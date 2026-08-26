@@ -1,0 +1,782 @@
+Sawa. Hii ndiyo index.html kamili ya Tanzania Digital Hub. Copy code yote, kisha GitHub → repository yako → Add file → Create new file → index.html → paste → Commit changes.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tanzania Digital Hub | Opportunities, Education & Digital Skills</title>
+
+<meta name="description" content="Tanzania Digital Hub — scholarships, jobs, internships, free courses, AI tools, digital skills and online opportunities.">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+}
+
+.topbar{
+  background:#071b3a;
+  color:white;
+  text-align:center;
+  padding:8px;
+  font-size:13px;
+}
+
+header{
+  background:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.nav{
+  max-width:1150px;
+  margin:auto;
+  padding:17px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+  color:#075cff;
+}
+
+.logo span{
+  color:#172033;
+}
+
+nav{
+  display:flex;
+  gap:22px;
+}
+
+nav a{
+  color:#172033;
+  font-size:14px;
+  font-weight:600;
+}
+
+.hero{
+  background:linear-gradient(135deg,#071b3a,#075cff);
+  color:white;
+}
+
+.hero-content{
+  max-width:1150px;
+  margin:auto;
+  padding:75px 20px;
+}
+
+.hero h1{
+  font-size:48px;
+  max-width:700px;
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:680px;
+  opacity:.9;
+}
+
+.search{
+  margin-top:28px;
+  max-width:650px;
+  background:white;
+  padding:6px;
+  border-radius:12px;
+  display:flex;
+}
+
+.search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:14px;
+  font-size:15px;
+}
+
+.search button{
+  background:#075cff;
+  color:white;
+  border:0;
+  padding:0 22px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+main{
+  max-width:1150px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.section-title h2{
+  font-size:28px;
+}
+
+.section-title a{
+  color:#075cff;
+  font-weight:bold;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(20,40,70,.07);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#687386;
+  font-size:14px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:9px 14px;
+  border-radius:8px;
+  background:#075cff;
+  color:white;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.featured{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+
+.featured-box,
+.popular{
+  background:white;
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(20,40,70,.07);
+}
+
+.badge{
+  background:#e8f0ff;
+  color:#075cff;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.featured-box h2{
+  margin:15px 0 10px;
+  font-size:27px;
+}
+
+.popular h3{
+  margin-bottom:12px;
+}
+
+.item{
+  padding:13px 0;
+  border-bottom:1px solid #edf0f5;
+}
+
+.item:last-child{
+  border-bottom:0;
+}
+
+.item strong{
+  display:block;
+  font-size:14px;
+}
+
+.item small{
+  color:#7a8494;
+}
+
+.newsletter{
+  margin-top:45px;
+  padding:40px;
+  border-radius:20px;
+  background:#075cff;
+  color:white;
+  text-align:center;
+}
+
+.newsletter h2{
+  margin-bottom:8px;
+}
+
+.email{
+  max-width:600px;
+  margin:20px auto 0;
+  display:flex;
+  background:white;
+  padding:6px;
+  border-radius:10px;
+}
+
+.email input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:12px;
+}
+
+.email button{
+  background:#071b3a;
+  color:white;
+  border:0;
+  padding:0 18px;
+  border-radius:7px;
+  font-weight:bold;
+}
+
+footer{
+  background:#071b3a;
+  color:#cbd5e1;
+  margin-top:50px;
+}
+
+.footer{
+  max-width:1150px;
+  margin:auto;
+  padding:45px 20px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:30px;
+}
+
+.footer h3{
+  color:white;
+  margin-bottom:12px;
+}
+
+.footer a{
+  display:block;
+  color:#cbd5e1;
+  margin:7px 0;
+  font-size:14px;
+}
+
+.copyright{
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  padding:16px;
+  font-size:13px;
+}
+
+@media(max-width:850px){
+
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .featured{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:550px){
+
+  .hero-content{
+    padding:55px 20px;
+  }
+
+  .hero h1{
+    font-size:33px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+  }
+
+  .search{
+    display:block;
+    background:transparent;
+  }
+
+  .search input{
+    width:100%;
+    border-radius:8px;
+    margin-bottom:8px;
+  }
+
+  .search button{
+    width:100%;
+    height:45px;
+  }
+
+  .email{
+    display:block;
+    background:transparent;
+  }
+
+  .email input{
+    width:100%;
+    border-radius:8px;
+    margin-bottom:8px;
+  }
+
+  .email button{
+    width:100%;
+    height:45px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+🇹🇿 Tanzania Digital Hub — Discover Opportunities. Build Your Future.
+</div>
+
+<header>
+<div class="nav">
+
+<a href="#" class="logo">
+Tanzania <span>Digital Hub</span>
+</a>
+
+<nav>
+<a href="#opportunities">Opportunities</a>
+<a href="#education">Education</a>
+<a href="#jobs">Jobs</a>
+<a href="#digital">Digital Skills</a>
+<a href="#about">About</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Discover Your Next Opportunity.
+</h1>
+
+<p>
+Find scholarships, jobs, internships, free courses,
+digital skills and online opportunities — all in one place.
+</p>
+
+<div class="search">
+
+<input
+id="searchInput"
+type="search"
+placeholder="Search scholarships, jobs, courses..."
+>
+
+<button onclick="searchSite()">
+Search
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<main>
+
+<section id="opportunities">
+
+<div class="section-title">
+<h2>🔥 Explore Opportunities</h2>
+<a href="#">View All →</a>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎓</div>
+<h3>Scholarships</h3>
+<p>
+Discover scholarships and study opportunities
+in Tanzania and abroad.
+</p>
+<a class="btn" href="#">Explore</a>
+</div>
+
+<div class="card" id="jobs">
+<div class="icon">💼</div>
+<h3>Jobs</h3>
+<p>
+Find job openings, internships and career opportunities.
+</p>
+<a class="btn" href="#">View Jobs</a>
+</div>
+
+<div class="card">
+<div class="icon">🌍</div>
+<h3>Remote Jobs</h3>
+<p>
+Discover legitimate remote work and online career opportunities.
+</p>
+<a class="btn" href="#">Explore</a>
+</div>
+
+<div class="card" id="education">
+<div class="icon">📚</div>
+<h3>Free Courses</h3>
+<p>
+Build valuable skills through free online learning resources.
+</p>
+<a class="btn" href="#">Learn Now</a>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="featured">
+
+<div class="featured-box">
+
+<span class="badge">
+FEATURED
+</span>
+
+<h2>
+Welcome to Tanzania Digital Hub
+</h2>
+
+<p>
+Our mission is to make useful opportunities easier to discover.
+We bring together education, careers, technology and digital
+opportunities in one simple platform.
+</p>
+
+<a href="#opportunities" class="btn">
+Explore Opportunities
+</a>
+
+</div>
+
+
+<div class="popular">
+
+<h3>⭐ Popular This Week</h3>
+
+<div class="item">
+<strong>🎓 Latest Scholarships</strong>
+<small>Education</small>
+</div>
+
+<div class="item">
+<strong>💼 Latest Jobs</strong>
+<small>Careers</small>
+</div>
+
+<div class="item">
+<strong>🤖 Useful AI Tools</strong>
+<small>Technology</small>
+</div>
+
+<div class="item">
+<strong>💻 Digital Skills</strong>
+<small>Learning</small>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="digital" style="margin-top:50px">
+
+<div class="section-title">
+
+<h2>💻 Digital Skills & Technology</h2>
+
+<a href="#">See More →</a>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">🤖</div>
+
+<h3>AI Tools</h3>
+
+<p>
+Discover useful AI tools for school,
+work and productivity.
+</p>
+
+<a class="btn" href="#">
+Explore
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📱</div>
+
+<h3>Apps & Technology</h3>
+
+<p>
+Useful apps, websites and technology tips.
+</p>
+
+<a class="btn" href="#">
+Explore
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💰</div>
+
+<h3>Online Opportunities</h3>
+
+<p>
+Learn about freelancing and digital business opportunities.
+</p>
+
+<a class="btn" href="#">
+Explore
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🚀</div>
+
+<h3>Digital Marketing</h3>
+
+<p>
+Learn practical skills for building online projects.
+</p>
+
+<a class="btn" href="#">
+Learn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="newsletter">
+
+<h2>
+📩 Don't Miss New Opportunities
+</h2>
+
+<p>
+Stay updated when new scholarships, jobs and
+digital opportunities are published.
+</p>
+
+<div class="email">
+
+<input
+type="email"
+placeholder="Enter your email"
+>
+
+<button onclick="subscribe()">
+Subscribe
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer id="about">
+
+<div class="footer">
+
+<div>
+
+<h3>
+Tanzania Digital Hub
+</h3>
+
+<p>
+A digital platform connecting Tanzanians
+with education, careers, technology and opportunities.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#opportunities">
+Opportunities
+</a>
+
+<a href="#education">
+Education
+</a>
+
+<a href="#jobs">
+Jobs
+</a>
+
+<a href="#digital">
+Digital Skills
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Information
+</h3>
+
+<a href="#">
+About Us
+</a>
+
+<a href="#">
+Contact
+</a>
+
+<a href="#">
+Privacy Policy
+</a>
+
+<a href="#">
+Disclaimer
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Tanzania Digital Hub.
+All rights reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+function searchSite(){
+
+const query =
+document.getElementById("searchInput").value.trim();
+
+if(query === ""){
+
+alert("Please enter what you want to search for.");
+
+return;
+
+}
+
+alert(
+"Search feature is ready. We will connect it to your articles soon: "
++ query
+);
+
+}
+
+
+function subscribe(){
+
+alert(
+"Newsletter subscription will be connected soon."
+);
+
+}
+
+</script>
+
+</body>
+</html>
