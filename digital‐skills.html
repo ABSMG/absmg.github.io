@@ -1,206 +1,1090 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Digital Skills | OpportunityBridge</title>
+    <title>Digital Skills | OpportunityBridge</title>
 
-<meta name="description" content="Explore digital skills, technology learning and online work resources on OpportunityBridge.">
-<meta name="robots" content="index, follow">
+    <meta name="description" content="Explore practical digital skills including computer skills, AI, web development, digital marketing, data skills and career skills on OpportunityBridge.">
+    <meta name="keywords" content="digital skills, computer skills, AI skills, web development, digital marketing, data skills, career skills">
+    <meta name="author" content="OpportunityBridge">
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8f7;color:#26343a;line-height:1.6}
-a{text-decoration:none;color:inherit}
+    <link rel="canonical" href="https://absmg.github.io/digital-skills.html">
 
-header{
-background:#123b3a;color:white;padding:18px 7%;
-display:flex;justify-content:space-between;align-items:center
-}
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
+        crossorigin="anonymous"></script>
 
-.logo{font-size:21px;font-weight:bold}
-nav a{color:white;margin-left:18px;font-size:14px}
-nav a:hover{color:#20b89a}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-main{max-width:1100px;margin:55px auto;padding:0 20px}
-.hero{text-align:center;margin-bottom:35px}
+        html {
+            scroll-behavior: smooth;
+        }
 
-h1{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:normal;
-color:#123b3a
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
 
-.hero p{color:#68757b;max-width:650px;margin:auto}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-.search-box{max-width:700px;margin:30px auto}
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e8ebf2;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.search-box input{
-width:100%;
-padding:16px 20px;
-border:1px solid #d5dddd;
-border-radius:10px;
-font-size:16px;
-outline:none
-}
+        .nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-.search-box input:focus{
-border-color:#176b63;
-box-shadow:0 0 0 3px rgba(23,107,99,.12)
-}
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-#resultCount{text-align:center;margin-top:10px;color:#176b63;font-size:14px}
+        .logo {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: #173f8a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
+        .brand h1 {
+            font-size: 21px;
+            color: #173f8a;
+        }
 
-.opportunity-card{
-background:white;
-border:1px solid #e1e6e4;
-border-radius:12px;
-padding:25px;
-transition:.2s
-}
+        .brand span {
+            display: block;
+            font-size: 11px;
+            color: #667085;
+        }
 
-.opportunity-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 25px rgba(0,0,0,.08)
-}
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-.opportunity-card h2{font-size:19px;color:#123b3a}
-.opportunity-card p{font-size:14px;color:#68757b}
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #344054;
+        }
 
-.explore{
-display:inline-block;
-margin-top:12px;
-background:#176b63;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-font-size:13px;
-font-weight:bold
-}
+        nav a:hover {
+            color: #173f8a;
+        }
 
-footer{
-margin-top:70px;
-background:#102f2e;
-color:#dcebea;
-text-align:center;
-padding:30px
-}
+        .hero {
+            background: linear-gradient(135deg, #173f8a, #2458b5);
+            color: white;
+            padding: 75px 20px;
+        }
 
-footer a{color:white;margin:0 8px}
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
 
-@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}}
+        .hero h2 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
 
-@media(max-width:500px){
-.cards{grid-template-columns:1fr}
-header{flex-direction:column;gap:12px}
-nav a{margin:0 5px}
-}
-</style>
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            opacity: .95;
+        }
+
+        .hero-buttons {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 21px;
+            border-radius: 9px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #173f8a;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.7);
+            color: white;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 31px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        .search-box {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            display: flex;
+            background: white;
+            border: 1px solid #d9dee8;
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.05);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 13px;
+            font-size: 15px;
+            background: transparent;
+        }
+
+        .search-box button {
+            border: none;
+            background: #173f8a;
+            color: white;
+            padding: 0 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #2458b5;
+        }
+
+        #resultCount {
+            text-align: center;
+            color: #667085;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e6eaf0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(23,63,138,.10);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #eef4ff;
+            color: #173f8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            margin-bottom: 17px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 9px;
+        }
+
+        .card p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .card a {
+            color: #173f8a;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .info-section {
+            background: #ffffff;
+        }
+
+        .info-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .info-content h2 {
+            text-align: center;
+            margin-bottom: 18px;
+            font-size: 30px;
+        }
+
+        .info-content p {
+            color: #475467;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .ad-container {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 5px 15px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cta {
+            background: #172033;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #d0d5dd;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        footer {
+            background: #101828;
+            color: #d0d5dd;
+            padding: 45px 20px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #98a2b3;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #98a2b3;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #344054;
+            text-align: center;
+            font-size: 13px;
+            color: #98a2b3;
+        }
+
+        @media (max-width: 800px) {
+            .nav {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .search-box button {
+                padding: 0 14px;
+            }
+
+            .brand h1 {
+                font-size: 19px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">OpportunityBridge</div>
+    <div class="nav">
 
-<nav>
-<a href="index.html">Home</a>
-<a href="scholarships.html">Scholarships</a>
-<a href="jobs.html">Jobs</a>
-<a href="internships.html">Internships</a>
-<a href="courses.html">Courses</a>
-</nav>
+        <a href="index.html" class="brand">
+            <div class="logo">OB</div>
+            <div>
+                <h1>OpportunityBridge</h1>
+                <span>Connect • Learn • Grow</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#opportunities">Opportunities</a>
+            <a href="digital-skills.html">Digital Skills</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
 </header>
 
 <main>
 
-<div class="hero">
+<section class="hero">
+    <div class="hero-content">
 
-<h1>Digital Skills</h1>
+        <h2>Build Your Digital Skills</h2>
 
-<p>
-Explore practical digital skills that can support learning,
-career development and responsible online work.
-</p>
+        <p>
+            Explore practical digital skills that can help you learn,
+            work, create and grow in today's digital world.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#skills" class="btn btn-primary">
+                Explore Skills
+            </a>
+
+            <a href="index.html" class="btn btn-outline">
+                Back to Home
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- AdSense Ad -->
+<div class="ad-container">
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2004981151172844"
+         data-ad-slot="5992864529"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+
+
+<section class="container" id="skills">
+
+    <div class="section-title">
+        <h2>Digital Skills</h2>
+        <p>Search and explore the skills that interest you.</p>
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search digital skills..."
+            aria-label="Search digital skills"
+        >
+
+        <button onclick="searchSkills()">Search</button>
+
+    </div>
+
+    <div id="resultCount"></div>
+
+    <div class="grid" id="skillsGrid">
+
+        <article class="card skill-card">
+
+            <div class="icon">💻</div>
+
+            <h3>Computer Skills</h3>
+
+            <p>
+                Learn essential computer and internet skills useful
+                for education, work and everyday digital activities.
+            </p>
+
+            <a href="#computer">Explore Computer Skills →</a>
+
+        </article>
+
+
+        <article class="card skill-card">
+
+            <div class="icon">🤖</div>
+
+            <h3>AI Skills</h3>
+
+            <p>
+                Understand artificial intelligence and learn responsible
+                ways to use AI tools for learning and productivity.
+            </p>
+
+            <a href="#ai">Explore AI Skills →</a>
+
+        </article>
+
+
+        <article class="card skill-card">
+
+            <div class="icon">🌐</div>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Learn the foundations of websites using HTML, CSS,
+                JavaScript and other web technologies.
+            </p>
+
+            <a href="#web">Explore Web Development →</a>
+
+        </article>
+
+
+        <article class="card skill-card">
+
+            <div class="icon">📱</div>
+
+            <h3>Digital Marketing</h3>
+
+            <p>
+                Learn the basics of online communication, content,
+                search visibility and digital marketing.
+            </p>
+
+            <a href="#marketing">Explore Digital Marketing →</a>
+
+        </article>
+
+
+        <article class="card skill-card">
+
+            <div class="icon">📊</div>
+
+            <h3>Data Skills</h3>
+
+            <p>
+                Build foundational skills for organizing information,
+                using spreadsheets and understanding data.
+            </p>
+
+            <a href="#data">Explore Data Skills →</a>
+
+        </article>
+
+
+        <article class="card skill-card">
+
+            <div class="icon">🎯</div>
+
+            <h3>Career Skills</h3>
+
+            <p>
+                Improve communication, CV writing, interview preparation
+                and other professional skills.
+            </p>
+
+            <a href="#career">Explore Career Skills →</a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- AdSense Ad -->
+<div class="ad-container">
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2004981151172844"
+         data-ad-slot="5992864529"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
 </div>
 
-<div class="search-box">
 
-<input
-type="search"
-id="searchInput"
-placeholder="Search digital skills..."
-aria-label="Search digital skills">
+<section class="info-section">
 
-<div id="resultCount"></div>
+    <div class="container">
+
+        <div class="info-content">
+
+            <h2>Why Digital Skills Matter</h2>
+
+            <p>
+                Digital skills can help students, job seekers,
+                entrepreneurs and professionals use technology
+                more effectively.
+            </p>
+
+            <p>
+                Start with the basics, practice regularly and
+                gradually build skills that match your education
+                and career goals.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="computer">
+
+    <div class="section-title">
+        <h2>💻 Computer Skills</h2>
+        <p>Build a strong foundation for using computers and the internet.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <h3>Computer Basics</h3>
+            <p>
+                Learn file management, typing, operating systems,
+                software installation and basic troubleshooting.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Internet Skills</h3>
+            <p>
+                Learn how to search for information, use browsers,
+                email and online services effectively.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Office Productivity</h3>
+            <p>
+                Build foundational skills in documents,
+                presentations and spreadsheets.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="ai">
+
+    <div class="section-title">
+        <h2>🤖 AI Skills</h2>
+        <p>Understand AI and learn to use it responsibly.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <h3>AI Fundamentals</h3>
+            <p>
+                Learn basic concepts such as artificial intelligence,
+                machine learning and generative AI.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>AI Productivity</h3>
+            <p>
+                Explore ways AI tools can support brainstorming,
+                learning, writing and everyday productivity.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Responsible AI</h3>
+            <p>
+                Learn about accuracy, privacy, responsible use and
+                the importance of checking AI-generated information.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="web">
+
+    <div class="section-title">
+        <h2>🌐 Web Development</h2>
+        <p>Learn the foundations of creating websites.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <h3>HTML</h3>
+            <p>
+                Learn how HTML structures webpages, headings,
+                paragraphs, links, images and other content.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>CSS</h3>
+            <p>
+                Learn how CSS controls layout, typography,
+                spacing, responsiveness and visual design.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>JavaScript</h3>
+            <p>
+                Learn the basics of JavaScript to add interaction
+                and functionality to websites.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="marketing">
+
+    <div class="section-title">
+        <h2>📱 Digital Marketing</h2>
+        <p>Develop useful skills for communicating online.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <h3>Content Creation</h3>
+            <p>
+                Learn how to plan and create useful digital content
+                for different audiences.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>SEO Basics</h3>
+            <p>
+                Understand basic search engine optimization concepts
+                for making online content easier to discover.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Online Communication</h3>
+            <p>
+                Improve professional communication and audience
+                engagement across digital channels.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="data">
+
+    <div class="section-title">
+        <h2>📊 Data Skills</h2>
+        <p>Learn how to organize and understand information.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <h3>Spreadsheets</h3>
+            <p>
+                Learn tables, formulas, sorting, filtering and
+                basic spreadsheet organization.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Data Organization</h3>
+            <p>
+                Learn how to collect, organize and maintain
+                information clearly.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Data Visualization</h3>
+            <p>
+                Learn basic concepts for presenting information
+                through charts and simple visualizations.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="career">
+
+    <div class="section-title">
+        <h2>🎯 Career Skills</h2>
+        <p>Build skills that support education and professional growth.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <h3>CV Writing</h3>
+            <p>
+                Learn how to organize your education, skills,
+                experience and achievements clearly.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Interview Skills</h3>
+            <p>
+                Improve communication, preparation and professional
+                presentation for interviews.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>Communication</h3>
+            <p>
+                Develop clear written and verbal communication
+                skills for school and professional environments.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- AdSense Ad -->
+<div class="ad-container">
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2004981151172844"
+         data-ad-slot="5992864529"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
 </div>
 
-<div class="cards">
 
-<div class="opportunity-card">
-<h2>💻 Computer Skills</h2>
-<p>Learn essential computer and internet skills.</p>
-<a class="explore" href="https://www.google.com/search?q=basic+computer+skills+course" target="_blank" rel="noopener">Explore →</a>
-</div>
+<section class="cta">
 
-<div class="opportunity-card">
-<h2>🤖 AI Skills</h2>
-<p>Explore educational resources for understanding artificial intelligence.</p>
-<a class="explore" href="https://www.google.com/search?q=AI+skills+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <h2>Keep Learning. Keep Growing.</h2>
 
-<div class="opportunity-card">
-<h2>🌐 Web Development</h2>
-<p>Learn HTML, CSS, JavaScript and web development fundamentals.</p>
-<a class="explore" href="https://www.google.com/search?q=web+development+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <p>
+        Explore more opportunities, courses and resources
+        available on OpportunityBridge.
+    </p>
 
-<div class="opportunity-card">
-<h2>📱 Digital Marketing</h2>
-<p>Explore digital marketing concepts and online communication skills.</p>
-<a class="explore" href="https://www.google.com/search?q=digital+marketing+skills" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <a href="index.html" class="btn btn-primary">
+        Explore OpportunityBridge
+    </a>
 
-<div class="opportunity-card">
-<h2>📊 Data Skills</h2>
-<p>Discover resources for spreadsheets, data analysis and visualization.</p>
-<a class="explore" href="https://www.google.com/search?q=data+analysis+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-<div class="opportunity-card">
-<h2>🚀 Career Skills</h2>
-<p>Develop communication, CV and professional digital skills.</p>
-<a class="explore" href="https://www.google.com/search?q=career+skills+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-</div>
+</section>
 
 </main>
 
+
 <footer>
-<strong>OpportunityBridge</strong>
-<p>Connect • Learn • Grow</p>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="disclaimer.html">Disclaimer</a>
+    <div class="footer-grid">
 
-<p>© 2026 OpportunityBridge. All rights reserved.</p>
+        <div>
+
+            <h3>OpportunityBridge</h3>
+
+            <p>
+                Connecting people with education, career and
+                digital learning opportunities.
+            </p>
+
+            <p style="margin-top:10px;">
+                Connect • Learn • Grow
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Explore</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html#opportunities">Opportunities</a>
+                </li>
+
+                <li>
+                    <a href="scholarships.html">Scholarships</a>
+                </li>
+
+                <li>
+                    <a href="jobs.html">Jobs</a>
+                </li>
+
+                <li>
+                    <a href="internships.html">Internships</a>
+                </li>
+
+                <li>
+                    <a href="courses.html">Courses</a>
+                </li>
+
+                <li>
+                    <a href="digital-skills.html">Digital Skills</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Information</h3>
+
+            <ul>
+
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+
+                <li>
+                    <a href="privacy.html">Privacy Policy</a>
+                </li>
+
+                <li>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 OpportunityBridge. All rights reserved.
+
+    </div>
+
 </footer>
 
-<script src="search.js"></script>
+
+<script>
+
+function searchSkills() {
+
+    const input =
+        document.getElementById("searchInput");
+
+    const query =
+        input.value.toLowerCase().trim();
+
+    const cards =
+        document.querySelectorAll(".skill-card");
+
+    const resultCount =
+        document.getElementById("resultCount");
+
+    let visible = 0;
+
+    cards.forEach(function(card) {
+
+        const text =
+            card.textContent.toLowerCase();
+
+        if (
+            query === "" ||
+            text.includes(query)
+        ) {
+
+            card.style.display = "";
+
+            visible++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    if (query === "") {
+
+        resultCount.textContent = "";
+
+    } else if (visible === 0) {
+
+        resultCount.textContent =
+            "No matching digital skills found.";
+
+    } else {
+
+        resultCount.textContent =
+            visible +
+            (
+                visible === 1
+                ? " matching skill found."
+                : " matching skills found."
+            );
+
+    }
+
+}
+
+
+document
+    .getElementById("searchInput")
+    .addEventListener(
+        "keyup",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                searchSkills();
+
+            }
+
+        }
+    );
+
+</script>
 
 </body>
 </html>
