@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Jobs | OpportunityBridge</title>
+
+<meta name="description" content="Explore job opportunities, remote work resources and career information on OpportunityBridge.">
+<meta name="robots" content="index, follow">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8f7;color:#26343a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+header{
+background:#123b3a;color:white;padding:18px 7%;
+display:flex;justify-content:space-between;align-items:center
+}
+
+.logo{font-size:21px;font-weight:bold}
+
+nav a{color:white;margin-left:18px;font-size:14px}
+nav a:hover{color:#20b89a}
+
+main{max-width:1100px;margin:55px auto;padding:0 20px}
+
+.hero{text-align:center;margin-bottom:35px}
+
+h1{
+font-family:Georgia,serif;
+font-size:42px;
+font-weight:normal;
+color:#123b3a
+}
+
+.hero p{color:#68757b;max-width:650px;margin:auto}
+
+.search-box{max-width:700px;margin:30px auto}
+
+.search-box input{
+width:100%;
+padding:16px 20px;
+border:1px solid #d5dddd;
+border-radius:10px;
+font-size:16px;
+outline:none
+}
+
+.search-box input:focus{
+border-color:#176b63;
+box-shadow:0 0 0 3px rgba(23,107,99,.12)
+}
+
+#resultCount{text-align:center;margin-top:10px;color:#176b63;font-size:14px}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.opportunity-card{
+background:white;
+border:1px solid #e1e6e4;
+border-radius:12px;
+padding:25px;
+transition:.2s
+}
+
+.opportunity-card:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 25px rgba(0,0,0,.08)
+}
+
+.opportunity-card h2{font-size:19px;color:#123b3a}
+.opportunity-card p{font-size:14px;color:#68757b}
+
+.explore{
+display:inline-block;
+margin-top:12px;
+background:#176b63;
+color:white;
+padding:10px 15px;
+border-radius:6px;
+font-size:13px;
+font-weight:bold
+}
+
+footer{
+margin-top:70px;
+background:#102f2e;
+color:#dcebea;
+text-align:center;
+padding:30px
+}
+
+footer a{color:white;margin:0 8px}
+
+@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}}
+
+@media(max-width:500px){
+.cards{grid-template-columns:1fr}
+header{flex-direction:column;gap:12px}
+nav a{margin:0 5px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">OpportunityBridge</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="scholarships.html">Scholarships</a>
+<a href="internships.html">Internships</a>
+<a href="courses.html">Courses</a>
+<a href="digital-skills.html">Digital Skills</a>
+</nav>
+</header>
+
+<main>
+
+<div class="hero">
+
+<h1>Jobs</h1>
+
+<p>
+Explore career opportunities and employment resources.
+Search by job type, career field or keyword.
+</p>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="search"
+id="searchInput"
+placeholder="Search jobs..."
+aria-label="Search jobs">
+
+<div id="resultCount"></div>
+
+</div>
+
+<div class="cards">
+
+<div class="opportunity-card">
+<h2>Remote Jobs</h2>
+<p>Explore remote job searches across different career fields.</p>
+<a class="explore" href="https://www.google.com/search?q=remote+jobs" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>Entry-Level Jobs</h2>
+<p>Find opportunities suitable for people starting their careers.</p>
+<a class="explore" href="https://www.google.com/search?q=entry+level+jobs" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>Graduate Jobs</h2>
+<p>Explore career opportunities for recent graduates.</p>
+<a class="explore" href="https://www.google.com/search?q=graduate+jobs" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>Technology Jobs</h2>
+<p>Discover opportunities in technology and digital careers.</p>
+<a class="explore" href="https://www.google.com/search?q=technology+jobs" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>Healthcare Jobs</h2>
+<p>Explore employment resources in healthcare-related fields.</p>
+<a class="explore" href="https://www.google.com/search?q=healthcare+jobs" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>International Jobs</h2>
+<p>Search for international career opportunities and employment resources.</p>
+<a class="explore" href="https://www.google.com/search?q=international+jobs" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<strong>OpportunityBridge</strong>
+<p>Connect • Learn • Grow</p>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="disclaimer.html">Disclaimer</a>
+
+<p>© 2026 OpportunityBridge. All rights reserved.</p>
+</footer>
+
+<script src="search.js"></script>
+
+</body>
+</html>
