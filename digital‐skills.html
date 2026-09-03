@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Digital Skills | OpportunityBridge</title>
+
+<meta name="description" content="Explore digital skills, technology learning and online work resources on OpportunityBridge.">
+<meta name="robots" content="index, follow">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8f7;color:#26343a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+header{
+background:#123b3a;color:white;padding:18px 7%;
+display:flex;justify-content:space-between;align-items:center
+}
+
+.logo{font-size:21px;font-weight:bold}
+nav a{color:white;margin-left:18px;font-size:14px}
+nav a:hover{color:#20b89a}
+
+main{max-width:1100px;margin:55px auto;padding:0 20px}
+.hero{text-align:center;margin-bottom:35px}
+
+h1{
+font-family:Georgia,serif;
+font-size:42px;
+font-weight:normal;
+color:#123b3a
+}
+
+.hero p{color:#68757b;max-width:650px;margin:auto}
+
+.search-box{max-width:700px;margin:30px auto}
+
+.search-box input{
+width:100%;
+padding:16px 20px;
+border:1px solid #d5dddd;
+border-radius:10px;
+font-size:16px;
+outline:none
+}
+
+.search-box input:focus{
+border-color:#176b63;
+box-shadow:0 0 0 3px rgba(23,107,99,.12)
+}
+
+#resultCount{text-align:center;margin-top:10px;color:#176b63;font-size:14px}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.opportunity-card{
+background:white;
+border:1px solid #e1e6e4;
+border-radius:12px;
+padding:25px;
+transition:.2s
+}
+
+.opportunity-card:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 25px rgba(0,0,0,.08)
+}
+
+.opportunity-card h2{font-size:19px;color:#123b3a}
+.opportunity-card p{font-size:14px;color:#68757b}
+
+.explore{
+display:inline-block;
+margin-top:12px;
+background:#176b63;
+color:white;
+padding:10px 15px;
+border-radius:6px;
+font-size:13px;
+font-weight:bold
+}
+
+footer{
+margin-top:70px;
+background:#102f2e;
+color:#dcebea;
+text-align:center;
+padding:30px
+}
+
+footer a{color:white;margin:0 8px}
+
+@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}}
+
+@media(max-width:500px){
+.cards{grid-template-columns:1fr}
+header{flex-direction:column;gap:12px}
+nav a{margin:0 5px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">OpportunityBridge</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="scholarships.html">Scholarships</a>
+<a href="jobs.html">Jobs</a>
+<a href="internships.html">Internships</a>
+<a href="courses.html">Courses</a>
+</nav>
+</header>
+
+<main>
+
+<div class="hero">
+
+<h1>Digital Skills</h1>
+
+<p>
+Explore practical digital skills that can support learning,
+career development and responsible online work.
+</p>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="search"
+id="searchInput"
+placeholder="Search digital skills..."
+aria-label="Search digital skills">
+
+<div id="resultCount"></div>
+
+</div>
+
+<div class="cards">
+
+<div class="opportunity-card">
+<h2>💻 Computer Skills</h2>
+<p>Learn essential computer and internet skills.</p>
+<a class="explore" href="https://www.google.com/search?q=basic+computer+skills+course" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>🤖 AI Skills</h2>
+<p>Explore educational resources for understanding artificial intelligence.</p>
+<a class="explore" href="https://www.google.com/search?q=AI+skills+courses" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>🌐 Web Development</h2>
+<p>Learn HTML, CSS, JavaScript and web development fundamentals.</p>
+<a class="explore" href="https://www.google.com/search?q=web+development+courses" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>📱 Digital Marketing</h2>
+<p>Explore digital marketing concepts and online communication skills.</p>
+<a class="explore" href="https://www.google.com/search?q=digital+marketing+skills" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>📊 Data Skills</h2>
+<p>Discover resources for spreadsheets, data analysis and visualization.</p>
+<a class="explore" href="https://www.google.com/search?q=data+analysis+courses" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+<div class="opportunity-card">
+<h2>🚀 Career Skills</h2>
+<p>Develop communication, CV and professional digital skills.</p>
+<a class="explore" href="https://www.google.com/search?q=career+skills+courses" target="_blank" rel="noopener">Explore →</a>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<strong>OpportunityBridge</strong>
+<p>Connect • Learn • Grow</p>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="disclaimer.html">Disclaimer</a>
+
+<p>© 2026 OpportunityBridge. All rights reserved.</p>
+</footer>
+
+<script src="search.js"></script>
+
+</body>
+</html>
