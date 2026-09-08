@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | OpportunityBridge</title>
+
+  <meta name="description" content="Login to your OpportunityBridge account.">
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .logo {
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      background: white;
+      color: #1d4ed8;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 0 auto 12px;
+    }
+
+    .logo h1 {
+      font-size: 27px;
+      margin-bottom: 5px;
+    }
+
+    .logo p {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      text-align: center;
+      color: #111827;
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+      color: #374151;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      padding-right: 75px;
+    }
+
+    .show-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: transparent;
+      color: #2563eb;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .forgot {
+      text-align: right;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .login-btn {
+      width: 100%;
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .login-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .login-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .message {
+      display: none;
+      padding: 12px;
+      border-radius: 9px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    .register {
+      text-align: center;
+      margin-top: 22px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .register a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .loading {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 20px;
+      }
+
+      .logo h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <div class="logo-icon">OB</div>
+      <h1>OpportunityBridge</h1>
+      <p>Connect. Learn. Grow.</p>
+    </div>
+
+    <!-- LOGIN CARD -->
+    <div class="card">
+
+      <h2>Welcome Back</h2>
+
+      <p class="subtitle">
+        Login to your OpportunityBridge account
+      </p>
+
+      <!-- Messages -->
+      <div id="successMessage" class="message success"></div>
+      <div id="errorMessage" class="message error"></div>
+
+      <form id="loginForm">
+
+        <!-- EMAIL -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+
+          <label for="password">Password</label>
+
+          <div class="password-wrapper">
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              class="show-password"
+              id="togglePassword">
+              Show
+            </button>
+
+          </div>
+        </div>
+
+        <!-- FORGOT PASSWORD -->
+        <div class="forgot">
+          <a href="#" id="forgotPassword">
+            Forgot password?
+          </a>
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button
+          type="submit"
+          class="login-btn"
+          id="loginButton">
+
+          <span id="buttonText">Login</span>
+          <span id="loadingText" class="loading">
+            Logging in...
+          </span>
+
+        </button>
+
+      </form>
+
+      <!-- REGISTER -->
+      <div class="register">
+        Don't have an account?
+        <a href="register.html">Create Account</a>
+      </div>
+
+    </div>
+
+    <!-- BACK -->
+    <div class="back">
+      <a href="index.html">← Back to OpportunityBridge</a>
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =========================================
+       SUPABASE CONFIGURATION
+    ========================================= */
+
+    const SUPABASE_URL =
+      "https://wrdpnhqwolqovoukhlns.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const passwordInput =
+      document.getElementById("password");
+
+    const loginButton =
+      document.getElementById("loginButton");
+
+    const buttonText =
+      document.getElementById("buttonText");
+
+    const loadingText =
+      document.getElementById("loadingText");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+    const errorMessage =
+      document.getElementById("errorMessage");
+
+    const togglePassword =
+      document.getElementById("togglePassword");
+
+    const forgotPassword =
+      document.getElementById("forgotPassword");
+
+
+    /* =========================================
+       SHOW / HIDE PASSWORD
+    ========================================= */
+
+    togglePassword.addEventListener("click", function () {
+
+      if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+        togglePassword.textContent = "Hide";
+
+      } else {
+
+        passwordInput.type = "password";
+        togglePassword.textContent = "Show";
+
+      }
+
+    });
+
+
+    /* =========================================
+       MESSAGE FUNCTIONS
+    ========================================= */
+
+    function showError(message) {
+
+      successMessage.style.display = "none";
+
+      errorMessage.textContent = message;
+      errorMessage.style.display = "block";
+
+    }
+
+
+    function showSuccess(message) {
+
+      errorMessage.style.display = "none";
+
+      successMessage.textContent = message;
+      successMessage.style.display = "block";
+
+    }
+
+
+    function hideMessages() {
+
+      successMessage.style.display = "none";
+      errorMessage.style.display = "none";
+
+    }
+
+
+    /* =========================================
+       LOGIN
+    ========================================= */
+
+    loginForm.addEventListener("submit", async function (event) {
+
+      event.preventDefault();
+
+      hideMessages();
+
+      const email =
+        emailInput.value.trim();
+
+      const password =
+        passwordInput.value;
+
+
+      if (!email || !password) {
+
+        showError(
+          "Please enter your email and password."
+        );
+
+        return;
+      }
+
+
+      /* Loading */
+
+      loginButton.disabled = true;
+
+      buttonText.style.display = "none";
+      loadingText.style.display = "inline";
+
+
+      try {
+
+        const { data, error } =
+          await supabaseClient.auth.signInWithPassword({
+
+            email: email,
+            password: password
+
+          });
+
+
+        if (error) {
+
+          console.error(error);
+
+          if (
+            error.message
+              .toLowerCase()
+              .includes("invalid login credentials")
+          ) {
+
+            showError(
+              "Incorrect email or password."
+            );
+
+          } else {
+
+            showError(error.message);
+
+          }
+
+          return;
+        }
+
+
+        /* =====================================
+           SUCCESS
+        ===================================== */
+
+        if (data && data.user) {
+
+          showSuccess(
+            "Login successful! Redirecting..."
+          );
+
+
+          setTimeout(function () {
+
+            window.location.href =
+              "index.html";
+
+          }, 1200);
+
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        showError(
+          "Something went wrong. Please try again."
+        );
+
+      } finally {
+
+        loginButton.disabled = false;
+
+        buttonText.style.display = "inline";
+        loadingText.style.display = "none";
+
+      }
+
+    });
+
+
+    /* =========================================
+       FORGOT PASSWORD
+    ========================================= */
+
+    forgotPassword.addEventListener(
+      "click",
+      async function (event) {
+
+        event.preventDefault();
+
+        const email =
+          emailInput.value.trim();
+
+
+        if (!email) {
+
+          showError(
+            "Enter your email address first, then click Forgot password."
+          );
+
+          emailInput.focus();
+
+          return;
+        }
+
+
+        try {
+
+          const { error } =
+            await supabaseClient.auth.resetPasswordForEmail(
+              email,
+              {
+                redirectTo:
+                  window.location.origin +
+                  "/reset-password.html"
+              }
+            );
+
+
+          if (error) {
+
+            showError(error.message);
+
+            return;
+          }
+
+
+          showSuccess(
+            "Password reset instructions have been sent to your email."
+          );
+
+
+        } catch (error) {
+
+          console.error(error);
+
+          showError(
+            "Unable to send password reset email."
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =========================================
+       CHECK EXISTING SESSION
+    ========================================= */
+
+    async function checkSession() {
+
+      const { data } =
+        await supabaseClient.auth.getSession();
+
+      if (data && data.session) {
+
+        console.log(
+          "User is already logged in."
+        );
+
+        // Uncomment this if you want
+        // logged-in users to skip login:
+
+        // window.location.href = "index.html";
+
+      }
+
+    }
+
+    checkSession();
+
+  </script>
+
+</body>
+</html>
