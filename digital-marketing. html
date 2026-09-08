@@ -2,35 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Digital Marketing Skills | Learn Online Marketing | OpportunityBridge</title>
-
-<meta name="description" content="Learn digital marketing skills including SEO, content marketing, social media, email marketing, analytics and online branding.">
-<meta name="keywords" content="digital marketing, SEO, content marketing, social media marketing, online marketing, digital skills">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital Marketing Skills | OpportunityBridge</title>
+<meta name="description" content="Learn digital marketing, SEO, content marketing, social media marketing, analytics and online branding.">
 <link rel="canonical" href="https://absmg.github.io/digital-marketing.html">
-
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.7}
-header{background:#0b1220;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:24px;font-weight:bold}
-nav a{color:white;text-decoration:none;margin:0 10px}
-.hero{padding:70px 7%;background:linear-gradient(135deg,#4b164c,#a83279);color:white}
-.hero h1{font-size:42px}
-.container{max-width:1050px;margin:auto;padding:45px 20px}
-.card{background:white;padding:28px;margin-bottom:25px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.07)}
-h2{color:#8d2869}
-ul{padding-left:25px}
-.btn{display:inline-block;background:#a83279;color:white;padding:12px 20px;border-radius:8px;text-decoration:none}
-footer{text-align:center;padding:30px;background:#0b1220;color:white}
-footer a{color:white}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.7}
+header{background:#0b1220;color:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:800}nav a{color:#fff;text-decoration:none;margin:7px;font-size:14px}
+.hero{padding:75px 7%;background:linear-gradient(135deg,#4b164c,#a83279);color:#fff}
+.hero h1{font-size:42px;margin:0 0 10px}.container{max-width:1000px;margin:auto;padding:45px 20px}
+.card{background:#fff;padding:28px;border-radius:18px;margin-bottom:22px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+h2{color:#8d2869}.btn{display:inline-block;background:#a83279;color:#fff;padding:12px 20px;border-radius:9px;text-decoration:none}
+footer{background:#0b1220;color:#fff;text-align:center;padding:30px}footer a{color:#fff}
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="logo">OpportunityBridge</div>
 <nav>
@@ -42,21 +29,17 @@ footer a{color:white}
 
 <section class="hero">
 <h1>Digital Marketing</h1>
-<p>Learn how businesses and organizations reach audiences online.</p>
+<p>Learn how organizations reach audiences using digital channels.</p>
 </section>
 
 <main class="container">
-
 <div class="card">
 <h2>What Is Digital Marketing?</h2>
-<p>
-Digital marketing is the use of online channels and digital technologies
-to communicate with audiences and promote products, services or ideas.
-</p>
+<p>Digital marketing uses online platforms and digital technologies to communicate with audiences and promote products, services or ideas.</p>
 </div>
 
 <div class="card">
-<h2>Key Digital Marketing Skills</h2>
+<h2>Skills to Learn</h2>
 <ul>
 <li>Search Engine Optimization (SEO)</li>
 <li>Content marketing</li>
@@ -71,22 +54,17 @@ to communicate with audiences and promote products, services or ideas.
 
 <div class="card">
 <h2>Why Learn Digital Marketing?</h2>
-<p>
-Digital marketing skills are useful for businesses, organizations,
-content creators and people interested in online communication.
-</p>
+<p>These skills are useful for businesses, organizations, entrepreneurs and people interested in online communication.</p>
 </div>
 
 <div class="card">
-<a class="btn" href="index.html">Explore More Opportunities</a>
+<a class="btn" href="index.html">Explore Opportunities</a>
 </div>
-
 </main>
 
 <footer>
 <p>© 2026 OpportunityBridge. All rights reserved.</p>
 <a href="Privacy.html">Privacy Policy</a>
 </footer>
-
 </body>
 </html>
