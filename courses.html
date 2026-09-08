@@ -6,12 +6,8 @@
 
   <title>Online Courses | OpportunityBridge</title>
 
-  <meta name="description"
-        content="Discover useful online courses and learning resources through OpportunityBridge.">
-
-  <meta name="keywords"
-        content="online courses, free courses, certificates, technology courses, business courses, Tanzania">
-
+  <meta name="description" content="Discover online courses and learning resources to build skills for education, work and business.">
+  <meta name="keywords" content="online courses, free courses, technology courses, business courses, data courses, Tanzania">
   <meta name="author" content="OpportunityBridge">
   <meta name="theme-color" content="#0b4f8a">
 
@@ -21,7 +17,6 @@
     crossorigin="anonymous"></script>
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -55,7 +50,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #ffffff;
+      background: #fff;
       border-bottom: 1px solid #e5e7eb;
     }
 
@@ -64,7 +59,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
     }
 
     .logo {
@@ -187,7 +181,7 @@
 
     .filter-btn {
       border: 1px solid #dbe1e8;
-      background: #ffffff;
+      background: white;
       color: #475569;
       padding: 9px 14px;
       border-radius: 8px;
@@ -203,7 +197,7 @@
       color: white;
     }
 
-    /* MAIN */
+    /* SECTIONS */
 
     section {
       padding: 65px 0;
@@ -304,6 +298,15 @@
       background: #094f8e;
     }
 
+    /* ADSENSE */
+
+    .ad-container {
+      margin: 40px auto;
+      width: 100%;
+      min-height: 100px;
+      text-align: center;
+    }
+
     /* EMPTY */
 
     .empty {
@@ -311,20 +314,6 @@
       text-align: center;
       padding: 50px 20px;
       color: #64748b;
-    }
-
-    /* AD */
-
-    .ad {
-      min-height: 70px;
-      margin: 30px auto 0;
-      border: 1px dashed #d1d5db;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      font-size: 12px;
     }
 
     /* CTA */
@@ -469,13 +458,14 @@
         font-size: 12px;
         padding: 8px 11px;
       }
-
     }
 
   </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
 
@@ -489,9 +479,7 @@
       class="menu-btn"
       id="menuBtn"
       aria-label="Open menu">
-
       ☰
-
     </button>
 
     <nav id="navMenu">
@@ -577,33 +565,23 @@
 
       <div class="filters">
 
-        <button
-          class="filter-btn active"
-          data-filter="all">
+        <button class="filter-btn active" data-filter="all">
           All
         </button>
 
-        <button
-          class="filter-btn"
-          data-filter="Technology">
+        <button class="filter-btn" data-filter="Technology">
           Technology
         </button>
 
-        <button
-          class="filter-btn"
-          data-filter="Business">
+        <button class="filter-btn" data-filter="Business">
           Business
         </button>
 
-        <button
-          class="filter-btn"
-          data-filter="Data">
+        <button class="filter-btn" data-filter="Data">
           Data
         </button>
 
-        <button
-          class="filter-btn"
-          data-filter="Free">
+        <button class="filter-btn" data-filter="Free">
           Free
         </button>
 
@@ -634,9 +612,7 @@
       </div>
 
 
-      <div
-        class="course-grid"
-        id="courseGrid">
+      <div class="course-grid" id="courseGrid">
 
 
         <!-- COURSE 1 -->
@@ -683,9 +659,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn">
-
             Start Learning →
-
           </a>
 
         </article>
@@ -735,9 +709,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn">
-
             Start Learning →
-
           </a>
 
         </article>
@@ -787,9 +759,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn">
-
             Explore Courses →
-
           </a>
 
         </article>
@@ -839,9 +809,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn">
-
             Start Learning →
-
           </a>
 
         </article>
@@ -887,13 +855,11 @@
           </div>
 
           <a
-            href="https://www.ibm.com/skills-build"
+            href="https://skillsbuild.org/"
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn">
-
             Start Learning →
-
           </a>
 
         </article>
@@ -943,9 +909,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="course-btn">
-
             Start Learning →
-
           </a>
 
         </article>
@@ -954,9 +918,9 @@
       </div>
 
 
-      <div
-        class="empty"
-        id="emptyMessage">
+      <!-- NO RESULTS -->
+
+      <div class="empty" id="emptyMessage">
 
         <h3>
           No courses found
@@ -969,8 +933,23 @@
       </div>
 
 
-      <div class="ad">
-        Advertisement
+      <!-- ADSENSE AD -->
+
+      <div class="ad-container">
+
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2004981151172844"
+          data-ad-slot="5992864529"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+        </ins>
+
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
       </div>
 
     </div>
@@ -995,12 +974,8 @@
           and find resources that support your goals.
         </p>
 
-        <a
-          href="jobs.html"
-          class="cta-btn">
-
+        <a href="jobs.html" class="cta-btn">
           Explore Jobs →
-
         </a>
 
       </div>
@@ -1106,7 +1081,6 @@
   const navMenu =
     document.getElementById("navMenu");
 
-
   menuBtn.addEventListener("click", function () {
 
     navMenu.classList.toggle("active");
@@ -1127,7 +1101,6 @@
 
   const emptyMessage =
     document.getElementById("emptyMessage");
-
 
   let currentFilter = "all";
 
@@ -1152,7 +1125,6 @@
       const matchesSearch =
         searchData.includes(searchText);
 
-
       const matchesFilter =
         currentFilter === "all" ||
         category.includes(
@@ -1163,7 +1135,6 @@
       if (matchesSearch && matchesFilter) {
 
         card.style.display = "block";
-
         visibleCount++;
 
       } else {
@@ -1194,18 +1165,14 @@
     button.addEventListener("click", function() {
 
       filterButtons.forEach(function(btn) {
-
         btn.classList.remove("active");
-
       });
 
 
       button.classList.add("active");
 
-
       currentFilter =
         button.dataset.filter;
-
 
       filterCourses();
 
