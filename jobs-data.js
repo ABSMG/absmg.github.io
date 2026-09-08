@@ -12,8 +12,7 @@ const jobs = [
     deadline: "Varies by vacancy",
     description:
       "Explore current government vacancies published by the Public Service Recruitment Secretariat.",
-    applyUrl:
-      "https://www.ajira.go.tz/"
+    applyUrl: "https://www.ajira.go.tz/"
   },
 
   {
@@ -28,8 +27,7 @@ const jobs = [
     deadline: "Varies by vacancy",
     description:
       "Search official United Nations job openings and apply for positions that match your qualifications.",
-    applyUrl:
-      "https://careers.un.org/jobs"
+    applyUrl: "https://careers.un.org/jobs"
   },
 
   {
@@ -44,8 +42,7 @@ const jobs = [
     deadline: "Varies by vacancy",
     description:
       "Access the official Ministry of Health Ajira Portal for healthcare recruitment opportunities.",
-    applyUrl:
-      "https://ajira.moh.go.tz/authentication/login"
+    applyUrl: "https://ajira.moh.go.tz/authentication/login"
   },
 
   {
@@ -60,13 +57,12 @@ const jobs = [
     deadline: "Varies by vacancy",
     description:
       "Explore technology, information systems and digital career opportunities through UN Careers.",
-    applyUrl:
-      "https://careers.un.org/jobs"
+    applyUrl: "https://careers.un.org/jobs"
   },
 
   {
     title: "Graduate Career Opportunities",
-    company: "Public Service Recruitment Secretariat",
+    company: "Public Service Recruitment Secretariat (PSRS)",
     location: "Tanzania",
     locationCategory: "Tanzania",
     type: "Full-time",
@@ -76,8 +72,7 @@ const jobs = [
     deadline: "Varies by vacancy",
     description:
       "Explore government opportunities suitable for graduates and other qualified applicants.",
-    applyUrl:
-      "https://www.ajira.go.tz/"
+    applyUrl: "https://www.ajira.go.tz/"
   },
 
   {
@@ -92,8 +87,7 @@ const jobs = [
     deadline: "Varies by vacancy",
     description:
       "Browse international opportunities and check each vacancy to confirm its location and remote-work eligibility.",
-    applyUrl:
-      "https://careers.un.org/jobs"
+    applyUrl: "https://careers.un.org/jobs"
   }
 
 ];
