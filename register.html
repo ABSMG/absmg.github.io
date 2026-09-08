@@ -2,18 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Create Account | OpportunityBridge</title>
-
   <meta name="description" content="Create your OpportunityBridge account and discover scholarships, jobs, internships and online courses.">
-
   <meta name="robots" content="noindex, nofollow">
-
-  <meta name="theme-color" content="#0b4f8a">
-
-  <link rel="canonical" href="https://absmg.github.io/register.html">
 
   <style>
     * {
@@ -23,142 +16,101 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
       min-height: 100vh;
-      background: linear-gradient(135deg, #eef6ff, #f7f9fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
       color: #172033;
     }
 
-    /* HEADER */
-
-    header {
-      background: #0b4f8a;
-      color: white;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
-    }
-
-    .nav-container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      color: white;
-      text-decoration: none;
-      font-size: 23px;
-      font-weight: 700;
-    }
-
-    .back-home {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .back-home:hover {
-      opacity: 0.8;
-    }
-
-    /* REGISTER AREA */
-
-    .register-wrapper {
-      min-height: calc(100vh - 68px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .register-card {
+    .container {
       width: 100%;
-      max-width: 470px;
+      max-width: 460px;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .brand h1 {
+      color: #0b4f8a;
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    .brand p {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .card {
       background: white;
       border-radius: 18px;
-      padding: 38px 35px;
-      box-shadow: 0 15px 45px rgba(11,79,138,0.12);
-      border: 1px solid #e7edf5;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.08);
     }
 
-    .register-header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .register-icon {
-      width: 62px;
-      height: 62px;
-      margin: 0 auto 15px;
-      border-radius: 50%;
-      background: #eaf4ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-
-    .register-header h1 {
-      font-size: 29px;
+    .card h2 {
+      font-size: 24px;
       margin-bottom: 8px;
-      color: #102a43;
     }
 
-    .register-header p {
-      color: #6b7280;
+    .subtitle {
+      color: #667085;
       font-size: 14px;
+      margin-bottom: 25px;
+      line-height: 1.5;
     }
 
-    /* FORM */
-
-    .form-group {
+    .field {
       margin-bottom: 17px;
     }
 
-    .form-group label {
+    label {
       display: block;
-      margin-bottom: 7px;
       font-size: 14px;
       font-weight: 600;
-      color: #26364a;
+      margin-bottom: 7px;
     }
 
-    .input-wrapper {
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: .2s;
+    }
+
+    input:focus {
+      border-color: #0b6fc2;
+      box-shadow: 0 0 0 3px rgba(11,111,194,.1);
+    }
+
+    .password-box {
       position: relative;
     }
 
-    .input-wrapper input {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d5dce5;
-      border-radius: 9px;
-      outline: none;
-      font-size: 15px;
-      background: #fff;
-      transition: 0.2s;
+    .password-box input {
+      padding-right: 75px;
     }
 
-    .input-wrapper input:focus {
-      border-color: #0b6fc2;
-      box-shadow: 0 0 0 3px rgba(11,111,194,0.1);
-    }
-
-    .password-toggle {
+    .show-btn {
       position: absolute;
-      right: 12px;
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
       border: none;
       background: transparent;
+      color: #0b6fc2;
+      font-weight: 600;
       cursor: pointer;
-      font-size: 17px;
-      color: #667085;
     }
-
-    /* TERMS */
 
     .terms {
       display: flex;
@@ -167,112 +119,95 @@
       margin: 18px 0;
       font-size: 13px;
       color: #667085;
+      line-height: 1.5;
     }
 
     .terms input {
+      width: auto;
       margin-top: 3px;
     }
 
     .terms a {
-      color: #0b5fa5;
+      color: #0b6fc2;
       text-decoration: none;
-      font-weight: 600;
     }
 
-    .terms a:hover {
-      text-decoration: underline;
-    }
-
-    /* BUTTON */
-
-    .register-btn {
+    .btn {
       width: 100%;
       border: none;
+      border-radius: 10px;
+      padding: 14px;
       background: #0b4f8a;
       color: white;
-      padding: 14px;
-      border-radius: 9px;
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.2s;
+      transition: .2s;
     }
 
-    .register-btn:hover {
-      background: #0b6fc2;
-      transform: translateY(-1px);
+    .btn:hover {
+      background: #083b68;
     }
 
-    /* MESSAGE */
+    .btn:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
 
     .message {
       display: none;
-      margin-top: 15px;
       padding: 12px;
-      border-radius: 8px;
-      text-align: center;
+      border-radius: 9px;
+      margin-bottom: 17px;
       font-size: 14px;
+      line-height: 1.4;
     }
 
     .message.error {
       display: block;
-      background: #fff1f2;
+      background: #fff1f0;
       color: #b42318;
+      border: 1px solid #fecdca;
     }
 
-    /* LOGIN */
+    .message.success {
+      display: block;
+      background: #ecfdf3;
+      color: #027a48;
+      border: 1px solid #abefc6;
+    }
 
     .login-link {
       text-align: center;
-      margin-top: 23px;
-      padding-top: 20px;
-      border-top: 1px solid #edf0f4;
-      color: #667085;
+      margin-top: 22px;
       font-size: 14px;
+      color: #667085;
     }
 
     .login-link a {
-      color: #0b4f8a;
-      text-decoration: none;
+      color: #0b6fc2;
       font-weight: 700;
+      text-decoration: none;
     }
 
-    .login-link a:hover {
-      text-decoration: underline;
-    }
-
-    /* FOOTER */
-
-    footer {
+    .back {
       text-align: center;
-      padding: 20px;
-      color: #7a8699;
-      font-size: 12px;
+      margin-top: 18px;
     }
 
-    /* MOBILE */
+    .back a {
+      color: #667085;
+      font-size: 13px;
+      text-decoration: none;
+    }
 
-    @media (max-width: 520px) {
-
-      .nav-container {
-        padding: 15px;
+    @media (max-width: 480px) {
+      .card {
+        padding: 23px 19px;
       }
 
-      .logo {
-        font-size: 20px;
-      }
-
-      .register-wrapper {
-        padding: 25px 15px;
-      }
-
-      .register-card {
-        padding: 30px 22px;
-        border-radius: 15px;
-      }
-
-      .register-header h1 {
-        font-size: 25px;
+      .brand h1 {
+        font-size: 26px;
       }
     }
   </style>
@@ -280,295 +215,292 @@
 
 <body>
 
-  <!-- HEADER -->
+  <div class="container">
 
-  <header>
-    <div class="nav-container">
-
-      <a href="index.html" class="logo">
-        OpportunityBridge
-      </a>
-
-      <a href="index.html" class="back-home">
-        ← Home
-      </a>
-
+    <div class="brand">
+      <h1>OpportunityBridge</h1>
+      <p>Find opportunities. Move forward.</p>
     </div>
-  </header>
 
+    <div class="card">
 
-  <!-- REGISTER -->
+      <h2>Create your account</h2>
+      <p class="subtitle">
+        Join OpportunityBridge to explore scholarships, jobs, internships and online courses.
+      </p>
 
-  <main class="register-wrapper">
-
-    <div class="register-card">
-
-      <div class="register-header">
-
-        <div class="register-icon">
-          👤
-        </div>
-
-        <h1>Create Your Account</h1>
-
-        <p>
-          Join OpportunityBridge and discover opportunities for your future.
-        </p>
-
-      </div>
-
+      <div id="message" class="message"></div>
 
       <form id="registerForm">
 
-        <div class="form-group">
-
-          <label for="fullName">
-            Full Name
-          </label>
-
-          <div class="input-wrapper">
-
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              placeholder="Enter your full name"
-              required
-            >
-
-          </div>
-
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required
+          >
         </div>
 
-
-        <div class="form-group">
-
-          <label for="email">
-            Email Address
-          </label>
-
-          <div class="input-wrapper">
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            >
-
-          </div>
-
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
         </div>
 
+        <div class="field">
+          <label for="password">Password</label>
 
-        <div class="form-group">
-
-          <label for="password">
-            Password
-          </label>
-
-          <div class="input-wrapper">
-
+          <div class="password-box">
             <input
               type="password"
               id="password"
-              name="password"
               placeholder="Create a password"
-              minlength="8"
+              autocomplete="new-password"
+              minlength="6"
               required
             >
 
             <button
               type="button"
-              class="password-toggle"
+              class="show-btn"
               onclick="togglePassword('password', this)"
-              aria-label="Show password">
-              👁
+            >
+              Show
             </button>
-
           </div>
-
         </div>
 
+        <div class="field">
+          <label for="confirmPassword">Confirm Password</label>
 
-        <div class="form-group">
-
-          <label for="confirmPassword">
-            Confirm Password
-          </label>
-
-          <div class="input-wrapper">
-
+          <div class="password-box">
             <input
               type="password"
               id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirm your password"
-              minlength="8"
+              placeholder="Repeat your password"
+              autocomplete="new-password"
+              minlength="6"
               required
             >
 
             <button
               type="button"
-              class="password-toggle"
+              class="show-btn"
               onclick="togglePassword('confirmPassword', this)"
-              aria-label="Show password">
-              👁
+            >
+              Show
             </button>
-
           </div>
-
         </div>
 
+        <label class="terms">
+          <input type="checkbox" id="terms" required>
 
-        <div class="terms">
-
-          <input
-            type="checkbox"
-            id="terms"
-            required
-          >
-
-          <label for="terms">
+          <span>
             I agree to the
-            <a href="Privacy.html">
-              Privacy Policy
-            </a>
+            <a href="Privacy.html">Privacy Policy</a>
             and
-            <a href="Disclaimer.html">
-              Disclaimer
-            </a>.
-          </label>
+            <a href="Disclaimer.html">Disclaimer</a>.
+          </span>
+        </label>
 
-        </div>
-
-
-        <button
-          type="submit"
-          class="register-btn">
+        <button type="submit" class="btn" id="registerBtn">
           Create Account
         </button>
 
-
-        <div id="message" class="message"></div>
-
       </form>
 
-
       <div class="login-link">
-
         Already have an account?
+        <a href="login.html">Login</a>
+      </div>
 
-        <a href="login.html">
-          Login
-        </a>
-
+      <div class="back">
+        <a href="index.html">← Back to OpportunityBridge</a>
       </div>
 
     </div>
+  </div>
 
-  </main>
 
-
-  <footer>
-    © 2026 OpportunityBridge. All rights reserved.
-  </footer>
-
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
 
-    function togglePassword(inputId, button) {
+    const SUPABASE_URL =
+      "https://wrdpnhqwolqovoukhlns.supabase.co";
 
-      const input = document.getElementById(inputId);
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+
+    const { createClient } = supabase;
+
+    const supabaseClient = createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+    function togglePassword(id, button) {
+
+      const input = document.getElementById(id);
 
       if (input.type === "password") {
-
         input.type = "text";
-        button.textContent = "🙈";
-
+        button.textContent = "Hide";
       } else {
-
         input.type = "password";
-        button.textContent = "👁";
-
+        button.textContent = "Show";
       }
-
     }
 
 
-    document.getElementById("registerForm").addEventListener("submit", function(event) {
+    function showMessage(text, type) {
 
-      event.preventDefault();
+      const message = document.getElementById("message");
 
-      const fullName =
-        document.getElementById("fullName").value.trim();
-
-      const email =
-        document.getElementById("email").value.trim();
-
-      const password =
-        document.getElementById("password").value;
-
-      const confirmPassword =
-        document.getElementById("confirmPassword").value;
-
-      const terms =
-        document.getElementById("terms").checked;
-
-      const message =
-        document.getElementById("message");
+      message.textContent = text;
+      message.className = "message " + type;
+    }
 
 
-      message.className = "message";
-      message.textContent = "";
+    document
+      .getElementById("registerForm")
+      .addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const fullName =
+          document.getElementById("fullName").value.trim();
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        const password =
+          document.getElementById("password").value;
+
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        const registerBtn =
+          document.getElementById("registerBtn");
 
 
-      if (password.length < 8) {
+        if (fullName.length < 2) {
 
-        message.className = "message error";
-        message.textContent =
-          "Password must contain at least 8 characters.";
+          showMessage(
+            "Please enter your full name.",
+            "error"
+          );
 
-        return;
-
-      }
-
-
-      if (password !== confirmPassword) {
-
-        message.className = "message error";
-        message.textContent =
-          "Passwords do not match.";
-
-        return;
-
-      }
+          return;
+        }
 
 
-      if (!terms) {
+        if (password.length < 6) {
 
-        message.className = "message error";
-        message.textContent =
-          "Please accept the Privacy Policy and Disclaimer.";
+          showMessage(
+            "Password must contain at least 6 characters.",
+            "error"
+          );
 
-        return;
+          return;
+        }
 
-      }
+
+        if (password !== confirmPassword) {
+
+          showMessage(
+            "Passwords do not match.",
+            "error"
+          );
+
+          return;
+        }
 
 
-      /*
-        Registration backend will be connected here.
+        registerBtn.disabled = true;
+        registerBtn.textContent = "Creating account...";
 
-        Do NOT store real passwords in localStorage
-        or directly inside this HTML file.
-      */
 
-      alert(
-        "Registration form is ready. Backend authentication needs to be connected."
-      );
+        try {
 
-    });
+          const { data, error } =
+            await supabaseClient.auth.signUp({
+
+              email: email,
+
+              password: password,
+
+              options: {
+
+                data: {
+                  full_name: fullName
+                },
+
+                emailRedirectTo:
+                  "https://absmg.github.io/login.html"
+              }
+
+            });
+
+
+          if (error) {
+            throw error;
+          }
+
+
+          if (data.session) {
+
+            showMessage(
+              "Account created successfully! Redirecting...",
+              "success"
+            );
+
+            setTimeout(() => {
+              window.location.href = "dashboard.html";
+            }, 1200);
+
+          } else {
+
+            showMessage(
+              "Account created! Please check your email and verify your account before logging in.",
+              "success"
+            );
+
+            document
+              .getElementById("registerForm")
+              .reset();
+
+          }
+
+
+        } catch (error) {
+
+          console.error(error);
+
+          showMessage(
+            error.message || "Registration failed. Please try again.",
+            "error"
+          );
+
+        } finally {
+
+          registerBtn.disabled = false;
+          registerBtn.textContent = "Create Account";
+
+        }
+
+      });
 
   </script>
 
