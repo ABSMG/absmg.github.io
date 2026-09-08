@@ -1,91 +1,99 @@
 const jobs = [
+
   {
-    id: 1,
     title: "Government Job Opportunities",
     company: "Public Service Recruitment Secretariat",
     location: "Tanzania",
+    locationCategory: "Tanzania",
     type: "Full-time",
-    category: "Government",
     level: "Graduate",
-    mode: "Tanzania",
-    deadline: "Check official vacancy",
-    description: "Find current government employment opportunities available through the official Tanzania recruitment portal.",
+    category: "Graduate",
     icon: "🇹🇿",
-    apply: "https://www.ajira.go.tz/"
+    deadline: "Check official portal",
+    description:
+      "Find current government vacancies and recruitment opportunities available through the official Tanzania recruitment portal.",
+    applyUrl:
+      "https://www.ajira.go.tz/"
   },
 
   {
-    id: 2,
-    title: "United Nations Job Opportunities",
+    title: "UN Job Opportunities",
     company: "United Nations",
     location: "Worldwide",
+    locationCategory: "International",
     type: "Full-time",
-    category: "International",
     level: "Various",
-    mode: "International",
-    deadline: "Varies by vacancy",
-    description: "Explore current career opportunities with the United Nations across different professional fields.",
-    icon: "🌍",
-    apply: "https://careers.un.org/job-openings"
+    category: "International",
+    icon: "🌎",
+    deadline: "Varies by position",
+    description:
+      "Explore official United Nations career opportunities available in different countries and professional fields.",
+    applyUrl:
+      "https://careers.un.org/job-openings"
   },
 
   {
-    id: 3,
     title: "Healthcare Opportunities",
     company: "Ministry of Health Tanzania",
     location: "Tanzania",
+    locationCategory: "Tanzania",
     type: "Full-time",
-    category: "Healthcare",
     level: "Various",
-    mode: "Tanzania",
-    deadline: "Check official portal",
-    description: "Explore available opportunities in Tanzania's health sector.",
+    category: "Healthcare",
     icon: "🏥",
-    apply: "https://ajira.moh.go.tz/login/"
+    deadline: "Check official portal",
+    description:
+      "Explore healthcare-related recruitment opportunities through the official Ministry of Health employment portal.",
+    applyUrl:
+      "https://ajira.moh.go.tz/login/"
   },
 
   {
-    id: 4,
-    title: "Technology & IT Opportunities",
+    title: "Technology & IT Careers",
     company: "United Nations",
     location: "Worldwide",
+    locationCategory: "International",
     type: "Full-time",
+    level: "Professional",
     category: "Technology",
-    level: "Various",
-    mode: "International",
-    deadline: "Varies by vacancy",
-    description: "Discover technology, IT and digital career opportunities.",
     icon: "💻",
-    apply: "https://careers.un.org/job-openings"
+    deadline: "Varies by position",
+    description:
+      "Explore technology, information systems, digital and other professional opportunities through UN Careers.",
+    applyUrl:
+      "https://careers.un.org/job-openings"
   },
 
   {
-    id: 5,
     title: "Graduate Career Opportunities",
-    company: "OpportunityBridge",
+    company: "Public Service Recruitment Secretariat",
     location: "Tanzania",
-    type: "Entry-level",
+    locationCategory: "Tanzania",
+    type: "Full-time",
+    level: "Entry-level",
     category: "Graduate",
-    level: "Graduate",
-    mode: "Tanzania",
-    deadline: "Check vacancy",
-    description: "Opportunities suitable for graduates and people beginning their careers.",
     icon: "🎓",
-    apply: "https://www.ajira.go.tz/"
+    deadline: "Check official portal",
+    description:
+      "Explore entry-level and graduate opportunities and check current requirements directly from the official recruitment portal.",
+    applyUrl:
+      "https://www.ajira.go.tz/"
   },
 
   {
-    id: 6,
     title: "Remote Work Opportunities",
-    company: "OpportunityBridge",
+    company: "International Opportunities",
     location: "Remote",
+    locationCategory: "Remote",
     type: "Remote",
-    category: "Remote",
     level: "Various",
-    mode: "Remote",
-    deadline: "Varies",
-    description: "Explore remote opportunities that can be performed from different locations.",
-    icon: "🏠",
-    apply: "https://careers.un.org/job-openings"
+    category: "Remote",
+    icon: "🌍",
+    deadline: "Varies by position",
+    description:
+      "Discover international opportunities that may offer remote or flexible working arrangements. Always confirm remote eligibility before applying.",
+    applyUrl:
+      "https://careers.un.org/job-openings"
   }
+
 ];
