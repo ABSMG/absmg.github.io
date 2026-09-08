@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web Development | Learn HTML CSS JavaScript | OpportunityBridge</title>
+
+<meta name="description" content="Learn web development from the basics including HTML, CSS, JavaScript, responsive design, websites and modern web development skills.">
+<meta name="keywords" content="web development, HTML, CSS, JavaScript, learn coding, website development, frontend development">
+
+<link rel="canonical" href="https://absmg.github.io/web-development.html">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.7}
+header{background:#0b1220;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:0 10px}
+.hero{padding:70px 7%;background:linear-gradient(135deg,#073b4c,#087f8c);color:white}
+.hero h1{font-size:42px}
+.container{max-width:1050px;margin:auto;padding:45px 20px}
+.card{background:white;padding:28px;margin-bottom:25px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.07)}
+h2{color:#087f8c}
+ul{padding-left:25px}
+.btn{display:inline-block;background:#087f8c;color:white;padding:12px 20px;border-radius:8px;text-decoration:none}
+footer{text-align:center;padding:30px;background:#0b1220;color:white}
+footer a{color:white}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">OpportunityBridge</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="computer-skills.html">Computer Skills</a>
+<a href="ai-skills.html">AI Skills</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Web Development</h1>
+<p>Learn how websites are designed, built and published on the internet.</p>
+</section>
+
+<main class="container">
+
+<div class="card">
+<h2>What Is Web Development?</h2>
+<p>
+Web development involves creating and maintaining websites and web applications.
+It combines programming, design, content and technical problem solving.
+</p>
+</div>
+
+<div class="card">
+<h2>Core Technologies</h2>
+<ul>
+<li>HTML — structure of web pages</li>
+<li>CSS — styling and layout</li>
+<li>JavaScript — interactive web experiences</li>
+<li>Responsive web design</li>
+<li>Git and GitHub</li>
+<li>Website hosting</li>
+<li>Basic web accessibility</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Beginner Learning Path</h2>
+<p>
+Start with HTML, then learn CSS and responsive design. After that,
+study JavaScript and learn how to use Git and GitHub to manage projects.
+</p>
+</div>
+
+<div class="card">
+<h2>Explore OpportunityBridge</h2>
+<a class="btn" href="index.html">Back to Home</a>
+</div>
+
+</main>
+
+<footer>
+<p>© 2026 OpportunityBridge. All rights reserved.</p>
+<a href="Privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
