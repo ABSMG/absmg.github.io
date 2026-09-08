@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://absmg.github.io/</loc>
   </url>
 
+  <!-- Main Opportunity Pages -->
   <url>
     <loc>https://absmg.github.io/scholarships.html</loc>
   </url>
@@ -21,10 +24,16 @@
     <loc>https://absmg.github.io/courses.html</loc>
   </url>
 
+  <!-- Articles -->
   <url>
     <loc>https://absmg.github.io/article1.html</loc>
   </url>
 
+  <url>
+    <loc>https://absmg.github.io/article2.html</loc>
+  </url>
+
+  <!-- Information Pages -->
   <url>
     <loc>https://absmg.github.io/about.html</loc>
   </url>
