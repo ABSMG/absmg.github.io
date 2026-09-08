@@ -1,207 +1,376 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Internships | OpportunityBridge</title>
+  <title>Internships | OpportunityBridge</title>
 
-<meta name="description" content="Explore internship opportunities and career experience resources on OpportunityBridge.">
-<meta name="robots" content="index, follow">
+  <meta name="description"
+        content="Discover internships, training opportunities and career experience with OpportunityBridge.">
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8f7;color:#26343a;line-height:1.6}
-a{text-decoration:none;color:inherit}
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
 
-header{
-background:#123b3a;color:white;padding:18px 7%;
-display:flex;justify-content:space-between;align-items:center
-}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f5f7fb;
+      color:#172033;
+      line-height:1.6;
+    }
 
-.logo{font-size:21px;font-weight:bold}
-nav a{color:white;margin-left:18px;font-size:14px}
-nav a:hover{color:#20b89a}
+    header{
+      background:#0b3d91;
+      padding:15px 5%;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 3px 12px rgba(0,0,0,.15);
+    }
 
-main{max-width:1100px;margin:55px auto;padding:0 20px}
-.hero{text-align:center;margin-bottom:35px}
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
-h1{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:normal;
-color:#123b3a
-}
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+      text-decoration:none;
+    }
 
-.hero p{color:#68757b;max-width:650px;margin:auto}
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:7px;
+    }
 
-.search-box{max-width:700px;margin:30px auto}
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      padding:8px 11px;
+      border-radius:7px;
+      font-size:14px;
+    }
 
-.search-box input{
-width:100%;
-padding:16px 20px;
-border:1px solid #d5dddd;
-border-radius:10px;
-font-size:16px;
-outline:none
-}
+    .nav-links a:hover,
+    .nav-links .active{
+      background:rgba(255,255,255,.18);
+    }
 
-.search-box input:focus{
-border-color:#176b63;
-box-shadow:0 0 0 3px rgba(23,107,99,.12)
-}
+    .hero{
+      background:linear-gradient(135deg,#0b3d91,#1769d1);
+      color:white;
+      text-align:center;
+      padding:65px 20px;
+    }
 
-#resultCount{text-align:center;margin-top:10px;color:#176b63;font-size:14px}
+    .hero h1{
+      font-size:clamp(30px,6vw,46px);
+      margin-bottom:12px;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:17px;
+    }
 
-.opportunity-card{
-background:white;
-border:1px solid #e1e6e4;
-border-radius:12px;
-padding:25px;
-transition:.2s
-}
+    .search-box{
+      max-width:650px;
+      margin:28px auto 0;
+    }
 
-.opportunity-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 25px rgba(0,0,0,.08)
-}
+    .search-box input{
+      width:100%;
+      padding:15px 18px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      font-size:16px;
+    }
 
-.opportunity-card h2{font-size:19px;color:#123b3a}
-.opportunity-card p{font-size:14px;color:#68757b}
+    .container{
+      max-width:1150px;
+      margin:45px auto;
+      padding:0 20px;
+    }
 
-.explore{
-display:inline-block;
-margin-top:12px;
-background:#176b63;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-font-size:13px;
-font-weight:bold
-}
+    .section-title{
+      text-align:center;
+      margin-bottom:30px;
+    }
 
-footer{
-margin-top:70px;
-background:#102f2e;
-color:#dcebea;
-text-align:center;
-padding:30px
-}
+    .section-title h2{
+      color:#0b3d91;
+      font-size:30px;
+    }
 
-footer a{color:white;margin:0 8px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:22px;
+    }
 
-@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}}
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 22px rgba(0,0,0,.08);
+      transition:.25s;
+    }
 
-@media(max-width:500px){
-.cards{grid-template-columns:1fr}
-header{flex-direction:column;gap:12px}
-nav a{margin:0 5px}
-}
-</style>
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 28px rgba(0,0,0,.12);
+    }
+
+    .icon{
+      font-size:34px;
+      margin-bottom:12px;
+    }
+
+    .card h3{
+      color:#0b3d91;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#596579;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#0b3d91;
+      color:white;
+      padding:10px 17px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#082f70;
+    }
+
+    footer{
+      background:#101828;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      margin-top:60px;
+    }
+
+    footer p{
+      margin:8px 0;
+    }
+
+    footer a{
+      color:white;
+      text-decoration:none;
+      margin:0 7px;
+    }
+
+    @media(max-width:700px){
+      .nav{
+        flex-direction:column;
+      }
+
+      .nav-links{
+        width:100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">OpportunityBridge</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="scholarships.html">Scholarships</a>
-<a href="jobs.html">Jobs</a>
-<a href="courses.html">Courses</a>
-<a href="digital-skills.html">Digital Skills</a>
-</nav>
+  <div class="nav">
+
+    <a class="logo" href="index.html">
+      OpportunityBridge
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a class="active" href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="computer-skills.html">Digital Skills</a>
+    </nav>
+
+  </div>
+
 </header>
 
-<main>
+<section class="hero">
 
-<div class="hero">
+  <h1>Internship Opportunities</h1>
 
-<h1>Internships</h1>
+  <p>
+    Gain practical experience, develop your skills
+    and discover new career opportunities.
+  </p>
 
-<p>
-Explore internship resources designed to help students and graduates
-gain practical experience.
-</p>
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search internships..."
+      aria-label="Search internships">
+  </div>
 
-</div>
+</section>
 
-<div class="search-box">
+<main class="container">
 
-<input
-type="search"
-id="searchInput"
-placeholder="Search internships..."
-aria-label="Search internships">
+  <div class="section-title">
+    <h2>Explore Internships</h2>
+    <p>Find opportunities to gain experience and build your career.</p>
+  </div>
 
-<div id="resultCount"></div>
+  <div class="cards">
 
-</div>
+    <article class="card">
+      <div class="icon">💻</div>
+      <h3>Technology Internships</h3>
+      <p>
+        Explore internship opportunities in technology,
+        software and digital fields.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=technology+internships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="cards">
+    <article class="card">
+      <div class="icon">🔬</div>
+      <h3>Science Internships</h3>
+      <p>
+        Discover internships in science, research
+        and related fields.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=science+internships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Student Internships</h2>
-<p>Explore internship opportunities for current students.</p>
-<a class="explore" href="https://www.google.com/search?q=student+internships" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🏥</div>
+      <h3>Health Internships</h3>
+      <p>
+        Explore practical training opportunities
+        in health-related fields.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=health+internships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Graduate Internships</h2>
-<p>Find internship opportunities for recent graduates.</p>
-<a class="explore" href="https://www.google.com/search?q=graduate+internships" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🌍</div>
+      <h3>International Internships</h3>
+      <p>
+        Discover internship opportunities available
+        internationally.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=international+internships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Technology Internships</h2>
-<p>Explore internships in technology and digital careers.</p>
-<a class="explore" href="https://www.google.com/search?q=technology+internships" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🎓</div>
+      <h3>Student Internships</h3>
+      <p>
+        Find internship opportunities suitable
+        for students and recent graduates.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=student+internships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Business Internships</h2>
-<p>Discover opportunities to gain experience in business fields.</p>
-<a class="explore" href="https://www.google.com/search?q=business+internships" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🚀</div>
+      <h3>Career Internships</h3>
+      <p>
+        Gain valuable experience and prepare yourself
+        for your future career.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=career+internships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Engineering Internships</h2>
-<p>Search for internship opportunities in engineering.</p>
-<a class="explore" href="https://www.google.com/search?q=engineering+internships" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-<div class="opportunity-card">
-<h2>International Internships</h2>
-<p>Explore internship searches for international opportunities.</p>
-<a class="explore" href="https://www.google.com/search?q=international+internships" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-</div>
+  </div>
 
 </main>
 
 <footer>
-<strong>OpportunityBridge</strong>
-<p>Connect • Learn • Grow</p>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="disclaimer.html">Disclaimer</a>
+  <p><strong>OpportunityBridge</strong></p>
 
-<p>© 2026 OpportunityBridge. All rights reserved.</p>
+  <p>Build skills. Gain experience. Find opportunities.</p>
+
+  <p>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="Privacy.html">Privacy Policy</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+
+  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+
 </footer>
 
-<script src="search.js"></script>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
+
+  searchInput.addEventListener("input", function(){
+
+    const query = this.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+
+      const text = card.textContent.toLowerCase();
+
+      card.style.display =
+        text.includes(query) ? "" : "none";
+
+    });
+
+  });
+</script>
 
 </body>
 </html>
