@@ -290,6 +290,127 @@
       font-size: 14px;
     }
 
+    /* ================= ADS ================= */
+
+    .ad-container {
+      max-width: 100%;
+      min-height: 90px;
+      margin: 10px auto 30px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* ================= ARTICLES ================= */
+
+    .articles-section {
+      background: #f5f7fa;
+      max-width: none;
+    }
+
+    .articles-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .articles-badge {
+      display: inline-block;
+      color: #0b6fc2;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .6px;
+      margin-bottom: 8px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .article-card {
+      background: white;
+      border: 1px solid #e4eaf0;
+      border-radius: 16px;
+      padding: 26px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+      transition: .25s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.10);
+    }
+
+    .article-icon {
+      width: 58px;
+      height: 58px;
+      min-width: 58px;
+      border-radius: 14px;
+      background: #eaf3fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .article-content {
+      flex: 1;
+    }
+
+    .article-category {
+      color: #0b6fc2;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .article-content h3 {
+      color: #123b5d;
+      font-size: 20px;
+      line-height: 1.4;
+      margin: 7px 0 10px;
+    }
+
+    .article-content p {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .read-more {
+      color: #0b6fc2;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    .articles-button {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .view-all-btn {
+      display: inline-block;
+      background: #0b4f8a;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .view-all-btn:hover {
+      background: #0b6fc2;
+      transform: translateY(-2px);
+    }
+
     /* ================= WHY ================= */
 
     .why {
@@ -324,16 +445,6 @@
     .why-box p {
       color: #667085;
       font-size: 15px;
-    }
-
-    /* ================= ADS ================= */
-
-    .ad-container {
-      max-width: 100%;
-      min-height: 90px;
-      margin: 10px auto 30px;
-      text-align: center;
-      overflow: hidden;
     }
 
     /* ================= CTA ================= */
@@ -407,6 +518,10 @@
         grid-template-columns: 1fr;
       }
 
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
       .menu-btn {
         display: block;
       }
@@ -475,6 +590,20 @@
         font-size: 27px;
       }
 
+      .article-card {
+        flex-direction: column;
+        padding: 22px;
+      }
+
+      .article-icon {
+        width: 55px;
+        height: 55px;
+      }
+
+      .article-content h3 {
+        font-size: 18px;
+      }
+
       .footer-inner {
         flex-direction: column;
       }
@@ -533,12 +662,10 @@
         Contact
       </a>
 
-      <!-- LOGIN -->
       <a href="login.html" class="login-link">
         Login
       </a>
 
-      <!-- REGISTER -->
       <a href="register.html" class="register-link">
         Register
       </a>
@@ -552,7 +679,7 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
 
   <section class="hero">
 
@@ -589,7 +716,7 @@
   </section>
 
 
-  <!-- OPPORTUNITIES -->
+  <!-- ================= OPPORTUNITIES ================= -->
 
   <section>
 
@@ -709,10 +836,9 @@
   </section>
 
 
-  <!-- ADSENSE -->
+  <!-- ================= ADSENSE ================= -->
 
-  <section
-    style="padding-top:10px;padding-bottom:20px;">
+  <section style="padding-top:10px;padding-bottom:20px;">
 
     <div class="ad-container">
 
@@ -734,7 +860,120 @@
   </section>
 
 
-  <!-- WHY -->
+  <!-- ================= LATEST ARTICLES ================= -->
+
+  <section class="articles-section">
+
+    <div class="articles-inner">
+
+      <div class="section-heading">
+
+        <span class="articles-badge">
+          📚 GUIDES & ARTICLES
+        </span>
+
+        <h2>
+          Latest Scholarship & Opportunity Guides
+        </h2>
+
+        <p>
+          Helpful guides to help students find scholarships,
+          study opportunities and build their future.
+        </p>
+
+      </div>
+
+
+      <div class="articles-grid">
+
+
+        <!-- ARTICLE 1 -->
+
+        <article class="article-card">
+
+          <div class="article-icon">
+            🎓
+          </div>
+
+          <div class="article-content">
+
+            <span class="article-category">
+              Scholarships
+            </span>
+
+            <h3>
+              Top Scholarships for Tanzanian Students in 2026/2027
+            </h3>
+
+            <p>
+              Discover scholarship opportunities and learn how
+              Tanzanian students can find funding for their studies.
+            </p>
+
+            <a
+              href="article1.html"
+              class="read-more">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ARTICLE 2 -->
+
+        <article class="article-card">
+
+          <div class="article-icon">
+            🌍
+          </div>
+
+          <div class="article-content">
+
+            <span class="article-category">
+              Study Abroad
+            </span>
+
+            <h3>
+              How to Find Fully Funded Scholarships Abroad from Tanzania
+            </h3>
+
+            <p>
+              Learn where to search, how to check eligibility and
+              how to prepare a strong scholarship application.
+            </p>
+
+            <a
+              href="article2.html"
+              class="read-more">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="articles-button">
+
+        <a
+          href="scholarships.html"
+          class="view-all-btn">
+          Explore More Opportunities →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= WHY ================= -->
 
   <div class="why">
 
@@ -804,7 +1043,7 @@
   </div>
 
 
-  <!-- CTA -->
+  <!-- ================= CTA ================= -->
 
   <section class="cta">
 
@@ -832,7 +1071,7 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
