@@ -2,32 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>OpportunityBridge | Global Opportunities & Digital Skills</title>
 
-  <meta name="description" content="OpportunityBridge helps students and young professionals discover scholarships, jobs, internships, online courses and digital skills.">
-  <meta name="keywords" content="scholarships, jobs, internships, online courses, digital skills, AI skills, web development, digital marketing, Tanzania">
+  <meta name="description"
+        content="OpportunityBridge helps students and young professionals discover scholarships, jobs, internships, online courses and practical digital skills.">
+
+  <meta name="keywords"
+        content="scholarships, jobs, internships, online courses, digital skills, AI skills, web development, data skills, career skills">
+
   <meta name="author" content="OpportunityBridge">
 
   <link rel="canonical" href="https://absmg.github.io/">
 
-  <!-- Google AdSense - KEEP INTACT -->
+  <!-- ============================= -->
+  <!-- GOOGLE ADSENSE -->
+  <!-- ============================= -->
+
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
+      background: #f6f8fb;
       color: #172033;
       line-height: 1.6;
     }
@@ -36,6 +49,16 @@
       text-decoration: none;
       color: inherit;
     }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ============================= */
+    /* HEADER */
+    /* ============================= */
 
     header {
       background: #ffffff;
@@ -46,9 +69,7 @@
     }
 
     .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 20px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -59,212 +80,236 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      font-size: 22px;
       font-weight: 800;
-      font-size: 21px;
-      color: #101828;
+      color: #14213d;
     }
 
     .logo-box {
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #14213d;
+      color: white;
       font-weight: 900;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: 22px;
     }
 
     nav a {
       font-size: 14px;
       font-weight: 600;
-      color: #475467;
+      color: #4b5563;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #2563eb;
+      color: #14213d;
     }
 
     .register-btn {
-      background: #2563eb;
+      background: #14213d;
       color: white !important;
-      padding: 10px 16px;
+      padding: 11px 18px;
       border-radius: 10px;
     }
 
+    .register-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* ============================= */
+    /* HERO */
+    /* ============================= */
+
     .hero {
-      background:
-        radial-gradient(circle at top right, rgba(124,58,237,.35), transparent 35%),
-        linear-gradient(135deg, #0f172a, #1d4ed8);
-      color: white;
-      padding: 90px 20px;
+      padding: 95px 0 80px;
+      background: linear-gradient(135deg, #eef4ff, #ffffff);
     }
 
     .hero-content {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 50px;
-      align-items: center;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #dce3ef;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
+      font-size: clamp(40px, 6vw, 70px);
       line-height: 1.05;
       margin-bottom: 22px;
+      color: #14213d;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
     }
 
     .hero p {
       max-width: 680px;
       font-size: 18px;
-      color: #dbeafe;
+      color: #5b6473;
       margin-bottom: 30px;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .btn {
+    .primary-btn,
+    .secondary-btn {
       display: inline-block;
-      padding: 13px 20px;
-      border-radius: 10px;
+      padding: 14px 22px;
+      border-radius: 11px;
       font-weight: 700;
-      border: none;
-      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .btn-primary {
-      background: white;
-      color: #1d4ed8;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,.12);
+    .primary-btn {
+      background: #14213d;
       color: white;
-      border: 1px solid rgba(255,255,255,.25);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 30px;
-      border-radius: 22px;
-      backdrop-filter: blur(10px);
+    .secondary-btn {
+      background: white;
+      border: 1px solid #dce3ef;
+      color: #14213d;
     }
 
-    .hero-card h3 {
-      margin-bottom: 15px;
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-2px);
     }
 
-    .hero-card div {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,.15);
+    /* ============================= */
+    /* ADS */
+    /* ============================= */
+
+    .ad-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 30px auto;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    /* ============================= */
+    /* SECTION */
+    /* ============================= */
 
     section {
-      padding: 75px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
+      padding: 80px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      max-width: 720px;
+      margin: 0 auto 45px;
     }
 
     .section-title h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 38px;
+      color: #14213d;
+      margin-bottom: 12px;
     }
 
     .section-title p {
       color: #667085;
-      max-width: 700px;
-      margin: auto;
     }
 
-    /* ADS */
-    .ad-container {
-      max-width: 1100px;
-      margin: 25px auto;
-      padding: 0 20px;
-      min-height: 90px;
-    }
-
+    /* ============================= */
     /* OPPORTUNITIES */
+    /* ============================= */
+
     .search-area {
-      max-width: 900px;
-      margin: 0 auto 35px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid #e7ebf2;
+      margin-bottom: 35px;
     }
 
-    .search-area input {
-      flex: 1;
-      min-width: 230px;
-      padding: 14px 16px;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
+    .search-input {
+      width: 100%;
+      padding: 15px 18px;
+      border: 1px solid #d8dee8;
+      border-radius: 11px;
       font-size: 15px;
       outline: none;
     }
 
-    .search-area select {
-      padding: 14px 16px;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
+    .search-input:focus {
+      border-color: #2563eb;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .filter-btn {
+      border: 1px solid #d8dee8;
       background: white;
-      font-size: 15px;
+      padding: 10px 15px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #14213d;
+      color: white;
     }
 
     .opportunity-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
     .opportunity-card {
       background: white;
-      border: 1px solid #eaecf0;
+      padding: 28px;
       border-radius: 18px;
-      padding: 25px;
-      transition: .25s;
+      border: 1px solid #e7ebf2;
+      transition: 0.3s;
     }
 
     .opportunity-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(16,24,40,.08);
+      box-shadow: 0 15px 35px rgba(20, 33, 61, 0.08);
     }
 
-    .badge {
-      display: inline-block;
-      padding: 6px 10px;
-      background: #eef4ff;
-      color: #175cd3;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 14px;
+    .opportunity-icon {
+      font-size: 35px;
+      margin-bottom: 18px;
     }
 
     .opportunity-card h3 {
       margin-bottom: 10px;
+      color: #14213d;
     }
 
     .opportunity-card p {
@@ -274,11 +319,15 @@
     }
 
     .card-link {
-      color: #2563eb;
       font-weight: 700;
+      color: #2563eb;
+      font-size: 14px;
     }
 
+    /* ============================= */
     /* DIGITAL SKILLS */
+    /* ============================= */
+
     .skills-section {
       background: #ffffff;
     }
@@ -286,213 +335,312 @@
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .skill-card {
       background: #f8fafc;
-      border: 1px solid #eaecf0;
-      border-radius: 18px;
-      padding: 28px;
-      transition: .25s;
+      border: 1px solid #e4e9f0;
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(16,24,40,.08);
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(20, 33, 61, 0.10);
     }
 
     .skill-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: #eaf2ff;
+      width: 58px;
+      height: 58px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 25px;
-      margin-bottom: 18px;
+      background: #ffffff;
+      border-radius: 15px;
+      font-size: 28px;
+      margin-bottom: 20px;
+      border: 1px solid #e5e9f0;
     }
 
     .skill-card h3 {
-      margin-bottom: 10px;
+      font-size: 22px;
+      color: #14213d;
+      margin-bottom: 12px;
     }
 
     .skill-card p {
       color: #667085;
-      margin-bottom: 18px;
-      font-size: 14px;
+      font-size: 15px;
+      margin-bottom: 22px;
+      flex-grow: 1;
     }
 
     .skill-btn {
       display: inline-block;
-      background: #2563eb;
+      background: #14213d;
       color: white;
-      padding: 10px 15px;
-      border-radius: 9px;
-      font-size: 13px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
       font-weight: 700;
+      text-align: center;
+      transition: 0.3s;
     }
 
-    /* ABOUT */
-    .about {
-      background: #f8fafc;
+    .skill-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
     }
+
+    /* ============================= */
+    /* ABOUT */
+    /* ============================= */
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 50px;
       align-items: center;
     }
 
     .about-box {
       background: white;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid #eaecf0;
+      border: 1px solid #e7ebf2;
+      border-radius: 20px;
+      padding: 35px;
     }
 
-    .about-box h3 {
+    .about-box h2 {
+      color: #14213d;
       margin-bottom: 15px;
     }
 
     .about-box p {
       color: #667085;
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, #111827, #312e81);
-      color: white;
-      text-align: center;
-    }
-
-    .cta p {
-      color: #d1d5db;
-      max-width: 650px;
-      margin: 15px auto 25px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #0b1120;
-      color: #cbd5e1;
-      padding: 50px 20px 25px;
-    }
-
-    .footer-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 30px;
-    }
-
-    footer h3 {
-      color: white;
       margin-bottom: 15px;
     }
 
-    footer p {
-      font-size: 14px;
-      color: #94a3b8;
+    .about-list {
+      list-style: none;
+      margin-top: 20px;
     }
 
-    footer a {
-      display: block;
-      color: #94a3b8;
-      margin: 8px 0;
-      font-size: 14px;
+    .about-list li {
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
-    footer a:hover {
+    /* ============================= */
+    /* REGISTER */
+    /* ============================= */
+
+    .register-section {
+      background: #14213d;
       color: white;
     }
 
-    .copyright {
-      max-width: 1200px;
-      margin: 35px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #1e293b;
+    .register-box {
       text-align: center;
-      font-size: 13px;
-      color: #64748b;
+      max-width: 750px;
+      margin: auto;
     }
 
-    @media (max-width: 900px) {
-      .hero-content,
-      .about-grid {
-        grid-template-columns: 1fr;
+    .register-box h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .register-box p {
+      color: #d8deea;
+      margin-bottom: 25px;
+    }
+
+    .register-box a {
+      display: inline-block;
+      background: white;
+      color: #14213d;
+      padding: 14px 24px;
+      border-radius: 11px;
+      font-weight: 800;
+    }
+
+    /* ============================= */
+    /* FOOTER */
+    /* ============================= */
+
+    footer {
+      background: #0d1528;
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 15px;
+    }
+
+    .footer-column p {
+      color: #aeb8c9;
+      font-size: 14px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #aeb8c9;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #263149;
+      padding-top: 22px;
+      text-align: center;
+      color: #8f9ab0;
+      font-size: 13px;
+    }
+
+    /* ============================= */
+    /* MOBILE */
+    /* ============================= */
+
+    @media (max-width: 1000px) {
+
+      .opportunity-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .opportunity-grid,
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .nav {
+        flex-direction: column;
+        padding: 15px 0;
       }
 
       nav {
-        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
       }
-    }
 
-    @media (max-width: 600px) {
       .hero {
-        padding: 65px 20px;
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
       }
 
       .opportunity-grid,
       .skills-grid,
+      .about-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 43px;
+      .skill-card {
+        padding: 25px;
       }
 
-      section {
-        padding: 55px 20px;
-      }
     }
+
   </style>
 </head>
 
 <body>
 
+<!-- ============================= -->
 <!-- HEADER -->
+<!-- ============================= -->
+
 <header>
-  <div class="nav">
+
+  <div class="container nav">
 
     <a href="index.html" class="logo">
+
       <span class="logo-box">OB</span>
-      OpportunityBridge
+
+      <span>OpportunityBridge</span>
+
     </a>
 
     <nav>
+
       <a href="index.html">Home</a>
+
       <a href="#opportunities">Opportunities</a>
+
       <a href="#digital-skills">Digital Skills</a>
+
       <a href="about.html">About</a>
+
       <a href="contact.html">Contact</a>
-      <a href="register.html" class="register-btn">Register</a>
+
+      <a href="register.html" class="register-btn">
+        Register
+      </a>
+
     </nav>
 
   </div>
+
 </header>
 
 
+<!-- ============================= -->
 <!-- HERO -->
+<!-- ============================= -->
+
 <section class="hero">
 
-  <div class="hero-content">
+  <div class="container">
 
-    <div>
-      <h1>Your Gateway to Opportunities</h1>
+    <div class="hero-content">
+
+      <span class="hero-badge">
+        Opportunities • Skills • Growth
+      </span>
+
+      <h1>
+        Your Gateway to
+        <span>Opportunities</span>
+      </h1>
 
       <p>
         Discover scholarships, jobs, internships, online courses
@@ -501,24 +649,17 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#opportunities" class="btn btn-primary">
+
+        <a href="#opportunities" class="primary-btn">
           Explore Opportunities
         </a>
 
-        <a href="#digital-skills" class="btn btn-secondary">
+        <a href="#digital-skills" class="secondary-btn">
           Learn Digital Skills
         </a>
+
       </div>
-    </div>
 
-    <div class="hero-card">
-      <h3>What you can find here</h3>
-
-      <div>🎓 Scholarships</div>
-      <div>💼 Jobs</div>
-      <div>🚀 Internships</div>
-      <div>📚 Online Courses</div>
-      <div>💻 Digital Skills</div>
     </div>
 
   </div>
@@ -526,15 +667,19 @@
 </section>
 
 
-<!-- ADSENSE 1 -->
-<div class="ad-container">
+<!-- ============================= -->
+<!-- ADSENSE AD 1 -->
+<!-- ============================= -->
+
+<div class="container ad-container">
 
   <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-2004981151172844"
     data-ad-slot="5992864529"
     data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
+    data-full-width-responsive="true">
+  </ins>
 
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
@@ -543,18 +688,23 @@
 </div>
 
 
+<!-- ============================= -->
 <!-- OPPORTUNITIES -->
+<!-- ============================= -->
+
 <section id="opportunities">
 
   <div class="container">
 
     <div class="section-title">
-      <h2>Latest Opportunities</h2>
+
+      <h2>Explore Opportunities</h2>
 
       <p>
-        Explore opportunities that can help you study, work,
-        gain experience and develop new skills.
+        Find opportunities that can help you study,
+        work and develop your career.
       </p>
+
     </div>
 
 
@@ -563,85 +713,135 @@
       <input
         type="text"
         id="searchInput"
-        placeholder="Search scholarships, jobs, courses..."
-        onkeyup="filterOpportunities()"
+        class="search-input"
+        placeholder="Search opportunities..."
       >
 
-      <select id="categoryFilter" onchange="filterOpportunities()">
-        <option value="all">All Categories</option>
-        <option value="scholarship">Scholarships</option>
-        <option value="job">Jobs</option>
-        <option value="internship">Internships</option>
-        <option value="course">Courses</option>
-      </select>
+      <div class="filter-buttons">
+
+        <button class="filter-btn active"
+                data-category="all">
+          All
+        </button>
+
+        <button class="filter-btn"
+                data-category="scholarships">
+          Scholarships
+        </button>
+
+        <button class="filter-btn"
+                data-category="jobs">
+          Jobs
+        </button>
+
+        <button class="filter-btn"
+                data-category="internships">
+          Internships
+        </button>
+
+        <button class="filter-btn"
+                data-category="courses">
+          Courses
+        </button>
+
+        <button class="filter-btn"
+                data-category="skills">
+          Skills
+        </button>
+
+      </div>
 
     </div>
 
 
-    <div class="opportunity-grid" id="opportunityGrid">
+    <div class="opportunity-grid">
 
-      <article class="opportunity-card" data-category="scholarship">
-        <span class="badge">Scholarship</span>
+      <!-- SCHOLARSHIPS -->
 
-        <h3>Scholarship Opportunities</h3>
+      <div class="opportunity-card"
+           data-category="scholarships">
+
+        <div class="opportunity-icon">🎓</div>
+
+        <h3>Scholarships</h3>
 
         <p>
-          Find scholarship opportunities and information
-          for students looking to continue their education.
+          Discover scholarship opportunities for
+          undergraduate and other students.
         </p>
 
-        <a href="scholarships.html" class="card-link">
+        <a href="scholarships.html"
+           class="card-link">
           Explore Scholarships →
         </a>
-      </article>
+
+      </div>
 
 
-      <article class="opportunity-card" data-category="job">
-        <span class="badge">Jobs</span>
+      <!-- JOBS -->
 
-        <h3>Job Opportunities</h3>
+      <div class="opportunity-card"
+           data-category="jobs">
+
+        <div class="opportunity-icon">💼</div>
+
+        <h3>Jobs</h3>
 
         <p>
-          Discover employment opportunities and career
-          resources for young professionals.
+          Find useful job opportunities and career
+          resources for students and professionals.
         </p>
 
-        <a href="jobs.html" class="card-link">
+        <a href="jobs.html"
+           class="card-link">
           Explore Jobs →
         </a>
-      </article>
+
+      </div>
 
 
-      <article class="opportunity-card" data-category="internship">
-        <span class="badge">Internships</span>
+      <!-- INTERNSHIPS -->
 
-        <h3>Internship Opportunities</h3>
+      <div class="opportunity-card"
+           data-category="internships">
+
+        <div class="opportunity-icon">🚀</div>
+
+        <h3>Internships</h3>
 
         <p>
-          Gain practical experience through internship
-          and work-experience opportunities.
+          Explore internships that can help you
+          gain practical experience.
         </p>
 
-        <a href="internships.html" class="card-link">
+        <a href="internships.html"
+           class="card-link">
           Explore Internships →
         </a>
-      </article>
+
+      </div>
 
 
-      <article class="opportunity-card" data-category="course">
-        <span class="badge">Courses</span>
+      <!-- COURSES -->
+
+      <div class="opportunity-card"
+           data-category="courses">
+
+        <div class="opportunity-icon">📚</div>
 
         <h3>Online Courses</h3>
 
         <p>
-          Learn useful skills through online courses and
-          professional learning resources.
+          Learn new skills through online courses
+          and educational resources.
         </p>
 
-        <a href="courses.html" class="card-link">
+        <a href="courses.html"
+           class="card-link">
           Explore Courses →
         </a>
-      </article>
+
+      </div>
 
     </div>
 
@@ -650,15 +850,19 @@
 </section>
 
 
-<!-- ADSENSE 2 -->
-<div class="ad-container">
+<!-- ============================= -->
+<!-- ADSENSE AD 2 -->
+<!-- ============================= -->
+
+<div class="container ad-container">
 
   <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-2004981151172844"
     data-ad-slot="5992864529"
     data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
+    data-full-width-responsive="true">
+  </ins>
 
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
@@ -667,8 +871,12 @@
 </div>
 
 
+<!-- ============================= -->
 <!-- DIGITAL SKILLS -->
-<section id="digital-skills" class="skills-section">
+<!-- ============================= -->
+
+<section id="digital-skills"
+         class="skills-section">
 
   <div class="container">
 
@@ -686,118 +894,186 @@
 
     <div class="skills-grid">
 
-      <!-- 1 -->
+
+      <!-- ===================== -->
+      <!-- 1. COMPUTER SKILLS -->
+      <!-- ===================== -->
+
       <div class="skill-card">
 
-        <div class="skill-icon">💻</div>
+        <div class="skill-icon">
+          💻
+        </div>
 
-        <h3>Computer Skills</h3>
+        <h3>
+          Computer Skills
+        </h3>
 
         <p>
-          Learn computer basics, productivity tools,
-          internet use, email and digital safety.
+          Learn computer basics, Microsoft Word,
+          Microsoft Excel, PowerPoint, internet use,
+          email, file management and digital safety.
         </p>
 
-        <a href="computer-skills.html" class="skill-btn">
+        <a href="computer-skills.html"
+           class="skill-btn">
+
           Learn Computer Skills →
+
         </a>
 
       </div>
 
 
-      <!-- 2 -->
+      <!-- ===================== -->
+      <!-- 2. AI SKILLS -->
+      <!-- ===================== -->
+
       <div class="skill-card">
 
-        <div class="skill-icon">🤖</div>
+        <div class="skill-icon">
+          🤖
+        </div>
 
-        <h3>AI Skills</h3>
+        <h3>
+          AI Skills
+        </h3>
 
         <p>
-          Learn how to understand and use artificial
-          intelligence tools responsibly and effectively.
+          Learn artificial intelligence, AI tools,
+          prompt writing, research, productivity,
+          automation and responsible AI use.
         </p>
 
-        <a href="ai-skills.html" class="skill-btn">
+        <a href="ai-skills.html"
+           class="skill-btn">
+
           Learn AI Skills →
+
         </a>
 
       </div>
 
 
-      <!-- 3 -->
+      <!-- ===================== -->
+      <!-- 3. WEB DEVELOPMENT -->
+      <!-- ===================== -->
+
       <div class="skill-card">
 
-        <div class="skill-icon">🌐</div>
+        <div class="skill-icon">
+          🌐
+        </div>
 
-        <h3>Web Development</h3>
+        <h3>
+          Web Development
+        </h3>
 
         <p>
-          Learn HTML, CSS, JavaScript, responsive design,
-          GitHub and website development.
+          Learn HTML, CSS, JavaScript, responsive
+          design, GitHub, website development
+          and web publishing.
         </p>
 
-        <a href="web-development.html" class="skill-btn">
+        <a href="web-development.html"
+           class="skill-btn">
+
           Learn Web Development →
+
         </a>
 
       </div>
 
 
-      <!-- 4 -->
+      <!-- ===================== -->
+      <!-- 4. DIGITAL MARKETING -->
+      <!-- ===================== -->
+
       <div class="skill-card">
 
-        <div class="skill-icon">📈</div>
+        <div class="skill-icon">
+          📈
+        </div>
 
-        <h3>Digital Marketing</h3>
+        <h3>
+          Digital Marketing
+        </h3>
 
         <p>
           Learn SEO, content marketing, social media,
-          branding and digital analytics.
+          branding, analytics, audience research
+          and online marketing.
         </p>
 
-        <a href="digital-marketing.html" class="skill-btn">
+        <a href="digital-marketing.html"
+           class="skill-btn">
+
           Learn Digital Marketing →
+
         </a>
 
       </div>
 
 
-      <!-- 5 -->
+      <!-- ===================== -->
+      <!-- 5. DATA SKILLS -->
+      <!-- ===================== -->
+
       <div class="skill-card">
 
-        <div class="skill-icon">📊</div>
+        <div class="skill-icon">
+          📊
+        </div>
 
-        <h3>Data Skills</h3>
+        <h3>
+          Data Skills
+        </h3>
 
         <p>
-          Learn spreadsheets, data cleaning, visualization,
-          statistics and data interpretation.
+          Learn spreadsheets, data cleaning,
+          statistics, data visualization,
+          dashboards and data interpretation.
         </p>
 
-        <a href="data-skills.html" class="skill-btn">
+        <a href="data-skills.html"
+           class="skill-btn">
+
           Learn Data Skills →
+
         </a>
 
       </div>
 
 
-      <!-- 6 -->
+      <!-- ===================== -->
+      <!-- 6. CAREER SKILLS -->
+      <!-- ===================== -->
+
       <div class="skill-card">
 
-        <div class="skill-icon">🚀</div>
+        <div class="skill-icon">
+          🚀
+        </div>
 
-        <h3>Career Skills</h3>
+        <h3>
+          Career Skills
+        </h3>
 
         <p>
-          Develop communication, CV writing, interview,
-          teamwork and professional skills.
+          Improve communication, CV writing,
+          interviews, teamwork, networking
+          and professional development.
         </p>
 
-        <a href="career-skills.html" class="skill-btn">
+        <a href="career-skills.html"
+           class="skill-btn">
+
           Learn Career Skills →
+
         </a>
 
       </div>
+
 
     </div>
 
@@ -806,15 +1082,19 @@
 </section>
 
 
-<!-- ADSENSE 3 -->
-<div class="ad-container">
+<!-- ============================= -->
+<!-- ADSENSE AD 3 -->
+<!-- ============================= -->
+
+<div class="container ad-container">
 
   <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-2004981151172844"
     data-ad-slot="5992864529"
     data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
+    data-full-width-responsive="true">
+  </ins>
 
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
@@ -823,46 +1103,70 @@
 </div>
 
 
+<!-- ============================= -->
 <!-- ABOUT -->
-<section class="about">
+<!-- ============================= -->
+
+<section id="about">
 
   <div class="container">
-
-    <div class="section-title">
-      <h2>About OpportunityBridge</h2>
-
-      <p>
-        A platform built to make useful opportunities and
-        digital learning resources easier to discover.
-      </p>
-    </div>
-
 
     <div class="about-grid">
 
-      <div class="about-box">
+      <div>
 
-        <h3>Our Mission</h3>
+        <div class="section-title"
+             style="text-align:left; margin:0;">
 
-        <p>
-          OpportunityBridge aims to connect students and
-          young professionals with opportunities that can
-          support education, career development and digital
-          growth.
-        </p>
+          <h2>
+            About OpportunityBridge
+          </h2>
+
+          <p>
+            Helping students and young professionals
+            discover opportunities and build useful skills.
+          </p>
+
+        </div>
+
+        <br>
+
+        <a href="about.html"
+           class="primary-btn">
+
+          Learn More About Us →
+
+        </a>
 
       </div>
 
 
       <div class="about-box">
 
-        <h3>What We Provide</h3>
+        <h2>
+          What You Can Find
+        </h2>
 
         <p>
-          Scholarships, jobs, internships, online courses
-          and practical digital-skills learning resources
-          in one accessible platform.
+          OpportunityBridge brings useful educational
+          and career resources together in one place.
         </p>
+
+        <ul class="about-list">
+
+          <li>🎓 Scholarships</li>
+
+          <li>💼 Jobs</li>
+
+          <li>🚀 Internships</li>
+
+          <li>📚 Online Courses</li>
+
+          <li>💻 Digital Skills</li>
+
+          <li>🌍 Career Resources</li>
+
+        </ul>
 
       </div>
 
@@ -873,136 +1177,245 @@
 </section>
 
 
-<!-- CTA -->
-<section class="cta">
+<!-- ============================= -->
+<!-- REGISTER -->
+<!-- ============================= -->
+
+<section class="register-section">
 
   <div class="container">
 
-    <h2>Ready to Build Your Future?</h2>
+    <div class="register-box">
 
-    <p>
-      Explore opportunities, develop digital skills and
-      take the next step toward your goals.
-    </p>
+      <h2>
+        Join OpportunityBridge
+      </h2>
 
-    <a href="#opportunities" class="btn btn-primary">
-      Start Exploring
-    </a>
+      <p>
+        Stay connected with opportunities,
+        educational resources and digital skills.
+      </p>
+
+      <a href="register.html">
+        Create Your Account →
+      </a>
+
+    </div>
 
   </div>
 
 </section>
 
 
+<!-- ============================= -->
 <!-- FOOTER -->
+<!-- ============================= -->
+
 <footer>
 
-  <div class="footer-grid">
+  <div class="container">
 
-    <div>
+    <div class="footer-grid">
 
-      <h3>OpportunityBridge</h3>
 
-      <p>
-        Your gateway to scholarships, jobs, internships,
-        online courses and digital skills.
-      </p>
+      <div class="footer-column">
+
+        <h3>
+          OpportunityBridge
+        </h3>
+
+        <p>
+          Your gateway to scholarships, jobs,
+          internships, online courses and
+          digital skills.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Opportunities
+        </h3>
+
+        <a href="scholarships.html">
+          Scholarships
+        </a>
+
+        <a href="jobs.html">
+          Jobs
+        </a>
+
+        <a href="internships.html">
+          Internships
+        </a>
+
+        <a href="courses.html">
+          Online Courses
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Digital Skills
+        </h3>
+
+        <a href="computer-skills.html">
+          Computer Skills
+        </a>
+
+        <a href="ai-skills.html">
+          AI Skills
+        </a>
+
+        <a href="web-development.html">
+          Web Development
+        </a>
+
+        <a href="digital-marketing.html">
+          Digital Marketing
+        </a>
+
+        <a href="data-skills.html">
+          Data Skills
+        </a>
+
+        <a href="career-skills.html">
+          Career Skills
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Company
+        </h3>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="Privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="disclaimer.html">
+          Disclaimer
+        </a>
+
+      </div>
+
 
     </div>
 
 
-    <div>
+    <div class="footer-bottom">
 
-      <h3>Opportunities</h3>
-
-      <a href="scholarships.html">Scholarships</a>
-      <a href="jobs.html">Jobs</a>
-      <a href="internships.html">Internships</a>
-      <a href="courses.html">Courses</a>
+      © 2026 OpportunityBridge.
+      All Rights Reserved.
 
     </div>
 
-
-    <div>
-
-      <h3>Digital Skills</h3>
-
-      <a href="computer-skills.html">Computer Skills</a>
-      <a href="ai-skills.html">AI Skills</a>
-      <a href="web-development.html">Web Development</a>
-      <a href="digital-marketing.html">Digital Marketing</a>
-      <a href="data-skills.html">Data Skills</a>
-      <a href="career-skills.html">Career Skills</a>
-
-    </div>
-
-
-    <div>
-
-      <h3>Company</h3>
-
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="Privacy.html">Privacy Policy</a>
-      <a href="disclaimer.html">Disclaimer</a>
-
-    </div>
-
-  </div>
-
-
-  <div class="copyright">
-    © 2026 OpportunityBridge. All rights reserved.
   </div>
 
 </footer>
 
 
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
 <script>
+
+  const searchInput =
+    document.getElementById("searchInput");
+
+  const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+  const opportunityCards =
+    document.querySelectorAll(".opportunity-card");
+
+
+  let currentCategory = "all";
+
 
   function filterOpportunities() {
 
-    const search =
-      document.getElementById("searchInput")
-      .value
-      .toLowerCase();
-
-    const category =
-      document.getElementById("categoryFilter")
-      .value;
-
-    const cards =
-      document.querySelectorAll(".opportunity-card");
+    const searchTerm =
+      searchInput.value.toLowerCase().trim();
 
 
-    cards.forEach(function(card) {
+    opportunityCards.forEach(card => {
+
+      const category =
+        card.getAttribute("data-category");
 
       const text =
         card.innerText.toLowerCase();
 
-      const cardCategory =
-        card.getAttribute("data-category");
+
+      const categoryMatch =
+        currentCategory === "all" ||
+        category === currentCategory;
 
 
-      const matchesSearch =
-        text.includes(search);
-
-      const matchesCategory =
-        category === "all" ||
-        cardCategory === category;
+      const searchMatch =
+        text.includes(searchTerm);
 
 
-      if (matchesSearch && matchesCategory) {
+      if (categoryMatch && searchMatch) {
+
         card.style.display = "block";
+
       } else {
+
         card.style.display = "none";
+
       }
 
     });
 
   }
 
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      filterButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      currentCategory =
+        button.getAttribute("data-category");
+
+      filterOpportunities();
+
+    });
+
+  });
+
+
+  searchInput.addEventListener(
+    "input",
+    filterOpportunities
+  );
+
 </script>
+
 
 </body>
 </html>
