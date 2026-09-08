@@ -3,117 +3,386 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Scholarships | OpportunityBridge</title>
-  <meta name="description" content="Find scholarships and funding opportunities for students and graduates.">
+
+  <meta name="description"
+        content="Discover scholarships, fully funded opportunities and study opportunities with OpportunityBridge.">
+
   <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-    header{background:#0b3d91;color:white;padding:18px 5%}
-    nav{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
-    nav a{color:white;text-decoration:none;padding:9px 12px;border-radius:7px}
-    nav a:hover{background:#ffffff22}
-    .hero{text-align:center;padding:55px 20px;background:#0b3d91;color:white}
-    .hero h1{font-size:38px;margin:0 0 12px}
-    .hero p{font-size:18px}
-    .search{max-width:700px;margin:25px auto 0;display:flex;gap:10px}
-    .search input{flex:1;padding:15px;border:0;border-radius:8px;font-size:16px}
-    .container{max-width:1100px;margin:40px auto;padding:0 20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
-    .card{background:white;border-radius:14px;padding:24px;box-shadow:0 5px 20px #00000010}
-    .card h2{margin-top:0;color:#0b3d91}
-    .card p{line-height:1.6}
-    .btn{display:inline-block;background:#0b3d91;color:white;text-decoration:none;padding:11px 18px;border-radius:7px}
-    footer{margin-top:50px;background:#101828;color:white;text-align:center;padding:30px 20px}
-    footer a{color:white;margin:0 8px;text-decoration:none}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b3d91;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 11px;
+      border-radius: 7px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      background: rgba(255,255,255,.18);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b3d91, #1769d1);
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 6vw, 46px);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+      opacity: .95;
+    }
+
+    .search-box {
+      max-width: 650px;
+      margin: 28px auto 0;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 18px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      color: #0b3d91;
+      font-size: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 22px rgba(0,0,0,.08);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #596579;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0b3d91;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #082f70;
+    }
+
+    footer {
+      background: #101828;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 7px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .hero {
+        padding: 50px 18px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="scholarships.html">Scholarships</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="internships.html">Internships</a>
-    <a href="courses.html">Courses</a>
-    <a href="computer-skills.html">Digital Skills</a>
-  </nav>
+  <div class="nav">
+
+    <a class="logo" href="index.html">
+      OpportunityBridge
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="computer-skills.html">Digital Skills</a>
+    </nav>
+
+  </div>
 </header>
 
 <section class="hero">
-  <h1>Scholarship Opportunities</h1>
-  <p>Discover scholarships and funding opportunities for your education.</p>
 
-  <div class="search">
-    <input type="text" id="searchInput" placeholder="Search scholarships...">
+  <h1>Scholarship Opportunities</h1>
+
+  <p>
+    Discover scholarships and educational opportunities
+    that can help you continue your studies.
+  </p>
+
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search scholarships..."
+      aria-label="Search scholarships">
   </div>
+
 </section>
 
 <main class="container">
-  <div class="grid" id="cards">
 
-    <div class="card">
-      <h2>International Scholarships</h2>
-      <p>Explore scholarship opportunities available for international students.</p>
-      <a class="btn" href="https://www.google.com/search?q=international+scholarships+for+students" target="_blank">Explore</a>
-    </div>
+  <div class="section-title">
+    <h2>Explore Scholarships</h2>
+    <p>Find opportunities that match your education goals.</p>
+  </div>
 
-    <div class="card">
-      <h2>Fully Funded Scholarships</h2>
-      <p>Find opportunities that may cover tuition, accommodation and other study costs.</p>
-      <a class="btn" href="https://www.google.com/search?q=fully+funded+scholarships+2026" target="_blank">Explore</a>
-    </div>
+  <div class="cards" id="cards">
 
-    <div class="card">
-      <h2>African Scholarships</h2>
-      <p>Scholarship opportunities available for students from African countries.</p>
-      <a class="btn" href="https://www.google.com/search?q=scholarships+for+African+students" target="_blank">Explore</a>
-    </div>
+    <article class="card">
+      <div class="icon">🎓</div>
+      <h3>Fully Funded Scholarships</h3>
+      <p>
+        Explore fully funded scholarship opportunities
+        for students around the world.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=fully+funded+scholarships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-    <div class="card">
-      <h2>Undergraduate Scholarships</h2>
-      <p>Discover opportunities for students looking to pursue bachelor's degrees.</p>
-      <a class="btn" href="https://www.google.com/search?q=undergraduate+scholarships+2026" target="_blank">Explore</a>
-    </div>
+    <article class="card">
+      <div class="icon">🌍</div>
+      <h3>Study Abroad</h3>
+      <p>
+        Discover opportunities for students interested
+        in studying abroad.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=study+abroad+scholarships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-    <div class="card">
-      <h2>Science & Health Scholarships</h2>
-      <p>Explore funding opportunities in science, technology and health-related fields.</p>
-      <a class="btn" href="https://www.google.com/search?q=science+health+scholarships+2026" target="_blank">Explore</a>
-    </div>
+    <article class="card">
+      <div class="icon">🌍</div>
+      <h3>Scholarships for African Students</h3>
+      <p>
+        Find scholarship opportunities available to
+        students from African countries.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=scholarships+for+African+students+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-    <div class="card">
-      <h2>Study Abroad Scholarships</h2>
-      <p>Find scholarship opportunities for studying outside your home country.</p>
-      <a class="btn" href="https://www.google.com/search?q=study+abroad+scholarships+2026" target="_blank">Explore</a>
-    </div>
+    <article class="card">
+      <div class="icon">🎓</div>
+      <h3>Undergraduate Scholarships</h3>
+      <p>
+        Explore opportunities for students pursuing
+        bachelor's degree programmes.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=undergraduate+scholarships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🔬</div>
+      <h3>Science & Health</h3>
+      <p>
+        Explore scholarship opportunities in science,
+        technology and health-related fields.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=science+health+scholarships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🌐</div>
+      <h3>International Scholarships</h3>
+      <p>
+        Find international scholarship opportunities
+        for students and graduates.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=international+scholarships+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
   </div>
+
 </main>
 
 <footer>
-  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+
+  <p><strong>OpportunityBridge</strong></p>
+
+  <p>
+    Connecting students and professionals to opportunities.
+  </p>
+
   <p>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="Privacy.html">Privacy Policy</a>
     <a href="disclaimer.html">Disclaimer</a>
   </p>
+
+  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+
 </footer>
 
 <script>
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
 
-searchInput.addEventListener("input", function () {
-  const query = this.value.toLowerCase();
+  searchInput.addEventListener("input", function () {
 
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(query) ? "" : "none";
+    const query = this.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+
+      const text = card.textContent.toLowerCase();
+
+      card.style.display =
+        text.includes(query) ? "" : "none";
+
+    });
+
   });
-});
 </script>
 
 </body>
