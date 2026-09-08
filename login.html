@@ -3,15 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Login | OpportunityBridge</title>
 
-  <meta
-    name="description"
-    content="Login to your OpportunityBridge account."
-  >
-
-  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <style>
@@ -19,778 +12,209 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      background: linear-gradient(135deg, #071a33, #0b4f8a);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
 
-    .container {
+    .login-box {
       width: 100%;
-      max-width: 430px;
+      max-width: 420px;
+      background: white;
+      padding: 35px 28px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
     }
 
     .logo {
       text-align: center;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .logo-icon {
-      width: 60px;
-      height: 60px;
-      background: white;
-      color: #1d4ed8;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      font-weight: bold;
-      margin: 0 auto 12px;
-    }
-
-    .logo h1 {
-      font-size: 27px;
-      margin-bottom: 5px;
-    }
-
-    .logo p {
-      font-size: 14px;
-      opacity: 0.85;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 32px 28px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    }
-
-    .card h2 {
-      text-align: center;
-      color: #111827;
+      font-size: 28px;
+      font-weight: 800;
+      color: #0b4f8a;
       margin-bottom: 8px;
-      font-size: 25px;
     }
 
     .subtitle {
       text-align: center;
-      color: #6b7280;
-      font-size: 14px;
-      margin-bottom: 25px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
+      color: #64748b;
+      margin-bottom: 28px;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
+      margin: 15px 0 7px;
       font-weight: 600;
-      color: #374151;
-      font-size: 14px;
+      color: #172033;
     }
 
     input {
       width: 100%;
-      padding: 13px 14px;
-      border: 1px solid #d1d5db;
+      padding: 14px;
+      border: 1px solid #d5dce5;
       border-radius: 10px;
       font-size: 15px;
       outline: none;
-      transition: 0.2s;
     }
 
     input:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+      border-color: #1479d1;
+      box-shadow: 0 0 0 3px rgba(20,121,209,.12);
     }
 
-    .password-wrapper {
-      position: relative;
-    }
-
-    .password-wrapper input {
-      padding-right: 75px;
-    }
-
-    .show-password {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      border: none;
-      background: transparent;
-      color: #2563eb;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    .forgot {
-      text-align: right;
-      margin-top: -8px;
-      margin-bottom: 20px;
-    }
-
-    .forgot a {
-      color: #2563eb;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .login-btn {
+    button {
       width: 100%;
-      border: none;
-      background: #2563eb;
-      color: white;
+      margin-top: 22px;
       padding: 14px;
+      border: none;
       border-radius: 10px;
+      background: linear-gradient(135deg, #0866b3, #1595ed);
+      color: white;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
-      transition: 0.2s;
     }
 
-    .login-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .login-btn:disabled {
-      opacity: 0.7;
+    button:disabled {
+      opacity: .6;
       cursor: not-allowed;
     }
 
-    .message {
-      display: none;
-      padding: 12px;
-      border-radius: 9px;
-      margin-bottom: 18px;
-      font-size: 14px;
+    #message {
+      margin-top: 18px;
       text-align: center;
-    }
-
-    .success {
-      background: #dcfce7;
-      color: #166534;
-      border: 1px solid #86efac;
-    }
-
-    .error {
-      background: #fee2e2;
-      color: #991b1b;
-      border: 1px solid #fca5a5;
+      font-size: 14px;
     }
 
     .register {
       text-align: center;
       margin-top: 22px;
-      color: #6b7280;
-      font-size: 14px;
+      color: #64748b;
     }
 
     .register a {
-      color: #2563eb;
-      font-weight: bold;
+      color: #0866b3;
+      font-weight: 700;
       text-decoration: none;
     }
 
     .back {
+      display: block;
       text-align: center;
       margin-top: 20px;
-    }
-
-    .back a {
-      color: white;
+      color: #64748b;
       text-decoration: none;
       font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .loading {
-      display: none;
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 28px 20px;
-      }
-
-      .logo h1 {
-        font-size: 24px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="login-box">
 
-    <!-- LOGO -->
-    <div class="logo">
+    <div class="logo">OpportunityBridge</div>
 
-      <div class="logo-icon">
-        OB
-      </div>
+    <p class="subtitle">Login to your account</p>
 
-      <h1>
-        OpportunityBridge
-      </h1>
+    <form id="loginForm">
 
-      <p>
-        Connect. Learn. Grow.
-      </p>
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      >
 
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      >
+
+      <button type="submit" id="loginBtn">
+        Login
+      </button>
+
+    </form>
+
+    <div id="message"></div>
+
+    <div class="register">
+      Don't have an account?
+      <a href="register.html">Create Account</a>
     </div>
 
-
-    <!-- LOGIN CARD -->
-    <div class="card">
-
-      <h2>
-        Welcome Back
-      </h2>
-
-      <p class="subtitle">
-        Login to your OpportunityBridge account
-      </p>
-
-
-      <!-- Messages -->
-      <div
-        id="successMessage"
-        class="message success">
-      </div>
-
-      <div
-        id="errorMessage"
-        class="message error">
-      </div>
-
-
-      <!-- LOGIN FORM -->
-      <form id="loginForm">
-
-        <!-- EMAIL -->
-        <div class="form-group">
-
-          <label for="email">
-            Email Address
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            autocomplete="email"
-            required
-          >
-
-        </div>
-
-
-        <!-- PASSWORD -->
-        <div class="form-group">
-
-          <label for="password">
-            Password
-          </label>
-
-          <div class="password-wrapper">
-
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-              autocomplete="current-password"
-              required
-            >
-
-            <button
-              type="button"
-              class="show-password"
-              id="togglePassword">
-              Show
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <!-- FORGOT PASSWORD -->
-        <div class="forgot">
-
-          <a
-            href="#"
-            id="forgotPassword">
-            Forgot password?
-          </a>
-
-        </div>
-
-
-        <!-- LOGIN BUTTON -->
-        <button
-          type="submit"
-          class="login-btn"
-          id="loginButton">
-
-          <span id="buttonText">
-            Login
-          </span>
-
-          <span
-            id="loadingText"
-            class="loading">
-            Logging in...
-          </span>
-
-        </button>
-
-      </form>
-
-
-      <!-- REGISTER -->
-      <div class="register">
-
-        Don't have an account?
-
-        <a href="register.html">
-          Create Account
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- BACK -->
-    <div class="back">
-
-      <a href="index.html">
-        ← Back to OpportunityBridge
-      </a>
-
-    </div>
+    <a href="index.html" class="back">← Back to website</a>
 
   </div>
 
+<script>
+  const SUPABASE_URL = "https://wrdpnhqwolqovoukhlns.supabase.co";
 
-  <script>
+  const SUPABASE_KEY =
+    "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
 
-    /* =========================================
-       SUPABASE CONFIGURATION
-    ========================================= */
-
-    const SUPABASE_URL =
-      "https://wrdpnhqwolqovoukhlns.supabase.co";
-
-    const SUPABASE_PUBLISHABLE_KEY =
-      "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
-
-    const supabaseClient =
-      window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_PUBLISHABLE_KEY
-      );
-
-
-    /* =========================================
-       ELEMENTS
-    ========================================= */
-
-    const loginForm =
-      document.getElementById("loginForm");
-
-    const emailInput =
-      document.getElementById("email");
-
-    const passwordInput =
-      document.getElementById("password");
-
-    const loginButton =
-      document.getElementById("loginButton");
-
-    const buttonText =
-      document.getElementById("buttonText");
-
-    const loadingText =
-      document.getElementById("loadingText");
-
-    const successMessage =
-      document.getElementById("successMessage");
-
-    const errorMessage =
-      document.getElementById("errorMessage");
-
-    const togglePassword =
-      document.getElementById("togglePassword");
-
-    const forgotPassword =
-      document.getElementById("forgotPassword");
-
-
-    /* =========================================
-       SHOW / HIDE PASSWORD
-    ========================================= */
-
-    togglePassword.addEventListener(
-      "click",
-      function () {
-
-        if (passwordInput.type === "password") {
-
-          passwordInput.type = "text";
-
-          togglePassword.textContent =
-            "Hide";
-
-        } else {
-
-          passwordInput.type = "password";
-
-          togglePassword.textContent =
-            "Show";
-
-        }
-
-      }
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
     );
 
+  const form = document.getElementById("loginForm");
+  const button = document.getElementById("loginBtn");
+  const message = document.getElementById("message");
 
-    /* =========================================
-       MESSAGE FUNCTIONS
-    ========================================= */
+  form.addEventListener("submit", async (e) => {
 
-    function showError(message) {
+    e.preventDefault();
 
-      successMessage.style.display =
-        "none";
+    const email =
+      document.getElementById("email").value.trim();
 
-      errorMessage.textContent =
-        message;
+    const password =
+      document.getElementById("password").value;
 
-      errorMessage.style.display =
-        "block";
+    button.disabled = true;
+    button.textContent = "Logging in...";
+    message.textContent = "";
+
+    const { data, error } =
+      await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+    if (error) {
+
+      message.style.color = "#dc2626";
+      message.textContent =
+        "Login failed. Please check your email and password.";
+
+      button.disabled = false;
+      button.textContent = "Login";
+
+      return;
     }
 
-
-    function showSuccess(message) {
-
-      errorMessage.style.display =
-        "none";
-
-      successMessage.textContent =
-        message;
-
-      successMessage.style.display =
-        "block";
-    }
-
-
-    function hideMessages() {
-
-      successMessage.style.display =
-        "none";
-
-      errorMessage.style.display =
-        "none";
-    }
-
-
-    /* =========================================
-       LOGIN
-    ========================================= */
-
-    loginForm.addEventListener(
-      "submit",
-      async function (event) {
-
-        event.preventDefault();
-
-        hideMessages();
-
-        const email =
-          emailInput.value.trim();
-
-        const password =
-          passwordInput.value;
-
-
-        if (!email || !password) {
-
-          showError(
-            "Please enter your email and password."
-          );
-
-          return;
-        }
-
-
-        /* Loading */
-
-        loginButton.disabled = true;
-
-        buttonText.style.display =
-          "none";
-
-        loadingText.style.display =
-          "inline";
-
-
-        try {
-
-          const { data, error } =
-            await supabaseClient.auth.signInWithPassword({
-
-              email: email,
-
-              password: password
-
-            });
-
-
-          if (error) {
-
-            console.error(error);
-
-
-            const errorMessageText =
-              error.message.toLowerCase();
-
-
-            /* Email not verified */
-
-            if (
-              errorMessageText.includes(
-                "email not confirmed"
-              )
-            ) {
-
-              showError(
-                "Please verify your email address before logging in."
-              );
-
-              return;
-            }
-
-
-            /* Wrong credentials */
-
-            if (
-              errorMessageText.includes(
-                "invalid login credentials"
-              )
-            ) {
-
-              showError(
-                "Incorrect email or password."
-              );
-
-              return;
-            }
-
-
-            showError(
-              error.message
-            );
-
-            return;
-          }
-
-
-          /* =====================================
-             LOGIN SUCCESS
-          ===================================== */
-
-          if (data && data.user) {
-
-            showSuccess(
-              "Login successful! Opening your dashboard..."
-            );
-
-
-            /*
-              IMPORTANT:
-              Send logged-in user to dashboard
-            */
-
-            setTimeout(
-              function () {
-
-                window.location.href =
-                  "dashboard.html";
-
-              },
-              800
-            );
-
-          }
-
-        } catch (error) {
-
-          console.error(error);
-
-          showError(
-            "Something went wrong. Please try again."
-          );
-
-        } finally {
-
-          loginButton.disabled = false;
-
-          buttonText.style.display =
-            "inline";
-
-          loadingText.style.display =
-            "none";
-
-        }
-
-      }
-    );
-
-
-    /* =========================================
-       FORGOT PASSWORD
-    ========================================= */
-
-    forgotPassword.addEventListener(
-      "click",
-      async function (event) {
-
-        event.preventDefault();
-
-        hideMessages();
-
-        const email =
-          emailInput.value.trim();
-
-
-        if (!email) {
-
-          showError(
-            "Enter your email address first, then click Forgot password."
-          );
-
-          emailInput.focus();
-
-          return;
-        }
-
-
-        try {
-
-          const { error } =
-            await supabaseClient.auth
-              .resetPasswordForEmail(
-                email,
-                {
-                  redirectTo:
-                    window.location.origin +
-                    "/reset-password.html"
-                }
-              );
-
-
-          if (error) {
-
-            showError(
-              error.message
-            );
-
-            return;
-          }
-
-
-          showSuccess(
-            "Password reset instructions have been sent to your email."
-          );
-
-
-        } catch (error) {
-
-          console.error(error);
-
-          showError(
-            "Unable to send password reset email."
-          );
-
-        }
-
-      }
-    );
-
-
-    /* =========================================
-       CHECK EXISTING SESSION
-    ========================================= */
-
-    async function checkSession() {
-
-      try {
-
-        const { data, error } =
-          await supabaseClient.auth.getSession();
-
-
-        if (error) {
-
-          console.error(
-            "Session error:",
-            error
-          );
-
-          return;
-        }
-
-
-        /*
-          If the user is already logged in,
-          don't show the login page again.
-        */
-
-        if (
-          data &&
-          data.session &&
-          data.session.user
-        ) {
-
-          window.location.replace(
-            "dashboard.html"
-          );
-
-        }
-
-      } catch (error) {
-
-        console.error(
-          "Unable to check session:",
-          error
-        );
-
-      }
-
-    }
-
-
-    /* Run session check */
-
-    checkSession();
-
-
-  </script>
+    message.style.color = "#16a34a";
+    message.textContent = "Login successful!";
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 700);
+
+  });
+</script>
 
 </body>
 </html>
