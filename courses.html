@@ -1,207 +1,358 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Online Courses | OpportunityBridge</title>
+  <title>Courses | OpportunityBridge</title>
 
-<meta name="description" content="Explore online courses and learning resources for digital, professional and career skills.">
-<meta name="robots" content="index, follow">
+  <meta name="description"
+        content="Discover online courses and learning opportunities to improve your knowledge and digital skills.">
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8f7;color:#26343a;line-height:1.6}
-a{text-decoration:none;color:inherit}
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
 
-header{
-background:#123b3a;color:white;padding:18px 7%;
-display:flex;justify-content:space-between;align-items:center
-}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f5f7fb;
+      color:#172033;
+      line-height:1.6;
+    }
 
-.logo{font-size:21px;font-weight:bold}
-nav a{color:white;margin-left:18px;font-size:14px}
-nav a:hover{color:#20b89a}
+    header{
+      background:#0b3d91;
+      padding:15px 5%;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 3px 12px rgba(0,0,0,.15);
+    }
 
-main{max-width:1100px;margin:55px auto;padding:0 20px}
-.hero{text-align:center;margin-bottom:35px}
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
-h1{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:normal;
-color:#123b3a
-}
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+      text-decoration:none;
+    }
 
-.hero p{color:#68757b;max-width:650px;margin:auto}
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:7px;
+    }
 
-.search-box{max-width:700px;margin:30px auto}
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      padding:8px 11px;
+      border-radius:7px;
+      font-size:14px;
+    }
 
-.search-box input{
-width:100%;
-padding:16px 20px;
-border:1px solid #d5dddd;
-border-radius:10px;
-font-size:16px;
-outline:none
-}
+    .nav-links a:hover,
+    .nav-links .active{
+      background:rgba(255,255,255,.18);
+    }
 
-.search-box input:focus{
-border-color:#176b63;
-box-shadow:0 0 0 3px rgba(23,107,99,.12)
-}
+    .hero{
+      background:linear-gradient(135deg,#0b3d91,#1769d1);
+      color:white;
+      text-align:center;
+      padding:65px 20px;
+    }
 
-#resultCount{text-align:center;margin-top:10px;color:#176b63;font-size:14px}
+    .hero h1{
+      font-size:clamp(30px,6vw,46px);
+      margin-bottom:12px;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:17px;
+    }
 
-.opportunity-card{
-background:white;
-border:1px solid #e1e6e4;
-border-radius:12px;
-padding:25px;
-transition:.2s
-}
+    .search-box{
+      max-width:650px;
+      margin:28px auto 0;
+    }
 
-.opportunity-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 25px rgba(0,0,0,.08)
-}
+    .search-box input{
+      width:100%;
+      padding:15px 18px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      font-size:16px;
+    }
 
-.opportunity-card h2{font-size:19px;color:#123b3a}
-.opportunity-card p{font-size:14px;color:#68757b}
+    .container{
+      max-width:1150px;
+      margin:45px auto;
+      padding:0 20px;
+    }
 
-.explore{
-display:inline-block;
-margin-top:12px;
-background:#176b63;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-font-size:13px;
-font-weight:bold
-}
+    .section-title{
+      text-align:center;
+      margin-bottom:30px;
+    }
 
-footer{
-margin-top:70px;
-background:#102f2e;
-color:#dcebea;
-text-align:center;
-padding:30px
-}
+    .section-title h2{
+      color:#0b3d91;
+      font-size:30px;
+    }
 
-footer a{color:white;margin:0 8px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:22px;
+    }
 
-@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}}
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 22px rgba(0,0,0,.08);
+      transition:.25s;
+    }
 
-@media(max-width:500px){
-.cards{grid-template-columns:1fr}
-header{flex-direction:column;gap:12px}
-nav a{margin:0 5px}
-}
-</style>
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 28px rgba(0,0,0,.12);
+    }
+
+    .icon{
+      font-size:34px;
+      margin-bottom:12px;
+    }
+
+    .card h3{
+      color:#0b3d91;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#596579;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#0b3d91;
+      color:white;
+      padding:10px 17px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#082f70;
+    }
+
+    footer{
+      background:#101828;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      margin-top:60px;
+    }
+
+    footer p{
+      margin:8px 0;
+    }
+
+    footer a{
+      color:white;
+      text-decoration:none;
+      margin:0 7px;
+    }
+
+    @media(max-width:700px){
+      .nav{
+        flex-direction:column;
+      }
+
+      .nav-links{
+        width:100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">OpportunityBridge</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="scholarships.html">Scholarships</a>
-<a href="jobs.html">Jobs</a>
-<a href="internships.html">Internships</a>
-<a href="digital-skills.html">Digital Skills</a>
-</nav>
+  <div class="nav">
+
+    <a class="logo" href="index.html">
+      OpportunityBridge
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a class="active" href="courses.html">Courses</a>
+      <a href="computer-skills.html">Digital Skills</a>
+    </nav>
+
+  </div>
+
 </header>
 
-<main>
+<section class="hero">
 
-<div class="hero">
+  <h1>Online Courses</h1>
 
-<h1>Online Courses</h1>
+  <p>
+    Learn new skills, improve your knowledge and
+    prepare for future opportunities.
+  </p>
 
-<p>
-Explore learning resources for technology, business, digital skills
-and professional development.
-</p>
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search courses..."
+      aria-label="Search courses">
+  </div>
 
-</div>
+</section>
 
-<div class="search-box">
+<main class="container">
 
-<input
-type="search"
-id="searchInput"
-placeholder="Search courses..."
-aria-label="Search courses">
+  <div class="section-title">
+    <h2>Explore Courses</h2>
+    <p>Discover learning resources for your personal and professional growth.</p>
+  </div>
 
-<div id="resultCount"></div>
+  <div class="cards">
 
-</div>
+    <article class="card">
+      <div class="icon">💻</div>
+      <h3>Computer Skills</h3>
+      <p>
+        Learn essential computer and digital skills
+        for school, work and everyday life.
+      </p>
+      <a class="btn" href="computer-skills.html">
+        Learn More
+      </a>
+    </article>
 
-<div class="cards">
+    <article class="card">
+      <div class="icon">🤖</div>
+      <h3>Artificial Intelligence</h3>
+      <p>
+        Discover AI concepts, tools and practical
+        digital skills.
+      </p>
+      <a class="btn" href="ai-skills.html">
+        Learn More
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Programming Courses</h2>
-<p>Explore programming and software development learning resources.</p>
-<a class="explore" href="https://www.google.com/search?q=free+programming+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🌐</div>
+      <h3>Web Development</h3>
+      <p>
+        Learn the fundamentals of creating websites
+        and web applications.
+      </p>
+      <a class="btn" href="web-development.html">
+        Learn More
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Artificial Intelligence</h2>
-<p>Discover courses and learning resources about artificial intelligence.</p>
-<a class="explore" href="https://www.google.com/search?q=AI+online+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">📣</div>
+      <h3>Digital Marketing</h3>
+      <p>
+        Learn digital marketing concepts and online
+        communication skills.
+      </p>
+      <a class="btn" href="digital-marketing.html">
+        Learn More
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Digital Marketing</h2>
-<p>Learn digital marketing concepts and practical skills.</p>
-<a class="explore" href="https://www.google.com/search?q=digital+marketing+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">📊</div>
+      <h3>Data Skills</h3>
+      <p>
+        Explore data-related skills and tools for
+        modern careers.
+      </p>
+      <a class="btn" href="data-skills.html">
+        Learn More
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Business Courses</h2>
-<p>Explore courses covering business and entrepreneurship.</p>
-<a class="explore" href="https://www.google.com/search?q=business+online+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🚀</div>
+      <h3>Career Skills</h3>
+      <p>
+        Improve communication, workplace and
+        career development skills.
+      </p>
+      <a class="btn" href="career-skills.html">
+        Learn More
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>English Courses</h2>
-<p>Find resources for improving English language skills.</p>
-<a class="explore" href="https://www.google.com/search?q=English+online+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-<div class="opportunity-card">
-<h2>Career Skills</h2>
-<p>Explore learning resources for CVs, communication and professional development.</p>
-<a class="explore" href="https://www.google.com/search?q=career+skills+online+courses" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-</div>
+  </div>
 
 </main>
 
 <footer>
-<strong>OpportunityBridge</strong>
-<p>Connect • Learn • Grow</p>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="disclaimer.html">Disclaimer</a>
+  <p><strong>OpportunityBridge</strong></p>
 
-<p>© 2026 OpportunityBridge. All rights reserved.</p>
+  <p>Learn today. Build tomorrow.</p>
+
+  <p>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="Privacy.html">Privacy Policy</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+
+  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+
 </footer>
 
-<script src="search.js"></script>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
+
+  searchInput.addEventListener("input", function(){
+
+    const query = this.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+
+      const text = card.textContent.toLowerCase();
+
+      card.style.display =
+        text.includes(query) ? "" : "none";
+
+    });
+
+  });
+</script>
 
 </body>
 </html>
