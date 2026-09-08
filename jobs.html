@@ -1,540 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs | OpportunityBridge</title>
 
-  <title>Jobs 2026 | Job Opportunities & Career Opportunities | OpportunityBridge</title>
+<meta name="description"
+content="Find jobs, remote work, graduate opportunities and international careers on OpportunityBridge.">
 
-  <meta name="description"
-        content="Discover job opportunities, career opportunities and employment resources with OpportunityBridge. Find opportunities for students, graduates and young professionals.">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-  <meta name="keywords"
-        content="jobs, job opportunities, career opportunities, graduate jobs, student jobs, employment opportunities, jobs in Tanzania, international jobs, OpportunityBridge">
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.6;
+}
 
-  <meta name="author" content="OpportunityBridge">
+/* NAVBAR */
+.navbar{
+    background:#ffffff;
+    border-bottom:1px solid #e8ebf0;
+    padding:15px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
+.logo{
+    font-size:22px;
+    font-weight:800;
+    color:#2563eb;
+    text-decoration:none;
+}
 
-  <link rel="canonical" href="https://absmg.github.io/jobs.html">
+.nav-links{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title"
-        content="Jobs 2026 | Job Opportunities & Career Opportunities">
-  <meta property="og:description"
-        content="Discover job opportunities and career resources for students, graduates and young professionals with OpportunityBridge.">
-  <meta property="og:url"
-        content="https://absmg.github.io/jobs.html">
-  <meta property="og:site_name"
-        content="OpportunityBridge">
+.nav-links a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title"
-        content="Jobs 2026 | OpportunityBridge">
-  <meta name="twitter:description"
-        content="Discover job opportunities and career resources with OpportunityBridge.">
+.nav-links a:hover{
+    color:#2563eb;
+}
 
-  <meta name="theme-color" content="#14213d">
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    padding:65px 6% 75px;
+    text-align:center;
+}
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Jobs 2026 | OpportunityBridge",
-    "description": "Discover job opportunities, career opportunities and employment resources with OpportunityBridge.",
-    "url": "https://absmg.github.io/jobs.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "OpportunityBridge",
-      "url": "https://absmg.github.io/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "OpportunityBridge",
-      "url": "https://absmg.github.io/"
+.hero h1{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:0 auto 28px;
+    opacity:.95;
+}
+
+.search-box{
+    max-width:760px;
+    margin:auto;
+    display:flex;
+    background:white;
+    padding:7px;
+    border-radius:14px;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.search-box input{
+    flex:1;
+    border:0;
+    outline:none;
+    padding:15px;
+    font-size:16px;
+    color:#111827;
+}
+
+.search-box button{
+    border:0;
+    background:#111827;
+    color:white;
+    padding:0 25px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* MAIN */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:45px 6%;
+}
+
+/* FILTERS */
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.filter-btn{
+    border:1px solid #dbe1ea;
+    background:white;
+    color:#374151;
+    padding:10px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#2563eb;
+    color:white;
+    border-color:#2563eb;
+}
+
+/* JOB GRID */
+.jobs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.job-card{
+    background:white;
+    border:1px solid #e6eaf0;
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 7px 22px rgba(15,23,42,.06);
+    transition:.25s;
+    display:flex;
+    flex-direction:column;
+}
+
+.job-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(15,23,42,.11);
+}
+
+.company{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.company-logo{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    font-size:23px;
+}
+
+.company-name{
+    font-size:13px;
+    color:#6b7280;
+}
+
+.job-card h2{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.job-info{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:16px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:20px;
+}
+
+.tag{
+    background:#f1f5f9;
+    padding:5px 9px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:700;
+    color:#475569;
+}
+
+.deadline{
+    font-size:13px;
+    color:#dc2626;
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.apply-btn{
+    display:block;
+    text-align:center;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+    font-weight:700;
+    margin-top:auto;
+}
+
+.apply-btn:hover{
+    background:#1d4ed8;
+}
+
+/* EMPTY */
+.no-results{
+    display:none;
+    text-align:center;
+    padding:50px 20px;
+    background:white;
+    border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+    background:#111827;
+    color:#cbd5e1;
+    padding:40px 6%;
+    margin-top:30px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .jobs-grid{
+        grid-template-columns:repeat(2,1fr);
     }
-  }
-  </script>
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+@media(max-width:650px){
+
+    .navbar{
+        flex-direction:column;
+        gap:12px;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #222;
-      line-height: 1.6;
+    .nav-links{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
-    header {
-      background: #14213d;
-      color: white;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .hero{
+        padding:45px 5%;
     }
 
-    .nav {
-      max-width: 1150px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .hero h1{
+        font-size:31px;
     }
 
-    .logo {
-      color: white;
-      text-decoration: none;
-      font-size: 22px;
-      font-weight: bold;
-      white-space: nowrap;
+    .search-box{
+        flex-direction:column;
+        gap:7px;
+        padding:7px;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
+    .search-box button{
+        padding:13px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
+    .jobs-grid{
+        grid-template-columns:1fr;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .footer-content{
+        flex-direction:column;
     }
-
-    .hero {
-      background: linear-gradient(135deg, #14213d, #1f4e8c);
-      color: white;
-      text-align: center;
-      padding: 65px 20px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 18px;
-      opacity: 0.95;
-    }
-
-    .search-box {
-      max-width: 650px;
-      margin: 30px auto 0;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 15px 18px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 45px 20px;
-    }
-
-    .intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-
-    .intro h2 {
-      font-size: 30px;
-      color: #14213d;
-      margin-bottom: 12px;
-    }
-
-    .intro p {
-      color: #555;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-    }
-
-    .card-icon {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #14213d;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .card p {
-      color: #666;
-      margin-bottom: 20px;
-      font-size: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #14213d;
-      color: white;
-      text-decoration: none;
-      padding: 11px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .btn:hover {
-      background: #1f4e8c;
-    }
-
-    .no-results {
-      display: none;
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      font-size: 17px;
-    }
-
-    footer {
-      background: #14213d;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 30px;
-    }
-
-    footer p {
-      margin-bottom: 12px;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 7px;
-      font-size: 14px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 850px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .nav {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        position: static;
-      }
-
-      nav {
-        gap: 10px;
-      }
-
-      nav a {
-        font-size: 13px;
-      }
-
-      .hero {
-        padding: 50px 18px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        padding: 35px 15px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
+<!-- NAVBAR -->
+<nav class="navbar">
 
-    <a class="logo" href="index.html">
-      OpportunityBridge
-    </a>
+<a href="index.html" class="logo">
+OpportunityBridge
+</a>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="scholarships.html">Scholarships</a>
-      <a href="jobs.html">Jobs</a>
-      <a href="internships.html">Internships</a>
-      <a href="courses.html">Courses</a>
-      <a href="computer-skills.html">Skills</a>
-    </nav>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="scholarships.html">Scholarships</a></li>
+<li><a href="jobs.html">Jobs</a></li>
+<li><a href="internships.html">Internships</a></li>
+<li><a href="courses.html">Courses</a></li>
+</ul>
 
-  </div>
-</header>
+</nav>
 
+
+<!-- HERO -->
 <section class="hero">
 
-  <h1>Job Opportunities</h1>
+<h1>Find Your Next Opportunity</h1>
 
-  <p>
-    Discover employment and career opportunities for students,
-    graduates and young professionals.
-  </p>
+<p>
+Discover jobs in Tanzania, Africa and around the world.
+Search opportunities that match your skills and career goals.
+</p>
 
-  <div class="search-box">
-    <input
-      type="search"
-      id="jobSearch"
-      placeholder="Search job opportunities..."
-      aria-label="Search job opportunities">
-  </div>
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search jobs, companies or locations..."
+onkeyup="filterJobs()"
+>
+
+<button onclick="filterJobs()">
+Search
+</button>
+
+</div>
 
 </section>
 
+
+<!-- CONTENT -->
 <main class="container">
 
-  <section class="intro">
+<!-- FILTER BUTTONS -->
 
-    <h2>Find Your Next Opportunity</h2>
+<div class="filters">
 
-    <p>
-      Explore different types of job opportunities and career resources
-      that can help you build your professional future.
-    </p>
+<button class="filter-btn active"
+onclick="filterCategory('all',this)">
+All Jobs
+</button>
 
-  </section>
+<button class="filter-btn"
+onclick="filterCategory('tanzania',this)">
+🇹🇿 Tanzania
+</button>
 
-  <section class="cards" id="jobCards">
+<button class="filter-btn"
+onclick="filterCategory('remote',this)">
+💻 Remote
+</button>
 
-    <article class="card" data-search="graduate jobs jobs for graduates">
-      <div class="card-icon">🎓</div>
+<button class="filter-btn"
+onclick="filterCategory('international',this)">
+🌍 International
+</button>
 
-      <h3>Graduate Jobs</h3>
+<button class="filter-btn"
+onclick="filterCategory('graduate',this)">
+🎓 Graduate
+</button>
 
-      <p>
-        Explore employment opportunities suitable for recent graduates
-        and young professionals.
-      </p>
+<button class="filter-btn"
+onclick="filterCategory('healthcare',this)">
+🏥 Healthcare
+</button>
 
-      <a
-        class="btn"
-        href="https://www.google.com/search?q=graduate+jobs"
-        target="_blank"
-        rel="noopener noreferrer">
-        Explore Jobs
-      </a>
-    </article>
+<button class="filter-btn"
+onclick="filterCategory('technology',this)">
+💻 Technology
+</button>
 
-
-    <article class="card" data-search="student jobs part time jobs">
-      <div class="card-icon">💼</div>
-
-      <h3>Student Jobs</h3>
-
-      <p>
-        Find job opportunities and career resources that may be suitable
-        for students.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.google.com/search?q=student+jobs"
-        target="_blank"
-        rel="noopener noreferrer">
-        Explore Jobs
-      </a>
-    </article>
+</div>
 
 
-    <article class="card" data-search="tanzania jobs employment opportunities">
-      <div class="card-icon">🇹🇿</div>
+<!-- JOBS -->
 
-      <h3>Jobs in Tanzania</h3>
-
-      <p>
-        Explore employment opportunities and career information related
-        to Tanzania.
-      </p>
-
-      <a
-        class="btn"
-        href="https://www.google.com/search?q=jobs+in+Tanzania"
-        target="_blank"
-        rel="noopener noreferrer">
-        Explore Jobs
-      </a>
-    </article>
+<div class="jobs-grid" id="jobsGrid">
 
 
-    <article class="card" data-search="international jobs global jobs">
-      <div class="card-icon">🌍</div>
+<!-- JOB 1 -->
 
-      <h3>International Jobs</h3>
+<article class="job-card"
+data-category="tanzania"
+data-search="government jobs tanzania public service recruitment">
 
-      <p>
-        Discover international employment opportunities and global
-        career resources.
-      </p>
+<div class="company">
 
-      <a
-        class="btn"
-        href="https://www.google.com/search?q=international+jobs"
-        target="_blank"
-        rel="noopener noreferrer">
-        Explore Jobs
-      </a>
-    </article>
+<div class="company-logo">🇹🇿</div>
+
+<div>
+<strong>Public Service Recruitment</strong>
+<div class="company-name">Government of Tanzania</div>
+</div>
+
+</div>
+
+<h2>Government Job Opportunities</h2>
+
+<div class="job-info">
+📍 Tanzania &nbsp; • &nbsp; 🏢 Full-time
+</div>
+
+<div class="tags">
+<span class="tag">Government</span>
+<span class="tag">Tanzania</span>
+<span class="tag">Various Fields</span>
+</div>
+
+<div class="deadline">
+🔔 Check current vacancy deadline
+</div>
+
+<a
+href="https://www.ajira.go.tz/"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+View & Apply
+</a>
+
+</article>
 
 
-    <article class="card" data-search="remote jobs online jobs">
-      <div class="card-icon">💻</div>
+<!-- JOB 2 -->
 
-      <h3>Remote Jobs</h3>
+<article class="job-card"
+data-category="international healthcare"
+data-search="unicef healthcare health technology consultancy tanzania">
 
-      <p>
-        Explore remote and online work opportunities that can help you
-        develop professional experience.
-      </p>
+<div class="company">
 
-      <a
-        class="btn"
-        href="https://www.google.com/search?q=remote+jobs"
-        target="_blank"
-        rel="noopener noreferrer">
-        Explore Jobs
-      </a>
-    </article>
+<div class="company-logo">🌍</div>
+
+<div>
+<strong>UNICEF</strong>
+<div class="company-name">United Nations</div>
+</div>
+
+</div>
+
+<h2>Health & Technology Opportunities</h2>
+
+<div class="job-info">
+📍 Dar es Salaam / Remote &nbsp; • &nbsp; 🌍 International
+</div>
+
+<div class="tags">
+<span class="tag">Healthcare</span>
+<span class="tag">International</span>
+<span class="tag">Consultancy</span>
+</div>
+
+<div class="deadline">
+📅 Check official deadline
+</div>
+
+<a
+href="https://tanzania.un.org/en/jobs"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+View & Apply
+</a>
+
+</article>
 
 
-    <article class="card" data-search="career opportunities professional careers">
-      <div class="card-icon">🚀</div>
+<!-- JOB 3 -->
 
-      <h3>Career Opportunities</h3>
+<article class="job-card"
+data-category="international"
+data-search="un jobs united nations careers">
 
-      <p>
-        Discover career resources and opportunities designed to support
-        your professional growth.
-      </p>
+<div class="company">
 
-      <a
-        class="btn"
-        href="https://www.google.com/search?q=career+opportunities"
-        target="_blank"
-        rel="noopener noreferrer">
-        Explore Opportunities
-      </a>
-    </article>
+<div class="company-logo">🌐</div>
 
-  </section>
+<div>
+<strong>United Nations</strong>
+<div class="company-name">UN Careers</div>
+</div>
 
-  <div class="no-results" id="noResults">
-    No matching opportunities found.
-  </div>
+</div>
+
+<h2>UN Job Opportunities</h2>
+
+<div class="job-info">
+📍 Worldwide &nbsp; • &nbsp; 🌍 International
+</div>
+
+<div class="tags">
+<span class="tag">UN</span>
+<span class="tag">International</span>
+<span class="tag">Various Fields</span>
+</div>
+
+<div class="deadline">
+🔔 Deadlines vary by vacancy
+</div>
+
+<a
+href="https://careers.un.org/job-openings"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+View & Apply
+</a>
+
+</article>
+
+
+<!-- JOB 4 -->
+
+<article class="job-card"
+data-category="remote"
+data-search="remote jobs online work technology">
+
+<div class="company">
+
+<div class="company-logo">💻</div>
+
+<div>
+<strong>Remote Careers</strong>
+<div class="company-name">Online Opportunities</div>
+</div>
+
+</div>
+
+<h2>Remote Work Opportunities</h2>
+
+<div class="job-info">
+📍 Work from anywhere &nbsp; • &nbsp; 💻 Remote
+</div>
+
+<div class="tags">
+<span class="tag">Remote</span>
+<span class="tag">Online</span>
+<span class="tag">Flexible</span>
+</div>
+
+<div class="deadline">
+🔔 Check vacancy requirements
+</div>
+
+<a
+href="https://careers.un.org/job-openings"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+Explore Jobs
+</a>
+
+</article>
+
+
+<!-- JOB 5 -->
+
+<article class="job-card"
+data-category="graduate international"
+data-search="graduate jobs internships young professionals">
+
+<div class="company">
+
+<div class="company-logo">🎓</div>
+
+<div>
+<strong>UN Careers</strong>
+<div class="company-name">Early Careers</div>
+</div>
+
+</div>
+
+<h2>Graduate & Early Career Jobs</h2>
+
+<div class="job-info">
+📍 Worldwide &nbsp; • &nbsp; 🎓 Graduate
+</div>
+
+<div class="tags">
+<span class="tag">Graduate</span>
+<span class="tag">Entry Level</span>
+<span class="tag">International</span>
+</div>
+
+<div class="deadline">
+📅 Deadlines vary
+</div>
+
+<a
+href="https://careers.un.org/job-openings"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+Find Opportunities
+</a>
+
+</article>
+
+
+<!-- JOB 6 -->
+
+<article class="job-card"
+data-category="tanzania healthcare"
+data-search="ministry health tanzania jobs healthcare ajira">
+
+<div class="company">
+
+<div class="company-logo">🏥</div>
+
+<div>
+<strong>Ministry of Health</strong>
+<div class="company-name">Tanzania</div>
+</div>
+
+</div>
+
+<h2>Health Sector Jobs</h2>
+
+<div class="job-info">
+📍 Tanzania &nbsp; • &nbsp; 🏥 Healthcare
+</div>
+
+<div class="tags">
+<span class="tag">Healthcare</span>
+<span class="tag">Tanzania</span>
+<span class="tag">Medical</span>
+</div>
+
+<div class="deadline">
+🔔 Check official vacancy
+</div>
+
+<a
+href="https://ajira.moh.go.tz/login/"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+Apply Now
+</a>
+
+</article>
+
+
+<!-- JOB 7 -->
+
+<article class="job-card"
+data-category="technology international"
+data-search="technology IT computer software jobs">
+
+<div class="company">
+
+<div class="company-logo">💻</div>
+
+<div>
+<strong>UN Careers</strong>
+<div class="company-name">Technology Opportunities</div>
+</div>
+
+</div>
+
+<h2>Technology & IT Jobs</h2>
+
+<div class="job-info">
+📍 Worldwide &nbsp; • &nbsp; 💻 Technology
+</div>
+
+<div class="tags">
+<span class="tag">IT</span>
+<span class="tag">Technology</span>
+<span class="tag">Digital</span>
+</div>
+
+<div class="deadline">
+📅 Check current openings
+</div>
+
+<a
+href="https://careers.un.org/job-openings"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+View Jobs
+</a>
+
+</article>
+
+
+<!-- JOB 8 -->
+
+<article class="job-card"
+data-category="tanzania graduate"
+data-search="entry level graduate jobs tanzania">
+
+<div class="company">
+
+<div class="company-logo">🚀</div>
+
+<div>
+<strong>OpportunityBridge</strong>
+<div class="company-name">Career Resources</div>
+</div>
+
+</div>
+
+<h2>Entry-Level Opportunities</h2>
+
+<div class="job-info">
+📍 Tanzania &nbsp; • &nbsp; 🎓 Entry Level
+</div>
+
+<div class="tags">
+<span class="tag">Entry Level</span>
+<span class="tag">Graduate</span>
+<span class="tag">Tanzania</span>
+</div>
+
+<div class="deadline">
+🔎 Explore current vacancies
+</div>
+
+<a
+href="https://www.ajira.go.tz/"
+target="_blank"
+rel="noopener"
+class="apply-btn">
+Explore Jobs
+</a>
+
+</article>
+
+</div>
+
+
+<div class="no-results" id="noResults">
+
+<h2>No jobs found</h2>
+
+<p>
+Try another keyword or select a different category.
+</p>
+
+</div>
 
 </main>
 
+
+<!-- FOOTER -->
+
 <footer>
 
-  <p>
-    © 2026 OpportunityBridge. All rights reserved.
-  </p>
+<div class="footer-content">
 
-  <div>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="disclaimer.html">Disclaimer</a>
-  </div>
+<div>
+
+<h3>OpportunityBridge</h3>
+
+<p>
+Connecting people to scholarships,
+jobs, internships and digital opportunities.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy Policy</a>
+
+<a href="disclaimer.html">Disclaimer</a>
+
+</div>
+
+</div>
+
+<p style="margin-top:25px;">
+© 2026 OpportunityBridge. All rights reserved.
+</p>
 
 </footer>
 
+
 <script>
-  const searchInput = document.getElementById("jobSearch");
-  const cards = document.querySelectorAll(".card");
-  const noResults = document.getElementById("noResults");
 
-  searchInput.addEventListener("input", function () {
+let currentCategory = "all";
 
-    const searchTerm = this.value.toLowerCase().trim();
 
-    let visibleCards = 0;
+function filterCategory(category,button){
 
-    cards.forEach(function(card) {
+currentCategory = category;
 
-      const searchableText =
-        (
-          card.innerText +
-          " " +
-          card.getAttribute("data-search")
-        ).toLowerCase();
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn => btn.classList.remove("active"));
 
-      if (searchableText.includes(searchTerm)) {
-        card.style.display = "";
-        visibleCards++;
-      } else {
-        card.style.display = "none";
-      }
+button.classList.add("active");
 
-    });
+filterJobs();
 
-    noResults.style.display =
-      visibleCards === 0 ? "block" : "none";
+}
 
-  });
+
+function filterJobs(){
+
+const search =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+const cards =
+document.querySelectorAll(".job-card");
+
+let visible = 0;
+
+
+cards.forEach(card => {
+
+const category =
+card.dataset.category.toLowerCase();
+
+const text =
+card.dataset.search.toLowerCase();
+
+const title =
+card.innerText.toLowerCase();
+
+
+const matchesSearch =
+text.includes(search) ||
+title.includes(search);
+
+
+const matchesCategory =
+currentCategory === "all" ||
+category.includes(currentCategory);
+
+
+if(matchesSearch && matchesCategory){
+
+card.style.display = "flex";
+
+visible++;
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
+
+
+document.getElementById("noResults").style.display =
+visible === 0 ? "block" : "none";
+
+}
+
 </script>
 
 </body>
