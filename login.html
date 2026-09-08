@@ -6,7 +6,10 @@
 
   <title>Login | OpportunityBridge</title>
 
-  <meta name="description" content="Login to your OpportunityBridge account.">
+  <meta
+    name="description"
+    content="Login to your OpportunityBridge account."
+  >
 
   <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -235,29 +238,55 @@
 
     <!-- LOGO -->
     <div class="logo">
-      <div class="logo-icon">OB</div>
-      <h1>OpportunityBridge</h1>
-      <p>Connect. Learn. Grow.</p>
+
+      <div class="logo-icon">
+        OB
+      </div>
+
+      <h1>
+        OpportunityBridge
+      </h1>
+
+      <p>
+        Connect. Learn. Grow.
+      </p>
+
     </div>
+
 
     <!-- LOGIN CARD -->
     <div class="card">
 
-      <h2>Welcome Back</h2>
+      <h2>
+        Welcome Back
+      </h2>
 
       <p class="subtitle">
         Login to your OpportunityBridge account
       </p>
 
-      <!-- Messages -->
-      <div id="successMessage" class="message success"></div>
-      <div id="errorMessage" class="message error"></div>
 
+      <!-- Messages -->
+      <div
+        id="successMessage"
+        class="message success">
+      </div>
+
+      <div
+        id="errorMessage"
+        class="message error">
+      </div>
+
+
+      <!-- LOGIN FORM -->
       <form id="loginForm">
 
         <!-- EMAIL -->
         <div class="form-group">
-          <label for="email">Email Address</label>
+
+          <label for="email">
+            Email Address
+          </label>
 
           <input
             type="email"
@@ -266,12 +295,16 @@
             autocomplete="email"
             required
           >
+
         </div>
+
 
         <!-- PASSWORD -->
         <div class="form-group">
 
-          <label for="password">Password</label>
+          <label for="password">
+            Password
+          </label>
 
           <div class="password-wrapper">
 
@@ -291,14 +324,21 @@
             </button>
 
           </div>
+
         </div>
+
 
         <!-- FORGOT PASSWORD -->
         <div class="forgot">
-          <a href="#" id="forgotPassword">
+
+          <a
+            href="#"
+            id="forgotPassword">
             Forgot password?
           </a>
+
         </div>
+
 
         <!-- LOGIN BUTTON -->
         <button
@@ -306,8 +346,13 @@
           class="login-btn"
           id="loginButton">
 
-          <span id="buttonText">Login</span>
-          <span id="loadingText" class="loading">
+          <span id="buttonText">
+            Login
+          </span>
+
+          <span
+            id="loadingText"
+            class="loading">
             Logging in...
           </span>
 
@@ -315,17 +360,28 @@
 
       </form>
 
+
       <!-- REGISTER -->
       <div class="register">
+
         Don't have an account?
-        <a href="register.html">Create Account</a>
+
+        <a href="register.html">
+          Create Account
+        </a>
+
       </div>
 
     </div>
 
+
     <!-- BACK -->
     <div class="back">
-      <a href="index.html">← Back to OpportunityBridge</a>
+
+      <a href="index.html">
+        ← Back to OpportunityBridge
+      </a>
+
     </div>
 
   </div>
@@ -389,21 +445,28 @@
        SHOW / HIDE PASSWORD
     ========================================= */
 
-    togglePassword.addEventListener("click", function () {
+    togglePassword.addEventListener(
+      "click",
+      function () {
 
-      if (passwordInput.type === "password") {
+        if (passwordInput.type === "password") {
 
-        passwordInput.type = "text";
-        togglePassword.textContent = "Hide";
+          passwordInput.type = "text";
 
-      } else {
+          togglePassword.textContent =
+            "Hide";
 
-        passwordInput.type = "password";
-        togglePassword.textContent = "Show";
+        } else {
+
+          passwordInput.type = "password";
+
+          togglePassword.textContent =
+            "Show";
+
+        }
 
       }
-
-    });
+    );
 
 
     /* =========================================
@@ -412,29 +475,37 @@
 
     function showError(message) {
 
-      successMessage.style.display = "none";
+      successMessage.style.display =
+        "none";
 
-      errorMessage.textContent = message;
-      errorMessage.style.display = "block";
+      errorMessage.textContent =
+        message;
 
+      errorMessage.style.display =
+        "block";
     }
 
 
     function showSuccess(message) {
 
-      errorMessage.style.display = "none";
+      errorMessage.style.display =
+        "none";
 
-      successMessage.textContent = message;
-      successMessage.style.display = "block";
+      successMessage.textContent =
+        message;
 
+      successMessage.style.display =
+        "block";
     }
 
 
     function hideMessages() {
 
-      successMessage.style.display = "none";
-      errorMessage.style.display = "none";
+      successMessage.style.display =
+        "none";
 
+      errorMessage.style.display =
+        "none";
     }
 
 
@@ -442,110 +513,153 @@
        LOGIN
     ========================================= */
 
-    loginForm.addEventListener("submit", async function (event) {
+    loginForm.addEventListener(
+      "submit",
+      async function (event) {
 
-      event.preventDefault();
+        event.preventDefault();
 
-      hideMessages();
+        hideMessages();
 
-      const email =
-        emailInput.value.trim();
+        const email =
+          emailInput.value.trim();
 
-      const password =
-        passwordInput.value;
-
-
-      if (!email || !password) {
-
-        showError(
-          "Please enter your email and password."
-        );
-
-        return;
-      }
+        const password =
+          passwordInput.value;
 
 
-      /* Loading */
+        if (!email || !password) {
 
-      loginButton.disabled = true;
-
-      buttonText.style.display = "none";
-      loadingText.style.display = "inline";
-
-
-      try {
-
-        const { data, error } =
-          await supabaseClient.auth.signInWithPassword({
-
-            email: email,
-            password: password
-
-          });
-
-
-        if (error) {
-
-          console.error(error);
-
-          if (
-            error.message
-              .toLowerCase()
-              .includes("invalid login credentials")
-          ) {
-
-            showError(
-              "Incorrect email or password."
-            );
-
-          } else {
-
-            showError(error.message);
-
-          }
+          showError(
+            "Please enter your email and password."
+          );
 
           return;
         }
 
 
-        /* =====================================
-           SUCCESS
-        ===================================== */
+        /* Loading */
 
-        if (data && data.user) {
+        loginButton.disabled = true;
 
-          showSuccess(
-            "Login successful! Redirecting..."
+        buttonText.style.display =
+          "none";
+
+        loadingText.style.display =
+          "inline";
+
+
+        try {
+
+          const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+
+              email: email,
+
+              password: password
+
+            });
+
+
+          if (error) {
+
+            console.error(error);
+
+
+            const errorMessageText =
+              error.message.toLowerCase();
+
+
+            /* Email not verified */
+
+            if (
+              errorMessageText.includes(
+                "email not confirmed"
+              )
+            ) {
+
+              showError(
+                "Please verify your email address before logging in."
+              );
+
+              return;
+            }
+
+
+            /* Wrong credentials */
+
+            if (
+              errorMessageText.includes(
+                "invalid login credentials"
+              )
+            ) {
+
+              showError(
+                "Incorrect email or password."
+              );
+
+              return;
+            }
+
+
+            showError(
+              error.message
+            );
+
+            return;
+          }
+
+
+          /* =====================================
+             LOGIN SUCCESS
+          ===================================== */
+
+          if (data && data.user) {
+
+            showSuccess(
+              "Login successful! Opening your dashboard..."
+            );
+
+
+            /*
+              IMPORTANT:
+              Send logged-in user to dashboard
+            */
+
+            setTimeout(
+              function () {
+
+                window.location.href =
+                  "dashboard.html";
+
+              },
+              800
+            );
+
+          }
+
+        } catch (error) {
+
+          console.error(error);
+
+          showError(
+            "Something went wrong. Please try again."
           );
 
+        } finally {
 
-          setTimeout(function () {
+          loginButton.disabled = false;
 
-            window.location.href =
-              "index.html";
+          buttonText.style.display =
+            "inline";
 
-          }, 1200);
+          loadingText.style.display =
+            "none";
 
         }
 
-      } catch (error) {
-
-        console.error(error);
-
-        showError(
-          "Something went wrong. Please try again."
-        );
-
-      } finally {
-
-        loginButton.disabled = false;
-
-        buttonText.style.display = "inline";
-        loadingText.style.display = "none";
-
       }
-
-    });
+    );
 
 
     /* =========================================
@@ -557,6 +671,8 @@
       async function (event) {
 
         event.preventDefault();
+
+        hideMessages();
 
         const email =
           emailInput.value.trim();
@@ -577,19 +693,22 @@
         try {
 
           const { error } =
-            await supabaseClient.auth.resetPasswordForEmail(
-              email,
-              {
-                redirectTo:
-                  window.location.origin +
-                  "/reset-password.html"
-              }
-            );
+            await supabaseClient.auth
+              .resetPasswordForEmail(
+                email,
+                {
+                  redirectTo:
+                    window.location.origin +
+                    "/reset-password.html"
+                }
+              );
 
 
           if (error) {
 
-            showError(error.message);
+            showError(
+              error.message
+            );
 
             return;
           }
@@ -620,25 +739,56 @@
 
     async function checkSession() {
 
-      const { data } =
-        await supabaseClient.auth.getSession();
+      try {
 
-      if (data && data.session) {
+        const { data, error } =
+          await supabaseClient.auth.getSession();
 
-        console.log(
-          "User is already logged in."
+
+        if (error) {
+
+          console.error(
+            "Session error:",
+            error
+          );
+
+          return;
+        }
+
+
+        /*
+          If the user is already logged in,
+          don't show the login page again.
+        */
+
+        if (
+          data &&
+          data.session &&
+          data.session.user
+        ) {
+
+          window.location.replace(
+            "dashboard.html"
+          );
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Unable to check session:",
+          error
         );
-
-        // Uncomment this if you want
-        // logged-in users to skip login:
-
-        // window.location.href = "index.html";
 
       }
 
     }
 
+
+    /* Run session check */
+
     checkSession();
+
 
   </script>
 
