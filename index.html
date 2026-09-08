@@ -16,7 +16,6 @@
 
   <meta name="theme-color" content="#0b4f8a">
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://absmg.github.io/">
 
   <!-- Open Graph -->
@@ -67,6 +66,7 @@
   </script>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -84,6 +84,8 @@
       text-decoration: none;
       color: inherit;
     }
+
+    /* ================= HEADER ================= */
 
     header {
       background: #0b4f8a;
@@ -110,7 +112,7 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       align-items: center;
     }
 
@@ -124,6 +126,37 @@
       opacity: .7;
     }
 
+    /* LOGIN */
+
+    .login-link {
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 7px;
+      transition: .2s;
+    }
+
+    .login-link:hover {
+      background: rgba(255,255,255,.1);
+      opacity: 1 !important;
+    }
+
+    /* REGISTER */
+
+    .register-link {
+      background: white;
+      color: #0b4f8a !important;
+      padding: 9px 15px;
+      border-radius: 7px;
+      font-weight: 700 !important;
+      transition: .2s;
+    }
+
+    .register-link:hover {
+      background: #eaf3fb;
+      transform: translateY(-1px);
+      opacity: 1 !important;
+    }
+
     .menu-btn {
       display: none;
       background: transparent;
@@ -132,6 +165,8 @@
       font-size: 28px;
       cursor: pointer;
     }
+
+    /* ================= HERO ================= */
 
     .hero {
       background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
@@ -188,6 +223,8 @@
       transform: translateY(-2px);
     }
 
+    /* ================= SECTIONS ================= */
+
     section {
       max-width: 1150px;
       margin: auto;
@@ -208,6 +245,8 @@
     .section-heading p {
       color: #667085;
     }
+
+    /* ================= CARDS ================= */
 
     .cards {
       display: grid;
@@ -251,6 +290,8 @@
       font-size: 14px;
     }
 
+    /* ================= WHY ================= */
+
     .why {
       background: white;
       max-width: none;
@@ -285,6 +326,8 @@
       font-size: 15px;
     }
 
+    /* ================= ADS ================= */
+
     .ad-container {
       max-width: 100%;
       min-height: 90px;
@@ -292,6 +335,8 @@
       text-align: center;
       overflow: hidden;
     }
+
+    /* ================= CTA ================= */
 
     .cta {
       background: #0b4f8a;
@@ -315,6 +360,8 @@
       margin-bottom: 25px;
       opacity: .9;
     }
+
+    /* ================= FOOTER ================= */
 
     footer {
       background: #092f52;
@@ -348,7 +395,10 @@
       opacity: .8;
     }
 
+    /* ================= TABLET ================= */
+
     @media (max-width: 850px) {
+
       .cards {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -369,15 +419,45 @@
         right: 0;
         background: #0b4f8a;
         flex-direction: column;
-        padding: 20px;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 20px 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,.15);
       }
 
       .nav-links.show {
         display: flex;
       }
+
+      .nav-links a {
+        padding: 12px 5px;
+        text-align: center;
+      }
+
+      .login-link {
+        border: 0;
+        padding: 12px 5px;
+      }
+
+      .register-link {
+        margin-top: 5px;
+        padding: 11px;
+        text-align: center;
+      }
     }
 
+    /* ================= MOBILE ================= */
+
     @media (max-width: 550px) {
+
+      .navbar {
+        padding: 14px 17px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
       .cards {
         grid-template-columns: 1fr;
       }
@@ -394,46 +474,93 @@
       .cta h2 {
         font-size: 27px;
       }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <nav class="navbar">
 
     <a href="index.html" class="logo">
       OpportunityBridge
     </a>
 
-    <button class="menu-btn"
-            onclick="toggleMenu()"
-            aria-label="Open navigation menu">
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Open navigation menu">
       ☰
     </button>
 
     <div class="nav-links" id="navLinks">
+
       <a href="index.html">Home</a>
-      <a href="scholarships.html">Scholarships</a>
-      <a href="jobs.html">Jobs</a>
-      <a href="internships.html">Internships</a>
-      <a href="courses.html">Courses</a>
-      <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
-      <a href="login.html">Login</a>
+
+      <a href="scholarships.html">
+        Scholarships
+      </a>
+
+      <a href="jobs.html">
+        Jobs
+      </a>
+
+      <a href="internships.html">
+        Internships
+      </a>
+
+      <a href="courses.html">
+        Courses
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="Contact.html">
+        Contact
+      </a>
+
+      <!-- LOGIN -->
+      <a href="login.html" class="login-link">
+        Login
+      </a>
+
+      <!-- REGISTER -->
+      <a href="register.html" class="register-link">
+        Register
+      </a>
+
     </div>
 
   </nav>
+
 </header>
+
 
 <main>
 
   <!-- HERO -->
+
   <section class="hero">
+
     <div class="hero-content">
 
-      <h1>Find opportunities. Move forward.</h1>
+      <h1>
+        Find opportunities. Move forward.
+      </h1>
 
       <p>
         Discover scholarships, jobs, internships and online courses
@@ -442,95 +569,150 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="scholarships.html" class="btn btn-primary">
+
+        <a
+          href="scholarships.html"
+          class="btn btn-primary">
           Explore Opportunities
         </a>
 
-        <a href="courses.html" class="btn btn-secondary">
+        <a
+          href="courses.html"
+          class="btn btn-secondary">
           Start Learning
         </a>
+
       </div>
 
     </div>
+
   </section>
 
+
   <!-- OPPORTUNITIES -->
+
   <section>
 
     <div class="section-heading">
-      <h2>Explore Opportunities</h2>
+
+      <h2>
+        Explore Opportunities
+      </h2>
+
       <p>
-        Find opportunities that match your education, career goals and skills.
+        Find opportunities that match your education,
+        career goals and skills.
       </p>
+
     </div>
+
 
     <div class="cards">
 
       <article class="card">
-        <div class="card-icon">🎓</div>
 
-        <h3>Scholarships</h3>
+        <div class="card-icon">
+          🎓
+        </div>
+
+        <h3>
+          Scholarships
+        </h3>
 
         <p>
           Find scholarship opportunities for undergraduate,
           postgraduate and international study.
         </p>
 
-        <a href="scholarships.html" class="card-link">
+        <a
+          href="scholarships.html"
+          class="card-link">
           Explore Scholarships →
         </a>
+
       </article>
 
-      <article class="card">
-        <div class="card-icon">💼</div>
 
-        <h3>Jobs</h3>
+      <article class="card">
+
+        <div class="card-icon">
+          💼
+        </div>
+
+        <h3>
+          Jobs
+        </h3>
 
         <p>
           Discover career opportunities from organizations
           and employers in Tanzania and beyond.
         </p>
 
-        <a href="jobs.html" class="card-link">
+        <a
+          href="jobs.html"
+          class="card-link">
           Find Jobs →
         </a>
+
       </article>
 
-      <article class="card">
-        <div class="card-icon">🚀</div>
 
-        <h3>Internships</h3>
+      <article class="card">
+
+        <div class="card-icon">
+          🚀
+        </div>
+
+        <h3>
+          Internships
+        </h3>
 
         <p>
           Gain practical experience through internships,
           volunteering and early-career opportunities.
         </p>
 
-        <a href="internships.html" class="card-link">
+        <a
+          href="internships.html"
+          class="card-link">
           Find Internships →
         </a>
+
       </article>
 
-      <article class="card">
-        <div class="card-icon">📚</div>
 
-        <h3>Online Courses</h3>
+      <article class="card">
+
+        <div class="card-icon">
+          📚
+        </div>
+
+        <h3>
+          Online Courses
+        </h3>
 
         <p>
           Learn technology, business, data and other
           useful skills through online courses.
         </p>
 
-        <a href="courses.html" class="card-link">
+        <a
+          href="courses.html"
+          class="card-link">
           Browse Courses →
         </a>
+
       </article>
 
     </div>
+
   </section>
 
+
   <!-- ADSENSE -->
-  <section style="padding-top:10px;padding-bottom:20px;">
+
+  <section
+    style="padding-top:10px;padding-bottom:20px;">
 
     <div class="ad-container">
 
@@ -551,47 +733,68 @@
 
   </section>
 
+
   <!-- WHY -->
+
   <div class="why">
 
     <div class="why-inner">
 
       <div class="section-heading">
-        <h2>Why OpportunityBridge?</h2>
+
+        <h2>
+          Why OpportunityBridge?
+        </h2>
 
         <p>
           One place to discover opportunities and develop
           skills for your future.
         </p>
+
       </div>
+
 
       <div class="why-grid">
 
         <div class="why-box">
-          <h3>Easy to Explore</h3>
+
+          <h3>
+            Easy to Explore
+          </h3>
 
           <p>
             Browse different opportunity categories from
             one simple and mobile-friendly platform.
           </p>
+
         </div>
 
+
         <div class="why-box">
-          <h3>Built for Students</h3>
+
+          <h3>
+            Built for Students
+          </h3>
 
           <p>
             Find resources that can help you move from
             education to career opportunities.
           </p>
+
         </div>
 
+
         <div class="why-box">
-          <h3>Keep Learning</h3>
+
+          <h3>
+            Keep Learning
+          </h3>
 
           <p>
             Develop useful skills through accessible
             online learning resources.
           </p>
+
         </div>
 
       </div>
@@ -600,19 +803,25 @@
 
   </div>
 
+
   <!-- CTA -->
+
   <section class="cta">
 
     <div class="cta-inner">
 
-      <h2>Ready to build your future?</h2>
+      <h2>
+        Ready to build your future?
+      </h2>
 
       <p>
         Explore scholarships, jobs, internships and courses
         available through OpportunityBridge.
       </p>
 
-      <a href="scholarships.html" class="btn btn-primary">
+      <a
+        href="scholarships.html"
+        class="btn btn-primary">
         Explore Now
       </a>
 
@@ -622,31 +831,61 @@
 
 </main>
 
+
+<!-- FOOTER -->
+
 <footer>
 
   <div class="footer-inner">
 
-    <strong>OpportunityBridge</strong>
+    <strong>
+      OpportunityBridge
+    </strong>
 
     <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
-      <a href="Privacy.html">Privacy Policy</a>
-      <a href="Disclaimer.html">Disclaimer</a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="Contact.html">
+        Contact
+      </a>
+
+      <a href="Privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="Disclaimer.html">
+        Disclaimer
+      </a>
+
     </div>
 
   </div>
 
+
   <div class="copyright">
-    © 2026 OpportunityBridge. All rights reserved.
+
+    © 2026 OpportunityBridge.
+    All rights reserved.
+
   </div>
 
 </footer>
 
+
 <script>
+
   function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
+
+    document
+      .getElementById("navLinks")
+      .classList
+      .toggle("show");
+
   }
+
 </script>
 
 </body>
