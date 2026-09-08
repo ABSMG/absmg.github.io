@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Create Account | OpportunityBridge</title>
 
   <meta name="description"
-        content="Create your OpportunityBridge account and stay connected with scholarships, jobs, internships, courses and digital skills.">
+        content="Create your OpportunityBridge account and discover scholarships, jobs, internships, courses and digital skills.">
 
-  <link rel="canonical" href="https://absmg.github.io/register.html">
+  <link rel="canonical"
+        href="https://absmg.github.io/register.html">
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -37,25 +36,20 @@
       flex-direction: column;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
-
     header {
-      background: #ffffff;
+      background: #fff;
       border-bottom: 1px solid #e7ebf2;
     }
 
     .header-inner {
       width: 92%;
       max-width: 1150px;
-      margin: auto;
       min-height: 70px;
+      margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .logo {
@@ -89,14 +83,6 @@
       font-size: 14px;
     }
 
-    .home-link:hover {
-      text-decoration: underline;
-    }
-
-    /* =========================
-       MAIN
-    ========================= */
-
     main {
       flex: 1;
 
@@ -113,14 +99,15 @@
     }
 
     .register-card {
-      background: #ffffff;
+      background: white;
 
       border: 1px solid #e5e9f0;
       border-radius: 22px;
 
       padding: 38px;
 
-      box-shadow: 0 20px 60px rgba(20, 33, 61, 0.08);
+      box-shadow:
+        0 20px 60px rgba(20, 33, 61, 0.08);
     }
 
     .top-icon {
@@ -156,10 +143,6 @@
       line-height: 1.6;
     }
 
-    /* =========================
-       FORM
-    ========================= */
-
     .form-group {
       margin-bottom: 19px;
     }
@@ -168,7 +151,6 @@
       display: block;
 
       color: #26334d;
-
       font-size: 14px;
       font-weight: 700;
 
@@ -179,7 +161,7 @@
       position: relative;
     }
 
-    .input-wrapper input {
+    input {
       width: 100%;
 
       padding: 14px 15px;
@@ -195,7 +177,7 @@
       transition: 0.25s;
     }
 
-    .input-wrapper input:focus {
+    input:focus {
       border-color: #2563eb;
 
       box-shadow:
@@ -203,7 +185,7 @@
     }
 
     .password-wrapper input {
-      padding-right: 85px;
+      padding-right: 80px;
     }
 
     .show-password {
@@ -225,10 +207,6 @@
       cursor: pointer;
     }
 
-    /* =========================
-       PASSWORD STRENGTH
-    ========================= */
-
     .strength-container {
       margin-top: 8px;
     }
@@ -238,7 +216,6 @@
       height: 5px;
 
       background: #e9edf3;
-
       border-radius: 10px;
 
       overflow: hidden;
@@ -247,8 +224,6 @@
     .strength-progress {
       width: 0%;
       height: 100%;
-
-      background: #94a3b8;
 
       transition: 0.3s;
     }
@@ -262,10 +237,6 @@
       color: #667085;
     }
 
-    /* =========================
-       CHECKBOX
-    ========================= */
-
     .terms {
       display: flex;
       align-items: flex-start;
@@ -276,8 +247,8 @@
     }
 
     .terms input {
+      width: auto;
       margin-top: 4px;
-      accent-color: #2563eb;
     }
 
     .terms label {
@@ -290,10 +261,6 @@
       color: #2563eb;
       font-weight: 700;
     }
-
-    /* =========================
-       BUTTON
-    ========================= */
 
     .create-btn {
       width: 100%;
@@ -317,18 +284,12 @@
 
     .create-btn:hover {
       background: #2563eb;
-      transform: translateY(-1px);
     }
 
     .create-btn:disabled {
       opacity: 0.65;
       cursor: not-allowed;
-      transform: none;
     }
-
-    /* =========================
-       MESSAGES
-    ========================= */
 
     .message {
       display: none;
@@ -356,10 +317,6 @@
       border: 1px solid #bbf7d0;
     }
 
-    /* =========================
-       LOGIN
-    ========================= */
-
     .login-text {
       text-align: center;
 
@@ -375,10 +332,6 @@
       font-weight: 800;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
       text-align: center;
 
@@ -388,10 +341,6 @@
 
       font-size: 12px;
     }
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media (max-width: 600px) {
 
@@ -416,9 +365,7 @@
         width: 38px;
         height: 38px;
       }
-
     }
-
   </style>
 </head>
 
@@ -426,9 +373,7 @@
 
 <div class="page">
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+  <!-- HEADER -->
 
   <header>
 
@@ -455,9 +400,7 @@
   </header>
 
 
-  <!-- =========================
-       MAIN
-  ========================= -->
+  <!-- MAIN -->
 
   <main>
 
@@ -469,7 +412,6 @@
           👤
         </div>
 
-
         <div class="title">
 
           <h1>
@@ -477,31 +419,29 @@
           </h1>
 
           <p>
-            Join OpportunityBridge and stay connected
-            with scholarships, jobs, internships,
+            Join OpportunityBridge and discover
+            scholarships, jobs, internships,
             courses and digital skills.
           </p>
 
         </div>
 
 
-        <!-- ERROR MESSAGE -->
+        <!-- ERROR -->
 
         <div id="errorMessage"
              class="message error-message">
         </div>
 
 
-        <!-- SUCCESS MESSAGE -->
+        <!-- SUCCESS -->
 
         <div id="successMessage"
              class="message success-message">
         </div>
 
 
-        <!-- =====================
-             REGISTRATION FORM
-        ====================== -->
+        <!-- FORM -->
 
         <form id="registerForm">
 
@@ -519,7 +459,6 @@
               <input
                 type="text"
                 id="fullName"
-                name="fullName"
                 placeholder="Enter your full name"
                 autocomplete="name"
                 required
@@ -543,7 +482,6 @@
               <input
                 type="email"
                 id="email"
-                name="email"
                 placeholder="Enter your email"
                 autocomplete="email"
                 required
@@ -567,7 +505,6 @@
               <input
                 type="password"
                 id="password"
-                name="password"
                 placeholder="Create a password"
                 autocomplete="new-password"
                 minlength="8"
@@ -583,7 +520,6 @@
 
             </div>
 
-
             <div class="strength-container">
 
               <div class="strength-bar">
@@ -598,7 +534,9 @@
               <span
                 id="strengthText"
                 class="strength-text">
+
                 Use at least 8 characters.
+
               </span>
 
             </div>
@@ -619,7 +557,6 @@
               <input
                 type="password"
                 id="confirmPassword"
-                name="confirmPassword"
                 placeholder="Confirm your password"
                 autocomplete="new-password"
                 minlength="8"
@@ -664,7 +601,7 @@
           </div>
 
 
-          <!-- CREATE ACCOUNT -->
+          <!-- BUTTON -->
 
           <button
             type="submit"
@@ -674,7 +611,6 @@
             Create Account
 
           </button>
-
 
         </form>
 
@@ -698,10 +634,6 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
   <footer>
 
     © 2026 OpportunityBridge.
@@ -712,11 +644,35 @@
 </div>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<!-- =========================================
+     SUPABASE
+========================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
+
+  /* =========================================
+     SUPABASE CONFIGURATION
+  ========================================= */
+
+  const SUPABASE_URL =
+    "https://wrdpnhqwolqovoukhlns.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
 
   const registerForm =
     document.getElementById("registerForm");
@@ -758,249 +714,386 @@
     document.getElementById("strengthText");
 
 
-  /* =========================
+  /* =========================================
      SHOW / HIDE PASSWORD
-  ========================= */
+  ========================================= */
 
-  showPassword.addEventListener("click", function () {
+  showPassword.addEventListener(
+    "click",
+    function () {
 
-    if (password.type === "password") {
+      if (password.type === "password") {
 
-      password.type = "text";
-      showPassword.textContent = "Hide";
+        password.type = "text";
 
-    } else {
+        showPassword.textContent =
+          "Hide";
 
-      password.type = "password";
-      showPassword.textContent = "Show";
+      } else {
 
-    }
+        password.type = "password";
 
-  });
+        showPassword.textContent =
+          "Show";
 
-
-  showConfirmPassword.addEventListener("click", function () {
-
-    if (confirmPassword.type === "password") {
-
-      confirmPassword.type = "text";
-      showConfirmPassword.textContent = "Hide";
-
-    } else {
-
-      confirmPassword.type = "password";
-      showConfirmPassword.textContent = "Show";
+      }
 
     }
+  );
 
-  });
+
+  showConfirmPassword.addEventListener(
+    "click",
+    function () {
+
+      if (confirmPassword.type === "password") {
+
+        confirmPassword.type = "text";
+
+        showConfirmPassword.textContent =
+          "Hide";
+
+      } else {
+
+        confirmPassword.type =
+          "password";
+
+        showConfirmPassword.textContent =
+          "Show";
+
+      }
+
+    }
+  );
 
 
-  /* =========================
+  /* =========================================
      PASSWORD STRENGTH
-  ========================= */
+  ========================================= */
 
-  password.addEventListener("input", function () {
+  password.addEventListener(
+    "input",
+    function () {
 
-    const value = password.value;
+      const value =
+        password.value;
 
-    let strength = 0;
+      let strength = 0;
 
-    if (value.length >= 8) {
-      strength++;
-    }
+      if (value.length >= 8) {
+        strength++;
+      }
 
-    if (/[A-Z]/.test(value)) {
-      strength++;
-    }
+      if (/[A-Z]/.test(value)) {
+        strength++;
+      }
 
-    if (/[a-z]/.test(value)) {
-      strength++;
-    }
+      if (/[a-z]/.test(value)) {
+        strength++;
+      }
 
-    if (/[0-9]/.test(value)) {
-      strength++;
-    }
+      if (/[0-9]/.test(value)) {
+        strength++;
+      }
 
-    if (/[^A-Za-z0-9]/.test(value)) {
-      strength++;
-    }
-
-
-    if (value.length === 0) {
-
-      strengthProgress.style.width = "0%";
-
-      strengthText.textContent =
-        "Use at least 8 characters.";
-
-    }
-
-    else if (strength <= 2) {
-
-      strengthProgress.style.width = "35%";
-
-      strengthText.textContent =
-        "Weak password";
-
-    }
-
-    else if (strength === 3) {
-
-      strengthProgress.style.width = "60%";
-
-      strengthText.textContent =
-        "Medium password";
-
-    }
-
-    else if (strength === 4) {
-
-      strengthProgress.style.width = "80%";
-
-      strengthText.textContent =
-        "Good password";
-
-    }
-
-    else {
-
-      strengthProgress.style.width = "100%";
-
-      strengthText.textContent =
-        "Strong password";
-
-    }
-
-  });
+      if (/[^A-Za-z0-9]/.test(value)) {
+        strength++;
+      }
 
 
-  /* =========================
-     FORM SUBMISSION
-  ========================= */
+      if (value.length === 0) {
 
-  registerForm.addEventListener("submit", function (event) {
+        strengthProgress.style.width =
+          "0%";
 
-    event.preventDefault();
+        strengthText.textContent =
+          "Use at least 8 characters.";
 
+      }
 
-    errorMessage.style.display = "none";
-    successMessage.style.display = "none";
+      else if (strength <= 2) {
 
+        strengthProgress.style.width =
+          "35%";
 
-    const nameValue =
-      fullName.value.trim();
+        strengthText.textContent =
+          "Weak password";
 
-    const emailValue =
-      email.value.trim();
+      }
 
-    const passwordValue =
-      password.value;
+      else if (strength === 3) {
 
-    const confirmValue =
-      confirmPassword.value;
+        strengthProgress.style.width =
+          "60%";
 
+        strengthText.textContent =
+          "Medium password";
 
-    /* NAME */
+      }
 
-    if (nameValue.length < 2) {
+      else if (strength === 4) {
 
-      showError(
-        "Please enter your full name."
-      );
+        strengthProgress.style.width =
+          "80%";
 
-      return;
+        strengthText.textContent =
+          "Good password";
+
+      }
+
+      else {
+
+        strengthProgress.style.width =
+          "100%";
+
+        strengthText.textContent =
+          "Strong password";
+
+      }
 
     }
+  );
 
 
-    /* EMAIL */
+  /* =========================================
+     REGISTER USER
+  ========================================= */
 
-    const emailPattern =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  registerForm.addEventListener(
+    "submit",
+    async function (event) {
 
+      event.preventDefault();
 
-    if (!emailPattern.test(emailValue)) {
-
-      showError(
-        "Please enter a valid email address."
-      );
-
-      return;
-
-    }
+      hideMessages();
 
 
-    /* PASSWORD */
+      const nameValue =
+        fullName.value.trim();
 
-    if (passwordValue.length < 8) {
+      const emailValue =
+        email.value.trim();
 
-      showError(
-        "Password must contain at least 8 characters."
-      );
+      const passwordValue =
+        password.value;
 
-      return;
-
-    }
-
-
-    /* CONFIRM PASSWORD */
-
-    if (passwordValue !== confirmValue) {
-
-      showError(
-        "Passwords do not match."
-      );
-
-      return;
-
-    }
+      const confirmValue =
+        confirmPassword.value;
 
 
-    /* TERMS */
+      /* VALIDATION */
 
-    if (!terms.checked) {
+      if (nameValue.length < 2) {
 
-      showError(
-        "Please agree to the Privacy Policy and Disclaimer."
-      );
+        showError(
+          "Please enter your full name."
+        );
 
-      return;
-
-    }
-
-
-    /* =========================
-       FRONTEND SUCCESS
-    ========================= */
-
-    createBtn.disabled = true;
-
-    createBtn.textContent =
-      "Creating Account...";
+        return;
+      }
 
 
-    setTimeout(function () {
+      const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      successMessage.textContent =
-        "Your registration form is valid. Account creation needs to be connected to a secure authentication system before accounts can be saved.";
 
-      successMessage.style.display =
-        "block";
+      if (!emailPattern.test(emailValue)) {
 
-      createBtn.disabled = false;
+        showError(
+          "Please enter a valid email address."
+        );
+
+        return;
+      }
+
+
+      if (passwordValue.length < 8) {
+
+        showError(
+          "Password must contain at least 8 characters."
+        );
+
+        return;
+      }
+
+
+      if (passwordValue !== confirmValue) {
+
+        showError(
+          "Passwords do not match."
+        );
+
+        return;
+      }
+
+
+      if (!terms.checked) {
+
+        showError(
+          "Please agree to the Privacy Policy and Disclaimer."
+        );
+
+        return;
+      }
+
+
+      /* BUTTON */
+
+      createBtn.disabled = true;
 
       createBtn.textContent =
-        "Create Account";
-
-    }, 700);
-
-  });
+        "Creating Account...";
 
 
-  /* =========================
-     ERROR FUNCTION
-  ========================= */
+      try {
+
+        /* =================================
+           CREATE SUPABASE AUTH USER
+        ================================= */
+
+        const {
+          data,
+          error
+        } = await supabaseClient.auth.signUp({
+
+          email: emailValue,
+
+          password: passwordValue,
+
+          options: {
+
+            data: {
+
+              full_name: nameValue
+
+            }
+
+          }
+
+        });
+
+
+        if (error) {
+
+          throw error;
+
+        }
+
+
+        /* =================================
+           PROFILE
+        ================================= */
+
+        /*
+          Normally the database trigger creates
+          the profile automatically.
+
+          We do not insert the password into
+          the profiles table.
+        */
+
+
+        /* =================================
+           SUCCESS
+        ================================= */
+
+        successMessage.innerHTML =
+          "Account created successfully! " +
+          "Please check your email to verify your account.";
+
+        successMessage.style.display =
+          "block";
+
+
+        registerForm.reset();
+
+        strengthProgress.style.width =
+          "0%";
+
+        strengthText.textContent =
+          "Use at least 8 characters.";
+
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "Registration error:",
+          error
+        );
+
+
+        showError(
+          getFriendlyError(error.message)
+        );
+
+      }
+
+      finally {
+
+        createBtn.disabled = false;
+
+        createBtn.textContent =
+          "Create Account";
+
+      }
+
+    }
+  );
+
+
+  /* =========================================
+     FRIENDLY ERROR MESSAGES
+  ========================================= */
+
+  function getFriendlyError(message) {
+
+    if (!message) {
+
+      return "Something went wrong. Please try again.";
+
+    }
+
+
+    if (
+      message.toLowerCase()
+      .includes("already registered")
+    ) {
+
+      return "This email is already registered. Please login instead.";
+
+    }
+
+
+    if (
+      message.toLowerCase()
+      .includes("invalid email")
+    ) {
+
+      return "Please enter a valid email address.";
+
+    }
+
+
+    if (
+      message.toLowerCase()
+      .includes("password")
+    ) {
+
+      return "Your password does not meet the required security rules.";
+
+    }
+
+
+    return message;
+
+  }
+
+
+  /* =========================================
+     ERROR
+  ========================================= */
 
   function showError(message) {
 
@@ -1010,10 +1103,23 @@
     errorMessage.style.display =
       "block";
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    successMessage.style.display =
+      "none";
+
+  }
+
+
+  /* =========================================
+     HIDE MESSAGES
+  ========================================= */
+
+  function hideMessages() {
+
+    errorMessage.style.display =
+      "none";
+
+    successMessage.style.display =
+      "none";
 
   }
 
