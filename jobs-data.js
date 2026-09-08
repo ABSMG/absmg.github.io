@@ -2,16 +2,16 @@ const jobs = [
 
   {
     title: "Government Job Opportunities",
-    company: "Public Service Recruitment Secretariat",
+    company: "Public Service Recruitment Secretariat (PSRS)",
     location: "Tanzania",
     locationCategory: "Tanzania",
     type: "Full-time",
-    level: "Graduate",
+    level: "Various",
     category: "Graduate",
     icon: "🇹🇿",
-    deadline: "Check official portal",
+    deadline: "Varies by vacancy",
     description:
-      "Find current government vacancies and recruitment opportunities available through the official Tanzania recruitment portal.",
+      "Explore current government vacancies published by the Public Service Recruitment Secretariat.",
     applyUrl:
       "https://www.ajira.go.tz/"
   },
@@ -25,15 +25,15 @@ const jobs = [
     level: "Various",
     category: "International",
     icon: "🌎",
-    deadline: "Varies by position",
+    deadline: "Varies by vacancy",
     description:
-      "Explore official United Nations career opportunities available in different countries and professional fields.",
+      "Search official United Nations job openings and apply for positions that match your qualifications.",
     applyUrl:
-      "https://careers.un.org/job-openings"
+      "https://careers.un.org/jobs"
   },
 
   {
-    title: "Healthcare Opportunities",
+    title: "Healthcare Job Opportunities",
     company: "Ministry of Health Tanzania",
     location: "Tanzania",
     locationCategory: "Tanzania",
@@ -41,27 +41,27 @@ const jobs = [
     level: "Various",
     category: "Healthcare",
     icon: "🏥",
-    deadline: "Check official portal",
+    deadline: "Varies by vacancy",
     description:
-      "Explore healthcare-related recruitment opportunities through the official Ministry of Health employment portal.",
+      "Access the official Ministry of Health Ajira Portal for healthcare recruitment opportunities.",
     applyUrl:
-      "https://ajira.moh.go.tz/login/"
+      "https://ajira.moh.go.tz/authentication/login"
   },
 
   {
-    title: "Technology & IT Careers",
+    title: "Technology & IT Opportunities",
     company: "United Nations",
     location: "Worldwide",
     locationCategory: "International",
     type: "Full-time",
-    level: "Professional",
+    level: "Various",
     category: "Technology",
     icon: "💻",
-    deadline: "Varies by position",
+    deadline: "Varies by vacancy",
     description:
-      "Explore technology, information systems, digital and other professional opportunities through UN Careers.",
+      "Explore technology, information systems and digital career opportunities through UN Careers.",
     applyUrl:
-      "https://careers.un.org/job-openings"
+      "https://careers.un.org/jobs"
   },
 
   {
@@ -73,27 +73,27 @@ const jobs = [
     level: "Entry-level",
     category: "Graduate",
     icon: "🎓",
-    deadline: "Check official portal",
+    deadline: "Varies by vacancy",
     description:
-      "Explore entry-level and graduate opportunities and check current requirements directly from the official recruitment portal.",
+      "Explore government opportunities suitable for graduates and other qualified applicants.",
     applyUrl:
       "https://www.ajira.go.tz/"
   },
 
   {
-    title: "Remote Work Opportunities",
-    company: "International Opportunities",
-    location: "Remote",
+    title: "Remote & International Opportunities",
+    company: "United Nations Careers",
+    location: "Worldwide",
     locationCategory: "Remote",
-    type: "Remote",
+    type: "Remote / Various",
     level: "Various",
     category: "Remote",
     icon: "🌍",
-    deadline: "Varies by position",
+    deadline: "Varies by vacancy",
     description:
-      "Discover international opportunities that may offer remote or flexible working arrangements. Always confirm remote eligibility before applying.",
+      "Browse international opportunities and check each vacancy to confirm its location and remote-work eligibility.",
     applyUrl:
-      "https://careers.un.org/job-openings"
+      "https://careers.un.org/jobs"
   }
 
 ];
