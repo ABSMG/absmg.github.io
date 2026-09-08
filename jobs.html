@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jobs | Tanzania Digital Hub</title>
+  <title>Jobs | OpportunityBridge</title>
 
-  <meta name="description"
-    content="Find jobs in Tanzania, remote jobs, graduate jobs, international jobs, healthcare and technology opportunities.">
+  <meta
+    name="description"
+    content="Discover verified job opportunities in Tanzania, Africa and around the world with OpportunityBridge."
+  >
 
-  <meta name="keywords"
-    content="jobs Tanzania, jobs in Tanzania, graduate jobs, remote jobs, international jobs, healthcare jobs, technology jobs">
+  <meta name="theme-color" content="#0b1f3a">
 
   <style>
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -24,740 +26,1559 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: #f5f8fc;
+      color: #14213d;
       line-height: 1.6;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
-    .container {
-      width: 92%;
-      max-width: 1180px;
-      margin: auto;
+    button,
+    input {
+      font: inherit;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e2e8f0;
+
+      background: rgba(11, 31, 58, 0.97);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .nav {
-      min-height: 70px;
+    .nav-container {
+      width: min(1180px, 92%);
+      margin: auto;
+
+      min-height: 72px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
     }
 
     .logo {
-      font-size: 21px;
-      font-weight: 900;
-      color: #0f766e;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: #0f172a;
-    }
-
-    nav {
       display: flex;
-      gap: 20px;
       align-items: center;
-    }
+      gap: 10px;
 
-    nav a {
-      color: #334155;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #0f766e;
-    }
-
-    /* HERO */
-    .hero {
-      background:
-        linear-gradient(135deg, #0f766e, #115e59 55%, #0f172a);
       color: white;
-      padding: 75px 0 85px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
-    .hero-content {
-      max-width: 850px;
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background: linear-gradient(
+        135deg,
+        #1688ff,
+        #5b5ff0
+      );
+
+      box-shadow: 0 8px 25px rgba(22,136,255,0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links a {
+      color: #d9e5f5;
+
+      padding: 10px 13px;
+
+      border-radius: 9px;
+
+      font-size: 0.92rem;
+      font-weight: 600;
+
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      border: 0;
+      background: transparent;
+      color: white;
+
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(38,134,255,0.25),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #081a32,
+          #0b2b50 55%,
+          #103d6d
+        );
+
+      color: white;
+    }
+
+    .hero-container {
+      width: min(1180px, 92%);
       margin: auto;
+
+      padding: 82px 0 90px;
+
       text-align: center;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 7px 14px;
-      border-radius: 50px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.25);
-      font-size: 13px;
-      margin-bottom: 18px;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 8px 15px;
+
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 100px;
+
+      background: rgba(255,255,255,0.07);
+
+      color: #dcecff;
+
+      font-size: 0.84rem;
+      font-weight: 700;
+
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 7vw, 64px);
-      line-height: 1.05;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+
+      line-height: 1.08;
+
+      letter-spacing: -1.5px;
+
       margin-bottom: 18px;
     }
 
+    .hero h1 span {
+      background: linear-gradient(
+        90deg,
+        #59b7ff,
+        #9aa4ff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
     .hero p {
-      color: #dbeafe;
-      font-size: 17px;
-      max-width: 700px;
+      max-width: 680px;
+      margin: auto;
+
+      color: #c8d7e9;
+
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    .search-wrapper {
+      width: min(850px, 92%);
+      margin: -32px auto 0;
+
+      position: relative;
+      z-index: 10;
+    }
+
+    .search-box {
+      background: white;
+
+      border-radius: 18px;
+
+      padding: 10px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      box-shadow:
+        0 18px 55px rgba(14,35,65,0.16);
+
+      border: 1px solid #e5ebf3;
+    }
+
+    .search-icon {
+      padding-left: 15px;
+
+      color: #718198;
+
+      font-size: 1.1rem;
+    }
+
+    #searchInput {
+      flex: 1;
+
+      border: 0;
+      outline: 0;
+
+      padding: 15px 8px;
+
+      color: #14213d;
+
+      background: transparent;
+
+      font-size: 1rem;
+    }
+
+    #searchInput::placeholder {
+      color: #9aa7b8;
+    }
+
+    .search-button {
+      border: 0;
+
+      background: linear-gradient(
+        135deg,
+        #1677e8,
+        #4d63e9
+      );
+
+      color: white;
+
+      padding: 13px 20px;
+
+      border-radius: 12px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: 0.25s ease;
+    }
+
+    .search-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(22,119,232,0.25);
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      width: min(1180px, 92%);
       margin: auto;
     }
 
-    /* SEARCH */
-    .search-area {
-      margin-top: 30px;
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-heading {
       display: flex;
-      background: white;
-      padding: 7px;
-      border-radius: 14px;
-      box-shadow: 0 15px 40px rgba(0,0,0,.18);
-    }
-
-    .search-area input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 15px;
-      font-size: 16px;
-      color: #0f172a;
-    }
-
-    .search-btn {
-      border: none;
-      background: #f59e0b;
-      color: #111827;
-      font-weight: 900;
-      padding: 0 25px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    /* MAIN */
-    main {
-      padding: 55px 0;
-    }
-
-    .top-row {
-      display: flex;
+      align-items: end;
       justify-content: space-between;
-      align-items: center;
+
       gap: 20px;
+
       margin-bottom: 25px;
     }
 
-    .top-row h2 {
-      font-size: 30px;
+    .section-heading h2 {
+      font-size: 1.75rem;
+      letter-spacing: -0.5px;
     }
 
-    .job-count {
-      color: #64748b;
-      font-size: 14px;
+    .section-heading p {
+      color: #718198;
+      font-size: 0.94rem;
     }
 
-    /* FILTERS */
+    /* =========================
+       FILTERS
+    ========================== */
+
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 35px;
+      gap: 9px;
+
+      margin-bottom: 32px;
     }
 
     .filter-btn {
-      border: 1px solid #cbd5e1;
+      border: 1px solid #dce4ee;
+
       background: white;
-      color: #334155;
-      padding: 10px 16px;
-      border-radius: 50px;
-      font-weight: 700;
+
+      color: #526176;
+
+      padding: 9px 15px;
+
+      border-radius: 100px;
+
       cursor: pointer;
-      transition: .2s;
+
+      font-weight: 700;
+      font-size: 0.86rem;
+
+      transition: 0.25s ease;
     }
 
-    .filter-btn:hover,
+    .filter-btn:hover {
+      border-color: #368ce9;
+      color: #176ec8;
+      transform: translateY(-1px);
+    }
+
     .filter-btn.active {
-      background: #0f766e;
       color: white;
-      border-color: #0f766e;
+
+      border-color: transparent;
+
+      background: linear-gradient(
+        135deg,
+        #1677e8,
+        #4d63e9
+      );
+
+      box-shadow:
+        0 7px 18px rgba(22,119,232,0.2);
     }
 
-    /* JOB GRID */
+    /* =========================
+       JOB GRID
+    ========================== */
+
     .jobs-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
       gap: 22px;
     }
 
     .job-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 8px 25px rgba(15,23,42,.05);
-      transition: .25s;
+      position: relative;
+
       display: flex;
       flex-direction: column;
+
+      background: white;
+
+      border: 1px solid #e4eaf2;
+
+      border-radius: 18px;
+
+      padding: 24px;
+
+      min-height: 355px;
+
+      box-shadow:
+        0 8px 25px rgba(22,42,70,0.05);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+      animation: cardIn 0.45s ease both;
     }
 
     .job-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 35px rgba(15,23,42,.11);
+
+      border-color: #cbdcf1;
+
+      box-shadow:
+        0 18px 40px rgba(22,42,70,0.1);
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .job-top {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 17px;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 18px;
     }
 
-    .company-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 13px;
-      background: #ecfeff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
+    .job-icon {
+      width: 52px;
+      height: 52px;
+
+      display: grid;
+      place-items: center;
+
+      background: #edf5ff;
+
+      border-radius: 14px;
+
+      font-size: 1.55rem;
     }
 
-    .category {
+    .job-type {
       display: inline-block;
-      font-size: 11px;
+
+      padding: 6px 10px;
+
+      border-radius: 100px;
+
+      background: #f0f5fa;
+
+      color: #53647b;
+
+      font-size: 0.72rem;
       font-weight: 800;
-      background: #f1f5f9;
-      color: #475569;
-      padding: 6px 9px;
-      border-radius: 50px;
+
+      white-space: nowrap;
     }
 
     .job-card h3 {
-      font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 8px;
+      font-size: 1.12rem;
+
+      line-height: 1.35;
+
+      margin-bottom: 7px;
+
+      color: #13233d;
     }
 
     .company {
-      color: #0f766e;
-      font-weight: 800;
-      font-size: 14px;
-      margin-bottom: 15px;
+      color: #3978b9;
+
+      font-size: 0.88rem;
+
+      font-weight: 700;
+
+      margin-bottom: 14px;
     }
 
-    .job-info {
+    .job-description {
+      color: #68778d;
+
+      font-size: 0.88rem;
+
+      margin-bottom: 18px;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+    }
+
+    .job-meta {
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
-      margin-bottom: 15px;
-    }
 
-    .info {
-      font-size: 12px;
-      color: #64748b;
-      background: #f8fafc;
-      padding: 6px 8px;
-      border-radius: 7px;
-    }
-
-    .description {
-      color: #64748b;
-      font-size: 14px;
       margin-bottom: 20px;
-      flex-grow: 1;
+    }
+
+    .meta-item {
+      padding: 6px 9px;
+
+      background: #f7f9fc;
+
+      border: 1px solid #e8edf4;
+
+      border-radius: 8px;
+
+      color: #627188;
+
+      font-size: 0.74rem;
+
+      font-weight: 600;
+    }
+
+    .job-footer {
+      margin-top: auto;
+
+      padding-top: 17px;
+
+      border-top: 1px solid #edf0f5;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
     }
 
     .deadline {
-      font-size: 12px;
-      color: #64748b;
-      margin-bottom: 15px;
-    }
+      color: #7a8799;
 
-    .deadline strong {
-      color: #dc2626;
+      font-size: 0.72rem;
+
+      font-weight: 600;
     }
 
     .apply-btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: #0f766e;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(
+        135deg,
+        #1677e8,
+        #4d63e9
+      );
+
       color: white;
-      padding: 12px;
+
+      padding: 10px 15px;
+
       border-radius: 10px;
+
+      font-size: 0.8rem;
+
       font-weight: 800;
-      transition: .2s;
+
+      transition: 0.25s ease;
+
+      white-space: nowrap;
     }
 
     .apply-btn:hover {
-      background: #115e59;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 20px rgba(22,119,232,0.25);
     }
 
-    /* EMPTY */
-    .empty {
+    /* =========================
+       EMPTY STATE
+    ========================== */
+
+    .empty-state {
       display: none;
+
       text-align: center;
-      padding: 60px 20px;
-      color: #64748b;
+
+      padding: 65px 20px;
+
+      background: white;
+
+      border: 1px dashed #cbd5e2;
+
+      border-radius: 18px;
+
+      color: #708096;
     }
 
-    .empty-icon {
-      font-size: 45px;
-      margin-bottom: 10px;
+    .empty-state-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
     }
 
-    /* NOTICE */
-    .notice {
-      margin-top: 45px;
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      padding: 20px;
-      border-radius: 14px;
-      color: #713f12;
-      font-size: 14px;
+    .empty-state h3 {
+      color: #263852;
+      margin-bottom: 6px;
     }
 
-    /* FOOTER */
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      margin: 10px 0 75px;
+
+      padding: 48px 35px;
+
+      text-align: center;
+
+      border-radius: 22px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(82,160,255,0.22),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #0b1f3a,
+          #123e6a
+        );
+
+      color: white;
+
+      box-shadow:
+        0 18px 45px rgba(11,31,58,0.14);
+    }
+
+    .cta h2 {
+      font-size: 1.8rem;
+
+      margin-bottom: 9px;
+    }
+
+    .cta p {
+      color: #c9d9ec;
+
+      max-width: 620px;
+
+      margin: auto auto 22px;
+
+      font-size: 0.93rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+
+      padding: 11px 20px;
+
+      background: white;
+
+      color: #0c3156;
+
+      border-radius: 10px;
+
+      font-size: 0.85rem;
+
+      font-weight: 800;
+
+      transition: 0.25s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer {
-      background: #020617;
-      color: #cbd5e1;
-      padding: 45px 0 20px;
-      margin-top: 40px;
+      background: #08182d;
+
+      color: #aebed2;
+
+      padding: 55px 0 25px;
+    }
+
+    .footer-container {
+      width: min(1180px, 92%);
+      margin: auto;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 30px;
+
+      grid-template-columns:
+        2fr 1fr 1fr;
+
+      gap: 45px;
+
+      padding-bottom: 35px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    footer h3 {
+    .footer-brand {
+      max-width: 430px;
+    }
+
+    .footer-brand h3 {
       color: white;
+
+      font-size: 1.25rem;
+
       margin-bottom: 12px;
     }
 
-    footer p {
-      font-size: 14px;
-      color: #94a3b8;
+    .footer-brand p {
+      font-size: 0.87rem;
+
+      color: #9dafc4;
     }
 
-    footer a {
-      display: block;
-      color: #cbd5e1;
-      margin: 7px 0;
-      font-size: 14px;
-    }
-
-    footer a:hover {
+    .footer-column h4 {
       color: white;
+
+      font-size: 0.9rem;
+
+      margin-bottom: 14px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      color: #9dafc4;
+
+      font-size: 0.83rem;
+
+      margin-bottom: 9px;
+
+      transition: 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: white;
+      transform: translateX(2px);
     }
 
     .copyright {
-      border-top: 1px solid #1e293b;
-      margin-top: 30px;
-      padding-top: 18px;
       text-align: center;
-      font-size: 13px;
-      color: #64748b;
+
+      padding-top: 22px;
+
+      font-size: 0.76rem;
+
+      color: #71859e;
     }
 
-    /* MOBILE */
-    @media(max-width: 900px) {
-      nav {
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .jobs-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          1.5fr 1fr 1fr;
+      }
+
+      .nav-links a {
+        padding: 9px 8px;
+        font-size: 0.82rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .nav-container {
+        min-height: 64px;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 64px;
+        left: 0;
+        right: 0;
+
+        padding: 12px;
+
+        background: #081a32;
+
+        border-top: 1px solid rgba(255,255,255,0.08);
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 14px;
+      }
+
+      .hero-container {
+        padding: 65px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .hero p {
+        font-size: 0.92rem;
+      }
+
+      .search-box {
+        padding: 8px;
+      }
+
+      .search-icon {
         display: none;
       }
 
-      .jobs-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media(max-width: 600px) {
-      .hero {
-        padding: 55px 0 65px;
+      .search-button {
+        padding: 12px 14px;
       }
 
-      .search-area {
+      .section {
+        padding: 50px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
         flex-direction: column;
-        background: transparent;
-        box-shadow: none;
-        padding: 0;
-        gap: 8px;
-      }
-
-      .search-area input {
-        border-radius: 10px;
-        padding: 15px;
-      }
-
-      .search-btn {
-        min-height: 48px;
+        gap: 5px;
       }
 
       .jobs-grid {
         grid-template-columns: 1fr;
-      }
-
-      .top-row {
-        align-items: flex-start;
-        flex-direction: column;
       }
 
       .footer-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .cta {
+        padding: 38px 22px;
       }
     }
+
+    @media (max-width: 430px) {
+
+      .logo {
+        font-size: 1.05rem;
+      }
+
+      .logo-icon {
+        width: 34px;
+        height: 34px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .search-box {
+        flex-wrap: wrap;
+      }
+
+      #searchInput {
+        min-width: 0;
+      }
+
+      .search-button {
+        width: 100%;
+      }
+
+      .job-card {
+        padding: 20px;
+      }
+
+      .job-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .apply-btn {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <a href="index.html" class="logo">
-      Tanzania <span>Digital Hub</span>
-    </a>
+  <header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="scholarships.html">Scholarships</a>
-      <a href="jobs.html" class="active">Jobs</a>
-      <a href="internships.html">Internships</a>
-      <a href="courses.html">Courses</a>
-    </nav>
+    <div class="nav-container">
 
-  </div>
-</header>
+      <a href="index.html" class="logo">
 
-<section class="hero">
+        <span class="logo-icon">🌍</span>
 
-  <div class="container hero-content">
+        <span>OpportunityBridge</span>
 
-    <span class="badge">
-      💼 Career Opportunities
-    </span>
+      </a>
 
-    <h1>Find Your Next Opportunity</h1>
-
-    <p>
-      Discover jobs in Tanzania, remote positions, graduate opportunities,
-      international careers, healthcare and technology jobs.
-    </p>
-
-    <div class="search-area">
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="Search job title, company or location..."
-        aria-label="Search jobs">
-
-      <button class="search-btn" onclick="searchJobs()">
-        Search
+      <button
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Open navigation">
+        ☰
       </button>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="scholarships.html">
+          Scholarships
+        </a>
+
+        <a href="jobs.html" class="active">
+          Jobs
+        </a>
+
+        <a href="internships.html">
+          Internships
+        </a>
+
+        <a href="courses.html">
+          Courses
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+      </nav>
+
     </div>
 
-  </div>
+  </header>
 
-</section>
 
-<main>
+  <!-- =========================
+       HERO
+  ========================== -->
 
-  <div class="container">
+  <section class="hero">
 
-    <div class="top-row">
+    <div class="hero-container">
 
-      <div>
-        <h2>Latest Job Opportunities</h2>
-        <div class="job-count" id="jobCount">
-          Loading jobs...
-        </div>
+      <div class="hero-badge">
+        ✨ Career Opportunities
       </div>
 
-    </div>
-
-    <div class="filters">
-
-      <button class="filter-btn active" data-category="All">
-        All Jobs
-      </button>
-
-      <button class="filter-btn" data-category="Tanzania">
-        🇹🇿 Tanzania
-      </button>
-
-      <button class="filter-btn" data-category="Remote">
-        🌍 Remote
-      </button>
-
-      <button class="filter-btn" data-category="International">
-        🌎 International
-      </button>
-
-      <button class="filter-btn" data-category="Graduate">
-        🎓 Graduate
-      </button>
-
-      <button class="filter-btn" data-category="Healthcare">
-        🏥 Healthcare
-      </button>
-
-      <button class="filter-btn" data-category="Technology">
-        💻 Technology
-      </button>
-
-    </div>
-
-    <div class="jobs-grid" id="jobsGrid"></div>
-
-    <div class="empty" id="emptyState">
-
-      <div class="empty-icon">🔎</div>
-
-      <h3>No jobs found</h3>
+      <h1>
+        Find Your Next
+        <span>Opportunity</span>
+      </h1>
 
       <p>
-        Try another keyword or choose a different category.
+        Discover job opportunities from Tanzania,
+        Africa and international organizations —
+        all in one place.
       </p>
 
     </div>
 
-    <div class="notice">
+  </section>
 
-      <strong>⚠️ Important:</strong>
-      Always verify the job, deadline, eligibility requirements and
-      application instructions on the official website before applying.
-      Tanzania Digital Hub does not guarantee employment or selection.
+
+  <!-- =========================
+       SEARCH
+  ========================== -->
+
+  <div class="search-wrapper">
+
+    <div class="search-box">
+
+      <span class="search-icon">
+        🔎
+      </span>
+
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search jobs, companies, locations..."
+        autocomplete="off"
+      >
+
+      <button
+        class="search-button"
+        onclick="renderJobs()">
+        Search
+      </button>
 
     </div>
 
   </div>
 
-</main>
 
-<footer>
+  <!-- =========================
+       MAIN
+  ========================== -->
 
-  <div class="container">
+  <main>
 
-    <div class="footer-grid">
+    <section class="section">
 
-      <div>
-        <h3>Tanzania Digital Hub</h3>
+      <div class="section-heading">
+
+        <div>
+          <h2>Explore Job Opportunities</h2>
+
+          <p id="resultsCount">
+            Discover opportunities that match your goals.
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- FILTERS -->
+
+      <div class="filters">
+
+        <button
+          class="filter-btn active"
+          data-category="All">
+          All
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="Tanzania">
+          🇹🇿 Tanzania
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="International">
+          🌎 International
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="Graduate">
+          🎓 Graduate
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="Healthcare">
+          🏥 Healthcare
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="Technology">
+          💻 Technology
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="Remote">
+          🏠 Remote
+        </button>
+
+      </div>
+
+
+      <!-- JOBS -->
+
+      <div
+        class="jobs-grid"
+        id="jobsGrid">
+      </div>
+
+
+      <!-- EMPTY -->
+
+      <div
+        class="empty-state"
+        id="emptyState">
+
+        <div class="empty-state-icon">
+          🔎
+        </div>
+
+        <h3>
+          No jobs found
+        </h3>
 
         <p>
-          Helping Tanzanians discover scholarships, jobs,
-          internships, courses and digital opportunities.
+          Try another keyword or choose a different category.
         </p>
+
       </div>
 
-      <div>
-        <h3>Explore</h3>
+    </section>
 
-        <a href="index.html">Home</a>
-        <a href="scholarships.html">Scholarships</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="internships.html">Internships</a>
-        <a href="courses.html">Courses</a>
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+      <h2>
+        Your next opportunity could be here.
+      </h2>
+
+      <p>
+        Keep checking OpportunityBridge for
+        scholarships, jobs, internships and
+        learning opportunities.
+      </p>
+
+      <a
+        href="index.html"
+        class="cta-btn">
+        Explore OpportunityBridge →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <h3>
+            OpportunityBridge
+          </h3>
+
+          <p>
+            Connecting students, graduates and
+            job seekers with opportunities that
+            can help them build a better future.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Explore
+          </h4>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="scholarships.html">
+            Scholarships
+          </a>
+
+          <a href="jobs.html">
+            Jobs
+          </a>
+
+          <a href="internships.html">
+            Internships
+          </a>
+
+          <a href="courses.html">
+            Courses
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Information
+          </h4>
+
+          <a href="about.html">
+            About Us
+          </a>
+
+          <a href="Contact.html">
+            Contact
+          </a>
+
+          <a href="Privacy.html">
+            Privacy Policy
+          </a>
+
+          <a href="Disclaimer.html">
+            Disclaimer
+          </a>
+
+        </div>
+
       </div>
 
-      <div>
-        <h3>Information</h3>
 
-        <a href="about.html">About</a>
-        <a href="Contact.html">Contact</a>
-        <a href="Privacy.html">Privacy Policy</a>
-        <a href="Disclaimer.html">Disclaimer</a>
+      <div class="copyright">
+
+        © <span id="year"></span>
+        OpportunityBridge.
+        All rights reserved.
+
       </div>
 
     </div>
 
-    <div class="copyright">
-      © 2026 Tanzania Digital Hub. All rights reserved.
-    </div>
+  </footer>
 
-  </div>
 
-</footer>
+  <!-- =========================
+       JOB DATA
+  ========================== -->
 
-<script src="jobs-data.js"></script>
+  <script src="jobs-data.js"></script>
 
-<script>
 
-  let selectedCategory = "All";
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-  function renderJobs() {
+  <script>
 
-    const grid = document.getElementById("jobsGrid");
-    const empty = document.getElementById("emptyState");
-    const count = document.getElementById("jobCount");
+    let selectedCategory = "All";
 
-    const search =
-      document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
 
-    let filteredJobs = jobs.filter(job => {
+    /* =========================
+       RENDER JOBS
+    ========================== */
 
-      const matchesCategory =
-        selectedCategory === "All" ||
-        job.category === selectedCategory ||
-        job.locationCategory === selectedCategory;
+    function renderJobs() {
 
-      const searchableText =
-        (
-          job.title + " " +
-          job.company + " " +
-          job.location + " " +
-          job.category + " " +
-          job.description
-        ).toLowerCase();
+      const grid =
+        document.getElementById("jobsGrid");
 
-      const matchesSearch =
-        searchableText.includes(search);
+      const emptyState =
+        document.getElementById("emptyState");
 
-      return matchesCategory && matchesSearch;
+      const resultsCount =
+        document.getElementById("resultsCount");
 
-    });
+      const searchInput =
+        document.getElementById("searchInput");
 
-    grid.innerHTML = "";
+      const searchTerm =
+        searchInput.value
+          .toLowerCase()
+          .trim();
 
-    count.textContent =
-      filteredJobs.length +
-      (filteredJobs.length === 1 ? " job found" : " jobs found");
 
-    if (filteredJobs.length === 0) {
+      const filteredJobs =
+        jobs.filter(job => {
 
-      empty.style.display = "block";
+          const matchesCategory =
+            selectedCategory === "All" ||
+            job.locationCategory === selectedCategory ||
+            job.category === selectedCategory;
 
-      return;
+
+          const searchableText = `
+            ${job.title}
+            ${job.company}
+            ${job.location}
+            ${job.category}
+            ${job.level}
+            ${job.type}
+            ${job.description}
+          `.toLowerCase();
+
+
+          const matchesSearch =
+            !searchTerm ||
+            searchableText.includes(searchTerm);
+
+
+          return (
+            matchesCategory &&
+            matchesSearch
+          );
+
+        });
+
+
+      grid.innerHTML = "";
+
+
+      if (filteredJobs.length === 0) {
+
+        emptyState.style.display = "block";
+
+        resultsCount.textContent =
+          "No opportunities match your search.";
+
+        return;
+
+      }
+
+
+      emptyState.style.display = "none";
+
+
+      resultsCount.textContent =
+        `${filteredJobs.length} opportunity${
+          filteredJobs.length === 1 ? "" : "ies"
+        } available`;
+
+
+      filteredJobs.forEach(
+        (job, index) => {
+
+          const card =
+            document.createElement("article");
+
+          card.className = "job-card";
+
+          card.style.animationDelay =
+            `${index * 0.05}s`;
+
+
+          card.innerHTML = `
+
+            <div class="job-top">
+
+              <div class="job-icon">
+                ${job.icon || "💼"}
+              </div>
+
+              <span class="job-type">
+                ${job.type || "Opportunity"}
+              </span>
+
+            </div>
+
+
+            <h3>
+              ${job.title}
+            </h3>
+
+
+            <div class="company">
+              ${job.company}
+            </div>
+
+
+            <p class="job-description">
+              ${job.description}
+            </p>
+
+
+            <div class="job-meta">
+
+              <span class="meta-item">
+                📍 ${job.location}
+              </span>
+
+              <span class="meta-item">
+                🎓 ${job.level}
+              </span>
+
+            </div>
+
+
+            <div class="job-footer">
+
+              <span class="deadline">
+                ⏳ ${job.deadline}
+              </span>
+
+              <a
+                class="apply-btn"
+                href="${job.applyUrl}"
+                target="_blank"
+                rel="noopener noreferrer">
+                Apply Now →
+              </a>
+
+            </div>
+
+          `;
+
+
+          grid.appendChild(card);
+
+        }
+      );
 
     }
 
-    empty.style.display = "none";
 
-    filteredJobs.forEach(job => {
+    /* =========================
+       FILTER BUTTONS
+    ========================== */
 
-      const card = document.createElement("article");
+    document
+      .querySelectorAll(".filter-btn")
+      .forEach(button => {
 
-      card.className = "job-card";
+        button.addEventListener(
+          "click",
+          () => {
 
-      card.innerHTML = `
+            document
+              .querySelectorAll(".filter-btn")
+              .forEach(btn =>
+                btn.classList.remove("active")
+              );
 
-        <div class="job-top">
 
-          <div class="company-icon">
-            ${job.icon}
-          </div>
+            button.classList.add("active");
 
-          <span class="category">
-            ${job.category}
-          </span>
 
-        </div>
+            selectedCategory =
+              button.dataset.category;
 
-        <h3>${job.title}</h3>
 
-        <div class="company">
-          ${job.company}
-        </div>
+            renderJobs();
 
-        <div class="job-info">
-
-          <span class="info">
-            📍 ${job.location}
-          </span>
-
-          <span class="info">
-            💼 ${job.type}
-          </span>
-
-          <span class="info">
-            🎯 ${job.level}
-          </span>
-
-        </div>
-
-        <p class="description">
-          ${job.description}
-        </p>
-
-        <div class="deadline">
-          Deadline:
-          <strong>${job.deadline}</strong>
-        </div>
-
-        <a
-          class="apply-btn"
-          href="${job.applyUrl}"
-          target="_blank"
-          rel="noopener noreferrer">
-          Apply Now →
-        </a>
-
-      `;
-
-      grid.appendChild(card);
-
-    });
-
-  }
-
-  function searchJobs() {
-    renderJobs();
-  }
-
-  document
-    .getElementById("searchInput")
-    .addEventListener("input", renderJobs);
-
-  document
-    .querySelectorAll(".filter-btn")
-    .forEach(button => {
-
-      button.addEventListener("click", function() {
-
-        document
-          .querySelectorAll(".filter-btn")
-          .forEach(btn =>
-            btn.classList.remove("active")
-          );
-
-        this.classList.add("active");
-
-        selectedCategory =
-          this.dataset.category;
-
-        renderJobs();
+          }
+        );
 
       });
 
-    });
 
-  renderJobs();
+    /* =========================
+       SEARCH AS YOU TYPE
+    ========================== */
 
-</script>
+    document
+      .getElementById("searchInput")
+      .addEventListener(
+        "input",
+        renderJobs
+      );
+
+
+    /* =========================
+       ENTER TO SEARCH
+    ========================== */
+
+    document
+      .getElementById("searchInput")
+      .addEventListener(
+        "keydown",
+        event => {
+
+          if (event.key === "Enter") {
+            renderJobs();
+          }
+
+        }
+      );
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    mobileMenu.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle("show");
+
+      }
+    );
+
+
+    /* =========================
+       CLOSE MENU AFTER CLICK
+    ========================== */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove("show");
+
+          }
+        );
+
+      });
+
+
+    /* =========================
+       YEAR
+    ========================== */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* =========================
+       INITIAL LOAD
+    ========================== */
+
+    renderJobs();
+
+  </script>
 
 </body>
 </html>
