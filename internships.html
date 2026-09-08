@@ -4,21 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Internships | OpportunityBridge</title>
+  <title>Internships in Tanzania & Africa | OpportunityBridge</title>
 
   <meta name="description"
-        content="Discover internship opportunities for students and graduates through OpportunityBridge.">
+        content="Find internships in Tanzania, Africa and internationally. Discover opportunities for students, graduates and young professionals to gain valuable experience.">
 
-  <meta name="keywords"
-        content="internships, Tanzania internships, student internships, graduate internships, remote internships">
-
+  <meta name="robots" content="index, follow">
   <meta name="author" content="OpportunityBridge">
   <meta name="theme-color" content="#0b4f8a">
+
+  <!-- Canonical -->
+  <link rel="canonical"
+        href="https://absmg.github.io/internships.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Internships in Tanzania & Africa | OpportunityBridge">
+  <meta property="og:description"
+        content="Discover internship opportunities in Tanzania, Africa and internationally. Build experience and develop your career.">
+  <meta property="og:url"
+        content="https://absmg.github.io/internships.html">
+  <meta property="og:site_name"
+        content="OpportunityBridge">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title"
+        content="Internships in Tanzania & Africa | OpportunityBridge">
+  <meta name="twitter:description"
+        content="Find internships and early-career opportunities for students and graduates.">
 
   <!-- Google AdSense -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
+
+  <!-- CollectionPage Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Internships in Tanzania & Africa",
+    "url": "https://absmg.github.io/internships.html",
+    "description": "Internship opportunities for students, graduates and young professionals.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Internships",
+        "item": "https://absmg.github.io/internships.html"
+      }
+    ]
+  }
+  </script>
 
   <style>
     * {
@@ -27,147 +86,104 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #172033;
+      background: #f5f7fa;
+      color: #1f2937;
       line-height: 1.6;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
-
-    .container {
-      width: 92%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    /* HEADER */
 
     header {
+      background: #0b4f8a;
+      color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
     }
 
-    .nav {
-      min-height: 70px;
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
     }
 
     .logo {
-      color: #0b4f8a;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
-      white-space: nowrap;
     }
 
-    .logo span {
-      color: #172033;
-    }
-
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 20px;
     }
 
-    nav a {
-      color: #374151;
+    .nav-links a {
       font-size: 14px;
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: #0b6fc2;
-    }
-
-    nav a.active {
-      color: #0b6fc2;
-    }
-
-    .nav-button {
-      background: #0b6fc2;
-      color: white !important;
-      padding: 9px 15px;
-      border-radius: 8px;
+    .nav-links a:hover {
+      opacity: .7;
     }
 
     .menu-btn {
       display: none;
-      border: 0;
-      background: transparent;
-      font-size: 27px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
       cursor: pointer;
-      color: #172033;
     }
 
-    /* HERO */
-
     .hero {
-      background: #0b4f8a;
+      background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
       color: white;
-      padding: 75px 0;
+      text-align: center;
+      padding: 70px 20px;
     }
 
     .hero-content {
-      max-width: 800px;
-    }
-
-    .hero-small {
-      display: inline-block;
-      color: #dbeafe;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 15px;
+      max-width: 850px;
+      margin: auto;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 58px);
-      line-height: 1.1;
-      margin-bottom: 18px;
-      letter-spacing: -1px;
+      font-size: clamp(35px, 6vw, 55px);
+      line-height: 1.15;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      color: #e5f1ff;
-      font-size: 17px;
-      max-width: 680px;
+      font-size: 18px;
+      opacity: .95;
     }
 
-    /* SEARCH */
-
-    .search-area {
-      margin-top: -30px;
-      position: relative;
-      z-index: 10;
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 20px;
     }
 
     .search-box {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+      margin-bottom: 25px;
     }
 
     .search-box input {
       width: 100%;
-      padding: 15px 17px;
-      border: 1px solid #d1d5db;
-      border-radius: 9px;
-      font-size: 15px;
+      padding: 16px 18px;
+      border: 1px solid #d7dee6;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
       outline: none;
     }
 
@@ -175,298 +191,205 @@
       border-color: #0b6fc2;
     }
 
-    /* FILTERS */
-
     .filters {
       display: flex;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 15px;
+      margin-bottom: 30px;
     }
 
     .filter-btn {
-      border: 1px solid #dbe1e8;
-      background: #ffffff;
-      color: #475569;
-      padding: 9px 14px;
+      padding: 10px 16px;
+      border: 1px solid #d6dee7;
+      background: white;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 13px;
+      color: #344054;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #0b6fc2;
-      border-color: #0b6fc2;
+      background: #0b4f8a;
       color: white;
+      border-color: #0b4f8a;
     }
 
-    /* MAIN */
-
-    section {
-      padding: 65px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-      font-size: 32px;
-      margin-bottom: 7px;
-    }
-
-    .section-heading p {
-      color: #64748b;
-    }
-
-    /* CARDS */
-
-    .internship-grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .internship-card {
+    .card {
       background: white;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #e4e9ef;
       border-radius: 14px;
-      padding: 24px;
-      transition: .2s ease;
+      padding: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      transition: .2s;
     }
 
-    .internship-card:hover {
+    .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
     }
 
     .badge {
       display: inline-block;
-      background: #eef6ff;
+      background: #eaf3fb;
       color: #0b4f8a;
       padding: 5px 9px;
-      border-radius: 6px;
-      font-size: 11px;
+      border-radius: 20px;
+      font-size: 12px;
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .internship-card h3 {
-      font-size: 19px;
+    .card h2 {
+      font-size: 20px;
+      color: #123b5d;
       margin-bottom: 10px;
     }
 
-    .internship-card p {
-      color: #64748b;
+    .card p {
+      color: #667085;
       font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card a {
+      color: #0b6fc2;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .ad-container {
+      min-height: 90px;
+      margin: 30px auto;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .info-section {
+      background: white;
+      padding: 55px 20px;
+    }
+
+    .info-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .info-inner h2 {
+      color: #123b5d;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .info-inner p {
+      color: #667085;
       margin-bottom: 15px;
     }
 
-    .details {
-      border-top: 1px solid #edf0f4;
-      padding-top: 14px;
-      margin-top: 12px;
-    }
-
-    .detail {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      font-size: 13px;
-      margin: 7px 0;
-    }
-
-    .detail strong {
-      color: #374151;
-    }
-
-    .detail span {
-      color: #64748b;
-      text-align: right;
-    }
-
-    .apply-btn {
-      display: block;
-      text-align: center;
-      margin-top: 18px;
-      background: #0b6fc2;
-      color: white;
-      padding: 11px 15px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .apply-btn:hover {
-      background: #094f8e;
-    }
-
-    /* EMPTY */
-
-    .empty {
-      display: none;
-      text-align: center;
-      padding: 50px 20px;
-      color: #64748b;
-    }
-
-    /* AD */
-
-    .ad {
-      min-height: 70px;
-      margin: 30px auto 0;
-      border: 1px dashed #d1d5db;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      font-size: 12px;
-    }
-
-    /* CTA */
-
     .cta {
-      background: #eef6ff;
-    }
-
-    .cta-box {
       background: #0b4f8a;
       color: white;
-      border-radius: 16px;
-      padding: 42px 25px;
       text-align: center;
+      padding: 60px 20px;
     }
 
-    .cta-box h2 {
+    .cta h2 {
       font-size: 30px;
       margin-bottom: 10px;
     }
 
-    .cta-box p {
-      color: #dbeafe;
-      max-width: 650px;
-      margin: 0 auto 22px;
+    .cta p {
+      margin-bottom: 22px;
+      opacity: .9;
     }
 
-    .cta-btn {
+    .cta a {
       display: inline-block;
       background: white;
       color: #0b4f8a;
-      padding: 12px 19px;
+      padding: 13px 22px;
       border-radius: 8px;
       font-weight: 700;
     }
 
-    /* FOOTER */
-
     footer {
-      background: #111827;
-      color: #cbd5e1;
-      padding: 50px 0 20px;
+      background: #092f52;
+      color: #dbe8f3;
+      padding: 35px 20px;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 35px;
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    footer h3 {
-      color: white;
-      margin-bottom: 14px;
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    footer p {
+    .footer-links a {
       font-size: 14px;
-      line-height: 1.7;
-    }
-
-    footer a {
-      display: block;
-      color: #cbd5e1;
-      margin: 7px 0;
-      font-size: 14px;
-    }
-
-    footer a:hover {
-      color: white;
     }
 
     .copyright {
-      border-top: 1px solid #263244;
-      margin-top: 35px;
-      padding-top: 18px;
+      max-width: 1150px;
+      margin: 25px auto 0;
       text-align: center;
       font-size: 13px;
-      color: #94a3b8;
+      opacity: .8;
     }
 
-    /* MOBILE */
+    @media (max-width: 850px) {
 
-    @media (max-width: 900px) {
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 15px 6%;
-        border-bottom: 1px solid #e5e7eb;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav.active {
-        display: flex;
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .menu-btn {
         display: block;
       }
 
-      .internship-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #0b4f8a;
+        flex-direction: column;
+        padding: 20px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+      .nav-links.show {
+        display: flex;
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 550px) {
 
-      .hero {
-        padding: 60px 0;
+      .cards {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 39px;
+      .hero {
+        padding: 55px 18px;
       }
 
       .hero p {
         font-size: 16px;
-      }
-
-      section {
-        padding: 50px 0;
-      }
-
-      .internship-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading h2 {
-        font-size: 27px;
-      }
-
-      .filter-btn {
-        font-size: 12px;
-        padding: 8px 11px;
       }
     }
   </style>
@@ -475,53 +398,36 @@
 <body>
 
 <header>
-  <div class="container nav">
+
+  <nav class="navbar">
 
     <a href="index.html" class="logo">
-      Opportunity<span>Bridge</span>
+      OpportunityBridge
     </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Open navigation menu">
       ☰
     </button>
 
-    <nav id="navMenu">
+    <div class="nav-links" id="navLinks">
 
       <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="login.html">Login</a>
 
-      <a href="scholarships.html">
-        Scholarships
-      </a>
+    </div>
 
-      <a href="jobs.html">
-        Jobs
-      </a>
+  </nav>
 
-      <a href="internships.html" class="active">
-        Internships
-      </a>
-
-      <a href="courses.html">
-        Courses
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="Contact.html">
-        Contact
-      </a>
-
-      <a href="login.html" class="nav-button">
-        Login
-      </a>
-
-    </nav>
-
-  </div>
 </header>
-
 
 <main>
 
@@ -529,21 +435,14 @@
 
   <section class="hero">
 
-    <div class="container hero-content">
+    <div class="hero-content">
 
-      <span class="hero-small">
-        Build experience. Grow your career.
-      </span>
-
-      <h1>
-        Find internships<br>
-        that build experience.
-      </h1>
+      <h1>Find Internships in Tanzania & Africa</h1>
 
       <p>
-        Discover internship opportunities for students,
-        graduates and young professionals. Check the
-        official organization website before applying.
+        Discover internships and early-career opportunities
+        that can help you gain practical experience and build
+        valuable professional skills.
       </p>
 
     </div>
@@ -551,415 +450,246 @@
   </section>
 
 
-  <!-- SEARCH -->
+  <div class="container">
 
-  <div class="container search-area">
+    <!-- SEARCH -->
 
     <div class="search-box">
 
       <input
         type="search"
         id="searchInput"
-        placeholder="Search internships, organizations, locations..."
-      >
+        placeholder="Search internships..."
+        aria-label="Search internships">
 
-      <div class="filters">
+    </div>
 
-        <button
-          class="filter-btn active"
-          data-filter="all">
-          All
-        </button>
 
-        <button
-          class="filter-btn"
-          data-filter="Tanzania">
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+      <button class="filter-btn active"
+              data-filter="all">
+        All
+      </button>
+
+      <button class="filter-btn"
+              data-filter="tanzania">
+        Tanzania
+      </button>
+
+      <button class="filter-btn"
+              data-filter="africa">
+        Africa
+      </button>
+
+      <button class="filter-btn"
+              data-filter="international">
+        International
+      </button>
+
+      <button class="filter-btn"
+              data-filter="remote">
+        Remote
+      </button>
+
+    </div>
+
+
+    <!-- INTERNSHIP CARDS -->
+
+    <div class="cards" id="internshipCards">
+
+
+      <article class="card"
+               data-category="tanzania">
+
+        <span class="badge">
           Tanzania
-        </button>
+        </span>
 
-        <button
-          class="filter-btn"
-          data-filter="Africa">
-          Africa
-        </button>
+        <h2>Government Opportunities</h2>
 
-        <button
-          class="filter-btn"
-          data-filter="International">
+        <p>
+          Explore official recruitment and career information
+          from Tanzania's public service.
+        </p>
+
+        <a href="https://www.ajira.go.tz/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="international africa">
+
+        <span class="badge">
           International
-        </button>
+        </span>
 
-        <button
-          class="filter-btn"
-          data-filter="Remote">
-          Remote
-        </button>
+        <h2>United Nations Opportunities</h2>
 
-      </div>
+        <p>
+          Explore career, internship and professional
+          opportunities through the United Nations.
+        </p>
+
+        <a href="https://careers.un.org/jobs"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="africa international">
+
+        <span class="badge">
+          Africa
+        </span>
+
+        <h2>African Development Bank</h2>
+
+        <p>
+          Discover career and professional opportunities
+          with the African Development Bank.
+        </p>
+
+        <a href="https://www.afdb.org/en/about-us/careers"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="international">
+
+        <span class="badge">
+          International
+        </span>
+
+        <h2>UN Volunteers</h2>
+
+        <p>
+          Explore volunteering opportunities that can provide
+          valuable international experience.
+        </p>
+
+        <a href="https://www.unv.org/become-volunteer"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="international">
+
+        <span class="badge">
+          International
+        </span>
+
+        <h2>World Bank Opportunities</h2>
+
+        <p>
+          Explore career and professional development
+          opportunities with the World Bank.
+        </p>
+
+        <a href="https://www.worldbank.org/en/about/careers"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="international">
+
+        <span class="badge">
+          International
+        </span>
+
+        <h2>UNDP Careers</h2>
+
+        <p>
+          Discover career and professional opportunities
+          with the United Nations Development Programme.
+        </p>
+
+        <a href="https://www.undp.org/careers"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- ADS -->
+
+    <div class="ad-container">
+
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2004981151172844"
+        data-ad-slot="5992864529"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
+      </ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
 
     </div>
 
   </div>
 
 
-  <!-- INTERNSHIPS -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <h2>
-          Internship Opportunities
-        </h2>
-
-        <p>
-          Explore opportunities and verify all
-          requirements on the official source.
-        </p>
-
-      </div>
-
-
-      <div
-        class="internship-grid"
-        id="internshipGrid">
-
-
-        <!-- CARD 1 -->
-
-        <article
-          class="internship-card"
-          data-category="Tanzania Africa"
-          data-search="Tanzania internship students graduates organizations">
-
-          <span class="badge">
-            Tanzania
-          </span>
-
-          <h3>
-            Internship Opportunities in Tanzania
-          </h3>
-
-          <p>
-            Explore internship opportunities available
-            through organizations and institutions in Tanzania.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Students / Graduates</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Tanzania</span>
-            </div>
-
-            <div class="detail">
-              <strong>Type</strong>
-              <span>Various</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.ajira.go.tz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn">
-
-            View Official Source →
-
-          </a>
-
-        </article>
-
-
-        <!-- CARD 2 -->
-
-        <article
-          class="internship-card"
-          data-category="International"
-          data-search="United Nations internship international students graduates">
-
-          <span class="badge">
-            International
-          </span>
-
-          <h3>
-            UN Internship Opportunities
-          </h3>
-
-          <p>
-            Explore internship opportunities available
-            through the United Nations careers platform.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Students / Graduates</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Various</span>
-            </div>
-
-            <div class="detail">
-              <strong>Type</strong>
-              <span>Various</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://careers.un.org/jobs"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn">
-
-            View Official Source →
-
-          </a>
-
-        </article>
-
-
-        <!-- CARD 3 -->
-
-        <article
-          class="internship-card"
-          data-category="Africa"
-          data-search="Africa internship students graduates development">
-
-          <span class="badge">
-            Africa
-          </span>
-
-          <h3>
-            African Internship Opportunities
-          </h3>
-
-          <p>
-            Discover internship and early-career opportunities
-            from organizations working across Africa.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Students / Graduates</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Africa</span>
-            </div>
-
-            <div class="detail">
-              <strong>Type</strong>
-              <span>Various</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.afdb.org/en/about-us/careers"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn">
-
-            View Official Source →
-
-          </a>
-
-        </article>
-
-
-        <!-- CARD 4 -->
-
-        <article
-          class="internship-card"
-          data-category="Remote International"
-          data-search="remote internship online students international">
-
-          <span class="badge">
-            Remote
-          </span>
-
-          <h3>
-            Remote Internship Opportunities
-          </h3>
-
-          <p>
-            Find remote opportunities that can help
-            you gain practical experience online.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Students / Graduates</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Remote</span>
-            </div>
-
-            <div class="detail">
-              <strong>Type</strong>
-              <span>Online</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.unv.org/become-volunteer"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn">
-
-            View Official Source →
-
-          </a>
-
-        </article>
-
-
-        <!-- CARD 5 -->
-
-        <article
-          class="internship-card"
-          data-category="International"
-          data-search="World Bank internship international students graduates">
-
-          <span class="badge">
-            International
-          </span>
-
-          <h3>
-            World Bank Opportunities
-          </h3>
-
-          <p>
-            Explore career and internship-related
-            opportunities through the World Bank.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Students / Graduates</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>International</span>
-            </div>
-
-            <div class="detail">
-              <strong>Type</strong>
-              <span>Various</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.worldbank.org/en/about/careers"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn">
-
-            View Official Source →
-
-          </a>
-
-        </article>
-
-
-        <!-- CARD 6 -->
-
-        <article
-          class="internship-card"
-          data-category="International"
-          data-search="Africa development internship young professionals">
-
-          <span class="badge">
-            Development
-          </span>
-
-          <h3>
-            Development Internships
-          </h3>
-
-          <p>
-            Explore opportunities in development,
-            policy, research and related fields.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Students / Graduates</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Various</span>
-            </div>
-
-            <div class="detail">
-              <strong>Type</strong>
-              <span>Various</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.undp.org/careers"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn">
-
-            View Official Source →
-
-          </a>
-
-        </article>
-
-
-      </div>
-
-
-      <div
-        class="empty"
-        id="emptyMessage">
-
-        <h3>
-          No internships found
-        </h3>
-
-        <p>
-          Try another search term or category.
-        </p>
-
-      </div>
-
-
-      <div class="ad">
-        Advertisement
-      </div>
+  <!-- SEO INFORMATION -->
+
+  <section class="info-section">
+
+    <div class="info-inner">
+
+      <h2>Why Internships Matter</h2>
+
+      <p>
+        Internships can help students and graduates gain
+        practical experience, develop professional skills
+        and understand how workplaces operate.
+      </p>
+
+      <p>
+        OpportunityBridge brings together internship and
+        early-career resources so that students and young
+        professionals can discover opportunities more easily.
+      </p>
+
+      <p>
+        Before applying, always check the official organization
+        website for eligibility requirements, application
+        instructions and deadlines.
+      </p>
 
     </div>
 
@@ -970,115 +700,46 @@
 
   <section class="cta">
 
-    <div class="container">
+    <h2>Keep developing your skills</h2>
 
-      <div class="cta-box">
+    <p>
+      Explore online courses and build skills that can
+      strengthen your future applications.
+    </p>
 
-        <h2>
-          Ready for your next opportunity?
-        </h2>
-
-        <p>
-          Explore scholarships, jobs and online courses
-          to keep building your future.
-        </p>
-
-        <a
-          href="jobs.html"
-          class="cta-btn">
-
-          Explore Jobs →
-
-        </a>
-
-      </div>
-
-    </div>
+    <a href="courses.html">
+      Explore Online Courses
+    </a>
 
   </section>
 
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-  <div class="container">
+  <div class="footer-inner">
 
-    <div class="footer-grid">
+    <strong>
+      OpportunityBridge
+    </strong>
 
-      <div>
+    <div class="footer-links">
 
-        <h3>
-          OpportunityBridge
-        </h3>
+      <a href="about.html">About</a>
 
-        <p>
-          A platform designed to make education,
-          career and learning opportunities easier
-          to discover.
-        </p>
+      <a href="Contact.html">Contact</a>
 
-      </div>
+      <a href="Privacy.html">Privacy Policy</a>
 
-
-      <div>
-
-        <h3>
-          Explore
-        </h3>
-
-        <a href="scholarships.html">
-          Scholarships
-        </a>
-
-        <a href="jobs.html">
-          Jobs
-        </a>
-
-        <a href="internships.html">
-          Internships
-        </a>
-
-        <a href="courses.html">
-          Courses
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          Information
-        </h3>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="Contact.html">
-          Contact
-        </a>
-
-        <a href="Privacy.html">
-          Privacy Policy
-        </a>
-
-        <a href="Disclaimer.html">
-          Disclaimer
-        </a>
-
-      </div>
+      <a href="Disclaimer.html">Disclaimer</a>
 
     </div>
 
+  </div>
 
-    <div class="copyright">
-      © 2026 OpportunityBridge. All rights reserved.
-    </div>
-
+  <div class="copyright">
+    © 2026 OpportunityBridge. All rights reserved.
   </div>
 
 </footer>
@@ -1086,135 +747,81 @@
 
 <script>
 
-  /* MOBILE MENU */
+  function toggleMenu() {
+    document
+      .getElementById("navLinks")
+      .classList
+      .toggle("show");
+  }
 
-  const menuBtn =
-    document.getElementById("menuBtn");
-
-  const navMenu =
-    document.getElementById("navMenu");
-
-
-  menuBtn.addEventListener("click", function () {
-
-    navMenu.classList.toggle("active");
-
-  });
-
-
-  /* SEARCH + FILTER */
 
   const searchInput =
     document.getElementById("searchInput");
 
   const cards =
-    document.querySelectorAll(".internship-card");
+    document.querySelectorAll(".card");
 
   const filterButtons =
     document.querySelectorAll(".filter-btn");
-
-  const emptyMessage =
-    document.getElementById("emptyMessage");
 
 
   let currentFilter = "all";
 
 
-  function filterInternships() {
+  function filterCards() {
 
-    const searchText =
+    const searchTerm =
       searchInput.value.toLowerCase().trim();
 
-    let visibleCount = 0;
+    cards.forEach(card => {
 
+      const text =
+        card.textContent.toLowerCase();
 
-    cards.forEach(function(card) {
-
-      const category =
+      const categories =
         card.dataset.category.toLowerCase();
 
-      const searchData =
-        card.dataset.search.toLowerCase();
-
-
       const matchesSearch =
-        searchData.includes(searchText);
-
+        text.includes(searchTerm);
 
       const matchesFilter =
         currentFilter === "all" ||
-        category.includes(
-          currentFilter.toLowerCase()
-        );
+        categories.includes(currentFilter);
 
-
-      if (matchesSearch && matchesFilter) {
-
-        card.style.display = "block";
-
-        visibleCount++;
-
-      } else {
-
-        card.style.display = "none";
-
-      }
+      card.style.display =
+        matchesSearch && matchesFilter
+          ? "block"
+          : "none";
 
     });
-
-
-    emptyMessage.style.display =
-      visibleCount === 0
-        ? "block"
-        : "none";
 
   }
 
 
   searchInput.addEventListener(
     "input",
-    filterInternships
+    filterCards
   );
 
 
-  filterButtons.forEach(function(button) {
+  filterButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", () => {
 
-      filterButtons.forEach(function(btn) {
-
-        btn.classList.remove("active");
-
-      });
-
+      filterButtons.forEach(btn =>
+        btn.classList.remove("active")
+      );
 
       button.classList.add("active");
-
 
       currentFilter =
         button.dataset.filter;
 
-
-      filterInternships();
+      filterCards();
 
     });
 
   });
-
-
-  /* CLOSE MOBILE MENU */
-
-  document
-    .querySelectorAll("#navMenu a")
-    .forEach(function(link) {
-
-      link.addEventListener("click", function() {
-
-        navMenu.classList.remove("active");
-
-      });
-
-    });
 
 </script>
 
