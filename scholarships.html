@@ -2,22 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Scholarships | OpportunityBridge</title>
+  <title>Scholarships in Tanzania & Africa | OpportunityBridge</title>
 
   <meta name="description"
-    content="Discover scholarship opportunities for students through OpportunityBridge.">
+        content="Find scholarships for students in Tanzania and Africa, including undergraduate, postgraduate, international and study abroad opportunities.">
 
-  <meta name="keywords"
-    content="scholarships, Tanzania scholarships, undergraduate scholarships, international scholarships">
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="OpportunityBridge">
 
   <meta name="theme-color" content="#0b4f8a">
+
+  <!-- Canonical -->
+  <link rel="canonical"
+        href="https://absmg.github.io/scholarships.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+
+  <meta property="og:title"
+        content="Scholarships in Tanzania & Africa | OpportunityBridge">
+
+  <meta property="og:description"
+        content="Discover scholarships and study opportunities for students in Tanzania and across Africa.">
+
+  <meta property="og:url"
+        content="https://absmg.github.io/scholarships.html">
+
+  <meta property="og:site_name"
+        content="OpportunityBridge">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+
+  <meta name="twitter:title"
+        content="Scholarships in Tanzania & Africa">
+
+  <meta name="twitter:description"
+        content="Explore scholarships and study opportunities for students in Tanzania and Africa.">
 
   <!-- Google AdSense -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Scholarships",
+    "url": "https://absmg.github.io/scholarships.html",
+    "description": "Scholarship opportunities for students in Tanzania, Africa and internationally.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Scholarships",
+        "item": "https://absmg.github.io/scholarships.html"
+      }
+    ]
+  }
+  </script>
 
   <style>
     * {
@@ -28,420 +97,286 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #172033;
+      background: #f5f7fa;
+      color: #1f2937;
       line-height: 1.6;
     }
 
     a {
       text-decoration: none;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1150px;
-      margin: auto;
+      color: inherit;
     }
 
     header {
+      background: #0b4f8a;
+      color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
     }
 
-    .nav {
-      min-height: 70px;
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      color: #0b4f8a;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
     }
 
-    .logo span {
-      color: #172033;
-    }
-
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 20px;
     }
 
-    nav a {
-      color: #374151;
+    .nav-links a {
       font-size: 14px;
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: #0b6fc2;
-    }
-
-    .active {
-      color: #0b6fc2 !important;
-    }
-
-    .nav-button {
-      background: #0b6fc2;
-      color: white !important;
-      padding: 9px 15px;
-      border-radius: 8px;
+    .nav-links a:hover {
+      opacity: .7;
     }
 
     .menu-btn {
       display: none;
-      border: 0;
-      background: transparent;
-      font-size: 27px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
       cursor: pointer;
     }
 
-    /* HERO */
-
     .hero {
-      background: #0b4f8a;
+      background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
       color: white;
-      padding: 75px 0;
+      text-align: center;
+      padding: 70px 20px;
     }
 
     .hero-content {
-      max-width: 800px;
-    }
-
-    .hero-small {
-      display: inline-block;
-      color: #dbeafe;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 15px;
+      max-width: 850px;
+      margin: auto;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 58px);
-      line-height: 1.1;
-      margin-bottom: 18px;
+      font-size: clamp(35px, 6vw, 55px);
+      margin-bottom: 15px;
+      line-height: 1.15;
     }
 
     .hero p {
-      color: #e5f1ff;
-      font-size: 17px;
-      max-width: 680px;
+      font-size: 18px;
+      opacity: .95;
     }
 
-    /* SEARCH */
-
-    .search-area {
-      margin-top: -30px;
-      position: relative;
-      z-index: 10;
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 20px;
     }
 
     .search-box {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+      margin-bottom: 25px;
     }
 
     .search-box input {
       width: 100%;
-      padding: 15px 17px;
-      border: 1px solid #d1d5db;
-      border-radius: 9px;
-      font-size: 15px;
+      padding: 16px 18px;
+      border: 1px solid #d7dee6;
+      border-radius: 10px;
+      font-size: 16px;
       outline: none;
+      background: white;
     }
 
     .search-box input:focus {
       border-color: #0b6fc2;
     }
 
-    /* FILTERS */
-
     .filters {
       display: flex;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 15px;
-    }
-
-    .filter-btn {
-      border: 1px solid #dbe1e8;
-      background: #fff;
-      color: #475569;
-      padding: 9px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: #0b6fc2;
-      border-color: #0b6fc2;
-      color: white;
-    }
-
-    /* CONTENT */
-
-    section {
-      padding: 65px 0;
-    }
-
-    .section-heading {
       margin-bottom: 30px;
     }
 
-    .section-heading h2 {
-      font-size: 32px;
-      margin-bottom: 7px;
+    .filter-btn {
+      padding: 10px 16px;
+      border: 1px solid #d6dee7;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #344054;
     }
 
-    .section-heading p {
-      color: #64748b;
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #0b4f8a;
+      color: white;
+      border-color: #0b4f8a;
     }
 
-    .scholarship-grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .scholarship-card {
+    .card {
       background: white;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #e4e9ef;
       border-radius: 14px;
-      padding: 24px;
-      transition: .2s ease;
+      padding: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      transition: .2s;
     }
 
-    .scholarship-card:hover {
+    .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
     }
 
     .badge {
       display: inline-block;
-      background: #eef6ff;
+      background: #eaf3fb;
       color: #0b4f8a;
       padding: 5px 9px;
-      border-radius: 6px;
-      font-size: 11px;
+      border-radius: 20px;
+      font-size: 12px;
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .scholarship-card h3 {
-      font-size: 19px;
+    .card h2 {
+      font-size: 20px;
+      color: #123b5d;
       margin-bottom: 10px;
     }
 
-    .scholarship-card p {
-      color: #64748b;
+    .card p {
+      color: #667085;
       font-size: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
-    .details {
-      border-top: 1px solid #edf0f4;
-      padding-top: 14px;
-      margin-top: 12px;
-    }
-
-    .detail {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      font-size: 13px;
-      margin: 7px 0;
-    }
-
-    .detail strong {
-      color: #374151;
-    }
-
-    .detail span {
-      color: #64748b;
-      text-align: right;
-    }
-
-    .apply-btn {
-      display: block;
-      text-align: center;
-      margin-top: 18px;
-      background: #0b6fc2;
-      color: white;
-      padding: 11px 15px;
-      border-radius: 8px;
-      font-size: 14px;
+    .card a {
+      color: #0b6fc2;
       font-weight: 700;
+      font-size: 14px;
     }
 
-    .apply-btn:hover {
-      background: #094f8e;
-    }
-
-    .empty {
-      display: none;
+    .ad-container {
+      min-height: 90px;
+      margin: 30px auto;
       text-align: center;
-      padding: 50px 20px;
-      color: #64748b;
+      overflow: hidden;
     }
-
-    /* AD */
-
-    .ad {
-      min-height: 70px;
-      margin: 25px auto 0;
-      border: 1px dashed #d1d5db;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      font-size: 12px;
-    }
-
-    /* CTA */
 
     .cta {
-      background: #eef6ff;
-    }
-
-    .cta-box {
       background: #0b4f8a;
       color: white;
-      border-radius: 16px;
-      padding: 42px 25px;
       text-align: center;
+      padding: 60px 20px;
     }
 
-    .cta-box h2 {
+    .cta h2 {
       font-size: 30px;
       margin-bottom: 10px;
     }
 
-    .cta-box p {
-      color: #dbeafe;
-      max-width: 650px;
-      margin: 0 auto 22px;
+    .cta p {
+      margin-bottom: 22px;
+      opacity: .9;
     }
 
-    .cta-btn {
+    .cta a {
       display: inline-block;
       background: white;
       color: #0b4f8a;
-      padding: 12px 19px;
+      padding: 13px 22px;
       border-radius: 8px;
       font-weight: 700;
     }
 
-    /* FOOTER */
-
     footer {
-      background: #111827;
-      color: #cbd5e1;
-      padding: 50px 0 20px;
+      background: #092f52;
+      color: #dbe8f3;
+      padding: 35px 20px;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 35px;
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    footer h3 {
-      color: white;
-      margin-bottom: 14px;
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    footer p {
+    .footer-links a {
       font-size: 14px;
-    }
-
-    footer a {
-      display: block;
-      color: #cbd5e1;
-      margin: 7px 0;
-      font-size: 14px;
-    }
-
-    footer a:hover {
-      color: white;
     }
 
     .copyright {
-      border-top: 1px solid #263244;
-      margin-top: 35px;
-      padding-top: 18px;
+      max-width: 1150px;
+      margin: 25px auto 0;
       text-align: center;
       font-size: 13px;
-      color: #94a3b8;
+      opacity: .8;
     }
 
-    /* MOBILE */
+    @media (max-width: 850px) {
 
-    @media (max-width: 900px) {
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 15px 6%;
-        border-bottom: 1px solid #e5e7eb;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav.active {
-        display: flex;
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .menu-btn {
         display: block;
       }
 
-      .scholarship-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #0b4f8a;
+        flex-direction: column;
+        padding: 20px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+      .nav-links.show {
+        display: flex;
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 550px) {
 
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 39px;
-      }
-
-      .scholarship-grid {
+      .cards {
         grid-template-columns: 1fr;
       }
 
-      section {
-        padding: 50px 0;
+      .hero {
+        padding: 55px 18px;
       }
 
-      .section-heading h2 {
-        font-size: 27px;
+      .hero p {
+        font-size: 16px;
       }
     }
   </style>
@@ -450,438 +385,292 @@
 <body>
 
 <header>
-  <div class="container nav">
+
+  <nav class="navbar">
 
     <a href="index.html" class="logo">
-      Opportunity<span>Bridge</span>
+      OpportunityBridge
     </a>
 
-    <button class="menu-btn" id="menuBtn">
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Open navigation menu">
       ☰
     </button>
 
-    <nav id="navMenu">
+    <div class="nav-links" id="navLinks">
+
       <a href="index.html">Home</a>
-      <a href="scholarships.html" class="active">Scholarships</a>
+
+      <a href="scholarships.html">Scholarships</a>
+
       <a href="jobs.html">Jobs</a>
+
       <a href="internships.html">Internships</a>
+
       <a href="courses.html">Courses</a>
+
       <a href="about.html">About</a>
+
       <a href="Contact.html">Contact</a>
-      <a href="login.html" class="nav-button">Login</a>
-    </nav>
 
-  </div>
+      <a href="login.html">Login</a>
+
+    </div>
+
+  </nav>
+
 </header>
-
 
 <main>
 
+  <!-- HERO -->
+
   <section class="hero">
-    <div class="container hero-content">
 
-      <span class="hero-small">
-        Education opportunities
-      </span>
+    <div class="hero-content">
 
-      <h1>
-        Find scholarships<br>
-        for your future.
-      </h1>
+      <h1>Find Scholarships for Your Future</h1>
 
       <p>
-        Discover scholarship opportunities for students,
-        graduates and learners. Always check the official
-        scholarship website before applying.
+        Explore scholarship opportunities for students in Tanzania,
+        Africa and around the world.
       </p>
 
     </div>
+
   </section>
 
 
-  <div class="container search-area">
+  <div class="container">
+
+    <!-- SEARCH -->
 
     <div class="search-box">
 
       <input
         type="search"
         id="searchInput"
-        placeholder="Search scholarships, countries, levels..."
-      >
+        placeholder="Search scholarships..."
+        aria-label="Search scholarships">
 
-      <div class="filters">
+    </div>
 
-        <button class="filter-btn active" data-filter="all">
-          All
-        </button>
 
-        <button class="filter-btn" data-filter="Undergraduate">
-          Undergraduate
-        </button>
+    <!-- FILTERS -->
 
-        <button class="filter-btn" data-filter="Postgraduate">
-          Postgraduate
-        </button>
+    <div class="filters">
 
-        <button class="filter-btn" data-filter="International">
-          International
-        </button>
+      <button class="filter-btn active"
+              data-filter="all">
+        All
+      </button>
 
-        <button class="filter-btn" data-filter="Africa">
+      <button class="filter-btn"
+              data-filter="undergraduate">
+        Undergraduate
+      </button>
+
+      <button class="filter-btn"
+              data-filter="postgraduate">
+        Postgraduate
+      </button>
+
+      <button class="filter-btn"
+              data-filter="international">
+        International
+      </button>
+
+      <button class="filter-btn"
+              data-filter="africa">
+        Africa
+      </button>
+
+    </div>
+
+
+    <!-- SCHOLARSHIP CARDS -->
+
+    <div class="cards" id="scholarshipCards">
+
+
+      <article class="card"
+               data-category="undergraduate africa">
+
+        <span class="badge">
+          Tanzania
+        </span>
+
+        <h2>HESLB Student Financing</h2>
+
+        <p>
+          Information about higher education student financing
+          opportunities available in Tanzania.
+        </p>
+
+        <a href="https://www.heslb.go.tz/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="undergraduate international">
+
+        <span class="badge">
+          Japan
+        </span>
+
+        <h2>Study in Japan Scholarships</h2>
+
+        <p>
+          Explore scholarship and study opportunities for
+          international students interested in Japan.
+        </p>
+
+        <a href="https://www.studyinjapan.go.jp/en/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="postgraduate international">
+
+        <span class="badge">
+          Germany
+        </span>
+
+        <h2>DAAD Scholarships</h2>
+
+        <p>
+          Discover study and research funding opportunities
+          in Germany for international students.
+        </p>
+
+        <a href="https://www.daad.de/en/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="undergraduate postgraduate africa">
+
+        <span class="badge">
           Africa
-        </button>
+        </span>
 
-      </div>
+        <h2>Mastercard Foundation Opportunities</h2>
+
+        <p>
+          Explore education opportunities and programs supporting
+          young people across Africa.
+        </p>
+
+        <a href="https://www.mastercardfdn.org/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="postgraduate international">
+
+        <span class="badge">
+          United Kingdom
+        </span>
+
+        <h2>Chevening Scholarships</h2>
+
+        <p>
+          Explore UK scholarship opportunities for eligible
+          international students.
+        </p>
+
+        <a href="https://www.chevening.org/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Official Website →
+        </a>
+
+      </article>
+
+
+      <article class="card"
+               data-category="international undergraduate postgraduate">
+
+        <span class="badge">
+          International
+        </span>
+
+        <h2>International Study Opportunities</h2>
+
+        <p>
+          Find international education resources and scholarship
+          information for students planning to study abroad.
+        </p>
+
+        <a href="https://www.studyinjapan.go.jp/en/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Explore Opportunities →
+        </a>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- ADS -->
+
+    <div class="ad-container">
+
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2004981151172844"
+        data-ad-slot="5992864529"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
+      </ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
 
     </div>
 
   </div>
 
 
-  <section>
-
-    <div class="container">
-
-      <div class="section-heading">
-        <h2>Scholarship Opportunities</h2>
-        <p>
-          Browse available opportunities and check
-          the official source for application details.
-        </p>
-      </div>
-
-
-      <div class="scholarship-grid" id="scholarshipGrid">
-
-        <article
-          class="scholarship-card"
-          data-category="Undergraduate Africa"
-          data-search="Tanzania undergraduate scholarship university students"
-        >
-
-          <span class="badge">Undergraduate</span>
-
-          <h3>
-            Tanzania University Scholarships
-          </h3>
-
-          <p>
-            Scholarship opportunities for students
-            looking to pursue higher education in Tanzania.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Undergraduate</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Tanzania</span>
-            </div>
-
-            <div class="detail">
-              <strong>Funding</strong>
-              <span>Varies</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.heslb.go.tz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn"
-          >
-            Official Information →
-          </a>
-
-        </article>
-
-
-        <article
-          class="scholarship-card"
-          data-category="International Undergraduate"
-          data-search="international undergraduate scholarship students abroad"
-        >
-
-          <span class="badge">International</span>
-
-          <h3>
-            International Undergraduate Scholarships
-          </h3>
-
-          <p>
-            Explore international scholarship opportunities
-            for students interested in studying abroad.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Undergraduate</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Various countries</span>
-            </div>
-
-            <div class="detail">
-              <strong>Funding</strong>
-              <span>Varies</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.studyinjapan.go.jp/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn"
-          >
-            View Opportunity →
-          </a>
-
-        </article>
-
-
-        <article
-          class="scholarship-card"
-          data-category="Postgraduate International"
-          data-search="postgraduate scholarship masters phd international"
-        >
-
-          <span class="badge">Postgraduate</span>
-
-          <h3>
-            Postgraduate Scholarships
-          </h3>
-
-          <p>
-            Find opportunities for Master's and PhD
-            studies offered by universities and organizations.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Masters / PhD</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>International</span>
-            </div>
-
-            <div class="detail">
-              <strong>Funding</strong>
-              <span>Varies</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.daad.de/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn"
-          >
-            Official Information →
-          </a>
-
-        </article>
-
-
-        <article
-          class="scholarship-card"
-          data-category="Africa Undergraduate"
-          data-search="Africa scholarship undergraduate students university"
-        >
-
-          <span class="badge">Africa</span>
-
-          <h3>
-            African Student Opportunities
-          </h3>
-
-          <p>
-            Explore scholarship and education opportunities
-            available to students across Africa.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Various</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Africa</span>
-            </div>
-
-            <div class="detail">
-              <strong>Funding</strong>
-              <span>Varies</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.mastercardfdn.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn"
-          >
-            Official Website →
-          </a>
-
-        </article>
-
-
-        <article
-          class="scholarship-card"
-          data-category="International Postgraduate"
-          data-search="UK scholarship postgraduate international students"
-        >
-
-          <span class="badge">International</span>
-
-          <h3>
-            UK Study Opportunities
-          </h3>
-
-          <p>
-            Explore official UK scholarship and study
-            information for international students.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Various</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>United Kingdom</span>
-            </div>
-
-            <div class="detail">
-              <strong>Funding</strong>
-              <span>Varies</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.chevening.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn"
-          >
-            Official Website →
-          </a>
-
-        </article>
-
-
-        <article
-          class="scholarship-card"
-          data-category="International Undergraduate"
-          data-search="Japan scholarship undergraduate international students"
-        >
-
-          <span class="badge">International</span>
-
-          <h3>
-            Study in Japan Opportunities
-          </h3>
-
-          <p>
-            Explore official information about studying
-            and scholarship opportunities in Japan.
-          </p>
-
-          <div class="details">
-
-            <div class="detail">
-              <strong>Level</strong>
-              <span>Various</span>
-            </div>
-
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Japan</span>
-            </div>
-
-            <div class="detail">
-              <strong>Funding</strong>
-              <span>Varies</span>
-            </div>
-
-          </div>
-
-          <a
-            href="https://www.studyinjapan.go.jp/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="apply-btn"
-          >
-            Official Website →
-          </a>
-
-        </article>
-
-      </div>
-
-
-      <div class="empty" id="emptyMessage">
-        <h3>No scholarships found</h3>
-        <p>
-          Try another search term or category.
-        </p>
-      </div>
-
-
-      <div class="ad">
-        Advertisement
-      </div>
-
-    </div>
-
-  </section>
-
+  <!-- CTA -->
 
   <section class="cta">
 
-    <div class="container">
+    <h2>Looking for more opportunities?</h2>
 
-      <div class="cta-box">
+    <p>
+      Explore jobs, internships and online courses on OpportunityBridge.
+    </p>
 
-        <h2>
-          Looking for more opportunities?
-        </h2>
-
-        <p>
-          Explore jobs, internships and online courses
-          available through OpportunityBridge.
-        </p>
-
-        <a href="jobs.html" class="cta-btn">
-          Explore Jobs →
-        </a>
-
-      </div>
-
-    </div>
+    <a href="jobs.html">
+      Explore Jobs
+    </a>
 
   </section>
 
@@ -890,44 +679,28 @@
 
 <footer>
 
-  <div class="container">
+  <div class="footer-inner">
 
-    <div class="footer-grid">
+    <strong>
+      OpportunityBridge
+    </strong>
 
-      <div>
-        <h3>OpportunityBridge</h3>
+    <div class="footer-links">
 
-        <p>
-          A platform designed to make education,
-          career and learning opportunities easier
-          to discover.
-        </p>
-      </div>
+      <a href="about.html">About</a>
 
-      <div>
-        <h3>Explore</h3>
+      <a href="Contact.html">Contact</a>
 
-        <a href="scholarships.html">Scholarships</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="internships.html">Internships</a>
-        <a href="courses.html">Courses</a>
-      </div>
+      <a href="Privacy.html">Privacy Policy</a>
 
-      <div>
-        <h3>Information</h3>
-
-        <a href="about.html">About</a>
-        <a href="Contact.html">Contact</a>
-        <a href="Privacy.html">Privacy Policy</a>
-        <a href="Disclaimer.html">Disclaimer</a>
-      </div>
+      <a href="Disclaimer.html">Disclaimer</a>
 
     </div>
 
-    <div class="copyright">
-      © 2026 OpportunityBridge. All rights reserved.
-    </div>
+  </div>
 
+  <div class="copyright">
+    © 2026 OpportunityBridge. All rights reserved.
   </div>
 
 </footer>
@@ -935,99 +708,82 @@
 
 <script>
 
-  const menuBtn = document.getElementById("menuBtn");
-  const navMenu = document.getElementById("navMenu");
+  function toggleMenu() {
+    document
+      .getElementById("navLinks")
+      .classList
+      .toggle("show");
+  }
 
-  menuBtn.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-  });
 
+  const searchInput =
+    document.getElementById("searchInput");
 
-  const searchInput = document.getElementById("searchInput");
-  const cards = document.querySelectorAll(".scholarship-card");
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const emptyMessage = document.getElementById("emptyMessage");
+  const cards =
+    document.querySelectorAll(".card");
+
+  const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
 
   let currentFilter = "all";
 
 
-  function filterScholarships() {
+  function filterCards() {
 
-    const searchText =
+    const searchTerm =
       searchInput.value.toLowerCase().trim();
 
-    let visibleCount = 0;
 
+    cards.forEach(card => {
 
-    cards.forEach(function(card) {
+      const text =
+        card.textContent.toLowerCase();
 
-      const category =
+      const categories =
         card.dataset.category.toLowerCase();
 
-      const searchData =
-        card.dataset.search.toLowerCase();
-
       const matchesSearch =
-        searchData.includes(searchText);
+        text.includes(searchTerm);
 
       const matchesFilter =
         currentFilter === "all" ||
-        category.includes(currentFilter.toLowerCase());
+        categories.includes(currentFilter);
 
-
-      if (matchesSearch && matchesFilter) {
-
-        card.style.display = "block";
-        visibleCount++;
-
-      } else {
-
-        card.style.display = "none";
-
-      }
+      card.style.display =
+        matchesSearch && matchesFilter
+          ? "block"
+          : "none";
 
     });
 
-
-    emptyMessage.style.display =
-      visibleCount === 0 ? "block" : "none";
   }
 
 
   searchInput.addEventListener(
     "input",
-    filterScholarships
+    filterCards
   );
 
 
-  filterButtons.forEach(function(button) {
+  filterButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", () => {
 
-      filterButtons.forEach(function(btn) {
-        btn.classList.remove("active");
-      });
+      filterButtons.forEach(btn =>
+        btn.classList.remove("active")
+      );
 
       button.classList.add("active");
 
       currentFilter =
         button.dataset.filter;
 
-      filterScholarships();
+      filterCards();
 
     });
 
   });
-
-
-  document.querySelectorAll("#navMenu a")
-    .forEach(function(link) {
-
-      link.addEventListener("click", function() {
-        navMenu.classList.remove("active");
-      });
-
-    });
 
 </script>
 
