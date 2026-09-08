@@ -1,208 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jobs | OpportunityBridge</title>
+  <title>Jobs | OpportunityBridge</title>
 
-<meta name="description" content="Explore job opportunities, remote work resources and career information on OpportunityBridge.">
-<meta name="robots" content="index, follow">
+  <meta name="description"
+        content="Discover job opportunities, career opportunities and employment resources with OpportunityBridge.">
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8f7;color:#26343a;line-height:1.6}
-a{text-decoration:none;color:inherit}
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
 
-header{
-background:#123b3a;color:white;padding:18px 7%;
-display:flex;justify-content:space-between;align-items:center
-}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f5f7fb;
+      color:#172033;
+      line-height:1.6;
+    }
 
-.logo{font-size:21px;font-weight:bold}
+    header{
+      background:#0b3d91;
+      padding:15px 5%;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 3px 12px rgba(0,0,0,.15);
+    }
 
-nav a{color:white;margin-left:18px;font-size:14px}
-nav a:hover{color:#20b89a}
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
 
-main{max-width:1100px;margin:55px auto;padding:0 20px}
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+      text-decoration:none;
+    }
 
-.hero{text-align:center;margin-bottom:35px}
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:7px;
+    }
 
-h1{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:normal;
-color:#123b3a
-}
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      padding:8px 11px;
+      border-radius:7px;
+      font-size:14px;
+    }
 
-.hero p{color:#68757b;max-width:650px;margin:auto}
+    .nav-links a:hover,
+    .nav-links .active{
+      background:rgba(255,255,255,.18);
+    }
 
-.search-box{max-width:700px;margin:30px auto}
+    .hero{
+      background:linear-gradient(135deg,#0b3d91,#1769d1);
+      color:white;
+      text-align:center;
+      padding:65px 20px;
+    }
 
-.search-box input{
-width:100%;
-padding:16px 20px;
-border:1px solid #d5dddd;
-border-radius:10px;
-font-size:16px;
-outline:none
-}
+    .hero h1{
+      font-size:clamp(30px,6vw,46px);
+      margin-bottom:12px;
+    }
 
-.search-box input:focus{
-border-color:#176b63;
-box-shadow:0 0 0 3px rgba(23,107,99,.12)
-}
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:17px;
+    }
 
-#resultCount{text-align:center;margin-top:10px;color:#176b63;font-size:14px}
+    .search-box{
+      max-width:650px;
+      margin:28px auto 0;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
+    .search-box input{
+      width:100%;
+      padding:15px 18px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      font-size:16px;
+    }
 
-.opportunity-card{
-background:white;
-border:1px solid #e1e6e4;
-border-radius:12px;
-padding:25px;
-transition:.2s
-}
+    .container{
+      max-width:1150px;
+      margin:45px auto;
+      padding:0 20px;
+    }
 
-.opportunity-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 25px rgba(0,0,0,.08)
-}
+    .section-title{
+      text-align:center;
+      margin-bottom:30px;
+    }
 
-.opportunity-card h2{font-size:19px;color:#123b3a}
-.opportunity-card p{font-size:14px;color:#68757b}
+    .section-title h2{
+      color:#0b3d91;
+      font-size:30px;
+    }
 
-.explore{
-display:inline-block;
-margin-top:12px;
-background:#176b63;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-font-size:13px;
-font-weight:bold
-}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:22px;
+    }
 
-footer{
-margin-top:70px;
-background:#102f2e;
-color:#dcebea;
-text-align:center;
-padding:30px
-}
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 22px rgba(0,0,0,.08);
+      transition:.25s;
+    }
 
-footer a{color:white;margin:0 8px}
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 28px rgba(0,0,0,.12);
+    }
 
-@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}}
+    .icon{
+      font-size:34px;
+      margin-bottom:12px;
+    }
 
-@media(max-width:500px){
-.cards{grid-template-columns:1fr}
-header{flex-direction:column;gap:12px}
-nav a{margin:0 5px}
-}
-</style>
+    .card h3{
+      color:#0b3d91;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#596579;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#0b3d91;
+      color:white;
+      padding:10px 17px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#082f70;
+    }
+
+    footer{
+      background:#101828;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      margin-top:60px;
+    }
+
+    footer p{
+      margin:8px 0;
+    }
+
+    footer a{
+      color:white;
+      text-decoration:none;
+      margin:0 7px;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
+
+    @media(max-width:700px){
+      .nav{
+        flex-direction:column;
+      }
+
+      .nav-links{
+        width:100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">OpportunityBridge</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="scholarships.html">Scholarships</a>
-<a href="internships.html">Internships</a>
-<a href="courses.html">Courses</a>
-<a href="digital-skills.html">Digital Skills</a>
-</nav>
+  <div class="nav">
+
+    <a class="logo" href="index.html">
+      OpportunityBridge
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a class="active" href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="computer-skills.html">Digital Skills</a>
+    </nav>
+
+  </div>
+
 </header>
 
-<main>
+<section class="hero">
 
-<div class="hero">
+  <h1>Job Opportunities</h1>
 
-<h1>Jobs</h1>
+  <p>
+    Discover employment opportunities and resources
+    to help you grow your career.
+  </p>
 
-<p>
-Explore career opportunities and employment resources.
-Search by job type, career field or keyword.
-</p>
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search jobs..."
+      aria-label="Search jobs">
+  </div>
 
-</div>
+</section>
 
-<div class="search-box">
+<main class="container">
 
-<input
-type="search"
-id="searchInput"
-placeholder="Search jobs..."
-aria-label="Search jobs">
+  <div class="section-title">
+    <h2>Explore Jobs</h2>
+    <p>Search for opportunities that match your skills and interests.</p>
+  </div>
 
-<div id="resultCount"></div>
+  <div class="cards">
 
-</div>
+    <article class="card">
+      <div class="icon">💼</div>
+      <h3>International Jobs</h3>
+      <p>
+        Explore international employment opportunities
+        and career resources.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=international+jobs+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="cards">
+    <article class="card">
+      <div class="icon">🌍</div>
+      <h3>Jobs in Africa</h3>
+      <p>
+        Find employment opportunities across African
+        countries.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=jobs+in+Africa+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Remote Jobs</h2>
-<p>Explore remote job searches across different career fields.</p>
-<a class="explore" href="https://www.google.com/search?q=remote+jobs" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🇹🇿</div>
+      <h3>Jobs in Tanzania</h3>
+      <p>
+        Explore career and employment opportunities
+        available in Tanzania.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=jobs+in+Tanzania+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Entry-Level Jobs</h2>
-<p>Find opportunities suitable for people starting their careers.</p>
-<a class="explore" href="https://www.google.com/search?q=entry+level+jobs" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">💻</div>
+      <h3>Remote Jobs</h3>
+      <p>
+        Discover remote work opportunities that can
+        be performed online.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=remote+jobs+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Graduate Jobs</h2>
-<p>Explore career opportunities for recent graduates.</p>
-<a class="explore" href="https://www.google.com/search?q=graduate+jobs" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🎓</div>
+      <h3>Graduate Jobs</h3>
+      <p>
+        Find career opportunities suitable for
+        graduates and entry-level applicants.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=graduate+jobs+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Technology Jobs</h2>
-<p>Discover opportunities in technology and digital careers.</p>
-<a class="explore" href="https://www.google.com/search?q=technology+jobs" target="_blank" rel="noopener">Explore →</a>
-</div>
+    <article class="card">
+      <div class="icon">🚀</div>
+      <h3>Career Opportunities</h3>
+      <p>
+        Discover different career paths and
+        employment resources.
+      </p>
+      <a class="btn"
+         href="https://www.google.com/search?q=career+opportunities+2026"
+         target="_blank"
+         rel="noopener">
+        Explore
+      </a>
+    </article>
 
-<div class="opportunity-card">
-<h2>Healthcare Jobs</h2>
-<p>Explore employment resources in healthcare-related fields.</p>
-<a class="explore" href="https://www.google.com/search?q=healthcare+jobs" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-<div class="opportunity-card">
-<h2>International Jobs</h2>
-<p>Search for international career opportunities and employment resources.</p>
-<a class="explore" href="https://www.google.com/search?q=international+jobs" target="_blank" rel="noopener">Explore →</a>
-</div>
-
-</div>
+  </div>
 
 </main>
 
 <footer>
-<strong>OpportunityBridge</strong>
-<p>Connect • Learn • Grow</p>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="disclaimer.html">Disclaimer</a>
+  <p><strong>OpportunityBridge</strong></p>
 
-<p>© 2026 OpportunityBridge. All rights reserved.</p>
+  <p>Connecting people to opportunities.</p>
+
+  <p>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="Privacy.html">Privacy Policy</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+
+  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+
 </footer>
 
-<script src="search.js"></script>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
+
+  searchInput.addEventListener("input", function(){
+
+    const query = this.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+
+      const text = card.textContent.toLowerCase();
+
+      card.style.display =
+        text.includes(query) ? "" : "none";
+
+    });
+
+  });
+</script>
 
 </body>
 </html>
