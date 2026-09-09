@@ -1,9 +1,25 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>OpportunityBridge | Global Opportunities & Digital Resources</title>  <meta name="description" content="OpportunityBridge helps students, graduates and young professionals discover scholarships, jobs, internships, online courses and digital skills opportunities.">  <meta name="keywords" content="scholarships, jobs, internships, online courses, digital skills, opportunities, students, graduates">  <meta name="author" content="OpportunityBridge">  <meta name="robots" content="index, follow">  <!-- Google AdSense -->  <meta name="google-adsense-account" content="ca-pub-2004981151172844">  <script async
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OpportunityBridge | Global Opportunities & Digital Resources</title>
+
+  <meta name="description" content="OpportunityBridge helps students, graduates and young professionals discover scholarships, jobs, internships, online courses and digital skills opportunities.">
+
+  <meta name="author" content="OpportunityBridge">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
+
+  <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
     crossorigin="anonymous">
-  </script>  <style>
+  </script>
+
+  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -25,6 +41,8 @@
       text-decoration: none;
     }
 
+    /* ================= HEADER ================= */
+
     header {
       background: #0b3d91;
       color: white;
@@ -37,40 +55,56 @@
     .nav-container {
       max-width: 1200px;
       margin: auto;
-      padding: 16px 20px;
+      min-height: 68px;
+      padding: 12px 20px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
     .logo {
       color: white;
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 700;
       white-space: nowrap;
     }
 
-    .logo span {
-      font-weight: 400;
-    }
-
     nav {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: flex-end;
-      gap: 14px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     nav a {
       color: white;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
+      padding: 5px 0;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* Mobile menu button */
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 5px 8px;
+    }
+
+
+    /* ================= HERO ================= */
 
     .hero {
       background: white;
@@ -95,7 +129,7 @@
     }
 
     .hero p {
-      max-width: 750px;
+      max-width: 760px;
       margin: auto;
       color: #555;
       font-size: 18px;
@@ -128,13 +162,20 @@
       opacity: 0.9;
     }
 
+
+    /* ================= ADS ================= */
+
     .ad-space {
+      width: 100%;
       max-width: 1000px;
       min-height: 90px;
       margin: 25px auto;
       padding: 10px;
       text-align: center;
     }
+
+
+    /* ================= GENERAL SECTIONS ================= */
 
     section {
       padding: 65px 20px;
@@ -158,13 +199,18 @@
 
     .section-heading p {
       color: #666;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
     }
 
+
+    /* ================= CARDS ================= */
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
       gap: 22px;
     }
 
@@ -172,8 +218,22 @@
       background: white;
       padding: 27px;
       border-radius: 10px;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+
+      box-shadow:
+        0 3px 14px rgba(0,0,0,0.07);
+
       border: 1px solid #edf0f5;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 6px 20px rgba(0,0,0,0.10);
     }
 
     .card-icon {
@@ -197,6 +257,9 @@
       font-weight: 700;
     }
 
+
+    /* ================= ABOUT ================= */
+
     .about-section {
       background: white;
     }
@@ -217,9 +280,14 @@
       margin-bottom: 17px;
     }
 
+
+    /* ================= STEPS ================= */
+
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
       gap: 20px;
       margin-top: 30px;
     }
@@ -236,20 +304,41 @@
       margin-bottom: 8px;
     }
 
+    .step p {
+      color: #555;
+    }
+
+
+    /* ================= CONTACT ================= */
+
     .contact-box {
       max-width: 750px;
       margin: auto;
+
       background: white;
+
       padding: 35px;
+
       border-radius: 10px;
+
       text-align: center;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+
+      box-shadow:
+        0 3px 14px rgba(0,0,0,0.06);
+    }
+
+    .contact-box h2 {
+      color: #0b3d91;
+      margin-bottom: 15px;
     }
 
     .contact-box p {
       color: #555;
       margin-bottom: 18px;
     }
+
+
+    /* ================= FOOTER ================= */
 
     footer {
       background: #102a43;
@@ -276,6 +365,10 @@
       font-size: 14px;
     }
 
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
     .footer-description {
       color: #d5dde5;
       max-width: 700px;
@@ -289,14 +382,70 @@
       font-size: 13px;
     }
 
+
+    /* ================= MOBILE ================= */
+
     @media (max-width: 750px) {
 
       .nav-container {
-        flex-direction: column;
+        min-height: 65px;
+        padding: 12px 18px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       nav {
-        justify-content: center;
+        display: none;
+
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        background: #0b3d91;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px 0;
+
+        box-shadow:
+          0 5px 12px rgba(0,0,0,0.15);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 22px;
+
+        font-size: 15px;
+
+        border-top:
+          1px solid rgba(255,255,255,0.12);
+      }
+
+      nav a:hover {
+        background:
+          rgba(255,255,255,0.08);
+
+        text-decoration: none;
       }
 
       .hero {
@@ -310,431 +459,804 @@
       .hero p {
         font-size: 16px;
       }
+
+      section {
+        padding: 50px 18px;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
     }
-  </style></head><body><header>
-  <div class="nav-container"><a href="index.html" class="logo">
-  OpportunityBridge
-</a>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="scholarships.html">Scholarships</a>
-  <a href="jobs.html">Jobs</a>
-  <a href="internships.html">Internships</a>
-  <a href="courses.html">Courses</a>
-  <a href="opportunities.html">Opportunities</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
 
-  </div>
-</header><main>  <!-- HERO -->  <section class="hero" id="home"><div class="hero-content">
+    /* ================= VERY SMALL SCREENS ================= */
 
-  <h1>
-    Welcome to <span>OpportunityBridge</span>
-  </h1>
+    @media (max-width: 380px) {
 
-  <p>
-    Global Opportunities & Digital Resources for students,
-    graduates and young professionals. Discover useful
-    information about education, careers, internships,
-    online learning and digital skills.
-  </p>
+      .logo {
+        font-size: 19px;
+      }
 
-  <div class="hero-buttons">
+      .hero h1 {
+        font-size: 29px;
+      }
 
-    <a href="scholarships.html" class="btn btn-primary">
-      Explore Scholarships
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section-heading h2 {
+        font-size: 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="nav-container">
+
+    <a href="index.html" class="logo">
+      OpportunityBridge
     </a>
 
-    <a href="jobs.html" class="btn btn-secondary">
-      Find Jobs
-    </a>
 
-  </div>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mainNav">
 
-</div>
+      ☰
 
-  </section>  <!-- AD SPACE -->  <div class="ad-space"><ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2004981151172844"
-     data-ad-slot="auto"
-     data-ad-format="auto"
-     data-full-width-responsive="true">
-</ins>
-
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-  </div>  <!-- OPPORTUNITIES -->  <section id="opportunities"><div class="container">
-
-  <div class="section-heading">
-
-    <h2>Explore Opportunities</h2>
-
-    <p>
-      Explore different types of opportunities and resources
-      that can support your education, career and personal
-      development.
-    </p>
-
-  </div>
+    </button>
 
 
-  <div class="cards">
+    <nav id="mainNav">
 
-    <article class="card">
-
-      <div class="card-icon">🎓</div>
-
-      <h3>Scholarships</h3>
-
-      <p>
-        Discover scholarship opportunities and learn about
-        eligibility requirements, application processes,
-        supporting documents and useful application tips.
-      </p>
+      <a href="index.html">
+        Home
+      </a>
 
       <a href="scholarships.html">
-        Explore Scholarships →
+        Scholarships
       </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <div class="card-icon">💼</div>
-
-      <h3>Jobs</h3>
-
-      <p>
-        Explore employment resources and learn how to prepare
-        a professional CV, application and interview for
-        different career opportunities.
-      </p>
 
       <a href="jobs.html">
-        Explore Jobs →
+        Jobs
       </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <div class="card-icon">🚀</div>
-
-      <h3>Internships</h3>
-
-      <p>
-        Learn how internships can help students and graduates
-        gain practical experience, build professional skills
-        and understand different career fields.
-      </p>
 
       <a href="internships.html">
-        Explore Internships →
+        Internships
       </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <div class="card-icon">📚</div>
-
-      <h3>Online Courses</h3>
-
-      <p>
-        Find learning resources that can help you develop
-        knowledge and practical skills in technology, business,
-        science, languages and other areas.
-      </p>
 
       <a href="courses.html">
-        Explore Courses →
+        Courses
       </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <div class="card-icon">🌍</div>
-
-      <h3>Other Opportunities</h3>
-
-      <p>
-        Explore fellowships, competitions, volunteering,
-        training programmes and other opportunities that may
-        help you grow academically and professionally.
-      </p>
 
       <a href="opportunities.html">
-        Explore Opportunities →
+        Opportunities
       </a>
 
-    </article>
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
 
 
-    <article class="card">
 
-      <div class="card-icon">💻</div>
+<!-- ================= MAIN ================= -->
 
-      <h3>Digital Skills</h3>
+<main>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>
+        Welcome to <span>OpportunityBridge</span>
+      </h1>
 
       <p>
-        Improve your digital knowledge through practical
-        resources covering online work, technology,
-        communication and digital productivity.
+        Global Opportunities & Digital Resources for students,
+        graduates and young professionals. Discover useful
+        information about education, careers, internships,
+        online learning and digital skills.
       </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="scholarships.html"
+          class="btn btn-primary">
+
+          Explore Scholarships
+
+        </a>
+
+
+        <a
+          href="jobs.html"
+          class="btn btn-secondary">
+
+          Find Jobs
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= AD ================= -->
+
+  <div class="ad-space">
+
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2004981151172844"
+      data-ad-slot="auto"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+  </div>
+
+
+
+  <!-- ================= OPPORTUNITIES ================= -->
+
+  <section id="opportunities">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Explore Opportunities
+        </h2>
+
+        <p>
+          Explore different types of opportunities and resources
+          that can support your education, career and personal
+          development.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+
+        <article class="card">
+
+          <div class="card-icon">
+            🎓
+          </div>
+
+          <h3>
+            Scholarships
+          </h3>
+
+          <p>
+            Discover scholarship opportunities and learn about
+            eligibility requirements, application processes,
+            supporting documents and useful application tips.
+          </p>
+
+          <a href="scholarships.html">
+            Explore Scholarships →
+          </a>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <div class="card-icon">
+            💼
+          </div>
+
+          <h3>
+            Jobs
+          </h3>
+
+          <p>
+            Explore employment resources and learn how to prepare
+            a professional CV, application and interview for
+            different career opportunities.
+          </p>
+
+          <a href="jobs.html">
+            Explore Jobs →
+          </a>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <div class="card-icon">
+            🚀
+          </div>
+
+          <h3>
+            Internships
+          </h3>
+
+          <p>
+            Learn how internships can help students and graduates
+            gain practical experience, build professional skills
+            and understand different career fields.
+          </p>
+
+          <a href="internships.html">
+            Explore Internships →
+          </a>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <div class="card-icon">
+            📚
+          </div>
+
+          <h3>
+            Online Courses
+          </h3>
+
+          <p>
+            Find learning resources that can help you develop
+            knowledge and practical skills in technology, business,
+            science, languages and other areas.
+          </p>
+
+          <a href="courses.html">
+            Explore Courses →
+          </a>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <div class="card-icon">
+            🌍
+          </div>
+
+          <h3>
+            Other Opportunities
+          </h3>
+
+          <p>
+            Explore fellowships, competitions, volunteering,
+            training programmes and other opportunities that may
+            help you grow academically and professionally.
+          </p>
+
+          <a href="opportunities.html">
+            Explore Opportunities →
+          </a>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <div class="card-icon">
+            💻
+          </div>
+
+          <h3>
+            Digital Skills
+          </h3>
+
+          <p>
+            Improve your digital knowledge through practical
+            resources covering online work, technology,
+            communication and digital productivity.
+          </p>
+
+          <a href="courses.html">
+            Start Learning →
+          </a>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= AD ================= -->
+
+  <div class="ad-space">
+
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2004981151172844"
+      data-ad-slot="auto"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+    </ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+  </div>
+
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section
+    class="about-section"
+    id="about">
+
+    <div class="about-content">
+
+      <h2>
+        About OpportunityBridge
+      </h2>
+
+
+      <p>
+        OpportunityBridge is a digital resource platform created
+        to make it easier for students, graduates and young
+        professionals to discover useful education and career
+        opportunities.
+      </p>
+
+
+      <p>
+        Information about scholarships, jobs, internships and
+        learning opportunities can often be spread across many
+        different websites. OpportunityBridge aims to organize
+        useful information into simple categories so visitors can
+        find resources more easily.
+      </p>
+
+
+      <p>
+        In addition to sharing opportunities, the platform provides
+        practical educational content and guidance to help visitors
+        understand application requirements, improve their skills
+        and make better decisions about their education and career.
+      </p>
+
+
+      <p>
+        Our goal is to connect people with reliable resources and
+        encourage continuous learning, professional development
+        and access to opportunities.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= HOW IT WORKS ================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          How to Use OpportunityBridge
+        </h2>
+
+        <p>
+          Follow these simple steps when exploring opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+
+        <div class="step">
+
+          <h3>
+            1. Choose a Category
+          </h3>
+
+          <p>
+            Start by selecting scholarships, jobs, internships,
+            courses or another category that matches your goal.
+          </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+          <h3>
+            2. Read the Information
+          </h3>
+
+          <p>
+            Review the opportunity details, eligibility requirements,
+            deadlines and application instructions carefully.
+          </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+          <h3>
+            3. Check the Source
+          </h3>
+
+          <p>
+            Always confirm important information on the official
+            website of the organization offering the opportunity.
+          </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+          <h3>
+            4. Prepare and Apply
+          </h3>
+
+          <p>
+            Prepare the required documents and follow the official
+            application instructions before submitting your application.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= DIGITAL SKILLS ================= -->
+
+  <section
+    id="skills"
+    class="about-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Build Your Digital Skills
+        </h2>
+
+        <p>
+          Digital skills can help students and young professionals
+          learn, communicate, work and discover new opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+
+        <article class="card">
+
+          <h3>
+            Computer Skills
+          </h3>
+
+          <p>
+            Develop essential computer and internet skills that
+            are useful for education, work and everyday digital tasks.
+          </p>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <h3>
+            Communication
+          </h3>
+
+          <p>
+            Improve written and digital communication skills for
+            applications, professional networking and online learning.
+          </p>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <h3>
+            Online Learning
+          </h3>
+
+          <p>
+            Learn how to use online learning platforms effectively
+            and create a consistent personal learning routine.
+          </p>
+
+        </article>
+
+
+
+        <article class="card">
+
+          <h3>
+            Career Development
+          </h3>
+
+          <p>
+            Learn practical approaches to CV preparation, job
+            searching, interviews and professional development.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact">
+
+    <div class="contact-box">
+
+      <h2>
+        Contact OpportunityBridge
+      </h2>
+
+      <p>
+        Have a question, suggestion or useful opportunity you would
+        like us to know about? Visit our contact page.
+      </p>
+
+      <a
+        href="contact.html"
+        class="btn btn-primary">
+
+        Contact Us
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-container">
+
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="scholarships.html">
+        Scholarships
+      </a>
+
+      <a href="jobs.html">
+        Jobs
+      </a>
+
+      <a href="internships.html">
+        Internships
+      </a>
 
       <a href="courses.html">
-        Start Learning →
+        Courses
       </a>
 
-    </article>
+      <a href="opportunities.html">
+        Opportunities
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="disclaimer.html">
+        Disclaimer
+      </a>
+
+    </div>
+
+
+    <p class="footer-description">
+
+      OpportunityBridge provides educational and career resources
+      to help students, graduates and young professionals discover
+      opportunities and develop useful skills.
+
+    </p>
+
+
+    <p class="copyright">
+
+      © 2026 OpportunityBridge. All rights reserved.
+
+    </p>
 
   </div>
 
-</div>
+</footer>
 
-  </section>  <!-- AD SPACE -->  <div class="ad-space"><ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2004981151172844"
-     data-ad-slot="auto"
-     data-ad-format="auto"
-     data-full-width-responsive="true">
-</ins>
+
+
+<!-- ================= MOBILE MENU SCRIPT ================= -->
 
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
+
+  const menuToggle =
+    document.getElementById("menuToggle");
+
+  const mainNav =
+    document.getElementById("mainNav");
+
+
+  menuToggle.addEventListener("click", function () {
+
+    const isOpen =
+      mainNav.classList.toggle("active");
+
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
+
+
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close navigation menu"
+        : "Open navigation menu"
+    );
+
+
+    menuToggle.textContent =
+      isOpen ? "✕" : "☰";
+
+  });
+
+
+
+  // Close menu when a link is selected
+
+  mainNav
+    .querySelectorAll("a")
+    .forEach(function (link) {
+
+      link.addEventListener(
+        "click",
+        function () {
+
+          mainNav.classList.remove(
+            "active"
+          );
+
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+          );
+
+
+          menuToggle.textContent = "☰";
+
+        }
+      );
+
+    });
+
+
 </script>
 
-  </div>  <!-- ABOUT -->  <section class="about-section" id="about"><div class="about-content">
 
-  <h2>About OpportunityBridge</h2>
-
-  <p>
-    OpportunityBridge is a digital resource platform created
-    to make it easier for students, graduates and young
-    professionals to discover useful education and career
-    opportunities.
-  </p>
-
-  <p>
-    Information about scholarships, jobs, internships and
-    learning opportunities can often be spread across many
-    different websites. OpportunityBridge aims to organize
-    useful information into simple categories so visitors can
-    find resources more easily.
-  </p>
-
-  <p>
-    In addition to sharing opportunities, the platform provides
-    practical educational content and guidance to help visitors
-    understand application requirements, improve their skills
-    and make better decisions about their education and career.
-  </p>
-
-  <p>
-    Our goal is to connect people with reliable resources and
-    encourage continuous learning, professional development
-    and access to opportunities.
-  </p>
-
-</div>
-
-  </section>  <!-- HOW IT WORKS -->  <section><div class="container">
-
-  <div class="section-heading">
-
-    <h2>How to Use OpportunityBridge</h2>
-
-    <p>
-      Follow these simple steps when exploring opportunities.
-    </p>
-
-  </div>
-
-
-  <div class="steps">
-
-    <div class="step">
-
-      <h3>1. Choose a Category</h3>
-
-      <p>
-        Start by selecting scholarships, jobs, internships,
-        courses or another category that matches your goal.
-      </p>
-
-    </div>
-
-
-    <div class="step">
-
-      <h3>2. Read the Information</h3>
-
-      <p>
-        Review the opportunity details, eligibility requirements,
-        deadlines and application instructions carefully.
-      </p>
-
-    </div>
-
-
-    <div class="step">
-
-      <h3>3. Check the Source</h3>
-
-      <p>
-        Always confirm important information on the official
-        website of the organization offering the opportunity.
-      </p>
-
-    </div>
-
-
-    <div class="step">
-
-      <h3>4. Prepare and Apply</h3>
-
-      <p>
-        Prepare the required documents and follow the official
-        application instructions before submitting your application.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
-  </section>  <!-- DIGITAL SKILLS -->  <section id="skills" class="about-section"><div class="container">
-
-  <div class="section-heading">
-
-    <h2>Build Your Digital Skills</h2>
-
-    <p>
-      Digital skills can help students and young professionals
-      learn, communicate, work and discover new opportunities.
-    </p>
-
-  </div>
-
-
-  <div class="cards">
-
-    <article class="card">
-
-      <h3>Computer Skills</h3>
-
-      <p>
-        Develop essential computer and internet skills that
-        are useful for education, work and everyday digital tasks.
-      </p>
-
-    </article>
-
-
-    <article class="card">
-
-      <h3>Communication</h3>
-
-      <p>
-        Improve written and digital communication skills for
-        applications, professional networking and online learning.
-      </p>
-
-    </article>
-
-
-    <article class="card">
-
-      <h3>Online Learning</h3>
-
-      <p>
-        Learn how to use online learning platforms effectively
-        and create a consistent personal learning routine.
-      </p>
-
-    </article>
-
-
-    <article class="card">
-
-      <h3>Career Development</h3>
-
-      <p>
-        Learn practical approaches to CV preparation, job
-        searching, interviews and professional development.
-      </p>
-
-    </article>
-
-  </div>
-
-</div>
-
-  </section>  <!-- CONTACT -->  <section id="contact"><div class="contact-box">
-
-  <h2 style="color:#0b3d91; margin-bottom:15px;">
-    Contact OpportunityBridge
-  </h2>
-
-  <p>
-    Have a question, suggestion or useful opportunity you would
-    like us to know about? Visit our contact page.
-  </p>
-
-  <a href="contact.html" class="btn btn-primary">
-    Contact Us
-  </a>
-
-</div>
-
-  </section></main><!-- FOOTER --><footer>  <div class="footer-container"><div class="footer-links">
-
-  <a href="index.html">Home</a>
-
-  <a href="about.html">About</a>
-
-  <a href="scholarships.html">Scholarships</a>
-
-  <a href="jobs.html">Jobs</a>
-
-  <a href="internships.html">Internships</a>
-
-  <a href="courses.html">Courses</a>
-
-  <a href="opportunities.html">Opportunities</a>
-
-  <a href="contact.html">Contact</a>
-
-  <a href="privacy.html">Privacy Policy</a>
-
-  <a href="disclaimer.html">Disclaimer</a>
-
-</div>
-
-
-<p class="footer-description">
-  OpportunityBridge provides educational and career resources
-  to help students, graduates and young professionals discover
-  opportunities and develop useful skills.
-</p>
-
-
-<p class="copyright">
-  © 2026 OpportunityBridge. All rights reserved.
-</p>
-
-  </div></footer></body>
+</body>
 </html>
-```Kumbuka: Code hii ina-preserve mawazo/content kuu ya zamani lakini inai-brand upya kuwa OpportunityBridge na kuboresha SEO, navigation, accessibility na AdSense structure. AdSense approval bado inategemea pia ubora wa pages nyingine na sera za Google.
-
-Ukitaka, hatua inayofuata ni nikupatie "scholarships.html" kamili inayolingana na hii homepage.
