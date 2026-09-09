@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dashboard | OpportunityBridge</title>
-  <meta name="description" content="Your OpportunityBridge dashboard.">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0b4f8a">
+  <title>Dashboard | Tanzania Digital Hub</title>
 
   <style>
     * {
@@ -18,32 +15,41 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #172033;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
     }
 
-    header {
-      background: #0b4f8a;
-      color: white;
+    a {
+      text-decoration: none;
+    }
+
+    .header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .navbar {
+    .nav {
       max-width: 1150px;
+      min-height: 70px;
       margin: auto;
-      padding: 15px 20px;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      color: white;
-      text-decoration: none;
-      font-size: 23px;
+      font-size: 21px;
       font-weight: 800;
+      color: #0f766e;
+    }
+
+    .logo span {
+      color: #0f172a;
     }
 
     .nav-right {
@@ -52,63 +58,70 @@
       gap: 12px;
     }
 
-    .home-btn,
-    .logout-btn {
-      border-radius: 8px;
-      padding: 9px 15px;
+    .user-name {
+      color: #475569;
+      font-size: 14px;
+    }
+
+    .logout {
+      border: none;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 10px 15px;
+      border-radius: 9px;
       font-weight: 700;
       cursor: pointer;
-      text-decoration: none;
-      font-size: 14px;
     }
 
-    .home-btn {
-      color: white;
-      border: 1px solid rgba(255,255,255,.6);
-    }
-
-    .logout-btn {
-      border: none;
-      background: white;
-      color: #0b4f8a;
-    }
-
-    main {
+    .container {
+      width: 92%;
       max-width: 1150px;
       margin: auto;
-      padding: 45px 20px;
     }
 
-    .welcome {
-      background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
+    .hero {
+      margin-top: 30px;
+      background: linear-gradient(
+        135deg,
+        #0f766e,
+        #115e59 55%,
+        #0f172a
+      );
       color: white;
-      border-radius: 18px;
-      padding: 35px;
-      margin-bottom: 30px;
+      padding: 40px;
+      border-radius: 20px;
     }
 
-    .welcome h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
+    .hero small {
+      opacity: .8;
     }
 
-    .welcome p {
-      opacity: .9;
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 50px);
+      margin: 5px 0 10px;
     }
 
-    .email {
-      margin-top: 8px;
-      font-size: 14px;
-      opacity: .85;
+    .hero p {
+      color: #dbeafe;
+    }
+
+    .section {
+      padding: 45px 0;
     }
 
     .section-title {
-      font-size: 25px;
-      color: #123b5d;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
-    .cards {
+    .section-title h2 {
+      font-size: 30px;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
@@ -116,84 +129,110 @@
 
     .card {
       background: white;
-      border: 1px solid #e5eaf0;
-      border-radius: 14px;
-      padding: 25px 20px;
-      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      border: 1px solid #e2e8f0;
+      border-radius: 17px;
+      padding: 24px;
+      box-shadow: 0 7px 25px rgba(15,23,42,.05);
       transition: .2s;
     }
 
     .card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(15,23,42,.10);
     }
 
     .icon {
-      font-size: 34px;
-      margin-bottom: 13px;
+      font-size: 35px;
+      margin-bottom: 10px;
     }
 
     .card h3 {
-      color: #123b5d;
       margin-bottom: 8px;
     }
 
     .card p {
-      color: #667085;
+      color: #64748b;
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
 
-    .card a {
-      color: #0b6fc2;
+    .card-link {
+      color: #0f766e;
       font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
     }
 
-    .loading {
-      text-align: center;
-      padding: 60px 20px;
-      color: #667085;
+    .profile {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 17px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .profile-box {
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    .profile-box label {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .profile-box strong {
+      word-break: break-word;
     }
 
     footer {
-      margin-top: 50px;
-      background: #092f52;
-      color: #dbe8f3;
+      background: #020617;
+      color: #94a3b8;
       text-align: center;
-      padding: 25px 20px;
-      font-size: 13px;
+      padding: 30px 20px;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #cbd5e1;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: #64748b;
+    }
+
+    #error {
+      display: none;
+      margin-top: 30px;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 15px;
+      border-radius: 10px;
     }
 
     @media (max-width: 850px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
+      .grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 550px) {
-      .navbar {
-        padding: 14px 15px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .home-btn {
-        display: none;
-      }
-
-      .welcome {
-        padding: 27px 22px;
-      }
-
-      .welcome h1 {
-        font-size: 26px;
-      }
-
-      .cards {
+      .grid,
+      .profile {
         grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 22px;
+      }
+
+      .user-name {
+        display: none;
       }
     }
   </style>
@@ -201,127 +240,231 @@
 
 <body>
 
-<header>
-  <nav class="navbar">
+<header class="header">
+  <div class="nav">
 
+    <!-- LINK BACK TO YOUR EXISTING INDEX -->
     <a href="index.html" class="logo">
-      OpportunityBridge
+      Tanzania <span>Digital Hub</span>
     </a>
 
     <div class="nav-right">
-
-      <a href="index.html" class="home-btn">
-        Home
-      </a>
-
-      <button id="logoutBtn" class="logout-btn">
-        Logout
+      <span class="user-name" id="navUser">Loading...</span>
+      <button class="logout" id="logoutBtn">
+        Log out
       </button>
-
     </div>
 
-  </nav>
+  </div>
 </header>
 
 
-<main>
+<main class="container">
 
-  <div id="loading" class="loading">
-    Checking your account...
+  <div id="loading">
+    Loading your dashboard...
   </div>
+
+  <div id="error"></div>
+
 
   <div id="dashboard" style="display:none;">
 
-    <section class="welcome">
+    <!-- WELCOME -->
+    <section class="hero">
 
-      <h1>
-        Welcome, <span id="userName">User</span> 👋
+      <small>Welcome back</small>
+
+      <h1 id="welcomeName">
+        User
       </h1>
 
       <p>
-        Welcome to your OpportunityBridge dashboard.
+        Welcome to your Tanzania Digital Hub dashboard.
+        Explore scholarships, jobs, internships and online courses.
       </p>
-
-      <div class="email" id="userEmail"></div>
 
     </section>
 
 
-    <h2 class="section-title">
-      Explore Opportunities
-    </h2>
+    <!-- OPPORTUNITIES -->
+    <section class="section">
 
+      <div class="section-title">
 
-    <div class="cards">
-
-      <div class="card">
-
-        <div class="icon">🎓</div>
-
-        <h3>Scholarships</h3>
+        <h2>
+          Explore Opportunities
+        </h2>
 
         <p>
-          Discover scholarship opportunities for your education.
+          Find opportunities that can help you build your future.
         </p>
-
-        <a href="scholarships.html">
-          Explore →
-        </a>
 
       </div>
 
 
-      <div class="card">
+      <div class="grid">
 
-        <div class="icon">💼</div>
+        <article class="card">
 
-        <h3>Jobs</h3>
+          <div class="icon">🎓</div>
+
+          <h3>
+            Scholarships
+          </h3>
+
+          <p>
+            Discover scholarships and education funding opportunities.
+          </p>
+
+          <a
+            href="scholarships.html"
+            class="card-link">
+            Explore →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="icon">💼</div>
+
+          <h3>
+            Jobs
+          </h3>
+
+          <p>
+            Discover career and employment opportunities.
+          </p>
+
+          <a
+            href="jobs.html"
+            class="card-link">
+            Explore →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="icon">🧑‍💻</div>
+
+          <h3>
+            Internships
+          </h3>
+
+          <p>
+            Find internships and gain professional experience.
+          </p>
+
+          <a
+            href="internships.html"
+            class="card-link">
+            Explore →
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="icon">📚</div>
+
+          <h3>
+            Online Courses
+          </h3>
+
+          <p>
+            Learn new skills through online courses.
+          </p>
+
+          <a
+            href="courses.html"
+            class="card-link">
+            Explore →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROFILE -->
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          My Profile
+        </h2>
 
         <p>
-          Find career opportunities in Tanzania and beyond.
+          Your account information from Supabase.
         </p>
-
-        <a href="jobs.html">
-          Explore →
-        </a>
 
       </div>
 
 
-      <div class="card">
+      <div class="profile">
 
-        <div class="icon">🚀</div>
+        <div class="profile-box">
 
-        <h3>Internships</h3>
+          <label>
+            Full Name
+          </label>
 
-        <p>
-          Find internships and early-career opportunities.
-        </p>
+          <strong id="profileName">
+            —
+          </strong>
 
-        <a href="internships.html">
-          Explore →
-        </a>
+        </div>
+
+
+        <div class="profile-box">
+
+          <label>
+            Email
+          </label>
+
+          <strong id="profileEmail">
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+          <label>
+            Account ID
+          </label>
+
+          <strong id="profileId">
+            —
+          </strong>
+
+        </div>
+
+
+        <div class="profile-box">
+
+          <label>
+            Member Since
+          </label>
+
+          <strong id="profileDate">
+            —
+          </strong>
+
+        </div>
 
       </div>
 
-
-      <div class="card">
-
-        <div class="icon">📚</div>
-
-        <h3>Online Courses</h3>
-
-        <p>
-          Learn new skills through online learning resources.
-        </p>
-
-        <a href="courses.html">
-          Explore →
-        </a>
-
-      </div>
-
-    </div>
+    </section>
 
   </div>
 
@@ -329,102 +472,271 @@
 
 
 <footer>
-  © 2026 OpportunityBridge. All rights reserved.
+
+  © 2026 Tanzania Digital Hub
+
+  ·
+
+  <a href="Privacy.html">
+    Privacy
+  </a>
+
+  ·
+
+  <a href="Contact.html">
+    Contact
+  </a>
+
 </footer>
 
 
+<!-- SUPABASE -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
-const SUPABASE_URL =
-  "https://wrdpnhqwolqovoukhlns.supabase.co";
+  const SUPABASE_URL =
+    "https://wrdpnhqwolqovoukhlns.supabase.co";
 
-const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+  const SUPABASE_KEY =
+    "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
 
-const { createClient } = supabase;
-
-const supabaseClient = createClient(
-  SUPABASE_URL,
-  SUPABASE_PUBLISHABLE_KEY
-);
-
-
-// Check logged-in user
-
-async function checkUser() {
-
-  const {
-    data: { user },
-    error
-  } = await supabaseClient.auth.getUser();
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
 
 
-  if (error || !user) {
+  const loading =
+    document.getElementById("loading");
 
-    window.location.href = "login.html";
+  const dashboard =
+    document.getElementById("dashboard");
 
-    return;
+  const errorBox =
+    document.getElementById("error");
+
+
+  function showError(message) {
+
+    loading.style.display = "none";
+
+    errorBox.textContent = message;
+
+    errorBox.style.display = "block";
+
   }
 
 
-  const fullName =
-    user.user_metadata?.full_name;
+  async function loadDashboard() {
 
-
-  document.getElementById("userName").textContent =
-    fullName || "User";
-
-
-  document.getElementById("userEmail").textContent =
-    user.email || "";
-
-
-  document.getElementById("loading").style.display =
-    "none";
-
-
-  document.getElementById("dashboard").style.display =
-    "block";
-}
-
-
-// Logout
-
-document
-  .getElementById("logoutBtn")
-  .addEventListener("click", async function() {
-
-    this.disabled = true;
-    this.textContent = "Logging out...";
-
-
-    const { error } =
-      await supabaseClient.auth.signOut();
+    const {
+      data: {
+        session
+      },
+      error
+    } =
+      await supabaseClient.auth.getSession();
 
 
     if (error) {
 
-      alert(
-        "Logout failed. Please try again."
+      showError(
+        "Unable to check your login session."
       );
 
-      this.disabled = false;
-      this.textContent = "Logout";
-
       return;
+
     }
 
 
-    window.location.href = "login.html";
+    /*
+      USER IS NOT LOGGED IN
+      → SEND THEM TO LOGIN
+    */
 
-  });
+    if (!session || !session.user) {
+
+      window.location.href =
+        "login.html";
+
+      return;
+
+    }
 
 
-// Start
+    const user =
+      session.user;
 
-checkUser();
+
+    /*
+      GET PROFILE FROM SUPABASE
+    */
+
+    const {
+      data: profile,
+      error: profileError
+    } =
+      await supabaseClient
+
+        .from("profiles")
+
+        .select(
+          "full_name, created_at"
+        )
+
+        .eq(
+          "id",
+          user.id
+        )
+
+        .maybeSingle();
+
+
+    /*
+      USE PROFILE NAME
+      OR FALLBACK TO EMAIL
+    */
+
+    const name =
+      profile?.full_name?.trim() ||
+      user.user_metadata?.full_name?.trim() ||
+      user.email?.split("@")[0] ||
+      "User";
+
+
+    /*
+      SHOW USER INFORMATION
+    */
+
+    document.getElementById(
+      "welcomeName"
+    ).textContent = name;
+
+
+    document.getElementById(
+      "navUser"
+    ).textContent = name;
+
+
+    document.getElementById(
+      "profileName"
+    ).textContent = name;
+
+
+    document.getElementById(
+      "profileEmail"
+    ).textContent =
+      user.email || "—";
+
+
+    document.getElementById(
+      "profileId"
+    ).textContent =
+      user.id;
+
+
+    const createdDate =
+      profile?.created_at ||
+      user.created_at;
+
+
+    if (createdDate) {
+
+      document.getElementById(
+        "profileDate"
+      ).textContent =
+        new Date(
+          createdDate
+        ).toLocaleDateString(
+          "en-GB",
+          {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+          }
+        );
+
+    }
+
+
+    /*
+      SHOW DASHBOARD
+    */
+
+    loading.style.display =
+      "none";
+
+    dashboard.style.display =
+      "block";
+
+  }
+
+
+  /*
+    LOGOUT
+  */
+
+  document
+    .getElementById("logoutBtn")
+    .addEventListener(
+      "click",
+      async function () {
+
+        const {
+          error
+        } =
+          await supabaseClient
+            .auth
+            .signOut();
+
+
+        if (error) {
+
+          showError(
+            "Logout failed. Please try again."
+          );
+
+          return;
+
+        }
+
+
+        window.location.href =
+          "login.html";
+
+      }
+    );
+
+
+  /*
+    KEEP DASHBOARD IN SYNC
+  */
+
+  supabaseClient.auth
+    .onAuthStateChange(
+      function (event, session) {
+
+        if (
+          event === "SIGNED_OUT" ||
+          !session
+        ) {
+
+          window.location.href =
+            "login.html";
+
+        }
+
+      }
+    );
+
+
+  /*
+    START
+  */
+
+  loadDashboard();
 
 </script>
 
