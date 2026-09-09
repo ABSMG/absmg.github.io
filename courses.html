@@ -5,75 +5,26 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Online Courses | Free Courses & Learning Opportunities | OpportunityBridge</title>
+  <title>Online Courses & Digital Skills | OpportunityBridge</title>
 
-  <meta name="description" content="Discover free and affordable online courses, professional training and learning opportunities from trusted platforms with OpportunityBridge.">
+  <meta name="description" content="Discover useful online courses and digital skills resources for students, graduates and professionals. Learn practical skills for education, careers and remote opportunities.">
 
-  <meta name="keywords" content="online courses, free online courses, courses in Tanzania, online learning, free certificates, professional courses, OpportunityBridge">
+  <meta name="keywords" content="online courses, free online courses, digital skills, online learning, computer courses, technology courses, career skills, OpportunityBridge">
 
   <meta name="author" content="OpportunityBridge">
 
   <meta name="robots" content="index, follow">
 
-  <meta name="theme-color" content="#0b4f8a">
-
-  <link rel="canonical" href="https://absmg.github.io/courses.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Online Courses | OpportunityBridge">
-  <meta property="og:description" content="Find online courses, professional training and learning opportunities from trusted platforms.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://absmg.github.io/courses.html">
-  <meta property="og:site_name" content="OpportunityBridge">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Online Courses | OpportunityBridge">
-  <meta name="twitter:description" content="Explore online courses and learning opportunities.">
-
   <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
+
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous"></script>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Online Courses",
-    "description": "Online courses and learning opportunities.",
-    "url": "https://absmg.github.io/courses.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "OpportunityBridge",
-      "url": "https://absmg.github.io/"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://absmg.github.io/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Courses",
-        "item": "https://absmg.github.io/courses.html"
-      }
-    ]
-  }
+    crossorigin="anonymous">
   </script>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -82,13 +33,19 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #172033;
       line-height: 1.6;
+      background: #f5f7fb;
+      color: #222;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
     header {
-      background: #0b4f8a;
+      background: #0b5ed7;
       color: white;
       position: sticky;
       top: 0;
@@ -96,10 +53,10 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.12);
     }
 
-    .nav-container {
+    .header-container {
       max-width: 1150px;
       margin: auto;
-      padding: 16px 20px;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -107,19 +64,18 @@
 
     .logo {
       color: white;
-      text-decoration: none;
       font-size: 23px;
-      font-weight: 700;
+      font-weight: bold;
     }
 
-    nav {
+    nav ul {
+      list-style: none;
       display: flex;
       gap: 22px;
     }
 
     nav a {
       color: white;
-      text-decoration: none;
       font-size: 15px;
       font-weight: 600;
     }
@@ -128,664 +84,1038 @@
       opacity: 0.8;
     }
 
-    .menu-btn {
+    .menu-toggle {
       display: none;
-      background: none;
       border: none;
+      background: transparent;
       color: white;
       font-size: 28px;
       cursor: pointer;
     }
 
+    /* HERO */
+
     .hero {
-      background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
-      color: white;
+      background: white;
       padding: 65px 20px;
       text-align: center;
     }
 
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
     .hero h1 {
-      font-size: 42px;
+      color: #0b5ed7;
+      font-size: 38px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 720px;
-      margin: auto;
+      color: #555;
       font-size: 18px;
-      opacity: 0.95;
+      max-width: 760px;
+      margin: auto;
     }
 
-    .container {
+    /* MAIN */
+
+    main {
       max-width: 1150px;
       margin: auto;
-      padding: 45px 20px;
+      padding: 35px 20px 60px;
     }
 
-    .search-area {
+    .intro {
       background: white;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-      margin-bottom: 35px;
+      padding: 28px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
-    .search-area input,
-    .search-area select {
-      width: 100%;
-      padding: 13px 15px;
-      border: 1px solid #d6dce5;
+    .intro h2 {
+      color: #0b5ed7;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #555;
+    }
+
+    /* ADS */
+
+    .ad-container {
+      background: white;
+      min-height: 100px;
+      margin: 25px 0;
+      padding: 10px;
+      text-align: center;
+      overflow: hidden;
       border-radius: 8px;
-      font-size: 15px;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      margin: 30px 0 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 18px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
       outline: none;
     }
 
-    .search-area input:focus,
-    .search-area select:focus {
-      border-color: #0b6fc2;
+    .search-box input:focus {
+      border-color: #0b5ed7;
     }
+
+    /* FILTERS */
 
     .filters {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 30px;
+    .filter-btn {
+      border: none;
+      background: #e9eef7;
+      color: #333;
+      padding: 10px 17px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
     }
 
-    .section-title h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #0b5ed7;
+      color: white;
     }
 
-    .section-title p {
-      color: #667085;
-    }
+    /* COURSE CARDS */
 
-    .courses-grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .course-card {
+    .card {
       background: white;
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-      transition: 0.25s ease;
-      border: 1px solid #edf0f4;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      transition: transform 0.2s ease;
     }
 
-    .course-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    .card:hover {
+      transform: translateY(-4px);
     }
 
-    .badge {
-      display: inline-block;
-      background: #eaf4ff;
-      color: #0b4f8a;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .course-card h3 {
-      font-size: 20px;
+    .card h3 {
+      color: #0b5ed7;
       margin-bottom: 10px;
+      font-size: 20px;
     }
 
-    .course-card p {
-      color: #667085;
-      font-size: 14px;
-      margin-bottom: 18px;
+    .card p {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 15px;
     }
 
-    .course-card a {
+    .tag {
       display: inline-block;
-      background: #0b4f8a;
+      background: #eef4ff;
+      color: #0b5ed7;
+      padding: 5px 9px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin: 2px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      background: #0b5ed7;
       color: white;
-      text-decoration: none;
-      padding: 10px 17px;
-      border-radius: 7px;
-      font-size: 14px;
+      padding: 10px 15px;
+      border-radius: 6px;
       font-weight: 600;
+      font-size: 14px;
     }
 
-    .course-card a:hover {
-      background: #0b6fc2;
+    .card a:hover {
+      background: #084298;
     }
 
-    .seo-section {
+    .no-results {
+      display: none;
       background: white;
-      margin-top: 50px;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      color: #666;
     }
 
-    .seo-section h2 {
+    /* LEARNING GUIDE */
+
+    .guidance {
+      background: white;
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .guidance h2 {
+      color: #0b5ed7;
       margin-bottom: 15px;
     }
 
-    .seo-section p {
-      color: #596579;
-      margin-bottom: 12px;
+    .guidance h3 {
+      margin-top: 20px;
+      margin-bottom: 7px;
     }
 
+    .guidance p {
+      color: #555;
+    }
+
+    .guidance ul {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    /* CTA */
+
     .cta {
-      margin-top: 45px;
-      background: #0b4f8a;
+      background: #0b5ed7;
       color: white;
       text-align: center;
-      padding: 40px 20px;
-      border-radius: 15px;
+      padding: 35px 20px;
+      margin-top: 40px;
+      border-radius: 12px;
     }
 
     .cta h2 {
       margin-bottom: 10px;
     }
 
+    .cta p {
+      margin-bottom: 20px;
+    }
+
     .cta a {
       display: inline-block;
-      margin-top: 18px;
       background: white;
-      color: #0b4f8a;
+      color: #0b5ed7;
       padding: 11px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
+      border-radius: 7px;
+      font-weight: bold;
     }
 
-    .ad-container {
-      margin: 35px 0;
-      text-align: center;
-      min-height: 100px;
-    }
+    /* FOOTER */
 
     footer {
-      background: #102033;
-      color: #cbd5e1;
-      margin-top: 50px;
-      padding: 40px 20px;
-    }
-
-    .footer-container {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 30px;
-    }
-
-    footer h3 {
+      background: #102a43;
       color: white;
-      margin-bottom: 12px;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: white;
+      font-size: 14px;
     }
 
     footer p {
       font-size: 14px;
+      color: #d7e0ea;
     }
 
-    footer a {
-      color: #cbd5e1;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 7px;
-      font-size: 14px;
-    }
+    /* MOBILE */
 
-    footer a:hover {
-      color: white;
-    }
+    @media (max-width: 750px) {
 
-    .copyright {
-      max-width: 1150px;
-      margin: 30px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #263548;
-      text-align: center;
-      font-size: 13px;
-    }
+      .header-container {
+        padding: 13px 16px;
+        flex-wrap: wrap;
+      }
 
-    @media (max-width: 800px) {
-
-      .menu-btn {
+      .menu-toggle {
         display: block;
       }
 
       nav {
         display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
         width: 100%;
-        background: #0b4f8a;
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
+        order: 3;
       }
 
       nav.active {
-        display: flex;
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0 15px;
+      }
+
+      nav li {
+        border-top: 1px solid rgba(255,255,255,0.15);
+      }
+
+      nav a {
+        display: block;
+        padding: 12px 5px;
+      }
+
+      .hero {
+        padding: 45px 18px;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
-      .filters {
+      main {
+        padding: 25px 15px 45px;
+      }
+
+      .cards {
         grid-template-columns: 1fr;
       }
 
-      .courses-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-container {
-        grid-template-columns: 1fr;
+      .intro,
+      .guidance {
+        padding: 22px;
       }
     }
 
-    @media (min-width: 801px) and (max-width: 1050px) {
-      .courses-grid {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 380px) {
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .filter-btn {
+        font-size: 13px;
+        padding: 8px 13px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav-container">
+  <!-- HEADER -->
 
-    <a href="index.html" class="logo">
-      OpportunityBridge
-    </a>
+  <header>
 
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
-      ☰
-    </button>
+    <div class="header-container">
 
-    <nav id="mainNav">
-      <a href="index.html">Home</a>
-      <a href="scholarships.html">Scholarships</a>
-      <a href="jobs.html">Jobs</a>
-      <a href="internships.html">Internships</a>
-      <a href="courses.html">Courses</a>
-      <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
-    </nav>
+      <a href="index.html" class="logo">
+        OpportunityBridge
+      </a>
 
-  </div>
-</header>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰
+      </button>
 
-<section class="hero">
-  <h1>Online Courses & Learning Opportunities</h1>
+      <nav id="mainNav">
 
-  <p>
-    Discover online courses, professional training and learning
-    opportunities that can help you build valuable skills for your future.
-  </p>
-</section>
+        <ul>
 
-<main class="container">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
 
-  <div class="search-area">
+          <li>
+            <a href="scholarships.html">Scholarships</a>
+          </li>
 
-    <div class="filters">
+          <li>
+            <a href="jobs.html">Jobs</a>
+          </li>
+
+          <li>
+            <a href="internships.html">Internships</a>
+          </li>
+
+          <li>
+            <a href="courses.html">Courses</a>
+          </li>
+
+          <li>
+            <a href="opportunities.html">Opportunities</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Online Courses & Digital Skills</h1>
+
+      <p>
+        Discover online learning resources that can help you
+        develop academic, professional and digital skills for
+        education, employment and future opportunities.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <h2>Learn Skills That Create Opportunities</h2>
+
+      <p>
+        Online learning can make it easier to develop useful skills
+        alongside school, university or work. From digital literacy
+        and programming to communication and career preparation,
+        the right course can help you build knowledge and confidence.
+      </p>
+
+    </section>
+
+
+    <!-- FIRST AD -->
+
+    <div class="ad-container">
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2004981151172844"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
 
       <input
         type="text"
         id="searchInput"
-        placeholder="Search courses..."
-        onkeyup="filterCourses()"
-      >
-
-      <select id="categoryFilter" onchange="filterCourses()">
-        <option value="all">All Categories</option>
-        <option value="technology">Technology</option>
-        <option value="business">Business</option>
-        <option value="health">Health</option>
-        <option value="languages">Languages</option>
-        <option value="general">General Learning</option>
-      </select>
+        placeholder="Search courses by subject or skill..."
+        aria-label="Search courses">
 
     </div>
 
-  </div>
 
-  <!-- AdSense -->
-  <div class="ad-container">
+    <!-- FILTERS -->
 
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-2004981151172844"
-      data-ad-slot="5992864529"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
+    <div class="filters">
 
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+      <button
+        class="filter-btn active"
+        data-filter="all">
+        All
+      </button>
 
-  </div>
+      <button
+        class="filter-btn"
+        data-filter="technology">
+        Technology
+      </button>
 
-  <section>
+      <button
+        class="filter-btn"
+        data-filter="business">
+        Business
+      </button>
 
-    <div class="section-title">
-      <h2>Explore Courses</h2>
-      <p>Start learning new skills from trusted education platforms.</p>
+      <button
+        class="filter-btn"
+        data-filter="language">
+        Languages
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="career">
+        Career
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="science">
+        Science
+      </button>
+
     </div>
 
-    <div class="courses-grid" id="coursesGrid">
 
-      <article class="course-card" data-category="technology">
+    <!-- COURSE CARDS -->
 
-        <span class="badge">Technology</span>
-
-        <h3>Free Online Courses</h3>
-
-        <p>
-          Explore courses covering technology, business, data,
-          programming and many other useful skills.
-        </p>
-
-        <a href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">
-          Explore Courses
-        </a>
-
-      </article>
+    <section class="cards" id="courseCards">
 
 
-      <article class="course-card" data-category="technology">
+      <!-- CARD 1 -->
 
-        <span class="badge">Technology</span>
+      <article
+        class="card"
+        data-category="technology"
+        data-search="computer digital literacy technology basic computer skills">
 
-        <h3>Digital Skills</h3>
+        <h3>Digital Literacy</h3>
 
         <p>
-          Learn digital skills and explore professional development
-          opportunities through online learning.
+          Build essential computer and digital skills for studying,
+          communicating online and using modern digital tools.
         </p>
 
-        <a href="https://www.edx.org/" target="_blank" rel="noopener noreferrer">
-          Explore Courses
-        </a>
+        <span class="tag">Technology</span>
+        <span class="tag">Beginner</span>
 
-      </article>
+        <br>
 
-
-      <article class="course-card" data-category="technology">
-
-        <span class="badge">Technology</span>
-
-        <h3>Programming & Computer Science</h3>
-
-        <p>
-          Build programming and computer science knowledge through
-          structured online learning resources.
-        </p>
-
-        <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://edu.gcfglobal.org/en/topics/digital-skills/"
+          target="_blank"
+          rel="noopener noreferrer">
           Start Learning
         </a>
 
       </article>
 
 
-      <article class="course-card" data-category="business">
+      <!-- CARD 2 -->
 
-        <span class="badge">Business</span>
+      <article
+        class="card"
+        data-category="technology"
+        data-search="programming coding computer science web development software">
+
+        <h3>Programming & Coding</h3>
+
+        <p>
+          Explore programming concepts and develop the foundation
+          needed for software development and technology careers.
+        </p>
+
+        <span class="tag">Technology</span>
+        <span class="tag">Coding</span>
+
+        <br>
+
+        <a
+          href="https://www.freecodecamp.org/learn/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Explore Courses
+        </a>
+
+      </article>
+
+
+      <!-- CARD 3 -->
+
+      <article
+        class="card"
+        data-category="business"
+        data-search="business entrepreneurship management finance business skills">
 
         <h3>Business & Entrepreneurship</h3>
 
         <p>
-          Improve your understanding of entrepreneurship, business
-          and professional skills.
+          Learn about entrepreneurship, business planning, marketing
+          and other skills useful for starting or managing projects.
         </p>
 
-        <a href="https://www.coursera.org/browse/business" target="_blank" rel="noopener noreferrer">
+        <span class="tag">Business</span>
+        <span class="tag">Entrepreneurship</span>
+
+        <br>
+
+        <a
+          href="https://www.saylor.org/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Explore Learning
+        </a>
+
+      </article>
+
+
+      <!-- CARD 4 -->
+
+      <article
+        class="card"
+        data-category="language career"
+        data-search="english communication language writing communication skills">
+
+        <h3>English & Communication</h3>
+
+        <p>
+          Improve communication, writing and language skills that
+          can support academic work and professional development.
+        </p>
+
+        <span class="tag">Language</span>
+        <span class="tag">Communication</span>
+
+        <br>
+
+        <a
+          href="https://www.open.edu/openlearn/"
+          target="_blank"
+          rel="noopener noreferrer">
           Explore Courses
         </a>
 
       </article>
 
 
-      <article class="course-card" data-category="languages">
+      <!-- CARD 5 -->
 
-        <span class="badge">Languages</span>
+      <article
+        class="card"
+        data-category="career"
+        data-search="career development CV interview job professional skills">
 
-        <h3>Language Learning</h3>
+        <h3>Career Development</h3>
 
         <p>
-          Discover resources for learning languages and improving
-          communication skills online.
+          Develop practical career skills such as CV preparation,
+          communication, professional planning and workplace readiness.
         </p>
 
-        <a href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer">
+        <span class="tag">Career</span>
+        <span class="tag">Professional</span>
+
+        <br>
+
+        <a
+          href="https://www.coursera.org/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Explore Learning
+        </a>
+
+      </article>
+
+
+      <!-- CARD 6 -->
+
+      <article
+        class="card"
+        data-category="science"
+        data-search="science biology chemistry physics mathematics science courses">
+
+        <h3>Science & Mathematics</h3>
+
+        <p>
+          Strengthen your understanding of science and mathematics
+          through structured online learning resources.
+        </p>
+
+        <span class="tag">Science</span>
+        <span class="tag">Mathematics</span>
+
+        <br>
+
+        <a
+          href="https://www.khanacademy.org/"
+          target="_blank"
+          rel="noopener noreferrer">
           Start Learning
         </a>
 
       </article>
 
-
-      <article class="course-card" data-category="general">
-
-        <span class="badge">General Learning</span>
-
-        <h3>Khan Academy</h3>
-
-        <p>
-          Access free educational lessons and practice resources
-          across a wide range of subjects.
-        </p>
-
-        <a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">
-          Start Learning
-        </a>
-
-      </article>
+    </section>
 
 
-      <article class="course-card" data-category="health">
+    <div
+      class="no-results"
+      id="noResults">
 
-        <span class="badge">Health</span>
-
-        <h3>Health & Medical Learning</h3>
-
-        <p>
-          Explore educational resources related to health and
-          medical sciences from established learning platforms.
-        </p>
-
-        <a href="https://www.coursera.org/browse/health" target="_blank" rel="noopener noreferrer">
-          Explore Courses
-        </a>
-
-      </article>
-
-
-      <article class="course-card" data-category="general">
-
-        <span class="badge">General Learning</span>
-
-        <h3>OpenLearn</h3>
-
-        <p>
-          Discover free courses and educational resources covering
-          different academic and professional subjects.
-        </p>
-
-        <a href="https://www.open.edu/openlearn/" target="_blank" rel="noopener noreferrer">
-          Start Learning
-        </a>
-
-      </article>
-
-
-      <article class="course-card" data-category="technology">
-
-        <span class="badge">Technology</span>
-
-        <h3>Microsoft Learn</h3>
-
-        <p>
-          Develop technology and professional skills through
-          Microsoft's learning resources and training paths.
-        </p>
-
-        <a href="https://learn.microsoft.com/training/" target="_blank" rel="noopener noreferrer">
-          Start Learning
-        </a>
-
-      </article>
+      No courses matched your search.
+      Try another keyword or choose another category.
 
     </div>
 
-  </section>
+
+    <!-- SECOND AD -->
+
+    <div class="ad-container">
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2004981151172844"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+    </div>
 
 
-  <section class="seo-section">
+    <!-- LEARNING GUIDE -->
 
-    <h2>Why Online Courses Matter</h2>
+    <section class="guidance">
 
-    <p>
-      Online courses can help students, graduates and professionals
-      develop new knowledge and practical skills without being limited
-      by location.
-    </p>
-
-    <p>
-      Learners can explore areas such as technology, programming,
-      business, languages, health sciences and professional development.
-    </p>
-
-    <p>
-      Before starting a course, check the provider's official website
-      for eligibility requirements, course duration, fees and certificate
-      information.
-    </p>
-
-  </section>
+      <h2>How to Choose an Online Course</h2>
 
 
-  <section class="cta">
-
-    <h2>Looking for More Opportunities?</h2>
-
-    <p>
-      Explore scholarships, jobs and internships on OpportunityBridge.
-    </p>
-
-    <a href="index.html">
-      Explore Opportunities
-    </a>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <div class="footer-container">
-
-    <div>
-      <h3>OpportunityBridge</h3>
+      <h3>1. Start With Your Goal</h3>
 
       <p>
-        Helping students and job seekers discover scholarships,
-        jobs, internships and online learning opportunities.
+        Decide what you want to achieve before choosing a course.
+        You might want to improve your academic knowledge, learn
+        a professional skill or prepare for a particular career.
       </p>
-    </div>
 
-    <div>
 
-      <h3>Explore</h3>
+      <h3>2. Check the Course Content</h3>
+
+      <p>
+        Read the course description and learning outcomes carefully.
+        Choose content that matches your current level and your
+        learning goals.
+      </p>
+
+
+      <h3>3. Consider Your Available Time</h3>
+
+      <p>
+        Online learning requires consistency. Choose a course that
+        fits your schedule so you can make steady progress.
+      </p>
+
+
+      <h3>4. Practice What You Learn</h3>
+
+      <p>
+        Knowledge becomes more useful when you apply it. Work on
+        small projects, exercises or practical activities related
+        to the skill you are learning.
+      </p>
+
+
+      <h3>5. Keep Learning</h3>
+
+      <p>
+        Technology and professional requirements change over time.
+        Continue improving your skills after completing a course.
+      </p>
+
+
+      <h3>Important: Certificates</h3>
+
+      <p>
+        Not every online course provides a certificate, and not every
+        certificate has the same value. Before paying for a course,
+        check who provides it, what the certificate represents and
+        whether it is relevant to your education or career goals.
+      </p>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <h2>Looking for More Opportunities?</h2>
+
+      <p>
+        Explore scholarships, jobs and internships to connect
+        your learning with real-world opportunities.
+      </p>
+
+      <a href="opportunities.html">
+        Explore Opportunities
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
 
       <a href="scholarships.html">Scholarships</a>
+
       <a href="jobs.html">Jobs</a>
+
       <a href="internships.html">Internships</a>
+
       <a href="courses.html">Courses</a>
 
-    </div>
+      <a href="opportunities.html">Opportunities</a>
 
-    <div>
+      <a href="about.html">About</a>
 
-      <h3>Information</h3>
+      <a href="contact.html">Contact</a>
 
-      <a href="about.html">About Us</a>
-      <a href="Contact.html">Contact</a>
-      <a href="Privacy.html">Privacy Policy</a>
+      <a href="Privacy.html">Privacy</a>
+
       <a href="Disclaimer.html">Disclaimer</a>
 
     </div>
 
-  </div>
 
-  <div class="copyright">
-    © 2026 OpportunityBridge. All rights reserved.
-  </div>
+    <p>
+      © 2026 OpportunityBridge. All rights reserved.
+    </p>
 
-</footer>
-
-
-<script>
-
-  function toggleMenu() {
-    document.getElementById("mainNav").classList.toggle("active");
-  }
+  </footer>
 
 
-  function filterCourses() {
+  <!-- JAVASCRIPT -->
 
-    const search =
-      document.getElementById("searchInput").value.toLowerCase();
+  <script>
 
-    const category =
-      document.getElementById("categoryFilter").value;
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+
+    menuToggle.addEventListener(
+      "click",
+      function() {
+
+        mainNav.classList.toggle("active");
+
+        const isOpen =
+          mainNav.classList.contains("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen
+            ? "Close navigation"
+            : "Open navigation"
+        );
+
+        menuToggle.textContent =
+          isOpen ? "✕" : "☰";
+
+      }
+    );
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document
+      .querySelectorAll("#mainNav a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            mainNav.classList.remove("active");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuToggle.setAttribute(
+              "aria-label",
+              "Open navigation"
+            );
+
+            menuToggle.textContent = "☰";
+
+          }
+        );
+
+      });
+
+
+    /* SEARCH + FILTER */
+
+    const searchInput =
+      document.getElementById("searchInput");
 
     const cards =
-      document.querySelectorAll(".course-card");
+      document.querySelectorAll(".card");
 
-    cards.forEach(function(card) {
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
 
-      const text =
-        card.textContent.toLowerCase();
+    const noResults =
+      document.getElementById("noResults");
 
-      const cardCategory =
-        card.getAttribute("data-category");
+    let currentFilter = "all";
 
-      const matchesSearch =
-        text.includes(search);
 
-      const matchesCategory =
-        category === "all" ||
-        cardCategory === category;
+    function filterCards() {
 
-      if (matchesSearch && matchesCategory) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
+      const searchTerm =
+        searchInput.value
+          .toLowerCase()
+          .trim();
+
+      let visibleCards = 0;
+
+
+      cards.forEach(function(card) {
+
+        const category =
+          card.dataset.category.toLowerCase();
+
+        const searchText =
+          card.dataset.search.toLowerCase();
+
+        const title =
+          card
+            .querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        const matchesSearch =
+          searchText.includes(searchTerm) ||
+          title.includes(searchTerm);
+
+        const matchesFilter =
+          currentFilter === "all" ||
+          category.includes(currentFilter);
+
+
+        if (
+          matchesSearch &&
+          matchesFilter
+        ) {
+
+          card.style.display = "block";
+
+          visibleCards++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      noResults.style.display =
+        visibleCards === 0
+          ? "block"
+          : "none";
+
+    }
+
+
+    searchInput.addEventListener(
+      "input",
+      filterCards
+    );
+
+
+    filterButtons.forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            filterButtons.forEach(
+              function(btn) {
+                btn.classList.remove("active");
+              }
+            );
+
+            button.classList.add("active");
+
+            currentFilter =
+              button.dataset.filter;
+
+            filterCards();
+
+          }
+        );
+
       }
+    );
 
-    });
-
-  }
-
-</script>
+  </script>
 
 </body>
 </html>
