@@ -2,37 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>OpportunityBridge | Scholarships, Jobs, Internships & Online Courses</title>
+  <title>OpportunityBridge | Scholarships, Jobs, Internships & Courses</title>
 
-  <meta name="description"
-        content="OpportunityBridge helps students and young professionals in Tanzania and Africa discover scholarships, jobs, internships and online courses.">
+  <meta name="description" content="OpportunityBridge helps students and opportunity seekers discover scholarships, jobs, internships and online courses in Tanzania and beyond.">
+  <meta name="keywords" content="scholarships Tanzania, jobs Tanzania, internships Tanzania, online courses, opportunities, students, OpportunityBridge">
 
-  <meta name="robots" content="index, follow">
-
-  <meta name="author" content="OpportunityBridge">
-
-  <meta name="theme-color" content="#0b4f8a">
-
-  <link rel="canonical" href="https://absmg.github.io/">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title"
-        content="OpportunityBridge | Scholarships, Jobs, Internships & Online Courses">
-  <meta property="og:description"
-        content="Discover scholarships, jobs, internships and online courses for students and young professionals in Tanzania and Africa.">
-  <meta property="og:url" content="https://absmg.github.io/">
-  <meta property="og:site_name" content="OpportunityBridge">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title"
-        content="OpportunityBridge | Opportunities for Your Future">
-  <meta name="twitter:description"
-        content="Find scholarships, jobs, internships and online courses in one place.">
+  <meta name="theme-color" content="#0b1f3a">
 
   <!-- Google AdSense -->
   <script async
@@ -40,43 +17,24 @@
     crossorigin="anonymous">
   </script>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "OpportunityBridge",
-    "url": "https://absmg.github.io/",
-    "description": "A platform helping students and young professionals discover scholarships, jobs, internships and online courses.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://absmg.github.io/scholarships.html?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OpportunityBridge",
-    "url": "https://absmg.github.io/"
-  }
-  </script>
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #1f2937;
+      background: #f5f7fb;
+      color: #172033;
       line-height: 1.6;
     }
 
@@ -85,1019 +43,1153 @@
       color: inherit;
     }
 
-    /* ================= HEADER ================= */
+    button {
+      font-family: inherit;
+    }
 
-    header {
-      background: #0b4f8a;
-      color: white;
+    /* ================= NAVBAR ================= */
+
+    .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e9f0;
     }
 
-    .navbar {
-      max-width: 1150px;
+    .nav-container {
+      max-width: 1200px;
       margin: auto;
       padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
-      letter-spacing: .3px;
+      color: #0b1f3a;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #1677ff;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
       align-items: center;
+      gap: 18px;
+      list-style: none;
     }
 
     .nav-links a {
+      color: #344054;
       font-size: 14px;
       font-weight: 600;
-      opacity: .95;
     }
 
     .nav-links a:hover {
-      opacity: .7;
+      color: #1677ff;
     }
 
-    .login-link {
-      padding: 8px 13px;
-      border: 1px solid rgba(255,255,255,.65);
-      border-radius: 7px;
-      transition: .2s;
-    }
-
-    .login-link:hover {
-      background: rgba(255,255,255,.1);
-      opacity: 1 !important;
-    }
-
-    .register-link {
-      background: white;
-      color: #0b4f8a !important;
-      padding: 9px 15px;
-      border-radius: 7px;
-      font-weight: 700 !important;
-      transition: .2s;
-    }
-
-    .register-link:hover {
-      background: #eaf3fb;
-      transform: translateY(-1px);
-      opacity: 1 !important;
-    }
-
-    .menu-btn {
-      display: none;
-      background: transparent;
-      border: 0;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
-      color: white;
-      padding: 85px 20px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 64px);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      opacity: .95;
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
+    .nav-buttons {
       display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      padding: 11px 17px;
+      border-radius: 10px;
       font-weight: 700;
-      transition: .2s;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #0b4f8a;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,.7);
-      color: white;
+      font-size: 14px;
+      transition: .2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
-    /* ================= SECTIONS ================= */
+    .btn-primary {
+      background: #1677ff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #075fd4;
+    }
+
+    .btn-outline {
+      background: white;
+      color: #1677ff;
+      border: 1px solid #1677ff;
+    }
+
+    .btn-dark {
+      background: #0b1f3a;
+      color: white;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #0b1f3a 0%, #123c6b 50%, #1677ff 100%);
+      color: white;
+      padding: 85px 20px 75px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: #7fc1ff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #dbeafe;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero .btn-primary {
+      background: white;
+      color: #0b1f3a;
+    }
+
+    .hero .btn-outline {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,.7);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 28px;
+      border-radius: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero-mini {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 10px;
+    }
+
+    .mini-box {
+      padding: 15px;
+      background: rgba(255,255,255,.12);
+      border-radius: 12px;
+    }
+
+    .mini-box strong {
+      display: block;
+      font-size: 22px;
+    }
+
+    .mini-box small {
+      color: #dbeafe;
+    }
+
+    /* ================= TRUST ================= */
+
+    .trust-bar {
+      background: white;
+      border-bottom: 1px solid #e5e9f0;
+    }
+
+    .trust-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      text-align: center;
+    }
+
+    .trust-item {
+      font-size: 14px;
+      font-weight: 700;
+      color: #344054;
+    }
+
+    .trust-item span {
+      color: #1677ff;
+    }
+
+    /* ================= SECTION ================= */
 
     section {
-      max-width: 1150px;
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
       margin: auto;
-      padding: 65px 20px;
     }
 
     .section-heading {
       text-align: center;
-      margin-bottom: 35px;
+      max-width: 720px;
+      margin: 0 auto 40px;
     }
 
     .section-heading h2 {
-      font-size: 32px;
-      color: #123b5d;
-      margin-bottom: 8px;
+      color: #0b1f3a;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
     .section-heading p {
       color: #667085;
     }
 
-    /* ================= CARDS ================= */
+    /* ================= OPPORTUNITIES ================= */
 
-    .cards {
+    .opportunity-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4,1fr);
       gap: 20px;
     }
 
-    .card {
+    .opportunity-card {
       background: white;
+      border: 1px solid #e5e9f0;
+      border-radius: 18px;
+      padding: 25px;
+      transition: .25s ease;
+      box-shadow: 0 8px 30px rgba(16,24,40,.04);
+    }
+
+    .opportunity-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(16,24,40,.1);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 14px;
-      padding: 28px 22px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.06);
-      border: 1px solid #e8edf2;
-      transition: .2s;
+      background: #eaf3ff;
+      font-size: 25px;
+      margin-bottom: 18px;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.09);
+    .opportunity-card h3 {
+      color: #0b1f3a;
+      margin-bottom: 8px;
     }
 
-    .card-icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #123b5d;
-      margin-bottom: 10px;
-    }
-
-    .card p {
+    .opportunity-card p {
+      font-size: 14px;
       color: #667085;
-      font-size: 15px;
       margin-bottom: 18px;
     }
 
     .card-link {
-      color: #0b6fc2;
-      font-weight: 700;
+      color: #1677ff;
       font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* ================= REGISTER BENEFITS ================= */
+
+    .benefits {
+      background: #eef5ff;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid #dce8f8;
+    }
+
+    .benefit-card .benefit-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .benefit-card h3 {
+      margin-bottom: 6px;
+      color: #0b1f3a;
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      color: #667085;
+    }
+
+    /* ================= HOW IT WORKS ================= */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #1677ff;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin-bottom: 6px;
+      color: #0b1f3a;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #667085;
+    }
+
+    /* ================= FEATURED ================= */
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .featured-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e5e9f0;
+      box-shadow: 0 8px 25px rgba(16,24,40,.05);
+    }
+
+    .featured-top {
+      padding: 20px;
+      background: #f1f6fd;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: #dff1ff;
+      color: #075fd4;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .featured-body {
+      padding: 20px;
+    }
+
+    .featured-body h3 {
+      margin-bottom: 8px;
+    }
+
+    .featured-body p {
+      font-size: 14px;
+      color: #667085;
+      margin-bottom: 15px;
+    }
+
+    /* ================= REGISTRATION CTA ================= */
+
+    .register-section {
+      padding: 75px 20px;
+    }
+
+    .register-box {
+      max-width: 1100px;
+      margin: auto;
+      background: linear-gradient(135deg,#0b1f3a,#1677ff);
+      color: white;
+      padding: 55px 40px;
+      border-radius: 25px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .register-box h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .register-box p {
+      color: #dbeafe;
+      max-width: 700px;
     }
 
     /* ================= ADS ================= */
 
     .ad-container {
-      max-width: 100%;
+      max-width: 1100px;
+      margin: 10px auto 35px;
+      padding: 0 20px;
+      text-align: center;
       min-height: 90px;
-      margin: 10px auto 30px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    /* ================= ARTICLES ================= */
-
-    .articles-section {
-      background: #f5f7fa;
-      max-width: none;
-    }
-
-    .articles-inner {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .articles-badge {
-      display: inline-block;
-      color: #0b6fc2;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .6px;
-      margin-bottom: 8px;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .article-card {
-      background: white;
-      border: 1px solid #e4eaf0;
-      border-radius: 16px;
-      padding: 26px;
-      display: flex;
-      gap: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.05);
-      transition: .25s ease;
-    }
-
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.10);
-    }
-
-    .article-icon {
-      width: 58px;
-      height: 58px;
-      min-width: 58px;
-      border-radius: 14px;
-      background: #eaf3fb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-
-    .article-content {
-      flex: 1;
-    }
-
-    .article-category {
-      color: #0b6fc2;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-
-    .article-content h3 {
-      color: #123b5d;
-      font-size: 20px;
-      line-height: 1.4;
-      margin: 7px 0 10px;
-    }
-
-    .article-content p {
-      color: #667085;
-      font-size: 14px;
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-
-    .read-more {
-      color: #0b6fc2;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .read-more:hover {
-      text-decoration: underline;
-    }
-
-    .articles-button {
-      text-align: center;
-      margin-top: 35px;
-    }
-
-    .view-all-btn {
-      display: inline-block;
-      background: #0b4f8a;
-      color: white;
-      padding: 13px 24px;
-      border-radius: 9px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .view-all-btn:hover {
-      background: #0b6fc2;
-      transform: translateY(-2px);
-    }
-
-    /* ================= WHY ================= */
-
-    .why {
-      background: white;
-      max-width: none;
-    }
-
-    .why-inner {
-      max-width: 1150px;
-      margin: auto;
-      padding: 65px 20px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .why-box {
-      padding: 25px;
-      border: 1px solid #e6ebf0;
-      border-radius: 12px;
-      background: #f9fafb;
-    }
-
-    .why-box h3 {
-      margin-bottom: 8px;
-      color: #123b5d;
-    }
-
-    .why-box p {
-      color: #667085;
-      font-size: 15px;
-    }
-
-    /* ================= CTA ================= */
-
-    .cta {
-      background: #0b4f8a;
-      color: white;
-      text-align: center;
-      max-width: none;
-    }
-
-    .cta-inner {
-      max-width: 800px;
-      margin: auto;
-      padding: 65px 20px;
-    }
-
-    .cta h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      margin-bottom: 25px;
-      opacity: .9;
     }
 
     /* ================= FOOTER ================= */
 
     footer {
-      background: #092f52;
-      color: #dbe8f3;
-      padding: 35px 20px;
+      background: #08172b;
+      color: #dbe4f0;
+      padding: 55px 20px 20px;
     }
 
-    .footer-inner {
-      max-width: 1150px;
+    .footer-grid {
+      max-width: 1200px;
       margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3,1fr);
+      gap: 40px;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+    .footer-brand h2 {
+      color: white;
+      margin-bottom: 12px;
     }
 
-    .footer-links a {
+    .footer-brand p {
+      color: #aebbd0;
       font-size: 14px;
+      max-width: 350px;
+    }
+
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #aebbd0;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+
+    .footer-col a:hover {
+      color: white;
     }
 
     .copyright {
-      margin-top: 25px;
-      text-align: center;
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #91a0b5;
       font-size: 13px;
-      opacity: .8;
+      text-align: center;
     }
 
-    /* ================= TABLET ================= */
+    /* ================= RESPONSIVE ================= */
 
-    @media (max-width: 850px) {
+    @media(max-width: 950px) {
 
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-grid {
+      .hero-container {
         grid-template-columns: 1fr;
       }
 
-      .articles-grid {
-        grid-template-columns: 1fr;
+      .opportunity-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .menu-btn {
-        display: block;
+      .benefit-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .featured-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
       .nav-links {
         display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        right: 0;
-        background: #0b4f8a;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 12px 20px 20px;
-        box-shadow: 0 8px 20px rgba(0,0,0,.15);
       }
 
-      .nav-links.show {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 12px 5px;
-        text-align: center;
-      }
-
-      .login-link {
-        border: 0;
-        padding: 12px 5px;
-      }
-
-      .register-link {
-        margin-top: 5px;
-        padding: 11px;
-        text-align: center;
+      .mobile-menu {
+        display: block;
       }
     }
 
-    /* ================= MOBILE ================= */
+    @media(max-width: 600px) {
 
-    @media (max-width: 550px) {
-
-      .navbar {
-        padding: 14px 17px;
+      .nav-container {
+        padding: 12px 15px;
       }
 
       .logo {
-        font-size: 21px;
+        font-size: 19px;
       }
 
-      .cards {
-        grid-template-columns: 1fr;
+      .nav-buttons .btn {
+        padding: 8px 10px;
+        font-size: 12px;
       }
 
       .hero {
-        padding: 65px 18px;
+        padding: 55px 18px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
-      .section-heading h2,
-      .cta h2 {
-        font-size: 27px;
+      .hero-card {
+        padding: 20px;
       }
 
-      .article-card {
-        flex-direction: column;
-        padding: 22px;
+      .trust-container {
+        grid-template-columns: 1fr;
       }
 
-      .article-icon {
-        width: 55px;
-        height: 55px;
+      section {
+        padding: 55px 18px;
       }
 
-      .article-content h3 {
-        font-size: 18px;
+      .section-heading h2 {
+        font-size: 28px;
       }
 
-      .footer-inner {
-        flex-direction: column;
+      .opportunity-grid,
+      .benefit-grid,
+      .featured-grid,
+      .steps {
+        grid-template-columns: 1fr;
       }
 
-      .footer-links {
-        flex-direction: column;
-        gap: 10px;
+      .register-box {
+        grid-template-columns: 1fr;
+        padding: 35px 25px;
+        text-align: center;
+      }
+
+      .register-box h2 {
+        font-size: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-<header>
+<!-- ================= NAVBAR ================= -->
 
-  <nav class="navbar">
+<header class="navbar">
+
+  <div class="nav-container">
 
     <a href="index.html" class="logo">
-      OpportunityBridge
+      Opportunity<span>Bridge</span>
     </a>
 
-    <button
-      class="menu-btn"
-      onclick="toggleMenu()"
-      aria-label="Open navigation menu">
-      ☰
-    </button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="courses.html">Courses</a></li>
+      </ul>
+    </nav>
 
-    <div class="nav-links" id="navLinks">
-
-      <a href="index.html">Home</a>
-
-      <a href="scholarships.html">
-        Scholarships
-      </a>
-
-      <a href="jobs.html">
-        Jobs
-      </a>
-
-      <a href="internships.html">
-        Internships
-      </a>
-
-      <a href="courses.html">
-        Courses
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="Contact.html">
-        Contact
-      </a>
-
-      <a href="login.html" class="login-link">
-        Login
-      </a>
-
-      <a href="register.html" class="register-link">
-        Register
-      </a>
-
+    <div class="nav-buttons" id="authButtons">
+      <a href="login.html" class="btn btn-outline">Login</a>
+      <a href="register.html" class="btn btn-primary">Register Free</a>
     </div>
 
-  </nav>
+    <div class="mobile-menu">☰</div>
+
+  </div>
 
 </header>
 
 
-<main>
+<!-- ================= HERO ================= -->
 
-  <!-- ================= HERO ================= -->
+<section class="hero">
 
-  <section class="hero">
+  <div class="hero-container">
 
-    <div class="hero-content">
+    <div>
+
+      <div style="margin-bottom:15px;font-size:14px;font-weight:700;">
+        🌍 Your Bridge to Better Opportunities
+      </div>
 
       <h1>
-        Find opportunities. Move forward.
+        Discover Opportunities.
+        <span>Build Your Future.</span>
       </h1>
 
       <p>
-        Discover scholarships, jobs, internships and online courses
-        designed to help students and young professionals build a
-        better future.
+        Find scholarships, jobs, internships and online courses
+        in one simple platform — designed to help you move closer
+        to your goals.
       </p>
 
       <div class="hero-buttons">
 
-        <a
-          href="scholarships.html"
-          class="btn btn-primary">
-          Explore Opportunities
+        <a href="register.html" class="btn btn-primary">
+          🚀 Create Free Account
         </a>
 
-        <a
-          href="courses.html"
-          class="btn btn-secondary">
-          Start Learning
+        <a href="#opportunities" class="btn btn-outline">
+          Explore Opportunities
         </a>
 
       </div>
 
     </div>
 
-  </section>
+
+    <div class="hero-card">
+
+      <h3>Why create an account?</h3>
+
+      <p>
+        Register for free and make your opportunity search
+        more organized and personalized.
+      </p>
+
+      <div class="hero-mini">
+
+        <div class="mini-box">
+          <strong>🎓</strong>
+          <small>Scholarships</small>
+        </div>
+
+        <div class="mini-box">
+          <strong>💼</strong>
+          <small>Jobs</small>
+        </div>
+
+        <div class="mini-box">
+          <strong>🌱</strong>
+          <small>Internships</small>
+        </div>
+
+        <div class="mini-box">
+          <strong>📚</strong>
+          <small>Courses</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  <!-- ================= OPPORTUNITIES ================= -->
+<!-- ================= TRUST ================= -->
 
-  <section>
+<div class="trust-bar">
+
+  <div class="trust-container">
+
+    <div class="trust-item">
+      ✓ <span>Free</span> to register
+    </div>
+
+    <div class="trust-item">
+      ✓ Built for <span>opportunity seekers</span>
+    </div>
+
+    <div class="trust-item">
+      ✓ Discover opportunities in <span>one place</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= ADS ================= -->
+
+<div class="ad-container">
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2004981151172844"
+       data-ad-slot="5992864529"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</div>
+
+
+<!-- ================= OPPORTUNITIES ================= -->
+
+<section id="opportunities">
+
+  <div class="container">
 
     <div class="section-heading">
 
-      <h2>
-        Explore Opportunities
-      </h2>
+      <h2>Explore Opportunities</h2>
 
       <p>
-        Find opportunities that match your education,
-        career goals and skills.
+        Everything you need to take the next step in your
+        education and career journey.
       </p>
 
     </div>
 
 
-    <div class="cards">
+    <div class="opportunity-grid">
 
-      <article class="card">
 
-        <div class="card-icon">
-          🎓
-        </div>
+      <div class="opportunity-card">
 
-        <h3>
-          Scholarships
-        </h3>
+        <div class="icon">🎓</div>
+
+        <h3>Scholarships</h3>
 
         <p>
-          Find scholarship opportunities for undergraduate,
-          postgraduate and international study.
+          Discover scholarships and funding opportunities
+          for students in Tanzania and abroad.
         </p>
 
-        <a
-          href="scholarships.html"
-          class="card-link">
+        <a class="card-link" href="scholarships.html">
           Explore Scholarships →
         </a>
 
-      </article>
+      </div>
 
 
-      <article class="card">
+      <div class="opportunity-card">
 
-        <div class="card-icon">
-          💼
-        </div>
+        <div class="icon">💼</div>
 
-        <h3>
-          Jobs
-        </h3>
+        <h3>Jobs</h3>
 
         <p>
-          Discover career opportunities from organizations
-          and employers in Tanzania and beyond.
+          Find employment opportunities and career openings
+          for different skills and experience levels.
         </p>
 
-        <a
-          href="jobs.html"
-          class="card-link">
-          Find Jobs →
+        <a class="card-link" href="jobs.html">
+          Explore Jobs →
         </a>
-
-      </article>
-
-
-      <article class="card">
-
-        <div class="card-icon">
-          🚀
-        </div>
-
-        <h3>
-          Internships
-        </h3>
-
-        <p>
-          Gain practical experience through internships,
-          volunteering and early-career opportunities.
-        </p>
-
-        <a
-          href="internships.html"
-          class="card-link">
-          Find Internships →
-        </a>
-
-      </article>
-
-
-      <article class="card">
-
-        <div class="card-icon">
-          📚
-        </div>
-
-        <h3>
-          Online Courses
-        </h3>
-
-        <p>
-          Learn technology, business, data and other
-          useful skills through online courses.
-        </p>
-
-        <a
-          href="courses.html"
-          class="card-link">
-          Browse Courses →
-        </a>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= ADSENSE ================= -->
-
-  <section style="padding-top:10px;padding-bottom:20px;">
-
-    <div class="ad-container">
-
-      <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-2004981151172844"
-        data-ad-slot="5992864529"
-        data-ad-format="auto"
-        data-full-width-responsive="true">
-      </ins>
-
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= LATEST ARTICLES ================= -->
-
-  <section class="articles-section">
-
-    <div class="articles-inner">
-
-      <div class="section-heading">
-
-        <span class="articles-badge">
-          📚 GUIDES & ARTICLES
-        </span>
-
-        <h2>
-          Latest Scholarship & Opportunity Guides
-        </h2>
-
-        <p>
-          Helpful guides to help students find scholarships,
-          study opportunities and build their future.
-        </p>
 
       </div>
 
 
-      <div class="articles-grid">
+      <div class="opportunity-card">
 
+        <div class="icon">🌱</div>
 
-        <!-- ARTICLE 1 -->
+        <h3>Internships</h3>
 
-        <article class="article-card">
+        <p>
+          Build experience and strengthen your CV through
+          internship and practical opportunities.
+        </p>
 
-          <div class="article-icon">
-            🎓
-          </div>
-
-          <div class="article-content">
-
-            <span class="article-category">
-              Scholarships
-            </span>
-
-            <h3>
-              Top Scholarships for Tanzanian Students in 2026/2027
-            </h3>
-
-            <p>
-              Discover scholarship opportunities and learn how
-              Tanzanian students can find funding for their studies.
-            </p>
-
-            <a
-              href="article1.html"
-              class="read-more">
-              Read Article →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- ARTICLE 2 -->
-
-        <article class="article-card">
-
-          <div class="article-icon">
-            🌍
-          </div>
-
-          <div class="article-content">
-
-            <span class="article-category">
-              Study Abroad
-            </span>
-
-            <h3>
-              How to Find Fully Funded Scholarships Abroad from Tanzania
-            </h3>
-
-            <p>
-              Learn where to search, how to check eligibility and
-              how to prepare a strong scholarship application.
-            </p>
-
-            <a
-              href="article2.html"
-              class="read-more">
-              Read Article →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- ARTICLE 3 -->
-
-        <article class="article-card">
-
-          <div class="article-icon">
-            🧪
-          </div>
-
-          <div class="article-content">
-
-            <span class="article-category">
-              Science & Education
-            </span>
-
-            <h3>
-              Best Universities in Tanzania for Science Students in 2026/2027
-            </h3>
-
-            <p>
-              Discover universities, science programmes and important
-              tips for choosing the right university in Tanzania.
-            </p>
-
-            <a
-              href="article3.html"
-              class="read-more">
-              Read Article →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- ARTICLE 4 -->
-
-        <article class="article-card">
-
-          <div class="article-icon">
-            🎓
-          </div>
-
-          <div class="article-content">
-
-            <span class="article-category">
-              HESLB & Education
-            </span>
-
-            <h3>
-              HESLB 2026/2027: How to Apply for Student Loans in Tanzania
-            </h3>
-
-            <p>
-              Learn about HESLB student loans, eligibility, important
-              documents, application steps and official resources for
-              Tanzanian students.
-            </p>
-
-            <a
-              href="article4.html"
-              class="read-more">
-              Read Article →
-            </a>
-
-          </div>
-
-        </article>
-
+        <a class="card-link" href="internships.html">
+          Explore Internships →
+        </a>
 
       </div>
 
 
-      <div class="articles-button">
+      <div class="opportunity-card">
 
-        <a
-          href="scholarships.html"
-          class="view-all-btn">
-          Explore More Opportunities →
+        <div class="icon">📚</div>
+
+        <h3>Online Courses</h3>
+
+        <p>
+          Learn new skills through online courses and
+          improve your academic and professional profile.
+        </p>
+
+        <a class="card-link" href="courses.html">
+          Explore Courses →
         </a>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- ================= WHY ================= -->
+<!-- ================= WHY REGISTER ================= -->
 
-  <div class="why">
+<section class="benefits">
 
-    <div class="why-inner">
+  <div class="container">
 
-      <div class="section-heading">
+    <div class="section-heading">
 
-        <h2>
-          Why OpportunityBridge?
-        </h2>
+      <h2>Why Register on OpportunityBridge?</h2>
+
+      <p>
+        Your free account gives you a better way to discover,
+        organize and follow opportunities.
+      </p>
+
+    </div>
+
+
+    <div class="benefit-grid">
+
+
+      <div class="benefit-card">
+
+        <div class="benefit-icon">🎯</div>
+
+        <h3>Personalized Opportunities</h3>
 
         <p>
-          One place to discover opportunities and develop
-          skills for your future.
+          Build a profile so you can organize opportunities
+          around your interests and goals.
         </p>
 
       </div>
 
 
-      <div class="why-grid">
+      <div class="benefit-card">
 
-        <div class="why-box">
+        <div class="benefit-icon">🔔</div>
 
-          <h3>
-            Easy to Explore
-          </h3>
+        <h3>Stay Updated</h3>
 
-          <p>
-            Browse different opportunity categories from
-            one simple and mobile-friendly platform.
-          </p>
+        <p>
+          Keep your account ready for new scholarships,
+          jobs, internships and courses.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <div class="benefit-icon">❤️</div>
+
+        <h3>Save Opportunities</h3>
+
+        <p>
+          Keep useful opportunities organized so you can
+          return to them later.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <div class="benefit-icon">📊</div>
+
+        <h3>Track Your Journey</h3>
+
+        <p>
+          Use your dashboard as a personal space for managing
+          your opportunity journey.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <div class="benefit-icon">👤</div>
+
+        <h3>Your Personal Dashboard</h3>
+
+        <p>
+          Access your profile and account information from
+          one convenient dashboard.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <div class="benefit-icon">🚀</div>
+
+        <h3>One Account, Many Possibilities</h3>
+
+        <p>
+          Use one account to build your connection with
+          scholarships, jobs, internships and courses.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>How OpportunityBridge Works</h2>
+
+      <p>
+        Getting started takes only a few simple steps.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step">
+
+        <div class="step-number">1</div>
+
+        <h3>Create Account</h3>
+
+        <p>
+          Register for your free OpportunityBridge account.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">2</div>
+
+        <h3>Discover</h3>
+
+        <p>
+          Explore scholarships, jobs, internships and courses.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">3</div>
+
+        <h3>Organize</h3>
+
+        <p>
+          Keep the opportunities that matter to you organized.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">4</div>
+
+        <h3>Take Action</h3>
+
+        <p>
+          Visit the official opportunity source and apply.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FEATURED OPPORTUNITIES ================= -->
+
+<section style="background:#f8fafc;">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>Featured Opportunities</h2>
+
+      <p>
+        Start exploring some of the opportunity categories
+        available on OpportunityBridge.
+      </p>
+
+    </div>
+
+
+    <div class="featured-grid">
+
+
+      <div class="featured-card">
+
+        <div class="featured-top">
+
+          <span class="badge">SCHOLARSHIPS</span>
+
+          <h3>Study Opportunities</h3>
 
         </div>
 
-
-        <div class="why-box">
-
-          <h3>
-            Built for Students
-          </h3>
+        <div class="featured-body">
 
           <p>
-            Find resources that can help you move from
-            education to career opportunities.
+            Explore scholarship opportunities for undergraduate
+            and further studies.
           </p>
+
+          <a href="scholarships.html" class="card-link">
+            View Scholarships →
+          </a>
 
         </div>
 
+      </div>
 
-        <div class="why-box">
 
-          <h3>
-            Keep Learning
-          </h3>
+      <div class="featured-card">
+
+        <div class="featured-top">
+
+          <span class="badge">CAREER</span>
+
+          <h3>Job Opportunities</h3>
+
+        </div>
+
+        <div class="featured-body">
 
           <p>
-            Develop useful skills through accessible
-            online learning resources.
+            Explore career opportunities and discover new
+            ways to develop your professional journey.
           </p>
+
+          <a href="jobs.html" class="card-link">
+            View Jobs →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="featured-card">
+
+        <div class="featured-top">
+
+          <span class="badge">LEARNING</span>
+
+          <h3>Learn New Skills</h3>
+
+        </div>
+
+        <div class="featured-body">
+
+          <p>
+            Find online courses that can help you develop
+            useful academic and professional skills.
+          </p>
+
+          <a href="courses.html" class="card-link">
+            View Courses →
+          </a>
 
         </div>
 
@@ -1107,71 +1199,139 @@
 
   </div>
 
+</section>
 
-  <!-- ================= CTA ================= -->
 
-  <section class="cta">
+<!-- ================= REGISTRATION CTA ================= -->
 
-    <div class="cta-inner">
+<section class="register-section">
 
-      <h2>
-        Ready to build your future?
-      </h2>
+  <div class="register-box">
+
+    <div>
+
+      <h2>Don't Miss Your Next Opportunity.</h2>
 
       <p>
-        Explore scholarships, jobs, internships and courses
-        available through OpportunityBridge.
+        Create your free OpportunityBridge account today and
+        start building a more organized opportunity journey.
       </p>
 
-      <a
-        href="scholarships.html"
-        class="btn btn-primary">
-        Explore Now
+    </div>
+
+    <div>
+
+      <a href="register.html" class="btn btn-primary">
+        🚀 Register Free
       </a>
 
     </div>
 
-  </section>
+  </div>
 
-</main>
+</section>
+
+
+<!-- ================= FINAL CTA ================= -->
+
+<section style="padding-top:20px;">
+
+  <div class="container">
+
+    <div style="
+      text-align:center;
+      background:white;
+      border:1px solid #e5e9f0;
+      border-radius:20px;
+      padding:40px 20px;
+    ">
+
+      <h2 style="color:#0b1f3a;margin-bottom:10px;">
+        Ready to explore?
+      </h2>
+
+      <p style="color:#667085;margin-bottom:20px;">
+        You can explore opportunities without registering.
+        Create a free account when you're ready for a more
+        personalized experience.
+      </p>
+
+      <a href="#opportunities" class="btn btn-dark">
+        Explore Opportunities
+      </a>
+
+      <a href="register.html" class="btn btn-primary">
+        Create Free Account
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-  <div class="footer-inner">
+  <div class="footer-grid">
 
-    <strong>
-      OpportunityBridge
-    </strong>
 
-    <div class="footer-links">
+    <div class="footer-brand">
 
-      <a href="about.html">
-        About
-      </a>
+      <h2>OpportunityBridge</h2>
 
-      <a href="Contact.html">
-        Contact
-      </a>
-
-      <a href="Privacy.html">
-        Privacy Policy
-      </a>
-
-      <a href="Disclaimer.html">
-        Disclaimer
-      </a>
+      <p>
+        Connecting students, graduates and opportunity seekers
+        with scholarships, jobs, internships and learning
+        opportunities.
+      </p>
 
     </div>
+
+
+    <div class="footer-col">
+
+      <h3>Opportunities</h3>
+
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Online Courses</a>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h3>Account</h3>
+
+      <a href="register.html">Create Account</a>
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Dashboard</a>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h3>Information</h3>
+
+      <a href="about.html">About Us</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Privacy.html">Privacy Policy</a>
+      <a href="Disclaimer.html">Disclaimer</a>
+
+    </div>
+
 
   </div>
 
 
   <div class="copyright">
 
-    © 2026 OpportunityBridge.
+    © <span id="year"></span> OpportunityBridge.
     All rights reserved.
 
   </div>
@@ -1179,16 +1339,86 @@
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-  function toggleMenu() {
+  /* Current year */
 
-    document
-      .getElementById("navLinks")
-      .classList
-      .toggle("show");
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+  /* ==========================================
+     SUPABASE AUTHENTICATION
+     ========================================== */
+
+  const SUPABASE_URL =
+    "https://wrdpnhqwolqovoukhlns.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+
+  async function updateAuthButtons() {
+
+    const {
+      data: { session }
+    } = await supabaseClient.auth.getSession();
+
+
+    const authButtons =
+      document.getElementById("authButtons");
+
+
+    if (session) {
+
+      authButtons.innerHTML = `
+
+        <a href="dashboard.html"
+           class="btn btn-primary">
+           👤 My Dashboard
+        </a>
+
+      `;
+
+    } else {
+
+      authButtons.innerHTML = `
+
+        <a href="login.html"
+           class="btn btn-outline">
+           Login
+        </a>
+
+        <a href="register.html"
+           class="btn btn-primary">
+           Register Free
+        </a>
+
+      `;
+
+    }
 
   }
+
+
+  updateAuthButtons();
+
+
+  supabaseClient.auth.onAuthStateChange(
+    function(event, session) {
+
+      updateAuthButtons();
+
+    }
+  );
 
 </script>
 
