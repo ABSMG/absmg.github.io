@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Opportunities | OpportunityBridge</title>
+
+  <meta name="description" content="Explore scholarships, jobs, internships, online learning and digital opportunities through OpportunityBridge. Find practical resources for education, career development and personal growth.">
+
+  <meta name="keywords" content="opportunities, scholarships, jobs, internships, online courses, digital skills, career opportunities, student opportunities, OpportunityBridge">
+
+  <meta name="author" content="OpportunityBridge">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
+
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
+    crossorigin="anonymous">
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #0b5ed7;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    }
+
+    .header-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: white;
+      padding: 65px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      color: #0b5ed7;
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #555;
+      font-size: 18px;
+      max-width: 780px;
+      margin: auto;
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 35px 20px 60px;
+    }
+
+    .intro {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .intro h2 {
+      color: #0b5ed7;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #555;
+    }
+
+    /* ADS */
+
+    .ad-container {
+      background: white;
+      min-height: 100px;
+      margin: 25px 0;
+      padding: 10px;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      margin: 30px 0 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 18px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #0b5ed7;
+    }
+
+    /* FILTERS */
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .filter-btn {
+      border: none;
+      background: #e9eef7;
+      color: #333;
+      padding: 10px 17px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #0b5ed7;
+      color: white;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      color: #0b5ed7;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef4ff;
+      color: #0b5ed7;
+      padding: 5px 9px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin: 2px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      background: #0b5ed7;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .card a:hover {
+      background: #084298;
+    }
+
+    .no-results {
+      display: none;
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      color: #666;
+    }
+
+    /* GUIDE */
+
+    .guidance {
+      background: white;
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .guidance h2 {
+      color: #0b5ed7;
+      margin-bottom: 15px;
+    }
+
+    .guidance h3 {
+      margin-top: 20px;
+      margin-bottom: 7px;
+    }
+
+    .guidance p {
+      color: #555;
+    }
+
+    .guidance ul {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    /* CHECKLIST */
+
+    .checklist {
+      background: #eef4ff;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+
+    .checklist h3 {
+      color: #0b5ed7;
+      margin-bottom: 10px;
+    }
+
+    .checklist ul {
+      padding-left: 20px;
+      color: #444;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: #0b5ed7;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: #0b5ed7;
+      padding: 11px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #102a43;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: white;
+      font-size: 14px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #d7e0ea;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .header-container {
+        padding: 13px 16px;
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0 15px;
+      }
+
+      nav li {
+        border-top: 1px solid rgba(255,255,255,0.15);
+      }
+
+      nav a {
+        display: block;
+        padding: 12px 5px;
+      }
+
+      .hero {
+        padding: 45px 18px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      main {
+        padding: 25px 15px 45px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .intro,
+      .guidance {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .filter-btn {
+        font-size: 13px;
+        padding: 8px 13px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="header-container">
+
+      <a href="index.html" class="logo">
+        OpportunityBridge
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="mainNav">
+
+        <ul>
+
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="scholarships.html">Scholarships</a></li>
+
+          <li><a href="jobs.html">Jobs</a></li>
+
+          <li><a href="internships.html">Internships</a></li>
+
+          <li><a href="courses.html">Courses</a></li>
+
+          <li><a href="opportunities.html">Opportunities</a></li>
+
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Explore Opportunities</h1>
+
+      <p>
+        Discover education, career and skills opportunities in one
+        place. Explore scholarships, jobs, internships, online
+        courses and other resources to support your next step.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <main>
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <h2>Your Gateway to New Opportunities</h2>
+
+      <p>
+        Finding the right opportunity can take time. OpportunityBridge
+        brings together useful resources and practical guidance to help
+        students, graduates and young professionals make better-informed
+        decisions about education, careers and skills development.
+      </p>
+
+    </section>
+
+
+    <!-- FIRST AD -->
+
+    <div class="ad-container">
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2004981151172844"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search opportunities..."
+        aria-label="Search opportunities">
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+      <button
+        class="filter-btn active"
+        data-filter="all">
+        All
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="education">
+        Education
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="career">
+        Career
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="skills">
+        Skills
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="international">
+        International
+      </button>
+
+    </div>
+
+
+    <!-- OPPORTUNITY CARDS -->
+
+    <section class="cards" id="opportunityCards">
+
+
+      <article
+        class="card"
+        data-category="education international"
+        data-search="scholarships education university study abroad fully funded">
+
+        <h3>Scholarships</h3>
+
+        <p>
+          Explore scholarship resources for students looking for
+          financial support for education locally or internationally.
+        </p>
+
+        <span class="tag">Education</span>
+        <span class="tag">International</span>
+
+        <br>
+
+        <a href="scholarships.html">
+          View Scholarships
+        </a>
+
+      </article>
+
+
+      <article
+        class="card"
+        data-category="career"
+        data-search="jobs employment careers graduate work opportunities">
+
+        <h3>Jobs</h3>
+
+        <p>
+          Find career resources and job-search guidance for graduates,
+          students and people developing their professional careers.
+        </p>
+
+        <span class="tag">Career</span>
+        <span class="tag">Employment</span>
+
+        <br>
+
+        <a href="jobs.html">
+          Explore Jobs
+        </a>
+
+      </article>
+
+
+      <article
+        class="card"
+        data-category="career education"
+        data-search="internships students graduates experience practical training">
+
+        <h3>Internships</h3>
+
+        <p>
+          Learn how to find internships that can provide practical
+          experience and help prepare you for future employment.
+        </p>
+
+        <span class="tag">Career</span>
+        <span class="tag">Students</span>
+
+        <br>
+
+        <a href="internships.html">
+          Find Internships
+        </a>
+
+      </article>
+
+
+      <article
+        class="card"
+        data-category="skills education"
+        data-search="online courses digital skills computer programming learning">
+
+        <h3>Online Courses</h3>
+
+        <p>
+          Develop useful academic, professional and digital skills
+          through online learning resources.
+        </p>
+
+        <span class="tag">Skills</span>
+        <span class="tag">Learning</span>
+
+        <br>
+
+        <a href="courses.html">
+          Explore Courses
+        </a>
+
+      </article>
+
+
+      <article
+        class="card"
+        data-category="skills career"
+        data-search="digital skills technology computer communication career skills">
+
+        <h3>Digital Skills</h3>
+
+        <p>
+          Build practical digital abilities that can support your
+          education, career development and online work opportunities.
+        </p>
+
+        <span class="tag">Skills</span>
+        <span class="tag">Digital</span>
+
+        <br>
+
+        <a href="courses.html">
+          Build Skills
+        </a>
+
+      </article>
+
+
+      <article
+        class="card"
+        data-category="international education career"
+        data-search="international opportunities global study work organizations">
+
+        <h3>Global Opportunities</h3>
+
+        <p>
+          Explore resources for people interested in international
+          education, professional development and global careers.
+        </p>
+
+        <span class="tag">International</span>
+        <span class="tag">Global</span>
+
+        <br>
+
+        <a href="scholarships.html">
+          Explore Resources
+        </a>
+
+      </article>
+
+    </section>
+
+
+    <div
+      class="no-results"
+      id="noResults">
+
+      No opportunities matched your search.
+      Try another keyword or category.
+
+    </div>
+
+
+    <!-- SECOND AD -->
+
+    <div class="ad-container">
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2004981151172844"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+    </div>
+
+
+    <!-- GUIDE -->
+
+    <section class="guidance">
+
+      <h2>How to Make the Most of Opportunities</h2>
+
+
+      <h3>1. Define Your Goal</h3>
+
+      <p>
+        Decide whether your priority is education, employment,
+        practical experience or learning a new skill. A clear goal
+        makes your search more focused.
+      </p>
+
+
+      <h3>2. Research Before Applying</h3>
+
+      <p>
+        Read the requirements carefully and research the organization,
+        university or platform offering the opportunity.
+      </p>
+
+
+      <h3>3. Prepare Your Documents</h3>
+
+      <p>
+        Depending on the opportunity, you may need a CV, academic
+        documents, identification documents, certificates or a
+        personal statement.
+      </p>
+
+
+      <h3>4. Follow Instructions Carefully</h3>
+
+      <p>
+        Submit applications through the correct channel and before
+        the stated deadline. Missing a required document can affect
+        an otherwise strong application.
+      </p>
+
+
+      <h3>5. Keep Track of Applications</h3>
+
+      <p>
+        Keep a simple record of opportunities you have applied for,
+        application dates, deadlines and any required follow-up.
+      </p>
+
+
+      <h3>6. Keep Improving Your Skills</h3>
+
+      <p>
+        If an opportunity does not work out, continue developing
+        useful skills and look for other suitable opportunities.
+      </p>
+
+
+      <div class="checklist">
+
+        <h3>Before You Apply: Quick Checklist</h3>
+
+        <ul>
+
+          <li>Read the eligibility requirements.</li>
+
+          <li>Check the application deadline.</li>
+
+          <li>Use accurate personal and academic information.</li>
+
+          <li>Prepare the required documents.</li>
+
+          <li>Verify the organization or opportunity.</li>
+
+          <li>Use the official application channel whenever possible.</li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- SAFETY -->
+
+    <section class="guidance">
+
+      <h2>Stay Safe While Searching Online</h2>
+
+      <p>
+        Not every opportunity advertised online is genuine. Be
+        cautious when someone asks for unnecessary payments, passwords,
+        verification codes or other sensitive information. Before
+        applying, verify the opportunity using the official website
+        or another reliable source.
+      </p>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <h2>Start With One Step Today</h2>
+
+      <p>
+        Choose an area that matches your current goal and begin
+        exploring opportunities that can help you move forward.
+      </p>
+
+      <a href="index.html">
+        Back to OpportunityBridge
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="scholarships.html">Scholarships</a>
+
+      <a href="jobs.html">Jobs</a>
+
+      <a href="internships.html">Internships</a>
+
+      <a href="courses.html">Courses</a>
+
+      <a href="opportunities.html">Opportunities</a>
+
+      <a href="about.html">About</a>
+
+      <a href="contact.html">Contact</a>
+
+      <a href="Privacy.html">Privacy</a>
+
+      <a href="Disclaimer.html">Disclaimer</a>
+
+    </div>
+
+    <p>
+      © 2026 OpportunityBridge. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+
+    menuToggle.addEventListener(
+      "click",
+      function() {
+
+        mainNav.classList.toggle("active");
+
+        const isOpen =
+          mainNav.classList.contains("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen
+            ? "Close navigation"
+            : "Open navigation"
+        );
+
+        menuToggle.textContent =
+          isOpen ? "✕" : "☰";
+
+      }
+    );
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document
+      .querySelectorAll("#mainNav a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            mainNav.classList.remove("active");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuToggle.setAttribute(
+              "aria-label",
+              "Open navigation"
+            );
+
+            menuToggle.textContent = "☰";
+
+          }
+        );
+
+      });
+
+
+    /* SEARCH + FILTER */
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const cards =
+      document.querySelectorAll(".card");
+
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    const noResults =
+      document.getElementById("noResults");
+
+    let currentFilter = "all";
+
+
+    function filterCards() {
+
+      const searchTerm =
+        searchInput.value
+          .toLowerCase()
+          .trim();
+
+      let visibleCards = 0;
+
+
+      cards.forEach(function(card) {
+
+        const category =
+          card.dataset.category.toLowerCase();
+
+        const searchText =
+          card.dataset.search.toLowerCase();
+
+        const title =
+          card
+            .querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+
+        const matchesSearch =
+          searchText.includes(searchTerm) ||
+          title.includes(searchTerm);
+
+
+        const matchesFilter =
+          currentFilter === "all" ||
+          category.includes(currentFilter);
+
+
+        if (
+          matchesSearch &&
+          matchesFilter
+        ) {
+
+          card.style.display = "block";
+
+          visibleCards++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      noResults.style.display =
+        visibleCards === 0
+          ? "block"
+          : "none";
+
+    }
+
+
+    searchInput.addEventListener(
+      "input",
+      filterCards
+    );
+
+
+    filterButtons.forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            filterButtons.forEach(
+              function(btn) {
+                btn.classList.remove("active");
+              }
+            );
+
+            button.classList.add("active");
+
+            currentFilter =
+              button.dataset.filter;
+
+            filterCards();
+
+          }
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
