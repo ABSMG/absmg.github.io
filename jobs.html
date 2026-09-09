@@ -4,78 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jobs in Tanzania & Africa | OpportunityBridge</title>
+  <title>Jobs | OpportunityBridge</title>
 
-  <meta name="description"
-        content="Find job opportunities in Tanzania and Africa. Explore careers, employment opportunities and professional resources on OpportunityBridge.">
-
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Discover job opportunities, career resources and employment information through OpportunityBridge. Explore jobs in Tanzania and international opportunities.">
+  <meta name="keywords" content="jobs Tanzania, jobs in Tanzania, graduate jobs, entry level jobs, international jobs, career opportunities">
   <meta name="author" content="OpportunityBridge">
-  <meta name="theme-color" content="#0b4f8a">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://absmg.github.io/jobs.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title"
-        content="Jobs in Tanzania & Africa | OpportunityBridge">
-  <meta property="og:description"
-        content="Discover job and career opportunities in Tanzania, Africa and internationally.">
-  <meta property="og:url"
-        content="https://absmg.github.io/jobs.html">
-  <meta property="og:site_name"
-        content="OpportunityBridge">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title"
-        content="Jobs in Tanzania & Africa | OpportunityBridge">
-  <meta name="twitter:description"
-        content="Find job and career opportunities for students, graduates and professionals.">
+  <meta name="robots" content="index, follow">
 
   <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
+
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
     crossorigin="anonymous">
-  </script>
-
-  <!-- CollectionPage Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Jobs in Tanzania & Africa",
-    "url": "https://absmg.github.io/jobs.html",
-    "description": "Job and career opportunities in Tanzania, Africa and internationally.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "OpportunityBridge",
-      "url": "https://absmg.github.io/"
-    }
-  }
-  </script>
-
-  <!-- Breadcrumb Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://absmg.github.io/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Jobs",
-        "item": "https://absmg.github.io/jobs.html"
-      }
-    ]
-  }
   </script>
 
   <style>
@@ -85,69 +26,83 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #1f2937;
       line-height: 1.6;
+      background: #f5f7fb;
+      color: #1f2937;
     }
 
     a {
       text-decoration: none;
-      color: inherit;
     }
 
+    /* HEADER */
     header {
-      background: #0b4f8a;
+      background: #0b5ed7;
       color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
     }
 
-    .navbar {
+    .header-container {
       max-width: 1150px;
       margin: auto;
-      padding: 15px 20px;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
+      color: white;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: .3px;
     }
 
-    .nav-links {
+    .nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
     }
 
-    .nav-links a {
-      font-size: 14px;
+    .nav a {
+      color: white;
+      font-size: 15px;
       font-weight: 600;
     }
 
-    .nav-links a:hover {
-      opacity: .7;
+    .nav a:hover {
+      opacity: .8;
     }
 
-    .menu-btn {
+    .nav a.active {
+      border-bottom: 2px solid white;
+      padding-bottom: 3px;
+    }
+
+    .menu-toggle {
       display: none;
-      background: none;
       border: none;
+      background: transparent;
       color: white;
-      font-size: 28px;
+      font-size: 29px;
       cursor: pointer;
     }
 
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #0b4f8a, #0b6fc2);
+      background: linear-gradient(135deg, #0b5ed7, #084298);
       color: white;
+      padding: 65px 20px;
       text-align: center;
-      padding: 70px 20px;
     }
 
     .hero-content {
@@ -156,217 +111,346 @@
     }
 
     .hero h1 {
-      font-size: clamp(35px, 6vw, 55px);
-      line-height: 1.15;
+      font-size: 42px;
       margin-bottom: 15px;
     }
 
     .hero p {
+      max-width: 720px;
+      margin: auto;
       font-size: 18px;
       opacity: .95;
     }
 
-    .container {
+    /* MAIN */
+    main {
       max-width: 1150px;
       margin: auto;
-      padding: 45px 20px;
+      padding: 40px 20px 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 30px;
+      color: #111827;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      text-align: center;
+      color: #667085;
+    }
+
+    /* SEARCH */
+    .search-area {
+      max-width: 750px;
+      margin: 0 auto 30px;
     }
 
     .search-box {
-      margin-bottom: 25px;
-    }
-
-    .search-box input {
       width: 100%;
-      padding: 16px 18px;
-      border: 1px solid #d7dee6;
+      padding: 15px 18px;
+      border: 1px solid #d0d5dd;
       border-radius: 10px;
       font-size: 16px;
-      background: white;
       outline: none;
+      background: white;
     }
 
-    .search-box input:focus {
-      border-color: #0b6fc2;
+    .search-box:focus {
+      border-color: #0b5ed7;
+      box-shadow: 0 0 0 3px rgba(11,94,215,.12);
     }
 
+    /* FILTERS */
     .filters {
       display: flex;
-      gap: 10px;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 30px;
     }
 
     .filter-btn {
-      padding: 10px 16px;
-      border: 1px solid #d6dee7;
+      border: 1px solid #d0d5dd;
       background: white;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
       color: #344054;
+      padding: 9px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #0b4f8a;
+      background: #0b5ed7;
       color: white;
-      border-color: #0b4f8a;
+      border-color: #0b5ed7;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #e4e9ef;
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 5px 18px rgba(0,0,0,.05);
-      transition: .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.08);
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eaf3fb;
-      color: #0b4f8a;
-      padding: 5px 9px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .card h2 {
-      font-size: 20px;
-      color: #123b5d;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #667085;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .card a {
-      color: #0b6fc2;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
+    /* ADS */
     .ad-container {
       min-height: 90px;
-      margin: 30px auto;
+      margin: 25px auto;
       text-align: center;
       overflow: hidden;
     }
 
-    .cta {
-      background: #0b4f8a;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
+    /* JOB GRID */
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .cta h2 {
-      font-size: 30px;
+    .job-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 18px rgba(15,23,42,.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(15,23,42,.10);
+    }
+
+    .badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #e8f1ff;
+      color: #0b5ed7;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    .job-card h3 {
+      font-size: 20px;
+      color: #111827;
       margin-bottom: 10px;
     }
 
-    .cta p {
-      margin-bottom: 22px;
-      opacity: .9;
+    .job-card p {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 13px;
     }
 
-    .cta a {
+    .details {
+      list-style: none;
+      color: #475467;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .details li {
+      margin-bottom: 7px;
+    }
+
+    .details strong {
+      color: #1f2937;
+    }
+
+    .job-btn {
       display: inline-block;
-      background: white;
-      color: #0b4f8a;
-      padding: 13px 22px;
+      margin-top: auto;
+      text-align: center;
+      background: #0b5ed7;
+      color: white;
+      padding: 11px 16px;
       border-radius: 8px;
       font-weight: 700;
-    }
-
-    footer {
-      background: #092f52;
-      color: #dbe8f3;
-      padding: 35px 20px;
-    }
-
-    .footer-inner {
-      max-width: 1150px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
       font-size: 14px;
     }
 
-    .copyright {
-      max-width: 1150px;
-      margin: 25px auto 0;
-      text-align: center;
-      font-size: 13px;
-      opacity: .8;
+    .job-btn:hover {
+      background: #084298;
     }
 
-    @media (max-width: 850px) {
+    /* INFO */
+    .info-section {
+      margin-top: 55px;
+      background: white;
+      border-radius: 14px;
+      padding: 30px;
+      border: 1px solid #e5e7eb;
+    }
 
-      .cards {
+    .info-section h2 {
+      margin-bottom: 14px;
+      color: #111827;
+    }
+
+    .info-section p {
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+
+    .info-section ul {
+      margin-left: 20px;
+      color: #4b5563;
+    }
+
+    .info-section li {
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 17px;
+      border-left: 4px solid #0b5ed7;
+      background: #eef5ff;
+      border-radius: 6px;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    /* NO RESULTS */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 30px;
+      color: #667085;
+      grid-column: 1 / -1;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 35px 20px;
+    }
+
+    .footer-container {
+      max-width: 1150px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .footer-links {
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: #d1d5db;
+      margin: 0 9px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    /* TABLET */
+    @media (max-width: 900px) {
+      .job-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        right: 0;
-        background: #0b4f8a;
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .nav-links.show {
-        display: flex;
+      .nav {
+        gap: 13px;
       }
     }
 
-    @media (max-width: 550px) {
+    /* MOBILE */
+    @media (max-width: 750px) {
 
-      .cards {
-        grid-template-columns: 1fr;
+      .header-container {
+        padding: 13px 17px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #0b5ed7;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0 15px;
+        box-shadow: 0 5px 12px rgba(0,0,0,.15);
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 12px 20px;
+        display: block;
+      }
+
+      .nav a.active {
+        border-bottom: none;
+        background: rgba(255,255,255,.10);
       }
 
       .hero {
-        padding: 55px 18px;
+        padding: 48px 18px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
       }
 
       .hero p {
         font-size: 16px;
+      }
+
+      main {
+        padding: 30px 16px 55px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .job-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-section {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .job-card {
+        padding: 19px;
+      }
+
+      .filter-btn {
+        font-size: 13px;
       }
     }
   </style>
@@ -374,51 +458,72 @@
 
 <body>
 
-<header>
+  <!-- HEADER -->
+  <header>
 
-  <nav class="navbar">
+    <div class="header-container">
 
-    <a href="index.html" class="logo">
-      OpportunityBridge
-    </a>
+      <a href="index.html" class="logo">
+        OpportunityBridge
+      </a>
 
-    <button
-      class="menu-btn"
-      onclick="toggleMenu()"
-      aria-label="Open navigation menu">
-      ☰
-    </button>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰
+      </button>
 
-    <div class="nav-links" id="navLinks">
+      <nav class="nav" id="mainNav">
 
-      <a href="index.html">Home</a>
-      <a href="scholarships.html">Scholarships</a>
-      <a href="jobs.html">Jobs</a>
-      <a href="internships.html">Internships</a>
-      <a href="courses.html">Courses</a>
-      <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
-      <a href="login.html">Login</a>
+        <a href="index.html">Home</a>
+
+        <a href="scholarships.html">
+          Scholarships
+        </a>
+
+        <a href="jobs.html" class="active">
+          Jobs
+        </a>
+
+        <a href="internships.html">
+          Internships
+        </a>
+
+        <a href="courses.html">
+          Courses
+        </a>
+
+        <a href="opportunities.html">
+          Opportunities
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
 
     </div>
 
-  </nav>
+  </header>
 
-</header>
-
-<main>
 
   <!-- HERO -->
-
   <section class="hero">
 
     <div class="hero-content">
 
-      <h1>Find Jobs in Tanzania & Africa</h1>
+      <h1>Job Opportunities</h1>
 
       <p>
-        Discover career opportunities, employment resources
-        and professional opportunities to help you move forward.
+        Discover employment opportunities, career resources and
+        useful information to help you take your next career step.
       </p>
 
     </div>
@@ -426,208 +531,33 @@
   </section>
 
 
-  <div class="container">
+  <main>
 
-    <!-- SEARCH -->
+    <!-- INTRO -->
+    <section>
 
-    <div class="search-box">
+      <h2 class="section-title">
+        Find Your Next Opportunity
+      </h2>
 
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="Search jobs..."
-        aria-label="Search jobs">
+      <p class="section-intro">
+        Explore different types of job opportunities and learn how
+        to search, prepare and apply for positions safely and
+        effectively.
+      </p>
 
-    </div>
-
-
-    <!-- FILTERS -->
-
-    <div class="filters">
-
-      <button class="filter-btn active"
-              data-filter="all">
-        All
-      </button>
-
-      <button class="filter-btn"
-              data-filter="tanzania">
-        Tanzania
-      </button>
-
-      <button class="filter-btn"
-              data-filter="africa">
-        Africa
-      </button>
-
-      <button class="filter-btn"
-              data-filter="international">
-        International
-      </button>
-
-      <button class="filter-btn"
-              data-filter="remote">
-        Remote
-      </button>
-
-    </div>
+    </section>
 
 
-    <!-- JOB CARDS -->
-
-    <div class="cards" id="jobCards">
-
-      <article class="card"
-               data-category="tanzania">
-
-        <span class="badge">
-          Tanzania
-        </span>
-
-        <h2>Government Jobs in Tanzania</h2>
-
-        <p>
-          Find official information about employment opportunities
-          and public service recruitment in Tanzania.
-        </p>
-
-        <a href="https://www.ajira.go.tz/"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit Official Website →
-        </a>
-
-      </article>
-
-
-      <article class="card"
-               data-category="international africa">
-
-        <span class="badge">
-          International
-        </span>
-
-        <h2>United Nations Careers</h2>
-
-        <p>
-          Explore career and employment opportunities available
-          through the United Nations system.
-        </p>
-
-        <a href="https://careers.un.org/jobs"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit Official Website →
-        </a>
-
-      </article>
-
-
-      <article class="card"
-               data-category="africa international">
-
-        <span class="badge">
-          Africa
-        </span>
-
-        <h2>African Development Bank Careers</h2>
-
-        <p>
-          Explore professional opportunities with the African
-          Development Bank.
-        </p>
-
-        <a href="https://www.afdb.org/en/about-us/careers"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit Official Website →
-        </a>
-
-      </article>
-
-
-      <article class="card"
-               data-category="international">
-
-        <span class="badge">
-          International
-        </span>
-
-        <h2>World Bank Careers</h2>
-
-        <p>
-          Discover career opportunities and professional
-          resources from the World Bank.
-        </p>
-
-        <a href="https://www.worldbank.org/en/about/careers"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit Official Website →
-        </a>
-
-      </article>
-
-
-      <article class="card"
-               data-category="international">
-
-        <span class="badge">
-          International
-        </span>
-
-        <h2>UNDP Careers</h2>
-
-        <p>
-          Explore employment opportunities with the United
-          Nations Development Programme.
-        </p>
-
-        <a href="https://www.undp.org/careers"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit Official Website →
-        </a>
-
-      </article>
-
-
-      <article class="card"
-               data-category="remote international">
-
-        <span class="badge">
-          Remote
-        </span>
-
-        <h2>International Remote Opportunities</h2>
-
-        <p>
-          Explore international career resources and look for
-          opportunities that may offer remote work options.
-        </p>
-
-        <a href="https://careers.un.org/jobs"
-           target="_blank"
-           rel="noopener noreferrer">
-          Explore Careers →
-        </a>
-
-      </article>
-
-    </div>
-
-
-    <!-- ADS -->
-
+    <!-- AD -->
     <div class="ad-container">
 
-      <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-2004981151172844"
-        data-ad-slot="5992864529"
-        data-ad-format="auto"
-        data-full-width-responsive="true">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2004981151172844"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true">
       </ins>
 
       <script>
@@ -636,134 +566,665 @@
 
     </div>
 
-  </div>
 
+    <!-- SEARCH -->
+    <div class="search-area">
 
-  <!-- CTA -->
-
-  <section class="cta">
-
-    <h2>Build skills for your next opportunity</h2>
-
-    <p>
-      Explore internships and online courses to strengthen
-      your skills and career opportunities.
-    </p>
-
-    <a href="internships.html">
-      Explore Internships
-    </a>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <div class="footer-inner">
-
-    <strong>
-      OpportunityBridge
-    </strong>
-
-    <div class="footer-links">
-
-      <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
-      <a href="Privacy.html">Privacy Policy</a>
-      <a href="Disclaimer.html">Disclaimer</a>
+      <input
+        type="search"
+        id="jobSearch"
+        class="search-box"
+        placeholder="Search jobs by field, location or level..."
+        aria-label="Search jobs">
 
     </div>
 
-  </div>
 
-  <div class="copyright">
-    © 2026 OpportunityBridge. All rights reserved.
-  </div>
+    <!-- FILTERS -->
+    <div class="filters">
 
-</footer>
+      <button class="filter-btn active" data-filter="all">
+        All
+      </button>
+
+      <button class="filter-btn" data-filter="tanzania">
+        Tanzania
+      </button>
+
+      <button class="filter-btn" data-filter="graduate">
+        Graduate
+      </button>
+
+      <button class="filter-btn" data-filter="technology">
+        Technology
+      </button>
+
+      <button class="filter-btn" data-filter="health">
+        Health
+      </button>
+
+      <button class="filter-btn" data-filter="remote">
+        Remote
+      </button>
+
+    </div>
 
 
-<script>
+    <!-- JOBS -->
+    <section>
 
-  function toggleMenu() {
-    document
-      .getElementById("navLinks")
-      .classList
-      .toggle("show");
-  }
+      <div class="job-grid" id="jobGrid">
 
 
-  const searchInput =
-    document.getElementById("searchInput");
+        <!-- JOB 1 -->
+        <article
+          class="job-card"
+          data-category="tanzania"
+          data-search="tanzania jobs general employment career">
 
-  const cards =
-    document.querySelectorAll(".card");
+          <span class="badge">
+            Tanzania
+          </span>
 
-  const filterButtons =
-    document.querySelectorAll(".filter-btn");
+          <h3>
+            Tanzania Job Opportunities
+          </h3>
+
+          <p>
+            Explore employment announcements and career information
+            from official Tanzanian sources.
+          </p>
+
+          <ul class="details">
+
+            <li>
+              <strong>Location:</strong> Tanzania
+            </li>
+
+            <li>
+              <strong>Level:</strong> Varies
+            </li>
+
+            <li>
+              <strong>Field:</strong> Various sectors
+            </li>
+
+          </ul>
+
+          <a
+            href="https://www.ajira.go.tz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="job-btn">
+            Visit Official Source
+          </a>
+
+        </article>
 
 
-  let currentFilter = "all";
+        <!-- JOB 2 -->
+        <article
+          class="job-card"
+          data-category="graduate"
+          data-search="graduate jobs fresh graduates entry level Tanzania">
+
+          <span class="badge">
+            Graduate
+          </span>
+
+          <h3>
+            Graduate & Entry-Level Jobs
+          </h3>
+
+          <p>
+            Opportunities suitable for graduates and candidates
+            beginning their professional careers.
+          </p>
+
+          <ul class="details">
+
+            <li>
+              <strong>Level:</strong> Entry level
+            </li>
+
+            <li>
+              <strong>Experience:</strong> Varies
+            </li>
+
+            <li>
+              <strong>Location:</strong> Varies
+            </li>
+
+          </ul>
+
+          <a
+            href="https://www.ajira.go.tz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="job-btn">
+            Explore Jobs
+          </a>
+
+        </article>
 
 
-  function filterCards() {
+        <!-- JOB 3 -->
+        <article
+          class="job-card"
+          data-category="technology"
+          data-search="technology IT software developer programming jobs">
 
-    const searchTerm =
-      searchInput.value.toLowerCase().trim();
+          <span class="badge">
+            Technology
+          </span>
 
-    cards.forEach(card => {
+          <h3>
+            Technology & IT Careers
+          </h3>
 
-      const text =
-        card.textContent.toLowerCase();
+          <p>
+            Explore careers in software, information technology,
+            digital services and related fields.
+          </p>
 
-      const categories =
-        card.dataset.category.toLowerCase();
+          <ul class="details">
 
-      const matchesSearch =
-        text.includes(searchTerm);
+            <li>
+              <strong>Fields:</strong> IT & Technology
+            </li>
 
-      const matchesFilter =
-        currentFilter === "all" ||
-        categories.includes(currentFilter);
+            <li>
+              <strong>Roles:</strong> Varies
+            </li>
 
-      card.style.display =
-        matchesSearch && matchesFilter
+            <li>
+              <strong>Experience:</strong> Varies
+            </li>
+
+          </ul>
+
+          <a
+            href="https://www.ajira.go.tz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="job-btn">
+            Explore Opportunities
+          </a>
+
+        </article>
+
+
+        <!-- JOB 4 -->
+        <article
+          class="job-card"
+          data-category="health"
+          data-search="health medical laboratory nursing medicine healthcare jobs">
+
+          <span class="badge">
+            Health
+          </span>
+
+          <h3>
+            Health & Medical Careers
+          </h3>
+
+          <p>
+            Discover career opportunities across healthcare,
+            medical and health-related fields.
+          </p>
+
+          <ul class="details">
+
+            <li>
+              <strong>Sector:</strong> Healthcare
+            </li>
+
+            <li>
+              <strong>Roles:</strong> Varies
+            </li>
+
+            <li>
+              <strong>Requirements:</strong> Position specific
+            </li>
+
+          </ul>
+
+          <a
+            href="https://www.ajira.go.tz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="job-btn">
+            Check Official Source
+          </a>
+
+        </article>
+
+
+        <!-- JOB 5 -->
+        <article
+          class="job-card"
+          data-category="remote"
+          data-search="remote online jobs work from home digital jobs">
+
+          <span class="badge">
+            Remote
+          </span>
+
+          <h3>
+            Remote & Digital Jobs
+          </h3>
+
+          <p>
+            Learn about remote work opportunities and digital
+            careers that may be available depending on location
+            and employer requirements.
+          </p>
+
+          <ul class="details">
+
+            <li>
+              <strong>Work type:</strong> Remote
+            </li>
+
+            <li>
+              <strong>Field:</strong> Digital & online
+            </li>
+
+            <li>
+              <strong>Location:</strong> Varies
+            </li>
+
+          </ul>
+
+          <a
+            href="https://www.ajira.go.tz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="job-btn">
+            Explore Jobs
+          </a>
+
+        </article>
+
+
+        <!-- JOB 6 -->
+        <article
+          class="job-card"
+          data-category="tanzania"
+          data-search="public service government jobs Tanzania employment">
+
+          <span class="badge">
+            Public Service
+          </span>
+
+          <h3>
+            Public Service Careers
+          </h3>
+
+          <p>
+            Explore official public-sector employment information
+            and recruitment announcements in Tanzania.
+          </p>
+
+          <ul class="details">
+
+            <li>
+              <strong>Country:</strong> Tanzania
+            </li>
+
+            <li>
+              <strong>Sector:</strong> Public service
+            </li>
+
+            <li>
+              <strong>Requirements:</strong> Position specific
+            </li>
+
+          </ul>
+
+          <a
+            href="https://www.ajira.go.tz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="job-btn">
+            Visit Official Source
+          </a>
+
+        </article>
+
+
+        <div class="no-results" id="noResults">
+
+          <strong>No jobs found.</strong>
+
+          <br>
+
+          Try another search term or category.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- AD -->
+    <div class="ad-container">
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2004981151172844"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true">
+      </ins>
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+    </div>
+
+
+    <!-- JOB SEARCH GUIDE -->
+    <section class="info-section">
+
+      <h2>
+        How to Search for Jobs
+      </h2>
+
+      <p>
+        A good job search starts with understanding the type of
+        position you want and checking reliable sources regularly.
+      </p>
+
+      <ul>
+
+        <li>
+          Identify your skills, qualifications and career interests.
+        </li>
+
+        <li>
+          Prepare an updated CV and relevant application documents.
+        </li>
+
+        <li>
+          Search through official employer or recruitment sources.
+        </li>
+
+        <li>
+          Read the complete job description before applying.
+        </li>
+
+        <li>
+          Check application deadlines and required qualifications.
+        </li>
+
+        <li>
+          Keep records of positions you have applied for.
+        </li>
+
+      </ul>
+
+      <div class="notice">
+
+        <strong>Job Safety:</strong>
+        Be careful with job advertisements that request money,
+        passwords, banking details or other sensitive information
+        before employment is verified. Always confirm the employer
+        and use official application channels whenever possible.
+
+      </div>
+
+    </section>
+
+
+    <!-- CAREER PREPARATION -->
+    <section class="info-section">
+
+      <h2>
+        Prepare for Your Career
+      </h2>
+
+      <p>
+        Finding a job is only one part of building a career.
+        Developing useful skills, preparing a strong CV and improving
+        communication can help you become more competitive.
+      </p>
+
+      <p>
+        Visit our Courses section to discover learning resources
+        that can help you develop professional and digital skills.
+      </p>
+
+      <p>
+
+        <a
+          href="courses.html"
+          class="job-btn">
+          Explore Courses
+        </a>
+
+      </p>
+
+    </section>
+
+
+    <!-- MORE -->
+    <section class="info-section">
+
+      <h2>
+        Explore More on OpportunityBridge
+      </h2>
+
+      <p>
+        Looking for more than jobs? Explore scholarships,
+        internships, online courses and other opportunities.
+      </p>
+
+      <p>
+
+        <a
+          href="opportunities.html"
+          class="job-btn">
+          Explore Opportunities
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="scholarships.html">Scholarships</a>
+
+        <a href="jobs.html">Jobs</a>
+
+        <a href="internships.html">Internships</a>
+
+        <a href="courses.html">Courses</a>
+
+        <a href="opportunities.html">Opportunities</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="Privacy.html">Privacy</a>
+
+        <a href="Disclaimer.html">Disclaimer</a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 OpportunityBridge. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        mainNav.classList.toggle("active");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close navigation"
+          : "Open navigation"
+      );
+
+      menuToggle.textContent =
+        isOpen ? "✕" : "☰";
+
+    });
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document.querySelectorAll("#mainNav a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          mainNav.classList.remove("active");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation"
+          );
+
+          menuToggle.textContent = "☰";
+
+        });
+
+      });
+
+
+    /* JOB SEARCH + FILTER */
+
+    const searchInput =
+      document.getElementById("jobSearch");
+
+    const cards =
+      document.querySelectorAll(".job-card");
+
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    const noResults =
+      document.getElementById("noResults");
+
+    let currentFilter = "all";
+
+
+    function updateJobs() {
+
+      const searchTerm =
+        searchInput.value.toLowerCase().trim();
+
+      let visibleCards = 0;
+
+
+      cards.forEach(function(card) {
+
+        const category =
+          card.getAttribute("data-category");
+
+        const searchText =
+          card.getAttribute("data-search")
+            .toLowerCase();
+
+        const matchesSearch =
+          searchText.includes(searchTerm);
+
+        const matchesFilter =
+          currentFilter === "all" ||
+          category === currentFilter;
+
+        if (matchesSearch && matchesFilter) {
+
+          card.style.display = "flex";
+
+          visibleCards++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      noResults.style.display =
+        visibleCards === 0
           ? "block"
           : "none";
 
+    }
+
+
+    searchInput.addEventListener(
+      "input",
+      updateJobs
+    );
+
+
+    filterButtons.forEach(function(button) {
+
+      button.addEventListener("click", function() {
+
+        filterButtons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        currentFilter =
+          button.getAttribute("data-filter");
+
+        updateJobs();
+
+      });
+
     });
 
-  }
-
-
-  searchInput.addEventListener(
-    "input",
-    filterCards
-  );
-
-
-  filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      filterButtons.forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-      button.classList.add("active");
-
-      currentFilter =
-        button.dataset.filter;
-
-      filterCards();
-
-    });
-
-  });
-
-</script>
+  </script>
 
 </body>
 </html>
