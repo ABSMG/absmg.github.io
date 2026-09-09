@@ -6,87 +6,314 @@
 
   <title>Privacy Policy | OpportunityBridge</title>
 
-  <meta name="description" content="Privacy Policy for OpportunityBridge. Learn how information may be handled when you use our website.">
+  <meta name="description" content="Read the OpportunityBridge Privacy Policy to understand how cookies, advertising services, external links and visitor information may be handled when using our website.">
+  <meta name="keywords" content="OpportunityBridge Privacy Policy, privacy, cookies, Google AdSense, advertising, data protection">
+  <meta name="author" content="OpportunityBridge">
   <meta name="robots" content="index, follow">
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f8f8;
-      color: #243333;
-      line-height: 1.7;
+      line-height: 1.75;
+      color: #1f2937;
+      background: #f8fafc;
     }
 
-    header {
-      background: #123b3a;
-      color: white;
-      padding: 18px 7%;
+    a {
+      color: #0b5ed7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0b5ed7;
+      box-shadow: 0 3px 15px rgba(0,0,0,.12);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      min-height: 70px;
+      margin: auto;
+      padding: 0 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-weight: bold;
-      font-size: 21px;
-    }
-
-    nav a {
       color: white;
-      text-decoration: none;
-      margin-left: 18px;
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #dbeafe;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav a {
+      color: white;
       font-size: 14px;
+      font-weight: 600;
+      padding: 10px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: .25s;
     }
 
-    nav a:hover {
-      color: #20b89a;
+    .nav a:hover,
+    .nav a.active {
+      background: rgba(255,255,255,.16);
+      text-decoration: none;
     }
 
-    main {
-      max-width: 900px;
-      margin: 55px auto;
-      padding: 0 20px;
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
     }
 
-    .box {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.07);
-    }
-
-    h1 {
-      color: #123b3a;
+    .hero {
+      background: linear-gradient(135deg, #0b5ed7, #084298);
+      color: white;
       text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 52px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #eaf2ff;
+      font-size: 17px;
+    }
+
+    .container {
+      width: min(950px, 92%);
+      margin: auto;
+    }
+
+    .content {
+      padding: 55px 0;
+    }
+
+    .policy-card {
+      background: white;
+      padding: 35px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 28px rgba(15,23,42,.06);
+    }
+
+    .updated {
+      display: inline-block;
+      background: #eff6ff;
+      color: #0b5ed7;
+      padding: 8px 13px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .policy-section {
+      margin-bottom: 35px;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
     }
 
     h2 {
-      color: #176b63;
-      margin-top: 30px;
+      color: #123b73;
+      font-size: 25px;
+      margin-bottom: 12px;
     }
 
-    footer {
-      background: #102f2e;
-      color: #dcebea;
-      text-align: center;
-      padding: 30px;
+    h3 {
+      color: #1e40af;
+      font-size: 19px;
+      margin: 20px 0 8px;
     }
 
-    footer a {
+    p {
+      color: #475569;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin: 10px 0 15px 22px;
+      color: #475569;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      background: #f0fdf4;
+      border-left: 5px solid #16a34a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .notice strong {
+      color: #166534;
+    }
+
+    .links-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .links-box a {
+      display: block;
+      margin: 8px 0;
+      word-break: break-word;
+    }
+
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 45px 20px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer h3 {
       color: white;
-      text-decoration: none;
-      margin: 0 8px;
+      margin-bottom: 12px;
+      font-size: 18px;
     }
 
-    @media(max-width:700px) {
-      header {
+    .footer p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .footer a {
+      display: block;
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 7px 0;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #334155;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #0b5ed7;
+        display: none;
         flex-direction: column;
-        gap: 12px;
+        padding: 12px 20px 20px;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 60px 18px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .content {
+        padding: 35px 0;
+      }
+
+      .policy-card {
+        padding: 23px 18px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .logo {
+        font-size: 19px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
       }
     }
   </style>
@@ -94,102 +321,439 @@
 
 <body>
 
-<header>
+<header class="header">
+  <div class="nav-container">
 
-  <div class="logo">OpportunityBridge</div>
+    <a href="index.html" class="logo">
+      Opportunity<span>Bridge</span>
+    </a>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation"
+      aria-expanded="false">
+      ☰
+    </button>
 
+    <nav class="nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
 </header>
 
-<main>
+<section class="hero">
+  <h1>Privacy Policy</h1>
+  <p>
+    How OpportunityBridge handles information, cookies,
+    advertising technologies and external services.
+  </p>
+</section>
 
-  <div class="box">
+<main class="content">
 
-    <h1>Privacy Policy</h1>
+  <div class="container">
 
-    <p>
-      This Privacy Policy explains how OpportunityBridge may handle
-      information when you visit and use this website.
-    </p>
+    <div class="policy-card">
 
-    <h2>Information We Collect</h2>
+      <div class="updated">
+        Last Updated: September 2026
+      </div>
 
-    <p>
-      OpportunityBridge does not intentionally collect sensitive personal
-      information from visitors unless you voluntarily provide information,
-      for example when contacting us by email.
-    </p>
+      <section class="policy-section">
 
-    <h2>Cookies</h2>
+        <h2>1. Introduction</h2>
 
-    <p>
-      This website may use cookies and similar technologies to improve
-      website functionality and understand how visitors use the website.
-    </p>
+        <p>
+          Welcome to OpportunityBridge. We respect your privacy and
+          are committed to being transparent about how our website
+          may use information and technologies such as cookies.
+        </p>
 
-    <h2>Google AdSense</h2>
+        <p>
+          This Privacy Policy explains the general ways information
+          may be handled when you visit and use OpportunityBridge.
+        </p>
 
-    <p>
-      OpportunityBridge may use Google AdSense to display advertisements.
-      Google and its partners may use cookies or similar technologies to
-      serve advertisements based on visits to this and other websites.
-    </p>
+      </section>
 
-    <h2>Third-Party Websites</h2>
+      <section class="policy-section">
 
-    <p>
-      Our website may contain links to third-party websites. We are not
-      responsible for the privacy practices, content or policies of external
-      websites. We recommend reviewing their privacy policies before
-      providing personal information.
-    </p>
+        <h2>2. Information We Collect</h2>
 
-    <h2>Children's Privacy</h2>
+        <p>
+          OpportunityBridge is primarily an informational website.
+          We do not intentionally request sensitive personal
+          information simply for browsing our pages.
+        </p>
 
-    <p>
-      OpportunityBridge is not intended to knowingly collect personal
-      information from children.
-    </p>
+        <p>
+          Depending on how you interact with the website, limited
+          technical information may be processed automatically by
+          web hosting, analytics, advertising or security services.
+        </p>
 
-    <h2>Changes to This Policy</h2>
+        <p>
+          Such information may include items such as browser type,
+          device information, approximate technical information,
+          pages visited and general usage information.
+        </p>
 
-    <p>
-      We may update this Privacy Policy from time to time. Any changes will
-      be published on this page.
-    </p>
+      </section>
 
-    <h2>Contact</h2>
+      <section class="policy-section">
 
-    <p>
-      If you have questions about this Privacy Policy, contact us at
-      <a href="mailto:anordsom@gmail.com">anordsom@gmail.com</a>.
-    </p>
+        <h2>3. Cookies</h2>
+
+        <p>
+          Cookies are small files or similar technologies that may
+          be stored on a visitor's browser. Websites and third-party
+          services may use cookies for functionality, measurement,
+          security and advertising.
+        </p>
+
+        <p>
+          OpportunityBridge may use or allow third-party services
+          that use cookies or similar technologies.
+        </p>
+
+        <div class="notice">
+
+          <strong>Important:</strong>
+
+          <p>
+            Google states that publishers using AdSense must clearly
+            disclose the use of cookies and third-party advertising
+            technologies in their privacy policy.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>4. Google AdSense and Advertising</h2>
+
+        <p>
+          OpportunityBridge may display advertisements provided by
+          Google AdSense and other advertising partners.
+        </p>
+
+        <p>
+          Third-party vendors, including Google, may use cookies to
+          serve advertisements based on a user's previous visits to
+          this website or other websites.
+        </p>
+
+        <p>
+          Google's use of advertising cookies can allow Google and
+          its partners to provide advertisements that may be more
+          relevant to users based on their browsing activity.
+        </p>
+
+        <p>
+          Google may also use technologies such as cookies, web
+          beacons, IP addresses or other identifiers as described in
+          its applicable policies.
+        </p>
+
+        <p>
+          For more information about how Google uses data when you
+          use websites or apps that use its services, please visit:
+        </p>
+
+        <div class="links-box">
+
+          <a
+            href="https://policies.google.com/technologies/partner-sites"
+            target="_blank"
+            rel="noopener noreferrer">
+            Google — How Google uses information from sites or apps that use our services
+          </a>
+
+          <a
+            href="https://adssettings.google.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Google Ads Settings
+          </a>
+
+        </div>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>5. Personalized Advertising</h2>
+
+        <p>
+          Depending on available settings, location and applicable
+          privacy requirements, advertising displayed on the website
+          may be personalized or non-personalized.
+        </p>
+
+        <p>
+          Users can manage certain Google advertising preferences
+          through Google's Ads Settings.
+        </p>
+
+        <p>
+          Where applicable, users may also be presented with consent
+          choices through advertising or consent-management systems.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>6. Third-Party Websites and Links</h2>
+
+        <p>
+          OpportunityBridge may link to external websites operated
+          by universities, organizations, companies, job boards,
+          learning platforms and other third parties.
+        </p>
+
+        <p>
+          Once you leave OpportunityBridge and visit an external
+          website, that website's own privacy policy and terms may
+          apply.
+        </p>
+
+        <p>
+          We encourage visitors to review the privacy policy of any
+          external website before submitting personal information.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>7. Contact Information</h2>
+
+        <p>
+          If you contact OpportunityBridge, information you provide
+          may be used only for the purpose of responding to your
+          request or providing the requested assistance.
+        </p>
+
+        <p>
+          Please avoid sending passwords, banking PINs, identity
+          document numbers or other highly sensitive information
+          unless it is specifically necessary and the communication
+          channel is appropriate and secure.
+        </p>
+
+        <p>
+          For general questions, please visit our
+          <a href="contact.html">Contact page</a>.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>8. Data Security</h2>
+
+        <p>
+          We take reasonable steps to maintain a safe website
+          environment. However, no internet transmission or website
+          can be guaranteed to be completely secure.
+        </p>
+
+        <p>
+          Visitors should also take reasonable precautions when
+          submitting information online, especially when following
+          links to external websites.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>9. Children's Privacy</h2>
+
+        <p>
+          OpportunityBridge is an informational resource website
+          intended for a general audience. We do not intentionally
+          collect personal information from children through
+          dedicated child-directed features.
+        </p>
+
+        <p>
+          If you believe that personal information has been submitted
+          to us unnecessarily, please contact us so that the matter
+          can be reviewed.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>10. Your Choices</h2>
+
+        <p>
+          Depending on your browser, device and location, you may
+          have controls that allow you to manage cookies and other
+          privacy settings.
+        </p>
+
+        <ul>
+          <li>You may manage cookies through your browser settings.</li>
+          <li>You may manage certain Google advertising preferences through Google Ads Settings.</li>
+          <li>Where required, applicable consent choices may be presented through a consent-management system.</li>
+          <li>You may choose not to provide information when it is not required.</li>
+        </ul>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>11. Changes to This Privacy Policy</h2>
+
+        <p>
+          We may update this Privacy Policy from time to time to
+          reflect changes to the website, services, advertising
+          technologies, legal requirements or other operational
+          practices.
+        </p>
+
+        <p>
+          When changes are made, the updated date at the top of this
+          page may also be changed.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>12. Important Disclaimer</h2>
+
+        <p>
+          This Privacy Policy is provided to explain our general
+          privacy practices. It is not legal advice and does not
+          replace advice from a qualified privacy professional or
+          lawyer regarding laws applicable to your specific situation.
+        </p>
+
+      </section>
+
+      <section class="policy-section">
+
+        <h2>13. Related Pages</h2>
+
+        <div class="links-box">
+
+          <a href="about.html">About OpportunityBridge</a>
+
+          <a href="contact.html">Contact OpportunityBridge</a>
+
+          <a href="Disclaimer.html">Disclaimer</a>
+
+          <a href="index.html">OpportunityBridge Home</a>
+
+        </div>
+
+      </section>
+
+    </div>
 
   </div>
 
 </main>
 
-<footer>
+<footer class="footer">
 
-  <strong>OpportunityBridge</strong>
+  <div class="footer-grid">
 
-  <p>Your Gateway to Global Opportunities</p>
+    <div>
+      <h3>OpportunityBridge</h3>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="disclaimer.html">Disclaimer</a>
+      <p>
+        Global Opportunities & Digital Resources for students,
+        graduates and opportunity seekers.
+      </p>
+    </div>
+
+    <div>
+
+      <h3>Explore</h3>
+
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Online Courses</a>
+      <a href="opportunities.html">Opportunities</a>
+
+    </div>
+
+    <div>
+
+      <h3>Information</h3>
+
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="Privacy.html">Privacy Policy</a>
+      <a href="Disclaimer.html">Disclaimer</a>
+
+    </div>
+
   </div>
 
-  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+  <div class="copyright">
+    © 2026 OpportunityBridge. All rights reserved.
+  </div>
 
 </footer>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  menuToggle.addEventListener("click", function () {
+
+    mainNav.classList.toggle("active");
+
+    const isOpen = mainNav.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation" : "Open navigation"
+    );
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+      mainNav.classList.remove("active");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
+
+      menuToggle.textContent = "☰";
+
+    });
+
+  });
+</script>
 
 </body>
 </html>
