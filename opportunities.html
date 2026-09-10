@@ -1,29 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Opportunities | OpportunityBridge</title>
-
-  <meta name="description" content="Explore scholarships, jobs, internships, online learning and digital opportunities through OpportunityBridge. Find practical resources for education, career development and personal growth.">
-
-  <meta name="keywords" content="opportunities, scholarships, jobs, internships, online courses, digital skills, career opportunities, student opportunities, OpportunityBridge">
-
-  <meta name="author" content="OpportunityBridge">
-
-  <meta name="robots" content="index, follow">
-
-  <!-- Google AdSense -->
-  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
-
-  <script async
+  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Opportunities | Scholarships, Jobs &amp; Skills | OpportunityBridge</title>  <meta name="description" content="Explore scholarships, jobs, internships, online courses and digital skills opportunities through OpportunityBridge. Find practical resources for education, careers and professional development.">  <meta name="keywords" content="opportunities, scholarships, jobs, internships, online courses, digital skills, career opportunities, student opportunities, OpportunityBridge">  <meta name="author" content="OpportunityBridge">  <meta name="robots" content="index, follow, max-image-preview:large">  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">  <meta name="theme-color" content="#0b5ed7">  <link rel="canonical" href="https://absmg.github.io/opportunities.html">  <!-- Open Graph -->  <meta property="og:type" content="website">
+  <meta property="og:title" content="Opportunities | OpportunityBridge">
+  <meta property="og:description" content="Explore scholarships, jobs, internships, online courses and digital skills opportunities through OpportunityBridge.">
+  <meta property="og:url" content="https://absmg.github.io/opportunities.html">
+  <meta property="og:site_name" content="OpportunityBridge">  <!-- Twitter -->  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Opportunities | OpportunityBridge">
+  <meta name="twitter:description" content="Explore education, career, internship, scholarship and digital skills opportunities in one place.">  <!-- Google AdSense -->  <meta name="google-adsense-account" content="ca-pub-2004981151172844">  <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
     crossorigin="anonymous">
-  </script>
-
-  <style>
+  </script>  <!-- Structured Data -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Opportunities | OpportunityBridge",
+    "url": "https://absmg.github.io/opportunities.html",
+    "description": "Explore scholarships, jobs, internships, online courses and digital skills opportunities through OpportunityBridge.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    }
+  }
+  </script>  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Opportunities",
+        "item": "https://absmg.github.io/opportunities.html"
+      }
+    ]
+  }
+  </script>  <style>
 
     * {
       box-sizing: border-box;
@@ -40,6 +63,13 @@
 
     a {
       text-decoration: none;
+    }
+
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 3px solid rgba(11, 94, 215, 0.25);
+      outline-offset: 2px;
     }
 
     /* HEADER */
@@ -82,6 +112,11 @@
 
     nav a:hover {
       opacity: 0.8;
+    }
+
+    nav a[aria-current="page"] {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .menu-toggle {
@@ -144,6 +179,11 @@
       color: #555;
     }
 
+    .intro a {
+      color: #0b5ed7;
+      font-weight: 600;
+    }
+
     /* ADS */
 
     .ad-container {
@@ -160,6 +200,13 @@
 
     .search-box {
       margin: 30px 0 20px;
+    }
+
+    .search-box label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
     }
 
     .search-box input {
@@ -449,500 +496,519 @@
       }
     }
 
-  </style>
-</head>
+  </style></head><body>  <!-- HEADER -->  <header><div class="header-container">
 
-<body>
+  <a href="index.html" class="logo">
+    OpportunityBridge
+  </a>
 
-  <!-- HEADER -->
+  <button
+    type="button"
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="mainNav">
+    ☰
+  </button>
 
-  <header>
+  <nav id="mainNav" aria-label="Main navigation">
 
-    <div class="header-container">
+    <ul>
 
-      <a href="index.html" class="logo">
-        OpportunityBridge
-      </a>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation"
-        aria-expanded="false">
-        ☰
-      </button>
+      <li>
+        <a href="scholarships.html">Scholarships</a>
+      </li>
 
-      <nav id="mainNav">
+      <li>
+        <a href="jobs.html">Jobs</a>
+      </li>
 
-        <ul>
+      <li>
+        <a href="internships.html">Internships</a>
+      </li>
 
-          <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="courses.html">Courses</a>
+      </li>
 
-          <li><a href="scholarships.html">Scholarships</a></li>
+      <li>
+        <a href="opportunities.html" aria-current="page">Opportunities</a>
+      </li>
 
-          <li><a href="jobs.html">Jobs</a></li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
 
-          <li><a href="internships.html">Internships</a></li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
 
-          <li><a href="courses.html">Courses</a></li>
+    </ul>
 
-          <li><a href="opportunities.html">Opportunities</a></li>
+  </nav>
 
-          <li><a href="about.html">About</a></li>
+</div>
 
-          <li><a href="contact.html">Contact</a></li>
+  </header>  <!-- HERO -->  <section class="hero"><div class="hero-content">
 
-        </ul>
+  <h1>Explore Opportunities</h1>
 
-      </nav>
+  <p>
+    Discover education, career and skills opportunities in one
+    place. Explore scholarships, jobs, internships, online
+    courses and other resources to support your next step.
+  </p>
 
-    </div>
+</div>
 
-  </header>
+  </section>  <main><!-- INTRO -->
 
+<section class="intro">
 
-  <!-- HERO -->
+  <h2>Your Gateway to New Opportunities</h2>
 
-  <section class="hero">
+  <p>
+    Finding the right opportunity can take time. OpportunityBridge
+    brings together useful resources and practical guidance to help
+    students, graduates and young professionals make better-informed
+    decisions about education, careers and skills development.
+  </p>
 
-    <div class="hero-content">
+  <p style="margin-top:12px;">
+    You can also explore our
+    <a href="scholarships.html">scholarships</a>,
+    <a href="jobs.html">job resources</a>,
+    <a href="internships.html">internship resources</a>,
+    and <a href="courses.html">online courses</a>
+    for more focused information.
+  </p>
 
-      <h1>Explore Opportunities</h1>
+</section>
 
-      <p>
-        Discover education, career and skills opportunities in one
-        place. Explore scholarships, jobs, internships, online
-        courses and other resources to support your next step.
-      </p>
 
-    </div>
+<!-- FIRST AD -->
 
-  </section>
+<div class="ad-container" aria-label="Advertisement">
 
-
-  <main>
-
-    <!-- INTRO -->
-
-    <section class="intro">
-
-      <h2>Your Gateway to New Opportunities</h2>
-
-      <p>
-        Finding the right opportunity can take time. OpportunityBridge
-        brings together useful resources and practical guidance to help
-        students, graduates and young professionals make better-informed
-        decisions about education, careers and skills development.
-      </p>
-
-    </section>
-
-
-    <!-- FIRST AD -->
-
-    <div class="ad-container">
-
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-    </div>
-
-
-    <!-- SEARCH -->
-
-    <div class="search-box">
-
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search opportunities..."
-        aria-label="Search opportunities">
-
-    </div>
-
-
-    <!-- FILTERS -->
-
-    <div class="filters">
-
-      <button
-        class="filter-btn active"
-        data-filter="all">
-        All
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="education">
-        Education
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="career">
-        Career
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="skills">
-        Skills
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="international">
-        International
-      </button>
-
-    </div>
-
-
-    <!-- OPPORTUNITY CARDS -->
-
-    <section class="cards" id="opportunityCards">
-
-
-      <article
-        class="card"
-        data-category="education international"
-        data-search="scholarships education university study abroad fully funded">
-
-        <h3>Scholarships</h3>
-
-        <p>
-          Explore scholarship resources for students looking for
-          financial support for education locally or internationally.
-        </p>
-
-        <span class="tag">Education</span>
-        <span class="tag">International</span>
-
-        <br>
-
-        <a href="scholarships.html">
-          View Scholarships
-        </a>
-
-      </article>
-
-
-      <article
-        class="card"
-        data-category="career"
-        data-search="jobs employment careers graduate work opportunities">
-
-        <h3>Jobs</h3>
-
-        <p>
-          Find career resources and job-search guidance for graduates,
-          students and people developing their professional careers.
-        </p>
-
-        <span class="tag">Career</span>
-        <span class="tag">Employment</span>
-
-        <br>
-
-        <a href="jobs.html">
-          Explore Jobs
-        </a>
-
-      </article>
-
-
-      <article
-        class="card"
-        data-category="career education"
-        data-search="internships students graduates experience practical training">
-
-        <h3>Internships</h3>
-
-        <p>
-          Learn how to find internships that can provide practical
-          experience and help prepare you for future employment.
-        </p>
-
-        <span class="tag">Career</span>
-        <span class="tag">Students</span>
-
-        <br>
-
-        <a href="internships.html">
-          Find Internships
-        </a>
-
-      </article>
-
-
-      <article
-        class="card"
-        data-category="skills education"
-        data-search="online courses digital skills computer programming learning">
-
-        <h3>Online Courses</h3>
-
-        <p>
-          Develop useful academic, professional and digital skills
-          through online learning resources.
-        </p>
-
-        <span class="tag">Skills</span>
-        <span class="tag">Learning</span>
-
-        <br>
-
-        <a href="courses.html">
-          Explore Courses
-        </a>
-
-      </article>
-
-
-      <article
-        class="card"
-        data-category="skills career"
-        data-search="digital skills technology computer communication career skills">
-
-        <h3>Digital Skills</h3>
-
-        <p>
-          Build practical digital abilities that can support your
-          education, career development and online work opportunities.
-        </p>
-
-        <span class="tag">Skills</span>
-        <span class="tag">Digital</span>
-
-        <br>
-
-        <a href="courses.html">
-          Build Skills
-        </a>
-
-      </article>
-
-
-      <article
-        class="card"
-        data-category="international education career"
-        data-search="international opportunities global study work organizations">
-
-        <h3>Global Opportunities</h3>
-
-        <p>
-          Explore resources for people interested in international
-          education, professional development and global careers.
-        </p>
-
-        <span class="tag">International</span>
-        <span class="tag">Global</span>
-
-        <br>
-
-        <a href="scholarships.html">
-          Explore Resources
-        </a>
-
-      </article>
-
-    </section>
-
-
-    <div
-      class="no-results"
-      id="noResults">
-
-      No opportunities matched your search.
-      Try another keyword or category.
-
-    </div>
-
-
-    <!-- SECOND AD -->
-
-    <div class="ad-container">
-
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-    </div>
-
-
-    <!-- GUIDE -->
-
-    <section class="guidance">
-
-      <h2>How to Make the Most of Opportunities</h2>
-
-
-      <h3>1. Define Your Goal</h3>
-
-      <p>
-        Decide whether your priority is education, employment,
-        practical experience or learning a new skill. A clear goal
-        makes your search more focused.
-      </p>
-
-
-      <h3>2. Research Before Applying</h3>
-
-      <p>
-        Read the requirements carefully and research the organization,
-        university or platform offering the opportunity.
-      </p>
-
-
-      <h3>3. Prepare Your Documents</h3>
-
-      <p>
-        Depending on the opportunity, you may need a CV, academic
-        documents, identification documents, certificates or a
-        personal statement.
-      </p>
-
-
-      <h3>4. Follow Instructions Carefully</h3>
-
-      <p>
-        Submit applications through the correct channel and before
-        the stated deadline. Missing a required document can affect
-        an otherwise strong application.
-      </p>
-
-
-      <h3>5. Keep Track of Applications</h3>
-
-      <p>
-        Keep a simple record of opportunities you have applied for,
-        application dates, deadlines and any required follow-up.
-      </p>
-
-
-      <h3>6. Keep Improving Your Skills</h3>
-
-      <p>
-        If an opportunity does not work out, continue developing
-        useful skills and look for other suitable opportunities.
-      </p>
-
-
-      <div class="checklist">
-
-        <h3>Before You Apply: Quick Checklist</h3>
-
-        <ul>
-
-          <li>Read the eligibility requirements.</li>
-
-          <li>Check the application deadline.</li>
-
-          <li>Use accurate personal and academic information.</li>
-
-          <li>Prepare the required documents.</li>
-
-          <li>Verify the organization or opportunity.</li>
-
-          <li>Use the official application channel whenever possible.</li>
-
-        </ul>
-
-      </div>
-
-    </section>
-
-
-    <!-- SAFETY -->
-
-    <section class="guidance">
-
-      <h2>Stay Safe While Searching Online</h2>
-
-      <p>
-        Not every opportunity advertised online is genuine. Be
-        cautious when someone asks for unnecessary payments, passwords,
-        verification codes or other sensitive information. Before
-        applying, verify the opportunity using the official website
-        or another reliable source.
-      </p>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-      <h2>Start With One Step Today</h2>
-
-      <p>
-        Choose an area that matches your current goal and begin
-        exploring opportunities that can help you move forward.
-      </p>
-
-      <a href="index.html">
-        Back to OpportunityBridge
-      </a>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-links">
-
-      <a href="index.html">Home</a>
-
-      <a href="scholarships.html">Scholarships</a>
-
-      <a href="jobs.html">Jobs</a>
-
-      <a href="internships.html">Internships</a>
-
-      <a href="courses.html">Courses</a>
-
-      <a href="opportunities.html">Opportunities</a>
-
-      <a href="about.html">About</a>
-
-      <a href="contact.html">Contact</a>
-
-      <a href="Privacy.html">Privacy</a>
-
-      <a href="Disclaimer.html">Disclaimer</a>
-
-    </div>
-
-    <p>
-      © 2026 OpportunityBridge. All rights reserved.
-    </p>
-
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2004981151172844"
+       data-ad-slot="5992864529"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
 
   <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+  <label for="searchInput">
+    Search opportunities
+  </label>
+
+  <input
+    type="search"
+    id="searchInput"
+    placeholder="Search scholarships, jobs, internships, skills..."
+    aria-label="Search opportunities"
+    autocomplete="off">
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div
+  class="filters"
+  role="group"
+  aria-label="Filter opportunities">
+
+  <button
+    type="button"
+    class="filter-btn active"
+    data-filter="all"
+    aria-pressed="true">
+    All
+  </button>
+
+  <button
+    type="button"
+    class="filter-btn"
+    data-filter="education"
+    aria-pressed="false">
+    Education
+  </button>
+
+  <button
+    type="button"
+    class="filter-btn"
+    data-filter="career"
+    aria-pressed="false">
+    Career
+  </button>
+
+  <button
+    type="button"
+    class="filter-btn"
+    data-filter="skills"
+    aria-pressed="false">
+    Skills
+  </button>
+
+  <button
+    type="button"
+    class="filter-btn"
+    data-filter="international"
+    aria-pressed="false">
+    International
+  </button>
+
+</div>
+
+
+<!-- OPPORTUNITY CARDS -->
+
+<section
+  class="cards"
+  id="opportunityCards"
+  aria-label="Opportunity categories">
+
+
+  <article
+    class="card"
+    data-category="education international"
+    data-search="scholarships education university study abroad fully funded financial aid students">
+
+    <h3>Scholarships</h3>
+
+    <p>
+      Explore scholarship resources for students looking for
+      financial support for education locally or internationally.
+    </p>
+
+    <span class="tag">Education</span>
+    <span class="tag">International</span>
+
+    <br>
+
+    <a href="scholarships.html">
+      View Scholarships
+    </a>
+
+  </article>
+
+
+  <article
+    class="card"
+    data-category="career"
+    data-search="jobs employment careers graduate work opportunities professional career">
+
+    <h3>Jobs</h3>
+
+    <p>
+      Find career resources and job-search guidance for graduates,
+      students and people developing their professional careers.
+    </p>
+
+    <span class="tag">Career</span>
+    <span class="tag">Employment</span>
+
+    <br>
+
+    <a href="jobs.html">
+      Explore Jobs
+    </a>
+
+  </article>
+
+
+  <article
+    class="card"
+    data-category="career education"
+    data-search="internships students graduates experience practical training career development">
+
+    <h3>Internships</h3>
+
+    <p>
+      Learn how to find internships that can provide practical
+      experience and help prepare you for future employment.
+    </p>
+
+    <span class="tag">Career</span>
+    <span class="tag">Students</span>
+
+    <br>
+
+    <a href="internships.html">
+      Find Internships
+    </a>
+
+  </article>
+
+
+  <article
+    class="card"
+    data-category="skills education"
+    data-search="online courses digital skills computer programming learning education">
+
+    <h3>Online Courses</h3>
+
+    <p>
+      Develop useful academic, professional and digital skills
+      through online learning resources.
+    </p>
+
+    <span class="tag">Skills</span>
+    <span class="tag">Learning</span>
+
+    <br>
+
+    <a href="courses.html">
+      Explore Courses
+    </a>
+
+  </article>
+
+
+  <article
+    class="card"
+    data-category="skills career"
+    data-search="digital skills technology computer communication career skills online work">
+
+    <h3>Digital Skills</h3>
+
+    <p>
+      Build practical digital abilities that can support your
+      education, career development and online work opportunities.
+    </p>
+
+    <span class="tag">Skills</span>
+    <span class="tag">Digital</span>
+
+    <br>
+
+    <a href="courses.html">
+      Build Skills
+    </a>
+
+  </article>
+
+
+  <article
+    class="card"
+    data-category="international education career"
+    data-search="international opportunities global study work organizations education career">
+
+    <h3>Global Opportunities</h3>
+
+    <p>
+      Explore resources for people interested in international
+      education, professional development and global careers.
+    </p>
+
+    <span class="tag">International</span>
+    <span class="tag">Global</span>
+
+    <br>
+
+    <a href="scholarships.html">
+      Explore Resources
+    </a>
+
+  </article>
+
+</section>
+
+
+<div
+  class="no-results"
+  id="noResults"
+  role="status"
+  aria-live="polite">
+
+  No opportunities matched your search.
+  Try another keyword or category.
+
+</div>
+
+
+<!-- SECOND AD -->
+
+<div class="ad-container" aria-label="Advertisement">
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2004981151172844"
+       data-ad-slot="5992864529"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</div>
+
+
+<!-- GUIDE -->
+
+<section class="guidance">
+
+  <h2>How to Make the Most of Opportunities</h2>
+
+
+  <h3>1. Define Your Goal</h3>
+
+  <p>
+    Decide whether your priority is education, employment,
+    practical experience or learning a new skill. A clear goal
+    makes your search more focused.
+  </p>
+
+
+  <h3>2. Research Before Applying</h3>
+
+  <p>
+    Read the requirements carefully and research the organization,
+    university or platform offering the opportunity.
+  </p>
+
+
+  <h3>3. Prepare Your Documents</h3>
+
+  <p>
+    Depending on the opportunity, you may need a CV, academic
+    documents, identification documents, certificates or a
+    personal statement.
+  </p>
+
+
+  <h3>4. Follow Instructions Carefully</h3>
+
+  <p>
+    Submit applications through the correct channel and before
+    the stated deadline. Missing a required document can affect
+    an otherwise strong application.
+  </p>
+
+
+  <h3>5. Keep Track of Applications</h3>
+
+  <p>
+    Keep a simple record of opportunities you have applied for,
+    application dates, deadlines and any required follow-up.
+  </p>
+
+
+  <h3>6. Keep Improving Your Skills</h3>
+
+  <p>
+    If an opportunity does not work out, continue developing
+    useful skills and look for other suitable opportunities.
+  </p>
+
+
+  <div class="checklist">
+
+    <h3>Before You Apply: Quick Checklist</h3>
+
+    <ul>
+
+      <li>Read the eligibility requirements.</li>
+
+      <li>Check the application deadline.</li>
+
+      <li>Use accurate personal and academic information.</li>
+
+      <li>Prepare the required documents.</li>
+
+      <li>Verify the organization or opportunity.</li>
+
+      <li>Use the official application channel whenever possible.</li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- SAFETY -->
+
+<section class="guidance">
+
+  <h2>Stay Safe While Searching Online</h2>
+
+  <p>
+    Not every opportunity advertised online is genuine. Be
+    cautious when someone asks for unnecessary payments, passwords,
+    verification codes or other sensitive information. Before
+    applying, verify the opportunity using the official website
+    or another reliable source.
+  </p>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <h2>Start With One Step Today</h2>
+
+  <p>
+    Choose an area that matches your current goal and begin
+    exploring opportunities that can help you move forward.
+  </p>
+
+  <a href="index.html">
+    Back to OpportunityBridge
+  </a>
+
+</section>
+
+  </main>  <!-- FOOTER -->  <footer><div class="footer-links">
+
+  <a href="index.html">Home</a>
+
+  <a href="scholarships.html">Scholarships</a>
+
+  <a href="jobs.html">Jobs</a>
+
+  <a href="internships.html">Internships</a>
+
+  <a href="courses.html">Courses</a>
+
+  <a href="opportunities.html" aria-current="page">
+    Opportunities
+  </a>
+
+  <a href="about.html">About</a>
+
+  <a href="contact.html">Contact</a>
+
+  <a href="Privacy.html">Privacy</a>
+
+  <a href="Disclaimer.html">Disclaimer</a>
+
+</div>
+
+<p>
+  © 2026 OpportunityBridge. All rights reserved.
+</p>
+
+  </footer>  <!-- JAVASCRIPT -->  <script>
 
     /* MOBILE MENU */
 
@@ -1041,10 +1107,12 @@
       cards.forEach(function(card) {
 
         const category =
-          card.dataset.category.toLowerCase();
+          (card.dataset.category || "")
+            .toLowerCase();
 
         const searchText =
-          card.dataset.search.toLowerCase();
+          (card.dataset.search || "")
+            .toLowerCase();
 
         const title =
           card
@@ -1052,10 +1120,31 @@
             .textContent
             .toLowerCase();
 
+        const description =
+          card
+            .querySelector("p")
+            .textContent
+            .toLowerCase();
+
+        const tags =
+          Array.from(
+            card.querySelectorAll(".tag")
+          )
+          .map(function(tag) {
+            return tag.textContent.toLowerCase();
+          })
+          .join(" ");
+
+
+        const searchableContent =
+          searchText + " " +
+          title + " " +
+          description + " " +
+          tags;
+
 
         const matchesSearch =
-          searchText.includes(searchTerm) ||
-          title.includes(searchTerm);
+          searchableContent.includes(searchTerm);
 
 
         const matchesFilter =
@@ -1104,11 +1193,23 @@
 
             filterButtons.forEach(
               function(btn) {
+
                 btn.classList.remove("active");
+
+                btn.setAttribute(
+                  "aria-pressed",
+                  "false"
+                );
+
               }
             );
 
             button.classList.add("active");
+
+            button.setAttribute(
+              "aria-pressed",
+              "true"
+            );
 
             currentFilter =
               button.dataset.filter;
@@ -1121,7 +1222,5 @@
       }
     );
 
-  </script>
-
-</body>
+  </script></body>
 </html>
