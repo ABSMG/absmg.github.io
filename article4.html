@@ -15,16 +15,56 @@
 
   <meta name="author" content="Tanzania Digital Hub">
 
-  <meta name="robots" content="index, follow">
+  <meta name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta name="googlebot"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta name="theme-color" content="#0f766e">
 
   <link rel="canonical"
     href="https://absmg.github.io/article4.html">
 
+
+  <!-- Open Graph -->
+
+  <meta property="og:type" content="article">
+
+  <meta property="og:title"
+    content="HESLB 2026/2027: How to Apply for Student Loans in Tanzania">
+
+  <meta property="og:description"
+    content="A practical guide to HESLB student loans in Tanzania, including eligibility, documents, application steps and official resources.">
+
+  <meta property="og:url"
+    content="https://absmg.github.io/article4.html">
+
+  <meta property="og:site_name"
+    content="Tanzania Digital Hub">
+
+  <meta property="og:locale"
+    content="en_TZ">
+
+
+  <!-- Twitter -->
+
+  <meta name="twitter:card" content="summary">
+
+  <meta name="twitter:title"
+    content="HESLB 2026/2027: How to Apply for Student Loans in Tanzania">
+
+  <meta name="twitter:description"
+    content="Learn about HESLB student loans, eligibility, documents, application steps and official guidance for Tanzanian students.">
+
+
   <!-- Google AdSense -->
+
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
     crossorigin="anonymous">
   </script>
+
 
   <style>
 
@@ -49,11 +89,16 @@
       text-decoration: none;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .container {
       width: 92%;
       max-width: 1000px;
       margin: auto;
     }
+
 
     /* HEADER */
 
@@ -70,12 +115,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
       font-size: 21px;
       font-weight: 800;
       color: #0f766e;
+      white-space: nowrap;
     }
 
     .logo span {
@@ -84,6 +131,7 @@
 
     nav {
       display: flex;
+      align-items: center;
       gap: 18px;
     }
 
@@ -93,9 +141,32 @@
       font-size: 14px;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       color: #0f766e;
     }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .menu-btn:focus-visible,
+    nav a:focus-visible,
+    .official-link:focus-visible,
+    .back-home:focus-visible,
+    footer a:focus-visible {
+      outline: 3px solid rgba(15,118,110,.35);
+      outline-offset: 3px;
+    }
+
 
     /* HERO */
 
@@ -138,6 +209,7 @@
       max-width: 780px;
     }
 
+
     /* ADS */
 
     .ad {
@@ -151,7 +223,9 @@
       color: #94a3b8;
       font-size: 12px;
       background: #ffffff;
+      overflow: hidden;
     }
+
 
     /* ARTICLE */
 
@@ -178,11 +252,14 @@
       font-size: 28px;
       margin: 35px 0 12px;
       color: #0f172a;
+      line-height: 1.3;
     }
 
     .article h3 {
       font-size: 21px;
       margin: 25px 0 10px;
+      color: #0f172a;
+      line-height: 1.4;
     }
 
     .article p {
@@ -199,6 +276,13 @@
     .article li {
       margin-bottom: 9px;
     }
+
+    .article strong {
+      color: #0f172a;
+    }
+
+
+    /* INFORMATION BOXES */
 
     .important {
       background: #ecfeff;
@@ -224,6 +308,9 @@
       margin: 25px 0;
     }
 
+
+    /* LINKS */
+
     .official-link {
       display: inline-block;
       margin: 8px 0;
@@ -232,11 +319,23 @@
       background: #0f766e;
       color: white;
       font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
     }
 
     .official-link:hover {
       background: #115e59;
+      transform: translateY(-1px);
     }
+
+    .internal-link {
+      color: #0f766e;
+      font-weight: 700;
+    }
+
+    .internal-link:hover {
+      text-decoration: underline;
+    }
+
 
     /* FAQ */
 
@@ -255,6 +354,11 @@
       color: #0f172a;
     }
 
+    .faq-item p {
+      margin-bottom: 0;
+    }
+
+
     /* BACK HOME */
 
     .back-home {
@@ -270,6 +374,7 @@
     .back-home:hover {
       background: #115e59;
     }
+
 
     /* FOOTER */
 
@@ -313,12 +418,41 @@
       color: #94a3b8;
     }
 
+
     /* MOBILE */
 
     @media(max-width: 850px) {
 
+      .menu-btn {
+        display: block;
+      }
+
       nav {
         display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 15px 4%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 8px 20px rgba(15,23,42,.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px 5px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      nav a:last-child {
+        border-bottom: none;
       }
 
       .article {
@@ -331,6 +465,7 @@
 
     }
 
+
     @media(max-width: 520px) {
 
       .hero {
@@ -339,6 +474,10 @@
 
       .hero h1 {
         font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
       }
 
       .article {
@@ -350,38 +489,90 @@
         font-size: 25px;
       }
 
+      .article h3 {
+        font-size: 20px;
+      }
+
+      .official-link {
+        width: 100%;
+        text-align: center;
+      }
+
+    }
+
+
+    @media(prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .official-link {
+        transition: none;
+      }
+
     }
 
   </style>
 
+
   <!-- Article Structured Data -->
 
   <script type="application/ld+json">
-
   {
     "@context": "https://schema.org",
     "@type": "Article",
-
     "headline": "HESLB 2026/2027: How to Apply for Student Loans in Tanzania",
-
     "description": "A practical guide for Tanzanian students on HESLB student loans, eligibility, documents, application steps and official resources.",
-
     "author": {
       "@type": "Organization",
-      "name": "Tanzania Digital Hub"
+      "name": "Tanzania Digital Hub",
+      "url": "https://absmg.github.io/"
     },
-
     "publisher": {
       "@type": "Organization",
-      "name": "Tanzania Digital Hub"
+      "name": "Tanzania Digital Hub",
+      "url": "https://absmg.github.io/"
     },
-
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://absmg.github.io/article4.html"
-    }
+    },
+    "url": "https://absmg.github.io/article4.html",
+    "articleSection": "Education & Student Loans",
+    "keywords": [
+      "HESLB 2026/2027",
+      "HESLB student loans",
+      "HESLB Tanzania",
+      "how to apply HESLB",
+      "student loans Tanzania",
+      "HESLB application"
+    ]
   }
+  </script>
 
+
+  <!-- Breadcrumb Structured Data -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "HESLB Student Loans Guide",
+        "item": "https://absmg.github.io/article4.html"
+      }
+    ]
+  }
   </script>
 
 </head>
@@ -396,14 +587,23 @@
 
   <div class="container nav">
 
-    <!-- HOME LINK -->
-
-    <a href="index.html" class="logo">
+    <a href="index.html" class="logo" aria-label="Tanzania Digital Hub Home">
       Tanzania <span>Digital Hub</span>
     </a>
 
 
-    <nav>
+    <button
+      type="button"
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open navigation menu"
+      aria-controls="mainNav"
+      aria-expanded="false">
+      ☰
+    </button>
+
+
+    <nav id="mainNav" aria-label="Main navigation">
 
       <a href="index.html">
         Home
@@ -429,7 +629,7 @@
         About
       </a>
 
-      <a href="Contact.html">
+      <a href="contact.html">
         Contact
       </a>
 
@@ -443,15 +643,15 @@
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" aria-labelledby="page-title">
 
   <div class="container hero-content">
 
     <span class="badge">
-      🎓 HESLB & Education
+      🎓 HESLB &amp; Education
     </span>
 
-    <h1>
+    <h1 id="page-title">
       HESLB 2026/2027: How to Apply for Student Loans in Tanzania
     </h1>
 
@@ -471,9 +671,9 @@
 
 <div class="container">
 
-  <div class="ad">
+  <div class="ad" aria-label="Advertisement">
 
-    Advertisement
+    <span>Advertisement</span>
 
     <ins class="adsbygoogle"
       style="display:block"
@@ -517,6 +717,18 @@
         higher education institution for the 2026/2027 academic year,
         understanding the loan application process can help you prepare
         your documents and avoid common mistakes.
+      </p>
+
+      <p>
+        You can also explore more opportunities through our
+        <a class="internal-link" href="scholarships.html">
+          scholarships
+        </a>
+        and
+        <a class="internal-link" href="courses.html">
+          online courses
+        </a>
+        sections.
       </p>
 
 
@@ -595,6 +807,7 @@
         online application system.
       </p>
 
+
       <h3>
         Step 1: Prepare Your Information
       </h3>
@@ -633,7 +846,7 @@
         class="official-link"
         href="https://www.heslb.go.tz/"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
         Visit Official HESLB Website →
       </a>
 
@@ -738,7 +951,7 @@
         class="official-link"
         href="https://www.heslb.go.tz/loanapplication/application-guideline"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
         Check HESLB Application Guidelines →
       </a>
 
@@ -839,7 +1052,7 @@
         class="official-link"
         href="https://www.heslb.go.tz/"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
         HESLB Official Website →
       </a>
 
@@ -849,7 +1062,7 @@
         class="official-link"
         href="https://www.heslb.go.tz/loanapplication/application-guideline"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
         HESLB Application Guidelines →
       </a>
 
@@ -1033,7 +1246,7 @@
           About
         </a>
 
-        <a href="Contact.html">
+        <a href="contact.html">
           Contact
         </a>
 
@@ -1059,6 +1272,77 @@
   </div>
 
 </footer>
+
+
+
+<script>
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mainNav = document.getElementById("mainNav");
+
+
+  function setMenuState(isOpen) {
+
+    mainNav.classList.toggle("active", isOpen);
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    menuBtn.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close navigation menu"
+        : "Open navigation menu"
+    );
+
+  }
+
+
+  menuBtn.addEventListener("click", function () {
+
+    const isOpen =
+      mainNav.classList.contains("active");
+
+    setMenuState(!isOpen);
+
+  });
+
+
+  document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+      setMenuState(false);
+
+    });
+
+  });
+
+
+  document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+      setMenuState(false);
+
+    }
+
+  });
+
+
+  window.addEventListener("resize", function() {
+
+    if (window.innerWidth > 850) {
+
+      setMenuState(false);
+
+    }
+
+  });
+
+</script>
 
 
 </body>
