@@ -5,20 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Login | OpportunityBridge</title>
-  <meta name="description" content="Login to your OpportunityBridge account.">
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
       color: #222;
       min-height: 100vh;
       display: flex;
@@ -27,7 +25,6 @@
 
     header {
       background: #0b3d91;
-      color: white;
       padding: 16px 20px;
     }
 
@@ -35,14 +32,14 @@
       max-width: 1100px;
       margin: auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
       color: white;
       text-decoration: none;
-      font-size: 23px;
+      font-size: 22px;
       font-weight: bold;
     }
 
@@ -50,7 +47,7 @@
       color: #ffd54a;
     }
 
-    .home-link {
+    .home {
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -61,16 +58,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 35px 15px;
+      padding: 30px 15px;
     }
 
-    .auth-box {
-      background: white;
+    .login-card {
       width: 100%;
-      max-width: 430px;
-      padding: 32px 25px;
+      max-width: 420px;
+      background: white;
+      padding: 30px 24px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
     }
 
     h1 {
@@ -87,89 +84,89 @@
 
     label {
       display: block;
-      margin-bottom: 7px;
       font-weight: bold;
+      margin-bottom: 7px;
     }
 
-    .input-group {
-      position: relative;
-      margin-bottom: 17px;
+    .field {
+      margin-bottom: 18px;
     }
 
     input {
       width: 100%;
       padding: 13px;
-      border: 1px solid #d5d9e0;
-      border-radius: 6px;
+      border: 1px solid #ccd2dc;
+      border-radius: 7px;
       font-size: 16px;
       outline: none;
     }
 
     input:focus {
       border-color: #0b3d91;
-      box-shadow: 0 0 0 2px rgba(11,61,145,0.08);
     }
 
-    .password-input {
-      padding-right: 70px;
+    .password-wrap {
+      position: relative;
     }
 
-    .toggle-password {
+    .password-wrap input {
+      padding-right: 65px;
+    }
+
+    .show-btn {
       position: absolute;
-      right: 8px;
+      right: 6px;
       top: 50%;
       transform: translateY(-50%);
-      width: auto;
-      padding: 6px 8px;
+      border: 0;
       background: transparent;
       color: #0b3d91;
-      font-size: 13px;
-      border: none;
       cursor: pointer;
+      font-weight: bold;
     }
 
     .login-btn {
       width: 100%;
-      padding: 13px;
+      padding: 14px;
+      border: 0;
+      border-radius: 7px;
       background: #0b3d91;
       color: white;
-      border: none;
-      border-radius: 6px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
     }
 
     .login-btn:disabled {
-      opacity: 0.7;
+      opacity: .7;
       cursor: not-allowed;
     }
 
     .message {
       display: none;
-      margin-bottom: 18px;
       padding: 12px;
-      border-radius: 6px;
+      border-radius: 7px;
+      margin-bottom: 18px;
       font-size: 14px;
       line-height: 1.5;
       word-break: break-word;
     }
 
-    .error {
+    .message.error {
       display: block;
-      background: #ffe9e9;
-      color: #a40000;
+      background: #ffe8e8;
+      color: #a00000;
     }
 
-    .success {
+    .message.success {
       display: block;
-      background: #e9f8ee;
-      color: #176b32;
+      background: #e8f7ed;
+      color: #176b35;
     }
 
-    .info {
+    .message.info {
       display: block;
-      background: #eaf2ff;
+      background: #e8f0ff;
       color: #174b91;
     }
 
@@ -181,30 +178,16 @@
 
     .links a {
       color: #0b3d91;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
     }
 
     footer {
+      background: #071f49;
+      color: #dce3ef;
       text-align: center;
       padding: 18px;
-      background: #071f49;
-      color: #d3d9e5;
       font-size: 14px;
-    }
-
-    @media (max-width: 480px) {
-      .auth-box {
-        padding: 27px 20px;
-      }
-
-      h1 {
-        font-size: 27px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
     }
   </style>
 </head>
@@ -218,7 +201,7 @@
       Opportunity<span>Bridge</span>
     </a>
 
-    <a href="index.html" class="home-link">
+    <a href="index.html" class="home">
       Home
     </a>
 
@@ -228,7 +211,7 @@
 
 <main>
 
-  <div class="auth-box">
+  <div class="login-card">
 
     <h1>Welcome Back</h1>
 
@@ -240,43 +223,45 @@
 
     <form id="loginForm">
 
-      <label for="email">
-        Email Address
-      </label>
-
-      <input
-        type="email"
-        id="email"
-        placeholder="Enter your email"
-        required
-        autocomplete="email"
-      >
-
-      <label for="password">
-        Password
-      </label>
-
-      <div class="input-group">
+      <div class="field">
+        <label for="email">Email Address</label>
 
         <input
-          type="password"
-          id="password"
-          class="password-input"
-          placeholder="Enter your password"
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          autocomplete="email"
           required
-          minlength="6"
-          autocomplete="current-password"
         >
+      </div>
 
-        <button
-          type="button"
-          id="togglePassword"
-          class="toggle-password"
-        >
-          Show
-        </button>
+
+      <div class="field">
+
+        <label for="password">Password</label>
+
+        <div class="password-wrap">
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="button"
+            id="showPassword"
+            class="show-btn"
+          >
+            Show
+          </button>
+
+        </div>
 
       </div>
+
 
       <button
         type="submit"
@@ -287,6 +272,7 @@
       </button>
 
     </form>
+
 
     <div class="links">
 
@@ -316,85 +302,51 @@
 
 
 <script>
+
   /*
-   * ==========================================
-   * OPPORTUNITYBRIDGE SUPABASE CONFIGURATION
-   * ==========================================
+   * =========================================
+   * SUPABASE CONFIGURATION
+   * =========================================
    */
 
   const SUPABASE_URL =
     "https://wrdpnhqwolqovoukhlns.supabase.co";
 
-  const SUPABASE_KEY =
-    "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
-
-
   /*
-   * ==========================================
-   * CHECK SUPABASE LIBRARY
-   * ==========================================
+   * PASTE YOUR CURRENT SUPABASE
+   * PUBLISHABLE KEY BETWEEN THE QUOTES.
+   *
+   * It must start with:
+   * sb_publishable_
    */
 
-  const messageBox =
-    document.getElementById("message");
-
-  const loginButton =
-    document.getElementById("loginBtn");
-
-  const passwordInput =
-    document.getElementById("password");
-
-  const togglePassword =
-    document.getElementById("togglePassword");
-
-
-  function showMessage(text, type) {
-
-    messageBox.textContent = text;
-
-    messageBox.className =
-      "message " + type;
-  }
-
-
-  function hideMessage() {
-
-    messageBox.textContent = "";
-
-    messageBox.className =
-      "message";
-  }
+  const SUPABASE_PUBLISHABLE_KEY =
+    "PASTE_YOUR_CURRENT_PUBLISHABLE_KEY_HERE";
 
 
   /*
-   * ==========================================
-   * MAKE SURE SUPABASE LIBRARY EXISTS
-   * ==========================================
+   * =========================================
+   * SUPABASE CLIENT
+   * =========================================
    */
 
   if (!window.supabase) {
 
-    showMessage(
-      "Supabase library failed to load. Please check your internet connection and refresh the page.",
-      "error"
-    );
+    document.getElementById("message").textContent =
+      "Supabase library failed to load. Please refresh the page.";
 
-    throw new Error(
-      "Supabase JavaScript library failed to load."
-    );
+    document.getElementById("message").className =
+      "message error";
+
+    throw new Error("Supabase library not loaded.");
+
   }
 
-
-  /*
-   * ==========================================
-   * CREATE SUPABASE CLIENT
-   * ==========================================
-   */
 
   const supabaseClient =
     window.supabase.createClient(
       SUPABASE_URL,
-      SUPABASE_KEY,
+      SUPABASE_PUBLISHABLE_KEY,
       {
         auth: {
           persistSession: true,
@@ -406,12 +358,63 @@
 
 
   /*
-   * ==========================================
-   * SHOW / HIDE PASSWORD
-   * ==========================================
+   * =========================================
+   * ELEMENTS
+   * =========================================
    */
 
-  togglePassword.addEventListener(
+  const form =
+    document.getElementById("loginForm");
+
+  const emailInput =
+    document.getElementById("email");
+
+  const passwordInput =
+    document.getElementById("password");
+
+  const loginBtn =
+    document.getElementById("loginBtn");
+
+  const message =
+    document.getElementById("message");
+
+  const showPassword =
+    document.getElementById("showPassword");
+
+
+  /*
+   * =========================================
+   * MESSAGE
+   * =========================================
+   */
+
+  function showMessage(text, type) {
+
+    message.textContent = text;
+
+    message.className =
+      "message " + type;
+
+  }
+
+
+  function clearMessage() {
+
+    message.textContent = "";
+
+    message.className =
+      "message";
+
+  }
+
+
+  /*
+   * =========================================
+   * SHOW / HIDE PASSWORD
+   * =========================================
+   */
+
+  showPassword.addEventListener(
     "click",
     function () {
 
@@ -419,13 +422,13 @@
 
         passwordInput.type = "text";
 
-        togglePassword.textContent = "Hide";
+        showPassword.textContent = "Hide";
 
       } else {
 
         passwordInput.type = "password";
 
-        togglePassword.textContent = "Show";
+        showPassword.textContent = "Show";
 
       }
 
@@ -434,12 +437,12 @@
 
 
   /*
-   * ==========================================
-   * TEST SUPABASE CONNECTION
-   * ==========================================
+   * =========================================
+   * CHECK API KEY
+   * =========================================
    */
 
-  async function testSupabaseConnection() {
+  async function checkSupabase() {
 
     try {
 
@@ -448,362 +451,230 @@
           SUPABASE_URL + "/auth/v1/settings",
           {
             method: "GET",
+
             headers: {
-              "apikey": SUPABASE_KEY,
-              "Authorization":
-                "Bearer " + SUPABASE_KEY
+              "apikey":
+                SUPABASE_PUBLISHABLE_KEY
             },
+
             cache: "no-store"
           }
         );
 
 
-      const text =
-        await response.text();
-
-
-      console.log(
-        "Supabase API test:",
-        {
-          status: response.status,
-          ok: response.ok,
-          body: text
-        }
-      );
-
-
       if (!response.ok) {
 
+        const body =
+          await response.text();
+
         return {
-          ok: false,
+          success: false,
           status: response.status,
-          body: text
+          body: body
         };
 
       }
 
 
       return {
-        ok: true,
-        status: response.status,
-        body: text
+        success: true,
+        status: response.status
       };
 
     } catch (error) {
 
-      console.error(
-        "Supabase connection test failed:",
-        error
-      );
-
       return {
-        ok: false,
+        success: false,
         status: 0,
         body: error.message
       };
+
     }
+
   }
 
 
   /*
-   * ==========================================
+   * =========================================
    * LOGIN
-   * ==========================================
+   * =========================================
    */
 
-  document
-    .getElementById("loginForm")
-    .addEventListener(
-      "submit",
-      async function(event) {
+  form.addEventListener(
+    "submit",
+    async function (event) {
 
-        event.preventDefault();
+      event.preventDefault();
 
-        hideMessage();
+      clearMessage();
 
-        const email =
-          document
-            .getElementById("email")
-            .value
-            .trim();
+      const email =
+        emailInput.value.trim();
 
-        const password =
-          passwordInput.value;
+      const password =
+        passwordInput.value;
 
+
+      if (!email || !password) {
+
+        showMessage(
+          "Please enter your email and password.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      loginBtn.disabled = true;
+
+      loginBtn.textContent =
+        "Checking...";
+
+
+      try {
 
         /*
-         * BASIC VALIDATION
+         * FIRST CHECK SUPABASE
          */
 
-        if (!email) {
+        const api =
+          await checkSupabase();
+
+
+        if (!api.success) {
 
           showMessage(
-            "Please enter your email address.",
+            "Supabase API error. HTTP " +
+            api.status +
+            ". Details: " +
+            api.body,
             "error"
           );
+
+          loginBtn.disabled = false;
+
+          loginBtn.textContent =
+            "Login";
 
           return;
         }
 
 
-        if (!password) {
-
-          showMessage(
-            "Please enter your password.",
-            "error"
-          );
-
-          return;
-        }
-
-
         /*
-         * START LOADING
+         * LOGIN
          */
 
-        loginButton.disabled = true;
-
-        loginButton.textContent =
-          "Checking connection...";
+        loginBtn.textContent =
+          "Logging in...";
 
 
-        try {
-
-          /*
-           * ========================================
-           * FIRST: TEST SUPABASE API
-           * ========================================
-           */
-
-          const apiTest =
-            await testSupabaseConnection();
-
-
-          console.log(
-            "Supabase API result:",
-            apiTest
-          );
+        const {
+          data,
+          error
+        } =
+          await supabaseClient.auth
+            .signInWithPassword({
+              email: email,
+              password: password
+            });
 
 
-          if (!apiTest.ok) {
-
-            showMessage(
-              "Supabase API error. HTTP " +
-              apiTest.status +
-              ". Details: " +
-              apiTest.body,
-              "error"
-            );
-
-            loginButton.disabled = false;
-
-            loginButton.textContent = "Login";
-
-            return;
-          }
-
-
-          /*
-           * ========================================
-           * SECOND: LOGIN
-           * ========================================
-           */
-
-          loginButton.textContent =
-            "Logging in...";
-
-
-          console.log(
-            "Attempting login for:",
-            email
-          );
-
-
-          const {
-            data,
-            error
-          } =
-            await supabaseClient.auth
-              .signInWithPassword({
-                email: email,
-                password: password
-              });
-
-
-          console.log(
-            "Supabase login response:",
-            {
-              user: data?.user || null,
-              session: !!data?.session,
-              error: error || null
-            }
-          );
-
-
-          /*
-           * ========================================
-           * HANDLE LOGIN ERROR
-           * ========================================
-           */
-
-          if (error) {
-
-            console.error(
-              "SUPABASE LOGIN ERROR:",
-              error
-            );
-
-
-            let detailedError =
-              error.message ||
-              "Login failed.";
-
-
-            /*
-             * DO NOT HIDE THE REAL ERROR.
-             */
-
-            if (
-              error.status
-            ) {
-
-              detailedError +=
-                " (HTTP " +
-                error.status +
-                ")";
-
-            }
-
-
-            if (
-              error.code
-            ) {
-
-              detailedError +=
-                " Code: " +
-                error.code;
-
-            }
-
-
-            showMessage(
-              detailedError,
-              "error"
-            );
-
-
-            loginButton.disabled =
-              false;
-
-            loginButton.textContent =
-              "Login";
-
-            return;
-          }
-
-
-          /*
-           * ========================================
-           * MAKE SURE SESSION EXISTS
-           * ========================================
-           */
-
-          if (
-            !data ||
-            !data.user ||
-            !data.session
-          ) {
-
-            showMessage(
-              "Login completed but no active session was returned. Please try again.",
-              "error"
-            );
-
-
-            loginButton.disabled =
-              false;
-
-            loginButton.textContent =
-              "Login";
-
-            return;
-          }
-
-
-          /*
-           * ========================================
-           * LOGIN SUCCESS
-           * ========================================
-           */
-
-          console.log(
-            "LOGIN SUCCESS",
-            data.user
-          );
-
-
-          showMessage(
-            "Login successful. Opening your dashboard...",
-            "success"
-          );
-
-
-          /*
-           * Give Supabase a moment to persist
-           * the session before redirecting.
-           */
-
-          setTimeout(
-            function() {
-
-              window.location.replace(
-                "dashboard.html"
-              );
-
-            },
-            700
-          );
-
-        } catch (error) {
+        if (error) {
 
           console.error(
-            "UNEXPECTED LOGIN ERROR:",
+            "Supabase login error:",
             error
           );
 
-
-          let message =
-            error?.message ||
-            "Unexpected login error.";
-
-
-          if (
-            error?.status
-          ) {
-
-            message +=
-              " (HTTP " +
-              error.status +
-              ")";
-
-          }
-
-
           showMessage(
-            message,
+            error.message ||
+            "Login failed.",
             "error"
           );
 
+          loginBtn.disabled = false;
 
-          loginButton.disabled =
-            false;
-
-          loginButton.textContent =
+          loginBtn.textContent =
             "Login";
+
+          return;
         }
 
+
+        /*
+         * CHECK SESSION
+         */
+
+        if (
+          !data ||
+          !data.session ||
+          !data.user
+        ) {
+
+          showMessage(
+            "Login succeeded but no session was created. Please try again.",
+            "error"
+          );
+
+          loginBtn.disabled = false;
+
+          loginBtn.textContent =
+            "Login";
+
+          return;
+        }
+
+
+        /*
+         * SUCCESS
+         */
+
+        showMessage(
+          "Login successful. Opening dashboard...",
+          "success"
+        );
+
+
+        /*
+         * Give Supabase time to persist
+         * the session in local storage.
+         */
+
+        await new Promise(
+          resolve =>
+            setTimeout(resolve, 500)
+        );
+
+
+        window.location.href =
+          "dashboard.html";
+
       }
-    );
+
+      catch (error) {
+
+        console.error(
+          "Unexpected error:",
+          error
+        );
+
+        showMessage(
+          error.message ||
+          "An unexpected error occurred.",
+          "error"
+        );
+
+        loginBtn.disabled = false;
+
+        loginBtn.textContent =
+          "Login";
+
+      }
+
+    }
+  );
+
 </script>
 
 </body>
