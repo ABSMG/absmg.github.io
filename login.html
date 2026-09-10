@@ -82,14 +82,14 @@
       margin-bottom: 25px;
     }
 
+    .field {
+      margin-bottom: 18px;
+    }
+
     label {
       display: block;
       font-weight: bold;
       margin-bottom: 7px;
-    }
-
-    .field {
-      margin-bottom: 18px;
     }
 
     input {
@@ -297,10 +297,6 @@
 
 <script>
 
-  /* =================================
-     SUPABASE CONFIGURATION
-     ================================= */
-
   const SUPABASE_URL =
     "https://wrdpnhqwolqovoukhlns.supabase.co";
 
@@ -308,9 +304,9 @@
     "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
 
 
-  /* =================================
+  /* ==============================
      CHECK SUPABASE LIBRARY
-     ================================= */
+     ============================== */
 
   if (!window.supabase) {
 
@@ -320,15 +316,14 @@
     document.getElementById("message").className =
       "message error";
 
-    throw new Error(
-      "Supabase JavaScript library failed to load."
-    );
+    throw new Error("Supabase library failed to load.");
+
   }
 
 
-  /* =================================
-     CREATE SUPABASE CLIENT
-     ================================= */
+  /* ==============================
+     CREATE CLIENT
+     ============================== */
 
   const supabaseClient =
     window.supabase.createClient(
@@ -344,9 +339,9 @@
     );
 
 
-  /* =================================
-     GET ELEMENTS
-     ================================= */
+  /* ==============================
+     ELEMENTS
+     ============================== */
 
   const form =
     document.getElementById("loginForm");
@@ -367,9 +362,9 @@
     document.getElementById("showPassword");
 
 
-  /* =================================
-     MESSAGE FUNCTION
-     ================================= */
+  /* ==============================
+     MESSAGE
+     ============================== */
 
   function showMessage(text, type) {
 
@@ -381,19 +376,9 @@
   }
 
 
-  function clearMessage() {
-
-    message.textContent = "";
-
-    message.className =
-      "message";
-
-  }
-
-
-  /* =================================
+  /* ==============================
      SHOW / HIDE PASSWORD
-     ================================= */
+     ============================== */
 
   showPassword.addEventListener(
     "click",
@@ -417,9 +402,9 @@
   );
 
 
-  /* =================================
+  /* ==============================
      LOGIN
-     ================================= */
+     ============================== */
 
   form.addEventListener(
     "submit",
@@ -427,7 +412,8 @@
 
       event.preventDefault();
 
-      clearMessage();
+      message.className = "message";
+      message.textContent = "";
 
       const email =
         emailInput.value.trim();
@@ -436,35 +422,17 @@
         passwordInput.value;
 
 
-      /* ==============================
-         VALIDATE INPUT
-         ============================== */
-
-      if (!email) {
+      if (!email || !password) {
 
         showMessage(
-          "Please enter your email address.",
+          "Please enter your email and password.",
           "error"
         );
 
         return;
+
       }
 
-
-      if (!password) {
-
-        showMessage(
-          "Please enter your password.",
-          "error"
-        );
-
-        return;
-      }
-
-
-      /* ==============================
-         DISABLE BUTTON
-         ============================== */
 
       loginBtn.disabled = true;
 
@@ -474,24 +442,17 @@
 
       try {
 
-        /* ==========================
-           SIGN IN WITH SUPABASE
-           ========================== */
-
-        const {
-          data,
-          error
-        } =
-          await supabaseClient.auth
-            .signInWithPassword({
-              email: email,
-              password: password
-            });
+        const result =
+          await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
 
 
-        /* ==========================
-           HANDLE LOGIN ERROR
-           ========================== */
+        const data = result.data;
+
+        const error = result.error;
+
 
         if (error) {
 
@@ -512,12 +473,9 @@
             "Login";
 
           return;
+
         }
 
-
-        /* ==========================
-           CHECK SESSION
-           ========================== */
 
         if (
           !data ||
@@ -536,12 +494,9 @@
             "Login";
 
           return;
+
         }
 
-
-        /* ==========================
-           LOGIN SUCCESS
-           ========================== */
 
         showMessage(
           "Login successful. Opening dashboard...",
@@ -549,23 +504,17 @@
         );
 
 
-        /* ==========================
-           OPEN DASHBOARD
-           ========================== */
-
         setTimeout(
           function () {
 
-            window.location.replace(
-              "dashboard.html"
-            );
+            window.location.href =
+              "dashboard.html";
 
           },
           700
         );
 
       }
-
 
       catch (error) {
 
