@@ -53,6 +53,7 @@
     .home-link {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
 
     main {
@@ -90,21 +91,49 @@
       font-weight: bold;
     }
 
+    .input-group {
+      position: relative;
+      margin-bottom: 17px;
+    }
+
     input {
       width: 100%;
       padding: 13px;
       border: 1px solid #d5d9e0;
       border-radius: 6px;
-      margin-bottom: 17px;
       font-size: 16px;
       outline: none;
     }
 
     input:focus {
       border-color: #0b3d91;
+      box-shadow: 0 0 0 2px rgba(11, 61, 145, 0.08);
     }
 
-    button {
+    .password-input {
+      padding-right: 70px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 6px 8px;
+      background: transparent;
+      color: #0b3d91;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .toggle-password:hover {
+      background: transparent;
+      opacity: 0.8;
+    }
+
+    .login-btn {
       width: 100%;
       padding: 13px;
       background: #0b3d91;
@@ -116,7 +145,11 @@
       cursor: pointer;
     }
 
-    button:disabled {
+    .login-btn:hover {
+      opacity: 0.93;
+    }
+
+    .login-btn:disabled {
       opacity: 0.7;
       cursor: not-allowed;
     }
@@ -127,6 +160,7 @@
       padding: 11px;
       border-radius: 6px;
       font-size: 14px;
+      line-height: 1.5;
     }
 
     .error {
@@ -153,12 +187,30 @@
       font-weight: bold;
     }
 
+    .links a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 18px;
       background: #071f49;
       color: #d3d9e5;
       font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .auth-box {
+        padding: 27px 20px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -180,6 +232,7 @@
   </header>
 
   <main>
+
     <div class="auth-box">
 
       <h1>Welcome Back</h1>
@@ -208,15 +261,33 @@
           Password
         </label>
 
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your password"
-          required
-          autocomplete="current-password"
-        >
+        <div class="input-group">
 
-        <button type="submit" id="loginBtn">
+          <input
+            type="password"
+            id="password"
+            class="password-input"
+            placeholder="Enter your password"
+            required
+            minlength="6"
+            autocomplete="current-password"
+          >
+
+          <button
+            type="button"
+            id="togglePassword"
+            class="toggle-password"
+          >
+            Show
+          </button>
+
+        </div>
+
+        <button
+          type="submit"
+          id="loginBtn"
+          class="login-btn"
+        >
           Login
         </button>
 
@@ -240,11 +311,13 @@
       </div>
 
     </div>
+
   </main>
 
   <footer>
     © 2026 OpportunityBridge. All rights reserved.
   </footer>
+
 
   <script>
     // ==========================================
@@ -259,6 +332,17 @@
 
 
     // ==========================================
+    // CHECK SUPABASE LIBRARY
+    // ==========================================
+
+    if (!window.supabase) {
+
+      console.error("Supabase library failed to load.");
+
+    }
+
+
+    // ==========================================
     // CREATE SUPABASE CLIENT
     // ==========================================
 
@@ -270,7 +354,7 @@
 
 
     // ==========================================
-    // GET HTML ELEMENTS
+    // HTML ELEMENTS
     // ==========================================
 
     const loginForm =
@@ -281,6 +365,12 @@
 
     const messageBox =
       document.getElementById("message");
+
+    const passwordInput =
+      document.getElementById("password");
+
+    const togglePassword =
+      document.getElementById("togglePassword");
 
 
     // ==========================================
@@ -297,6 +387,45 @@
 
 
     // ==========================================
+    // HIDE MESSAGE
+    // ==========================================
+
+    function hideMessage() {
+
+      messageBox.textContent = "";
+
+      messageBox.className =
+        "message";
+    }
+
+
+    // ==========================================
+    // SHOW / HIDE PASSWORD
+    // ==========================================
+
+    togglePassword.addEventListener(
+      "click",
+      function () {
+
+        if (passwordInput.type === "password") {
+
+          passwordInput.type = "text";
+
+          togglePassword.textContent = "Hide";
+
+        } else {
+
+          passwordInput.type = "password";
+
+          togglePassword.textContent = "Show";
+
+        }
+
+      }
+    );
+
+
+    // ==========================================
     // LOGIN
     // ==========================================
 
@@ -306,6 +435,8 @@
 
         event.preventDefault();
 
+        hideMessage();
+
         const email =
           document
             .getElementById("email")
@@ -313,31 +444,81 @@
             .trim();
 
         const password =
-          document
-            .getElementById("password")
-            .value;
+          passwordInput.value;
 
 
-        // Disable button
+        // ==========================================
+        // BASIC VALIDATION
+        // ==========================================
+
+        if (!email) {
+
+          showMessage(
+            "Please enter your email address.",
+            "error"
+          );
+
+          return;
+        }
+
+
+        if (!password) {
+
+          showMessage(
+            "Please enter your password.",
+            "error"
+          );
+
+          return;
+        }
+
+
+        // ==========================================
+        // LOADING
+        // ==========================================
+
         loginButton.disabled = true;
-        loginButton.textContent = "Logging in...";
+
+        loginButton.textContent =
+          "Logging in...";
 
 
         try {
 
-          const result =
-            await supabaseClient.auth.signInWithPassword({
-              email: email,
-              password: password
-            });
-
-
-          const data = result.data;
-          const error = result.error;
+          console.log(
+            "Attempting Supabase login..."
+          );
 
 
           // ==========================================
-          // LOGIN ERROR
+          // SUPABASE LOGIN
+          // ==========================================
+
+          const {
+            data,
+            error
+          } =
+            await supabaseClient.auth.signInWithPassword({
+
+              email: email,
+
+              password: password
+
+            });
+
+
+          console.log(
+            "Login response:",
+            {
+              hasUser: !!data?.user,
+              hasSession: !!data?.session,
+              error: error?.message || null
+            }
+          );
+
+
+          // ==========================================
+          // HANDLE ERROR
           // ==========================================
 
           if (error) {
@@ -347,13 +528,35 @@
               error
             );
 
+
+            let errorMessage =
+              error.message ||
+              "Login failed. Please try again.";
+
+
+            if (
+              errorMessage
+                .toLowerCase()
+                .includes("invalid api key")
+            ) {
+
+              errorMessage =
+                "Invalid API Key. Please refresh the page and try again. If the problem continues, the live login.html may still be using an old configuration.";
+
+            }
+
+
             showMessage(
-              error.message,
+              errorMessage,
               "error"
             );
 
-            loginButton.disabled = false;
-            loginButton.textContent = "Login";
+
+            loginButton.disabled =
+              false;
+
+            loginButton.textContent =
+              "Login";
 
             return;
           }
@@ -366,12 +569,15 @@
           if (!data || !data.user) {
 
             showMessage(
-              "Login failed. Please try again.",
+              "Login failed. No user session was returned.",
               "error"
             );
 
-            loginButton.disabled = false;
-            loginButton.textContent = "Login";
+            loginButton.disabled =
+              false;
+
+            loginButton.textContent =
+              "Login";
 
             return;
           }
@@ -387,15 +593,20 @@
           );
 
 
-          // Give Supabase time to save the session
-          setTimeout(function () {
+          // ==========================================
+          // REDIRECT
+          // ==========================================
 
-            window.location.replace(
-              "dashboard.html"
-            );
+          setTimeout(
+            function () {
 
-          }, 700);
+              window.location.replace(
+                "dashboard.html"
+              );
 
+            },
+            500
+          );
 
         } catch (error) {
 
@@ -404,13 +615,19 @@
             error
           );
 
+
           showMessage(
-            "Unable to login right now. Please try again.",
+            "Unable to login right now. Please check your internet connection and try again.",
             "error"
           );
 
-          loginButton.disabled = false;
-          loginButton.textContent = "Login";
+
+          loginButton.disabled =
+            false;
+
+          loginButton.textContent =
+            "Login";
+
         }
 
       }
