@@ -1,62 +1,66 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-
     const searchInput = document.getElementById("searchInput");
-    const cards = document.querySelectorAll(".opportunity-card");
-    const resultCount = document.getElementById("resultCount");
+    const cards = document.querySelectorAll(".card");
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const noResults = document.querySelector(".no-results");
 
-    if (!searchInput || !cards.length) {
-        return;
-    }
+    if (!searchInput || !cards.length) return;
 
-    function performSearch() {
+    let activeFilter = "all";
 
-        const query = searchInput.value
-            .toLowerCase()
-            .trim();
-
+    function filterCards() {
+        const query = searchInput.value.toLowerCase().trim();
         let visibleCards = 0;
 
         cards.forEach(function (card) {
+            const category = (
+                card.getAttribute("data-category") || ""
+            ).toLowerCase();
 
-            const searchableText = card.textContent
-                .toLowerCase();
+            const searchableText = (
+                card.getAttribute("data-search") ||
+                card.textContent ||
+                ""
+            ).toLowerCase();
 
-            if (query === "" || searchableText.includes(query)) {
+            const matchesSearch =
+                query === "" || searchableText.includes(query);
 
+            const matchesFilter =
+                activeFilter === "all" ||
+                category === activeFilter.toLowerCase();
+
+            if (matchesSearch && matchesFilter) {
                 card.style.display = "";
-
                 visibleCards++;
-
             } else {
-
                 card.style.display = "none";
-
             }
-
         });
 
-        if (query === "") {
-
-            resultCount.textContent = "";
-
-        } else if (visibleCards === 0) {
-
-            resultCount.textContent =
-                "No matching opportunities found.";
-
-        } else {
-
-            resultCount.textContent =
-                visibleCards +
-                " matching " +
-                (visibleCards === 1 ? "opportunity" : "opportunities") +
-                " found.";
-
+        if (noResults) {
+            noResults.style.display =
+                visibleCards === 0 ? "block" : "none";
         }
-
     }
 
-    searchInput.addEventListener("input", performSearch);
+    searchInput.addEventListener("input", filterCards);
 
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            activeFilter = (
+                button.getAttribute("data-filter") || "all"
+            ).toLowerCase();
+
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            filterCards();
+        });
+    });
+
+    filterCards();
 });
