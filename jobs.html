@@ -4,19 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jobs | OpportunityBridge</title>
+  <title>Jobs in Tanzania & Remote Careers | OpportunityBridge</title>
 
-  <meta name="description" content="Discover job opportunities, career resources and employment information through OpportunityBridge. Explore jobs in Tanzania and international opportunities.">
-  <meta name="keywords" content="jobs Tanzania, jobs in Tanzania, graduate jobs, entry level jobs, international jobs, career opportunities">
+  <meta name="description"
+        content="Discover jobs in Tanzania, graduate jobs, entry-level careers, technology jobs, health careers, public service opportunities and remote work resources through OpportunityBridge.">
+
   <meta name="author" content="OpportunityBridge">
-  <meta name="robots" content="index, follow">
 
-  <!-- Google AdSense -->
-  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
+  <meta name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta name="googlebot"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta name="theme-color" content="#0b5ed7">
+
+  <!-- CANONICAL -->
+  <link rel="canonical"
+        href="https://absmg.github.io/jobs.html">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+
+  <meta property="og:title"
+        content="Jobs in Tanzania & Remote Careers | OpportunityBridge">
+
+  <meta property="og:description"
+        content="Explore jobs, graduate opportunities, technology careers, health jobs, public service recruitment and remote work resources.">
+
+  <meta property="og:url"
+        content="https://absmg.github.io/jobs.html">
+
+  <meta property="og:site_name"
+        content="OpportunityBridge">
+
+  <meta property="og:locale"
+        content="en_US">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary">
+
+  <meta name="twitter:title"
+        content="Jobs in Tanzania & Remote Careers | OpportunityBridge">
+
+  <meta name="twitter:description"
+        content="Find job opportunities, graduate careers, technology jobs, health careers and remote work resources.">
+
+  <!-- GOOGLE ADSENSE -->
+  <meta name="google-adsense-account"
+        content="ca-pub-2004981151172844">
 
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
     crossorigin="anonymous">
+  </script>
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Jobs in Tanzania & Remote Careers",
+    "url": "https://absmg.github.io/jobs.html",
+    "description": "A resource page helping users discover job opportunities, career resources and employment information.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- BREADCRUMB -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Jobs",
+        "item": "https://absmg.github.io/jobs.html"
+      }
+    ]
+  }
   </script>
 
   <style>
@@ -41,7 +120,6 @@
       text-decoration: none;
     }
 
-    /* HEADER */
     header {
       background: #0b5ed7;
       color: white;
@@ -98,6 +176,7 @@
     }
 
     /* HERO */
+
     .hero {
       background: linear-gradient(135deg, #0b5ed7, #084298);
       color: white;
@@ -123,6 +202,7 @@
     }
 
     /* MAIN */
+
     main {
       max-width: 1150px;
       margin: auto;
@@ -143,7 +223,14 @@
       color: #667085;
     }
 
+    .section-intro a,
+    .info-section a:not(.job-btn) {
+      color: #0b5ed7;
+      font-weight: 700;
+    }
+
     /* SEARCH */
+
     .search-area {
       max-width: 750px;
       margin: 0 auto 30px;
@@ -165,6 +252,7 @@
     }
 
     /* FILTERS */
+
     .filters {
       display: flex;
       justify-content: center;
@@ -192,6 +280,7 @@
     }
 
     /* ADS */
+
     .ad-container {
       min-height: 90px;
       margin: 25px auto;
@@ -200,6 +289,7 @@
     }
 
     /* JOB GRID */
+
     .job-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -266,7 +356,7 @@
       margin-top: auto;
       text-align: center;
       background: #0b5ed7;
-      color: white;
+      color: white !important;
       padding: 11px 16px;
       border-radius: 8px;
       font-weight: 700;
@@ -278,6 +368,7 @@
     }
 
     /* INFO */
+
     .info-section {
       margin-top: 55px;
       background: white;
@@ -316,6 +407,7 @@
     }
 
     /* NO RESULTS */
+
     .no-results {
       display: none;
       text-align: center;
@@ -325,6 +417,7 @@
     }
 
     /* FOOTER */
+
     footer {
       background: #111827;
       color: #d1d5db;
@@ -357,7 +450,9 @@
     }
 
     /* TABLET */
+
     @media (max-width: 900px) {
+
       .job-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -368,6 +463,7 @@
     }
 
     /* MOBILE */
+
     @media (max-width: 750px) {
 
       .header-container {
@@ -433,6 +529,10 @@
       .info-section {
         padding: 22px;
       }
+
+      .job-btn {
+        width: 100%;
+      }
     }
 
     @media (max-width: 380px) {
@@ -459,31 +559,45 @@
 <body>
 
   <!-- HEADER -->
+
   <header>
 
     <div class="header-container">
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="OpportunityBridge Home">
         OpportunityBridge
       </a>
 
       <button
         class="menu-toggle"
         id="menuToggle"
+        type="button"
         aria-label="Open navigation"
-        aria-expanded="false">
+        aria-expanded="false"
+        aria-controls="mainNav">
         ☰
       </button>
 
-      <nav class="nav" id="mainNav">
+      <nav
+        class="nav"
+        id="mainNav"
+        aria-label="Main navigation">
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
 
         <a href="scholarships.html">
           Scholarships
         </a>
 
-        <a href="jobs.html" class="active">
+        <a
+          href="jobs.html"
+          class="active"
+          aria-current="page">
           Jobs
         </a>
 
@@ -515,15 +629,19 @@
 
 
   <!-- HERO -->
+
   <section class="hero">
 
     <div class="hero-content">
 
-      <h1>Job Opportunities</h1>
+      <h1>
+        Job Opportunities
+      </h1>
 
       <p>
-        Discover employment opportunities, career resources and
-        useful information to help you take your next career step.
+        Discover employment opportunities, graduate careers,
+        technology jobs, health careers, public service recruitment
+        and remote work resources.
       </p>
 
     </div>
@@ -534,30 +652,51 @@
   <main>
 
     <!-- INTRO -->
-    <section>
 
-      <h2 class="section-title">
+    <section aria-labelledby="find-job-title">
+
+      <h2
+        id="find-job-title"
+        class="section-title">
         Find Your Next Opportunity
       </h2>
 
       <p class="section-intro">
+
         Explore different types of job opportunities and learn how
         to search, prepare and apply for positions safely and
         effectively.
+
+        You can also explore our
+        <a href="scholarships.html">
+          scholarships
+        </a>,
+        <a href="internships.html">
+          internships
+        </a>
+        and
+        <a href="courses.html">
+          online courses
+        </a>.
+
       </p>
 
     </section>
 
 
-    <!-- AD -->
-    <div class="ad-container">
+    <!-- ADVERTISEMENT -->
 
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true">
+    <div
+      class="ad-container"
+      aria-label="Advertisement">
+
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2004981151172844"
+        data-ad-slot="5992864529"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
       </ins>
 
       <script>
@@ -568,42 +707,68 @@
 
 
     <!-- SEARCH -->
-    <div class="search-area">
+
+    <section
+      class="search-area"
+      aria-label="Job search">
 
       <input
         type="search"
         id="jobSearch"
         class="search-box"
         placeholder="Search jobs by field, location or level..."
-        aria-label="Search jobs">
+        aria-label="Search jobs"
+        autocomplete="off">
 
-    </div>
+    </section>
 
 
     <!-- FILTERS -->
-    <div class="filters">
 
-      <button class="filter-btn active" data-filter="all">
+    <div
+      class="filters"
+      role="group"
+      aria-label="Filter jobs by category">
+
+      <button
+        type="button"
+        class="filter-btn active"
+        data-filter="all">
         All
       </button>
 
-      <button class="filter-btn" data-filter="tanzania">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="tanzania">
         Tanzania
       </button>
 
-      <button class="filter-btn" data-filter="graduate">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="graduate">
         Graduate
       </button>
 
-      <button class="filter-btn" data-filter="technology">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="technology">
         Technology
       </button>
 
-      <button class="filter-btn" data-filter="health">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="health">
         Health
       </button>
 
-      <button class="filter-btn" data-filter="remote">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="remote">
         Remote
       </button>
 
@@ -611,12 +776,24 @@
 
 
     <!-- JOBS -->
-    <section>
 
-      <div class="job-grid" id="jobGrid">
+    <section
+      aria-labelledby="job-list-title">
+
+      <h2
+        id="job-list-title"
+        class="section-title"
+        style="position:absolute;left:-9999px;">
+        Job Opportunity Resources
+      </h2>
+
+      <div
+        class="job-grid"
+        id="jobGrid">
 
 
         <!-- JOB 1 -->
+
         <article
           class="job-card"
           data-category="tanzania"
@@ -663,6 +840,7 @@
 
 
         <!-- JOB 2 -->
+
         <article
           class="job-card"
           data-category="graduate"
@@ -673,7 +851,7 @@
           </span>
 
           <h3>
-            Graduate & Entry-Level Jobs
+            Graduate &amp; Entry-Level Jobs
           </h3>
 
           <p>
@@ -709,6 +887,7 @@
 
 
         <!-- JOB 3 -->
+
         <article
           class="job-card"
           data-category="technology"
@@ -719,7 +898,7 @@
           </span>
 
           <h3>
-            Technology & IT Careers
+            Technology &amp; IT Careers
           </h3>
 
           <p>
@@ -730,7 +909,7 @@
           <ul class="details">
 
             <li>
-              <strong>Fields:</strong> IT & Technology
+              <strong>Fields:</strong> IT &amp; Technology
             </li>
 
             <li>
@@ -755,6 +934,7 @@
 
 
         <!-- JOB 4 -->
+
         <article
           class="job-card"
           data-category="health"
@@ -765,7 +945,7 @@
           </span>
 
           <h3>
-            Health & Medical Careers
+            Health &amp; Medical Careers
           </h3>
 
           <p>
@@ -801,6 +981,7 @@
 
 
         <!-- JOB 5 -->
+
         <article
           class="job-card"
           data-category="remote"
@@ -811,7 +992,7 @@
           </span>
 
           <h3>
-            Remote & Digital Jobs
+            Remote &amp; Digital Jobs
           </h3>
 
           <p>
@@ -827,7 +1008,7 @@
             </li>
 
             <li>
-              <strong>Field:</strong> Digital & online
+              <strong>Field:</strong> Digital &amp; online
             </li>
 
             <li>
@@ -848,6 +1029,7 @@
 
 
         <!-- JOB 6 -->
+
         <article
           class="job-card"
           data-category="tanzania"
@@ -893,9 +1075,17 @@
         </article>
 
 
-        <div class="no-results" id="noResults">
+        <!-- NO RESULTS -->
 
-          <strong>No jobs found.</strong>
+        <div
+          class="no-results"
+          id="noResults"
+          role="status"
+          aria-live="polite">
+
+          <strong>
+            No jobs found.
+          </strong>
 
           <br>
 
@@ -908,15 +1098,19 @@
     </section>
 
 
-    <!-- AD -->
-    <div class="ad-container">
+    <!-- SECOND ADVERTISEMENT -->
 
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true">
+    <div
+      class="ad-container"
+      aria-label="Advertisement">
+
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2004981151172844"
+        data-ad-slot="5992864529"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
       </ins>
 
       <script>
@@ -927,9 +1121,12 @@
 
 
     <!-- JOB SEARCH GUIDE -->
-    <section class="info-section">
 
-      <h2>
+    <section
+      class="info-section"
+      aria-labelledby="job-guide-title">
+
+      <h2 id="job-guide-title">
         How to Search for Jobs
       </h2>
 
@@ -969,6 +1166,7 @@
       <div class="notice">
 
         <strong>Job Safety:</strong>
+
         Be careful with job advertisements that request money,
         passwords, banking details or other sensitive information
         before employment is verified. Always confirm the employer
@@ -980,9 +1178,12 @@
 
 
     <!-- CAREER PREPARATION -->
-    <section class="info-section">
 
-      <h2>
+    <section
+      class="info-section"
+      aria-labelledby="career-title">
+
+      <h2 id="career-title">
         Prepare for Your Career
       </h2>
 
@@ -1010,26 +1211,84 @@
     </section>
 
 
-    <!-- MORE -->
-    <section class="info-section">
+    <!-- MORE OPPORTUNITIES -->
 
-      <h2>
-        Explore More on OpportunityBridge
+    <section
+      class="info-section"
+      aria-labelledby="more-opportunities-title">
+
+      <h2 id="more-opportunities-title">
+        Explore More Opportunities
       </h2>
 
       <p>
         Looking for more than jobs? Explore scholarships,
-        internships, online courses and other opportunities.
+        internships, online courses and other opportunities
+        available through OpportunityBridge.
       </p>
 
       <p>
 
         <a
-          href="opportunities.html"
+          href="scholarships.html"
           class="job-btn">
-          Explore Opportunities
+          Scholarships
         </a>
 
+        <br><br>
+
+        <a
+          href="internships.html"
+          class="job-btn">
+          Internships
+        </a>
+
+        <br><br>
+
+        <a
+          href="opportunities.html"
+          class="job-btn">
+          All Opportunities
+        </a>
+
+      </p>
+
+    </section>
+
+
+    <!-- TRUST / INFORMATION -->
+
+    <section
+      class="info-section"
+      aria-labelledby="verification-title">
+
+      <h2 id="verification-title">
+        Verify Job Information Before Applying
+      </h2>
+
+      <p>
+        OpportunityBridge is an information platform designed to
+        help students, graduates and job seekers discover useful
+        employment resources.
+      </p>
+
+      <p>
+        Job availability, requirements, deadlines and recruitment
+        information can change. Always confirm important details
+        directly with the official employer or recruitment source
+        before applying.
+      </p>
+
+      <p>
+        Learn more about
+        <a href="about.html">
+          OpportunityBridge
+        </a>
+        or visit our
+        <a href="contact.html">
+          Contact page
+        </a>
+        if you have a correction or useful information to share.
       </p>
 
     </section>
@@ -1038,31 +1297,54 @@
 
 
   <!-- FOOTER -->
+
   <footer>
 
     <div class="footer-container">
 
       <div class="footer-links">
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
 
-        <a href="scholarships.html">Scholarships</a>
+        <a href="scholarships.html">
+          Scholarships
+        </a>
 
-        <a href="jobs.html">Jobs</a>
+        <a
+          href="jobs.html"
+          aria-current="page">
+          Jobs
+        </a>
 
-        <a href="internships.html">Internships</a>
+        <a href="internships.html">
+          Internships
+        </a>
 
-        <a href="courses.html">Courses</a>
+        <a href="courses.html">
+          Courses
+        </a>
 
-        <a href="opportunities.html">Opportunities</a>
+        <a href="opportunities.html">
+          Opportunities
+        </a>
 
-        <a href="about.html">About</a>
+        <a href="about.html">
+          About
+        </a>
 
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">
+          Contact
+        </a>
 
-        <a href="Privacy.html">Privacy</a>
+        <a href="Privacy.html">
+          Privacy
+        </a>
 
-        <a href="Disclaimer.html">Disclaimer</a>
+        <a href="Disclaimer.html">
+          Disclaimer
+        </a>
 
       </div>
 
@@ -1076,6 +1358,7 @@
 
 
   <!-- JAVASCRIPT -->
+
   <script>
 
     /* MOBILE MENU */
@@ -1086,56 +1369,64 @@
     const mainNav =
       document.getElementById("mainNav");
 
-    menuToggle.addEventListener("click", function () {
 
-      const isOpen =
-        mainNav.classList.toggle("active");
+    menuToggle.addEventListener(
+      "click",
+      function() {
 
-      menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-      );
+        const isOpen =
+          mainNav.classList.toggle("active");
 
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen
-          ? "Close navigation"
-          : "Open navigation"
-      );
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
 
-      menuToggle.textContent =
-        isOpen ? "✕" : "☰";
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen
+            ? "Close navigation"
+            : "Open navigation"
+        );
 
-    });
+        menuToggle.textContent =
+          isOpen ? "✕" : "☰";
+
+      }
+    );
 
 
     /* CLOSE MENU AFTER CLICK */
 
-    document.querySelectorAll("#mainNav a")
+    document
+      .querySelectorAll("#mainNav a")
       .forEach(function(link) {
 
-        link.addEventListener("click", function() {
+        link.addEventListener(
+          "click",
+          function() {
 
-          mainNav.classList.remove("active");
+            mainNav.classList.remove("active");
 
-          menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-          menuToggle.setAttribute(
-            "aria-label",
-            "Open navigation"
-          );
+            menuToggle.setAttribute(
+              "aria-label",
+              "Open navigation"
+            );
 
-          menuToggle.textContent = "☰";
+            menuToggle.textContent = "☰";
 
-        });
+          }
+        );
 
       });
 
 
-    /* JOB SEARCH + FILTER */
+    /* JOB SEARCH */
 
     const searchInput =
       document.getElementById("jobSearch");
@@ -1155,7 +1446,9 @@
     function updateJobs() {
 
       const searchTerm =
-        searchInput.value.toLowerCase().trim();
+        searchInput.value
+          .toLowerCase()
+          .trim();
 
       let visibleCards = 0;
 
@@ -1170,13 +1463,18 @@
             .toLowerCase();
 
         const matchesSearch =
+          searchTerm === "" ||
           searchText.includes(searchTerm);
 
         const matchesFilter =
           currentFilter === "all" ||
           category === currentFilter;
 
-        if (matchesSearch && matchesFilter) {
+
+        if (
+          matchesSearch &&
+          matchesFilter
+        ) {
 
           card.style.display = "flex";
 
@@ -1199,30 +1497,41 @@
     }
 
 
+    /* SEARCH EVENT */
+
     searchInput.addEventListener(
       "input",
       updateJobs
     );
 
 
-    filterButtons.forEach(function(button) {
+    /* FILTER EVENTS */
 
-      button.addEventListener("click", function() {
+    filterButtons.forEach(
+      function(button) {
 
-        filterButtons.forEach(function(btn) {
-          btn.classList.remove("active");
-        });
+        button.addEventListener(
+          "click",
+          function() {
 
-        button.classList.add("active");
+            filterButtons.forEach(
+              function(btn) {
+                btn.classList.remove("active");
+              }
+            );
 
-        currentFilter =
-          button.getAttribute("data-filter");
+            button.classList.add("active");
 
-        updateJobs();
+            currentFilter =
+              button.getAttribute("data-filter");
 
-      });
+            updateJobs();
 
-    });
+          }
+        );
+
+      }
+    );
 
   </script>
 
