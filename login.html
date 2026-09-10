@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Login | OpportunityBridge</title>
-  <meta name="description" content="Login to your OpportunityBridge account.">
+  <meta
+    name="description"
+    content="Login to your OpportunityBridge account."
+  >
 
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <style>
@@ -69,7 +73,7 @@
       max-width: 430px;
       padding: 32px 25px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
@@ -165,112 +169,183 @@
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      Opportunity<span>Bridge</span>
-    </a>
+  <header>
+    <div class="header-inner">
 
-    <a href="index.html" class="home-link">Home</a>
-  </div>
-</header>
+      <a href="index.html" class="logo">
+        Opportunity<span>Bridge</span>
+      </a>
 
-<main>
-  <div class="auth-box">
+      <a href="index.html" class="home-link">
+        Home
+      </a>
 
-    <h1>Welcome Back</h1>
-    <p class="subtitle">Login to your OpportunityBridge account.</p>
-
-    <div id="message" class="message"></div>
-
-    <form id="loginForm">
-
-      <label for="email">Email Address</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Enter your email"
-        required
-        autocomplete="email"
-      >
-
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="Enter your password"
-        required
-        autocomplete="current-password"
-      >
-
-      <button type="submit" id="loginBtn">
-        Login
-      </button>
-
-    </form>
-
-    <div class="links">
-      <div>
-        <a href="forgot-password.html">Forgot your password?</a>
-      </div>
-
-      <div>
-        Don't have an account?
-        <a href="register.html">Create an account</a>
-      </div>
     </div>
+  </header>
 
-  </div>
-</main>
+  <main>
+    <div class="auth-box">
 
-<footer>
-  © 2026 OpportunityBridge. All rights reserved.
-</footer>
+      <h1>Welcome Back</h1>
 
-<script>
-  const SUPABASE_URL = "https://wrdpnhqwolqovoukhlns.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+      <p class="subtitle">
+        Login to your OpportunityBridge account.
+      </p>
 
-  const supabaseClient =
-    window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      <div id="message" class="message"></div>
 
-  const form = document.getElementById("loginForm");
-  const button = document.getElementById("loginBtn");
-  const message = document.getElementById("message");
+      <form id="loginForm">
 
-  function showMessage(text, type) {
-    message.textContent = text;
-    message.className = "message " + type;
-  }
+        <label for="email">
+          Email Address
+        </label>
 
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+          autocomplete="email"
+        >
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+        <label for="password">
+          Password
+        </label>
 
-    button.disabled = true;
-    button.textContent = "Logging in...";
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+          autocomplete="current-password"
+        >
 
-    const { error } = await supabaseClient.auth.signInWithPassword({
-      email: email,
-      password: password
-    });
+        <button type="submit" id="loginBtn">
+          Login
+        </button>
 
-    if (error) {
-      showMessage(error.message, "error");
-      button.disabled = false;
-      button.textContent = "Login";
-      return;
+      </form>
+
+      <div class="links">
+
+        <div>
+          <a href="forgot-password.html">
+            Forgot your password?
+          </a>
+        </div>
+
+        <div>
+          Don't have an account?
+          <a href="register.html">
+            Create an account
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2026 OpportunityBridge. All rights reserved.
+  </footer>
+
+  <script>
+    const SUPABASE_URL =
+      "https://wrdpnhqwolqovoukhlns.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+      );
+
+    const form =
+      document.getElementById("loginForm");
+
+    const button =
+      document.getElementById("loginBtn");
+
+    const message =
+      document.getElementById("message");
+
+    function showMessage(text, type) {
+      message.textContent = text;
+      message.className = "message " + type;
     }
 
-    showMessage("Login successful. Redirecting...", "success");
+    form.addEventListener(
+      "submit",
+      async function (event) {
 
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 700);
-  });
-</script>
+        event.preventDefault();
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        const password =
+          document.getElementById("password").value;
+
+        button.disabled = true;
+        button.textContent = "Logging in...";
+
+        try {
+
+          const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+              email: email,
+              password: password
+            });
+
+          if (error) {
+            showMessage(
+              error.message,
+              "error"
+            );
+
+            button.disabled = false;
+            button.textContent = "Login";
+
+            return;
+          }
+
+          if (!data || !data.user) {
+            showMessage(
+              "Login could not be completed. Please try again.",
+              "error"
+            );
+
+            button.disabled = false;
+            button.textContent = "Login";
+
+            return;
+          }
+
+          showMessage(
+            "Login successful. Redirecting...",
+            "success"
+          );
+
+          setTimeout(function () {
+            window.location.href = "dashboard.html";
+          }, 700);
+
+        } catch (error) {
+
+          showMessage(
+            "Something went wrong. Please try again.",
+            "error"
+          );
+
+          button.disabled = false;
+          button.textContent = "Login";
+        }
+      }
+    );
+  </script>
 
 </body>
 </html>
