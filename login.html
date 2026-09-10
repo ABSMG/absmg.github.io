@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
 
   <title>Login | OpportunityBridge</title>
 
@@ -193,6 +190,7 @@
 
 <header>
   <div class="header-inner">
+
     <a href="index.html" class="logo">
       Opportunity<span>Bridge</span>
     </a>
@@ -200,9 +198,9 @@
     <a href="index.html" class="home">
       Home
     </a>
+
   </div>
 </header>
-
 
 <main>
 
@@ -219,7 +217,10 @@
     <form id="loginForm">
 
       <div class="field">
-        <label for="email">Email Address</label>
+
+        <label for="email">
+          Email Address
+        </label>
 
         <input
           type="email"
@@ -228,12 +229,14 @@
           autocomplete="email"
           required
         >
-      </div>
 
+      </div>
 
       <div class="field">
 
-        <label for="password">Password</label>
+        <label for="password">
+          Password
+        </label>
 
         <div class="password-wrap">
 
@@ -257,7 +260,6 @@
 
       </div>
 
-
       <button
         type="submit"
         id="loginBtn"
@@ -267,7 +269,6 @@
       </button>
 
     </form>
-
 
     <div class="links">
 
@@ -290,29 +291,26 @@
 
 </main>
 
-
 <footer>
   © 2026 OpportunityBridge. All rights reserved.
 </footer>
 
-
 <script>
 
-  /* ================================
+  /* =================================
      SUPABASE CONFIGURATION
-     ================================ */
+     ================================= */
 
   const SUPABASE_URL =
     "https://wrdpnhqwolqovoukhlns.supabase.co";
 
   const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
-    
+    "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
 
 
-  /* ================================
+  /* =================================
      CHECK SUPABASE LIBRARY
-     ================================ */
+     ================================= */
 
   if (!window.supabase) {
 
@@ -328,9 +326,9 @@
   }
 
 
-  /* ================================
+  /* =================================
      CREATE SUPABASE CLIENT
-     ================================ */
+     ================================= */
 
   const supabaseClient =
     window.supabase.createClient(
@@ -346,9 +344,9 @@
     );
 
 
-  /* ================================
-     ELEMENTS
-     ================================ */
+  /* =================================
+     GET ELEMENTS
+     ================================= */
 
   const form =
     document.getElementById("loginForm");
@@ -369,9 +367,9 @@
     document.getElementById("showPassword");
 
 
-  /* ================================
+  /* =================================
      MESSAGE FUNCTION
-     ================================ */
+     ================================= */
 
   function showMessage(text, type) {
 
@@ -393,9 +391,9 @@
   }
 
 
-  /* ================================
+  /* =================================
      SHOW / HIDE PASSWORD
-     ================================ */
+     ================================= */
 
   showPassword.addEventListener(
     "click",
@@ -419,63 +417,9 @@
   );
 
 
-  /* ================================
-     TEST SUPABASE API
-     ================================ */
-
-  async function testSupabaseConnection() {
-
-    try {
-
-      const response =
-        await fetch(
-          SUPABASE_URL + "/auth/v1/settings",
-          {
-            method: "GET",
-
-            headers: {
-              "apikey":
-                SUPABASE_PUBLISHABLE_KEY
-            },
-
-            cache: "no-store"
-          }
-        );
-
-
-      const body =
-        await response.text();
-
-
-      console.log(
-        "Supabase API:",
-        response.status,
-        body
-      );
-
-
-      return {
-        ok: response.ok,
-        status: response.status,
-        body: body
-      };
-
-    } catch (error) {
-
-      return {
-        ok: false,
-        status: 0,
-        body: error.message
-      };
-
-    }
-
-  }
-
-
-  /* ================================
+  /* =================================
      LOGIN
-     ================================ */
+     ================================= */
 
   form.addEventListener(
     "submit",
@@ -491,6 +435,10 @@
       const password =
         passwordInput.value;
 
+
+      /* ==============================
+         VALIDATE INPUT
+         ============================== */
 
       if (!email) {
 
@@ -514,48 +462,21 @@
       }
 
 
+      /* ==============================
+         DISABLE BUTTON
+         ============================== */
+
       loginBtn.disabled = true;
 
       loginBtn.textContent =
-        "Checking connection...";
+        "Logging in...";
 
 
       try {
 
         /* ==========================
-           TEST API KEY
+           SIGN IN WITH SUPABASE
            ========================== */
-
-        const api =
-          await testSupabaseConnection();
-
-
-        if (!api.ok) {
-
-          showMessage(
-            "Supabase API error. HTTP " +
-            api.status +
-            ". Details: " +
-            api.body,
-            "error"
-          );
-
-          loginBtn.disabled = false;
-
-          loginBtn.textContent =
-            "Login";
-
-          return;
-        }
-
-
-        /* ==========================
-           SIGN IN
-           ========================== */
-
-        loginBtn.textContent =
-          "Logging in...";
-
 
         const {
           data,
@@ -568,16 +489,20 @@
             });
 
 
+        /* ==========================
+           HANDLE LOGIN ERROR
+           ========================== */
+
         if (error) {
 
           console.error(
-            "Login error:",
+            "Supabase login error:",
             error
           );
 
           showMessage(
             error.message ||
-            "Login failed.",
+            "Login failed. Please check your email and password.",
             "error"
           );
 
@@ -624,14 +549,19 @@
         );
 
 
-        await new Promise(
-          resolve =>
-            setTimeout(resolve, 700)
-        );
+        /* ==========================
+           OPEN DASHBOARD
+           ========================== */
 
+        setTimeout(
+          function () {
 
-        window.location.replace(
-          "dashboard.html"
+            window.location.replace(
+              "dashboard.html"
+            );
+
+          },
+          700
         );
 
       }
@@ -640,13 +570,13 @@
       catch (error) {
 
         console.error(
-          "Unexpected error:",
+          "Unexpected login error:",
           error
         );
 
         showMessage(
           error.message ||
-          "An unexpected error occurred.",
+          "An unexpected error occurred. Please try again.",
           "error"
         );
 
