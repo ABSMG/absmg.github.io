@@ -9,11 +9,30 @@
 
   <meta name="description" content="Discover useful online courses and digital skills resources for students, graduates and professionals. Learn practical skills for education, careers and remote opportunities.">
 
-  <meta name="keywords" content="online courses, free online courses, digital skills, online learning, computer courses, technology courses, career skills, OpportunityBridge">
+  <meta name="keywords" content="online courses, free online courses, digital skills, online learning, computer courses, technology courses, career skills, science courses, OpportunityBridge">
 
   <meta name="author" content="OpportunityBridge">
 
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta name="googlebot" content="index, follow">
+
+  <meta name="theme-color" content="#0b5ed7">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://absmg.github.io/courses.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Online Courses & Digital Skills | OpportunityBridge">
+  <meta property="og:description" content="Discover online learning resources and practical digital skills for education, careers and future opportunities.">
+  <meta property="og:url" content="https://absmg.github.io/courses.html">
+  <meta property="og:site_name" content="OpportunityBridge">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Online Courses & Digital Skills | OpportunityBridge">
+  <meta name="twitter:description" content="Discover useful online courses and digital skills resources through OpportunityBridge.">
 
   <!-- Google AdSense -->
   <meta name="google-adsense-account" content="ca-pub-2004981151172844">
@@ -23,12 +42,57 @@
     crossorigin="anonymous">
   </script>
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Online Courses & Digital Skills | OpportunityBridge",
+    "url": "https://absmg.github.io/courses.html",
+    "description": "Discover useful online courses and digital skills resources for students, graduates and professionals.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Online learning and digital skills"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Courses",
+        "item": "https://absmg.github.io/courses.html"
+      }
+    ]
+  }
+  </script>
+
   <style>
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -40,6 +104,11 @@
 
     a {
       text-decoration: none;
+    }
+
+    button,
+    input {
+      font-family: inherit;
     }
 
     /* HEADER */
@@ -80,8 +149,14 @@
       font-weight: 600;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       opacity: 0.8;
+    }
+
+    nav a[aria-current="page"] {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .menu-toggle {
@@ -91,6 +166,16 @@
       color: white;
       font-size: 28px;
       cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    .menu-toggle:focus-visible,
+    nav a:focus-visible,
+    .filter-btn:focus-visible,
+    .card a:focus-visible,
+    .cta a:focus-visible {
+      outline: 3px solid #ffd43b;
+      outline-offset: 3px;
     }
 
     /* HERO */
@@ -144,6 +229,11 @@
       color: #555;
     }
 
+    .intro a {
+      color: #0b5ed7;
+      font-weight: 600;
+    }
+
     /* ADS */
 
     .ad-container {
@@ -162,6 +252,13 @@
       margin: 30px 0 20px;
     }
 
+    .search-box label {
+      display: block;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
     .search-box input {
       width: 100%;
       padding: 15px 18px;
@@ -169,10 +266,12 @@
       border-radius: 8px;
       font-size: 16px;
       outline: none;
+      background: white;
     }
 
     .search-box input:focus {
       border-color: #0b5ed7;
+      box-shadow: 0 0 0 3px rgba(11,94,215,0.12);
     }
 
     /* FILTERS */
@@ -323,6 +422,10 @@
       font-weight: bold;
     }
 
+    .cta a:hover {
+      background: #f1f5f9;
+    }
+
     /* FOOTER */
 
     footer {
@@ -343,6 +446,10 @@
     .footer-links a {
       color: white;
       font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
 
     footer p {
@@ -441,19 +548,24 @@
 
     <div class="header-container">
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="OpportunityBridge Home">
         OpportunityBridge
       </a>
 
       <button
+        type="button"
         class="menu-toggle"
         id="menuToggle"
         aria-label="Open navigation"
-        aria-expanded="false">
+        aria-expanded="false"
+        aria-controls="mainNav">
         ☰
       </button>
 
-      <nav id="mainNav">
+      <nav id="mainNav" aria-label="Main navigation">
 
         <ul>
 
@@ -474,7 +586,11 @@
           </li>
 
           <li>
-            <a href="courses.html">Courses</a>
+            <a
+              href="courses.html"
+              aria-current="page">
+              Courses
+            </a>
           </li>
 
           <li>
@@ -504,7 +620,7 @@
 
     <div class="hero-content">
 
-      <h1>Online Courses & Digital Skills</h1>
+      <h1>Online Courses &amp; Digital Skills</h1>
 
       <p>
         Discover online learning resources that can help you
@@ -532,19 +648,31 @@
         the right course can help you build knowledge and confidence.
       </p>
 
+      <p style="margin-top:12px;">
+        You can also explore our
+        <a href="scholarships.html">scholarships</a>,
+        <a href="jobs.html">job opportunities</a> and
+        <a href="internships.html">internships</a>
+        to connect your learning with real-world opportunities.
+      </p>
+
     </section>
 
 
     <!-- FIRST AD -->
 
-    <div class="ad-container">
+    <div
+      class="ad-container"
+      aria-label="Advertisement">
 
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2004981151172844"
+        data-ad-slot="5992864529"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
+      </ins>
 
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
@@ -555,54 +683,75 @@
 
     <!-- SEARCH -->
 
-    <div class="search-box">
+    <section
+      class="search-box"
+      aria-label="Course search">
+
+      <label for="searchInput">
+        Search Online Courses
+      </label>
 
       <input
-        type="text"
+        type="search"
         id="searchInput"
         placeholder="Search courses by subject or skill..."
-        aria-label="Search courses">
+        aria-label="Search courses by subject or skill"
+        autocomplete="off">
 
-    </div>
+    </section>
 
 
     <!-- FILTERS -->
 
-    <div class="filters">
+    <div
+      class="filters"
+      aria-label="Course categories">
 
       <button
+        type="button"
         class="filter-btn active"
-        data-filter="all">
+        data-filter="all"
+        aria-pressed="true">
         All
       </button>
 
       <button
+        type="button"
         class="filter-btn"
-        data-filter="technology">
+        data-filter="technology"
+        aria-pressed="false">
         Technology
       </button>
 
       <button
+        type="button"
         class="filter-btn"
-        data-filter="business">
+        data-filter="business"
+        aria-pressed="false">
         Business
       </button>
 
       <button
+        type="button"
         class="filter-btn"
-        data-filter="language">
+        data-filter="language"
+        aria-pressed="false">
         Languages
       </button>
 
       <button
+        type="button"
         class="filter-btn"
-        data-filter="career">
+        data-filter="career"
+        aria-pressed="false">
         Career
       </button>
 
       <button
+        type="button"
         class="filter-btn"
-        data-filter="science">
+        data-filter="science"
+        aria-pressed="false">
         Science
       </button>
 
@@ -611,7 +760,10 @@
 
     <!-- COURSE CARDS -->
 
-    <section class="cards" id="courseCards">
+    <section
+      class="cards"
+      id="courseCards"
+      aria-label="Online course resources">
 
 
       <!-- CARD 1 -->
@@ -650,7 +802,7 @@
         data-category="technology"
         data-search="programming coding computer science web development software">
 
-        <h3>Programming & Coding</h3>
+        <h3>Programming &amp; Coding</h3>
 
         <p>
           Explore programming concepts and develop the foundation
@@ -679,7 +831,7 @@
         data-category="business"
         data-search="business entrepreneurship management finance business skills">
 
-        <h3>Business & Entrepreneurship</h3>
+        <h3>Business &amp; Entrepreneurship</h3>
 
         <p>
           Learn about entrepreneurship, business planning, marketing
@@ -708,7 +860,7 @@
         data-category="language career"
         data-search="english communication language writing communication skills">
 
-        <h3>English & Communication</h3>
+        <h3>English &amp; Communication</h3>
 
         <p>
           Improve communication, writing and language skills that
@@ -766,7 +918,7 @@
         data-category="science"
         data-search="science biology chemistry physics mathematics science courses">
 
-        <h3>Science & Mathematics</h3>
+        <h3>Science &amp; Mathematics</h3>
 
         <p>
           Strengthen your understanding of science and mathematics
@@ -790,9 +942,13 @@
     </section>
 
 
+    <!-- NO RESULTS -->
+
     <div
       class="no-results"
-      id="noResults">
+      id="noResults"
+      role="status"
+      aria-live="polite">
 
       No courses matched your search.
       Try another keyword or choose another category.
@@ -802,14 +958,18 @@
 
     <!-- SECOND AD -->
 
-    <div class="ad-container">
+    <div
+      class="ad-container"
+      aria-label="Advertisement">
 
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2004981151172844"
+        data-ad-slot="5992864529"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
+      </ins>
 
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
@@ -914,7 +1074,9 @@
 
       <a href="internships.html">Internships</a>
 
-      <a href="courses.html">Courses</a>
+      <a href="courses.html" aria-current="page">
+        Courses
+      </a>
 
       <a href="opportunities.html">Opportunities</a>
 
@@ -960,7 +1122,7 @@
 
         menuToggle.setAttribute(
           "aria-expanded",
-          isOpen
+          String(isOpen)
         );
 
         menuToggle.setAttribute(
@@ -1037,10 +1199,12 @@
       cards.forEach(function(card) {
 
         const category =
-          card.dataset.category.toLowerCase();
+          (card.dataset.category || "")
+            .toLowerCase();
 
         const searchText =
-          card.dataset.search.toLowerCase();
+          (card.dataset.search || "")
+            .toLowerCase();
 
         const title =
           card
@@ -1048,9 +1212,29 @@
             .textContent
             .toLowerCase();
 
+        const description =
+          card
+            .querySelector("p")
+            .textContent
+            .toLowerCase();
+
+        const tags =
+          Array.from(
+            card.querySelectorAll(".tag")
+          )
+          .map(function(tag) {
+            return tag.textContent.toLowerCase();
+          })
+          .join(" ");
+
+        const searchableContent =
+          searchText + " " +
+          title + " " +
+          description + " " +
+          tags;
+
         const matchesSearch =
-          searchText.includes(searchTerm) ||
-          title.includes(searchTerm);
+          searchableContent.includes(searchTerm);
 
         const matchesFilter =
           currentFilter === "all" ||
@@ -1089,6 +1273,8 @@
     );
 
 
+    /* FILTER BUTTONS */
+
     filterButtons.forEach(
       function(button) {
 
@@ -1098,11 +1284,25 @@
 
             filterButtons.forEach(
               function(btn) {
+
                 btn.classList.remove("active");
+
+                btn.setAttribute(
+                  "aria-pressed",
+                  "false"
+                );
+
               }
             );
 
+
             button.classList.add("active");
+
+            button.setAttribute(
+              "aria-pressed",
+              "true"
+            );
+
 
             currentFilter =
               button.dataset.filter;
