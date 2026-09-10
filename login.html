@@ -70,7 +70,7 @@
       max-width: 430px;
       padding: 32px 25px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     }
 
     h1 {
@@ -107,7 +107,7 @@
 
     input:focus {
       border-color: #0b3d91;
-      box-shadow: 0 0 0 2px rgba(11, 61, 145, 0.08);
+      box-shadow: 0 0 0 2px rgba(11,61,145,0.08);
     }
 
     .password-input {
@@ -128,11 +128,6 @@
       cursor: pointer;
     }
 
-    .toggle-password:hover {
-      background: transparent;
-      opacity: 0.8;
-    }
-
     .login-btn {
       width: 100%;
       padding: 13px;
@@ -145,10 +140,6 @@
       cursor: pointer;
     }
 
-    .login-btn:hover {
-      opacity: 0.93;
-    }
-
     .login-btn:disabled {
       opacity: 0.7;
       cursor: not-allowed;
@@ -157,10 +148,11 @@
     .message {
       display: none;
       margin-bottom: 18px;
-      padding: 11px;
+      padding: 12px;
       border-radius: 6px;
       font-size: 14px;
       line-height: 1.5;
+      word-break: break-word;
     }
 
     .error {
@@ -175,6 +167,12 @@
       color: #176b32;
     }
 
+    .info {
+      display: block;
+      background: #eaf2ff;
+      color: #174b91;
+    }
+
     .links {
       text-align: center;
       margin-top: 20px;
@@ -185,10 +183,6 @@
       color: #0b3d91;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
     }
 
     footer {
@@ -217,221 +211,311 @@
 
 <body>
 
-  <header>
-    <div class="header-inner">
+<header>
+  <div class="header-inner">
 
-      <a href="index.html" class="logo">
-        Opportunity<span>Bridge</span>
-      </a>
+    <a href="index.html" class="logo">
+      Opportunity<span>Bridge</span>
+    </a>
 
-      <a href="index.html" class="home-link">
-        Home
-      </a>
+    <a href="index.html" class="home-link">
+      Home
+    </a>
 
-    </div>
-  </header>
+  </div>
+</header>
 
-  <main>
 
-    <div class="auth-box">
+<main>
 
-      <h1>Welcome Back</h1>
+  <div class="auth-box">
 
-      <p class="subtitle">
-        Login to your OpportunityBridge account.
-      </p>
+    <h1>Welcome Back</h1>
 
-      <div id="message" class="message"></div>
+    <p class="subtitle">
+      Login to your OpportunityBridge account.
+    </p>
 
-      <form id="loginForm">
+    <div id="message" class="message"></div>
 
-        <label for="email">
-          Email Address
-        </label>
+    <form id="loginForm">
+
+      <label for="email">
+        Email Address
+      </label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+        autocomplete="email"
+      >
+
+      <label for="password">
+        Password
+      </label>
+
+      <div class="input-group">
 
         <input
-          type="email"
-          id="email"
-          placeholder="Enter your email"
+          type="password"
+          id="password"
+          class="password-input"
+          placeholder="Enter your password"
           required
-          autocomplete="email"
+          minlength="6"
+          autocomplete="current-password"
         >
-
-        <label for="password">
-          Password
-        </label>
-
-        <div class="input-group">
-
-          <input
-            type="password"
-            id="password"
-            class="password-input"
-            placeholder="Enter your password"
-            required
-            minlength="6"
-            autocomplete="current-password"
-          >
-
-          <button
-            type="button"
-            id="togglePassword"
-            class="toggle-password"
-          >
-            Show
-          </button>
-
-        </div>
 
         <button
-          type="submit"
-          id="loginBtn"
-          class="login-btn"
+          type="button"
+          id="togglePassword"
+          class="toggle-password"
         >
-          Login
+          Show
         </button>
 
-      </form>
+      </div>
 
-      <div class="links">
+      <button
+        type="submit"
+        id="loginBtn"
+        class="login-btn"
+      >
+        Login
+      </button>
 
-        <div>
-          <a href="forgot-password.html">
-            Forgot your password?
-          </a>
-        </div>
+    </form>
 
-        <div>
-          Don't have an account?
-          <a href="register.html">
-            Create an account
-          </a>
-        </div>
+    <div class="links">
 
+      <div>
+        <a href="forgot-password.html">
+          Forgot your password?
+        </a>
+      </div>
+
+      <div>
+        Don't have an account?
+        <a href="register.html">
+          Create an account
+        </a>
       </div>
 
     </div>
 
-  </main>
+  </div>
 
-  <footer>
-    © 2026 OpportunityBridge. All rights reserved.
-  </footer>
+</main>
 
 
-  <script>
-    // ==========================================
-    // SUPABASE CONFIGURATION
-    // ==========================================
-
-    const SUPABASE_URL =
-      "https://wrdpnhqwolqovoukhlns.supabase.co";
-
-    const SUPABASE_KEY =
-      "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
+<footer>
+  © 2026 OpportunityBridge. All rights reserved.
+</footer>
 
 
-    // ==========================================
-    // CHECK SUPABASE LIBRARY
-    // ==========================================
+<script>
+  /*
+   * ==========================================
+   * OPPORTUNITYBRIDGE SUPABASE CONFIGURATION
+   * ==========================================
+   */
 
-    if (!window.supabase) {
+  const SUPABASE_URL =
+    "https://wrdpnhqwolqovoukhlns.supabase.co";
 
-      console.error("Supabase library failed to load.");
-
-    }
-
-
-    // ==========================================
-    // CREATE SUPABASE CLIENT
-    // ==========================================
-
-    const supabaseClient =
-      window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-      );
+  const SUPABASE_KEY =
+    "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
 
 
-    // ==========================================
-    // HTML ELEMENTS
-    // ==========================================
+  /*
+   * ==========================================
+   * CHECK SUPABASE LIBRARY
+   * ==========================================
+   */
 
-    const loginForm =
-      document.getElementById("loginForm");
+  const messageBox =
+    document.getElementById("message");
 
-    const loginButton =
-      document.getElementById("loginBtn");
+  const loginButton =
+    document.getElementById("loginBtn");
 
-    const messageBox =
-      document.getElementById("message");
+  const passwordInput =
+    document.getElementById("password");
 
-    const passwordInput =
-      document.getElementById("password");
-
-    const togglePassword =
-      document.getElementById("togglePassword");
-
-
-    // ==========================================
-    // SHOW MESSAGE
-    // ==========================================
-
-    function showMessage(text, type) {
-
-      messageBox.textContent = text;
-
-      messageBox.className =
-        "message " + type;
-    }
+  const togglePassword =
+    document.getElementById("togglePassword");
 
 
-    // ==========================================
-    // HIDE MESSAGE
-    // ==========================================
+  function showMessage(text, type) {
 
-    function hideMessage() {
+    messageBox.textContent = text;
 
-      messageBox.textContent = "";
-
-      messageBox.className =
-        "message";
-    }
+    messageBox.className =
+      "message " + type;
+  }
 
 
-    // ==========================================
-    // SHOW / HIDE PASSWORD
-    // ==========================================
+  function hideMessage() {
 
-    togglePassword.addEventListener(
-      "click",
-      function () {
+    messageBox.textContent = "";
 
-        if (passwordInput.type === "password") {
+    messageBox.className =
+      "message";
+  }
 
-          passwordInput.type = "text";
 
-          togglePassword.textContent = "Hide";
+  /*
+   * ==========================================
+   * MAKE SURE SUPABASE LIBRARY EXISTS
+   * ==========================================
+   */
 
-        } else {
+  if (!window.supabase) {
 
-          passwordInput.type = "password";
+    showMessage(
+      "Supabase library failed to load. Please check your internet connection and refresh the page.",
+      "error"
+    );
 
-          togglePassword.textContent = "Show";
+    throw new Error(
+      "Supabase JavaScript library failed to load."
+    );
+  }
 
+
+  /*
+   * ==========================================
+   * CREATE SUPABASE CLIENT
+   * ==========================================
+   */
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY,
+      {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true
         }
-
       }
     );
 
 
-    // ==========================================
-    // LOGIN
-    // ==========================================
+  /*
+   * ==========================================
+   * SHOW / HIDE PASSWORD
+   * ==========================================
+   */
 
-    loginForm.addEventListener(
+  togglePassword.addEventListener(
+    "click",
+    function () {
+
+      if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+
+        togglePassword.textContent = "Hide";
+
+      } else {
+
+        passwordInput.type = "password";
+
+        togglePassword.textContent = "Show";
+
+      }
+
+    }
+  );
+
+
+  /*
+   * ==========================================
+   * TEST SUPABASE CONNECTION
+   * ==========================================
+   */
+
+  async function testSupabaseConnection() {
+
+    try {
+
+      const response =
+        await fetch(
+          SUPABASE_URL + "/auth/v1/settings",
+          {
+            method: "GET",
+            headers: {
+              "apikey": SUPABASE_KEY,
+              "Authorization":
+                "Bearer " + SUPABASE_KEY
+            },
+            cache: "no-store"
+          }
+        );
+
+
+      const text =
+        await response.text();
+
+
+      console.log(
+        "Supabase API test:",
+        {
+          status: response.status,
+          ok: response.ok,
+          body: text
+        }
+      );
+
+
+      if (!response.ok) {
+
+        return {
+          ok: false,
+          status: response.status,
+          body: text
+        };
+
+      }
+
+
+      return {
+        ok: true,
+        status: response.status,
+        body: text
+      };
+
+    } catch (error) {
+
+      console.error(
+        "Supabase connection test failed:",
+        error
+      );
+
+      return {
+        ok: false,
+        status: 0,
+        body: error.message
+      };
+    }
+  }
+
+
+  /*
+   * ==========================================
+   * LOGIN
+   * ==========================================
+   */
+
+  document
+    .getElementById("loginForm")
+    .addEventListener(
       "submit",
-      async function (event) {
+      async function(event) {
 
         event.preventDefault();
 
@@ -447,9 +531,9 @@
           passwordInput.value;
 
 
-        // ==========================================
-        // BASIC VALIDATION
-        // ==========================================
+        /*
+         * BASIC VALIDATION
+         */
 
         if (!email) {
 
@@ -473,81 +557,137 @@
         }
 
 
-        // ==========================================
-        // LOADING
-        // ==========================================
+        /*
+         * START LOADING
+         */
 
         loginButton.disabled = true;
 
         loginButton.textContent =
-          "Logging in...";
+          "Checking connection...";
 
 
         try {
 
+          /*
+           * ========================================
+           * FIRST: TEST SUPABASE API
+           * ========================================
+           */
+
+          const apiTest =
+            await testSupabaseConnection();
+
+
           console.log(
-            "Attempting Supabase login..."
+            "Supabase API result:",
+            apiTest
           );
 
 
-          // ==========================================
-          // SUPABASE LOGIN
-          // ==========================================
+          if (!apiTest.ok) {
+
+            showMessage(
+              "Supabase API error. HTTP " +
+              apiTest.status +
+              ". Details: " +
+              apiTest.body,
+              "error"
+            );
+
+            loginButton.disabled = false;
+
+            loginButton.textContent = "Login";
+
+            return;
+          }
+
+
+          /*
+           * ========================================
+           * SECOND: LOGIN
+           * ========================================
+           */
+
+          loginButton.textContent =
+            "Logging in...";
+
+
+          console.log(
+            "Attempting login for:",
+            email
+          );
+
 
           const {
             data,
             error
           } =
-            await supabaseClient.auth.signInWithPassword({
-
-              email: email,
-
-              password: password
-
-            });
+            await supabaseClient.auth
+              .signInWithPassword({
+                email: email,
+                password: password
+              });
 
 
           console.log(
-            "Login response:",
+            "Supabase login response:",
             {
-              hasUser: !!data?.user,
-              hasSession: !!data?.session,
-              error: error?.message || null
+              user: data?.user || null,
+              session: !!data?.session,
+              error: error || null
             }
           );
 
 
-          // ==========================================
-          // HANDLE ERROR
-          // ==========================================
+          /*
+           * ========================================
+           * HANDLE LOGIN ERROR
+           * ========================================
+           */
 
           if (error) {
 
             console.error(
-              "Supabase Login Error:",
+              "SUPABASE LOGIN ERROR:",
               error
             );
 
 
-            let errorMessage =
+            let detailedError =
               error.message ||
-              "Login failed. Please try again.";
+              "Login failed.";
+
+
+            /*
+             * DO NOT HIDE THE REAL ERROR.
+             */
+
+            if (
+              error.status
+            ) {
+
+              detailedError +=
+                " (HTTP " +
+                error.status +
+                ")";
+
+            }
 
 
             if (
-              errorMessage
-                .toLowerCase()
-                .includes("invalid api key")
+              error.code
             ) {
 
-              errorMessage =
-                "Invalid API Key. Please refresh the page and try again. If the problem continues, the live login.html may still be using an old configuration.";
+              detailedError +=
+                " Code: " +
+                error.code;
 
             }
 
 
             showMessage(
-              errorMessage,
+              detailedError,
               "error"
             );
 
@@ -562,16 +702,23 @@
           }
 
 
-          // ==========================================
-          // CHECK USER
-          // ==========================================
+          /*
+           * ========================================
+           * MAKE SURE SESSION EXISTS
+           * ========================================
+           */
 
-          if (!data || !data.user) {
+          if (
+            !data ||
+            !data.user ||
+            !data.session
+          ) {
 
             showMessage(
-              "Login failed. No user session was returned.",
+              "Login completed but no active session was returned. Please try again.",
               "error"
             );
+
 
             loginButton.disabled =
               false;
@@ -583,41 +730,67 @@
           }
 
 
-          // ==========================================
-          // SUCCESS
-          // ==========================================
+          /*
+           * ========================================
+           * LOGIN SUCCESS
+           * ========================================
+           */
+
+          console.log(
+            "LOGIN SUCCESS",
+            data.user
+          );
+
 
           showMessage(
-            "Login successful. Redirecting...",
+            "Login successful. Opening your dashboard...",
             "success"
           );
 
 
-          // ==========================================
-          // REDIRECT
-          // ==========================================
+          /*
+           * Give Supabase a moment to persist
+           * the session before redirecting.
+           */
 
           setTimeout(
-            function () {
+            function() {
 
               window.location.replace(
                 "dashboard.html"
               );
 
             },
-            500
+            700
           );
 
         } catch (error) {
 
           console.error(
-            "Unexpected Login Error:",
+            "UNEXPECTED LOGIN ERROR:",
             error
           );
 
 
+          let message =
+            error?.message ||
+            "Unexpected login error.";
+
+
+          if (
+            error?.status
+          ) {
+
+            message +=
+              " (HTTP " +
+              error.status +
+              ")";
+
+          }
+
+
           showMessage(
-            "Unable to login right now. Please check your internet connection and try again.",
+            message,
             "error"
           );
 
@@ -627,12 +800,11 @@
 
           loginButton.textContent =
             "Login";
-
         }
 
       }
     );
-  </script>
+</script>
 
 </body>
 </html>
