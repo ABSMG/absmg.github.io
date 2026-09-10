@@ -7,13 +7,32 @@
 
   <title>Internships | OpportunityBridge</title>
 
-  <meta name="description" content="Find internship opportunities, career experience, graduate internships and practical learning opportunities through OpportunityBridge.">
+  <meta name="description" content="Find internship opportunities, career experience, graduate internships and practical learning opportunities through OpportunityBridge. Explore Tanzania and international internship resources.">
 
-  <meta name="keywords" content="internships, internship opportunities, Tanzania internships, graduate internships, student internships, remote internships, OpportunityBridge">
+  <meta name="keywords" content="internships, internship opportunities, Tanzania internships, graduate internships, student internships, remote internships, technology internships, health internships, OpportunityBridge">
 
   <meta name="author" content="OpportunityBridge">
 
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta name="googlebot" content="index, follow">
+
+  <meta name="theme-color" content="#0b5ed7">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://absmg.github.io/internships.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Internships | OpportunityBridge">
+  <meta property="og:description" content="Discover internship opportunities, practical training and career resources for students, graduates and young professionals.">
+  <meta property="og:url" content="https://absmg.github.io/internships.html">
+  <meta property="og:site_name" content="OpportunityBridge">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Internships | OpportunityBridge">
+  <meta name="twitter:description" content="Discover internship opportunities, practical training and career resources through OpportunityBridge.">
 
   <!-- Google AdSense -->
   <meta name="google-adsense-account" content="ca-pub-2004981151172844">
@@ -23,11 +42,56 @@
     crossorigin="anonymous">
   </script>
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Internships | OpportunityBridge",
+    "url": "https://absmg.github.io/internships.html",
+    "description": "Discover internship opportunities, practical training and career resources for students, graduates and young professionals.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Internship opportunities"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://absmg.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Internships",
+        "item": "https://absmg.github.io/internships.html"
+      }
+    ]
+  }
+  </script>
+
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -39,6 +103,11 @@
 
     a {
       text-decoration: none;
+    }
+
+    button,
+    input {
+      font-family: inherit;
     }
 
     /* HEADER */
@@ -78,8 +147,14 @@
       font-weight: 600;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       opacity: 0.8;
+    }
+
+    nav a[aria-current="page"] {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .menu-toggle {
@@ -89,6 +164,16 @@
       color: white;
       font-size: 28px;
       cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    .menu-toggle:focus-visible,
+    nav a:focus-visible,
+    .filter-btn:focus-visible,
+    .card a:focus-visible,
+    .cta a:focus-visible {
+      outline: 3px solid #ffd43b;
+      outline-offset: 3px;
     }
 
     /* HERO */
@@ -140,6 +225,11 @@
       color: #555;
     }
 
+    .intro a {
+      color: #0b5ed7;
+      font-weight: 600;
+    }
+
     /* ADS */
     .ad-container {
       background: white;
@@ -153,7 +243,14 @@
 
     /* SEARCH */
     .search-box {
-      margin: 30px 0;
+      margin: 30px 0 18px;
+    }
+
+    .search-box label {
+      display: block;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
     }
 
     .search-box input {
@@ -163,10 +260,12 @@
       border-radius: 8px;
       font-size: 16px;
       outline: none;
+      background: white;
     }
 
     .search-box input:focus {
       border-color: #0b5ed7;
+      box-shadow: 0 0 0 3px rgba(11,94,215,0.12);
     }
 
     /* FILTERS */
@@ -286,6 +385,7 @@
       color: #555;
     }
 
+    /* CTA */
     .cta {
       background: #0b5ed7;
       color: white;
@@ -312,6 +412,10 @@
       font-weight: bold;
     }
 
+    .cta a:hover {
+      background: #f1f5f9;
+    }
+
     /* FOOTER */
     footer {
       background: #102a43;
@@ -331,6 +435,10 @@
     .footer-links a {
       color: white;
       font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
 
     footer p {
@@ -408,6 +516,7 @@
     }
 
     @media (max-width: 380px) {
+
       .logo {
         font-size: 20px;
       }
@@ -430,37 +539,65 @@
   <header>
     <div class="header-container">
 
-      <a href="index.html" class="logo">
+      <a href="index.html" class="logo" aria-label="OpportunityBridge Home">
         OpportunityBridge
       </a>
 
       <button
+        type="button"
         class="menu-toggle"
         id="menuToggle"
         aria-label="Open navigation"
-        aria-expanded="false">
+        aria-expanded="false"
+        aria-controls="mainNav">
         ☰
       </button>
 
-      <nav id="mainNav">
+      <nav id="mainNav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="scholarships.html">Scholarships</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="internships.html">Internships</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="opportunities.html">Opportunities</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <li>
+            <a href="scholarships.html">Scholarships</a>
+          </li>
+
+          <li>
+            <a href="jobs.html">Jobs</a>
+          </li>
+
+          <li>
+            <a href="internships.html"
+               aria-current="page">
+              Internships
+            </a>
+          </li>
+
+          <li>
+            <a href="courses.html">Courses</a>
+          </li>
+
+          <li>
+            <a href="opportunities.html">Opportunities</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
         </ul>
       </nav>
 
     </div>
   </header>
 
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
+
       <h1>Internship Opportunities</h1>
 
       <p>
@@ -468,13 +605,16 @@
         graduates and young professionals gain practical experience,
         develop skills and prepare for future careers.
       </p>
+
     </div>
   </section>
+
 
   <main>
 
     <!-- INTRO -->
     <section class="intro">
+
       <h2>Find the Right Internship</h2>
 
       <p>
@@ -483,66 +623,119 @@
         internship resources and learn how to search, prepare and
         apply for opportunities effectively.
       </p>
+
+      <p style="margin-top:12px;">
+        You can also explore our
+        <a href="jobs.html">job opportunities</a>,
+        <a href="scholarships.html">scholarships</a> and
+        <a href="courses.html">online courses</a>
+        to support your career development.
+      </p>
+
     </section>
 
+
     <!-- ADS -->
-    <div class="ad-container">
+    <div class="ad-container" aria-label="Advertisement">
+
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
+           data-ad-slot="5992864529"
            data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+           data-full-width-responsive="true">
+      </ins>
 
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+
     </div>
+
 
     <!-- SEARCH -->
-    <div class="search-box">
+    <section class="search-box" aria-label="Internship search">
+
+      <label for="searchInput">
+        Search Internship Opportunities
+      </label>
+
       <input
-        type="text"
+        type="search"
         id="searchInput"
         placeholder="Search internships by field, location or keyword..."
-        aria-label="Search internships">
-    </div>
+        aria-label="Search internships by field, location or keyword"
+        autocomplete="off">
+
+    </section>
+
 
     <!-- FILTERS -->
-    <div class="filters">
+    <div class="filters"
+         aria-label="Internship categories">
 
-      <button class="filter-btn active" data-filter="all">
+      <button
+        type="button"
+        class="filter-btn active"
+        data-filter="all"
+        aria-pressed="true">
         All
       </button>
 
-      <button class="filter-btn" data-filter="tanzania">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="tanzania"
+        aria-pressed="false">
         Tanzania
       </button>
 
-      <button class="filter-btn" data-filter="students">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="students"
+        aria-pressed="false">
         Students
       </button>
 
-      <button class="filter-btn" data-filter="graduate">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="graduate"
+        aria-pressed="false">
         Graduate
       </button>
 
-      <button class="filter-btn" data-filter="technology">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="technology"
+        aria-pressed="false">
         Technology
       </button>
 
-      <button class="filter-btn" data-filter="health">
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="health"
+        aria-pressed="false">
         Health
       </button>
 
     </div>
 
-    <!-- CARDS -->
-    <section class="cards" id="internshipCards">
 
-      <article class="card"
-               data-category="tanzania students graduate"
-               data-search="tanzania internships students graduates">
+    <!-- CARDS -->
+    <section
+      class="cards"
+      id="internshipCards"
+      aria-label="Internship opportunities">
+
+      <article
+        class="card"
+        data-category="tanzania students graduate"
+        data-search="tanzania internships students graduates practical training">
+
         <h3>Tanzania Internship Opportunities</h3>
 
         <p>
@@ -555,18 +748,22 @@
 
         <br>
 
-        <a href="https://www.ajira.go.tz/"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://www.ajira.go.tz/"
+          target="_blank"
+          rel="noopener noreferrer">
           Explore Opportunities
         </a>
+
       </article>
 
 
-      <article class="card"
-               data-category="students graduate"
-               data-search="student graduate internships practical training">
-        <h3>Student & Graduate Internships</h3>
+      <article
+        class="card"
+        data-category="students graduate"
+        data-search="student graduate internships practical training">
+
+        <h3>Student &amp; Graduate Internships</h3>
 
         <p>
           Learn where to search for internships designed for students,
@@ -578,18 +775,22 @@
 
         <br>
 
-        <a href="https://www.ilo.org/"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://www.ilo.org/"
+          target="_blank"
+          rel="noopener noreferrer">
           Explore Resources
         </a>
+
       </article>
 
 
-      <article class="card"
-               data-category="technology students graduate"
-               data-search="technology IT software computer internships">
-        <h3>Technology & IT Internships</h3>
+      <article
+        class="card"
+        data-category="technology students graduate"
+        data-search="technology IT software computer internships digital skills">
+
+        <h3>Technology &amp; IT Internships</h3>
 
         <p>
           Find resources for internships related to software,
@@ -601,18 +802,22 @@
 
         <br>
 
-        <a href="https://www.ibm.com/careers"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://www.ibm.com/careers"
+          target="_blank"
+          rel="noopener noreferrer">
           Explore Careers
         </a>
+
       </article>
 
 
-      <article class="card"
-               data-category="health students graduate"
-               data-search="health medical laboratory medicine healthcare internships">
-        <h3>Health & Medical Internships</h3>
+      <article
+        class="card"
+        data-category="health students graduate"
+        data-search="health medical laboratory medicine healthcare internships">
+
+        <h3>Health &amp; Medical Internships</h3>
 
         <p>
           Explore career and professional development resources for
@@ -624,17 +829,21 @@
 
         <br>
 
-        <a href="https://www.who.int/"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://www.who.int/"
+          target="_blank"
+          rel="noopener noreferrer">
           Explore Resources
         </a>
+
       </article>
 
 
-      <article class="card"
-               data-category="graduate students"
-               data-search="international graduate internship opportunities">
+      <article
+        class="card"
+        data-category="graduate students"
+        data-search="international graduate internship opportunities global experience">
+
         <h3>International Internships</h3>
 
         <p>
@@ -647,18 +856,22 @@
 
         <br>
 
-        <a href="https://www.un.org/en/about-us/careers"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://www.un.org/en/about-us/careers"
+          target="_blank"
+          rel="noopener noreferrer">
           Explore Careers
         </a>
+
       </article>
 
 
-      <article class="card"
-               data-category="technology students"
-               data-search="digital remote technology internship skills">
-        <h3>Digital & Remote Internships</h3>
+      <article
+        class="card"
+        data-category="technology students"
+        data-search="digital remote technology internship skills remote work">
+
+        <h3>Digital &amp; Remote Internships</h3>
 
         <p>
           Learn about digital career opportunities and resources for
@@ -673,28 +886,40 @@
         <a href="courses.html">
           Build Digital Skills
         </a>
+
       </article>
 
     </section>
 
-    <div class="no-results" id="noResults">
+
+    <!-- NO RESULTS -->
+    <div
+      class="no-results"
+      id="noResults"
+      role="status"
+      aria-live="polite">
+
       No internship opportunities matched your search.
       Try another keyword or select another category.
+
     </div>
 
 
     <!-- SECOND AD -->
-    <div class="ad-container">
+    <div class="ad-container" aria-label="Advertisement">
+
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-2004981151172844"
-           data-ad-slot="auto"
+           data-ad-slot="5992864529"
            data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+           data-full-width-responsive="true">
+      </ins>
 
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+
     </div>
 
 
@@ -711,6 +936,7 @@
         education and interests.
       </p>
 
+
       <h3>2. Use Reliable Sources</h3>
 
       <p>
@@ -718,6 +944,7 @@
         universities, government institutions and established
         international organizations.
       </p>
+
 
       <h3>3. Prepare Your CV</h3>
 
@@ -727,12 +954,14 @@
         experience.
       </p>
 
+
       <h3>4. Prepare a Professional Application</h3>
 
       <p>
         Read the requirements carefully before applying. Make sure
         your application documents are complete and accurate.
       </p>
+
 
       <h3>5. Avoid Internship Scams</h3>
 
@@ -776,7 +1005,9 @@
 
       <a href="jobs.html">Jobs</a>
 
-      <a href="internships.html">Internships</a>
+      <a href="internships.html" aria-current="page">
+        Internships
+      </a>
 
       <a href="courses.html">Courses</a>
 
@@ -811,48 +1042,67 @@
 
       mainNav.classList.toggle("active");
 
-      const isOpen = mainNav.classList.contains("active");
+      const isOpen =
+        mainNav.classList.contains("active");
 
-      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
 
       menuToggle.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation" : "Open navigation"
+        isOpen
+          ? "Close navigation"
+          : "Open navigation"
       );
 
-      menuToggle.textContent = isOpen ? "✕" : "☰";
+      menuToggle.textContent =
+        isOpen ? "✕" : "☰";
 
     });
 
 
     /* CLOSE MOBILE MENU */
 
-    document.querySelectorAll("#mainNav a").forEach(function(link) {
+    document
+      .querySelectorAll("#mainNav a")
+      .forEach(function(link) {
 
-      link.addEventListener("click", function() {
+        link.addEventListener("click", function() {
 
-        mainNav.classList.remove("active");
+          mainNav.classList.remove("active");
 
-        menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
-        menuToggle.setAttribute("aria-label", "Open navigation");
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation"
+          );
 
-        menuToggle.textContent = "☰";
+          menuToggle.textContent = "☰";
+
+        });
 
       });
-
-    });
 
 
     /* SEARCH + FILTER */
 
-    const searchInput = document.getElementById("searchInput");
+    const searchInput =
+      document.getElementById("searchInput");
 
-    const cards = document.querySelectorAll(".card");
+    const cards =
+      document.querySelectorAll(".card");
 
-    const filterButtons = document.querySelectorAll(".filter-btn");
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
 
-    const noResults = document.getElementById("noResults");
+    const noResults =
+      document.getElementById("noResults");
 
     let currentFilter = "all";
 
@@ -860,7 +1110,9 @@
     function filterCards() {
 
       const searchTerm =
-        searchInput.value.toLowerCase().trim();
+        searchInput.value
+          .toLowerCase()
+          .trim();
 
       let visibleCards = 0;
 
@@ -868,17 +1120,40 @@
       cards.forEach(function(card) {
 
         const category =
-          card.dataset.category.toLowerCase();
+          (card.dataset.category || "")
+            .toLowerCase();
 
         const searchText =
-          card.dataset.search.toLowerCase();
+          (card.dataset.search || "")
+            .toLowerCase();
 
         const title =
-          card.querySelector("h3").textContent.toLowerCase();
+          card.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        const description =
+          card.querySelector("p")
+            .textContent
+            .toLowerCase();
+
+        const tags =
+          Array.from(
+            card.querySelectorAll(".tag")
+          )
+          .map(function(tag) {
+            return tag.textContent.toLowerCase();
+          })
+          .join(" ");
+
+        const searchableContent =
+          searchText + " " +
+          title + " " +
+          description + " " +
+          tags;
 
         const matchesSearch =
-          searchText.includes(searchTerm) ||
-          title.includes(searchTerm);
+          searchableContent.includes(searchTerm);
 
         const matchesFilter =
           currentFilter === "all" ||
@@ -900,7 +1175,9 @@
 
 
       noResults.style.display =
-        visibleCards === 0 ? "block" : "none";
+        visibleCards === 0
+          ? "block"
+          : "none";
 
     }
 
@@ -911,22 +1188,43 @@
     );
 
 
+    /* FILTER BUTTONS */
+
     filterButtons.forEach(function(button) {
 
-      button.addEventListener("click", function() {
+      button.addEventListener(
+        "click",
+        function() {
 
-        filterButtons.forEach(function(btn) {
-          btn.classList.remove("active");
-        });
+          filterButtons.forEach(
+            function(btn) {
 
-        button.classList.add("active");
+              btn.classList.remove("active");
 
-        currentFilter =
-          button.dataset.filter;
+              btn.setAttribute(
+                "aria-pressed",
+                "false"
+              );
 
-        filterCards();
+            }
+          );
 
-      });
+
+          button.classList.add("active");
+
+          button.setAttribute(
+            "aria-pressed",
+            "true"
+          );
+
+
+          currentFilter =
+            button.dataset.filter;
+
+          filterCards();
+
+        }
+      );
 
     });
 
