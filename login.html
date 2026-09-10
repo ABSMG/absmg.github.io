@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Login | OpportunityBridge</title>
-  <meta
-    name="description"
-    content="Login to your OpportunityBridge account."
-  >
+  <meta name="description" content="Login to your OpportunityBridge account.">
 
-  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <style>
@@ -251,15 +247,20 @@
   </footer>
 
   <script>
-    const SUPABASE_URL =
-  "https://wrdpnhqwolqovoukhlns.supabase.co";
+    // ==========================================
+    // SUPABASE CONFIGURATION
+    // ==========================================
 
-const SUPABASE_KEY =
-  "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
-  
+    const SUPABASE_URL =
+      "https://wrdpnhqwolqovoukhlns.supabase.co";
 
     const SUPABASE_KEY =
       "sb_publishable_lwbqDRIFpr9-n0DGGgJRuBg_QK7Srf_b";
+
+
+    // ==========================================
+    // CREATE SUPABASE CLIENT
+    // ==========================================
 
     const supabaseClient =
       window.supabase.createClient(
@@ -267,86 +268,151 @@ const SUPABASE_KEY =
         SUPABASE_KEY
       );
 
-    const form =
+
+    // ==========================================
+    // GET HTML ELEMENTS
+    // ==========================================
+
+    const loginForm =
       document.getElementById("loginForm");
 
-    const button =
+    const loginButton =
       document.getElementById("loginBtn");
 
-    const message =
+    const messageBox =
       document.getElementById("message");
 
+
+    // ==========================================
+    // SHOW MESSAGE
+    // ==========================================
+
     function showMessage(text, type) {
-      message.textContent = text;
-      message.className = "message " + type;
+
+      messageBox.textContent = text;
+
+      messageBox.className =
+        "message " + type;
     }
 
-    form.addEventListener(
+
+    // ==========================================
+    // LOGIN
+    // ==========================================
+
+    loginForm.addEventListener(
       "submit",
       async function (event) {
 
         event.preventDefault();
 
         const email =
-          document.getElementById("email").value.trim();
+          document
+            .getElementById("email")
+            .value
+            .trim();
 
         const password =
-          document.getElementById("password").value;
+          document
+            .getElementById("password")
+            .value;
 
-        button.disabled = true;
-        button.textContent = "Logging in...";
+
+        // Disable button
+        loginButton.disabled = true;
+        loginButton.textContent = "Logging in...";
+
 
         try {
 
-          const { data, error } =
+          const result =
             await supabaseClient.auth.signInWithPassword({
               email: email,
               password: password
             });
 
+
+          const data = result.data;
+          const error = result.error;
+
+
+          // ==========================================
+          // LOGIN ERROR
+          // ==========================================
+
           if (error) {
+
+            console.error(
+              "Supabase Login Error:",
+              error
+            );
+
             showMessage(
               error.message,
               "error"
             );
 
-            button.disabled = false;
-            button.textContent = "Login";
+            loginButton.disabled = false;
+            loginButton.textContent = "Login";
 
             return;
           }
 
+
+          // ==========================================
+          // CHECK USER
+          // ==========================================
+
           if (!data || !data.user) {
+
             showMessage(
-              "Login could not be completed. Please try again.",
+              "Login failed. Please try again.",
               "error"
             );
 
-            button.disabled = false;
-            button.textContent = "Login";
+            loginButton.disabled = false;
+            loginButton.textContent = "Login";
 
             return;
           }
+
+
+          // ==========================================
+          // SUCCESS
+          // ==========================================
 
           showMessage(
             "Login successful. Redirecting...",
             "success"
           );
 
+
+          // Give Supabase time to save the session
           setTimeout(function () {
-            window.location.href = "dashboard.html";
+
+            window.location.replace(
+              "dashboard.html"
+            );
+
           }, 700);
+
 
         } catch (error) {
 
+          console.error(
+            "Unexpected Login Error:",
+            error
+          );
+
           showMessage(
-            "Something went wrong. Please try again.",
+            "Unable to login right now. Please try again.",
             "error"
           );
 
-          button.disabled = false;
-          button.textContent = "Login";
+          loginButton.disabled = false;
+          loginButton.textContent = "Login";
         }
+
       }
     );
   </script>
