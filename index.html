@@ -1,9 +1,13 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Login | OpportunityBridge</title>
-  <meta name="description" content="Login to your OpportunityBridge account.">
-  <meta name="robots" content="index, follow">  <!-- Supabase -->  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>OpportunityBridge | Global Opportunities & Digital Resources</title><meta name="description"
+content="OpportunityBridge connects students, graduates and job seekers with scholarships, jobs, internships, online courses and digital opportunities.">
+
+  <meta name="author" content="OpportunityBridge">
+  <meta name="robots" content="index, follow">  <!-- Google AdSense -->  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
+    crossorigin="anonymous"></script>  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -12,357 +16,1007 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
       background: #f5f7fb;
       color: #222;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     header {
       background: #0b3d91;
       color: white;
-      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    .header-inner {
-      max-width: 1100px;
+    .header-container {
+      max-width: 1200px;
       margin: auto;
+      padding: 15px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      color: white;
-      text-decoration: none;
-      font-size: 23px;
+      font-size: 24px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .logo span {
       color: #ffd54a;
     }
 
-    .home-link {
-      color: white;
-      text-decoration: none;
-    }
-
-    main {
-      flex: 1;
+    nav {
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 35px 15px;
+      gap: 5px;
     }
 
-    .auth-box {
-      background: white;
-      width: 100%;
-      max-width: 430px;
-      padding: 32px 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    nav a {
+      padding: 9px 11px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s;
     }
 
-    h1 {
-      text-align: center;
+    nav a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .login-btn {
+      border: 1px solid white;
+    }
+
+    .register-btn {
+      background: #ffd54a;
       color: #0b3d91;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 7px;
       font-weight: bold;
     }
 
-    input {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #d5d9e0;
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b3d91, #1769d1);
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
       border-radius: 6px;
-      margin-bottom: 17px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #ffd54a;
+      color: #0b3d91;
+    }
+
+    .btn-secondary {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .ad-container {
+      width: 100%;
+      min-height: 100px;
+      margin: 20px auto;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      color: #0b3d91;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .search-box {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 13px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
       font-size: 16px;
       outline: none;
     }
 
-    input:focus {
+    .search-box input:focus {
       border-color: #0b3d91;
     }
 
-    button {
-      width: 100%;
-      padding: 13px;
-      background: #0b3d91;
-      color: white;
+    .search-box button {
+      padding: 13px 20px;
       border: none;
       border-radius: 6px;
-      font-size: 16px;
-      font-weight: bold;
+      background: #0b3d91;
+      color: white;
       cursor: pointer;
-    }
-
-    button:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-
-    .message {
-      display: none;
-      margin-bottom: 18px;
-      padding: 11px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    .error {
-      display: block;
-      background: #ffe9e9;
-      color: #a40000;
-    }
-
-    .success {
-      display: block;
-      background: #e9f8ee;
-      color: #176b32;
-    }
-
-    .links {
-      text-align: center;
-      margin-top: 20px;
-      line-height: 2;
-    }
-
-    .links a {
-      color: #0b3d91;
-      text-decoration: none;
       font-weight: bold;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 7px 18px rgba(0,0,0,0.12);
+    }
+
+    .card-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .card-link {
+      color: #0b3d91;
+      font-weight: bold;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .step {
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: #0b3d91;
+      color: white;
+      font-weight: bold;
+    }
+
+    .cta {
+      background: #0b3d91;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .cta h2 {
+      margin-bottom: 12px;
+      font-size: 30px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 22px;
     }
 
     footer {
-      text-align: center;
-      padding: 18px;
       background: #071f49;
+      color: white;
+      padding: 35px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3,
+    footer h4 {
+      margin-bottom: 12px;
+    }
+
+    footer p {
       color: #d3d9e5;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: #d3d9e5;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      color: #c7cfdd;
       font-size: 14px;
     }
-  </style></head><body><header>
-  <div class="header-inner"><a href="index.html" class="logo">
-  Opportunity<span>Bridge</span>
-</a>
 
-<a href="index.html" class="home-link">
-  Home
-</a>
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-  </div>
-</header><main>  <div class="auth-box"><h1>Welcome Back</h1>
+      .steps {
+        grid-template-columns: 1fr;
+      }
 
-<p class="subtitle">
-  Login to your OpportunityBridge account.
-</p>
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
+    @media (max-width: 700px) {
+      .header-container {
+        padding: 13px 15px;
+      }
 
-<div id="message" class="message"></div>
+      .logo {
+        font-size: 21px;
+      }
 
+      .menu-btn {
+        display: block;
+      }
 
-<form id="loginForm">
+      nav {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        background: #0b3d91;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 15px 15px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+      }
 
-  <label for="email">
-    Email Address
-  </label>
+      nav.active {
+        display: flex;
+      }
 
-  <input
-    type="email"
-    id="email"
-    placeholder="Enter your email"
-    required
-    autocomplete="email"
-  >
+      nav a {
+        width: 100%;
+        padding: 12px;
+      }
 
+      .hero {
+        padding: 55px 18px;
+      }
 
-  <label for="password">
-    Password
-  </label>
+      .hero h1 {
+        font-size: 32px;
+      }
 
-  <input
-    type="password"
-    id="password"
-    placeholder="Enter your password"
-    required
-    autocomplete="current-password"
-  >
+      .hero p {
+        font-size: 16px;
+      }
 
+      .cards {
+        grid-template-columns: 1fr;
+      }
 
-  <button type="submit" id="loginBtn">
-    Login
+      .search-box {
+        flex-direction: column;
+      }
+
+      .search-box button {
+        width: 100%;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style></head><body>  <!-- HEADER -->  <header>
+    <div class="header-container">  <a href="index.html" class="logo">
+    Opportunity<span>Bridge</span>
+  </a>
+
+  <button
+    class="menu-btn"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu">
+    ☰
   </button>
 
-</form>
+  <nav id="mainNav">
 
+    <a href="index.html">Home</a>
 
-<div class="links">
-
-  <div>
-    <a href="forgot-password.html">
-      Forgot your password?
+    <a href="scholarships.html">
+      Scholarships
     </a>
+
+    <a href="jobs.html">
+      Jobs
+    </a>
+
+    <a href="internships.html">
+      Internships
+    </a>
+
+    <a href="courses.html">
+      Courses
+    </a>
+
+    <a href="opportunities.html">
+      Opportunities
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="login.html" class="login-btn">
+      Login
+    </a>
+
+    <a href="register.html" class="register-btn">
+      Register
+    </a>
+
+  </nav>
+
+</div>
+
+  </header>  <!-- HERO -->  <section class="hero"><h1>
+  Discover Opportunities. Build Your Future.
+</h1>
+
+<p>
+  OpportunityBridge connects students, graduates and job seekers
+  with scholarships, jobs, internships, online courses and digital
+  opportunities from Tanzania and around the world.
+</p>
+
+<div class="hero-buttons">
+
+  <a
+    href="opportunities.html"
+    class="btn btn-primary">
+    Explore Opportunities
+  </a>
+
+  <a
+    href="register.html"
+    class="btn btn-secondary">
+    Create Free Account
+  </a>
+
+</div>
+
+  </section>  <!-- ADSENSE -->  <div class="container"><div class="ad-container">
+
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-2004981151172844"
+    data-ad-slot="5992864529"
+    data-ad-format="auto"
+    data-full-width-responsive="true">
+  </ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</div>
+
+  </div>  <!-- SEARCH -->  <section class="container"><div class="section-title">
+
+  <h2>
+    Find Your Opportunity
+  </h2>
+
+  <p>
+    Search scholarships, jobs, internships, courses and more.
+  </p>
+
+</div>
+
+<div class="search-box">
+
+  <input
+    type="search"
+    id="searchInput"
+    placeholder="Search opportunities..."
+    aria-label="Search opportunities"
+    onkeyup="searchCards()">
+
+  <button onclick="searchCards()">
+    Search
+  </button>
+
+</div>
+
+  </section>  <!-- OPPORTUNITIES -->  <section class="container"><div class="section-title">
+
+  <h2>
+    Explore Opportunities
+  </h2>
+
+  <p>
+    Find the right opportunity for your next step.
+  </p>
+
+</div>
+
+
+<div class="cards" id="opportunityCards">
+
+
+  <div class="card">
+
+    <div class="card-icon">
+      🎓
+    </div>
+
+    <h3>
+      Scholarships
+    </h3>
+
+    <p>
+      Discover scholarships and study opportunities
+      in Tanzania and around the world.
+    </p>
+
+    <a
+      href="scholarships.html"
+      class="card-link">
+      Explore Scholarships →
+    </a>
+
   </div>
 
-  <div>
-    Don't have an account?
-    <a href="register.html">
-      Create an account
+
+  <div class="card">
+
+    <div class="card-icon">
+      💼
+    </div>
+
+    <h3>
+      Jobs
+    </h3>
+
+    <p>
+      Find job opportunities for graduates,
+      students and professionals.
+    </p>
+
+    <a
+      href="jobs.html"
+      class="card-link">
+      Explore Jobs →
     </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="card-icon">
+      🧑‍💻
+    </div>
+
+    <h3>
+      Internships
+    </h3>
+
+    <p>
+      Find internships that help you gain
+      valuable experience.
+    </p>
+
+    <a
+      href="internships.html"
+      class="card-link">
+      Explore Internships →
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="card-icon">
+      📚
+    </div>
+
+    <h3>
+      Online Courses
+    </h3>
+
+    <p>
+      Learn useful skills through online courses
+      and educational platforms.
+    </p>
+
+    <a
+      href="courses.html"
+      class="card-link">
+      Explore Courses →
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="card-icon">
+      💻
+    </div>
+
+    <h3>
+      Digital Skills
+    </h3>
+
+    <p>
+      Improve your digital skills and learn
+      technologies for your future.
+    </p>
+
+    <a
+      href="courses.html"
+      class="card-link">
+      Learn Digital Skills →
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="card-icon">
+      🌍
+    </div>
+
+    <h3>
+      Global Opportunities
+    </h3>
+
+    <p>
+      Explore international opportunities,
+      competitions and programs.
+    </p>
+
+    <a
+      href="opportunities.html"
+      class="card-link">
+      Explore Opportunities →
+    </a>
+
   </div>
 
 </div>
 
-  </div></main><footer>
-  © 2026 OpportunityBridge. All rights reserved.
-</footer><script>
+  </section>  <!-- SECOND ADSENSE -->  <div class="container"><div class="ad-container">
 
-  /* =========================
-     SUPABASE CONFIGURATION
-  ========================= */
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-2004981151172844"
+    data-ad-slot="5992864529"
+    data-ad-format="auto"
+    data-full-width-responsive="true">
+  </ins>
 
-  const SUPABASE_URL =
-    "https://wrdpnhqwolqovoukhlns.supabase.co";
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 
-  const SUPABASE_KEY =
-    "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
+</div>
+
+  </div>  <!-- ABOUT -->  <section class="about"><div class="container">
+
+  <div class="section-title">
+
+    <h2>
+      About OpportunityBridge
+    </h2>
+
+  </div>
+
+  <div class="about-content">
+
+    <p>
+      OpportunityBridge is a digital platform created to make
+      useful opportunities easier to discover.
+    </p>
+
+    <p>
+      We bring together scholarships, jobs, internships,
+      online learning resources and digital opportunities
+      in one simple place.
+    </p>
+
+    <p>
+      Our goal is to help students, graduates and job seekers
+      discover opportunities that can support their education,
+      skills and careers.
+    </p>
+
+  </div>
+
+</div>
+
+  </section>  <!-- HOW IT WORKS -->  <section class="container"><div class="section-title">
+
+  <h2>
+    How It Works
+  </h2>
+
+  <p>
+    Finding an opportunity is simple.
+  </p>
+
+</div>
 
 
-  const supabaseClient =
-    window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_KEY
-    );
+<div class="steps">
+
+  <div class="step">
+
+    <div class="step-number">
+      1
+    </div>
+
+    <h3>
+      Explore
+    </h3>
+
+    <p>
+      Browse scholarships, jobs, internships,
+      courses and other opportunities.
+    </p>
+
+  </div>
 
 
-  /* =========================
-     ELEMENTS
-  ========================= */
+  <div class="step">
 
-  const form =
-    document.getElementById("loginForm");
+    <div class="step-number">
+      2
+    </div>
 
-  const button =
-    document.getElementById("loginBtn");
+    <h3>
+      Choose
+    </h3>
 
-  const message =
-    document.getElementById("message");
+    <p>
+      Read the available information and
+      choose opportunities that match you.
+    </p>
 
-
-  /* =========================
-     MESSAGE FUNCTION
-  ========================= */
-
-  function showMessage(text, type) {
-
-    message.textContent = text;
-
-    message.className =
-      "message " + type;
-
-  }
+  </div>
 
 
-  /* =========================
-     LOGIN
-  ========================= */
+  <div class="step">
 
-  form.addEventListener(
-    "submit",
-    async function(event) {
+    <div class="step-number">
+      3
+    </div>
 
-      event.preventDefault();
+    <h3>
+      Apply & Learn
+    </h3>
+
+    <p>
+      Follow the official instructions and
+      take the next step toward your goals.
+    </p>
+
+  </div>
+
+</div>
+
+  </section>  <!-- CTA -->  <section class="cta"><h2>
+  Don't Miss Your Next Opportunity
+</h2>
+
+<p>
+  Create your free OpportunityBridge account
+  and keep exploring useful opportunities.
+</p>
+
+<a
+  href="register.html"
+  class="btn btn-primary">
+  Get Started Free
+</a>
+
+  </section>  <!-- FOOTER -->  <footer><div class="footer-container">
 
 
-      const email =
+  <div>
+
+    <h3>
+      OpportunityBridge
+    </h3>
+
+    <p>
+      Global opportunities and digital resources
+      for students, graduates and job seekers.
+    </p>
+
+  </div>
+
+
+  <div>
+
+    <h4>
+      Explore
+    </h4>
+
+    <ul>
+
+      <li>
+        <a href="scholarships.html">
+          Scholarships
+        </a>
+      </li>
+
+      <li>
+        <a href="jobs.html">
+          Jobs
+        </a>
+      </li>
+
+      <li>
+        <a href="internships.html">
+          Internships
+        </a>
+      </li>
+
+      <li>
+        <a href="courses.html">
+          Online Courses
+        </a>
+      </li>
+
+      <li>
+        <a href="opportunities.html">
+          Opportunities
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div>
+
+    <h4>
+      Company
+    </h4>
+
+    <ul>
+
+      <li>
+        <a href="about.html">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+
+      <li>
+        <a href="Privacy.html">
+          Privacy Policy
+        </a>
+      </li>
+
+      <li>
+        <a href="Disclaimer.html">
+          Disclaimer
+        </a>
+      </li>
+
+      <li>
+        <a href="login.html">
+          Login
+        </a>
+      </li>
+
+      <li>
+        <a href="register.html">
+          Register
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+
+<div class="copyright">
+
+  © 2026 OpportunityBridge.
+  All rights reserved.
+
+</div>
+
+  </footer>  <script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    function toggleMenu() {
+
+      const nav =
+        document.getElementById("mainNav");
+
+      nav.classList.toggle("active");
+
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    function searchCards() {
+
+      const input =
         document
-          .getElementById("email")
+          .getElementById("searchInput")
           .value
+          .toLowerCase()
           .trim();
 
 
-      const password =
-        document
-          .getElementById("password")
-          .value;
-
-
-      button.disabled = true;
-
-      button.textContent =
-        "Logging in...";
-
-
-      const {
-        error
-      } =
-        await supabaseClient.auth.signInWithPassword({
-
-          email: email,
-
-          password: password
-
-        });
-
-
-      /* =========================
-         LOGIN ERROR
-      ========================= */
-
-      if (error) {
-
-        showMessage(
-          error.message,
-          "error"
+      const cards =
+        document.querySelectorAll(
+          "#opportunityCards .card"
         );
 
-        button.disabled = false;
 
-        button.textContent =
-          "Login";
+      cards.forEach(function(card) {
 
-        return;
-      }
+        const text =
+          card.textContent.toLowerCase();
 
+        if (
+          input === "" ||
+          text.includes(input)
+        ) {
 
-      /* =========================
-         LOGIN SUCCESS
-      ========================= */
+          card.style.display = "";
 
-      showMessage(
-        "Login successful. Redirecting...",
-        "success"
-      );
+        } else {
 
+          card.style.display = "none";
 
-      /*
-        IMPORTANT:
-        After successful login,
-        send the user to dashboard.html
-      */
+        }
 
-      setTimeout(() => {
-
-        window.location.href =
-          "dashboard.html";
-
-      }, 700);
+      });
 
     }
-  );
 
-</script></body>
+  </script></body>
 </html>
