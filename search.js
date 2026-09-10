@@ -26,9 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const matchesSearch =
                 query === "" || searchableText.includes(query);
 
-            const matchesFilter =
-                activeFilter === "all" ||
-                category === activeFilter.toLowerCase();
+            const categories = category
+    .split(/\s+/)
+    .filter(Boolean);
+
+const matchesFilter =
+    activeFilter === "all" ||
+    categories.includes(activeFilter.toLowerCase());
+
 
             if (matchesSearch && matchesFilter) {
                 card.style.display = "";
