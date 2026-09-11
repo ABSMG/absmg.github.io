@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Online Courses & Digital Skills | OpportunityBridge</title>
@@ -12,12 +11,9 @@
   <meta name="keywords" content="online courses, free online courses, digital skills, online learning, computer courses, technology courses, career skills, science courses, OpportunityBridge">
 
   <meta name="author" content="OpportunityBridge">
-
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
   <meta name="googlebot" content="index, follow">
-
-  <meta name="theme-color" content="#0b5ed7">
+  <meta name="theme-color" content="#0B3D91">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://absmg.github.io/courses.html">
@@ -39,8 +35,7 @@
 
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -84,6 +79,18 @@
   </script>
 
   <style>
+    :root {
+      --navy: #0B3D91;
+      --blue: #1769D1;
+      --gold: #F4C542;
+      --bg: #F6F8FC;
+      --white: #FFFFFF;
+      --text: #172033;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --dark: #071F49;
+      --success-bg: #EFF6FF;
+    }
 
     * {
       box-sizing: border-box;
@@ -97,12 +104,13 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: #f5f7fb;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
@@ -111,195 +119,253 @@
       font-family: inherit;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================== */
 
-    header {
-      background: #0b5ed7;
-      color: white;
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
     }
 
-    .header-container {
-      max-width: 1150px;
+    .nav-container {
+      width: min(1200px, 92%);
+      min-height: 68px;
       margin: auto;
-      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
-    .logo {
-      color: white;
+    .brand {
+      color: var(--white);
       font-size: 23px;
-      font-weight: bold;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
-    nav ul {
-      list-style: none;
+    .brand span {
+      color: var(--gold);
+    }
+
+    .main-nav {
       display: flex;
-      gap: 22px;
+      align-items: center;
+      gap: 4px;
     }
 
-    nav a {
-      color: white;
-      font-size: 15px;
+    .main-nav a {
+      padding: 9px 11px;
+      border-radius: 6px;
+      font-size: 14px;
       font-weight: 600;
+      color: var(--white);
+      transition: background 0.2s ease;
     }
 
-    nav a:hover,
-    nav a:focus {
-      opacity: 0.8;
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.13);
     }
 
-    nav a[aria-current="page"] {
-      text-decoration: underline;
-      text-underline-offset: 4px;
+    .main-nav a[aria-current="page"] {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .login-link {
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .register-link {
+      background: var(--gold);
+      color: var(--navy) !important;
+    }
+
+    .register-link:hover {
+      background: #ffd95e !important;
     }
 
     .menu-toggle {
       display: none;
-      border: none;
+      border: 0;
       background: transparent;
-      color: white;
+      color: var(--white);
       font-size: 28px;
       cursor: pointer;
       padding: 4px 8px;
     }
 
+    /* =========================
+       ACCESSIBILITY
+    ========================== */
+
     .menu-toggle:focus-visible,
-    nav a:focus-visible,
+    .main-nav a:focus-visible,
     .filter-btn:focus-visible,
     .card a:focus-visible,
-    .cta a:focus-visible {
-      outline: 3px solid #ffd43b;
+    .cta a:focus-visible,
+    .search-box input:focus-visible {
+      outline: 3px solid var(--gold);
       outline-offset: 3px;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================== */
 
-    .hero {
-      background: white;
-      padding: 65px 20px;
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
       text-align: center;
+      padding: 68px 20px;
     }
 
-    .hero-content {
-      max-width: 850px;
+    .page-hero-content {
+      width: min(850px, 92%);
       margin: auto;
     }
 
-    .hero h1 {
-      color: #0b5ed7;
-      font-size: 38px;
-      margin-bottom: 15px;
+    .page-hero h1 {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.15;
+      margin-bottom: 16px;
     }
 
-    .hero p {
-      color: #555;
-      font-size: 18px;
-      max-width: 760px;
+    .page-hero p {
+      max-width: 780px;
+      margin: auto;
+      color: #EAF2FF;
+      font-size: 17px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    .container {
+      width: min(1100px, 92%);
       margin: auto;
     }
 
-    /* MAIN */
-
-    main {
-      max-width: 1150px;
-      margin: auto;
-      padding: 35px 20px 60px;
+    .content-section {
+      padding: 45px 0;
     }
 
-    .intro {
-      background: white;
-      padding: 28px;
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
     }
 
-    .intro h2 {
-      color: #0b5ed7;
+    .intro-card h2 {
+      color: var(--navy);
       margin-bottom: 12px;
+      font-size: 27px;
     }
 
-    .intro p {
-      color: #555;
+    .intro-card p {
+      color: var(--muted);
     }
 
-    .intro a {
-      color: #0b5ed7;
-      font-weight: 600;
+    .intro-card p + p {
+      margin-top: 12px;
     }
 
-    /* ADS */
+    .inline-link {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .inline-link:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       ADS
+    ========================== */
 
     .ad-container {
-      background: white;
-      min-height: 100px;
+      width: 100%;
+      min-height: 90px;
       margin: 25px 0;
       padding: 10px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
       text-align: center;
       overflow: hidden;
-      border-radius: 8px;
     }
 
-    /* SEARCH */
+    /* =========================
+       SEARCH
+    ========================== */
 
-    .search-box {
-      margin: 30px 0 20px;
+    .search-area {
+      margin: 35px 0 22px;
     }
 
-    .search-box label {
+    .search-area label {
       display: block;
-      font-weight: 700;
-      color: #333;
       margin-bottom: 8px;
+      color: var(--text);
+      font-weight: 700;
     }
 
-    .search-box input {
+    .search-area input {
       width: 100%;
-      padding: 15px 18px;
-      border: 1px solid #ddd;
+      padding: 14px 17px;
+      border: 1px solid var(--border);
       border-radius: 8px;
+      background: var(--white);
+      color: var(--text);
       font-size: 16px;
+    }
+
+    .search-area input:focus {
       outline: none;
-      background: white;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23, 105, 209, 0.12);
     }
 
-    .search-box input:focus {
-      border-color: #0b5ed7;
-      box-shadow: 0 0 0 3px rgba(11,94,215,0.12);
-    }
-
-    /* FILTERS */
+    /* =========================
+       FILTERS
+    ========================== */
 
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 25px;
+      gap: 9px;
+      margin-bottom: 26px;
     }
 
     .filter-btn {
-      border: none;
-      background: #e9eef7;
-      color: #333;
-      padding: 10px 17px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      padding: 9px 16px;
       border-radius: 20px;
       cursor: pointer;
       font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #0b5ed7;
-      color: white;
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
     }
 
-    /* COURSE CARDS */
+    /* =========================
+       COURSE GRID
+    ========================== */
 
     .cards {
       display: grid;
@@ -308,227 +374,284 @@
     }
 
     .card {
-      background: white;
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-      transition: transform 0.2s ease;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.10);
     }
 
     .card h3 {
-      color: #0b5ed7;
-      margin-bottom: 10px;
+      color: var(--navy);
       font-size: 20px;
+      margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .card p {
-      color: #555;
-      margin-bottom: 15px;
+      color: var(--muted);
       font-size: 15px;
+      margin-bottom: 15px;
     }
 
     .tag {
       display: inline-block;
-      background: #eef4ff;
-      color: #0b5ed7;
+      margin: 2px 4px 2px 0;
       padding: 5px 9px;
       border-radius: 5px;
+      background: var(--success-bg);
+      color: var(--blue);
       font-size: 12px;
-      margin: 2px;
+      font-weight: 700;
     }
 
-    .card a {
+    .card-link {
       display: inline-block;
-      margin-top: 15px;
-      background: #0b5ed7;
-      color: white;
+      margin-top: 16px;
       padding: 10px 15px;
-      border-radius: 6px;
-      font-weight: 600;
+      border-radius: 7px;
+      background: var(--navy);
+      color: var(--white);
       font-size: 14px;
+      font-weight: 700;
+      transition: background 0.2s ease;
     }
 
-    .card a:hover {
-      background: #084298;
+    .card-link:hover {
+      background: var(--blue);
     }
 
     .no-results {
       display: none;
-      background: white;
+      margin-top: 20px;
       padding: 25px;
-      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 10px;
-      color: #666;
+      color: var(--muted);
+      text-align: center;
     }
 
-    /* LEARNING GUIDE */
+    /* =========================
+       GUIDANCE
+    ========================== */
 
     .guidance {
-      background: white;
-      margin-top: 40px;
+      margin-top: 42px;
       padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
     }
 
     .guidance h2 {
-      color: #0b5ed7;
-      margin-bottom: 15px;
+      color: var(--navy);
+      margin-bottom: 18px;
+      font-size: 28px;
     }
 
     .guidance h3 {
-      margin-top: 20px;
+      color: var(--text);
+      margin-top: 21px;
       margin-bottom: 7px;
+      font-size: 18px;
     }
 
     .guidance p {
-      color: #555;
+      color: var(--muted);
     }
 
     .guidance ul {
-      padding-left: 20px;
-      color: #555;
+      padding-left: 22px;
+      color: var(--muted);
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================== */
 
     .cta {
-      background: #0b5ed7;
-      color: white;
+      margin-top: 42px;
+      padding: 38px 22px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
       text-align: center;
-      padding: 35px 20px;
-      margin-top: 40px;
       border-radius: 12px;
     }
 
     .cta h2 {
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
     .cta p {
-      margin-bottom: 20px;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: #EAF2FF;
     }
 
     .cta a {
       display: inline-block;
-      background: white;
-      color: #0b5ed7;
       padding: 11px 20px;
       border-radius: 7px;
-      font-weight: bold;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
     }
 
     .cta a:hover {
-      background: #f1f5f9;
+      background: #FFD95E;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      background: #102a43;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
+      margin-top: 20px;
+      background: var(--dark);
+      color: #D8E0ED;
+      padding: 45px 20px 25px;
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 18px;
+    .footer-grid {
+      width: min(1100px, 92%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #D8E0ED;
+      font-size: 14px;
     }
 
     .footer-links a {
-      color: white;
+      display: block;
+      margin: 7px 0;
+      color: #D8E0ED;
       font-size: 14px;
     }
 
     .footer-links a:hover {
-      text-decoration: underline;
+      color: var(--gold);
     }
 
-    footer p {
-      font-size: 14px;
-      color: #d7e0ea;
+    .copyright {
+      width: min(1100px, 92%);
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: center;
+      font-size: 13px;
+      color: #BFC9D8;
     }
 
-    /* MOBILE */
+    /* =========================
+       RESPONSIVE
+    ========================== */
 
-    @media (max-width: 750px) {
-
-      .header-container {
-        padding: 13px 16px;
-        flex-wrap: wrap;
+    @media (max-width: 1000px) {
+      .main-nav a {
+        padding: 8px 7px;
+        font-size: 13px;
       }
+    }
 
+    @media (max-width: 850px) {
       .menu-toggle {
         display: block;
       }
 
-      nav {
+      .main-nav {
         display: none;
-        width: 100%;
-        order: 3;
-      }
-
-      nav.active {
-        display: block;
-      }
-
-      nav ul {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
         flex-direction: column;
-        gap: 0;
-        padding: 10px 0 15px;
+        align-items: stretch;
+        padding: 12px 18px 18px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
       }
 
-      nav li {
-        border-top: 1px solid rgba(255,255,255,0.15);
+      .main-nav.active {
+        display: flex;
       }
 
-      nav a {
+      .main-nav a {
         display: block;
-        padding: 12px 5px;
-      }
-
-      .hero {
-        padding: 45px 18px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      main {
-        padding: 25px 15px 45px;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
       }
 
       .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        min-height: 64px;
+      }
+
+      .main-nav {
+        top: 64px;
+      }
+
+      .page-hero {
+        padding: 52px 18px;
+      }
+
+      .page-hero p {
+        font-size: 16px;
+      }
+
+      .content-section {
+        padding: 32px 0;
+      }
+
+      .cards,
+      .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .intro,
+      .intro-card,
       .guidance {
         padding: 22px;
+      }
+
+      .guidance h2,
+      .cta h2 {
+        font-size: 24px;
       }
     }
 
     @media (max-width: 380px) {
-
-      .logo {
+      .brand {
         font-size: 20px;
-      }
-
-      .hero h1 {
-        font-size: 27px;
       }
 
       .filter-btn {
@@ -536,23 +659,20 @@
         padding: 8px 13px;
       }
     }
-
   </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
-
-  <header>
-
-    <div class="header-container">
+  <header class="site-header">
+    <div class="nav-container">
 
       <a
         href="index.html"
-        class="logo"
+        class="brand"
         aria-label="OpportunityBridge Home">
-        OpportunityBridge
+        Opportunity<span>Bridge</span>
       </a>
 
       <button
@@ -565,60 +685,32 @@
         ☰
       </button>
 
-      <nav id="mainNav" aria-label="Main navigation">
+      <nav
+        class="main-nav"
+        id="mainNav"
+        aria-label="Main navigation">
 
-        <ul>
-
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-
-          <li>
-            <a href="scholarships.html">Scholarships</a>
-          </li>
-
-          <li>
-            <a href="jobs.html">Jobs</a>
-          </li>
-
-          <li>
-            <a href="internships.html">Internships</a>
-          </li>
-
-          <li>
-            <a
-              href="courses.html"
-              aria-current="page">
-              Courses
-            </a>
-          </li>
-
-          <li>
-            <a href="opportunities.html">Opportunities</a>
-          </li>
-
-          <li>
-            <a href="about.html">About</a>
-          </li>
-
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="internships.html">Internships</a>
+        <a href="courses.html" aria-current="page">Courses</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="login-link">Login</a>
+        <a href="register.html" class="register-link">Register</a>
 
       </nav>
 
     </div>
-
   </header>
 
 
   <!-- HERO -->
+  <section class="page-hero">
 
-  <section class="hero">
-
-    <div class="hero-content">
+    <div class="page-hero-content">
 
       <h1>Online Courses &amp; Digital Skills</h1>
 
@@ -633,427 +725,417 @@
   </section>
 
 
-  <main>
+  <main class="container">
 
-    <!-- INTRO -->
+    <section class="content-section">
 
-    <section class="intro">
+      <!-- INTRO -->
+      <div class="intro-card">
 
-      <h2>Learn Skills That Create Opportunities</h2>
-
-      <p>
-        Online learning can make it easier to develop useful skills
-        alongside school, university or work. From digital literacy
-        and programming to communication and career preparation,
-        the right course can help you build knowledge and confidence.
-      </p>
-
-      <p style="margin-top:12px;">
-        You can also explore our
-        <a href="scholarships.html">scholarships</a>,
-        <a href="jobs.html">job opportunities</a> and
-        <a href="internships.html">internships</a>
-        to connect your learning with real-world opportunities.
-      </p>
-
-    </section>
-
-
-    <!-- FIRST AD -->
-
-    <div
-      class="ad-container"
-      aria-label="Advertisement">
-
-      <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-2004981151172844"
-        data-ad-slot="5992864529"
-        data-ad-format="auto"
-        data-full-width-responsive="true">
-      </ins>
-
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-    </div>
-
-
-    <!-- SEARCH -->
-
-    <section
-      class="search-box"
-      aria-label="Course search">
-
-      <label for="searchInput">
-        Search Online Courses
-      </label>
-
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="Search courses by subject or skill..."
-        aria-label="Search courses by subject or skill"
-        autocomplete="off">
-
-    </section>
-
-
-    <!-- FILTERS -->
-
-    <div
-      class="filters"
-      aria-label="Course categories">
-
-      <button
-        type="button"
-        class="filter-btn active"
-        data-filter="all"
-        aria-pressed="true">
-        All
-      </button>
-
-      <button
-        type="button"
-        class="filter-btn"
-        data-filter="technology"
-        aria-pressed="false">
-        Technology
-      </button>
-
-      <button
-        type="button"
-        class="filter-btn"
-        data-filter="business"
-        aria-pressed="false">
-        Business
-      </button>
-
-      <button
-        type="button"
-        class="filter-btn"
-        data-filter="language"
-        aria-pressed="false">
-        Languages
-      </button>
-
-      <button
-        type="button"
-        class="filter-btn"
-        data-filter="career"
-        aria-pressed="false">
-        Career
-      </button>
-
-      <button
-        type="button"
-        class="filter-btn"
-        data-filter="science"
-        aria-pressed="false">
-        Science
-      </button>
-
-    </div>
-
-
-    <!-- COURSE CARDS -->
-
-    <section
-      class="cards"
-      id="courseCards"
-      aria-label="Online course resources">
-
-
-      <!-- CARD 1 -->
-
-      <article
-        class="card"
-        data-category="technology"
-        data-search="computer digital literacy technology basic computer skills">
-
-        <h3>Digital Literacy</h3>
+        <h2>Learn Skills That Create Opportunities</h2>
 
         <p>
-          Build essential computer and digital skills for studying,
-          communicating online and using modern digital tools.
+          Online learning can make it easier to develop useful skills
+          alongside school, university or work. From digital literacy
+          and programming to communication and career preparation,
+          the right course can help you build knowledge and confidence.
         </p>
-
-        <span class="tag">Technology</span>
-        <span class="tag">Beginner</span>
-
-        <br>
-
-        <a
-          href="https://edu.gcfglobal.org/en/topics/digital-skills/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Start Learning
-        </a>
-
-      </article>
-
-
-      <!-- CARD 2 -->
-
-      <article
-        class="card"
-        data-category="technology"
-        data-search="programming coding computer science web development software">
-
-        <h3>Programming &amp; Coding</h3>
 
         <p>
-          Explore programming concepts and develop the foundation
-          needed for software development and technology careers.
+          You can also explore our
+          <a class="inline-link" href="scholarships.html">scholarships</a>,
+          <a class="inline-link" href="jobs.html">job opportunities</a>
+          and
+          <a class="inline-link" href="internships.html">internships</a>
+          to connect your learning with real-world opportunities.
         </p>
 
-        <span class="tag">Technology</span>
-        <span class="tag">Coding</span>
-
-        <br>
-
-        <a
-          href="https://www.freecodecamp.org/learn/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Explore Courses
-        </a>
-
-      </article>
+      </div>
 
 
-      <!-- CARD 3 -->
+      <!-- FIRST AD -->
+      <div
+        class="ad-container"
+        aria-label="Advertisement">
 
-      <article
-        class="card"
-        data-category="business"
-        data-search="business entrepreneurship management finance business skills">
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2004981151172844"
+          data-ad-slot="5992864529"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+        </ins>
 
-        <h3>Business &amp; Entrepreneurship</h3>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+      </div>
+
+
+      <!-- SEARCH -->
+      <section
+        class="search-area"
+        aria-label="Course search">
+
+        <label for="searchInput">
+          Search Online Courses
+        </label>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search courses by subject or skill..."
+          aria-label="Search courses by subject or skill"
+          autocomplete="off">
+
+      </section>
+
+
+      <!-- FILTERS -->
+      <div
+        class="filters"
+        aria-label="Course categories">
+
+        <button
+          type="button"
+          class="filter-btn active"
+          data-filter="all"
+          aria-pressed="true">
+          All
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="technology"
+          aria-pressed="false">
+          Technology
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="business"
+          aria-pressed="false">
+          Business
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="language"
+          aria-pressed="false">
+          Languages
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="career"
+          aria-pressed="false">
+          Career
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="science"
+          aria-pressed="false">
+          Science
+        </button>
+
+      </div>
+
+
+      <!-- COURSE CARDS -->
+      <section
+        class="cards"
+        id="courseCards"
+        aria-label="Online course resources">
+
+
+        <!-- CARD 1 -->
+        <article
+          class="card"
+          data-category="technology"
+          data-search="computer digital literacy technology basic computer skills">
+
+          <h3>Digital Literacy</h3>
+
+          <p>
+            Build essential computer and digital skills for studying,
+            communicating online and using modern digital tools.
+          </p>
+
+          <span class="tag">Technology</span>
+          <span class="tag">Beginner</span>
+
+          <br>
+
+          <a
+            class="card-link"
+            href="https://edu.gcfglobal.org/en/topics/digital-skills/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Start Learning
+          </a>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+        <article
+          class="card"
+          data-category="technology"
+          data-search="programming coding computer science web development software">
+
+          <h3>Programming &amp; Coding</h3>
+
+          <p>
+            Explore programming concepts and develop the foundation
+            needed for software development and technology careers.
+          </p>
+
+          <span class="tag">Technology</span>
+          <span class="tag">Coding</span>
+
+          <br>
+
+          <a
+            class="card-link"
+            href="https://www.freecodecamp.org/learn/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Explore Courses
+          </a>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+        <article
+          class="card"
+          data-category="business"
+          data-search="business entrepreneurship management finance business skills">
+
+          <h3>Business &amp; Entrepreneurship</h3>
+
+          <p>
+            Learn about entrepreneurship, business planning, marketing
+            and other skills useful for starting or managing projects.
+          </p>
+
+          <span class="tag">Business</span>
+          <span class="tag">Entrepreneurship</span>
+
+          <br>
+
+          <a
+            class="card-link"
+            href="https://www.saylor.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Explore Learning
+          </a>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+        <article
+          class="card"
+          data-category="language career"
+          data-search="english communication language writing communication skills">
+
+          <h3>English &amp; Communication</h3>
+
+          <p>
+            Improve communication, writing and language skills that
+            can support academic work and professional development.
+          </p>
+
+          <span class="tag">Language</span>
+          <span class="tag">Communication</span>
+
+          <br>
+
+          <a
+            class="card-link"
+            href="https://www.open.edu/openlearn/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Explore Courses
+          </a>
+
+        </article>
+
+
+        <!-- CARD 5 -->
+        <article
+          class="card"
+          data-category="career"
+          data-search="career development CV interview job professional skills">
+
+          <h3>Career Development</h3>
+
+          <p>
+            Develop practical career skills such as CV preparation,
+            communication, professional planning and workplace readiness.
+          </p>
+
+          <span class="tag">Career</span>
+          <span class="tag">Professional</span>
+
+          <br>
+
+          <a
+            class="card-link"
+            href="https://www.coursera.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Explore Learning
+          </a>
+
+        </article>
+
+
+        <!-- CARD 6 -->
+        <article
+          class="card"
+          data-category="science"
+          data-search="science biology chemistry physics mathematics science courses">
+
+          <h3>Science &amp; Mathematics</h3>
+
+          <p>
+            Strengthen your understanding of science and mathematics
+            through structured online learning resources.
+          </p>
+
+          <span class="tag">Science</span>
+          <span class="tag">Mathematics</span>
+
+          <br>
+
+          <a
+            class="card-link"
+            href="https://www.khanacademy.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Start Learning
+          </a>
+
+        </article>
+
+      </section>
+
+
+      <!-- NO RESULTS -->
+      <div
+        class="no-results"
+        id="noResults"
+        role="status"
+        aria-live="polite">
+
+        No courses matched your search.
+        Try another keyword or choose another category.
+
+      </div>
+
+
+      <!-- SECOND AD -->
+      <div
+        class="ad-container"
+        aria-label="Advertisement">
+
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2004981151172844"
+          data-ad-slot="5992864529"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+        </ins>
+
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+      </div>
+
+
+      <!-- LEARNING GUIDE -->
+      <section class="guidance">
+
+        <h2>How to Choose an Online Course</h2>
+
+        <h3>1. Start With Your Goal</h3>
 
         <p>
-          Learn about entrepreneurship, business planning, marketing
-          and other skills useful for starting or managing projects.
+          Decide what you want to achieve before choosing a course.
+          You might want to improve your academic knowledge, learn
+          a professional skill or prepare for a particular career.
         </p>
 
-        <span class="tag">Business</span>
-        <span class="tag">Entrepreneurship</span>
-
-        <br>
-
-        <a
-          href="https://www.saylor.org/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Explore Learning
-        </a>
-
-      </article>
-
-
-      <!-- CARD 4 -->
-
-      <article
-        class="card"
-        data-category="language career"
-        data-search="english communication language writing communication skills">
-
-        <h3>English &amp; Communication</h3>
+        <h3>2. Check the Course Content</h3>
 
         <p>
-          Improve communication, writing and language skills that
-          can support academic work and professional development.
+          Read the course description and learning outcomes carefully.
+          Choose content that matches your current level and your
+          learning goals.
         </p>
 
-        <span class="tag">Language</span>
-        <span class="tag">Communication</span>
-
-        <br>
-
-        <a
-          href="https://www.open.edu/openlearn/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Explore Courses
-        </a>
-
-      </article>
-
-
-      <!-- CARD 5 -->
-
-      <article
-        class="card"
-        data-category="career"
-        data-search="career development CV interview job professional skills">
-
-        <h3>Career Development</h3>
+        <h3>3. Consider Your Available Time</h3>
 
         <p>
-          Develop practical career skills such as CV preparation,
-          communication, professional planning and workplace readiness.
+          Online learning requires consistency. Choose a course that
+          fits your schedule so you can make steady progress.
         </p>
 
-        <span class="tag">Career</span>
-        <span class="tag">Professional</span>
-
-        <br>
-
-        <a
-          href="https://www.coursera.org/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Explore Learning
-        </a>
-
-      </article>
-
-
-      <!-- CARD 6 -->
-
-      <article
-        class="card"
-        data-category="science"
-        data-search="science biology chemistry physics mathematics science courses">
-
-        <h3>Science &amp; Mathematics</h3>
+        <h3>4. Practice What You Learn</h3>
 
         <p>
-          Strengthen your understanding of science and mathematics
-          through structured online learning resources.
+          Knowledge becomes more useful when you apply it. Work on
+          small projects, exercises or practical activities related
+          to the skill you are learning.
         </p>
 
-        <span class="tag">Science</span>
-        <span class="tag">Mathematics</span>
+        <h3>5. Keep Learning</h3>
 
-        <br>
+        <p>
+          Technology and professional requirements change over time.
+          Continue improving your skills after completing a course.
+        </p>
 
-        <a
-          href="https://www.khanacademy.org/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Start Learning
+        <h3>Important: Certificates</h3>
+
+        <p>
+          Not every online course provides a certificate, and not every
+          certificate has the same value. Before paying for a course,
+          check who provides it, what the certificate represents and
+          whether it is relevant to your education or career goals.
+        </p>
+
+      </section>
+
+
+      <!-- CTA -->
+      <section class="cta">
+
+        <h2>Looking for More Opportunities?</h2>
+
+        <p>
+          Explore scholarships, jobs and internships to connect
+          your learning with real-world opportunities.
+        </p>
+
+        <a href="opportunities.html">
+          Explore Opportunities
         </a>
 
-      </article>
-
-    </section>
-
-
-    <!-- NO RESULTS -->
-
-    <div
-      class="no-results"
-      id="noResults"
-      role="status"
-      aria-live="polite">
-
-      No courses matched your search.
-      Try another keyword or choose another category.
-
-    </div>
-
-
-    <!-- SECOND AD -->
-
-    <div
-      class="ad-container"
-      aria-label="Advertisement">
-
-      <ins
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-2004981151172844"
-        data-ad-slot="5992864529"
-        data-ad-format="auto"
-        data-full-width-responsive="true">
-      </ins>
-
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-    </div>
-
-
-    <!-- LEARNING GUIDE -->
-
-    <section class="guidance">
-
-      <h2>How to Choose an Online Course</h2>
-
-
-      <h3>1. Start With Your Goal</h3>
-
-      <p>
-        Decide what you want to achieve before choosing a course.
-        You might want to improve your academic knowledge, learn
-        a professional skill or prepare for a particular career.
-      </p>
-
-
-      <h3>2. Check the Course Content</h3>
-
-      <p>
-        Read the course description and learning outcomes carefully.
-        Choose content that matches your current level and your
-        learning goals.
-      </p>
-
-
-      <h3>3. Consider Your Available Time</h3>
-
-      <p>
-        Online learning requires consistency. Choose a course that
-        fits your schedule so you can make steady progress.
-      </p>
-
-
-      <h3>4. Practice What You Learn</h3>
-
-      <p>
-        Knowledge becomes more useful when you apply it. Work on
-        small projects, exercises or practical activities related
-        to the skill you are learning.
-      </p>
-
-
-      <h3>5. Keep Learning</h3>
-
-      <p>
-        Technology and professional requirements change over time.
-        Continue improving your skills after completing a course.
-      </p>
-
-
-      <h3>Important: Certificates</h3>
-
-      <p>
-        Not every online course provides a certificate, and not every
-        certificate has the same value. Before paying for a course,
-        check who provides it, what the certificate represents and
-        whether it is relevant to your education or career goals.
-      </p>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-      <h2>Looking for More Opportunities?</h2>
-
-      <p>
-        Explore scholarships, jobs and internships to connect
-        your learning with real-world opportunities.
-      </p>
-
-      <a href="opportunities.html">
-        Explore Opportunities
-      </a>
+      </section>
 
     </section>
 
@@ -1061,115 +1143,117 @@
 
 
   <!-- FOOTER -->
-
   <footer>
 
-    <div class="footer-links">
+    <div class="footer-grid">
 
-      <a href="index.html">Home</a>
+      <div>
+        <h3>OpportunityBridge</h3>
 
-      <a href="scholarships.html">Scholarships</a>
+        <p>
+          Discover scholarships, jobs, internships, online courses
+          and digital opportunities in Tanzania and beyond.
+        </p>
+      </div>
 
-      <a href="jobs.html">Jobs</a>
+      <div>
+        <h4>Explore</h4>
 
-      <a href="internships.html">Internships</a>
+        <div class="footer-links">
+          <a href="scholarships.html">Scholarships</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="internships.html">Internships</a>
+          <a href="courses.html">Courses</a>
+          <a href="opportunities.html">Opportunities</a>
+        </div>
+      </div>
 
-      <a href="courses.html" aria-current="page">
-        Courses
-      </a>
+      <div>
+        <h4>Information</h4>
 
-      <a href="opportunities.html">Opportunities</a>
-
-      <a href="about.html">About</a>
-
-      <a href="contact.html">Contact</a>
-
-      <a href="Privacy.html">Privacy</a>
-
-      <a href="Disclaimer.html">Disclaimer</a>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="Privacy.html">Privacy</a>
+          <a href="Disclaimer.html">Disclaimer</a>
+          <a href="login.html">Login</a>
+          <a href="register.html">Register</a>
+        </div>
+      </div>
 
     </div>
 
-
-    <p>
+    <div class="copyright">
       © 2026 OpportunityBridge. All rights reserved.
-    </p>
+    </div>
 
   </footer>
 
 
   <!-- JAVASCRIPT -->
-
   <script>
+    /* =========================
+       MOBILE MENU
+    ========================== */
 
-    /* MOBILE MENU */
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
-    const menuToggle =
-      document.getElementById("menuToggle");
+    menuToggle.addEventListener("click", function () {
 
-    const mainNav =
-      document.getElementById("mainNav");
+      mainNav.classList.toggle("active");
 
+      const isOpen =
+        mainNav.classList.contains("active");
 
-    menuToggle.addEventListener(
-      "click",
-      function() {
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
 
-        mainNav.classList.toggle("active");
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close navigation"
+          : "Open navigation"
+      );
 
-        const isOpen =
-          mainNav.classList.contains("active");
+      menuToggle.textContent =
+        isOpen ? "✕" : "☰";
 
-        menuToggle.setAttribute(
-          "aria-expanded",
-          String(isOpen)
-        );
-
-        menuToggle.setAttribute(
-          "aria-label",
-          isOpen
-            ? "Close navigation"
-            : "Open navigation"
-        );
-
-        menuToggle.textContent =
-          isOpen ? "✕" : "☰";
-
-      }
-    );
+    });
 
 
-    /* CLOSE MENU AFTER CLICK */
+    /* Close mobile navigation after link click */
 
     document
       .querySelectorAll("#mainNav a")
-      .forEach(function(link) {
+      .forEach(function (link) {
 
-        link.addEventListener(
-          "click",
-          function() {
+        link.addEventListener("click", function () {
 
-            mainNav.classList.remove("active");
+          mainNav.classList.remove("active");
 
-            menuToggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
-            menuToggle.setAttribute(
-              "aria-label",
-              "Open navigation"
-            );
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation"
+          );
 
-            menuToggle.textContent = "☰";
+          menuToggle.textContent = "☰";
 
-          }
-        );
+        });
 
       });
 
 
-    /* SEARCH + FILTER */
+    /* =========================
+       SEARCH + FILTER
+    ========================== */
 
     const searchInput =
       document.getElementById("searchInput");
@@ -1196,7 +1280,7 @@
       let visibleCards = 0;
 
 
-      cards.forEach(function(card) {
+      cards.forEach(function (card) {
 
         const category =
           (card.dataset.category || "")
@@ -1222,7 +1306,7 @@
           Array.from(
             card.querySelectorAll(".tag")
           )
-          .map(function(tag) {
+          .map(function (tag) {
             return tag.textContent.toLowerCase();
           })
           .join(" ");
@@ -1247,7 +1331,6 @@
         ) {
 
           card.style.display = "block";
-
           visibleCards++;
 
         } else {
@@ -1273,48 +1356,46 @@
     );
 
 
-    /* FILTER BUTTONS */
+    /* =========================
+       FILTER BUTTONS
+    ========================== */
 
-    filterButtons.forEach(
-      function(button) {
+    filterButtons.forEach(function (button) {
 
-        button.addEventListener(
-          "click",
-          function() {
+      button.addEventListener("click", function () {
 
-            filterButtons.forEach(
-              function(btn) {
+        filterButtons.forEach(function (btn) {
 
-                btn.classList.remove("active");
+          btn.classList.remove("active");
 
-                btn.setAttribute(
-                  "aria-pressed",
-                  "false"
-                );
+          btn.setAttribute(
+            "aria-pressed",
+            "false"
+          );
 
-              }
-            );
+        });
 
 
-            button.classList.add("active");
+        button.classList.add("active");
 
-            button.setAttribute(
-              "aria-pressed",
-              "true"
-            );
-
-
-            currentFilter =
-              button.dataset.filter;
-
-            filterCards();
-
-          }
+        button.setAttribute(
+          "aria-pressed",
+          "true"
         );
 
-      }
-    );
 
+        currentFilter =
+          button.dataset.filter;
+
+        filterCards();
+
+      });
+
+    });
+
+
+    /* Initial state */
+    filterCards();
   </script>
 
 </body>
