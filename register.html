@@ -157,11 +157,6 @@
       overflow: hidden;
     }
 
-    /*
-      Subtle decorative background.
-      It does not affect functionality.
-    */
-
     .register-section::before,
     .register-section::after {
       content: "";
@@ -326,10 +321,6 @@
       color: var(--success);
     }
 
-    .message.animate-in {
-      animation: messageEntrance .4s cubic-bezier(.22,.61,.36,1) both;
-    }
-
     .message.animate-error {
       animation: shakeError .42s ease both;
     }
@@ -399,11 +390,6 @@
       color: #94A3B8;
     }
 
-    /*
-      Password fields need extra right padding
-      so the visibility button does not overlap text.
-    */
-
     .password-input {
       padding-right: 76px;
     }
@@ -442,14 +428,26 @@
     }
 
     /* =========================
-       BUTTON
+       REGISTER BUTTON STAGE
     ========================= */
+
+    .register-button-stage {
+      position: relative;
+      width: 100%;
+      margin-top: 4px;
+      overflow: visible;
+      isolation: isolate;
+    }
+
+    /*
+      The button starts slightly outside its final
+      position and is pulled into place by the plane.
+    */
 
     .register-button {
       width: 100%;
       min-height: 48px;
       padding: 13px;
-      margin-top: 3px;
 
       background: var(--blue);
       color: white;
@@ -467,12 +465,19 @@
       justify-content: center;
       gap: 10px;
 
+      position: relative;
+      z-index: 2;
+
+      opacity: 0;
+      transform: translateX(-82px) scale(.97);
+
+      animation:
+        buttonPulledIn 1s cubic-bezier(.22,.61,.36,1) .58s both;
+
       transition:
         background .2s ease,
         transform .2s ease,
         box-shadow .2s ease;
-      
-      animation: fadeSlideUp .5s ease .46s both;
     }
 
     .register-button:hover:not(:disabled) {
@@ -490,6 +495,79 @@
       cursor: not-allowed;
       transform: none;
       box-shadow: none;
+    }
+
+    /*
+      Subtle tow rope between the plane and button.
+    */
+
+    .tow-line {
+      position: absolute;
+      left: -66px;
+      width: 70px;
+      top: 50%;
+      height: 0;
+
+      border-top: 2px dashed rgba(244,197,66,.85);
+
+      transform-origin: right center;
+      opacity: 0;
+
+      pointer-events: none;
+      z-index: 1;
+
+      animation:
+        towLinePull 1.05s ease-out .48s both;
+    }
+
+    /*
+      Professional SVG paper plane.
+    */
+
+    .paper-plane {
+      position: absolute;
+
+      left: -86px;
+      top: 50%;
+
+      width: 58px;
+      height: 58px;
+
+      z-index: 3;
+      pointer-events: none;
+
+      opacity: 0;
+
+      fill: rgba(244,197,66,.12);
+      stroke: var(--gold);
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+
+      filter:
+        drop-shadow(0 5px 9px rgba(7,31,73,.16));
+
+      animation:
+        planePull 1.55s cubic-bezier(.22,.61,.36,1) .15s both;
+    }
+
+    .plane-trail {
+      position: absolute;
+      left: -98px;
+      top: calc(50% + 13px);
+
+      width: 45px;
+      height: 18px;
+
+      border-top: 2px solid rgba(23,105,209,.18);
+      border-radius: 50%;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      animation:
+        planeTrail 1.2s ease-out .22s both;
     }
 
     /* =========================
@@ -516,7 +594,7 @@
       color: var(--muted);
       font-size: 14px;
 
-      animation: fadeSlideUp .5s ease .52s both;
+      animation: fadeSlideUp .5s ease .75s both;
     }
 
     .links a {
@@ -539,7 +617,7 @@
       text-align: center;
       margin-top: 18px;
 
-      animation: fadeSlideUp .5s ease .58s both;
+      animation: fadeSlideUp .5s ease .82s both;
     }
 
     .back-home a {
@@ -622,18 +700,6 @@
       }
     }
 
-    @keyframes messageEntrance {
-      from {
-        opacity: 0;
-        transform: translateY(-7px) scale(.98);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
     @keyframes successPop {
       0% {
         opacity: 0;
@@ -672,6 +738,161 @@
       }
     }
 
+    /*
+      Paper plane flight:
+      It enters from the left, approaches the
+      button, pulls across it, then flies away.
+    */
+
+    @keyframes planePull {
+
+      0% {
+        opacity: 0;
+        left: -90px;
+        top: 58%;
+        transform:
+          rotate(-16deg)
+          scale(.72);
+      }
+
+      12% {
+        opacity: 1;
+      }
+
+      32% {
+        left: 4%;
+        top: 34%;
+        transform:
+          rotate(-8deg)
+          scale(.9);
+      }
+
+      52% {
+        left: 34%;
+        top: 50%;
+        transform:
+          rotate(-2deg)
+          scale(1);
+      }
+
+      68% {
+        left: 61%;
+        top: 50%;
+        transform:
+          rotate(5deg)
+          scale(.98);
+      }
+
+      82% {
+        left: 88%;
+        top: 35%;
+        transform:
+          rotate(10deg)
+          scale(.92);
+        opacity: 1;
+      }
+
+      100% {
+        left: calc(100% + 55px);
+        top: 12%;
+        transform:
+          rotate(16deg)
+          scale(.78);
+        opacity: 0;
+      }
+    }
+
+    @keyframes buttonPulledIn {
+
+      0% {
+        opacity: 0;
+        transform:
+          translateX(-82px)
+          scale(.97);
+      }
+
+      48% {
+        opacity: 1;
+      }
+
+      67% {
+        transform:
+          translateX(7px)
+          scale(1.012);
+      }
+
+      82% {
+        transform:
+          translateX(-3px)
+          scale(1);
+      }
+
+      100% {
+        opacity: 1;
+        transform:
+          translateX(0)
+          scale(1);
+      }
+    }
+
+    @keyframes towLinePull {
+
+      0% {
+        opacity: 0;
+        transform: scaleX(.05);
+      }
+
+      18% {
+        opacity: 1;
+      }
+
+      55% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      82% {
+        opacity: .7;
+        transform: scaleX(.65);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scaleX(.1);
+      }
+    }
+
+    @keyframes planeTrail {
+
+      0% {
+        opacity: 0;
+        transform:
+          translateX(-10px)
+          scale(.6)
+          rotate(-8deg);
+      }
+
+      25% {
+        opacity: .65;
+      }
+
+      75% {
+        opacity: .2;
+        transform:
+          translateX(22px)
+          scale(1)
+          rotate(2deg);
+      }
+
+      100% {
+        opacity: 0;
+        transform:
+          translateX(45px)
+          scale(.7)
+          rotate(7deg);
+      }
+    }
+
     @keyframes spin {
       to {
         transform: rotate(360deg);
@@ -698,16 +919,26 @@
       }
     }
 
-    /*
-      Accessibility:
-      Users who prefer reduced motion will not
-      receive the decorative animations.
-    */
+    /* =========================
+       REDUCED MOTION
+    ========================= */
 
     @media (prefers-reduced-motion: reduce) {
 
       html {
         scroll-behavior: auto;
+      }
+
+      .paper-plane,
+      .tow-line,
+      .plane-trail {
+        display: none;
+      }
+
+      .register-button {
+        opacity: 1;
+        transform: none;
+        animation: none;
       }
 
       *,
@@ -787,6 +1018,21 @@
       .password-toggle {
         min-width: 55px;
       }
+
+      /*
+        Give the plane a little more room on
+        narrow screens without changing layout.
+      */
+
+      .paper-plane {
+        width: 50px;
+        height: 50px;
+      }
+
+      .tow-line {
+        left: -56px;
+        width: 60px;
+      }
     }
   </style>
 </head>
@@ -840,8 +1086,6 @@
         <p>Join OpportunityBridge for free.</p>
       </div>
 
-      <!-- Welcome note -->
-
       <div class="welcome-note">
 
         <div class="welcome-icon" aria-hidden="true">
@@ -855,8 +1099,6 @@
         </p>
 
       </div>
-
-      <!-- Message -->
 
       <div
         id="message"
@@ -960,18 +1202,57 @@
 
         </div>
 
-        <button
-          type="submit"
-          id="registerBtn"
-          class="register-button">
+        <!-- Plane pulls the Create Account button into place -->
 
-          <span id="buttonSpinner" class="spinner" hidden></span>
+        <div class="register-button-stage">
 
-          <span id="buttonText">
-            Create Account
+          <span
+            class="plane-trail"
+            aria-hidden="true">
           </span>
 
-        </button>
+          <span
+            class="tow-line"
+            aria-hidden="true">
+          </span>
+
+          <svg
+            class="paper-plane"
+            viewBox="0 0 64 64"
+            aria-hidden="true">
+
+            <path
+              d="M5 31.5L59 5L42 59L29 37L5 31.5Z">
+            </path>
+
+            <path
+              d="M29 37L59 5">
+            </path>
+
+            <path
+              d="M29 37L20 49">
+            </path>
+
+          </svg>
+
+          <button
+            type="submit"
+            id="registerBtn"
+            class="register-button">
+
+            <span
+              id="buttonSpinner"
+              class="spinner"
+              hidden>
+            </span>
+
+            <span id="buttonText">
+              Create Account
+            </span>
+
+          </button>
+
+        </div>
 
       </form>
 
@@ -1100,12 +1381,8 @@ function showMessage(text, type) {
     message.classList.add(
       "animate-error"
     );
-  }
 
-  /*
-   * Restart animation cleanly if another
-   * message is displayed immediately.
-   */
+  }
 
   requestAnimationFrame(function() {
 
@@ -1162,10 +1439,6 @@ function setLoading(isLoading) {
  * ============================================
  * SHOW / HIDE PASSWORD
  * ============================================
- *
- * This only changes the visual input type.
- * It does NOT change the password sent
- * to Supabase.
  */
 
 document
@@ -1233,29 +1506,22 @@ form.addEventListener(
 
     event.preventDefault();
 
-
     const email =
       document
         .getElementById("email")
         .value
         .trim();
 
-
     const password =
       document
         .getElementById("password")
         .value;
-
 
     const confirmPassword =
       document
         .getElementById("confirmPassword")
         .value;
 
-
-    /*
-     * Password length validation.
-     */
 
     if (password.length < 6) {
 
@@ -1268,10 +1534,6 @@ form.addEventListener(
     }
 
 
-    /*
-     * Password confirmation validation.
-     */
-
     if (password !== confirmPassword) {
 
       showMessage(
@@ -1283,19 +1545,10 @@ form.addEventListener(
     }
 
 
-    /*
-     * Start loading state.
-     */
-
     setLoading(true);
 
 
     try {
-
-      /*
-       * EXISTING SUPABASE SIGN UP
-       * PRESERVED.
-       */
 
       const { data, error } =
         await supabaseClient.auth.signUp({
@@ -1306,11 +1559,6 @@ form.addEventListener(
 
           options: {
 
-            /*
-             * Existing email verification
-             * redirect behavior preserved.
-             */
-
             emailRedirectTo:
               window.location.origin +
               "/index.html"
@@ -1319,10 +1567,6 @@ form.addEventListener(
 
         });
 
-
-      /*
-       * Supabase returned an error.
-       */
 
       if (error) {
 
@@ -1341,11 +1585,6 @@ form.addEventListener(
         return;
       }
 
-
-      /*
-       * If Supabase immediately created
-       * an active session.
-       */
 
       if (data && data.session) {
 
@@ -1374,10 +1613,6 @@ form.addEventListener(
       }
 
 
-      /*
-       * If email confirmation is required.
-       */
-
       showMessage(
         "Account created. Please check your email and confirm your account before logging in.",
         "success"
@@ -1387,11 +1622,6 @@ form.addEventListener(
 
       form.reset();
 
-
-      /*
-       * Return password fields to their
-       * secure hidden state after registration.
-       */
 
       document
         .querySelectorAll(".password-input")
@@ -1424,10 +1654,6 @@ form.addEventListener(
 
 
     } catch (err) {
-
-      /*
-       * Unexpected registration error.
-       */
 
       console.error(
         "REGISTRATION EXCEPTION:",
