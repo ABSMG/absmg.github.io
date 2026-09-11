@@ -6,28 +6,104 @@
     <priority>1.0</priority>
   </url>
 
-  <url><loc>https://absmg.github.io/scholarships.html</loc><priority>0.9</priority></url>
-  <url><loc>https://absmg.github.io/jobs.html</loc><priority>0.9</priority></url>
-  <url><loc>https://absmg.github.io/internships.html</loc><priority>0.9</priority></url>
-  <url><loc>https://absmg.github.io/courses.html</loc><priority>0.9</priority></url>
-  <url><loc>https://absmg.github.io/opportunities.html</loc><priority>0.9</priority></url>
+  <url>
+    <loc>https://absmg.github.io/scholarships.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-  <url><loc>https://absmg.github.io/ai-skills.html</loc><priority>0.8</priority></url>
-  <url><loc>https://absmg.github.io/career-skills.html</loc><priority>0.8</priority></url>
-  <url><loc>https://absmg.github.io/computer-skills.html</loc><priority>0.8</priority></url>
-  <url><loc>https://absmg.github.io/data-skills.html</loc><priority>0.8</priority></url>
-  <url><loc>https://absmg.github.io/digital-marketing.html</loc><priority>0.8</priority></url>
-  <url><loc>https://absmg.github.io/digital%E2%80%90skills.html</loc><priority>0.8</priority></url>
-  <url><loc>https://absmg.github.io/web-development.html</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://absmg.github.io/jobs.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-  <url><loc>https://absmg.github.io/article1.html</loc><priority>0.7</priority></url>
-  <url><loc>https://absmg.github.io/article2.html</loc><priority>0.7</priority></url>
-  <url><loc>https://absmg.github.io/article3.html</loc><priority>0.7</priority></url>
-  <url><loc>https://absmg.github.io/article4.html</loc><priority>0.7</priority></url>
+  <url>
+    <loc>https://absmg.github.io/internships.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-  <url><loc>https://absmg.github.io/about.html</loc><priority>0.5</priority></url>
-  <url><loc>https://absmg.github.io/contact.html</loc><priority>0.5</priority></url>
-  <url><loc>https://absmg.github.io/Privacy.html</loc><priority>0.3</priority></url>
-  <url><loc>https://absmg.github.io/Disclaimer.html</loc><priority>0.3</priority></url>
+  <url>
+    <loc>https://absmg.github.io/courses.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/opportunities.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/ai-skills.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/career-skills.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/computer-skills.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/data-skills.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/digital-marketing.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/digital-skills.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/web-development.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/article1.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/article2.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/article3.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/article4.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/about.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/contact.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/Privacy.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://absmg.github.io/Disclaimer.html</loc>
+    <priority>0.3</priority>
+  </url>
 
 </urlset>
