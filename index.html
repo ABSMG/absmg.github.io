@@ -6,20 +6,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- =========================
-       PRIMARY SEO
-  ========================== -->
-
   <title>OpportunityBridge | Scholarships, Jobs, Internships & Online Courses</title>
 
-  <meta name="description" content="Discover scholarships, jobs, internships, online courses, and digital opportunities with OpportunityBridge—your gateway to education, career growth, and opportunities in Tanzania and beyond.">
-<meta name="author" content="Anord Boniphace">
-<meta name="author-country" content="Tanzania">
-<meta name="geo.region" content="TZ">
-<meta name="geo.country" content="Tanzania">
- <meta name="google-site-verification" content="sebJZeuuxXnG6XhRDonUX5V39yiUex4BX3UIDmz3mkA" />       
-<meta name="google-adsense-account" content="ca-pub-2004981151172844">
+  <meta name="description"
+        content="Discover scholarships, jobs, internships, online courses, and digital opportunities with OpportunityBridge—your gateway to education, career growth, and opportunities in Tanzania and beyond.">
+
   <meta name="author" content="OpportunityBridge">
+  <meta name="author-country" content="Tanzania">
+  <meta name="geo.region" content="TZ">
+  <meta name="geo.country" content="Tanzania">
 
   <meta name="robots"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -27,13 +22,19 @@
   <meta name="googlebot"
         content="index, follow, max-image-preview:large">
 
-  <link rel="canonical" href="https://absmg.github.io/">
+  <meta name="google-site-verification"
+        content="sebJZeuuxXnG6XhRDonUX5V39yiUex4BX3UIDmz3mkA">
 
-  <!-- =========================
-       OPEN GRAPH
-  ========================== -->
+  <meta name="google-adsense-account"
+        content="ca-pub-2004981151172844">
 
-  <meta property="og:type" content="website">
+  <link rel="canonical"
+        href="https://absmg.github.io/">
+
+  <!-- Open Graph -->
+
+  <meta property="og:type"
+        content="website">
 
   <meta property="og:title"
         content="OpportunityBridge | Global Opportunities & Digital Resources">
@@ -50,11 +51,10 @@
   <meta property="og:locale"
         content="en_US">
 
-  <!-- =========================
-       TWITTER / X
-  ========================== -->
+  <!-- Twitter / X -->
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card"
+        content="summary">
 
   <meta name="twitter:title"
         content="OpportunityBridge | Scholarships, Jobs & Opportunities">
@@ -62,18 +62,14 @@
   <meta name="twitter:description"
         content="Find scholarships, jobs, internships, online courses and digital skills resources.">
 
-  <!-- =========================
-       GOOGLE ADSENSE
-  ========================== -->
+  <!-- Google AdSense -->
 
   <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous">
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
+          crossorigin="anonymous">
   </script>
 
-  <!-- =========================
-       STRUCTURED DATA
-  ========================== -->
+  <!-- Structured Data -->
 
   <script type="application/ld+json">
   {
@@ -87,6 +83,26 @@
   </script>
 
   <style>
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    :root {
+      --navy: #0b3d91;
+      --blue: #1769d1;
+      --gold: #f4c542;
+      --dark: #172033;
+      --muted: #64748b;
+      --light: #f6f8fc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --footer: #071f49;
+      --success: #166534;
+      --shadow: 0 4px 18px rgba(15, 23, 42, 0.07);
+      --shadow-hover: 0 10px 28px rgba(15, 23, 42, 0.11);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -99,14 +115,14 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: #f5f7fb;
-      color: #222;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     button,
@@ -114,295 +130,476 @@
       font-family: inherit;
     }
 
-    header {
-      background: #0b3d91;
-      color: white;
+    button {
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(244, 197, 66, 0.8);
+      outline-offset: 2px;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
     }
 
     .header-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
+      width: min(1200px, 92%);
+      min-height: 68px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 23px;
+      font-weight: 800;
       white-space: nowrap;
+      letter-spacing: -0.3px;
     }
 
     .logo span {
-      color: #ffd54a;
+      color: var(--gold);
     }
 
-    nav {
+    .main-nav {
       display: flex;
       align-items: center;
-      gap: 5px;
+      justify-content: flex-end;
+      gap: 3px;
     }
 
-    nav a {
-      padding: 9px 11px;
-      border-radius: 5px;
+    .main-nav a {
+      display: inline-block;
+      padding: 9px 10px;
+      border-radius: 6px;
+      color: var(--white);
       font-size: 14px;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: background 0.2s ease;
     }
 
-    nav a:hover {
-      background: rgba(255,255,255,0.15);
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.13);
     }
 
-    .login-btn {
-      border: 1px solid white;
+    .main-nav .login-link {
+      margin-left: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
     }
 
-    .register-btn {
-      background: #ffd54a;
-      color: #0b3d91;
-      font-weight: bold;
+    .main-nav .register-link {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .main-nav .register-link:hover {
+      background: #ffd85c;
     }
 
     .menu-btn {
       display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
+      border: 0;
+      background: transparent;
+      color: var(--white);
+      font-size: 27px;
+      line-height: 1;
+      padding: 7px;
     }
 
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
     .hero {
-      background: linear-gradient(135deg, #0b3d91, #1769d1);
-      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
       text-align: center;
-      padding: 75px 20px;
+      padding: 78px 20px 82px;
+    }
+
+    .hero-inner {
+      width: min(900px, 94%);
+      margin: 0 auto;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.13;
+      letter-spacing: -1px;
     }
 
     .hero p {
-      max-width: 760px;
-      margin: 0 auto 25px;
+      max-width: 780px;
+      margin: 0 auto 28px;
+      color: #eaf2ff;
       font-size: 18px;
-      opacity: 0.95;
+      line-height: 1.75;
     }
 
     .hero-buttons {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 12px;
       flex-wrap: wrap;
     }
 
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
     .btn {
       display: inline-block;
-      padding: 12px 22px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #ffd54a;
-      color: #0b3d91;
-    }
-
-    .btn-secondary {
-      border: 1px solid white;
-      color: white;
+      padding: 12px 21px;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: #ffd85c;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.14);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      color: var(--white);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+
+    /* =========================================================
+       LAYOUT
+    ========================================================= */
 
     .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .ad-container {
-      width: 100%;
-      min-height: 100px;
-      margin: 20px auto;
-      text-align: center;
-      overflow: hidden;
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 58px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .section-title h2 {
-      color: #0b3d91;
+      color: var(--navy);
       font-size: 30px;
+      line-height: 1.25;
       margin-bottom: 8px;
     }
 
     .section-title p {
-      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       ADSENSE
+    ========================================================= */
+
+    .ad-container {
+      width: min(1000px, 100%);
+      min-height: 90px;
+      margin: 5px auto 10px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+
+    /* =========================================================
+       SEARCH
+    ========================================================= */
+
+    .search-section {
+      padding-top: 48px;
+      padding-bottom: 20px;
     }
 
     .search-box {
-      max-width: 700px;
-      margin: 0 auto 35px;
+      width: min(720px, 100%);
+      margin: 0 auto;
       display: flex;
       gap: 10px;
     }
 
     .search-box input {
       flex: 1;
+      min-width: 0;
       padding: 13px 15px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      background: var(--white);
+      color: var(--dark);
       font-size: 16px;
       outline: none;
     }
 
+    .search-box input::placeholder {
+      color: #94a3b8;
+    }
+
     .search-box input:focus {
-      border-color: #0b3d91;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23, 105, 209, 0.10);
     }
 
     .search-box button {
-      padding: 13px 20px;
-      border: none;
-      border-radius: 6px;
-      background: #0b3d91;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
+      padding: 13px 22px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      transition: background 0.2s ease;
     }
+
+    .search-box button:hover {
+      background: var(--blue);
+    }
+
+
+    /* =========================================================
+       OPPORTUNITY CARDS
+    ========================================================= */
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      min-height: 245px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 7px 18px rgba(0,0,0,0.12);
-    }
-
-    .card-icon {
-      font-size: 35px;
-      margin-bottom: 12px;
+      transform: translateY(-3px);
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-hover);
     }
 
     .card h3 {
-      color: #0b3d91;
+      color: var(--navy);
+      font-size: 20px;
       margin-bottom: 10px;
     }
 
     .card p {
-      color: #666;
-      margin-bottom: 15px;
+      color: var(--muted);
+      margin-bottom: 18px;
     }
 
     .card-link {
-      color: #0b3d91;
-      font-weight: bold;
+      display: inline-block;
+      margin-top: auto;
+      color: var(--blue);
+      font-weight: 700;
     }
 
+    .card-link:hover {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 4px;
+      margin-bottom: 19px;
+      border-radius: 4px;
+      background: var(--gold);
+      font-size: 0;
+    }
+
+    .no-results {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
     .about {
-      background: white;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .about-content {
-      max-width: 900px;
-      margin: auto;
+      width: min(850px, 100%);
+      margin: 0 auto;
       text-align: center;
     }
 
     .about-content p {
-      color: #555;
+      color: #475569;
       margin-bottom: 15px;
     }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =========================================================
+       HOW IT WORKS
+    ========================================================= */
 
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 25px;
+      gap: 22px;
+      margin-top: 28px;
     }
 
     .step {
-      background: white;
-      padding: 25px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
       text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      box-shadow: var(--shadow);
     }
 
     .step-number {
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-      margin: 0 auto 12px;
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
-      background: #0b3d91;
-      color: white;
-      font-weight: bold;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
     }
 
+    .step h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
     .cta {
-      background: #0b3d91;
-      color: white;
+      background: var(--navy);
+      color: var(--white);
       text-align: center;
-      padding: 55px 20px;
+      padding: 58px 20px;
+    }
+
+    .cta-inner {
+      width: min(760px, 94%);
+      margin: 0 auto;
     }
 
     .cta h2 {
       margin-bottom: 12px;
       font-size: 30px;
+      line-height: 1.3;
     }
 
     .cta p {
-      max-width: 700px;
-      margin: 0 auto 22px;
+      margin: 0 auto 24px;
+      color: #dbe8fb;
     }
 
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
     footer {
-      background: #071f49;
-      color: white;
-      padding: 35px 20px 20px;
+      background: var(--footer);
+      color: var(--white);
+      padding: 48px 20px 24px;
     }
 
     .footer-container {
-      max-width: 1200px;
-      margin: auto;
+      width: min(1100px, 92%);
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 30px;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 38px;
     }
 
     footer h3,
     footer h4 {
-      margin-bottom: 12px;
+      margin-bottom: 13px;
+      color: var(--white);
+    }
+
+    footer h3 {
+      font-size: 21px;
     }
 
     footer p {
-      color: #d3d9e5;
+      max-width: 430px;
+      color: #cbd5e1;
     }
 
     footer ul {
@@ -414,24 +611,42 @@
     }
 
     footer a {
-      color: #d3d9e5;
+      color: #cbd5e1;
+      transition: color 0.2s ease;
     }
 
     footer a:hover {
-      color: white;
+      color: var(--gold);
     }
 
     .copyright {
-      max-width: 1200px;
-      margin: 25px auto 0;
+      width: min(1100px, 92%);
+      margin: 32px auto 0;
       padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.15);
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
       text-align: center;
-      color: #c7cfdd;
-      font-size: 14px;
+      color: #aeb9c9;
+      font-size: 13px;
     }
 
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1050px) {
+
+      .main-nav a {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 13px;
+      }
+
+    }
+
+
     @media (max-width: 900px) {
+
       .cards {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -443,57 +658,87 @@
       .footer-container {
         grid-template-columns: 1fr 1fr;
       }
+
     }
 
-    @media (max-width: 700px) {
-      .header-container {
-        padding: 13px 15px;
-      }
 
-      .logo {
-        font-size: 21px;
+    @media (max-width: 760px) {
+
+      .header-container {
+        min-height: 64px;
       }
 
       .menu-btn {
         display: block;
       }
 
-      nav {
+      .main-nav {
         display: none;
         position: absolute;
-        top: 62px;
+        top: 64px;
         left: 0;
         right: 0;
-        background: #0b3d91;
+        padding: 12px 18px 18px;
+        background: var(--navy);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
         flex-direction: column;
         align-items: stretch;
-        padding: 10px 15px 15px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        gap: 3px;
       }
 
-      nav.active {
+      .main-nav.active {
         display: flex;
       }
 
-      nav a {
+      .main-nav a {
         width: 100%;
         padding: 12px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .main-nav .login-link {
+        margin-left: 0;
+        margin-top: 4px;
       }
 
       .hero {
-        padding: 55px 18px;
+        padding: 60px 18px 65px;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 34px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
+    }
+
+
+    @media (max-width: 600px) {
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .container {
+        width: min(92%, 1100px);
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+
+      .section-title h2 {
+        font-size: 27px;
+      }
+
       .cards {
         grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
       }
 
       .search-box {
@@ -506,18 +751,48 @@
 
       .footer-container {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
+
+      .cta {
+        padding: 50px 18px;
+      }
+
+      .cta h2 {
+        font-size: 27px;
+      }
+
     }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================
+  <!-- =======================================================
        HEADER / NAVIGATION
-  ========================== -->
+  ======================================================== -->
 
-  <header>
+  <header class="site-header">
+
     <div class="header-container">
 
       <a href="index.html"
@@ -527,7 +802,9 @@
       </a>
 
       <button
+        type="button"
         class="menu-btn"
+        id="menuButton"
         onclick="toggleMenu()"
         aria-label="Open navigation menu"
         aria-controls="mainNav"
@@ -535,97 +812,89 @@
         ☰
       </button>
 
-      <nav id="mainNav" aria-label="Main navigation">
+      <nav
+        id="mainNav"
+        class="main-nav"
+        aria-label="Main navigation">
 
         <a href="index.html">Home</a>
 
-        <a href="scholarships.html">
-          Scholarships
-        </a>
+        <a href="scholarships.html">Scholarships</a>
 
-        <a href="jobs.html">
-          Jobs
-        </a>
+        <a href="jobs.html">Jobs</a>
 
-        <a href="internships.html">
-          Internships
-        </a>
+        <a href="internships.html">Internships</a>
 
-        <a href="courses.html">
-          Courses
-        </a>
+        <a href="courses.html">Courses</a>
 
-        <a href="opportunities.html">
-          Opportunities
-        </a>
+        <a href="opportunities.html">Opportunities</a>
 
-        <a href="about.html">
-          About
-        </a>
+        <a href="about.html">About</a>
 
-        <a href="contact.html">
-          Contact
-        </a>
+        <a href="contact.html">Contact</a>
 
-        <!-- LOGIN FEATURE KEPT -->
         <a href="login.html"
-           class="login-btn">
+           class="login-link">
           Login
         </a>
 
-        <!-- REGISTER FEATURE KEPT -->
         <a href="register.html"
-           class="register-btn">
+           class="register-link">
           Register
         </a>
 
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- =======================================================
+       MAIN CONTENT
+  ======================================================== -->
 
   <main>
 
+
+    <!-- HERO -->
+
     <section class="hero">
 
-      <h1>
-        Discover Opportunities. Build Your Future.
-      </h1>
+      <div class="hero-inner">
 
-      <p>
-        OpportunityBridge connects students, graduates and job seekers
-        with scholarships, jobs, internships, online courses and digital
-        opportunities from Tanzania and around the world.
-      </p>
+        <h1>
+          Discover Opportunities. Build Your Future.
+        </h1>
 
-      <div class="hero-buttons">
+        <p>
+          OpportunityBridge connects students, graduates and job seekers
+          with scholarships, jobs, internships, online courses and digital
+          opportunities from Tanzania and around the world.
+        </p>
 
-        <a
-          href="opportunities.html"
-          class="btn btn-primary">
-          Explore Opportunities
-        </a>
+        <div class="hero-buttons">
 
-        <!-- REGISTER FEATURE KEPT -->
-        <a
-          href="register.html"
-          class="btn btn-secondary">
-          Create Free Account
-        </a>
+          <a href="opportunities.html"
+             class="btn btn-primary">
+            Explore Opportunities
+          </a>
+
+          <a href="register.html"
+             class="btn btn-secondary">
+            Create Free Account
+          </a>
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
-         ADSENSE
-    ========================== -->
+    <!-- =====================================================
+         ADSENSE 1
+    ====================================================== -->
 
     <div class="container">
 
@@ -649,12 +918,12 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =====================================================
          SEARCH
-    ========================== -->
+    ====================================================== -->
 
     <section
-      class="container"
+      class="container search-section"
       aria-labelledby="search-heading">
 
       <div class="section-title">
@@ -664,35 +933,34 @@
         </h2>
 
         <p>
-          Search scholarships, jobs, internships, courses and more.
+          Search scholarships, jobs, internships, courses and other resources.
         </p>
 
       </div>
 
-      <div class="search-box">
+      <form
+        class="search-box"
+        onsubmit="event.preventDefault(); searchCards();">
 
         <input
           type="search"
           id="searchInput"
           placeholder="Search opportunities..."
           aria-label="Search opportunities"
-          autocomplete="off"
-          onkeyup="searchCards()">
+          autocomplete="off">
 
-        <button
-          type="button"
-          onclick="searchCards()">
+        <button type="submit">
           Search
         </button>
 
-      </div>
+      </form>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          OPPORTUNITIES
-    ========================== -->
+    ====================================================== -->
 
     <section
       class="container"
@@ -705,13 +973,15 @@
         </h2>
 
         <p>
-          Find the right opportunity for your next step.
+          Find useful resources for education, careers and professional development.
         </p>
 
       </div>
 
 
-      <div class="cards" id="opportunityCards">
+      <div
+        class="cards"
+        id="opportunityCards">
 
 
         <!-- SCHOLARSHIPS -->
@@ -720,7 +990,6 @@
 
           <div class="card-icon"
                aria-hidden="true">
-            🎓
           </div>
 
           <h3>
@@ -732,9 +1001,8 @@
             in Tanzania and around the world.
           </p>
 
-          <a
-            href="scholarships.html"
-            class="card-link">
+          <a href="scholarships.html"
+             class="card-link">
             Explore Scholarships →
           </a>
 
@@ -747,7 +1015,6 @@
 
           <div class="card-icon"
                aria-hidden="true">
-            💼
           </div>
 
           <h3>
@@ -759,9 +1026,8 @@
             students and professionals.
           </p>
 
-          <a
-            href="jobs.html"
-            class="card-link">
+          <a href="jobs.html"
+             class="card-link">
             Explore Jobs →
           </a>
 
@@ -774,7 +1040,6 @@
 
           <div class="card-icon"
                aria-hidden="true">
-            🧑‍💻
           </div>
 
           <h3>
@@ -782,13 +1047,12 @@
           </h3>
 
           <p>
-            Find internships that help you gain
-            valuable experience.
+            Find internships that can help you gain
+            practical knowledge and experience.
           </p>
 
-          <a
-            href="internships.html"
-            class="card-link">
+          <a href="internships.html"
+             class="card-link">
             Explore Internships →
           </a>
 
@@ -801,7 +1065,6 @@
 
           <div class="card-icon"
                aria-hidden="true">
-            📚
           </div>
 
           <h3>
@@ -813,9 +1076,8 @@
             and educational platforms.
           </p>
 
-          <a
-            href="courses.html"
-            class="card-link">
+          <a href="courses.html"
+             class="card-link">
             Explore Courses →
           </a>
 
@@ -828,7 +1090,6 @@
 
           <div class="card-icon"
                aria-hidden="true">
-            💻
           </div>
 
           <h3>
@@ -837,12 +1098,11 @@
 
           <p>
             Improve your digital skills and learn
-            technologies for your future.
+            technologies that can support your future.
           </p>
 
-          <a
-            href="ai-skills.html"
-            class="card-link">
+          <a href="ai-skills.html"
+             class="card-link">
             Learn Digital Skills →
           </a>
 
@@ -855,7 +1115,6 @@
 
           <div class="card-icon"
                aria-hidden="true">
-            🌍
           </div>
 
           <h3>
@@ -864,25 +1123,35 @@
 
           <p>
             Explore international opportunities,
-            competitions and programs.
+            competitions and educational programs.
           </p>
 
-          <a
-            href="opportunities.html"
-            class="card-link">
+          <a href="opportunities.html"
+             class="card-link">
             Explore Opportunities →
           </a>
 
         </article>
+
+
+        <!-- SEARCH EMPTY STATE -->
+
+        <div
+          id="noResults"
+          class="no-results"
+          role="status">
+          No matching opportunity category was found.
+          Try another search term.
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
-         SECOND ADSENSE
-    ========================== -->
+    <!-- =====================================================
+         ADSENSE 2
+    ====================================================== -->
 
     <div class="container">
 
@@ -906,12 +1175,13 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =====================================================
          ABOUT
-    ========================== -->
+    ====================================================== -->
 
-    <section class="about"
-             aria-labelledby="about-heading">
+    <section
+      class="about"
+      aria-labelledby="about-heading">
 
       <div class="container">
 
@@ -949,12 +1219,13 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          HOW IT WORKS
-    ========================== -->
+    ====================================================== -->
 
-    <section class="container"
-             aria-labelledby="how-heading">
+    <section
+      class="container"
+      aria-labelledby="how-heading">
 
       <div class="section-title">
 
@@ -967,7 +1238,6 @@
         </p>
 
       </div>
-
 
       <div class="steps">
 
@@ -1003,7 +1273,7 @@
 
           <p>
             Read the available information and
-            choose opportunities that match you.
+            choose opportunities that match your goals.
           </p>
 
         </article>
@@ -1032,37 +1302,40 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          CTA
-    ========================== -->
+    ====================================================== -->
 
-    <section class="cta"
-             aria-labelledby="cta-heading">
+    <section
+      class="cta"
+      aria-labelledby="cta-heading">
 
-      <h2 id="cta-heading">
-        Don't Miss Your Next Opportunity
-      </h2>
+      <div class="cta-inner">
 
-      <p>
-        Create your free OpportunityBridge account
-        and keep exploring useful opportunities.
-      </p>
+        <h2 id="cta-heading">
+          Don't Miss Your Next Opportunity
+        </h2>
 
-      <!-- REGISTER FEATURE KEPT -->
-      <a
-        href="register.html"
-        class="btn btn-primary">
-        Get Started Free
-      </a>
+        <p>
+          Create your free OpportunityBridge account
+          and keep exploring useful opportunities.
+        </p>
+
+        <a href="register.html"
+           class="btn btn-primary">
+          Get Started Free
+        </a>
+
+      </div>
 
     </section>
 
   </main>
 
 
-  <!-- =========================
+  <!-- =======================================================
        FOOTER
-  ========================== -->
+  ======================================================== -->
 
   <footer>
 
@@ -1158,14 +1431,12 @@
             </a>
           </li>
 
-          <!-- LOGIN FEATURE KEPT -->
           <li>
             <a href="login.html">
               Login
             </a>
           </li>
 
-          <!-- REGISTER FEATURE KEPT -->
           <li>
             <a href="register.html">
               Register
@@ -1189,15 +1460,15 @@
   </footer>
 
 
-  <!-- =========================
+  <!-- =======================================================
        JAVASCRIPT
-  ========================== -->
+  ======================================================== -->
 
   <script>
 
-    /* =========================
+    /* =====================================================
        MOBILE MENU
-    ========================== */
+    ====================================================== */
 
     function toggleMenu() {
 
@@ -1205,7 +1476,7 @@
         document.getElementById("mainNav");
 
       const menuButton =
-        document.querySelector(".menu-btn");
+        document.getElementById("menuButton");
 
       nav.classList.toggle("active");
 
@@ -1217,28 +1488,39 @@
         isOpen ? "true" : "false"
       );
 
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close navigation menu"
+          : "Open navigation menu"
+      );
+
     }
 
 
-    /* =========================
+    /* =====================================================
        SEARCH
-    ========================== */
+    ====================================================== */
 
     function searchCards() {
 
+      const inputElement =
+        document.getElementById("searchInput");
+
       const input =
-        document
-          .getElementById("searchInput")
-          .value
+        inputElement.value
           .toLowerCase()
           .trim();
-
 
       const cards =
         document.querySelectorAll(
           "#opportunityCards .card"
         );
 
+      const noResults =
+        document.getElementById("noResults");
+
+      let visibleCards = 0;
 
       cards.forEach(function(card) {
 
@@ -1252,6 +1534,8 @@
 
           card.style.display = "";
 
+          visibleCards++;
+
         } else {
 
           card.style.display = "none";
@@ -1260,13 +1544,30 @@
 
       });
 
+      if (noResults) {
+
+        noResults.style.display =
+          visibleCards === 0
+            ? "block"
+            : "none";
+
+      }
+
     }
 
 
-    /* =========================
-       CLOSE MOBILE MENU
-       AFTER CLICKING A LINK
-    ========================== */
+    /* =====================================================
+       ENTER KEY SEARCH
+    ====================================================== */
+
+    document
+      .getElementById("searchInput")
+      .addEventListener("input", searchCards);
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU AFTER LINK CLICK
+    ====================================================== */
 
     document
       .querySelectorAll("#mainNav a")
@@ -1278,7 +1579,7 @@
             document.getElementById("mainNav");
 
           const menuButton =
-            document.querySelector(".menu-btn");
+            document.getElementById("menuButton");
 
           nav.classList.remove("active");
 
@@ -1287,9 +1588,81 @@
             "false"
           );
 
+          menuButton.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+          );
+
         });
 
       });
+
+
+    /* =====================================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+    ====================================================== */
+
+    document.addEventListener("click", function(event) {
+
+      const nav =
+        document.getElementById("mainNav");
+
+      const menuButton =
+        document.getElementById("menuButton");
+
+      if (
+        window.innerWidth <= 760 &&
+        nav.classList.contains("active") &&
+        !nav.contains(event.target) &&
+        !menuButton.contains(event.target)
+      ) {
+
+        nav.classList.remove("active");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+
+      }
+
+    });
+
+
+    /* =====================================================
+       RESET MOBILE NAVIGATION ON RESIZE
+    ====================================================== */
+
+    window.addEventListener("resize", function() {
+
+      const nav =
+        document.getElementById("mainNav");
+
+      const menuButton =
+        document.getElementById("menuButton");
+
+      if (window.innerWidth > 760) {
+
+        nav.classList.remove("active");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
+
+      }
+
+    });
 
   </script>
 
