@@ -17,36 +17,28 @@
   <meta name="googlebot"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <meta name="theme-color" content="#0b5ed7">
+  <meta name="theme-color" content="#0B3D91">
 
-  <!-- CANONICAL -->
   <link rel="canonical"
         href="https://absmg.github.io/jobs.html">
 
   <!-- OPEN GRAPH -->
   <meta property="og:type" content="website">
-
   <meta property="og:title"
         content="Jobs in Tanzania & Remote Careers | OpportunityBridge">
-
   <meta property="og:description"
         content="Explore jobs, graduate opportunities, technology careers, health jobs, public service recruitment and remote work resources.">
-
   <meta property="og:url"
         content="https://absmg.github.io/jobs.html">
-
   <meta property="og:site_name"
         content="OpportunityBridge">
-
   <meta property="og:locale"
         content="en_US">
 
   <!-- TWITTER -->
   <meta name="twitter:card" content="summary">
-
   <meta name="twitter:title"
         content="Jobs in Tanzania & Remote Careers | OpportunityBridge">
-
   <meta name="twitter:description"
         content="Find job opportunities, graduate careers, technology jobs, health careers and remote work resources.">
 
@@ -56,8 +48,7 @@
 
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"></script>
 
   <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
@@ -99,6 +90,19 @@
   </script>
 
   <style>
+    :root {
+      --navy: #0B3D91;
+      --blue: #1769D1;
+      --gold: #F4C542;
+      --bg: #F6F8FC;
+      --white: #FFFFFF;
+      --text: #172033;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --dark: #071F49;
+      --success-bg: #EEF6FF;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -111,144 +115,185 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: #f5f7fb;
-      color: #1f2937;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
-    header {
-      background: #0b5ed7;
-      color: white;
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 2px 12px rgba(15, 23, 42, .14);
     }
 
-    .header-container {
-      max-width: 1150px;
+    .nav-container {
+      width: min(1200px, 92%);
+      min-height: 68px;
       margin: auto;
-      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
-    .logo {
-      color: white;
+    .brand {
       font-size: 23px;
-      font-weight: 700;
-      letter-spacing: .3px;
+      font-weight: 800;
+      white-space: nowrap;
+      letter-spacing: .1px;
     }
 
-    .nav {
+    .brand span {
+      color: var(--gold);
+    }
+
+    .main-nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 3px;
     }
 
-    .nav a {
-      color: white;
-      font-size: 15px;
+    .main-nav a {
+      padding: 9px 10px;
+      border-radius: 6px;
+      font-size: 14px;
       font-weight: 600;
+      color: var(--white);
+      transition: background .2s ease;
     }
 
-    .nav a:hover {
-      opacity: .8;
+    .main-nav a:hover {
+      background: rgba(255,255,255,.12);
     }
 
-    .nav a.active {
-      border-bottom: 2px solid white;
-      padding-bottom: 3px;
+    .main-nav a.active {
+      background: rgba(255,255,255,.13);
+    }
+
+    .login-link {
+      margin-left: 5px;
+      border: 1px solid rgba(255,255,255,.75);
+    }
+
+    .register-link {
+      background: var(--gold);
+      color: var(--navy) !important;
+      margin-left: 2px;
+    }
+
+    .register-link:hover {
+      background: #FFD866 !important;
     }
 
     .menu-toggle {
       display: none;
-      border: none;
+      border: 0;
       background: transparent;
-      color: white;
-      font-size: 29px;
+      color: var(--white);
+      font-size: 28px;
       cursor: pointer;
+      line-height: 1;
+      padding: 5px;
     }
 
     /* HERO */
 
     .hero {
-      background: linear-gradient(135deg, #0b5ed7, #084298);
-      color: white;
-      padding: 65px 20px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
+      padding: 68px 20px;
       text-align: center;
     }
 
     .hero-content {
-      max-width: 850px;
+      width: min(850px, 92%);
       margin: auto;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
+      font-size: clamp(34px, 5vw, 50px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      font-weight: 800;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 760px;
       margin: auto;
-      font-size: 18px;
-      opacity: .95;
+      color: #EAF2FF;
+      font-size: 17px;
     }
 
     /* MAIN */
 
     main {
-      max-width: 1150px;
+      width: min(1100px, 92%);
       margin: auto;
-      padding: 40px 20px 70px;
+      padding: 55px 0 70px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 12px;
+      color: var(--navy);
       font-size: 30px;
-      color: #111827;
+      line-height: 1.25;
+      margin-bottom: 10px;
     }
 
     .section-intro {
-      max-width: 780px;
-      margin: 0 auto 30px;
+      max-width: 790px;
+      margin: 0 auto 32px;
       text-align: center;
-      color: #667085;
+      color: var(--muted);
     }
 
     .section-intro a,
-    .info-section a:not(.job-btn) {
-      color: #0b5ed7;
+    .info-section a:not(.btn) {
+      color: var(--blue);
       font-weight: 700;
     }
 
     /* SEARCH */
 
     .search-area {
-      max-width: 750px;
-      margin: 0 auto 30px;
+      max-width: 760px;
+      margin: 0 auto 22px;
     }
 
     .search-box {
       width: 100%;
-      padding: 15px 18px;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
+      padding: 14px 17px;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--text);
       font-size: 16px;
       outline: none;
-      background: white;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .search-box::placeholder {
+      color: #94A3B8;
     }
 
     .search-box:focus {
-      border-color: #0b5ed7;
-      box-shadow: 0 0 0 3px rgba(11,94,215,.12);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23,105,209,.12);
     }
 
     /* FILTERS */
@@ -257,33 +302,43 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
+      gap: 8px;
+      margin-bottom: 32px;
     }
 
     .filter-btn {
-      border: 1px solid #d0d5dd;
-      background: white;
-      color: #344054;
-      padding: 9px 15px;
-      border-radius: 20px;
+      border: 1px solid #CBD5E1;
+      background: var(--white);
+      color: #334155;
+      padding: 8px 15px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
+      transition: all .2s ease;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #0b5ed7;
-      color: white;
-      border-color: #0b5ed7;
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .filter-btn:focus-visible,
+    .job-btn:focus-visible,
+    .main-nav a:focus-visible,
+    .menu-toggle:focus-visible {
+      outline: 3px solid rgba(244,197,66,.65);
+      outline-offset: 2px;
     }
 
     /* ADS */
 
     .ad-container {
+      width: min(1000px, 100%);
       min-height: 90px;
-      margin: 25px auto;
+      margin: 28px auto;
       text-align: center;
       overflow: hidden;
     }
@@ -297,50 +352,52 @@
     }
 
     .job-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 24px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 5px 18px rgba(15,23,42,.06);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(15,23,42,.06);
       transition: transform .2s ease, box-shadow .2s ease;
     }
 
     .job-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(15,23,42,.10);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(15,23,42,.10);
     }
 
     .badge {
       display: inline-block;
       align-self: flex-start;
-      background: #e8f1ff;
-      color: #0b5ed7;
-      padding: 5px 10px;
-      border-radius: 20px;
+      background: #EAF2FF;
+      color: var(--navy);
+      border: 1px solid #D8E7FF;
+      padding: 4px 9px;
+      border-radius: 5px;
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 13px;
+      margin-bottom: 14px;
     }
 
     .job-card h3 {
+      color: var(--navy);
       font-size: 20px;
-      color: #111827;
+      line-height: 1.3;
       margin-bottom: 10px;
     }
 
     .job-card p {
-      color: #667085;
+      color: var(--muted);
       font-size: 14px;
-      margin-bottom: 13px;
+      margin-bottom: 15px;
     }
 
     .details {
       list-style: none;
-      color: #475467;
+      color: #475569;
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .details li {
@@ -348,48 +405,53 @@
     }
 
     .details strong {
-      color: #1f2937;
+      color: var(--text);
     }
 
     .job-btn {
       display: inline-block;
+      width: 100%;
       margin-top: auto;
       text-align: center;
-      background: #0b5ed7;
-      color: white !important;
+      background: var(--blue);
+      color: var(--white) !important;
       padding: 11px 16px;
-      border-radius: 8px;
+      border-radius: 7px;
       font-weight: 700;
       font-size: 14px;
+      transition: background .2s ease;
     }
 
     .job-btn:hover {
-      background: #084298;
+      background: var(--navy);
     }
 
-    /* INFO */
+    /* INFORMATION SECTIONS */
 
     .info-section {
-      margin-top: 55px;
-      background: white;
-      border-radius: 14px;
+      margin-top: 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
       padding: 30px;
-      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 14px rgba(15,23,42,.04);
     }
 
     .info-section h2 {
-      margin-bottom: 14px;
-      color: #111827;
+      color: var(--navy);
+      font-size: 25px;
+      line-height: 1.3;
+      margin-bottom: 13px;
     }
 
     .info-section p {
-      color: #4b5563;
+      color: #475569;
       margin-bottom: 15px;
     }
 
     .info-section ul {
-      margin-left: 20px;
-      color: #4b5563;
+      margin: 8px 0 0 20px;
+      color: #475569;
     }
 
     .info-section li {
@@ -397,129 +459,155 @@
     }
 
     .notice {
-      margin-top: 25px;
-      padding: 17px;
-      border-left: 4px solid #0b5ed7;
-      background: #eef5ff;
+      margin-top: 23px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--blue);
+      background: var(--success-bg);
       border-radius: 6px;
-      color: #344054;
+      color: #334155;
       font-size: 14px;
+    }
+
+    .info-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .info-actions .job-btn {
+      width: auto;
+      min-width: 150px;
+      margin-top: 0;
     }
 
     /* NO RESULTS */
 
     .no-results {
       display: none;
-      text-align: center;
-      padding: 30px;
-      color: #667085;
       grid-column: 1 / -1;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 20px;
+      color: var(--muted);
     }
 
     /* FOOTER */
 
     footer {
-      background: #111827;
-      color: #d1d5db;
-      padding: 35px 20px;
+      background: var(--dark);
+      color: #D8E0ED;
+      padding: 45px 20px 25px;
     }
 
-    .footer-container {
-      max-width: 1150px;
+    .footer-grid {
+      width: min(1100px, 92%);
       margin: auto;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
     }
 
-    .footer-links {
-      margin-bottom: 18px;
+    footer h3,
+    footer h4 {
+      color: var(--white);
+      margin-bottom: 12px;
     }
 
-    .footer-links a {
-      color: #d1d5db;
-      margin: 0 9px;
+    footer p {
+      color: #B9C5D6;
       font-size: 14px;
     }
 
-    .footer-links a:hover {
-      color: white;
+    footer a {
+      display: block;
+      margin: 7px 0;
+      color: #D8E0ED;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
     }
 
     .copyright {
+      width: min(1100px, 92%);
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      text-align: center;
       font-size: 13px;
-      color: #9ca3af;
+      color: #9EADC1;
     }
 
-    /* TABLET */
+    /* RESPONSIVE */
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
+
+      .main-nav a {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
 
       .job-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .nav {
-        gap: 13px;
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    /* MOBILE */
-
-    @media (max-width: 750px) {
-
-      .header-container {
-        padding: 13px 17px;
-      }
+    @media (max-width: 850px) {
 
       .menu-toggle {
         display: block;
       }
 
-      .nav {
+      .main-nav {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 68px;
         left: 0;
         right: 0;
-        background: #0b5ed7;
+        background: var(--navy);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 10px 0 15px;
-        box-shadow: 0 5px 12px rgba(0,0,0,.15);
+        padding: 10px 18px 18px;
+        box-shadow: 0 8px 18px rgba(0,0,0,.15);
       }
 
-      .nav.active {
+      .main-nav.active {
         display: flex;
       }
 
-      .nav a {
-        padding: 12px 20px;
-        display: block;
+      .main-nav a {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
       }
 
-      .nav a.active {
-        border-bottom: none;
-        background: rgba(255,255,255,.10);
+      .login-link {
+        margin: 4px 0 0;
       }
+
+      .register-link {
+        margin: 4px 0 0;
+      }
+    }
+
+    @media (max-width: 650px) {
 
       .hero {
-        padding: 48px 18px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
+        padding: 55px 18px;
       }
 
       main {
-        padding: 30px 16px 55px;
-      }
-
-      .section-title {
-        font-size: 26px;
+        width: min(92%, 560px);
+        padding: 42px 0 55px;
       }
 
       .job-grid {
@@ -527,30 +615,44 @@
       }
 
       .info-section {
-        padding: 22px;
+        padding: 24px 20px;
       }
 
-      .job-btn {
+      .info-actions {
+        flex-direction: column;
+      }
+
+      .info-actions .job-btn {
         width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 400px) {
 
-      .logo {
+      .brand {
         font-size: 20px;
       }
 
       .hero h1 {
-        font-size: 28px;
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 15px;
       }
 
       .job-card {
-        padding: 19px;
+        padding: 20px;
       }
 
       .filter-btn {
         font-size: 13px;
+        padding: 8px 12px;
       }
     }
   </style>
@@ -560,15 +662,15 @@
 
   <!-- HEADER -->
 
-  <header>
+  <header class="site-header">
 
-    <div class="header-container">
+    <div class="nav-container">
 
       <a
         href="index.html"
-        class="logo"
+        class="brand"
         aria-label="OpportunityBridge Home">
-        OpportunityBridge
+        Opportunity<span>Bridge</span>
       </a>
 
       <button
@@ -582,13 +684,11 @@
       </button>
 
       <nav
-        class="nav"
+        class="main-nav"
         id="mainNav"
         aria-label="Main navigation">
 
-        <a href="index.html">
-          Home
-        </a>
+        <a href="index.html">Home</a>
 
         <a href="scholarships.html">
           Scholarships
@@ -621,6 +721,18 @@
           Contact
         </a>
 
+        <a
+          href="login.html"
+          class="login-link">
+          Login
+        </a>
+
+        <a
+          href="register.html"
+          class="register-link">
+          Register
+        </a>
+
       </nav>
 
     </div>
@@ -634,9 +746,7 @@
 
     <div class="hero-content">
 
-      <h1>
-        Job Opportunities
-      </h1>
+      <h1>Job Opportunities</h1>
 
       <p>
         Discover employment opportunities, graduate careers,
@@ -668,16 +778,10 @@
         effectively.
 
         You can also explore our
-        <a href="scholarships.html">
-          scholarships
-        </a>,
-        <a href="internships.html">
-          internships
-        </a>
+        <a href="scholarships.html">scholarships</a>,
+        <a href="internships.html">internships</a>
         and
-        <a href="courses.html">
-          online courses
-        </a>.
+        <a href="courses.html">online courses</a>.
 
       </p>
 
@@ -775,10 +879,9 @@
     </div>
 
 
-    <!-- JOBS -->
+    <!-- JOB LIST -->
 
-    <section
-      aria-labelledby="job-list-title">
+    <section aria-labelledby="job-list-title">
 
       <h2
         id="job-list-title"
@@ -791,7 +894,6 @@
         class="job-grid"
         id="jobGrid">
 
-
         <!-- JOB 1 -->
 
         <article
@@ -799,9 +901,7 @@
           data-category="tanzania"
           data-search="tanzania jobs general employment career">
 
-          <span class="badge">
-            Tanzania
-          </span>
+          <span class="badge">Tanzania</span>
 
           <h3>
             Tanzania Job Opportunities
@@ -846,9 +946,7 @@
           data-category="graduate"
           data-search="graduate jobs fresh graduates entry level Tanzania">
 
-          <span class="badge">
-            Graduate
-          </span>
+          <span class="badge">Graduate</span>
 
           <h3>
             Graduate &amp; Entry-Level Jobs
@@ -893,9 +991,7 @@
           data-category="technology"
           data-search="technology IT software developer programming jobs">
 
-          <span class="badge">
-            Technology
-          </span>
+          <span class="badge">Technology</span>
 
           <h3>
             Technology &amp; IT Careers
@@ -940,9 +1036,7 @@
           data-category="health"
           data-search="health medical laboratory nursing medicine healthcare jobs">
 
-          <span class="badge">
-            Health
-          </span>
+          <span class="badge">Health</span>
 
           <h3>
             Health &amp; Medical Careers
@@ -987,9 +1081,7 @@
           data-category="remote"
           data-search="remote online jobs work from home digital jobs">
 
-          <span class="badge">
-            Remote
-          </span>
+          <span class="badge">Remote</span>
 
           <h3>
             Remote &amp; Digital Jobs
@@ -1035,9 +1127,7 @@
           data-category="tanzania"
           data-search="public service government jobs Tanzania employment">
 
-          <span class="badge">
-            Public Service
-          </span>
+          <span class="badge">Public Service</span>
 
           <h3>
             Public Service Careers
@@ -1083,9 +1173,7 @@
           role="status"
           aria-live="polite">
 
-          <strong>
-            No jobs found.
-          </strong>
+          <strong>No jobs found.</strong>
 
           <br>
 
@@ -1136,7 +1224,6 @@
       </p>
 
       <ul>
-
         <li>
           Identify your skills, qualifications and career interests.
         </li>
@@ -1160,7 +1247,6 @@
         <li>
           Keep records of positions you have applied for.
         </li>
-
       </ul>
 
       <div class="notice">
@@ -1198,7 +1284,7 @@
         that can help you develop professional and digital skills.
       </p>
 
-      <p>
+      <div class="info-actions">
 
         <a
           href="courses.html"
@@ -1206,7 +1292,7 @@
           Explore Courses
         </a>
 
-      </p>
+      </div>
 
     </section>
 
@@ -1227,7 +1313,7 @@
         available through OpportunityBridge.
       </p>
 
-      <p>
+      <div class="info-actions">
 
         <a
           href="scholarships.html"
@@ -1235,15 +1321,11 @@
           Scholarships
         </a>
 
-        <br><br>
-
         <a
           href="internships.html"
           class="job-btn">
           Internships
         </a>
-
-        <br><br>
 
         <a
           href="opportunities.html"
@@ -1251,7 +1333,7 @@
           All Opportunities
         </a>
 
-      </p>
+      </div>
 
     </section>
 
@@ -1281,13 +1363,9 @@
 
       <p>
         Learn more about
-        <a href="about.html">
-          OpportunityBridge
-        </a>
+        <a href="about.html">OpportunityBridge</a>
         or visit our
-        <a href="contact.html">
-          Contact page
-        </a>
+        <a href="contact.html">Contact page</a>
         if you have a correction or useful information to share.
       </p>
 
@@ -1300,59 +1378,45 @@
 
   <footer>
 
-    <div class="footer-container">
+    <div class="footer-grid">
 
-      <div class="footer-links">
+      <div>
+        <h3>OpportunityBridge</h3>
 
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="scholarships.html">
-          Scholarships
-        </a>
-
-        <a
-          href="jobs.html"
-          aria-current="page">
-          Jobs
-        </a>
-
-        <a href="internships.html">
-          Internships
-        </a>
-
-        <a href="courses.html">
-          Courses
-        </a>
-
-        <a href="opportunities.html">
-          Opportunities
-        </a>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="contact.html">
-          Contact
-        </a>
-
-        <a href="Privacy.html">
-          Privacy
-        </a>
-
-        <a href="Disclaimer.html">
-          Disclaimer
-        </a>
-
+        <p>
+          A digital information platform connecting students,
+          graduates and job seekers with useful education,
+          career and opportunity resources.
+        </p>
       </div>
 
-      <p class="copyright">
-        © 2026 OpportunityBridge. All rights reserved.
-      </p>
+      <div>
+        <h4>Explore</h4>
+
+        <a href="index.html">Home</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="internships.html">Internships</a>
+        <a href="courses.html">Courses</a>
+        <a href="opportunities.html">Opportunities</a>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="Privacy.html">Privacy</a>
+        <a href="Disclaimer.html">Disclaimer</a>
+      </div>
 
     </div>
+
+    <p class="copyright">
+      © 2026 OpportunityBridge. All rights reserved.
+    </p>
 
   </footer>
 
@@ -1369,10 +1433,9 @@
     const mainNav =
       document.getElementById("mainNav");
 
-
     menuToggle.addEventListener(
       "click",
-      function() {
+      function () {
 
         const isOpen =
           mainNav.classList.toggle("active");
@@ -1396,15 +1459,15 @@
     );
 
 
-    /* CLOSE MENU AFTER CLICK */
+    /* CLOSE MOBILE MENU */
 
     document
       .querySelectorAll("#mainNav a")
-      .forEach(function(link) {
+      .forEach(function (link) {
 
         link.addEventListener(
           "click",
-          function() {
+          function () {
 
             mainNav.classList.remove("active");
 
@@ -1426,7 +1489,7 @@
       });
 
 
-    /* JOB SEARCH */
+    /* JOB SEARCH + FILTER */
 
     const searchInput =
       document.getElementById("jobSearch");
@@ -1452,8 +1515,7 @@
 
       let visibleCards = 0;
 
-
-      cards.forEach(function(card) {
+      cards.forEach(function (card) {
 
         const category =
           card.getAttribute("data-category");
@@ -1469,7 +1531,6 @@
         const matchesFilter =
           currentFilter === "all" ||
           category === currentFilter;
-
 
         if (
           matchesSearch &&
@@ -1488,7 +1549,6 @@
 
       });
 
-
       noResults.style.display =
         visibleCards === 0
           ? "block"
@@ -1497,7 +1557,7 @@
     }
 
 
-    /* SEARCH EVENT */
+    /* SEARCH */
 
     searchInput.addEventListener(
       "input",
@@ -1505,17 +1565,17 @@
     );
 
 
-    /* FILTER EVENTS */
+    /* FILTERS */
 
     filterButtons.forEach(
-      function(button) {
+      function (button) {
 
         button.addEventListener(
           "click",
-          function() {
+          function () {
 
             filterButtons.forEach(
-              function(btn) {
+              function (btn) {
                 btn.classList.remove("active");
               }
             );
