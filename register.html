@@ -26,10 +26,16 @@
       --muted: #64748B;
       --border: #E2E8F0;
       --dark: #071F49;
+
       --danger-bg: #FFF1F2;
       --danger: #B42318;
+      --danger-border: #FECDD3;
+
       --success-bg: #ECFDF3;
       --success: #16803C;
+      --success-border: #BBF7D0;
+
+      --shadow: 0 12px 35px rgba(15,23,42,.09);
     }
 
     * {
@@ -55,12 +61,21 @@
       text-decoration: none;
     }
 
-    /* HEADER */
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     .site-header {
       background: var(--navy);
       color: white;
       box-shadow: 0 2px 12px rgba(0,0,0,.12);
+      position: relative;
+      z-index: 1000;
     }
 
     .nav-container {
@@ -95,10 +110,14 @@
       font-size: 14px;
       font-weight: 600;
       color: white;
+      transition:
+        background .2s ease,
+        transform .2s ease;
     }
 
     .main-nav a:hover {
       background: rgba(255,255,255,.13);
+      transform: translateY(-1px);
     }
 
     .login-link {
@@ -121,9 +140,12 @@
       color: white;
       font-size: 28px;
       cursor: pointer;
+      padding: 5px;
     }
 
-    /* MAIN */
+    /* =========================
+       MAIN
+    ========================= */
 
     .register-section {
       min-height: calc(100vh - 68px);
@@ -131,23 +153,67 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /*
+      Subtle decorative background.
+      It does not affect functionality.
+    */
+
+    .register-section::before,
+    .register-section::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: .45;
+      filter: blur(1px);
+    }
+
+    .register-section::before {
+      width: 260px;
+      height: 260px;
+      background: rgba(23,105,209,.08);
+      top: 30px;
+      left: -120px;
+      animation: floatOne 8s ease-in-out infinite;
+    }
+
+    .register-section::after {
+      width: 300px;
+      height: 300px;
+      background: rgba(244,197,66,.08);
+      right: -140px;
+      bottom: 30px;
+      animation: floatTwo 9s ease-in-out infinite;
     }
 
     .register-container {
       width: min(450px, 100%);
+      position: relative;
+      z-index: 2;
     }
+
+    /* =========================
+       AUTH BOX
+    ========================= */
 
     .auth-box {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 35px;
-      box-shadow: 0 8px 30px rgba(15,23,42,.08);
+      box-shadow: var(--shadow);
+
+      animation:
+        cardEntrance .65s cubic-bezier(.22,.61,.36,1) both;
     }
 
     .heading {
       text-align: center;
-      margin-bottom: 27px;
+      margin-bottom: 22px;
     }
 
     .heading h1 {
@@ -162,36 +228,135 @@
       font-size: 14px;
     }
 
-    /* MESSAGE */
+    /* =========================
+       WELCOME NOTE
+    ========================= */
+
+    .welcome-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #F0F6FF;
+      border: 1px solid #D7E7FF;
+      border-radius: 9px;
+      padding: 12px 13px;
+      margin-bottom: 22px;
+
+      animation:
+        fadeSlideUp .55s ease .18s both;
+    }
+
+    .welcome-icon {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .welcome-note p {
+      color: #31527C;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .welcome-note strong {
+      color: var(--navy);
+    }
+
+    /* =========================
+       MESSAGE
+    ========================= */
 
     .message {
       display: none;
       margin-bottom: 20px;
       padding: 12px 14px;
-      border-radius: 7px;
+      border-radius: 8px;
       font-size: 14px;
       line-height: 1.5;
       word-break: break-word;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .message-icon {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .message-content {
+      flex: 1;
     }
 
     .message.error {
-      display: block;
+      display: flex;
       background: var(--danger-bg);
       color: var(--danger);
-      border: 1px solid #FECDD3;
+      border: 1px solid var(--danger-border);
+    }
+
+    .message.error .message-icon {
+      background: #FECACA;
+      color: var(--danger);
     }
 
     .message.success {
-      display: block;
+      display: flex;
       background: var(--success-bg);
       color: var(--success);
-      border: 1px solid #BBF7D0;
+      border: 1px solid var(--success-border);
     }
 
-    /* FORM */
+    .message.success .message-icon {
+      background: #BBF7D0;
+      color: var(--success);
+    }
+
+    .message.animate-in {
+      animation: messageEntrance .4s cubic-bezier(.22,.61,.36,1) both;
+    }
+
+    .message.animate-error {
+      animation: shakeError .42s ease both;
+    }
+
+    .message.animate-success {
+      animation: successPop .45s cubic-bezier(.22,.61,.36,1) both;
+    }
+
+    /* =========================
+       FORM
+    ========================= */
 
     .form-group {
       margin-bottom: 18px;
+      animation: fadeSlideUp .5s ease both;
+    }
+
+    .form-group:nth-child(1) {
+      animation-delay: .25s;
+    }
+
+    .form-group:nth-child(2) {
+      animation-delay: .32s;
+    }
+
+    .form-group:nth-child(3) {
+      animation-delay: .39s;
     }
 
     label {
@@ -200,6 +365,10 @@
       color: var(--text);
       font-size: 14px;
       font-weight: 700;
+    }
+
+    .input-wrapper {
+      position: relative;
     }
 
     input {
@@ -211,7 +380,10 @@
       color: var(--text);
       font-size: 15px;
       outline: none;
-      transition: border-color .2s, box-shadow .2s;
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
     }
 
     input:focus {
@@ -219,44 +391,132 @@
       box-shadow: 0 0 0 3px rgba(23,105,209,.12);
     }
 
+    input:hover {
+      border-color: #B8C7DB;
+    }
+
     input::placeholder {
       color: #94A3B8;
     }
 
-    /* BUTTON */
+    /*
+      Password fields need extra right padding
+      so the visibility button does not overlap text.
+    */
+
+    .password-input {
+      padding-right: 76px;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 7px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      min-width: 58px;
+      padding: 6px 7px;
+
+      background: transparent;
+      border: 0;
+      border-radius: 6px;
+
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background .2s ease,
+        color .2s ease;
+    }
+
+    .password-toggle:hover {
+      background: #EEF5FF;
+      color: var(--navy);
+    }
+
+    .password-toggle:active {
+      transform: translateY(-50%) scale(.97);
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
 
     .register-button {
       width: 100%;
+      min-height: 48px;
       padding: 13px;
       margin-top: 3px;
+
       background: var(--blue);
       color: white;
+
       border: 0;
       border-radius: 7px;
+
       font-size: 16px;
       font-weight: 700;
+
       cursor: pointer;
-      transition: background .2s, transform .2s;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+      
+      animation: fadeSlideUp .5s ease .46s both;
     }
 
     .register-button:hover:not(:disabled) {
       background: var(--navy);
       transform: translateY(-1px);
+      box-shadow: 0 7px 18px rgba(11,61,145,.18);
+    }
+
+    .register-button:active:not(:disabled) {
+      transform: translateY(0);
     }
 
     .register-button:disabled {
-      opacity: .65;
+      opacity: .72;
       cursor: not-allowed;
       transform: none;
+      box-shadow: none;
     }
 
-    /* LINKS */
+    /* =========================
+       LOADING SPINNER
+    ========================= */
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      animation: spin .7s linear infinite;
+    }
+
+    /* =========================
+       LINKS
+    ========================= */
 
     .links {
       text-align: center;
       margin-top: 22px;
       color: var(--muted);
       font-size: 14px;
+
+      animation: fadeSlideUp .5s ease .52s both;
     }
 
     .links a {
@@ -278,18 +538,23 @@
     .back-home {
       text-align: center;
       margin-top: 18px;
+
+      animation: fadeSlideUp .5s ease .58s both;
     }
 
     .back-home a {
       color: var(--muted);
       font-size: 13px;
+      transition: color .2s ease;
     }
 
     .back-home a:hover {
       color: var(--navy);
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--dark);
@@ -311,13 +576,16 @@
       color: #d8e0ed;
       margin: 0 7px;
       font-size: 13px;
+      transition: color .2s ease;
     }
 
     footer a:hover {
       color: var(--gold);
     }
 
-    /* ACCESSIBILITY */
+    /* =========================
+       ACCESSIBILITY
+    ========================= */
 
     a:focus-visible,
     button:focus-visible,
@@ -326,7 +594,135 @@
       outline-offset: 3px;
     }
 
-    /* MOBILE */
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes cardEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(22px) scale(.985);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes messageEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(-7px) scale(.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes successPop {
+      0% {
+        opacity: 0;
+        transform: scale(.96);
+      }
+
+      60% {
+        transform: scale(1.015);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shakeError {
+      0%, 100% {
+        transform: translateX(0);
+      }
+
+      20% {
+        transform: translateX(-5px);
+      }
+
+      40% {
+        transform: translateX(5px);
+      }
+
+      60% {
+        transform: translateX(-3px);
+      }
+
+      80% {
+        transform: translateX(3px);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes floatOne {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(18px, 15px);
+      }
+    }
+
+    @keyframes floatTwo {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-15px, -18px);
+      }
+    }
+
+    /*
+      Accessibility:
+      Users who prefer reduced motion will not
+      receive the decorative animations.
+    */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 850px) {
 
@@ -340,14 +736,22 @@
         top: 68px;
         left: 0;
         right: 0;
+
         background: var(--navy);
+
         flex-direction: column;
+        align-items: stretch;
+
         padding: 12px 18px 18px;
+
         z-index: 1000;
+
+        box-shadow: 0 10px 20px rgba(0,0,0,.12);
       }
 
       .main-nav.active {
         display: flex;
+        animation: fadeSlideUp .2s ease both;
       }
 
       .main-nav a {
@@ -370,6 +774,18 @@
 
       .heading h1 {
         font-size: 27px;
+      }
+
+      .welcome-note {
+        padding: 11px;
+      }
+
+      .welcome-note p {
+        font-size: 12.5px;
+      }
+
+      .password-toggle {
+        min-width: 55px;
       }
     }
   </style>
@@ -424,11 +840,41 @@
         <p>Join OpportunityBridge for free.</p>
       </div>
 
+      <!-- Welcome note -->
+
+      <div class="welcome-note">
+
+        <div class="welcome-icon" aria-hidden="true">
+          ✓
+        </div>
+
+        <p>
+          <strong>Welcome to OpportunityBridge.</strong>
+          Create your free account to make your experience
+          more convenient and continue exploring opportunities.
+        </p>
+
+      </div>
+
+      <!-- Message -->
+
       <div
         id="message"
         class="message"
         role="alert"
         aria-live="polite">
+
+        <span
+          id="messageIcon"
+          class="message-icon"
+          aria-hidden="true">
+        </span>
+
+        <span
+          id="messageContent"
+          class="message-content">
+        </span>
+
       </div>
 
       <form id="registerForm">
@@ -456,15 +902,29 @@
             Password
           </label>
 
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Create a password"
-            minlength="6"
-            required
-            autocomplete="new-password"
-          >
+          <div class="input-wrapper">
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="password-input"
+              placeholder="Create a password"
+              minlength="6"
+              required
+              autocomplete="new-password"
+            >
+
+            <button
+              type="button"
+              class="password-toggle"
+              data-target="password"
+              aria-label="Show password"
+              aria-pressed="false">
+              Show
+            </button>
+
+          </div>
 
         </div>
 
@@ -474,15 +934,29 @@
             Confirm Password
           </label>
 
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Confirm your password"
-            minlength="6"
-            required
-            autocomplete="new-password"
-          >
+          <div class="input-wrapper">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              class="password-input"
+              placeholder="Confirm your password"
+              minlength="6"
+              required
+              autocomplete="new-password"
+            >
+
+            <button
+              type="button"
+              class="password-toggle"
+              data-target="confirmPassword"
+              aria-label="Show password"
+              aria-pressed="false">
+              Show
+            </button>
+
+          </div>
 
         </div>
 
@@ -490,7 +964,13 @@
           type="submit"
           id="registerBtn"
           class="register-button">
-          Create Account
+
+          <span id="buttonSpinner" class="spinner" hidden></span>
+
+          <span id="buttonText">
+            Create Account
+          </span>
+
         </button>
 
       </form>
@@ -544,8 +1024,10 @@
 <script>
 
 /*
+ * ============================================
  * SUPABASE CONFIGURATION
  * Existing configuration preserved.
+ * ============================================
  */
 
 const SUPABASE_URL =
@@ -561,29 +1043,188 @@ const supabaseClient =
   );
 
 
+/*
+ * ============================================
+ * ELEMENTS
+ * ============================================
+ */
+
 const form =
   document.getElementById("registerForm");
 
 const button =
   document.getElementById("registerBtn");
 
+const buttonText =
+  document.getElementById("buttonText");
+
+const buttonSpinner =
+  document.getElementById("buttonSpinner");
+
 const message =
   document.getElementById("message");
 
+const messageIcon =
+  document.getElementById("messageIcon");
+
+const messageContent =
+  document.getElementById("messageContent");
+
+
+/*
+ * ============================================
+ * MESSAGE HANDLER
+ * ============================================
+ */
 
 function showMessage(text, type) {
 
-  message.textContent = text;
-
   message.className =
     "message " + type;
+
+  messageContent.textContent =
+    text;
+
+  if (type === "success") {
+
+    messageIcon.textContent = "✓";
+
+    message.classList.add(
+      "animate-success"
+    );
+
+  } else {
+
+    messageIcon.textContent = "!";
+
+    message.classList.add(
+      "animate-error"
+    );
+  }
+
+  /*
+   * Restart animation cleanly if another
+   * message is displayed immediately.
+   */
+
+  requestAnimationFrame(function() {
+
+    message.classList.remove(
+      "animate-success",
+      "animate-error"
+    );
+
+    requestAnimationFrame(function() {
+
+      if (type === "success") {
+
+        message.classList.add(
+          "animate-success"
+        );
+
+      } else {
+
+        message.classList.add(
+          "animate-error"
+        );
+
+      }
+
+    });
+
+  });
 
 }
 
 
 /*
+ * ============================================
+ * BUTTON LOADING STATE
+ * ============================================
+ */
+
+function setLoading(isLoading) {
+
+  button.disabled =
+    isLoading;
+
+  buttonSpinner.hidden =
+    !isLoading;
+
+  buttonText.textContent =
+    isLoading
+      ? "Creating account..."
+      : "Create Account";
+}
+
+
+/*
+ * ============================================
+ * SHOW / HIDE PASSWORD
+ * ============================================
+ *
+ * This only changes the visual input type.
+ * It does NOT change the password sent
+ * to Supabase.
+ */
+
+document
+  .querySelectorAll(".password-toggle")
+  .forEach(function(toggle) {
+
+    toggle.addEventListener(
+      "click",
+      function() {
+
+        const targetId =
+          toggle.getAttribute(
+            "data-target"
+          );
+
+        const passwordInput =
+          document.getElementById(
+            targetId
+          );
+
+        const isPassword =
+          passwordInput.type === "password";
+
+        passwordInput.type =
+          isPassword
+            ? "text"
+            : "password";
+
+        toggle.textContent =
+          isPassword
+            ? "Hide"
+            : "Show";
+
+        toggle.setAttribute(
+          "aria-label",
+          isPassword
+            ? "Hide password"
+            : "Show password"
+        );
+
+        toggle.setAttribute(
+          "aria-pressed",
+          isPassword
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+  });
+
+
+/*
+ * ============================================
  * REGISTRATION
- * Existing Supabase signUp functionality preserved.
+ * Existing Supabase signUp functionality
+ * preserved.
+ * ============================================
  */
 
 form.addEventListener(
@@ -592,16 +1233,19 @@ form.addEventListener(
 
     event.preventDefault();
 
+
     const email =
       document
         .getElementById("email")
         .value
         .trim();
 
+
     const password =
       document
         .getElementById("password")
         .value;
+
 
     const confirmPassword =
       document
@@ -639,13 +1283,19 @@ form.addEventListener(
     }
 
 
-    button.disabled = true;
+    /*
+     * Start loading state.
+     */
 
-    button.textContent =
-      "Creating account...";
+    setLoading(true);
 
 
     try {
+
+      /*
+       * EXISTING SUPABASE SIGN UP
+       * PRESERVED.
+       */
 
       const { data, error } =
         await supabaseClient.auth.signUp({
@@ -657,8 +1307,8 @@ form.addEventListener(
           options: {
 
             /*
-             * Preserve existing email verification
-             * redirect behavior.
+             * Existing email verification
+             * redirect behavior preserved.
              */
 
             emailRedirectTo:
@@ -686,10 +1336,7 @@ form.addEventListener(
           "error"
         );
 
-        button.disabled = false;
-
-        button.textContent =
-          "Create Account";
+        setLoading(false);
 
         return;
       }
@@ -706,6 +1353,12 @@ form.addEventListener(
           "Account created successfully. Redirecting...",
           "success"
         );
+
+        buttonSpinner.hidden =
+          true;
+
+        buttonText.textContent =
+          "Account Created ✓";
 
         setTimeout(
           function() {
@@ -730,12 +1383,44 @@ form.addEventListener(
         "success"
       );
 
-      button.disabled = false;
-
-      button.textContent =
-        "Create Account";
+      setLoading(false);
 
       form.reset();
+
+
+      /*
+       * Return password fields to their
+       * secure hidden state after registration.
+       */
+
+      document
+        .querySelectorAll(".password-input")
+        .forEach(function(input) {
+
+          input.type =
+            "password";
+
+        });
+
+
+      document
+        .querySelectorAll(".password-toggle")
+        .forEach(function(toggle) {
+
+          toggle.textContent =
+            "Show";
+
+          toggle.setAttribute(
+            "aria-label",
+            "Show password"
+          );
+
+          toggle.setAttribute(
+            "aria-pressed",
+            "false"
+          );
+
+        });
 
 
     } catch (err) {
@@ -754,10 +1439,7 @@ form.addEventListener(
         "error"
       );
 
-      button.disabled = false;
-
-      button.textContent =
-        "Create Account";
+      setLoading(false);
 
     }
 
@@ -766,7 +1448,9 @@ form.addEventListener(
 
 
 /*
+ * ============================================
  * MOBILE NAVIGATION
+ * ============================================
  */
 
 const menuToggle =
@@ -785,7 +1469,9 @@ menuToggle.addEventListener(
 
     menuToggle.setAttribute(
       "aria-expanded",
-      isOpen ? "true" : "false"
+      isOpen
+        ? "true"
+        : "false"
     );
 
     menuToggle.setAttribute(
@@ -800,7 +1486,9 @@ menuToggle.addEventListener(
 
 
 /*
- * Close mobile menu after clicking a link.
+ * ============================================
+ * CLOSE MOBILE MENU AFTER LINK CLICK
+ * ============================================
  */
 
 document
@@ -811,7 +1499,9 @@ document
       "click",
       function() {
 
-        mainNav.classList.remove("active");
+        mainNav.classList.remove(
+          "active"
+        );
 
         menuToggle.setAttribute(
           "aria-expanded",
