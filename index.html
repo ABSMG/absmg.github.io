@@ -28,10 +28,22 @@
   <meta name="google-adsense-account"
         content="ca-pub-2004981151172844">
 
+  <meta name="theme-color" content="#0B3D91">
+
   <link rel="canonical"
         href="https://absmg.github.io/">
 
-  <!-- Open Graph -->
+  <!-- =========================
+       FAVICON / BRAND LOGO
+  ========================== -->
+
+  <link rel="icon"
+        type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B3D91'/%3E%3Cpath d='M14 39c8-16 28-16 36 0' fill='none' stroke='%23F4C542' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M20 39V27M44 39V27' fill='none' stroke='%23FFFFFF' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M18 44h28' fill='none' stroke='%231769D1' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- =========================
+       OPEN GRAPH
+  ========================== -->
 
   <meta property="og:type"
         content="website">
@@ -51,7 +63,9 @@
   <meta property="og:locale"
         content="en_US">
 
-  <!-- Twitter / X -->
+  <!-- =========================
+       TWITTER / X
+  ========================== -->
 
   <meta name="twitter:card"
         content="summary">
@@ -62,23 +76,33 @@
   <meta name="twitter:description"
         content="Find scholarships, jobs, internships, online courses and digital skills resources.">
 
-  <!-- Google AdSense -->
+  <!-- =========================
+       GOOGLE ADSENSE
+  ========================== -->
 
   <script async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
           crossorigin="anonymous">
   </script>
 
-  <!-- Structured Data -->
+  <!-- =========================
+       STRUCTURED DATA
+  ========================== -->
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "OpportunityBridge",
+    "alternateName": "OpportunityBridge Global Opportunities",
     "url": "https://absmg.github.io/",
     "description": "A digital resource platform helping students, graduates and job seekers discover scholarships, jobs, internships, online courses and digital opportunities.",
-    "inLanguage": "en"
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    }
   }
   </script>
 
@@ -98,9 +122,12 @@
       --white: #ffffff;
       --border: #e2e8f0;
       --footer: #071f49;
-      --success: #166534;
-      --shadow: 0 4px 18px rgba(15, 23, 42, 0.07);
-      --shadow-hover: 0 10px 28px rgba(15, 23, 42, 0.11);
+
+      --shadow:
+        0 4px 18px rgba(15, 23, 42, 0.07);
+
+      --shadow-hover:
+        0 10px 28px rgba(15, 23, 42, 0.11);
     }
 
     * {
@@ -114,7 +141,11 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: var(--light);
       color: var(--dark);
       line-height: 1.7;
@@ -148,61 +179,129 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+
       background: var(--navy);
       color: var(--white);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
+
+      box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.14);
     }
 
     .header-container {
       width: min(1200px, 92%);
       min-height: 68px;
+
       margin: 0 auto;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
+
+    /* =========================================================
+       MODERN LOGO
+    ========================================================= */
+
     .logo {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 10px;
+
       font-size: 23px;
       font-weight: 800;
+
       white-space: nowrap;
+
       letter-spacing: -0.3px;
+
+      color: var(--white);
     }
 
-    .logo span {
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+
+      flex: 0 0 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 5px;
+
+      background: var(--white);
+
+      border-radius: 11px;
+
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .logo-mark svg {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+    }
+
+    .logo-text {
+      color: var(--white);
+    }
+
+    .logo-text span {
       color: var(--gold);
     }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
 
     .main-nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       gap: 3px;
     }
 
     .main-nav a {
       display: inline-block;
+
       padding: 9px 10px;
+
       border-radius: 6px;
+
       color: var(--white);
+
       font-size: 14px;
       font-weight: 600;
-      transition: background 0.2s ease;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .main-nav a:hover {
-      background: rgba(255, 255, 255, 0.13);
+      background:
+        rgba(255, 255, 255, 0.13);
     }
 
     .main-nav .login-link {
       margin-left: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.75);
     }
 
     .main-nav .register-link {
       background: var(--gold);
       color: var(--navy);
+
       font-weight: 700;
     }
 
@@ -212,11 +311,15 @@
 
     .menu-btn {
       display: none;
+
       border: 0;
       background: transparent;
+
       color: var(--white);
+
       font-size: 27px;
       line-height: 1;
+
       padding: 7px;
     }
 
@@ -226,10 +329,19 @@
     ========================================================= */
 
     .hero {
-      background: linear-gradient(135deg, var(--navy), var(--blue));
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--blue)
+        );
+
       color: var(--white);
+
       text-align: center;
-      padding: 78px 20px 82px;
+
+      padding:
+        78px 20px 82px;
     }
 
     .hero-inner {
@@ -239,25 +351,39 @@
 
     .hero h1 {
       max-width: 850px;
-      margin: 0 auto 18px;
-      font-size: clamp(34px, 5vw, 52px);
+
+      margin:
+        0 auto 18px;
+
+      font-size:
+        clamp(34px, 5vw, 52px);
+
       line-height: 1.13;
+
       letter-spacing: -1px;
     }
 
     .hero p {
       max-width: 780px;
-      margin: 0 auto 28px;
+
+      margin:
+        0 auto 28px;
+
       color: #eaf2ff;
+
       font-size: 18px;
+
       line-height: 1.75;
     }
 
     .hero-buttons {
       display: flex;
+
       justify-content: center;
       align-items: center;
+
       gap: 12px;
+
       flex-wrap: wrap;
     }
 
@@ -268,10 +394,15 @@
 
     .btn {
       display: inline-block;
-      padding: 12px 21px;
+
+      padding:
+        12px 21px;
+
       border-radius: 7px;
+
       font-size: 15px;
       font-weight: 700;
+
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
@@ -279,7 +410,8 @@
     }
 
     .btn:hover {
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
     }
 
     .btn-primary {
@@ -289,17 +421,23 @@
 
     .btn-primary:hover {
       background: #ffd85c;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.14);
+
+      box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.14);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.85);
+      border:
+        1px solid rgba(255, 255, 255, 0.85);
+
       color: var(--white);
+
       background: transparent;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.09);
+      background:
+        rgba(255, 255, 255, 0.09);
     }
 
 
@@ -309,25 +447,34 @@
 
     .container {
       width: min(1100px, 92%);
+
       margin: 0 auto;
-      padding: 58px 0;
+
+      padding:
+        58px 0;
     }
 
     .section-title {
       text-align: center;
+
       margin-bottom: 32px;
     }
 
     .section-title h2 {
       color: var(--navy);
+
       font-size: 30px;
+
       line-height: 1.25;
+
       margin-bottom: 8px;
     }
 
     .section-title p {
       max-width: 700px;
+
       margin: 0 auto;
+
       color: var(--muted);
     }
 
@@ -338,9 +485,14 @@
 
     .ad-container {
       width: min(1000px, 100%);
+
       min-height: 90px;
-      margin: 5px auto 10px;
+
+      margin:
+        5px auto 10px;
+
       text-align: center;
+
       overflow: hidden;
     }
 
@@ -356,20 +508,32 @@
 
     .search-box {
       width: min(720px, 100%);
+
       margin: 0 auto;
+
       display: flex;
+
       gap: 10px;
     }
 
     .search-box input {
       flex: 1;
+
       min-width: 0;
-      padding: 13px 15px;
-      border: 1px solid #cbd5e1;
+
+      padding:
+        13px 15px;
+
+      border:
+        1px solid #cbd5e1;
+
       border-radius: 7px;
+
       background: var(--white);
       color: var(--dark);
+
       font-size: 16px;
+
       outline: none;
     }
 
@@ -379,17 +543,27 @@
 
     .search-box input:focus {
       border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(23, 105, 209, 0.10);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(23, 105, 209, 0.10);
     }
 
     .search-box button {
-      padding: 13px 22px;
+      padding:
+        13px 22px;
+
       border: 0;
+
       border-radius: 7px;
+
       background: var(--navy);
       color: var(--white);
+
       font-weight: 700;
-      transition: background 0.2s ease;
+
+      transition:
+        background 0.2s ease;
     }
 
     .search-box button:hover {
@@ -398,24 +572,36 @@
 
 
     /* =========================================================
-       OPPORTUNITY CARDS
+       CARDS
     ========================================================= */
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 22px;
     }
 
     .card {
       display: flex;
+
       flex-direction: column;
+
       min-height: 245px;
+
       background: var(--white);
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       border-radius: 12px;
+
       padding: 26px;
+
       box-shadow: var(--shadow);
+
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
@@ -423,51 +609,75 @@
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      border-color: #cbd5e1;
-      box-shadow: var(--shadow-hover);
+      transform:
+        translateY(-3px);
+
+      border-color:
+        #cbd5e1;
+
+      box-shadow:
+        var(--shadow-hover);
     }
 
     .card h3 {
       color: var(--navy);
+
       font-size: 20px;
+
       margin-bottom: 10px;
     }
 
     .card p {
       color: var(--muted);
+
       margin-bottom: 18px;
     }
 
     .card-link {
       display: inline-block;
+
       margin-top: auto;
+
       color: var(--blue);
+
       font-weight: 700;
     }
 
     .card-link:hover {
       color: var(--navy);
+
       text-decoration: underline;
     }
 
     .card-icon {
       width: 42px;
       height: 4px;
+
       margin-bottom: 19px;
+
       border-radius: 4px;
+
       background: var(--gold);
+
       font-size: 0;
     }
 
     .no-results {
       display: none;
+
       grid-column: 1 / -1;
+
       padding: 30px;
+
       background: var(--white);
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       border-radius: 10px;
+
       text-align: center;
+
       color: var(--muted);
     }
 
@@ -478,18 +688,25 @@
 
     .about {
       background: var(--white);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+
+      border-top:
+        1px solid var(--border);
+
+      border-bottom:
+        1px solid var(--border);
     }
 
     .about-content {
       width: min(850px, 100%);
+
       margin: 0 auto;
+
       text-align: center;
     }
 
     .about-content p {
       color: #475569;
+
       margin-bottom: 15px;
     }
 
@@ -504,35 +721,55 @@
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 22px;
+
       margin-top: 28px;
     }
 
     .step {
       background: var(--white);
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       border-radius: 12px;
-      padding: 28px 24px;
+
+      padding:
+        28px 24px;
+
       text-align: center;
-      box-shadow: var(--shadow);
+
+      box-shadow:
+        var(--shadow);
     }
 
     .step-number {
       width: 44px;
       height: 44px;
-      margin: 0 auto 15px;
+
+      margin:
+        0 auto 15px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       border-radius: 50%;
+
       background: var(--navy);
       color: var(--white);
+
       font-weight: 700;
     }
 
     .step h3 {
       color: var(--navy);
+
       margin-bottom: 8px;
     }
 
@@ -547,24 +784,33 @@
 
     .cta {
       background: var(--navy);
+
       color: var(--white);
+
       text-align: center;
-      padding: 58px 20px;
+
+      padding:
+        58px 20px;
     }
 
     .cta-inner {
       width: min(760px, 94%);
+
       margin: 0 auto;
     }
 
     .cta h2 {
       margin-bottom: 12px;
+
       font-size: 30px;
+
       line-height: 1.3;
     }
 
     .cta p {
-      margin: 0 auto 24px;
+      margin:
+        0 auto 24px;
+
       color: #dbe8fb;
     }
 
@@ -575,21 +821,30 @@
 
     footer {
       background: var(--footer);
+
       color: var(--white);
-      padding: 48px 20px 24px;
+
+      padding:
+        48px 20px 24px;
     }
 
     .footer-container {
       width: min(1100px, 92%);
+
       margin: 0 auto;
+
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr;
+
+      grid-template-columns:
+        1.6fr 1fr 1fr;
+
       gap: 38px;
     }
 
     footer h3,
     footer h4 {
       margin-bottom: 13px;
+
       color: var(--white);
     }
 
@@ -599,6 +854,7 @@
 
     footer p {
       max-width: 430px;
+
       color: #cbd5e1;
     }
 
@@ -612,7 +868,9 @@
 
     footer a {
       color: #cbd5e1;
-      transition: color 0.2s ease;
+
+      transition:
+        color 0.2s ease;
     }
 
     footer a:hover {
@@ -621,11 +879,19 @@
 
     .copyright {
       width: min(1100px, 92%);
-      margin: 32px auto 0;
+
+      margin:
+        32px auto 0;
+
       padding-top: 18px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.14);
+
       text-align: center;
+
       color: #aeb9c9;
+
       font-size: 13px;
     }
 
@@ -639,6 +905,7 @@
       .main-nav a {
         padding-left: 8px;
         padding-right: 8px;
+
         font-size: 13px;
       }
 
@@ -648,7 +915,8 @@
     @media (max-width: 900px) {
 
       .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .steps {
@@ -656,7 +924,8 @@
       }
 
       .footer-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
 
     }
@@ -674,15 +943,26 @@
 
       .main-nav {
         display: none;
+
         position: absolute;
+
         top: 64px;
+
         left: 0;
         right: 0;
-        padding: 12px 18px 18px;
+
+        padding:
+          12px 18px 18px;
+
         background: var(--navy);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+
+        box-shadow:
+          0 8px 18px rgba(0, 0, 0, 0.16);
+
         flex-direction: column;
+
         align-items: stretch;
+
         gap: 3px;
       }
 
@@ -692,18 +972,23 @@
 
       .main-nav a {
         width: 100%;
+
         padding: 12px;
+
         text-align: center;
+
         font-size: 14px;
       }
 
       .main-nav .login-link {
         margin-left: 0;
+
         margin-top: 4px;
       }
 
       .hero {
-        padding: 60px 18px 65px;
+        padding:
+          60px 18px 65px;
       }
 
       .hero h1 {
@@ -720,11 +1005,19 @@
     @media (max-width: 600px) {
 
       .logo {
-        font-size: 21px;
+        font-size: 20px;
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+
+        flex-basis: 36px;
       }
 
       .container {
         width: min(92%, 1100px);
+
         padding-top: 48px;
         padding-bottom: 48px;
       }
@@ -751,11 +1044,13 @@
 
       .footer-container {
         grid-template-columns: 1fr;
+
         gap: 28px;
       }
 
       .cta {
-        padding: 50px 18px;
+        padding:
+          50px 18px;
       }
 
       .cta h2 {
@@ -788,7 +1083,7 @@
 <body>
 
   <!-- =======================================================
-       HEADER / NAVIGATION
+       HEADER
   ======================================================== -->
 
   <header class="site-header">
@@ -798,8 +1093,55 @@
       <a href="index.html"
          class="logo"
          aria-label="OpportunityBridge Home">
-        Opportunity<span>Bridge</span>
+
+        <!-- MODERN OPPORTUNITYBRIDGE LOGO -->
+
+        <span class="logo-mark"
+              aria-hidden="true">
+
+          <svg
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Bridge -->
+
+            <path
+              d="M14 39c8-16 28-16 36 0"
+              fill="none"
+              stroke="#F4C542"
+              stroke-width="6"
+              stroke-linecap="round"/>
+
+            <!-- Bridge supports -->
+
+            <path
+              d="M20 39V27M44 39V27"
+              fill="none"
+              stroke="#0B3D91"
+              stroke-width="5"
+              stroke-linecap="round"/>
+
+            <!-- Bridge base -->
+
+            <path
+              d="M18 44h28"
+              fill="none"
+              stroke="#1769D1"
+              stroke-width="5"
+              stroke-linecap="round"/>
+
+          </svg>
+
+        </span>
+
+        <span class="logo-text">
+          Opportunity<span>Bridge</span>
+        </span>
+
       </a>
+
+
+      <!-- MOBILE MENU -->
 
       <button
         type="button"
@@ -809,38 +1151,63 @@
         aria-label="Open navigation menu"
         aria-controls="mainNav"
         aria-expanded="false">
+
         ☰
+
       </button>
+
+
+      <!-- NAVIGATION -->
 
       <nav
         id="mainNav"
         class="main-nav"
         aria-label="Main navigation">
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
 
-        <a href="scholarships.html">Scholarships</a>
+        <a href="scholarships.html">
+          Scholarships
+        </a>
 
-        <a href="jobs.html">Jobs</a>
+        <a href="jobs.html">
+          Jobs
+        </a>
 
-        <a href="internships.html">Internships</a>
+        <a href="internships.html">
+          Internships
+        </a>
 
-        <a href="courses.html">Courses</a>
+        <a href="courses.html">
+          Courses
+        </a>
 
-        <a href="opportunities.html">Opportunities</a>
+        <a href="opportunities.html">
+          Opportunities
+        </a>
 
-        <a href="about.html">About</a>
+        <a href="about.html">
+          About
+        </a>
 
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">
+          Contact
+        </a>
 
         <a href="login.html"
            class="login-link">
+
           Login
+
         </a>
 
         <a href="register.html"
            class="register-link">
+
           Register
+
         </a>
 
       </nav>
@@ -851,7 +1218,7 @@
 
 
   <!-- =======================================================
-       MAIN CONTENT
+       MAIN
   ======================================================== -->
 
   <main>
@@ -877,12 +1244,16 @@
 
           <a href="opportunities.html"
              class="btn btn-primary">
+
             Explore Opportunities
+
           </a>
 
           <a href="register.html"
              class="btn btn-secondary">
+
             Create Free Account
+
           </a>
 
         </div>
@@ -1003,7 +1374,9 @@
 
           <a href="scholarships.html"
              class="card-link">
+
             Explore Scholarships →
+
           </a>
 
         </article>
@@ -1028,7 +1401,9 @@
 
           <a href="jobs.html"
              class="card-link">
+
             Explore Jobs →
+
           </a>
 
         </article>
@@ -1053,7 +1428,9 @@
 
           <a href="internships.html"
              class="card-link">
+
             Explore Internships →
+
           </a>
 
         </article>
@@ -1078,7 +1455,9 @@
 
           <a href="courses.html"
              class="card-link">
+
             Explore Courses →
+
           </a>
 
         </article>
@@ -1103,7 +1482,9 @@
 
           <a href="ai-skills.html"
              class="card-link">
+
             Learn Digital Skills →
+
           </a>
 
         </article>
@@ -1128,20 +1509,24 @@
 
           <a href="opportunities.html"
              class="card-link">
+
             Explore Opportunities →
+
           </a>
 
         </article>
 
 
-        <!-- SEARCH EMPTY STATE -->
+        <!-- NO RESULTS -->
 
         <div
           id="noResults"
           class="no-results"
           role="status">
+
           No matching opportunity category was found.
           Try another search term.
+
         </div>
 
       </div>
@@ -1245,7 +1630,9 @@
 
           <div class="step-number"
                aria-hidden="true">
+
             1
+
           </div>
 
           <h3>
@@ -1264,7 +1651,9 @@
 
           <div class="step-number"
                aria-hidden="true">
+
             2
+
           </div>
 
           <h3>
@@ -1283,7 +1672,9 @@
 
           <div class="step-number"
                aria-hidden="true">
+
             3
+
           </div>
 
           <h3>
@@ -1323,7 +1714,9 @@
 
         <a href="register.html"
            class="btn btn-primary">
+
           Get Started Free
+
         </a>
 
       </div>
@@ -1557,12 +1950,20 @@
 
 
     /* =====================================================
-       ENTER KEY SEARCH
+       LIVE SEARCH
     ====================================================== */
 
-    document
-      .getElementById("searchInput")
-      .addEventListener("input", searchCards);
+    const searchInput =
+      document.getElementById("searchInput");
+
+    if (searchInput) {
+
+      searchInput.addEventListener(
+        "input",
+        searchCards
+      );
+
+    }
 
 
     /* =====================================================
@@ -1573,13 +1974,54 @@
       .querySelectorAll("#mainNav a")
       .forEach(function(link) {
 
-        link.addEventListener("click", function() {
+        link.addEventListener(
+          "click",
+          function() {
 
-          const nav =
-            document.getElementById("mainNav");
+            const nav =
+              document.getElementById("mainNav");
 
-          const menuButton =
-            document.getElementById("menuButton");
+            const menuButton =
+              document.getElementById("menuButton");
+
+            nav.classList.remove("active");
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuButton.setAttribute(
+              "aria-label",
+              "Open navigation menu"
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =====================================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+    ====================================================== */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        const nav =
+          document.getElementById("mainNav");
+
+        const menuButton =
+          document.getElementById("menuButton");
+
+        if (
+          window.innerWidth <= 760 &&
+          nav.classList.contains("active") &&
+          !nav.contains(event.target) &&
+          !menuButton.contains(event.target)
+        ) {
 
           nav.classList.remove("active");
 
@@ -1593,76 +2035,44 @@
             "Open navigation menu"
           );
 
-        });
-
-      });
-
-
-    /* =====================================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
-    ====================================================== */
-
-    document.addEventListener("click", function(event) {
-
-      const nav =
-        document.getElementById("mainNav");
-
-      const menuButton =
-        document.getElementById("menuButton");
-
-      if (
-        window.innerWidth <= 760 &&
-        nav.classList.contains("active") &&
-        !nav.contains(event.target) &&
-        !menuButton.contains(event.target)
-      ) {
-
-        nav.classList.remove("active");
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuButton.setAttribute(
-          "aria-label",
-          "Open navigation menu"
-        );
+        }
 
       }
-
-    });
+    );
 
 
     /* =====================================================
        RESET MOBILE NAVIGATION ON RESIZE
     ====================================================== */
 
-    window.addEventListener("resize", function() {
+    window.addEventListener(
+      "resize",
+      function() {
 
-      const nav =
-        document.getElementById("mainNav");
+        const nav =
+          document.getElementById("mainNav");
 
-      const menuButton =
-        document.getElementById("menuButton");
+        const menuButton =
+          document.getElementById("menuButton");
 
-      if (window.innerWidth > 760) {
+        if (window.innerWidth > 760) {
 
-        nav.classList.remove("active");
+          nav.classList.remove("active");
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
-        menuButton.setAttribute(
-          "aria-label",
-          "Open navigation menu"
-        );
+          menuButton.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+          );
+
+        }
 
       }
-
-    });
+    );
 
   </script>
 
