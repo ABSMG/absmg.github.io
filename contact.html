@@ -6,157 +6,606 @@
 
   <title>Contact Us | OpportunityBridge</title>
 
-  <meta name="description" content="Contact OpportunityBridge for questions, corrections, suggestions and general enquiries.">
+  <meta name="description" content="Contact OpportunityBridge for questions, corrections, suggestions and general enquiries about scholarships, jobs, internships, courses and digital opportunities.">
   <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
+  <meta name="author" content="OpportunityBridge">
+
+  <meta property="og:title" content="Contact Us | OpportunityBridge">
+  <meta property="og:description" content="Contact OpportunityBridge for questions, corrections, suggestions and general enquiries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://absmg.github.io/contact.html">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact Us | OpportunityBridge">
+  <meta name="twitter:description" content="Contact OpportunityBridge for questions, corrections, suggestions and general enquiries.">
+
+  <link rel="canonical" href="https://absmg.github.io/contact.html">
+
+  <meta name="google-adsense-account" content="ca-pub-2004981151172844">
+
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
+    crossorigin="anonymous"></script>
 
   <style>
+    :root {
+      --navy: #0B3D91;
+      --blue: #1769D1;
+      --gold: #F4C542;
+      --bg: #F6F8FC;
+      --white: #FFFFFF;
+      --text: #172033;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --dark: #071F49;
+    }
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f8f8;
-      color: #243333;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
 
-    header {
-      background: #123b3a;
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 21px;
-    }
-
-    nav a {
-      color: white;
+    a {
+      color: inherit;
       text-decoration: none;
-      margin-left: 18px;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,.12);
+    }
+
+    .nav-container {
+      width: min(1200px, 92%);
+      min-height: 68px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .main-nav a {
+      padding: 9px 11px;
+      border-radius: 6px;
       font-size: 14px;
+      font-weight: 600;
+      color: white;
     }
 
-    nav a:hover {
-      color: #20b89a;
+    .main-nav a:hover {
+      background: rgba(255,255,255,.13);
     }
 
-    main {
-      max-width: 800px;
-      margin: 55px auto;
-      padding: 0 20px;
+    .main-nav .active {
+      background: rgba(255,255,255,.13);
     }
 
-    .box {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.07);
+    .login-link {
+      border: 1px solid rgba(255,255,255,.7);
+    }
+
+    .register-link {
+      background: var(--gold);
+      color: var(--navy) !important;
+    }
+
+    .register-link:hover {
+      background: #ffd85a !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .page-hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #eaf2ff;
+    }
+
+    /* MAIN */
+
+    .content-section {
+      padding: 55px 0;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: auto;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 38px;
+      box-shadow: 0 4px 16px rgba(15,23,42,.06);
       text-align: center;
     }
 
-    h1 {
-      color: #123b3a;
+    .contact-card h2 {
+      color: var(--navy);
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
-    .email {
+    .contact-card p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 15px;
+    }
+
+    .contact-btn {
       display: inline-block;
       margin-top: 15px;
-      background: #176b63;
+      background: var(--blue);
       color: white;
-      padding: 14px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 13px 28px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: .2s ease;
     }
 
-    footer {
-      background: #102f2e;
-      color: #dcebea;
+    .contact-btn:hover {
+      background: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .info-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 16px rgba(15,23,42,.05);
+    }
+
+    .info-card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ADSENSE */
+
+    .ad-container {
+      width: min(1000px, 92%);
+      min-height: 90px;
+      margin: 25px auto;
       text-align: center;
-      padding: 30px;
+      overflow: hidden;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .cta h2 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--dark);
+      color: #d8e0ed;
+      padding: 45px 20px 25px;
+    }
+
+    .footer-grid {
+      width: min(1100px, 92%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #d8e0ed;
     }
 
     footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
+      display: block;
+      margin: 7px 0;
+      color: #d8e0ed;
     }
 
-    @media(max-width:700px) {
-      header {
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      width: min(1100px, 92%);
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* ACCESSIBILITY */
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
         flex-direction: column;
-        gap: 12px;
+        padding: 12px 18px 18px;
+      }
+
+      .main-nav.active {
+        display: flex;
+      }
+
+      .main-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .page-hero {
+        padding: 55px 18px;
+      }
+
+      .contact-card {
+        padding: 28px 20px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact OpportunityBridge",
+    "url": "https://absmg.github.io/contact.html",
+    "description": "Contact OpportunityBridge for questions, corrections, suggestions and general enquiries."
+  }
+  </script>
+
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
 
-  <div class="logo">OpportunityBridge</div>
+  <div class="nav-container">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <a href="index.html" class="brand">
+      Opportunity<span>Bridge</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mainNav">
+      ☰
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="register-link">Register</a>
+
+    </nav>
+
+  </div>
 
 </header>
 
+<section class="page-hero">
+
+  <h1>Contact Us</h1>
+
+  <p>
+    Have a question, suggestion, correction or general enquiry?
+    We would be happy to hear from you.
+  </p>
+
+</section>
+
 <main>
 
-  <div class="box">
+  <section class="content-section">
 
-    <h1>Contact Us</h1>
+    <div class="container">
 
-    <p>
-      Have a question, suggestion, correction or general enquiry?
-      We would be happy to hear from you.
-    </p>
+      <div class="contact-card">
 
-    <p>
-      You can contact OpportunityBridge by email:
-    </p>
+        <h2>Get in Touch</h2>
 
-    <a class="email" href="mailto:anordsom@gmail.com">
-      anordsom@gmail.com
-    </a>
+        <p>
+          If you have a question about OpportunityBridge, want to report
+          an incorrect link or information, or have a suggestion for
+          improving the platform, you can contact us by email.
+        </p>
 
-    <p style="margin-top:25px;">
-      For corrections concerning published information, please include
-      the relevant page or opportunity name in your message.
-    </p>
+        <a
+          href="mailto:anordsom@gmail.com"
+          class="contact-btn"
+          aria-label="Email OpportunityBridge">
+          Email Us
+        </a>
+
+        <p style="margin-top:22px;">
+          For corrections concerning published information, please include
+          the relevant page or opportunity name in your message.
+        </p>
+
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>Questions & Suggestions</h3>
+          <p>
+            Send us your questions, suggestions or feedback about
+            OpportunityBridge and its resources.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Report Incorrect Information</h3>
+          <p>
+            If you notice an outdated link or incorrect information,
+            please tell us the relevant page or opportunity so it can
+            be reviewed.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="ad-container">
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2004981151172844"
+         data-ad-slot="5992864529"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
   </div>
+
+  <section class="content-section">
+
+    <div class="container">
+
+      <div class="cta">
+
+        <h2>Explore OpportunityBridge</h2>
+
+        <p>
+          Discover scholarships, jobs, internships, online courses
+          and digital opportunities.
+        </p>
+
+        <a
+          href="opportunities.html"
+          class="contact-btn">
+          Explore Opportunities
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </main>
 
 <footer>
 
-  <strong>OpportunityBridge</strong>
+  <div class="footer-grid">
 
-  <p>Your Gateway to Global Opportunities</p>
+    <div>
+      <h3>OpportunityBridge</h3>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    
-<a href="Privacy.html">Privacy Policy</a>
-<a href="Disclaimer.html">Disclaimer</a>
+      <p>
+        A digital platform helping students, graduates and opportunity
+        seekers discover education, career and digital opportunities.
+      </p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="internships.html">Internships</a>
+      <a href="courses.html">Courses</a>
+      <a href="opportunities.html">Opportunities</a>
+    </div>
+
+    <div>
+      <h4>Information</h4>
+
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="Privacy.html">Privacy Policy</a>
+      <a href="Disclaimer.html">Disclaimer</a>
+    </div>
+
   </div>
 
-  <p>© 2026 OpportunityBridge. All rights reserved.</p>
+  <div class="copyright">
+    © 2026 OpportunityBridge. All rights reserved.
+  </div>
 
 </footer>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  menuToggle.addEventListener("click", function () {
+
+    const isOpen = mainNav.classList.toggle("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+  });
+
+  document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+      mainNav.classList.remove("active");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+      );
+
+    });
+
+  });
+</script>
 
 </body>
 </html>
