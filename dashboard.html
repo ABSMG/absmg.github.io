@@ -65,7 +65,7 @@
     }
 
     /* =========================
-       APP
+       APP LAYOUT
     ========================== */
 
     .app {
@@ -95,7 +95,7 @@
     .brand {
       display: block;
       padding: 8px 12px 25px;
-      font-size: 23px;
+      font-size: 21px;
       font-weight: 800;
       white-space: nowrap;
     }
@@ -106,9 +106,9 @@
 
     .sidebar-label {
       padding: 0 12px;
-      margin: 8px 0;
+      margin: 8px 0 8px;
       color: #91A4C1;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .8px;
@@ -123,12 +123,13 @@
     .sidebar-nav a {
       display: flex;
       align-items: center;
-      padding: 11px 12px;
+      gap: 12px;
+      padding: 10px 12px;
       border-radius: 8px;
       color: #D8E0ED;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      transition: .2s ease;
+      transition: background .2s, color .2s;
     }
 
     .sidebar-nav a:hover,
@@ -142,6 +143,12 @@
       padding-left: 9px;
     }
 
+    .nav-icon {
+      width: 21px;
+      text-align: center;
+      font-size: 15px;
+    }
+
     .sidebar-bottom {
       margin-top: auto;
       padding-top: 20px;
@@ -149,9 +156,9 @@
 
     .sidebar-bottom a {
       display: block;
-      padding: 10px 12px;
+      padding: 9px 12px;
       color: #B9C4D5;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .sidebar-bottom a:hover {
@@ -159,7 +166,7 @@
     }
 
     /* =========================
-       MAIN
+       MAIN AREA
     ========================== */
 
     .main-area {
@@ -169,7 +176,7 @@
     }
 
     /* =========================
-       TOPBAR
+       TOP BAR
     ========================== */
 
     .topbar {
@@ -188,7 +195,7 @@
     .mobile-brand {
       display: none;
       color: var(--navy);
-      font-size: 21px;
+      font-size: 19px;
       font-weight: 800;
     }
 
@@ -198,13 +205,14 @@
 
     .topbar-title {
       color: var(--text);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
     }
 
     .topbar-right {
       display: flex;
       align-items: center;
+      gap: 12px;
     }
 
     .user-pill {
@@ -212,7 +220,7 @@
       align-items: center;
       gap: 9px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .avatar {
@@ -225,7 +233,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .mobile-menu {
@@ -233,7 +241,7 @@
       border: 0;
       background: transparent;
       color: var(--navy);
-      font-size: 25px;
+      font-size: 24px;
       cursor: pointer;
     }
 
@@ -261,10 +269,12 @@
       border-radius: 15px;
       padding: 30px;
       margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
     }
 
     .welcome h1 {
-      font-size: clamp(25px, 3vw, 34px);
+      font-size: clamp(24px, 3vw, 31px);
       line-height: 1.2;
       margin-bottom: 8px;
     }
@@ -272,7 +282,7 @@
     .welcome p {
       color: #EAF2FF;
       max-width: 700px;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .welcome-email {
@@ -282,31 +292,33 @@
       background: rgba(255,255,255,.12);
       border-radius: 6px;
       color: white;
-      font-size: 13px;
+      font-size: 12px;
       word-break: break-word;
     }
 
     /* =========================
-       SECTION
+       SECTION HEADER
     ========================== */
 
     .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin: 28px 0 15px;
     }
 
     .section-header h2 {
       color: var(--text);
-      font-size: 20px;
+      font-size: 17px;
     }
 
     .section-header p {
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 3px;
+      font-size: 12px;
     }
 
     /* =========================
-       CARDS
+       QUICK ACCESS
     ========================== */
 
     .quick-grid {
@@ -319,8 +331,8 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 11px;
-      padding: 20px;
-      transition: .2s ease;
+      padding: 18px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
     }
 
     .quick-card:hover {
@@ -329,31 +341,44 @@
       box-shadow: 0 8px 20px rgba(15,23,42,.07);
     }
 
+    .quick-icon {
+      width: 37px;
+      height: 37px;
+      border-radius: 9px;
+      background: #EAF2FF;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 11px;
+      font-size: 17px;
+    }
+
     .quick-card h3 {
       color: var(--text);
-      font-size: 15px;
-      margin-bottom: 7px;
+      font-size: 13px;
+      margin-bottom: 5px;
     }
 
     .quick-card p {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
       line-height: 1.5;
-      margin-bottom: 13px;
+      margin-bottom: 11px;
     }
 
-    .card-link {
+    .quick-card .card-link {
       color: var(--navy);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
     }
 
-    .card-link:hover {
+    .quick-card .card-link:hover {
       color: var(--blue);
     }
 
     /* =========================
-       LOWER PANELS
+       ACCOUNT + INFO
     ========================== */
 
     .lower-grid {
@@ -372,7 +397,7 @@
 
     .panel h2 {
       color: var(--text);
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 17px;
     }
 
@@ -385,18 +410,18 @@
       border-bottom: 1px solid #EDF1F6;
     }
 
-    .account-row:last-of-type {
+    .account-row:last-child {
       border-bottom: 0;
     }
 
     .account-label {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .account-value {
       color: var(--text);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       text-align: right;
       word-break: break-word;
@@ -414,7 +439,7 @@
       padding: 9px 0;
       border-bottom: 1px solid #EDF1F6;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .info-list li:last-child {
@@ -440,17 +465,11 @@
       border-radius: 7px;
       font-weight: 700;
       cursor: pointer;
-      font-size: 13px;
-      transition: .2s ease;
+      font-size: 12px;
     }
 
     .logout-btn:hover {
       background: #FEF2F2;
-    }
-
-    .logout-btn:disabled {
-      opacity: .65;
-      cursor: not-allowed;
     }
 
     /* =========================
@@ -464,7 +483,7 @@
       justify-content: center;
       background: var(--bg);
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
     }
 
     .loading-box {
@@ -488,18 +507,6 @@
       }
     }
 
-    .loading-error {
-      max-width: 380px;
-      margin: 12px auto 0;
-      padding: 12px;
-      border-radius: 7px;
-      background: #FFF7F7;
-      border: 1px solid #FECACA;
-      color: var(--red);
-      font-size: 13px;
-      display: none;
-    }
-
     #dashboard {
       display: none;
     }
@@ -513,12 +520,13 @@
       color: #B9C4D5;
       padding: 25px 20px;
       text-align: center;
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .app-footer a {
       color: #D8E0ED;
       margin: 0 7px;
+      font-size: 11px;
     }
 
     .app-footer a:hover {
@@ -544,6 +552,7 @@
     ========================== */
 
     @media (max-width: 1050px) {
+
       .quick-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -631,8 +640,20 @@
         grid-template-columns: 1fr;
       }
 
+      .section-header {
+        display: block;
+      }
+
+      .section-header p {
+        margin-top: 3px;
+      }
+
       .welcome h1 {
-        font-size: 25px;
+        font-size: 24px;
+      }
+
+      .welcome p {
+        font-size: 12px;
       }
 
       .panel {
@@ -647,13 +668,27 @@
         text-align: left;
         margin-top: 3px;
       }
+
+      .quick-card h3 {
+        font-size: 13px;
+      }
+
+      .quick-card p {
+        font-size: 11px;
+      }
+
+      .quick-card .card-link {
+        font-size: 11px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- LOADING -->
+  <!-- =========================
+       LOADING
+  ========================== -->
 
   <div id="loading">
 
@@ -661,21 +696,18 @@
 
       <div class="loader"></div>
 
-      <p id="loadingText">
+      <p>
         Checking your account...
       </p>
-
-      <div
-        class="loading-error"
-        id="loadingError"
-      ></div>
 
     </div>
 
   </div>
 
 
-  <!-- DASHBOARD -->
+  <!-- =========================
+       APPLICATION
+  ========================== -->
 
   <div class="app" id="dashboard">
 
@@ -698,26 +730,32 @@
           class="active"
           aria-current="page"
         >
+          <span class="nav-icon">⌂</span>
           Dashboard
         </a>
 
         <a href="scholarships.html">
+          <span class="nav-icon">🎓</span>
           Scholarships
         </a>
 
         <a href="jobs.html">
+          <span class="nav-icon">💼</span>
           Jobs
         </a>
 
         <a href="internships.html">
+          <span class="nav-icon">🚀</span>
           Internships
         </a>
 
         <a href="courses.html">
+          <span class="nav-icon">📚</span>
           Courses
         </a>
 
         <a href="opportunities.html">
+          <span class="nav-icon">🌍</span>
           Opportunities
         </a>
 
@@ -731,10 +769,12 @@
       <nav class="sidebar-nav">
 
         <a href="about.html">
+          <span class="nav-icon">ℹ</span>
           About
         </a>
 
         <a href="contact.html">
+          <span class="nav-icon">✉</span>
           Contact
         </a>
 
@@ -776,7 +816,7 @@
 
     <div class="main-area">
 
-      <!-- TOPBAR -->
+      <!-- TOP BAR -->
 
       <header class="topbar">
 
@@ -824,6 +864,8 @@
 
       <main class="content">
 
+        <!-- WELCOME -->
+
         <section class="welcome">
 
           <h1 id="welcomeTitle">
@@ -845,25 +887,34 @@
         </section>
 
 
+        <!-- OPPORTUNITIES -->
+
         <div class="section-header">
 
-          <h2>
-            Explore Opportunities
-          </h2>
+          <div>
+            <h2>Explore Opportunities</h2>
 
-          <p>
-            Find useful resources for education, career and skills.
-          </p>
+            <p>
+              Find useful resources for education, career and skills.
+            </p>
+          </div>
 
         </div>
 
 
         <section class="quick-grid">
 
+          <!-- Scholarships -->
+
           <a
             href="scholarships.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              🎓
+            </div>
+
             <h3>Scholarships</h3>
 
             <p>
@@ -873,13 +924,21 @@
             <span class="card-link">
               Explore →
             </span>
+
           </a>
 
+
+          <!-- Jobs -->
 
           <a
             href="jobs.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              💼
+            </div>
+
             <h3>Jobs</h3>
 
             <p>
@@ -889,13 +948,21 @@
             <span class="card-link">
               Find Jobs →
             </span>
+
           </a>
 
+
+          <!-- Internships -->
 
           <a
             href="internships.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              🚀
+            </div>
+
             <h3>Internships</h3>
 
             <p>
@@ -905,13 +972,21 @@
             <span class="card-link">
               Explore →
             </span>
+
           </a>
 
+
+          <!-- Courses -->
 
           <a
             href="courses.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              📚
+            </div>
+
             <h3>Online Courses</h3>
 
             <p>
@@ -921,13 +996,21 @@
             <span class="card-link">
               Browse →
             </span>
+
           </a>
 
+
+          <!-- Opportunities -->
 
           <a
             href="opportunities.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              🌍
+            </div>
+
             <h3>Opportunities</h3>
 
             <p>
@@ -937,13 +1020,21 @@
             <span class="card-link">
               Explore →
             </span>
+
           </a>
 
+
+          <!-- Digital Skills -->
 
           <a
             href="index.html#digital-skills"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              💻
+            </div>
+
             <h3>Digital Skills</h3>
 
             <p>
@@ -953,13 +1044,21 @@
             <span class="card-link">
               Learn More →
             </span>
+
           </a>
 
+
+          <!-- About -->
 
           <a
             href="about.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              ℹ
+            </div>
+
             <h3>About Us</h3>
 
             <p>
@@ -969,13 +1068,21 @@
             <span class="card-link">
               Learn More →
             </span>
+
           </a>
 
+
+          <!-- Contact -->
 
           <a
             href="contact.html"
             class="quick-card"
           >
+
+            <div class="quick-icon">
+              ✉
+            </div>
+
             <h3>Contact</h3>
 
             <p>
@@ -985,14 +1092,17 @@
             <span class="card-link">
               Contact Us →
             </span>
+
           </a>
 
         </section>
 
 
-        <!-- ACCOUNT + QUICK LINKS -->
+        <!-- ACCOUNT + QUICK INFO -->
 
         <section class="lower-grid">
+
+          <!-- ACCOUNT -->
 
           <div class="panel">
 
@@ -1055,6 +1165,8 @@
 
           </div>
 
+
+          <!-- QUICK INFORMATION -->
 
           <div class="panel">
 
@@ -1144,13 +1256,11 @@
   </div>
 
 
-  <!-- SUPABASE AUTH -->
+  <!-- =========================
+       SUPABASE
+  ========================== -->
 
   <script>
-
-    /* =========================
-       SUPABASE CONFIG
-    ========================== */
 
     const SUPABASE_URL =
       "https://wrdpnhqwolqovoukhlns.supabase.co";
@@ -1158,34 +1268,6 @@
     const SUPABASE_KEY =
       "sb_publishable_lwbqDRIFpr9-n0DGgJRuBg_QK7Srf_b";
 
-
-    /* =========================
-       CHECK SUPABASE LIBRARY
-    ========================== */
-
-    if (
-      !window.supabase ||
-      typeof window.supabase.createClient !== "function"
-    ) {
-
-      document.getElementById("loadingText").textContent =
-        "Unable to connect to the account service.";
-
-      document.getElementById("loadingError").style.display =
-        "block";
-
-      document.getElementById("loadingError").textContent =
-        "Supabase could not be loaded. Please refresh the page.";
-
-      throw new Error(
-        "Supabase library was not loaded."
-      );
-    }
-
-
-    /* =========================
-       CREATE CLIENT
-    ========================== */
 
     const supabaseClient =
       window.supabase.createClient(
@@ -1207,12 +1289,6 @@
 
     const loading =
       document.getElementById("loading");
-
-    const loadingText =
-      document.getElementById("loadingText");
-
-    const loadingError =
-      document.getElementById("loadingError");
 
     const dashboard =
       document.getElementById("dashboard");
@@ -1237,90 +1313,12 @@
 
 
     /* =========================
-       SHOW DASHBOARD
-    ========================== */
-
-    function showDashboard(user) {
-
-      const email =
-        user.email || "User";
-
-      const name =
-        user.user_metadata?.full_name ||
-        user.user_metadata?.name ||
-        email.split("@")[0] ||
-        "User";
-
-
-      welcomeTitle.textContent =
-        "Welcome, " + name + "!";
-
-
-      userEmail.textContent =
-        email;
-
-
-      accountEmail.textContent =
-        email;
-
-
-      topUserName.textContent =
-        name;
-
-
-      avatar.textContent =
-        name
-          .trim()
-          .charAt(0)
-          .toUpperCase();
-
-
-      if (user.created_at) {
-
-        const date =
-          new Date(user.created_at);
-
-        memberSince.textContent =
-          date.toLocaleDateString(
-            undefined,
-            {
-              year: "numeric",
-              month: "short",
-              day: "numeric"
-            }
-          );
-
-      } else {
-
-        memberSince.textContent =
-          "Available";
-
-      }
-
-
-      loading.style.display =
-        "none";
-
-      dashboard.style.display =
-        "flex";
-
-    }
-
-
-    /* =========================
-       CHECK USER
+       CHECK AUTHENTICATED USER
     ========================== */
 
     async function checkUser() {
 
       try {
-
-        loadingText.textContent =
-          "Checking your account...";
-
-        loadingError.style.display =
-          "none";
-
 
         const {
           data,
@@ -1329,12 +1327,7 @@
           await supabaseClient.auth.getUser();
 
 
-        if (error) {
-
-          console.error(
-            "Supabase getUser error:",
-            error
-          );
+        if (error || !data || !data.user) {
 
           window.location.replace(
             "login.html"
@@ -1344,22 +1337,82 @@
         }
 
 
-        if (
-          !data ||
-          !data.user
-        ) {
+        const user =
+          data.user;
 
-          window.location.replace(
-            "login.html"
-          );
 
-          return;
+        const email =
+          user.email || "User";
+
+
+        const name =
+          user.user_metadata?.full_name ||
+          user.user_metadata?.name ||
+          email.split("@")[0] ||
+          "User";
+
+
+        /* Welcome */
+
+        welcomeTitle.textContent =
+          "Welcome, " + name + "!";
+
+
+        /* Email */
+
+        userEmail.textContent =
+          email;
+
+
+        accountEmail.textContent =
+          email;
+
+
+        /* Topbar */
+
+        topUserName.textContent =
+          name;
+
+
+        /* Avatar */
+
+        avatar.textContent =
+          name.charAt(0).toUpperCase();
+
+
+        /* Member date */
+
+        if (user.created_at) {
+
+          const date =
+            new Date(user.created_at);
+
+
+          memberSince.textContent =
+            date.toLocaleDateString(
+              undefined,
+              {
+                year: "numeric",
+                month: "short",
+                day: "numeric"
+              }
+            );
+
+        } else {
+
+          memberSince.textContent =
+            "Available";
+
         }
 
 
-        showDashboard(
-          data.user
-        );
+        /* Show dashboard */
+
+        loading.style.display =
+          "none";
+
+        dashboard.style.display =
+          "flex";
 
 
       } catch (error) {
@@ -1394,7 +1447,6 @@
         function(button) {
 
           button.disabled = true;
-
           button.textContent =
             "Logging out...";
 
@@ -1411,11 +1463,6 @@
 
 
         if (error) {
-
-          console.error(
-            "Logout error:",
-            error
-          );
 
           alert(
             "Logout failed: " +
@@ -1448,7 +1495,7 @@
       } catch (error) {
 
         console.error(
-          "Logout exception:",
+          "Logout error:",
           error
         );
 
@@ -1476,10 +1523,6 @@
     }
 
 
-    /* =========================
-       LOGOUT EVENTS
-    ========================== */
-
     document
       .getElementById("logoutBtn")
       .addEventListener(
@@ -1504,7 +1547,8 @@
       function(event, session) {
 
         if (
-          event === "SIGNED_OUT"
+          event === "SIGNED_OUT" ||
+          !session
         ) {
 
           window.location.replace(
@@ -1528,7 +1572,32 @@
       document.getElementById("sidebar");
 
     const sidebarOverlay =
-      document.getElementById("sidebarOverlay");
+      document.getElementById(
+        "sidebarOverlay"
+      );
+
+
+    function openSidebar() {
+
+      sidebar.classList.add(
+        "open"
+      );
+
+      sidebarOverlay.classList.add(
+        "active"
+      );
+
+      mobileMenu.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      mobileMenu.setAttribute(
+        "aria-label",
+        "Close dashboard menu"
+      );
+
+    }
 
 
     function closeSidebar() {
@@ -1546,6 +1615,11 @@
         "false"
       );
 
+      mobileMenu.setAttribute(
+        "aria-label",
+        "Open dashboard menu"
+      );
+
     }
 
 
@@ -1553,20 +1627,19 @@
       "click",
       function() {
 
-        const isOpen =
-          sidebar.classList.toggle(
+        if (
+          sidebar.classList.contains(
             "open"
-          );
+          )
+        ) {
 
-        sidebarOverlay.classList.toggle(
-          "active",
-          isOpen
-        );
+          closeSidebar();
 
-        mobileMenu.setAttribute(
-          "aria-expanded",
-          String(isOpen)
-        );
+        } else {
+
+          openSidebar();
+
+        }
 
       }
     );
@@ -1592,8 +1665,24 @@
       );
 
 
+    window.addEventListener(
+      "resize",
+      function() {
+
+        if (
+          window.innerWidth > 800
+        ) {
+
+          closeSidebar();
+
+        }
+
+      }
+    );
+
+
     /* =========================
-       START DASHBOARD
+       START
     ========================== */
 
     checkUser();
