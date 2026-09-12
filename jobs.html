@@ -130,6 +130,44 @@
       font: inherit;
     }
 
+    /* ACCESSIBILITY */
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 2000;
+      padding: 10px 16px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 7px;
+      font-weight: 700;
+      transform: translateY(-150%);
+      transition: transform .2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
     /* HEADER */
 
     .site-header {
@@ -177,12 +215,9 @@
       transition: background .2s ease;
     }
 
-    .main-nav a:hover {
-      background: rgba(255,255,255,.12);
-    }
-
+    .main-nav a:hover,
     .main-nav a.active {
-      background: rgba(255,255,255,.13);
+      background: rgba(255,255,255,.12);
     }
 
     .login-link {
@@ -275,6 +310,14 @@
       margin: 0 auto 22px;
     }
 
+    .search-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
     .search-box {
       width: 100%;
       padding: 14px 17px;
@@ -288,7 +331,8 @@
     }
 
     .search-box::placeholder {
-      color: #94A3B8;
+      color: #64748B;
+      opacity: 1;
     }
 
     .search-box:focus {
@@ -329,7 +373,7 @@
     .job-btn:focus-visible,
     .main-nav a:focus-visible,
     .menu-toggle:focus-visible {
-      outline: 3px solid rgba(244,197,66,.65);
+      outline: 3px solid var(--gold);
       outline-offset: 2px;
     }
 
@@ -510,10 +554,11 @@
       gap: 35px;
     }
 
-    footer h3,
-    footer h4 {
+    footer h2 {
       color: var(--white);
       margin-bottom: 12px;
+      font-size: 21px;
+      line-height: 1.3;
     }
 
     footer p {
@@ -655,10 +700,34 @@
         padding: 8px 12px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- ACCESSIBILITY SKIP LINK -->
+
+  <a
+    class="skip-link"
+    href="#main-content">
+    Skip to main content
+  </a>
+
 
   <!-- HEADER -->
 
@@ -688,7 +757,9 @@
         id="mainNav"
         aria-label="Main navigation">
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+          Home
+        </a>
 
         <a href="scholarships.html">
           Scholarships
@@ -742,11 +813,15 @@
 
   <!-- HERO -->
 
-  <section class="hero">
+  <section
+    class="hero"
+    aria-labelledby="page-title">
 
     <div class="hero-content">
 
-      <h1>Job Opportunities</h1>
+      <h1 id="page-title">
+        Job Opportunities
+      </h1>
 
       <p>
         Discover employment opportunities, graduate careers,
@@ -759,7 +834,7 @@
   </section>
 
 
-  <main>
+  <main id="main-content">
 
     <!-- INTRO -->
 
@@ -778,10 +853,16 @@
         effectively.
 
         You can also explore our
-        <a href="scholarships.html">scholarships</a>,
-        <a href="internships.html">internships</a>
+        <a href="scholarships.html">
+          scholarships
+        </a>,
+        <a href="internships.html">
+          internships
+        </a>
         and
-        <a href="courses.html">online courses</a>.
+        <a href="courses.html">
+          online courses
+        </a>.
 
       </p>
 
@@ -814,14 +895,27 @@
 
     <section
       class="search-area"
-      aria-label="Job search">
+      aria-labelledby="job-search-title">
+
+      <h2
+        id="job-search-title"
+        class="visually-hidden">
+        Search jobs
+      </h2>
+
+      <label
+        class="search-label"
+        for="jobSearch">
+        Search jobs
+      </label>
 
       <input
         type="search"
         id="jobSearch"
         class="search-box"
+        name="search"
         placeholder="Search jobs by field, location or level..."
-        aria-label="Search jobs"
+        aria-label="Search jobs by field, location or level"
         autocomplete="off">
 
     </section>
@@ -837,42 +931,48 @@
       <button
         type="button"
         class="filter-btn active"
-        data-filter="all">
+        data-filter="all"
+        aria-pressed="true">
         All
       </button>
 
       <button
         type="button"
         class="filter-btn"
-        data-filter="tanzania">
+        data-filter="tanzania"
+        aria-pressed="false">
         Tanzania
       </button>
 
       <button
         type="button"
         class="filter-btn"
-        data-filter="graduate">
+        data-filter="graduate"
+        aria-pressed="false">
         Graduate
       </button>
 
       <button
         type="button"
         class="filter-btn"
-        data-filter="technology">
+        data-filter="technology"
+        aria-pressed="false">
         Technology
       </button>
 
       <button
         type="button"
         class="filter-btn"
-        data-filter="health">
+        data-filter="health"
+        aria-pressed="false">
         Health
       </button>
 
       <button
         type="button"
         class="filter-btn"
-        data-filter="remote">
+        data-filter="remote"
+        aria-pressed="false">
         Remote
       </button>
 
@@ -885,8 +985,7 @@
 
       <h2
         id="job-list-title"
-        class="section-title"
-        style="position:absolute;left:-9999px;">
+        class="visually-hidden">
         Job Opportunity Resources
       </h2>
 
@@ -901,7 +1000,9 @@
           data-category="tanzania"
           data-search="tanzania jobs general employment career">
 
-          <span class="badge">Tanzania</span>
+          <span class="badge">
+            Tanzania
+          </span>
 
           <h3>
             Tanzania Job Opportunities
@@ -932,7 +1033,8 @@
             href="https://www.ajira.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="job-btn">
+            class="job-btn"
+            aria-label="Visit official Tanzania jobs source, opens in a new tab">
             Visit Official Source
           </a>
 
@@ -946,7 +1048,9 @@
           data-category="graduate"
           data-search="graduate jobs fresh graduates entry level Tanzania">
 
-          <span class="badge">Graduate</span>
+          <span class="badge">
+            Graduate
+          </span>
 
           <h3>
             Graduate &amp; Entry-Level Jobs
@@ -977,7 +1081,8 @@
             href="https://www.ajira.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="job-btn">
+            class="job-btn"
+            aria-label="Explore graduate and entry-level jobs, opens in a new tab">
             Explore Jobs
           </a>
 
@@ -991,7 +1096,9 @@
           data-category="technology"
           data-search="technology IT software developer programming jobs">
 
-          <span class="badge">Technology</span>
+          <span class="badge">
+            Technology
+          </span>
 
           <h3>
             Technology &amp; IT Careers
@@ -1022,7 +1129,8 @@
             href="https://www.ajira.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="job-btn">
+            class="job-btn"
+            aria-label="Explore technology and IT job opportunities, opens in a new tab">
             Explore Opportunities
           </a>
 
@@ -1036,7 +1144,9 @@
           data-category="health"
           data-search="health medical laboratory nursing medicine healthcare jobs">
 
-          <span class="badge">Health</span>
+          <span class="badge">
+            Health
+          </span>
 
           <h3>
             Health &amp; Medical Careers
@@ -1067,7 +1177,8 @@
             href="https://www.ajira.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="job-btn">
+            class="job-btn"
+            aria-label="Check official source for health and medical careers, opens in a new tab">
             Check Official Source
           </a>
 
@@ -1081,7 +1192,9 @@
           data-category="remote"
           data-search="remote online jobs work from home digital jobs">
 
-          <span class="badge">Remote</span>
+          <span class="badge">
+            Remote
+          </span>
 
           <h3>
             Remote &amp; Digital Jobs
@@ -1113,7 +1226,8 @@
             href="https://www.ajira.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="job-btn">
+            class="job-btn"
+            aria-label="Explore remote and digital job opportunities, opens in a new tab">
             Explore Jobs
           </a>
 
@@ -1127,7 +1241,9 @@
           data-category="tanzania"
           data-search="public service government jobs Tanzania employment">
 
-          <span class="badge">Public Service</span>
+          <span class="badge">
+            Public Service
+          </span>
 
           <h3>
             Public Service Careers
@@ -1158,7 +1274,8 @@
             href="https://www.ajira.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="job-btn">
+            class="job-btn"
+            aria-label="Visit official source for public service careers, opens in a new tab">
             Visit Official Source
           </a>
 
@@ -1171,9 +1288,12 @@
           class="no-results"
           id="noResults"
           role="status"
-          aria-live="polite">
+          aria-live="polite"
+          aria-atomic="true">
 
-          <strong>No jobs found.</strong>
+          <strong>
+            No jobs found.
+          </strong>
 
           <br>
 
@@ -1224,6 +1344,7 @@
       </p>
 
       <ul>
+
         <li>
           Identify your skills, qualifications and career interests.
         </li>
@@ -1247,6 +1368,7 @@
         <li>
           Keep records of positions you have applied for.
         </li>
+
       </ul>
 
       <div class="notice">
@@ -1288,7 +1410,8 @@
 
         <a
           href="courses.html"
-          class="job-btn">
+          class="job-btn"
+          aria-label="Explore online courses">
           Explore Courses
         </a>
 
@@ -1317,19 +1440,22 @@
 
         <a
           href="scholarships.html"
-          class="job-btn">
+          class="job-btn"
+          aria-label="Explore scholarships">
           Scholarships
         </a>
 
         <a
           href="internships.html"
-          class="job-btn">
+          class="job-btn"
+          aria-label="Explore internships">
           Internships
         </a>
 
         <a
           href="opportunities.html"
-          class="job-btn">
+          class="job-btn"
+          aria-label="Explore all opportunities">
           All Opportunities
         </a>
 
@@ -1363,9 +1489,13 @@
 
       <p>
         Learn more about
-        <a href="about.html">OpportunityBridge</a>
+        <a href="about.html">
+          OpportunityBridge
+        </a>
         or visit our
-        <a href="contact.html">Contact page</a>
+        <a href="contact.html">
+          Contact page
+        </a>
         if you have a correction or useful information to share.
       </p>
 
@@ -1376,40 +1506,86 @@
 
   <!-- FOOTER -->
 
-  <footer>
+  <footer aria-label="Site footer">
 
     <div class="footer-grid">
 
       <div>
-        <h3>OpportunityBridge</h3>
+
+        <h2>
+          OpportunityBridge
+        </h2>
 
         <p>
           A digital information platform connecting students,
           graduates and job seekers with useful education,
           career and opportunity resources.
         </p>
+
       </div>
 
       <div>
-        <h4>Explore</h4>
 
-        <a href="index.html">Home</a>
-        <a href="scholarships.html">Scholarships</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="internships.html">Internships</a>
-        <a href="courses.html">Courses</a>
-        <a href="opportunities.html">Opportunities</a>
+        <h2>
+          Explore
+        </h2>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="scholarships.html">
+          Scholarships
+        </a>
+
+        <a href="jobs.html">
+          Jobs
+        </a>
+
+        <a href="internships.html">
+          Internships
+        </a>
+
+        <a href="courses.html">
+          Courses
+        </a>
+
+        <a href="opportunities.html">
+          Opportunities
+        </a>
+
       </div>
 
       <div>
-        <h4>Information</h4>
 
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-        <a href="Privacy.html">Privacy</a>
-        <a href="Disclaimer.html">Disclaimer</a>
+        <h2>
+          Information
+        </h2>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="login.html">
+          Login
+        </a>
+
+        <a href="register.html">
+          Register
+        </a>
+
+        <a href="Privacy.html">
+          Privacy
+        </a>
+
+        <a href="Disclaimer.html">
+          Disclaimer
+        </a>
+
       </div>
 
     </div>
@@ -1481,7 +1657,8 @@
               "Open navigation"
             );
 
-            menuToggle.textContent = "☰";
+            menuToggle.textContent =
+              "☰";
 
           }
         );
@@ -1537,13 +1714,15 @@
           matchesFilter
         ) {
 
-          card.style.display = "flex";
+          card.style.display =
+            "flex";
 
           visibleCards++;
 
         } else {
 
-          card.style.display = "none";
+          card.style.display =
+            "none";
 
         }
 
@@ -1576,14 +1755,32 @@
 
             filterButtons.forEach(
               function (btn) {
-                btn.classList.remove("active");
+
+                btn.classList.remove(
+                  "active"
+                );
+
+                btn.setAttribute(
+                  "aria-pressed",
+                  "false"
+                );
+
               }
             );
 
-            button.classList.add("active");
+            button.classList.add(
+              "active"
+            );
+
+            button.setAttribute(
+              "aria-pressed",
+              "true"
+            );
 
             currentFilter =
-              button.getAttribute("data-filter");
+              button.getAttribute(
+                "data-filter"
+              );
 
             updateJobs();
 
