@@ -67,7 +67,7 @@
     }
 
     /* =========================
-       APP
+       APP LAYOUT
     ========================== */
 
     .app {
@@ -97,7 +97,7 @@
     .brand {
       display: block;
       padding: 8px 12px 25px;
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 800;
       white-space: nowrap;
     }
@@ -110,7 +110,7 @@
       padding: 0 12px;
       margin: 8px 0 8px;
       color: #91A4C1;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .8px;
@@ -125,11 +125,10 @@
     .sidebar-nav a {
       display: flex;
       align-items: center;
-      gap: 12px;
       padding: 12px 12px;
       border-radius: 8px;
       color: #D8E0ED;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       transition: background .2s, color .2s;
     }
@@ -154,7 +153,7 @@
       display: block;
       padding: 10px 12px;
       color: #B9C4D5;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .sidebar-bottom a:hover {
@@ -162,7 +161,7 @@
     }
 
     /* =========================
-       MAIN
+       MAIN AREA
     ========================== */
 
     .main-area {
@@ -172,7 +171,7 @@
     }
 
     /* =========================
-       TOPBAR
+       TOP BAR
     ========================== */
 
     .topbar {
@@ -191,7 +190,7 @@
     .mobile-brand {
       display: none;
       color: var(--navy);
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 800;
     }
 
@@ -201,7 +200,7 @@
 
     .topbar-title {
       color: var(--text);
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
     }
 
@@ -216,12 +215,12 @@
       align-items: center;
       gap: 9px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .avatar {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: #EAF2FF;
       color: var(--navy);
@@ -229,18 +228,19 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .mobile-menu {
       display: none;
-      border: 0;
-      background: transparent;
+      border: 1px solid var(--border);
+      background: white;
       color: var(--navy);
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-      padding: 5px;
+      padding: 7px 11px;
+      border-radius: 6px;
     }
 
     /* =========================
@@ -291,7 +291,7 @@
       background: rgba(255,255,255,.12);
       border-radius: 6px;
       color: white;
-      font-size: 14px;
+      font-size: 15px;
       word-break: break-word;
     }
 
@@ -308,17 +308,17 @@
 
     .section-header h2 {
       color: var(--text);
-      font-size: 22px;
+      font-size: 23px;
     }
 
     .section-header p {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
       margin-top: 3px;
     }
 
     /* =========================
-       QUICK CARDS
+       QUICK ACCESS
     ========================== */
 
     .quick-grid {
@@ -331,7 +331,7 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 11px;
-      padding: 20px;
+      padding: 21px;
       transition:
         transform .2s,
         box-shadow .2s,
@@ -346,20 +346,20 @@
 
     .quick-card h3 {
       color: var(--text);
-      font-size: 17px;
-      margin-bottom: 7px;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
 
     .quick-card p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.6;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
 
     .quick-card .card-link {
       color: var(--navy);
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
     }
 
@@ -387,7 +387,7 @@
 
     .panel h2 {
       color: var(--text);
-      font-size: 20px;
+      font-size: 21px;
       margin-bottom: 18px;
     }
 
@@ -406,12 +406,12 @@
 
     .account-label {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .account-value {
       color: var(--text);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       text-align: right;
       word-break: break-word;
@@ -426,10 +426,10 @@
     }
 
     .info-list li {
-      padding: 10px 0;
+      padding: 11px 0;
       border-bottom: 1px solid #EDF1F6;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .info-list li:last-child {
@@ -451,11 +451,11 @@
       border: 1px solid #FECACA;
       background: #FFF7F7;
       color: var(--red);
-      padding: 11px 14px;
+      padding: 12px 14px;
       border-radius: 7px;
       font-weight: 700;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .logout-btn:hover {
@@ -623,11 +623,19 @@
         font-size: 21px;
       }
 
+      .section-header p {
+        font-size: 15px;
+      }
+
       .quick-card h3 {
         font-size: 17px;
       }
 
       .quick-card p {
+        font-size: 14px;
+      }
+
+      .quick-card .card-link {
         font-size: 14px;
       }
 
@@ -660,7 +668,7 @@
 
       .section-header p {
         margin-top: 4px;
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .welcome {
@@ -676,7 +684,7 @@
       }
 
       .welcome-email {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .panel {
@@ -684,7 +692,7 @@
       }
 
       .panel h2 {
-        font-size: 19px;
+        font-size: 20px;
       }
 
       .account-row {
@@ -692,29 +700,29 @@
       }
 
       .account-label {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .account-value {
         text-align: left;
         margin-top: 4px;
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .info-list li {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .logout-btn {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .app-footer {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .app-footer a {
-        font-size: 13px;
+        font-size: 14px;
       }
     }
 
@@ -1108,8 +1116,6 @@
 
         <section class="lower-grid">
 
-          <!-- ACCOUNT -->
-
           <div class="panel">
 
             <h2>
@@ -1171,8 +1177,6 @@
 
           </div>
 
-
-          <!-- QUICK LINKS -->
 
           <div class="panel">
 
@@ -1360,34 +1364,25 @@
           "User";
 
 
-        /* Welcome */
-
         welcomeTitle.textContent =
           "Welcome, " + name + "!";
 
 
-        /* Email */
-
         userEmail.textContent =
           email;
+
 
         accountEmail.textContent =
           email;
 
 
-        /* Topbar */
-
         topUserName.textContent =
           name;
 
 
-        /* Avatar */
-
         avatar.textContent =
           name.charAt(0).toUpperCase();
 
-
-        /* Member date */
 
         if (user.created_at) {
 
@@ -1412,8 +1407,6 @@
 
         }
 
-
-        /* Show dashboard */
 
         loading.style.display =
           "none";
