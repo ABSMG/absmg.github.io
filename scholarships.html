@@ -27,11 +27,13 @@
     name="googlebot"
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <meta name="google-adsense-account"
-        content="ca-pub-2004981151172844">
+  <meta
+    name="google-adsense-account"
+    content="ca-pub-2004981151172844">
 
-  <meta name="theme-color"
-        content="#0b3d91">
+  <meta
+    name="theme-color"
+    content="#0b3d91">
 
   <meta
     name="google-site-verification"
@@ -48,8 +50,9 @@
        OPEN GRAPH
   ========================================================== -->
 
-  <meta property="og:type"
-        content="website">
+  <meta
+    property="og:type"
+    content="website">
 
   <meta
     property="og:title"
@@ -200,9 +203,41 @@
       font-family: inherit;
     }
 
+
+    /* =========================================================
+       ACCESSIBILITY
+    ========================================================== */
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 2000;
+
+      padding: 10px 16px;
+
+      background: var(--gold);
+      color: var(--navy);
+
+      border-radius: 7px;
+
+      font-weight: 700;
+
+      transform: translateY(-150%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
     :focus-visible {
-      outline: 3px solid rgba(244, 197, 66, 0.8);
-      outline-offset: 2px;
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .search-box::placeholder {
+      color: #64748b;
     }
 
 
@@ -289,6 +324,7 @@
       font-size: 27px;
       line-height: 1;
       padding: 7px;
+      cursor: pointer;
     }
 
 
@@ -411,10 +447,6 @@
       transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
-    }
-
-    .search-box::placeholder {
-      color: #94a3b8;
     }
 
     .search-box:focus {
@@ -666,13 +698,12 @@
       gap: 38px;
     }
 
-    footer h3,
-    footer h4 {
+    footer h2 {
       margin-bottom: 12px;
       color: var(--white);
     }
 
-    footer h3 {
+    footer h2 {
       font-size: 21px;
     }
 
@@ -869,6 +900,19 @@
 
 
   <!-- =========================================================
+       ACCESSIBILITY SKIP LINK
+  ========================================================== -->
+
+  <a
+    class="skip-link"
+    href="#main-content">
+
+    Skip to main content
+
+  </a>
+
+
+  <!-- =========================================================
        HEADER
   ========================================================== -->
 
@@ -912,7 +956,9 @@
           href="scholarships.html"
           class="active"
           aria-current="page">
+
           Scholarships
+
         </a>
 
         <a href="jobs.html">
@@ -942,13 +988,17 @@
         <a
           href="login.html"
           class="login-link">
+
           Login
+
         </a>
 
         <a
           href="register.html"
           class="register-link">
+
           Register
+
         </a>
 
       </nav>
@@ -962,11 +1012,13 @@
        HERO
   ========================================================== -->
 
-  <section class="hero">
+  <section
+    class="hero"
+    aria-labelledby="page-title">
 
     <div class="hero-content">
 
-      <h1>
+      <h1 id="page-title">
         Scholarship Opportunities
       </h1>
 
@@ -981,7 +1033,7 @@
   </section>
 
 
-  <main>
+  <main id="main-content">
 
 
     <!-- =======================================================
@@ -1054,7 +1106,15 @@
 
     <section
       class="search-area"
-      aria-label="Scholarship search">
+      aria-labelledby="search-scholarships-title">
+
+      <h2
+        id="search-scholarships-title"
+        class="visually-hidden">
+
+        Search scholarships
+
+      </h2>
 
       <label
         class="search-label"
@@ -1068,6 +1128,7 @@
         type="search"
         id="scholarshipSearch"
         class="search-box"
+        name="search"
         placeholder="Search by name, country, study level or field..."
         aria-label="Search scholarships"
         autocomplete="off">
@@ -1140,7 +1201,8 @@
             href="https://www.moe.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="apply-btn">
+            class="apply-btn"
+            aria-label="Official Information, opens in a new tab">
 
             Official Information
 
@@ -1193,7 +1255,8 @@
             href="https://www.educationplannerbc.ca/"
             target="_blank"
             rel="noopener noreferrer"
-            class="apply-btn">
+            class="apply-btn"
+            aria-label="Explore Official Options, opens in a new tab">
 
             Explore Official Options
 
@@ -1246,7 +1309,8 @@
             href="https://www.studyinafrica.com/"
             target="_blank"
             rel="noopener noreferrer"
-            class="apply-btn">
+            class="apply-btn"
+            aria-label="Explore Opportunities, opens in a new tab">
 
             Explore Opportunities
 
@@ -1299,7 +1363,8 @@
             href="https://www.educationplannerbc.ca/"
             target="_blank"
             rel="noopener noreferrer"
-            class="apply-btn">
+            class="apply-btn"
+            aria-label="Find University Options, opens in a new tab">
 
             Find University Options
 
@@ -1352,7 +1417,8 @@
             href="https://www.moe.go.tz/"
             target="_blank"
             rel="noopener noreferrer"
-            class="apply-btn">
+            class="apply-btn"
+            aria-label="Check Official Sources, opens in a new tab">
 
             Check Official Sources
 
@@ -1405,7 +1471,8 @@
             href="https://www.educationplannerbc.ca/"
             target="_blank"
             rel="noopener noreferrer"
-            class="apply-btn">
+            class="apply-btn"
+            aria-label="Explore Study Options, opens in a new tab">
 
             Explore Study Options
 
@@ -1422,7 +1489,8 @@
           class="no-results"
           id="noResults"
           role="status"
-          aria-live="polite">
+          aria-live="polite"
+          aria-atomic="true">
 
           <strong>
             No scholarships found.
@@ -1576,25 +1644,33 @@
         <a
           href="jobs.html"
           class="resource-btn">
+
           Explore Jobs
+
         </a>
 
         <a
           href="internships.html"
           class="resource-btn">
+
           Explore Internships
+
         </a>
 
         <a
           href="courses.html"
           class="resource-btn">
+
           Explore Courses
+
         </a>
 
         <a
           href="opportunities.html"
           class="resource-btn">
+
           All Opportunities
+
         </a>
 
       </div>
@@ -1643,7 +1719,7 @@
        FOOTER
   ========================================================== -->
 
-  <footer>
+  <footer aria-label="Site footer">
 
     <div class="footer-container">
 
@@ -1652,9 +1728,9 @@
 
         <div>
 
-          <h3>
+          <h2>
             OpportunityBridge
-          </h3>
+          </h2>
 
           <p>
             Global opportunities and digital resources for students,
@@ -1666,9 +1742,9 @@
 
         <div>
 
-          <h4>
+          <h2>
             Explore
-          </h4>
+          </h2>
 
           <ul>
 
@@ -1709,9 +1785,9 @@
 
         <div>
 
-          <h4>
+          <h2>
             Company
-          </h4>
+          </h2>
 
           <ul>
 
