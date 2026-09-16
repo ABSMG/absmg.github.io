@@ -1,7 +1,168 @@
 {
-  "approved_at": "2026-09-16T10:23:57.908656+00:00",
-  "total_checked": 0,
-  "approved_count": 0,
-  "rejected_count": 0,
-  "approved_items": []
+  "approved_at": "2026-09-16T21:21:01.950874+00:00",
+  "total_checked": 100,
+  "approved_count": 8,
+  "rejected_count": 92,
+  "approved_items": [
+    {
+      "title": "International Scholarships Take Old Dominion University Students Around the World - odu.edu",
+      "source": "Google News - Scholarships",
+      "publisher_name": "odu.edu",
+      "publisher_url": "https://www.odu.edu",
+      "news_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR0N0S1BJQmJ1MmxIZllLTlBwcEFIaWZiVlhGdVVjUFpBc1N5OGxOR05lallObWJEYXlKaFM1TVBLODZ3Vi01WHJqZ0xYTXVGRXI3MlF6LWZYQWpPLXREYUozaVJKbEhHY1dyVENkNUxLVTBVaENFRTNTWUE1eTRtQjRVR3hiZmJuVWtsbTBXci1IZWUtQWNGNzQ0LV9tMkVwM2QtcXZoQVRlazk4bnc?oc=5",
+      "source_url": "https://www.odu.edu",
+      "published": "2026-09-15T17:38:17+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students"
+      ],
+      "discovered_at": "2026-09-16T21:20:59.600285+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "5 Tips for Securing Summer Internships for Incoming First-Years - Harvard College",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "Harvard College",
+      "publisher_url": "https://college.harvard.edu",
+      "news_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNEhmZVFmUkwtVVFJcTdTZjJQZ2FCeUU4WXZrcU5qUXVCNGd6QTB2djFGTlczWVRDTHM4NURWeHFEbWNiVEI4d3lIcTgwUVdXWWY4aEMtYVNkUUJQdE9CTnpObERZOW81VHE1V0pKa09wOTBSTFdlR0tXMHFKNWlMMU0zV1Utb2d0Rm5EZFBUUWJZZVducmhIMWhvYzFrYXlwWnZVelNPLXNqYTdkUHRjcGxn?oc=5",
+      "source_url": "https://college.harvard.edu",
+      "published": "2026-09-04T07:00:00+00:00",
+      "matched_keywords": [
+        "internship",
+        "internships"
+      ],
+      "discovered_at": "2026-09-16T21:21:01.116054+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "Scholarship Opportunities for Students, Graduates & Researchers - fundsforNGOs",
+      "source": "Google News - Scholarships",
+      "publisher_name": "fundsforNGOs",
+      "publisher_url": "https://www2.fundsforngos.org",
+      "news_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaUVkN3UySkxSTXJicXEwMEVtVjBib21icndNZGlTVVJ2cWY2eEI2VGVITTA4QWVJa1pjUFIxdzkzejhFMjgyVWk2VmI4R2FmRnB3eHc2VEg0V1BPbWs3OTRVRDlFMng0dy1ab3cyVkxrYl9ZU1l4S29aNVBOZGZjVnVsLVYyOVlTN3ZiRVplNUs3U0xkdlBmbFRmZ3NhMTlL0gGmAUFVX3lxTE5zUVA2TS10MDhOREF4UUJNM0I0bmxYeG9Uc08zUjlIaTRDZUpVdzBWRzJGUnUxMHBvemhfS3hKUFhObHF2VHYxWUlfWjJ6ZkVPY3FwTHhTdWFIdldXZDFwbFhWcVlXYktxZGJJSWptb0NILVBGZzNSS2swazJkZnZHVDgzSDFLdlNiWHptZGJkTWU3ajJQT2ZrSGk0RjNZSWoxMGx1Y1E?oc=5",
+      "source_url": "https://www2.fundsforngos.org",
+      "published": "2026-09-03T05:19:03+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "students"
+      ],
+      "discovered_at": "2026-09-16T21:20:59.607748+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "South Africa Students Can Apply For 2027 Mastercard Foundation Scholarships - educationafricamag.com",
+      "source": "Google News - Scholarships",
+      "publisher_name": "educationafricamag.com",
+      "publisher_url": "https://www.educationafricamag.com",
+      "news_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbVJYR3FZcU8zMVlsNWM4WXJBUmZyWDRKNmFBY3VZeVVkMVZTUWVkeGpFbHBfYkRvRS1ENmZsZ2FiT2l5QzJxUEhkc3hYeG1aVHBmZDZlTG8tdHA3NTAxR21iWFk0bkM4OGJaTXhBODBCcVdqSTlVbDdpbUxIclpId3BPamdpMVloVW00ODRVUTFtNTAtMVhOTGFCSHZkWENrcjZWcnFjMTZXTWE3SVZyVU9CSDBEaVd6YWc?oc=5",
+      "source_url": "https://www.educationafricamag.com",
+      "published": "2026-08-24T18:18:29+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students",
+        "africa"
+      ],
+      "discovered_at": "2026-09-16T21:20:59.600624+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "‘Hidden gem’: Montana State’s Bracken Center helping students find internships, job offers - montana.edu",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "montana.edu",
+      "publisher_url": "https://www.montana.edu",
+      "news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdkNiNExCdDYyaTFpbzI1Mk9aUnd0TllsaWRxXy1MelJsUHJ4b2p4VnBvUlV2NGpUR201OXVQajMtMGFtTVp2ZjFhYmpQaGV1bGtUSXEzM1cyWVQ5NnFNbkFJam8xQWRvamN5NjZWWC1mMUVFRUZmaDlIUG5EWGpvWGNRU0tDUW00Qjg2ZDJ0TXBpT2IzTWhiOE0tOXNUdVVGbTJHNWNWMHB0UV9GSUVzX0NxQm5wWTFDYV94TVln?oc=5",
+      "source_url": "https://www.montana.edu",
+      "published": "2026-08-20T16:30:39+00:00",
+      "matched_keywords": [
+        "internship",
+        "internships",
+        "job",
+        "students"
+      ],
+      "discovered_at": "2026-09-16T21:21:01.116498+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "Free IT Certifications and Courses to Elevate Your Career - Coursera",
+      "source": "Google News - Free Courses",
+      "publisher_name": "Coursera",
+      "publisher_url": "https://www.coursera.org",
+      "news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9Rd2ZoYWFaR0ZwTUgyaWV6bXVFcldDV0lFTVhIcWVsbS0wQ0Z4QzMxUElicVNqcHBNSHZhd1lETXdwUzlubFljRkQtbVdKQkNiNVdmelMyRDdNcVhSM1N0THZUOFBzSG8?oc=5",
+      "source_url": "https://www.coursera.org",
+      "published": "2026-08-19T07:00:00+00:00",
+      "matched_keywords": [
+        "career",
+        "course",
+        "courses"
+      ],
+      "discovered_at": "2026-09-16T21:21:01.947125+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "Bulletin: 40 Partial Scholarships forWar-Affected Students at Egyptian-Russian University; Saudi University Lets Graduates of Health Related Subjects Study Medicine - Al-Fanar Media",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Al-Fanar Media",
+      "publisher_url": "https://al-fanarmedia.org",
+      "news_url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxOU05LN1l2ZWpoaklTS1VKZW9pR3hMWFh0cDdmQUpqc0NxeHZfUVQyay1oY205cFRFSDhSUXowS2dOM0s2YUlwbm5lZmxLSzBDd3dtYUctVkdpNDF3QWNiZkdwdW5ZYzhDY3ZhUjRrSWU0N2Q3MjFLMjYxa1BmbGxtMG5YYVFkYzRQdWtwNGtJdzZBYXNCUnB5dFZnUF84NE9YN0dqa0w3OG55Q1B6N0N6Qy13ZWVrNHhhLUNiV3BjRjRKNlRaTkZHTE9lLXVoS0M5RHZpUkt5T2RwNkhmaU5idzdyM19MMnR5R2FyUThHZTdCeWRpcGxuOEhFM2lVdHJ1eER0S1djWXVXRGRlbmVfTTE2YzRFcmlKNE1nR3JGQkhPSVU?oc=5",
+      "source_url": "https://al-fanarmedia.org",
+      "published": "2026-08-06T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students"
+      ],
+      "discovered_at": "2026-09-16T21:20:59.607028+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "Tom Queba and Pegasys Scholarships for Social Change (South Africa) - fundsforNGOs",
+      "source": "Google News - Scholarships",
+      "publisher_name": "fundsforNGOs",
+      "publisher_url": "https://www2.fundsforngos.org",
+      "news_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNWFpa1JoMUxJUVVLcFQzM2t1N2pjUW5HWXZIdUxvd2FvRG8yVDZGdGl4b21SUHlocXNKQ2lCOXRWTnp1Q1d5SnFMRER4bUFob0hRdUFGSEc2ZFVWMVRrYVg0R29veEZXZHUzWUt2WEcwTEpKQzVyS3NmdGF2YjBTNHNmczdLY2dmcTNmMUlQTnFJcHJaNGpVelp0ZzNBdlJQYl9OQkFsY9IBrAFBVV95cUxNMk4tdzczWm1pazV3Z2hZVjhFZUhhMEo2a0dEcThVaTdXWF9xNFJ4NTVnd1BJU2QwSEtMZTN1aVh2eE1sMVZsZnl6VU9RMnpaLUZsUldrb3J5RmZPLXVVQWRZUW5qNXpxU2R0NmlyeC13UmFuaFlkWUdPM0ZwUVcyYnpSWEFsaE9UTGdlNk1xTkY3UDJsN1RvdFJ1SlNwQl9RSGc4RzFfLTY1a0tR?oc=5",
+      "source_url": "https://www2.fundsforngos.org",
+      "published": "2026-07-27T10:09:40+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "africa"
+      ],
+      "discovered_at": "2026-09-16T21:20:59.607474+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    }
+  ]
 }
