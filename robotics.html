@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Robotics Skills, Courses & Opportunities | OpportunityBridge</title>
+
+  <meta
+    name="description"
+    content="Explore robotics skills, courses, learning resources, career opportunities and practical guidance for students and beginners interested in robotics, automation and technology."
+  >
+
+  <meta
+    name="keywords"
+    content="robotics, robotics courses, robotics skills, robotics careers, robotics opportunities, automation, robotics for students, programming, electronics, artificial intelligence"
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://absmg.github.io/robotics.html"
+  >
+
+  <!-- Open Graph -->
+  <meta
+    property="og:title"
+    content="Robotics Skills, Courses & Opportunities | OpportunityBridge"
+  >
+
+  <meta
+    property="og:description"
+    content="Explore robotics skills, courses, learning resources and career opportunities for students and beginners."
+  >
+
+  <meta
+    property="og:url"
+    content="https://absmg.github.io/robotics.html"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:site_name"
+    content="OpportunityBridge"
+  >
+
+  <!-- Twitter -->
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Robotics Skills, Courses & Opportunities"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Explore robotics skills, courses, learning resources and career opportunities."
+  >
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Robotics Skills, Courses & Opportunities",
+    "url": "https://absmg.github.io/robotics.html",
+    "description": "Explore robotics skills, courses, learning resources and career opportunities for students and beginners.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "OpportunityBridge",
+      "url": "https://absmg.github.io/"
+    }
+  }
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      line-height: 1.7;
+      color: #172033;
+      background: #f6f8fb;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #172033;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+
+    .hero {
+      background: #eef4ff;
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      font-size: 18px;
+      color: #475569;
+    }
+
+    /* Main */
+
+    main {
+      padding: 45px 20px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      color: #526071;
+      margin-bottom: 25px;
+    }
+
+    /* Cards */
+
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(240px, 1fr)
+        );
+
+      gap: 22px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 25px;
+
+      box-shadow:
+        0 5px 20px rgba(
+          15,
+          23,
+          42,
+          0.05
+        );
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #526071;
+    }
+
+    /* Lists */
+
+    .learning-list {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 28px 35px;
+    }
+
+    .learning-list li {
+      margin-bottom: 10px;
+    }
+
+    /* Opportunities */
+
+    .opportunity-box {
+      background: #ffffff;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+
+      background: #172033;
+      color: #ffffff;
+
+      padding: 12px 20px;
+
+      border-radius: 8px;
+
+      font-weight: 600;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
+    /* FAQ */
+
+    .faq {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 25px;
+      margin-bottom: 15px;
+    }
+
+    .faq h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .faq p {
+      color: #526071;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #172033;
+      color: #dbe4f0;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: #ffffff;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 55px 20px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section h2 {
+        font-size: 26px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <nav
+      class="nav-container"
+      aria-label="Main navigation"
+    >
+
+      <a
+        class="logo"
+        href="https://absmg.github.io/"
+      >
+        OpportunityBridge
+      </a>
+
+      <div class="nav-links">
+
+        <a href="https://absmg.github.io/">
+          Home
+        </a>
+
+        <a href="https://absmg.github.io/scholarships.html">
+          Scholarships
+        </a>
+
+        <a href="https://absmg.github.io/jobs.html">
+          Jobs
+        </a>
+
+        <a href="https://absmg.github.io/internships.html">
+          Internships
+        </a>
+
+        <a href="https://absmg.github.io/courses.html">
+          Courses
+        </a>
+
+        <a href="https://absmg.github.io/opportunities.html">
+          Opportunities
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>
+        Robotics Skills, Courses & Opportunities
+      </h1>
+
+      <p>
+        Explore robotics, automation, programming,
+        electronics, artificial intelligence and
+        practical technology skills. Discover
+        learning paths and opportunities that can
+        help students and beginners build a
+        foundation in robotics.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- MAIN -->
+
+  <main>
+
+    <div class="container">
+
+
+      <!-- INTRODUCTION -->
+
+      <section class="section">
+
+        <h2>
+          What Is Robotics?
+        </h2>
+
+        <p class="section-intro">
+
+          Robotics is an interdisciplinary field
+          that combines engineering, programming,
+          electronics, mathematics and computer
+          science to design and control machines
+          that can perform tasks automatically or
+          with human assistance.
+
+        </p>
+
+        <p class="section-intro">
+
+          Robotics can be applied in manufacturing,
+          healthcare, agriculture, transportation,
+          education, research, logistics and many
+          other areas of technology.
+
+        </p>
+
+      </section>
+
+
+      <!-- CORE SKILLS -->
+
+      <section class="section">
+
+        <h2>
+          Essential Robotics Skills
+        </h2>
+
+        <p class="section-intro">
+
+          Students interested in robotics can build
+          their knowledge gradually by developing
+          several technical and problem-solving
+          skills.
+
+        </p>
+
+
+        <div class="grid">
+
+
+          <article class="card">
+
+            <h3>
+              Programming
+            </h3>
+
+            <p>
+
+              Learn programming and computational
+              thinking to control robots, process
+              sensor information and build automated
+              systems.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Electronics
+            </h3>
+
+            <p>
+
+              Understand circuits, electronic
+              components, motors, controllers and
+              sensors used in robotic systems.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Mechanical Design
+            </h3>
+
+            <p>
+
+              Learn basic mechanical principles,
+              structures, movement and mechanisms
+              used when designing physical robots.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Sensors
+            </h3>
+
+            <p>
+
+              Explore how sensors allow robots to
+              detect information about their
+              environment.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Automation
+            </h3>
+
+            <p>
+
+              Understand how machines and software
+              can work together to perform repetitive
+              or complex tasks automatically.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Artificial Intelligence
+            </h3>
+
+            <p>
+
+              Explore AI concepts such as computer
+              vision, machine learning and intelligent
+              decision-making for robotic systems.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- LEARNING PATH -->
+
+      <section class="section">
+
+        <h2>
+          Robotics Learning Path
+        </h2>
+
+        <p class="section-intro">
+
+          A beginner can approach robotics step by
+          step rather than trying to learn every
+          subject at once.
+
+        </p>
+
+
+        <div class="learning-list">
+
+          <ul>
+
+            <li>
+              Learn basic mathematics and logical
+              problem-solving.
+            </li>
+
+            <li>
+              Develop programming fundamentals.
+            </li>
+
+            <li>
+              Study basic electronics and circuits.
+            </li>
+
+            <li>
+              Learn about sensors, motors and
+              microcontrollers.
+            </li>
+
+            <li>
+              Explore robotics programming and
+              control systems.
+            </li>
+
+            <li>
+              Build small practical robotics
+              projects.
+            </li>
+
+            <li>
+              Progress into automation, AI,
+              computer vision or advanced robotics.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+
+      <!-- CAREER AREAS -->
+
+      <section class="section">
+
+        <h2>
+          Robotics Career Areas
+        </h2>
+
+        <div class="grid">
+
+
+          <article class="card">
+
+            <h3>
+              Robotics Engineering
+            </h3>
+
+            <p>
+
+              Work on the design, development and
+              testing of robotic systems.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Automation
+            </h3>
+
+            <p>
+
+              Work with automated production systems,
+              industrial equipment and control
+              technologies.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Embedded Systems
+            </h3>
+
+            <p>
+
+              Develop software and hardware systems
+              that control electronic devices and
+              machines.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Artificial Intelligence
+            </h3>
+
+            <p>
+
+              Apply AI and machine learning to
+              intelligent machines and automated
+              systems.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Research & Development
+            </h3>
+
+            <p>
+
+              Participate in research and development
+              of new robotics technologies and
+              applications.
+
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Education & Training
+            </h3>
+
+            <p>
+
+              Teach robotics, programming,
+              electronics and technology skills.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- OPPORTUNITIES -->
+
+      <section class="section">
+
+        <div class="opportunity-box">
+
+          <h2>
+            Find Courses and Opportunities
+          </h2>
+
+          <p>
+
+            Explore scholarships, courses,
+            internships, jobs and other
+            opportunities available through
+            OpportunityBridge.
+
+          </p>
+
+          <a
+            class="button"
+            href="https://absmg.github.io/opportunities.html"
+          >
+            Explore Opportunities
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- FAQ -->
+
+      <section class="section">
+
+        <h2>
+          Robotics FAQs
+        </h2>
+
+
+        <div class="faq">
+
+          <h3>
+            Is robotics only about building robots?
+          </h3>
+
+          <p>
+
+            No. Robotics also involves programming,
+            electronics, mechanical systems,
+            sensors, automation, control systems
+            and artificial intelligence.
+
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>
+            What should a beginner learn first?
+          </h3>
+
+          <p>
+
+            A beginner can start with programming,
+            mathematics, basic electronics and
+            problem-solving before progressing to
+            practical robotics projects.
+
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>
+            Can robotics be combined with AI?
+          </h3>
+
+          <p>
+
+            Yes. Artificial intelligence can be
+            used with robotics for areas such as
+            computer vision, navigation,
+            classification and intelligent
+            decision-making.
+
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <h3>
+            Where can robotics skills be used?
+          </h3>
+
+          <p>
+
+            Robotics skills can be useful in
+            manufacturing, agriculture, healthcare,
+            logistics, research, education,
+            transportation and other technology
+            sectors.
+
+          </p>
+
+        </div>
+
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      &copy; 2026 OpportunityBridge.
+      All rights reserved.
+    </p>
+
+    <p>
+
+      <a href="https://absmg.github.io/about.html">
+        About
+      </a>
+
+      &nbsp; · &nbsp;
+
+      <a href="https://absmg.github.io/contact.html">
+        Contact
+      </a>
+
+      &nbsp; · &nbsp;
+
+      <a href="https://absmg.github.io/privacy.html">
+        Privacy
+      </a>
+
+      &nbsp; · &nbsp;
+
+      <a href="https://absmg.github.io/disclaimer.html">
+        Disclaimer
+      </a>
+
+    </p>
+
+  </footer>
+
+</body>
+</html>
