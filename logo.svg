@@ -1,86 +1,205 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
-  <title id="title">OpportunityBridge Logo</title>
-  <desc id="desc">A bridge connecting people to global opportunities</desc>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1024"
+     height="1024"
+     viewBox="0 0 1024 1024"
+     fill="none">
+
+  <!-- TRANSPARENT BACKGROUND -->
 
   <defs>
-    <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b3d91"/>
-      <stop offset="100%" stop-color="#1769d1"/>
+    <!-- Gold -->
+    <linearGradient id="gold" x1="180" y1="150" x2="850" y2="850"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF3A3"/>
+      <stop offset="0.22" stop-color="#FFD84D"/>
+      <stop offset="0.55" stop-color="#F4C542"/>
+      <stop offset="0.8" stop-color="#DDAA19"/>
+      <stop offset="1" stop-color="#B98208"/>
     </linearGradient>
 
-    <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f4c542"/>
-      <stop offset="100%" stop-color="#ffd966"/>
+    <!-- Blue -->
+    <linearGradient id="blue" x1="300" y1="300" x2="700" y2="700"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2388FF"/>
+      <stop offset="0.5" stop-color="#1769D1"/>
+      <stop offset="1" stop-color="#0B3D91"/>
     </linearGradient>
+
+    <!-- White metallic effect -->
+    <linearGradient id="whiteMetal" x1="300" y1="500" x2="700" y2="850"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.45" stop-color="#EAF2FF"/>
+      <stop offset="1" stop-color="#B9C9E5"/>
+    </linearGradient>
+
+    <!-- Gold glow -->
+    <filter id="goldGlow"
+            x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Blue glow -->
+    <filter id="blueGlow"
+            x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft shadow -->
+    <filter id="shadow"
+            x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14"
+                    stdDeviation="14"
+                    flood-color="#062B68"
+                    flood-opacity="0.35"/>
+    </filter>
   </defs>
 
-  <!-- Icon background -->
-  <rect x="20" y="20" width="200" height="200" rx="42"
-        fill="url(#blueGradient)"/>
+  <!-- ========================= -->
+  <!-- GOLD BRIDGE MAIN ARCH -->
+  <!-- ========================= -->
 
-  <!-- Global circle -->
-  <circle cx="120" cy="105" r="55"
-          fill="none"
-          stroke="#ffffff"
-          stroke-width="8"/>
+  <path
+    d="M150 650
+       C190 350 350 180 512 180
+       C674 180 834 350 874 650"
+    stroke="#0B3D91"
+    stroke-width="105"
+    stroke-linecap="round"
+    opacity="0.18"/>
 
-  <!-- Globe lines -->
-  <path d="M65 105 H175"
-        fill="none"
-        stroke="#ffffff"
-        stroke-width="6"
-        stroke-linecap="round"/>
+  <path
+    d="M150 650
+       C190 350 350 180 512 180
+       C674 180 834 350 874 650"
+    stroke="url(#gold)"
+    stroke-width="82"
+    stroke-linecap="round"
+    filter="url(#goldGlow)"/>
 
-  <path d="M120 50
-           C92 70 92 140 120 160
-           C148 140 148 70 120 50Z"
-        fill="none"
-        stroke="#ffffff"
-        stroke-width="6"/>
+  <!-- Inner gold highlight -->
 
-  <!-- Bridge -->
-  <path d="M55 165
-           C82 125 158 125 185 165"
-        fill="none"
-        stroke="url(#goldGradient)"
-        stroke-width="12"
-        stroke-linecap="round"/>
+  <path
+    d="M181 643
+       C218 375 360 224 512 224
+       C664 224 806 375 843 643"
+    stroke="#FFE77A"
+    stroke-width="10"
+    stroke-linecap="round"
+    opacity="0.85"/>
 
-  <!-- Bridge pillars -->
-  <path d="M72 158 V180 M168 158 V180"
-        stroke="#f4c542"
-        stroke-width="9"
-        stroke-linecap="round"/>
+  <!-- ========================= -->
+  <!-- WHITE BRIDGE SUPPORTS -->
+  <!-- ========================= -->
 
-  <!-- Opportunity path -->
-  <path d="M120 168 V192"
-        stroke="#ffffff"
-        stroke-width="7"
-        stroke-linecap="round"/>
+  <rect x="230" y="505"
+        width="72" height="250"
+        rx="22"
+        fill="url(#whiteMetal)"
+        filter="url(#shadow)"/>
 
-  <!-- Brand name -->
-  <text x="255" y="125"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="62"
-        font-weight="700"
-        fill="#0b3d91">
-    Opportunity
-  </text>
+  <rect x="722" y="505"
+        width="72" height="250"
+        rx="22"
+        fill="url(#whiteMetal)"
+        filter="url(#shadow)"/>
 
-  <text x="255" y="185"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="62"
-        font-weight="700"
-        fill="#1769d1">
-    Bridge
-  </text>
+  <!-- Support highlights -->
 
-  <!-- Tagline -->
-  <text x="515" y="218"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="18"
-        font-weight="600"
-        fill="#64748b">
-    GLOBAL OPPORTUNITIES
-  </text>
+  <rect x="247" y="525"
+        width="16" height="205"
+        rx="8"
+        fill="#FFFFFF"
+        opacity="0.9"/>
+
+  <rect x="739" y="525"
+        width="16" height="205"
+        rx="8"
+        fill="#FFFFFF"
+        opacity="0.9"/>
+
+  <!-- ========================= -->
+  <!-- BLUE CONNECTION SYMBOL -->
+  <!-- ========================= -->
+
+  <path
+    d="M365 600
+       C410 520 455 470 512 470
+       C569 470 614 520 659 600"
+    stroke="#082F70"
+    stroke-width="88"
+    stroke-linecap="round"
+    opacity="0.25"/>
+
+  <path
+    d="M365 600
+       C410 520 455 470 512 470
+       C569 470 614 520 659 600"
+    stroke="url(#blue)"
+    stroke-width="62"
+    stroke-linecap="round"
+    filter="url(#blueGlow)"/>
+
+  <!-- Connection center -->
+
+  <circle cx="512" cy="470"
+          r="30"
+          fill="#2388FF"/>
+
+  <circle cx="512" cy="470"
+          r="13"
+          fill="#FFFFFF"
+          opacity="0.9"/>
+
+  <!-- ========================= -->
+  <!-- BRIDGE DECK -->
+  <!-- ========================= -->
+
+  <rect x="175" y="700"
+        width="674"
+        height="86"
+        rx="43"
+        fill="#092F70"
+        opacity="0.25"/>
+
+  <rect x="175" y="680"
+        width="674"
+        height="82"
+        rx="41"
+        fill="url(#whiteMetal)"
+        filter="url(#shadow)"/>
+
+  <!-- Deck highlight -->
+
+  <rect x="225" y="700"
+        width="574"
+        height="13"
+        rx="6.5"
+        fill="#FFFFFF"
+        opacity="0.95"/>
+
+  <!-- ========================= -->
+  <!-- GOLD ACCENT POINTS -->
+  <!-- ========================= -->
+
+  <circle cx="150" cy="650"
+          r="17"
+          fill="#FFD84D"/>
+
+  <circle cx="874" cy="650"
+          r="17"
+          fill="#FFD84D"/>
+
+  <circle cx="512" cy="180"
+          r="15"
+          fill="#FFF3A3"/>
+
 </svg>
