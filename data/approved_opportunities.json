@@ -1,5 +1,5 @@
 {
-  "approved_at": "2026-09-17T03:01:26.594905+00:00",
+  "approved_at": "2026-09-17T10:32:58.505700+00:00",
   "total_checked": 100,
   "approved_count": 8,
   "rejected_count": 92,
@@ -17,7 +17,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-17T03:01:24.423847+00:00",
+      "discovered_at": "2026-09-17T10:32:56.467636+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -36,7 +36,7 @@
         "internship",
         "internships"
       ],
-      "discovered_at": "2026-09-17T03:01:25.807564+00:00",
+      "discovered_at": "2026-09-17T10:32:57.847675+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -55,7 +55,7 @@
         "scholarship",
         "students"
       ],
-      "discovered_at": "2026-09-17T03:01:24.430673+00:00",
+      "discovered_at": "2026-09-17T10:32:56.468928+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -76,7 +76,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-17T03:01:24.424013+00:00",
+      "discovered_at": "2026-09-17T10:32:56.468388+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -84,9 +84,9 @@
       "approval_reason": "Passed approval checks"
     },
     {
-      "title": "‘Hidden gem’: Montana State’s Bracken Center helping students find internships, job offers - montana.edu",
+      "title": "‘Hidden gem’: Montana State’s Bracken Center helping students find internships, job offers - Montana State University",
       "source": "Google News - Internships Africa",
-      "publisher_name": "montana.edu",
+      "publisher_name": "Montana State University",
       "publisher_url": "https://www.montana.edu",
       "news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdkNiNExCdDYyaTFpbzI1Mk9aUnd0TllsaWRxXy1MelJsUHJ4b2p4VnBvUlV2NGpUR201OXVQajMtMGFtTVp2ZjFhYmpQaGV1bGtUSXEzM1cyWVQ5NnFNbkFJam8xQWRvamN5NjZWWC1mMUVFRUZmaDlIUG5EWGpvWGNRU0tDUW00Qjg2ZDJ0TXBpT2IzTWhiOE0tOXNUdVVGbTJHNWNWMHB0UV9GSUVzX0NxQm5wWTFDYV94TVln?oc=5",
       "source_url": "https://www.montana.edu",
@@ -97,27 +97,7 @@
         "job",
         "students"
       ],
-      "discovered_at": "2026-09-17T03:01:25.807789+00:00",
-      "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative",
-      "approval_status": "approved",
-      "approval_reason": "Passed approval checks"
-    },
-    {
-      "title": "Free IT Certifications and Courses to Elevate Your Career - coursera.org",
-      "source": "Google News - Free Courses",
-      "publisher_name": "coursera.org",
-      "publisher_url": "https://www.coursera.org",
-      "news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9Rd2ZoYWFaR0ZwTUgyaWV6bXVFcldDV0lFTVhIcWVsbS0wQ0Z4QzMxUElicVNqcHBNSHZhd1lETXdwUzlubFljRkQtbVdKQkNiNVdmelMyRDdNcVhSM1N0THZUOFBzSG8?oc=5",
-      "source_url": "https://www.coursera.org",
-      "published": "2026-08-19T07:00:00+00:00",
-      "matched_keywords": [
-        "career",
-        "course",
-        "courses"
-      ],
-      "discovered_at": "2026-09-17T03:01:26.592869+00:00",
+      "discovered_at": "2026-09-17T10:32:57.847914+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -137,7 +117,26 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-17T03:01:24.430271+00:00",
+      "discovered_at": "2026-09-17T10:32:56.469022+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "CFAs: Canon Collins RMTF Scholarships for Postgraduate Study - fundsforNGOs",
+      "source": "Google News - Scholarships",
+      "publisher_name": "fundsforNGOs",
+      "publisher_url": "https://www2.fundsforngos.org",
+      "news_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaEp0SUY5N0dCLWNZdDVHSVMxdjVpM1FGOHExVFYzVlR2OFBHUWRjTmkzMUN6UDREU1Bhb1p1cWk2ejQwSmVkMXBkVC1IMVNESjhlMTJmRERzekpCZmZTYnp2VW53YnB0VEZrMnE3aTlYdndYLVFSM3ZpOTAzcmxDSTJTekozblE3UlMxamZoTWFxekVTQ01kMExrMmdsSDMxRVJkTtIBqgFBVV95cUxOTWxNSTgxYmMtTmZ6U2lzVmNvbnFCbHI4Z2cyd2gzVlhEZWxxeVcxaHFFUGItekZxbXQwUThQNHdKWVZRS3RNYlNfRURNMFVoaDBXUWNFT3VRMUN6QlpNUU9kZ1U5V183YVMxekVRb0tpYXVmaWx6R0lJUk5xSkJrd0tpTGJ1MXRJMl8xNE5TdlQ0MUl3aHVWN2x2MEJDV1p0RFNPVzFFNWlzZw?oc=5",
+      "source_url": "https://www2.fundsforngos.org",
+      "published": "2026-07-27T11:26:59+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships"
+      ],
+      "discovered_at": "2026-09-17T10:32:56.470193+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -157,7 +156,7 @@
         "scholarships",
         "africa"
       ],
-      "discovered_at": "2026-09-17T03:01:24.430550+00:00",
+      "discovered_at": "2026-09-17T10:32:56.469412+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
