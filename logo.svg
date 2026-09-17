@@ -1,90 +1,255 @@
-<!-- PREMIUM BLUE CONNECTION -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1024 1024"
+     width="1024"
+     height="1024">
 
-<defs>
-  <linearGradient id="premiumBlue"
-                  x1="350" y1="620"
-                  x2="680" y2="430"
-                  gradientUnits="userSpaceOnUse">
-    <stop offset="0" stop-color="#063B9C"/>
-    <stop offset="0.35" stop-color="#0B5FE7"/>
-    <stop offset="0.65" stop-color="#1688FF"/>
-    <stop offset="1" stop-color="#67C7FF"/>
-  </linearGradient>
+  <defs>
 
-  <linearGradient id="blueHighlight"
-                  x1="390" y1="570"
-                  x2="630" y2="480"
-                  gradientUnits="userSpaceOnUse">
-    <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
-    <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.9"/>
-    <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.2"/>
-  </linearGradient>
+    <!-- GOLD -->
+    <linearGradient id="gold"
+      x1="180" y1="150"
+      x2="850" y2="700"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF4A8"/>
+      <stop offset="25%" stop-color="#FFD84A"/>
+      <stop offset="55%" stop-color="#F4C542"/>
+      <stop offset="80%" stop-color="#DDAA20"/>
+      <stop offset="100%" stop-color="#B77B08"/>
+    </linearGradient>
 
-  <filter id="premiumBlueGlow"
-          x="-40%" y="-40%"
-          width="180%" height="180%">
-    <feGaussianBlur stdDeviation="13" result="blur"/>
-    <feMerge>
-      <feMergeNode in="blur"/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
-  </filter>
-</defs>
+    <!-- PREMIUM BLUE -->
+    <linearGradient id="blue"
+      x1="350" y1="600"
+      x2="670" y2="430"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#063B9C"/>
+      <stop offset="35%" stop-color="#0967E8"/>
+      <stop offset="70%" stop-color="#168CFF"/>
+      <stop offset="100%" stop-color="#67C7FF"/>
+    </linearGradient>
 
-<!-- Outer blue glow -->
-<path
-  d="M365 600
-     C410 520 455 470 512 470
-     C569 470 614 520 659 600"
-  stroke="#1688FF"
-  stroke-width="82"
-  stroke-linecap="round"
-  opacity="0.20"
-  filter="url(#premiumBlueGlow)"
-/>
+    <!-- WHITE -->
+    <linearGradient id="white"
+      x1="300" y1="500"
+      x2="700" y2="800"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F3F7FF"/>
+      <stop offset="100%" stop-color="#B8C9E5"/>
+    </linearGradient>
 
-<!-- Main premium blue connection -->
-<path
-  d="M365 600
-     C410 520 455 470 512 470
-     C569 470 614 520 659 600"
-  stroke="url(#premiumBlue)"
-  stroke-width="58"
-  stroke-linecap="round"
-/>
+  </defs>
 
-<!-- Blue glass highlight -->
-<path
-  d="M388 580
-     C430 515 470 485 512 485
-     C554 485 594 515 636 580"
-  stroke="url(#blueHighlight)"
-  stroke-width="9"
-  stroke-linecap="round"
-  opacity="0.85"
-/>
 
-<!-- Premium center -->
-<circle
-  cx="512"
-  cy="470"
-  r="34"
-  fill="#0B5FE7"
-  opacity="0.35"
-  filter="url(#premiumBlueGlow)"
-/>
+  <!-- ================================= -->
+  <!-- GOLDEN BRIDGE OUTER ARCH -->
+  <!-- ================================= -->
 
-<circle
-  cx="512"
-  cy="470"
-  r="27"
-  fill="url(#premiumBlue)"
-/>
+  <path
+    d="M145 650
+       C185 350 350 165 512 165
+       C674 165 839 350 879 650"
+    fill="none"
+    stroke="#8E6200"
+    stroke-width="108"
+    stroke-linecap="round"
+    opacity="0.25"/>
 
-<circle
-  cx="512"
-  cy="470"
-  r="10"
-  fill="#FFFFFF"
-  opacity="0.95"
-/>
+  <path
+    d="M145 650
+       C185 350 350 165 512 165
+       C674 165 839 350 879 650"
+    fill="none"
+    stroke="url(#gold)"
+    stroke-width="82"
+    stroke-linecap="round"/>
+
+
+  <!-- GOLD INNER HIGHLIGHT -->
+
+  <path
+    d="M177 640
+       C220 385 365 215 512 215
+       C659 215 804 385 847 640"
+    fill="none"
+    stroke="#FFF1A0"
+    stroke-width="9"
+    stroke-linecap="round"
+    opacity="0.9"/>
+
+
+  <!-- ================================= -->
+  <!-- LEFT WHITE SUPPORT -->
+  <!-- ================================= -->
+
+  <rect
+    x="225"
+    y="505"
+    width="78"
+    height="235"
+    rx="20"
+    fill="#8EA4C7"
+    opacity="0.35"/>
+
+  <rect
+    x="235"
+    y="495"
+    width="68"
+    height="245"
+    rx="18"
+    fill="url(#white)"/>
+
+  <rect
+    x="250"
+    y="515"
+    width="15"
+    height="190"
+    rx="7"
+    fill="#FFFFFF"/>
+
+
+  <!-- ================================= -->
+  <!-- RIGHT WHITE SUPPORT -->
+  <!-- ================================= -->
+
+  <rect
+    x="721"
+    y="505"
+    width="78"
+    height="235"
+    rx="20"
+    fill="#8EA4C7"
+    opacity="0.35"/>
+
+  <rect
+    x="721"
+    y="495"
+    width="68"
+    height="245"
+    rx="18"
+    fill="url(#white)"/>
+
+  <rect
+    x="739"
+    y="515"
+    width="15"
+    height="190"
+    rx="7"
+    fill="#FFFFFF"/>
+
+
+  <!-- ================================= -->
+  <!-- BLUE CONNECTION ARCH -->
+  <!-- ================================= -->
+
+  <path
+    d="M350 610
+       C395 525 450 465 512 465
+       C574 465 629 525 674 610"
+    fill="none"
+    stroke="#062E73"
+    stroke-width="82"
+    stroke-linecap="round"
+    opacity="0.25"/>
+
+  <path
+    d="M350 600
+       C395 520 450 460 512 460
+       C574 460 629 520 674 600"
+    fill="none"
+    stroke="url(#blue)"
+    stroke-width="58"
+    stroke-linecap="round"/>
+
+
+  <!-- BLUE HIGHLIGHT -->
+
+  <path
+    d="M375 585
+       C415 520 463 485 512 485
+       C561 485 609 520 649 585"
+    fill="none"
+    stroke="#9BD9FF"
+    stroke-width="8"
+    stroke-linecap="round"
+    opacity="0.75"/>
+
+
+  <!-- ================================= -->
+  <!-- BLUE CENTER CONNECTION -->
+  <!-- ================================= -->
+
+  <circle
+    cx="512"
+    cy="460"
+    r="36"
+    fill="#0755C7"
+    opacity="0.35"/>
+
+  <circle
+    cx="512"
+    cy="460"
+    r="27"
+    fill="url(#blue)"/>
+
+  <circle
+    cx="512"
+    cy="460"
+    r="9"
+    fill="#FFFFFF"/>
+
+
+  <!-- ================================= -->
+  <!-- BRIDGE DECK -->
+  <!-- ================================= -->
+
+  <rect
+    x="170"
+    y="675"
+    width="684"
+    height="95"
+    rx="47"
+    fill="#082F70"
+    opacity="0.25"/>
+
+  <rect
+    x="170"
+    y="665"
+    width="684"
+    height="82"
+    rx="41"
+    fill="url(#white)"/>
+
+  <rect
+    x="225"
+    y="686"
+    width="574"
+    height="11"
+    rx="5"
+    fill="#FFFFFF"
+    opacity="0.95"/>
+
+
+  <!-- ================================= -->
+  <!-- GOLD END ACCENTS -->
+  <!-- ================================= -->
+
+  <circle
+    cx="145"
+    cy="650"
+    r="16"
+    fill="#FFD84A"/>
+
+  <circle
+    cx="879"
+    cy="650"
+    r="16"
+    fill="#FFD84A"/>
+
+  <circle
+    cx="512"
+    cy="165"
+    r="14"
+    fill="#FFF4A8"/>
+
+</svg>
