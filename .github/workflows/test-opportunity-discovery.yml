@@ -1,7 +1,8 @@
-name: Test Opportunity Discovery
+name: OpportunityBridge Full Automation
 
 on:
   schedule:
+    # Kila siku saa 09:00 Tanzania time (06:00 UTC)
     - cron: "0 6 * * *"
 
   workflow_dispatch:
@@ -9,69 +10,153 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: opportunitybridge-automation
+  cancel-in-progress: false
+
 jobs:
-  discover:
+  automate:
+    # Zuia commit ya bot kuanzisha cycle nyingine
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Run opportunity discovery
+      # 1. Tafuta opportunities mpya
+      - name: Discover new opportunities
         run: |
           python scripts/opportunity_discovery.py
 
-      - name: Verify opportunities
+      # 2. Verify sources
+      - name: Verify discovered opportunities
         run: |
           python scripts/opportunity_verifier.py
 
-      - name: Show verified opportunities
-        run: |
-          cat data/verified_opportunities.json
-
-      - name: Approve opportunities
+      # 3. Approve valid opportunities
+      - name: Approve verified opportunities
         run: |
           python scripts/opportunity_approval.py
 
-      - name: Show approved opportunities
-        run: |
-          cat data/approved_opportunities.json
-
+      # 4. Generate HTML articles
       - name: Generate opportunity articles
         run: |
           python scripts/opportunity_article_generator.py
 
+      # 5. Add internal links
       - name: Update internal links
         run: |
           python scripts/auto_internal_links.py
 
+      # 6. Generate sitemap
       - name: Generate sitemap
         run: |
           python scripts/generate_sitemap.py
 
+      # 7. Check SEO
       - name: Run SEO checker
         run: |
           python scripts/seo_checker.py
 
-      - name: Show discoveries
+      # 8. Show results
+      - name: Show automation summary
         run: |
-          cat data/discovered_opportunities.json
+          echo "======================================"
+          echo "OPPORTUNITYBRIDGE AUTOMATION SUMMARY"
+          echo "======================================"
 
-      - name: Save discovery results
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/discovered_opportunities.json")
+
+          if p.exists():
+              data = json.loads(
+                  p.read_text(encoding="utf-8")
+              )
+
+              print(
+                  "Discovered:",
+                  data.get(
+                      "total",
+                      len(data.get("items", []))
+                  )
+              )
+          else:
+              print("Discovered: 0")
+          PY
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/verified_opportunities.json")
+
+          if p.exists():
+              data = json.loads(
+                  p.read_text(encoding="utf-8")
+              )
+
+              print(
+                  "Verified:",
+                  data.get(
+                      "total_checked",
+                      len(data.get("items", []))
+                  )
+              )
+          else:
+              print("Verified: 0")
+          PY
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/approved_opportunities.json")
+
+          if p.exists():
+              data = json.loads(
+                  p.read_text(encoding="utf-8")
+              )
+
+              print(
+                  "Approved:",
+                  data.get(
+                      "approved_count",
+                      len(data.get("approved_items", []))
+                  )
+              )
+          else:
+              print("Approved: 0")
+          PY
+
+          echo "======================================"
+
+      # 9. Publish automatically
+      - name: Publish automation results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add "*.html" sitemap.xml data/discovered_opportunities.json data/verified_opportunities.json data/approved_opportunities.json
+          git add -- \
+            '*.html' \
+            sitemap.xml \
+            data/discovered_opportunities.json \
+            data/verified_opportunities.json \
+            data/approved_opportunities.json
 
           if git diff --cached --quiet; then
-            echo "No new opportunity data."
+            echo "No changes to publish."
           else
-            git commit -m "chore: update opportunity discoveries"
+            git commit -m "chore: automated opportunity update [skip ci]"
             git push
           fi
