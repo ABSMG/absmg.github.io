@@ -1,10 +1,14 @@
-name: Automatic Sitemap Manual
+name: Sitemap Check
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: opportunitybridge-sitemap-check
+  cancel-in-progress: false
 
 jobs:
   generate-sitemap:
@@ -21,20 +25,15 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate sitemap
+      - name: Generate sitemap for validation
         run: |
           python scripts/generate_sitemap.py
 
-      - name: Commit sitemap if changed
+      - name: Check sitemap
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff -- sitemap.xml
 
-          git add sitemap.xml
-
-          if git diff --cached --quiet; then
-            echo "Sitemap is already up to date."
-          else
-            git commit -m "chore: manual sitemap update [skip ci]"
-            git push
-          fi
+      - name: Report
+        run: |
+          echo "Sitemap check completed."
+          echo "The main automation workflow is the only workflow allowed to publish sitemap changes."
