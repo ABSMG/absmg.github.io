@@ -1,105 +1,62 @@
 from pathlib import Path
 from datetime import datetime, timezone
-from xml.etree.ElementTree import Element, SubElement, ElementTree
+from xml.sax.saxutils import escape
 import subprocess
 
-
-BASE_URL = "https://absmg.github.io"
-
 ROOT = Path(__file__).resolve().parents[1]
-
+BASE_URL = "https://absmg.github.io"
 OUTPUT = ROOT / "sitemap.xml"
 
-
-# Pages that should NOT appear in Google sitemap.
-EXCLUDED EXCLUDED = {
+EXCLUDED = {
     "404.html",
-
-    # Authentication / private pages
     "login.html",
     "logout.html",
     "register.html",
     "dashboard.html",
     "forgot-password.html",
     "reset-password.html",
-
-    # Legal pages
     "privacy.html",
     "disclaimer.html",
 }
-}
 
 
-# Important public pages.
-PRIORITIES = {
-    "index.html": "1.0",
+def should_include(path: Path) -> bool:
+    if not path.is_file():
+        return False
 
-    "scholarships.html": "0.9",
-    "jobs.html": "0.9",
-    "internships.html": "0.9",
-    "courses.html": "0.9",
-    "opportunities.html": "0.9",
+    if path.suffix.lower() != ".html":
+        return False
 
-    "skills.html": "0.8",
-    "digital-skills.html": "0.8",
-    "career-skills.html": "0.8",
-    "computer-skills.html": "0.8",
-    "data-skills.html": "0.8",
-    "digital-marketing.html": "0.8",
-    "web-development.html": "0.8",
-    "ai-skills.html": "0.8",
+    if path.name in EXCLUDED:
+        return False
 
-    "about.html": "0.6",
-    "contact.html": "0.5",
-}
+    # Google Search Console verification files
+    if path.name.lower().startswith("google"):
+        return False
+
+    if path.name.startswith("_"):
+        return False
+
+    return True
 
 
-# Change frequency hints.
-CHANGEFREQ = {
-    "index.html": "daily",
+def page_url(path: Path) -> str:
+    relative = path.relative_to(ROOT).as_posix()
 
-    "scholarships.html": "daily",
-    "jobs.html": "daily",
-    "internships.html": "daily",
-    "courses.html": "daily",
-    "opportunities.html": "daily",
+    if relative == "index.html":
+        return BASE_URL + "/"
 
-    "skills.html": "weekly",
-    "digital-skills.html": "weekly",
-    "career-skills.html": "weekly",
-    "computer-skills.html": "weekly",
-    "data-skills.html": "weekly",
-    "digital-marketing.html": "weekly",
-    "web-development.html": "weekly",
-    "ai-skills.html": "weekly",
-
-    "about.html": "monthly",
-    "contact.html": "monthly",
-}
+    return BASE_URL + "/" + relative
 
 
-def get_last_modified(path: Path) -> str:
-    """
-    Get the last Git commit date for the file.
-    Falls back to filesystem modification date.
-    """
-
+def last_modified(path: Path) -> str:
     try:
-        relative_path = path.relative_to(ROOT)
-
         result = subprocess.run(
-            [
-                "git",
-                "log",
-                "-1",
-                "--format=%cs",
-                "--",
-                str(relative_path),
-            ],
+            ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(ROOT))],
             cwd=ROOT,
             capture_output=True,
             text=True,
-            check=True,
+            check=False,
         )
 
         value = result.stdout.strip()
@@ -110,186 +67,111 @@ def get_last_modified(path: Path) -> str:
     except Exception:
         pass
 
-    return datetime.fromtimestamp(
-        path.stat().st_mtime,
-        tz=timezone.utc,
-    ).date().isoformat()
+    return datetime.now(timezone.utc).isoformat()
 
 
-def url_for(path: Path) -> str:
-    """
-    Convert a local HTML file into its public OpportunityBridge URL.
-    """
+def priority_for(path: Path) -> str:
+    if path.name == "index.html":
+        return "1.0"
 
-    relative = path.relative_to(ROOT).as_posix()
+    important_pages = {
+        "scholarships.html",
+        "jobs.html",
+        "internships.html",
+        "courses.html",
+        "opportunities.html",
+    }
 
-    # Homepage must use root URL.
-    if relative == "index.html":
-        return BASE_URL + "/"
+    if path.name in important_pages:
+        return "0.9"
 
-    return BASE_URL + "/" + relative
-
-
-def should_include(path: Path) -> bool:
-    """
-    Decide whether a file belongs in the public sitemap.
-    """
-
-    # Must be a real file.
-    if not path.is_file():
-        return False
-
-    # Only HTML pages.
-    if path.suffix.lower() != ".html":
-        return False
-
-    # Excluded pages.
-    def should_include(path: Path) -> bool:
-
-    if not path.is_file():
-        return False
-
-    if path.suffix.lower() != ".html":
-        return False
-
-    if path.name in EXCLUDED:
-        return False
-
-    if path.name.lower().startswith("google"):
-        return False
-
-    if path.name.startswith("_"):
-        return False
-
-    return True
-
-    # Ignore hidden/internal files.
-    if path.name.startswith("_"):
-        return False
-
-    return True
+    return "0.7"
 
 
-def collect_public_pages():
-    """
-    Collect public HTML files from the repository root.
-    """
+def changefreq_for(path: Path) -> str:
+    if path.name == "index.html":
+        return "daily"
+
+    important_pages = {
+        "scholarships.html",
+        "jobs.html",
+        "internships.html",
+        "courses.html",
+        "opportunities.html",
+    }
+
+    if path.name in important_pages:
+        return "daily"
+
+    return "weekly"
+
+
+def main():
+    print("=" * 70)
+    print("OPPORTUNITYBRIDGE SITEMAP GENERATOR v2.1")
+    print("=" * 70)
 
     pages = []
 
-    for path in ROOT.glob("*.html"):
+    for path in sorted(ROOT.glob("*.html")):
         if should_include(path):
             pages.append(path)
 
-    # Remove duplicate paths defensively.
-    unique = {}
-
-    for page in pages:
-        unique[page.resolve()] = page
-
-    pages = list(unique.values())
-
-    # Homepage first, then alphabetical.
-    pages.sort(
-        key=lambda p: (
-            p.name.lower() != "index.html",
-            p.name.lower(),
-        )
-    )
-
-    return pages
-
-
-def generate_sitemap(pages):
-    """
-    Generate sitemap.xml.
-    """
-
-    urlset = Element(
-        "urlset",
-        {
-            "xmlns": "http://www.sitemaps.org/schemas/sitemap/0.9"
-        },
-    )
-
+    # Remove duplicate URLs
+    unique_pages = []
     seen_urls = set()
 
-    for page in pages:
+    for path in pages:
+        url = page_url(path)
 
-        url = url_for(page)
-
-        # Prevent duplicate URLs.
         if url in seen_urls:
             continue
 
         seen_urls.add(url)
+        unique_pages.append(path)
 
-        url_node = SubElement(
-            urlset,
-            "url",
+    pages = unique_pages
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+
+    for path in pages:
+        url = page_url(path)
+        modified = last_modified(path)
+        priority = priority_for(path)
+        changefreq = changefreq_for(path)
+
+        lines.extend(
+            [
+                "  <url>",
+                f"    <loc>{escape(url)}</loc>",
+                f"    <lastmod>{escape(modified)}</lastmod>",
+                f"    <changefreq>{changefreq}</changefreq>",
+                f"    <priority>{priority}</priority>",
+                "  </url>",
+            ]
         )
 
-        # Public URL
-        SubElement(
-            url_node,
-            "loc",
-        ).text = url
+    lines.append("</urlset>")
 
-        # Last modification
-        SubElement(
-            url_node,
-            "lastmod",
-        ).text = get_last_modified(page)
-
-        # Change frequency
-        SubElement(
-            url_node,
-            "changefreq",
-        ).text = CHANGEFREQ.get(
-            page.name,
-            "weekly",
-        )
-
-        # Priority
-        SubElement(
-            url_node,
-            "priority",
-        ).text = PRIORITIES.get(
-            page.name,
-            "0.6",
-        )
-
-    ElementTree(urlset).write(
-        OUTPUT,
+    OUTPUT.write_text(
+        "\n".join(lines) + "\n",
         encoding="utf-8",
-        xml_declaration=True,
     )
 
-    return len(seen_urls)
-
-
-def main():
-
-    print("=" * 70)
-    print("OPPORTUNITYBRIDGE SITEMAP GENERATOR v2.0")
-    print("=" * 70)
-
-    pages = collect_public_pages()
-
-    count = generate_sitemap(pages)
-
     print()
-    print(f"Public HTML pages found: {len(pages)}")
-    print(f"Unique sitemap URLs: {count}")
-    print(f"Output: {OUTPUT}")
+    print(f"Pages included: {len(pages)}")
+    print(f"Sitemap saved: {OUTPUT}")
     print()
-    print("Homepage:")
-    print(f"{BASE_URL}/")
+    print("Excluded:")
+    print("- 404.html")
+    print("- authentication pages")
+    print("- privacy/disclaimer")
+    print("- Google verification HTML files")
     print()
-    print("Sitemap:")
-    print(f"{BASE_URL}/sitemap.xml")
-    print()
-    print("Sitemap generation completed successfully.")
+    print(f"Sitemap URL: {BASE_URL}/sitemap.xml")
     print("=" * 70)
 
 
