@@ -1,29 +1,9 @@
 {
-  "approved_at": "2026-09-17T10:32:58.505700+00:00",
+  "approved_at": "2026-09-18T10:09:14.350262+00:00",
   "total_checked": 100,
   "approved_count": 8,
   "rejected_count": 92,
   "approved_items": [
-    {
-      "title": "International Scholarships Take Old Dominion University Students Around the World - Old Dominion University",
-      "source": "Google News - Scholarships",
-      "publisher_name": "Old Dominion University",
-      "publisher_url": "https://www.odu.edu",
-      "news_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR0N0S1BJQmJ1MmxIZllLTlBwcEFIaWZiVlhGdVVjUFpBc1N5OGxOR05lallObWJEYXlKaFM1TVBLODZ3Vi01WHJqZ0xYTXVGRXI3MlF6LWZYQWpPLXREYUozaVJKbEhHY1dyVENkNUxLVTBVaENFRTNTWUE1eTRtQjRVR3hiZmJuVWtsbTBXci1IZWUtQWNGNzQ0LV9tMkVwM2QtcXZoQVRlazk4bnc?oc=5",
-      "source_url": "https://www.odu.edu",
-      "published": "2026-09-15T17:38:17+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-17T10:32:56.467636+00:00",
-      "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative",
-      "approval_status": "approved",
-      "approval_reason": "Passed approval checks"
-    },
     {
       "title": "5 Tips for Securing Summer Internships for Incoming First-Years - Harvard College",
       "source": "Google News - Internships Africa",
@@ -36,7 +16,7 @@
         "internship",
         "internships"
       ],
-      "discovered_at": "2026-09-17T10:32:57.847675+00:00",
+      "discovered_at": "2026-09-18T10:09:13.625911+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -55,7 +35,7 @@
         "scholarship",
         "students"
       ],
-      "discovered_at": "2026-09-17T10:32:56.468928+00:00",
+      "discovered_at": "2026-09-18T10:09:12.677412+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -76,7 +56,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-17T10:32:56.468388+00:00",
+      "discovered_at": "2026-09-18T10:09:12.674396+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -97,7 +77,27 @@
         "job",
         "students"
       ],
-      "discovered_at": "2026-09-17T10:32:57.847914+00:00",
+      "discovered_at": "2026-09-18T10:09:13.626200+00:00",
+      "status": "needs_verification",
+      "verification_status": "verified_source",
+      "verification_reason": "Source domain looks authoritative",
+      "approval_status": "approved",
+      "approval_reason": "Passed approval checks"
+    },
+    {
+      "title": "Free IT Certifications and Courses to Elevate Your Career - Coursera",
+      "source": "Google News - Free Courses",
+      "publisher_name": "Coursera",
+      "publisher_url": "https://www.coursera.org",
+      "news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9Rd2ZoYWFaR0ZwTUgyaWV6bXVFcldDV0lFTVhIcWVsbS0wQ0Z4QzMxUElicVNqcHBNSHZhd1lETXdwUzlubFljRkQtbVdKQkNiNVdmelMyRDdNcVhSM1N0THZUOFBzSG8?oc=5",
+      "source_url": "https://www.coursera.org",
+      "published": "2026-08-19T07:00:00+00:00",
+      "matched_keywords": [
+        "career",
+        "course",
+        "courses"
+      ],
+      "discovered_at": "2026-09-18T10:09:14.346438+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -117,7 +117,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-17T10:32:56.469022+00:00",
+      "discovered_at": "2026-09-18T10:09:12.675989+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -136,7 +136,7 @@
         "scholarship",
         "scholarships"
       ],
-      "discovered_at": "2026-09-17T10:32:56.470193+00:00",
+      "discovered_at": "2026-09-18T10:09:12.678495+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
@@ -156,7 +156,7 @@
         "scholarships",
         "africa"
       ],
-      "discovered_at": "2026-09-17T10:32:56.469412+00:00",
+      "discovered_at": "2026-09-18T10:09:12.676879+00:00",
       "status": "needs_verification",
       "verification_status": "verified_source",
       "verification_reason": "Source domain looks authoritative",
