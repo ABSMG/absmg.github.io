@@ -3,18 +3,22 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse
 import re
 
+
 ROOT = Path(__file__).resolve().parents[1]
 
 BASE_URL = "https://absmg.github.io"
 
+
 EXCLUDED = {
     "404.html",
+
     "login.html",
     "logout.html",
     "register.html",
     "dashboard.html",
     "forgot-password.html",
     "reset-password.html",
+
     "privacy.html",
     "disclaimer.html",
 }
@@ -27,13 +31,14 @@ class SEOParser(HTMLParser):
 
         self.title = ""
         self.h1_count = 0
-        self.lang = None
+        self.lang = ""
 
         self.meta_description = False
         self.meta_robots = False
 
         self.og_title = False
         self.og_description = False
+        self.og_url = ""
 
         self.canonical = ""
 
@@ -42,12 +47,13 @@ class SEOParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
 
         tag = tag.lower()
-        attrs = dict(attrs)
+
+        attributes = dict(attrs)
 
         if tag == "html":
 
             self.lang = (
-                attrs.get("lang", "")
+                attributes.get("lang", "")
                 or ""
             ).strip()
 
@@ -62,17 +68,17 @@ class SEOParser(HTMLParser):
         elif tag == "meta":
 
             name = (
-                attrs.get("name", "")
+                attributes.get("name", "")
                 or ""
             ).lower().strip()
 
             property_name = (
-                attrs.get("property", "")
+                attributes.get("property", "")
                 or ""
             ).lower().strip()
 
             content = (
-                attrs.get("content", "")
+                attributes.get("content", "")
                 or ""
             ).strip()
 
@@ -100,15 +106,21 @@ class SEOParser(HTMLParser):
             ):
                 self.og_description = True
 
+            if (
+                property_name == "og:url"
+                and content
+            ):
+                self.og_url = content
+
         elif tag == "link":
 
             rel = (
-                attrs.get("rel", "")
+                attributes.get("rel", "")
                 or ""
             ).lower().strip()
 
             href = (
-                attrs.get("href", "")
+                attributes.get("href", "")
                 or ""
             ).strip()
 
@@ -138,7 +150,7 @@ def valid_absolute_url(url):
         return (
             parsed.scheme in {
                 "http",
-                "https"
+                "https",
             }
             and bool(parsed.netloc)
         )
@@ -148,27 +160,14 @@ def valid_absolute_url(url):
         return False
 
 
-def is_generated_article(path):
+def expected_url_for(path):
 
-    name = path.name.lower()
+    relative = path.relative_to(ROOT).as_posix()
 
-    # Automatically generated opportunity
-    # articles use long descriptive slugs.
-    generated_patterns = [
-        "5-tips-for-",
-        "bobcats-",
-    ]
+    if relative == "index.html":
+        return BASE_URL + "/"
 
-    return (
-        any(
-            name.startswith(pattern)
-            for pattern in generated_patterns
-        )
-        or (
-            len(name) > 55
-            and name.endswith(".html")
-        )
-    )
+    return BASE_URL + "/" + relative
 
 
 def check_page(path):
@@ -187,16 +186,18 @@ def check_page(path):
 
         return [
             f"READ ERROR: {error}"
-        ], parser
+        ], [], parser
 
     errors = []
     warnings = []
 
     title = parser.title.strip()
 
-    # --------------------------------
+    expected_url = expected_url_for(path)
+
+    # =========================================================
     # REQUIRED SEO ELEMENTS
-    # --------------------------------
+    # =========================================================
 
     if not title:
 
@@ -228,31 +229,75 @@ def check_page(path):
             'Missing <html lang="">'
         )
 
+    # =========================================================
+    # CANONICAL
+    # =========================================================
+
     if not parser.canonical:
 
         errors.append(
             "Missing canonical URL"
         )
 
-    elif not valid_absolute_url(
-        parser.canonical
-    ):
+    else:
 
-        errors.append(
-            "Canonical is not an absolute URL"
+        canonical = parser.canonical.strip()
+
+        if not valid_absolute_url(canonical):
+
+            errors.append(
+                "Canonical is not an absolute URL"
+            )
+
+        elif canonical != expected_url:
+
+            errors.append(
+                "Canonical does not match expected page URL "
+                f"(expected: {expected_url}, found: {canonical})"
+            )
+
+        if "/OpportunityBridge/" in canonical:
+
+            errors.append(
+                "Canonical still contains /OpportunityBridge/"
+            )
+
+    # =========================================================
+    # OPEN GRAPH URL
+    # =========================================================
+
+    if not parser.og_url:
+
+        warnings.append(
+            "Missing og:url"
         )
 
-    elif not parser.canonical.startswith(
-        BASE_URL
-    ):
+    else:
 
-        errors.append(
-            "Canonical points outside OpportunityBridge"
-        )
+        og_url = parser.og_url.strip()
 
-    # --------------------------------
-    # TITLE LENGTH = WARNING ONLY
-    # --------------------------------
+        if not valid_absolute_url(og_url):
+
+            errors.append(
+                "og:url is not an absolute URL"
+            )
+
+        elif og_url != expected_url:
+
+            errors.append(
+                "og:url does not match expected page URL "
+                f"(expected: {expected_url}, found: {og_url})"
+            )
+
+        if "/OpportunityBridge/" in og_url:
+
+            errors.append(
+                "og:url still contains /OpportunityBridge/"
+            )
+
+    # =========================================================
+    # TITLE LENGTH
+    # =========================================================
 
     if title:
 
@@ -268,9 +313,9 @@ def check_page(path):
                 f"Title is short ({len(title)} characters)"
             )
 
-    # --------------------------------
+    # =========================================================
     # OPTIONAL SEO ELEMENTS
-    # --------------------------------
+    # =========================================================
 
     if not parser.meta_robots:
 
@@ -296,8 +341,16 @@ def check_page(path):
 def is_google_verification(path):
 
     return (
-        path.name.startswith("google")
-        and path.name.endswith(".html")
+        path.name.lower().startswith("google")
+        and path.name.lower().endswith(".html")
+    )
+
+
+def is_html_file(path):
+
+    return (
+        path.is_file()
+        and path.suffix.lower() == ".html"
     )
 
 
@@ -306,7 +359,7 @@ def main():
     print("=" * 70)
 
     print(
-        "OPPORTUNITYBRIDGE SEO CHECK"
+        "OPPORTUNITYBRIDGE SEO CHECKER v2.0"
     )
 
     print("=" * 70)
@@ -316,6 +369,9 @@ def main():
     for path in sorted(
         ROOT.glob("*.html")
     ):
+
+        if not is_html_file(path):
+            continue
 
         if path.name in EXCLUDED:
             continue
@@ -335,11 +391,13 @@ def main():
     titles = {}
     canonicals = {}
 
+    # =========================================================
+    # CHECK EVERY PAGE
+    # =========================================================
+
     for page in pages:
 
-        result = check_page(page)
-
-        errors, warnings, parser = result
+        errors, warnings, parser = check_page(page)
 
         title = (
             parser.title
@@ -374,6 +432,7 @@ def main():
         if errors:
 
             pages_with_errors += 1
+
             total_errors += len(errors)
 
             print(
@@ -400,9 +459,9 @@ def main():
                 f"   ⚠️ WARNING: {warning}"
             )
 
-    # --------------------------------
+    # =========================================================
     # DUPLICATE TITLES
-    # --------------------------------
+    # =========================================================
 
     for title, page_list in titles.items():
 
@@ -415,12 +474,16 @@ def main():
             )
 
             print(
+                f"   Title: {title}"
+            )
+
+            print(
                 f"   Pages: {page_list}"
             )
 
-    # --------------------------------
+    # =========================================================
     # DUPLICATE CANONICALS
-    # --------------------------------
+    # =========================================================
 
     for canonical, page_list in canonicals.items():
 
@@ -439,6 +502,53 @@ def main():
             print(
                 f"   Pages: {page_list}"
             )
+
+    # =========================================================
+    # LEGACY URL SCAN
+    # =========================================================
+
+    legacy_files = []
+
+    for page in pages:
+
+        try:
+
+            content = page.read_text(
+                encoding="utf-8"
+            )
+
+        except Exception:
+
+            continue
+
+        if (
+            "https://absmg.github.io/OpportunityBridge"
+            in content
+        ):
+
+            legacy_files.append(
+                page.name
+            )
+
+    if legacy_files:
+
+        total_errors += len(
+            legacy_files
+        )
+
+        print(
+            "\n❌ LEGACY /OpportunityBridge/ URLS FOUND"
+        )
+
+        for filename in legacy_files:
+
+            print(
+                f"   {filename}"
+            )
+
+    # =========================================================
+    # FINAL REPORT
+    # =========================================================
 
     print(
         "\n" + "=" * 70
@@ -484,4 +594,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
