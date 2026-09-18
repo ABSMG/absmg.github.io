@@ -1,4 +1,4 @@
-name: SEO Content System
+name: SEO Content Manual
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run internal linking system
+      - name: Update internal links
         run: |
           python scripts/auto_internal_links.py
 
@@ -30,11 +30,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add "*.html"
+          git add -- '*.html'
 
           if git diff --cached --quiet; then
             echo "No SEO changes were required."
           else
-            git commit -m "chore: update internal links"
+            git commit -m "chore: manual internal links update [skip ci]"
             git push
           fi
