@@ -14,19 +14,27 @@ REQUIRED_KEYWORDS = {
     "scholarships",
     "fellowship",
     "grant",
+    "funding",
     "internship",
     "internships",
     "job",
     "jobs",
+    "career",
     "course",
     "courses",
     "training",
+    "opportunity",
+    "opportunities",
 }
+
+
+def clean(value):
+    return str(value or "").strip()
 
 
 def valid_url(url):
     try:
-        parsed = urlparse(url)
+        parsed = urlparse(clean(url))
 
         return (
             parsed.scheme in {"http", "https"}
@@ -38,17 +46,28 @@ def valid_url(url):
 
 
 def has_opportunity_keyword(item):
-    title = item.get("title", "").lower()
+    title = clean(
+        item.get("title")
+    ).lower()
 
-    matched = [
-        keyword.lower()
+    description = clean(
+        item.get("description")
+        or item.get("summary")
+    ).lower()
+
+    matched_keywords = [
+        clean(keyword).lower()
         for keyword in item.get(
             "matched_keywords",
             []
         )
     ]
 
-    combined = f"{title} {' '.join(matched)}"
+    combined = (
+        f"{title} "
+        f"{description} "
+        f"{' '.join(matched_keywords)}"
+    )
 
     return any(
         keyword in combined
@@ -57,32 +76,117 @@ def has_opportunity_keyword(item):
 
 
 def approve(item):
-    title = item.get("title", "").strip()
-    source_url = item.get("source_url", "").strip()
-
-    verification_status = item.get(
-        "verification_status",
-        ""
+    title = clean(
+        item.get("title")
     )
+
+    source_url = clean(
+        item.get("source_url")
+        or item.get("url")
+        or item.get("link")
+    )
+
+    verification_level = clean(
+        item.get("verification_level")
+    )
+
+    source_verified = bool(
+        item.get("source_verified", False)
+    )
+
+    page_reachable = bool(
+        item.get("page_reachable", False)
+    )
+
+    opportunity_relevant = bool(
+        item.get("opportunity_relevant", False)
+    )
+
+    # -----------------------------------------
+    # 1. Title
+    # -----------------------------------------
 
     if not title:
         return False, "Missing title"
 
+    # -----------------------------------------
+    # 2. Source URL
+    # -----------------------------------------
+
     if not valid_url(source_url):
         return False, "Invalid source URL"
 
-    if verification_status != "verified_source":
-        return False, "Source has not passed verification"
+    # -----------------------------------------
+    # 3. Verification level
+    # -----------------------------------------
+
+    if verification_level not in {
+        "source_checked",
+        "page_checked",
+    }:
+        return False, (
+            "Opportunity did not pass "
+            "verification engine"
+        )
+
+    # -----------------------------------------
+    # 4. Source verification
+    # -----------------------------------------
+
+    if not source_verified:
+        return False, (
+            "Source has not passed "
+            "source verification"
+        )
+
+    # -----------------------------------------
+    # 5. Page reachability
+    # -----------------------------------------
+
+    if not page_reachable:
+        return False, (
+            "Source page is not reachable"
+        )
+
+    # -----------------------------------------
+    # 6. Opportunity relevance
+    # -----------------------------------------
+
+    if not opportunity_relevant:
+        return False, (
+            "Source page is not recognized "
+            "as an opportunity"
+        )
+
+    # -----------------------------------------
+    # 7. Opportunity keyword
+    # -----------------------------------------
 
     if not has_opportunity_keyword(item):
-        return False, "Opportunity type not recognized"
+        return False, (
+            "Opportunity type not recognized"
+        )
 
-    return True, "Passed approval checks"
+    # -----------------------------------------
+    # Passed
+    # -----------------------------------------
+
+    if verification_level == "source_checked":
+        return True, (
+            "Passed source verification, "
+            "page reachability and opportunity checks"
+        )
+
+    return True, (
+        "Passed page verification, "
+        "page reachability and opportunity checks"
+    )
 
 
 def main():
+
     print("=" * 60)
-    print("OPPORTUNITYBRIDGE APPROVAL ENGINE")
+    print("OPPORTUNITYBRIDGE APPROVAL ENGINE v2.0")
     print("=" * 60)
 
     if not INPUT.exists():
@@ -90,29 +194,45 @@ def main():
             "ERROR: verified_opportunities.json was not found."
         )
 
-    data = json.loads(
-        INPUT.read_text(
-            encoding="utf-8"
+    try:
+        data = json.loads(
+            INPUT.read_text(
+                encoding="utf-8"
+            )
         )
-    )
 
-    items = data.get("items", [])
+    except Exception as error:
+        raise SystemExit(
+            f"ERROR: Could not read verification data: {error}"
+        )
+
+    items = data.get(
+        "items",
+        []
+    )
 
     approved = []
     rejected = []
 
     for item in items:
-        is_approved, reason = approve(item)
+
+        is_approved, reason = approve(
+            item
+        )
 
         updated = dict(item)
 
+        updated["approval_status"] = (
+            "approved"
+            if is_approved
+            else "rejected"
+        )
+
+        updated["approval_reason"] = reason
+
         if is_approved:
-            updated["approval_status"] = "approved"
-            updated["approval_reason"] = reason
             approved.append(updated)
         else:
-            updated["approval_status"] = "rejected"
-            updated["approval_reason"] = reason
             rejected.append(updated)
 
     OUTPUT.parent.mkdir(
@@ -121,6 +241,7 @@ def main():
     )
 
     result = {
+        "approval_engine_version": "2.0",
         "approved_at": data.get(
             "verified_at",
             ""
@@ -140,11 +261,12 @@ def main():
         encoding="utf-8"
     )
 
+    print()
     print(f"Checked: {len(items)}")
     print(f"Approved: {len(approved)}")
     print(f"Rejected: {len(rejected)}")
+    print()
     print(f"Saved: {OUTPUT}")
-
     print("=" * 60)
 
 
