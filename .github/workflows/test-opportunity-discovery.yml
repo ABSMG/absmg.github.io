@@ -11,13 +11,11 @@ permissions:
   contents: write
 
 concurrency:
-  group: opportunitybridge-automation
+  group: opportunitybridge-main-writer
   cancel-in-progress: false
 
 jobs:
   automate:
-    # Zuia commit ya bot kuanzisha cycle nyingine
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
     steps:
@@ -31,42 +29,34 @@ jobs:
         with:
           python-version: "3.x"
 
-      # 1. Tafuta opportunities mpya
       - name: Discover new opportunities
         run: |
           python scripts/opportunity_discovery.py
 
-      # 2. Verify sources
       - name: Verify discovered opportunities
         run: |
           python scripts/opportunity_verifier.py
 
-      # 3. Approve valid opportunities
       - name: Approve verified opportunities
         run: |
           python scripts/opportunity_approval.py
 
-      # 4. Generate HTML articles
       - name: Generate opportunity articles
         run: |
           python scripts/opportunity_article_generator.py
 
-      # 5. Add internal links
       - name: Update internal links
         run: |
           python scripts/auto_internal_links.py
 
-      # 6. Generate sitemap
       - name: Generate sitemap
         run: |
           python scripts/generate_sitemap.py
 
-      # 7. Check SEO
       - name: Run SEO checker
         run: |
           python scripts/seo_checker.py
 
-      # 8. Show results
       - name: Show automation summary
         run: |
           echo "======================================"
@@ -77,71 +67,28 @@ jobs:
           import json
           from pathlib import Path
 
-          p = Path("data/discovered_opportunities.json")
+          files = [
+              ("Discovered", "data/discovered_opportunities.json", "total", "items"),
+              ("Verified", "data/verified_opportunities.json", "total_checked", "items"),
+              ("Approved", "data/approved_opportunities.json", "approved_count", "approved_items"),
+          ]
 
-          if p.exists():
-              data = json.loads(
-                  p.read_text(encoding="utf-8")
-              )
+          for label, filename, count_key, items_key in files:
+              p = Path(filename)
 
-              print(
-                  "Discovered:",
-                  data.get(
-                      "total",
-                      len(data.get("items", []))
-                  )
-              )
-          else:
-              print("Discovered: 0")
-          PY
+              if p.exists():
+                  data = json.loads(p.read_text(encoding="utf-8"))
+                  count = data.get(count_key, len(data.get(items_key, [])))
+                  print(f"{label}: {count}")
+              else:
+                  print(f"{label}: 0")
 
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          p = Path("data/verified_opportunities.json")
-
-          if p.exists():
-              data = json.loads(
-                  p.read_text(encoding="utf-8")
-              )
-
-              print(
-                  "Verified:",
-                  data.get(
-                      "total_checked",
-                      len(data.get("items", []))
-                  )
-              )
-          else:
-              print("Verified: 0")
-          PY
-
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          p = Path("data/approved_opportunities.json")
-
-          if p.exists():
-              data = json.loads(
-                  p.read_text(encoding="utf-8")
-              )
-
-              print(
-                  "Approved:",
-                  data.get(
-                      "approved_count",
-                      len(data.get("approved_items", []))
-                  )
-              )
-          else:
-              print("Approved: 0")
+          echo = "Automation completed successfully."
+          print(echo)
           PY
 
           echo "======================================"
 
-      # 9. Publish automatically
       - name: Publish automation results
         run: |
           git config user.name "github-actions[bot]"
@@ -156,7 +103,12 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to publish."
-          else
-            git commit -m "chore: automated opportunity update [skip ci]"
-            git push
+            exit 0
           fi
+
+          git commit -m "chore: automated opportunity update [skip ci]"
+
+          git fetch origin main
+          git rebase origin/main
+
+          git push origin HEAD:main
