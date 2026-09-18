@@ -1,10 +1,14 @@
-name: SEO Pipeline Manual
+name: SEO Pipeline Check
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: opportunitybridge-seo-check
+  cancel-in-progress: false
 
 jobs:
   seo-pipeline:
@@ -21,11 +25,11 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Update internal links
+      - name: Check internal links
         run: |
           python scripts/auto_internal_links.py
 
-      - name: Generate sitemap
+      - name: Generate sitemap for validation
         run: |
           python scripts/generate_sitemap.py
 
@@ -33,16 +37,7 @@ jobs:
         run: |
           python scripts/seo_checker.py
 
-      - name: Commit SEO updates
+      - name: Report
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add -- '*.html' sitemap.xml
-
-          if git diff --cached --quiet; then
-            echo "No SEO updates required."
-          else
-            git commit -m "chore: manual SEO update [skip ci]"
-            git push
-          fi
+          echo "SEO pipeline check completed."
+          echo "The main automation workflow is the only workflow allowed to publish changes to main."
