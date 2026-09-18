@@ -2,37 +2,9 @@
   "approval_engine_version": "2.0",
   "approved_at": "",
   "total_checked": 100,
-  "approved_count": 74,
-  "rejected_count": 26,
+  "approved_count": 72,
+  "rejected_count": 28,
   "approved_items": [
-    {
-      "title": "Yaw helps present scholarships for religious school students - The Daily Review",
-      "source": "Google News - Scholarships",
-      "publisher_name": "The Daily Review",
-      "publisher_url": "https://www.thedailyreview.com",
-      "news_url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNd2U5cl9nd2VLcEJ2LTJTNFZGd19rZTFEWUI4RVFaWElYY01GSm51UmtiblFfZnh2aUljMDRWT1ZtRm5vQlRaM1FVdWQ2UG5lQzdGTS1zczZ6clR1U1h2eVh6Y1ljR2c1ajM4em5tNE04RzYzWnh1Wm5lTUJWeUs5SHcxX1hjRFRLRVNHOGlqQzlmdHpyTDVHeXNTdVN4VXdlVzIxb2ZCUWk3ZzA0R0k1Zl9xUmo5NEhYZk50QWtzbkc2Q0NIMHA1dEUxdmdMLThMeDUtSXprUEpPQ090RWRpTU8weHlHVFk?oc=5",
-      "source_url": "https://www.thedailyreview.com",
-      "published": "2026-09-18T13:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-18T17:44:32.028277+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.thedailyreview.com",
-      "final_url": "https://www.thedailyreview.com",
-      "http_status": 200,
-      "approval_status": "approved",
-      "approval_reason": "Passed page verification, page reachability and opportunity checks"
-    },
     {
       "title": "TAFISA Internship 2026 in Germany: Apply for International Sport for All Project Coordination Opportunity - Global South Opportunities",
       "source": "Google News - Internships Africa",
@@ -44,7 +16,7 @@
       "matched_keywords": [
         "internship"
       ],
-      "discovered_at": "2026-09-18T17:44:33.019691+00:00",
+      "discovered_at": "2026-09-18T19:26:40.071908+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -71,7 +43,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616252+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774031+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -100,7 +72,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.029074+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769258+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -129,7 +101,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.028481+00:00",
+      "discovered_at": "2026-09-18T19:26:38.768319+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -145,9 +117,9 @@
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
     },
     {
-      "title": "NGO awards three-year scholarships to 20 indigent Zamfara students - thenationonlineng.net",
+      "title": "NGO awards three-year scholarships to 20 indigent Zamfara students - The Nation Newspaper",
       "source": "Google News - Scholarships",
-      "publisher_name": "thenationonlineng.net",
+      "publisher_name": "The Nation Newspaper",
       "publisher_url": "https://thenationonlineng.net",
       "news_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUWwxeTM4S2VaMzFnV0NpLVZFZDVlQ0pIVVpjeGtmNUJCSXlKZ2NuNXIzakRpbmZLVHF5cU1VOGZVd2ZQLWZSNFN3WnptT1hPVlBRUTZYQXJNNERjQ0pBcTB0X1VPaTM2RVA2dFNkeDdZbGNoRm16emJ3cUdGUEFZaGdNM1JJc29paGhLRFdnbzR4LUt0RExaSFNuSFBKZ9IBowFBVV95cUxOQ3BOeHdtWDdLU1FhX2JXQ3VNcTYxUWN2UjdKT2VuWmkzZUJ0TU9adUlqSUozYVhLZnZPTXJDOEQ4TjIzckNZUzB4dWNqZlJKYnFKT3U3TUVXQm9SV3lxaUhaUV9mWFNOdlVFSlNQQjBoaTdjRkd6YzFzNS1tM245VXdjdUxfMzk1cDRxX1ItM1FRbzdKMi11cS1oZDJNOURXZ3k4?oc=5",
       "source_url": "https://thenationonlineng.net",
@@ -157,7 +129,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.032462+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771005+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -183,7 +155,7 @@
       "matched_keywords": [
         "career"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556355+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299552+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -194,34 +166,6 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.thecitizen.co.tz",
       "final_url": "https://www.thecitizen.co.tz",
-      "http_status": 200,
-      "approval_status": "approved",
-      "approval_reason": "Passed page verification, page reachability and opportunity checks"
-    },
-    {
-      "title": "Two TVET students win scholarships to work on Kenya’s electric Rhino Charge car - tech-ish.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "tech-ish.com",
-      "publisher_url": "https://tech-ish.com",
-      "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUFNLS2hyM1FSR01ZTlhOdmtjbTJTd1VsX3Roam40NXNMZVFZM3BtV1M4SDJ5bGRtb0lCS2hTeU9QSEJpQ1Q5ZjB5YVNWX0x3LTZGOXJMR1lpM3o1amtyYlFaeUtBNTYxZXMtSkxMYzNiOFB6RG1JYU1hYzNVU0paSTN4cGJvamtzbHN5c09GY1JsTFd6TUVvR0h1a1RpTEZScVpoU19sRnlHRllpZWNMdw?oc=5",
-      "source_url": "https://tech-ish.com",
-      "published": "2026-09-17T12:25:10+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-18T17:44:32.031830+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://tech-ish.com",
-      "final_url": "https://tech-ish.com",
       "http_status": 200,
       "approval_status": "approved",
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
@@ -239,7 +183,7 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.030193+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769296+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -267,7 +211,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.028632+00:00",
+      "discovered_at": "2026-09-18T19:26:38.768392+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -295,7 +239,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.028806+00:00",
+      "discovered_at": "2026-09-18T19:26:38.768504+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -323,7 +267,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.028388+00:00",
+      "discovered_at": "2026-09-18T19:26:38.768275+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -334,35 +278,6 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.myvetcandy.com",
       "final_url": "https://www.myvetcandy.com",
-      "http_status": 200,
-      "approval_status": "approved",
-      "approval_reason": "Passed page verification, page reachability and opportunity checks"
-    },
-    {
-      "title": "Airtel Africa Foundation Opens Technology Scholarships for Zambian Students - techafricanews.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "techafricanews.com",
-      "publisher_url": "https://techafricanews.com",
-      "news_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVHJ1SWx1bVlUZ3JBNXdhT1U0WHdVNm5Xb0VqUFB2SlBuOE52ZTR3ZUllUXpZWTUzMzl2UTlmSjZiTXloMHpoRzdIQlBHNmpkcHp3UEtHTDlTZTlHZkNkb0p6c3d6bjVVQW5DTS1kTkpuaWp4ZDFYLXdJV1VqbS1WRkRqUnNkQThiVHhhcWxzRFE5Y1Fjdy1qcXlSRjBYNzdpNHJySG43NEhZSnJkSkdmM3U5X2o?oc=5",
-      "source_url": "https://techafricanews.com",
-      "published": "2026-09-16T15:01:57+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students",
-        "africa"
-      ],
-      "discovered_at": "2026-09-18T17:44:32.028559+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://techafricanews.com",
-      "final_url": "https://techafricanews.com",
       "http_status": 200,
       "approval_status": "approved",
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
@@ -379,7 +294,7 @@
         "scholarship",
         "scholarships"
       ],
-      "discovered_at": "2026-09-18T17:44:32.030264+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769331+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -407,7 +322,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.032790+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771373+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -434,7 +349,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616452+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774216+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -462,7 +377,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.030341+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769368+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -478,9 +393,9 @@
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
     },
     {
-      "title": "Launch of the Airtel Africa Tech Fellowship - mwebantu.com",
+      "title": "Launch of the Airtel Africa Tech Fellowship - Mwebantu",
       "source": "Google News - Scholarships",
-      "publisher_name": "mwebantu.com",
+      "publisher_name": "Mwebantu",
       "publisher_url": "https://www.mwebantu.com",
       "news_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5zWDZSQnRkMDNWaDA3cXNRbUtUS3ZqZjU0RFNYbGVIQUR0aWZ1Umk0bmtSYkg5aDRtYTctN1FMWGc0LXRyYzRwUkdZVm82cmJNd1pFVV95Njg1NWJqZFNoODluSm9fRXFkaE5tT0RzeXdtM3NtanhLYtIBfkFVX3lxTFBkbEhiTWZXN1l6UkE2ejhYckdmek9UMnh2N1VPQlRCTjFZb01Ec3FkV01ReUxKc1VqUXFmS1MtbVdjTjEtUzU0TE1Ydlc1U0JjZERtcmFVSXR6a0I3SXl0S0lwWEZneTM2SVY0WGxQMWJOX3lUaUVDSWZOWk1OZw?oc=5",
       "source_url": "https://www.mwebantu.com",
@@ -489,7 +404,7 @@
         "fellowship",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.033753+00:00",
+      "discovered_at": "2026-09-18T19:26:38.772278+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -516,7 +431,7 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556038+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299518+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -527,6 +442,33 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://dailynews.co.tz",
       "final_url": "https://dailynews.co.tz",
+      "http_status": 200,
+      "approval_status": "approved",
+      "approval_reason": "Passed page verification, page reachability and opportunity checks"
+    },
+    {
+      "title": "US colleges restrict internships as CPT rules tighten - thepienews.com",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "thepienews.com",
+      "publisher_url": "https://thepienews.com",
+      "news_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdnUxU2NMQ3Y1bUVnZEVESnpoZFExQWdBSHpMWEhkdDZpYlFBcWs3T3Ywa3JPbkhiZFVxeXRqM0ZST2dGRlVaVHRpT3k3dDBmMHQwYS1iSjdOa0VTak5UZ0JkU2V0bzVhc2NlNWNubjlqYWdzU0NHbmctLTJJUlZKMHVLZw?oc=5",
+      "source_url": "https://thepienews.com",
+      "published": "2026-09-15T19:37:54+00:00",
+      "matched_keywords": [
+        "internship",
+        "internships"
+      ],
+      "discovered_at": "2026-09-18T19:26:40.071864+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://thepienews.com",
+      "final_url": "https://thepienews.com",
       "http_status": 200,
       "approval_status": "approved",
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
@@ -545,7 +487,7 @@
         "fully funded",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.031632+00:00",
+      "discovered_at": "2026-09-18T19:26:38.770301+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -571,7 +513,7 @@
       "matched_keywords": [
         "course"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616981+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774641+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -599,7 +541,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.030112+00:00",
+      "discovered_at": "2026-09-18T19:26:38.768951+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -627,7 +569,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.555768+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299155+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -654,7 +596,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616827+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774531+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -665,6 +607,35 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.globalsouthopportunities.com",
       "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200,
+      "approval_status": "approved",
+      "approval_reason": "Passed page verification, page reachability and opportunity checks"
+    },
+    {
+      "title": "Tanzania’s Kagera Coffee Nights Expose a Deeper Jobs and Skills Gap - pan african visions",
+      "source": "Google News - Jobs Tanzania",
+      "publisher_name": "pan african visions",
+      "publisher_url": "https://panafricanvisions.com",
+      "news_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWnNjSF9Mam1tWVE4SmZqVjNjTkkxYnF4bEE0YXk3bm9Ib2ZLeFlKdjc5TWxGbmhIZE11d1dxOFJXcTI0blpEdHBuVmtQUWVSSzVNOGNfcUJZV0pDYnZWOEJVazJSN3FkZFFVSVprVXc0LVFiaWo3ZXgxbjZhVFEzTG9tbmhYOWpTNFNhN19JQnNNWngzeTZLUHVLVXhJZS1MN0lOTFZ4U0w?oc=5",
+      "source_url": "https://panafricanvisions.com",
+      "published": "2026-09-12T18:55:37+00:00",
+      "matched_keywords": [
+        "job",
+        "jobs",
+        "africa",
+        "tanzania"
+      ],
+      "discovered_at": "2026-09-18T19:26:39.299030+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://panafricanvisions.com",
+      "final_url": "https://panafricanvisions.com",
       "http_status": 200,
       "approval_status": "approved",
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
@@ -681,7 +652,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.617023+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774679+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -697,9 +668,9 @@
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
     },
     {
-      "title": "Tanzania Must Risk Becoming \"Broke\" to Create 20 Million Jobs - uchumi360.com",
+      "title": "Tanzania Must Risk Becoming \"Broke\" to Create 20 Million Jobs - Uchumi360",
       "source": "Google News - Jobs Tanzania",
-      "publisher_name": "uchumi360.com",
+      "publisher_name": "Uchumi360",
       "publisher_url": "https://uchumi360.com",
       "news_url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE42d18wUHIyeFdlR1JwV25nNHowLXV6ZjZJZFYxemtZanZjOVJJTjBnSzhNMzZnVUVuTmRrcTNwUkNueDVoakpxUXNzUUUtN01vTW1DMWlnVGtQajhSZUpQczExWQ?oc=5",
       "source_url": "https://uchumi360.com",
@@ -709,7 +680,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.555710+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299118+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -736,7 +707,7 @@
         "job",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556577+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299746+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -766,7 +737,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.031087+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769747+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -795,7 +766,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.030404+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769400+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -822,7 +793,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616790+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774495+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -838,19 +809,19 @@
       "approval_reason": "Passed source verification, page reachability and opportunity checks"
     },
     {
-      "title": "Tanzania balances wage hikes, local jobs push - dailynews.co.tz",
+      "title": "Tanzania seeks Japan’s long-term investment to create jobs, develop skills, expand technology transfer - dailynews.co.tz",
       "source": "Google News - Jobs Tanzania",
       "publisher_name": "dailynews.co.tz",
       "publisher_url": "https://dailynews.co.tz",
-      "news_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5aMkQ2enBqWWpuT0ZuMkhnTkxCcGd2Rzhsc0RuMEl0MERpTkw1ZmstWlU0MW16T283RlBBMjJOckFBTmQ0bHJUMC1Ra1Y0RzNvU0o0TkVOVlJnUDJLWjVHTEVMbzhBQkU3Qm1rMWhWeU5JcTlRbnlLaQ?oc=5",
+      "news_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcHljLU5jMk5ZNlJZRV9JWU9BZjFpSm1Qdk9MNUNILUkyd2o1TVJYWl9mb1FaYk5RYzRkTkd2RTlZUlRVeHYwOGlJanU3UDJrUEFQZi15cXF0TG9FWS15YUpqS3BoUXVPblpKN0NXemNEZkE2dF9QWXhFWjlwUDR4UXZZVmhzMWZ0c0w0NS0xR2NsU09QRE9OQUNpOGlYOFJPa0dseUxDaGVSUWoxM1VIM215aDduTEdtSmNfaWg3eTREQQ?oc=5",
       "source_url": "https://dailynews.co.tz",
-      "published": "2026-09-04T07:00:00+00:00",
+      "published": "2026-09-08T09:27:47+00:00",
       "matched_keywords": [
         "job",
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556726+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299638+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -877,7 +848,7 @@
         "internship",
         "internships"
       ],
-      "discovered_at": "2026-09-18T17:44:33.019743+00:00",
+      "discovered_at": "2026-09-18T19:26:40.071946+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -904,7 +875,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616525+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774285+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -931,7 +902,7 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556495+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299674+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -947,9 +918,9 @@
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
     },
     {
-      "title": "Barau awards scholarships to Ghanaian students for Hausa studies - Punch Newspapers",
+      "title": "Barau awards scholarships to Ghanaian students for Hausa studies - punchng.com",
       "source": "Google News - Scholarships",
-      "publisher_name": "Punch Newspapers",
+      "publisher_name": "punchng.com",
       "publisher_url": "https://punchng.com",
       "news_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTG5NMFpUSFJSWHR0T1RmS1ZnUlUyaGtWMHRUeEFEYUt4UUxUdEs5dGlOWklLcXZfa0dlQ2M4eHVBOUh1akFVeE1QNlE0SjVPMloyOG9EUmF1RUtDVUlKTjhIX1ZNeGxxVE1MTTVXcGtKcGZmSmJ4NzU4VDA2ZG93NmF2b2lHVG1STXpZZVNB?oc=5",
       "source_url": "https://punchng.com",
@@ -959,7 +930,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.033160+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771697+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -987,7 +958,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556645+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299779+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1013,7 +984,7 @@
       "matched_keywords": [
         "fully funded"
       ],
-      "discovered_at": "2026-09-18T17:44:32.031976+00:00",
+      "discovered_at": "2026-09-18T19:26:38.770566+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1040,7 +1011,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.617060+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774711+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1068,7 +1039,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.555995+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299276+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1095,7 +1066,7 @@
         "scholarship",
         "scholarships"
       ],
-      "discovered_at": "2026-09-18T17:44:32.030979+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769671+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1123,7 +1094,7 @@
         "internships",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:33.019922+00:00",
+      "discovered_at": "2026-09-18T19:26:40.072057+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1150,7 +1121,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.618408+00:00",
+      "discovered_at": "2026-09-18T19:26:40.776050+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1177,7 +1148,7 @@
         "internship",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:33.020301+00:00",
+      "discovered_at": "2026-09-18T19:26:40.072375+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1206,7 +1177,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.029218+00:00",
+      "discovered_at": "2026-09-18T19:26:38.769035+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -1234,7 +1205,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.557681+00:00",
+      "discovered_at": "2026-09-18T19:26:39.300753+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1261,7 +1232,7 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558330+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301440+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1290,7 +1261,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.032380+00:00",
+      "discovered_at": "2026-09-18T19:26:38.770925+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1319,7 +1290,7 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.032509+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771053+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1346,7 +1317,7 @@
         "scholarship",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.032584+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771125+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1375,7 +1346,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.555942+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299239+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1403,7 +1374,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556154+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299354+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1432,7 +1403,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.556281+00:00",
+      "discovered_at": "2026-09-18T19:26:39.299456+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1460,7 +1431,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.557507+00:00",
+      "discovered_at": "2026-09-18T19:26:39.300586+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1488,7 +1459,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616296+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774072+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -1516,7 +1487,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.557955+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301025+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1544,7 +1515,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.557367+00:00",
+      "discovered_at": "2026-09-18T19:26:39.300448+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1571,7 +1542,7 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558594+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301669+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1598,7 +1569,7 @@
         "job",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558744+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301775+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1626,7 +1597,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558131+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301203+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1654,7 +1625,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558206+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301277+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1684,7 +1655,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.032424+00:00",
+      "discovered_at": "2026-09-18T19:26:38.770968+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1711,7 +1682,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.617393+00:00",
+      "discovered_at": "2026-09-18T19:26:40.775047+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1740,7 +1711,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T17:44:32.033482+00:00",
+      "discovered_at": "2026-09-18T19:26:38.772011+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1768,7 +1739,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558630+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301705+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1798,7 +1769,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.033527+00:00",
+      "discovered_at": "2026-09-18T19:26:38.772056+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1814,34 +1785,6 @@
       "approval_reason": "Passed page verification, page reachability and opportunity checks"
     },
     {
-      "title": "Airtel Africa Foundation Awards Scholarships and Laptops to 23 University of Ilorin Freshers - techafricanews.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "techafricanews.com",
-      "publisher_url": "https://techafricanews.com",
-      "news_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNd2FISWlGSGZOWDctOWtUY3gtdkIyQTdtbmROMkJobVltcE9VbjFWMzBldVFjMmVwdVVSWGtOZmc2VndFM2RIdW5rbll3TUI5YlBzbkg0aEhDMEJuel9Xa2xVTm1YNkJsMDk4UGhzQ3lWSUJOLVFycmE1VkR1NEtVbnJhUm8tbk01UGdzU0NtWk9ONzJBN2d2TUlfWmdORVFfV2lmWG5veTZYa0l1UXI5aU5CSW9wcFc2VTRjR0RBclZZM3JOM3hNVmVfdw?oc=5",
-      "source_url": "https://techafricanews.com",
-      "published": "2026-08-03T07:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "africa"
-      ],
-      "discovered_at": "2026-09-18T17:44:32.032902+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://techafricanews.com",
-      "final_url": "https://techafricanews.com",
-      "http_status": 200,
-      "approval_status": "approved",
-      "approval_reason": "Passed page verification, page reachability and opportunity checks"
-    },
-    {
       "title": "WFP Programme Policy Officer (Climate Resilience) 2026 in Tanzania: Join the UN's Climate Action Team - Global South Opportunities",
       "source": "Google News - Jobs Tanzania",
       "publisher_name": "Global South Opportunities",
@@ -1852,7 +1795,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.557261+00:00",
+      "discovered_at": "2026-09-18T19:26:39.300344+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1879,7 +1822,7 @@
         "internship",
         "students"
       ],
-      "discovered_at": "2026-09-18T17:44:33.020900+00:00",
+      "discovered_at": "2026-09-18T19:26:40.072896+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1908,7 +1851,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.031587+00:00",
+      "discovered_at": "2026-09-18T19:26:38.770257+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1935,7 +1878,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.617363+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774909+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1964,7 +1907,7 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.033312+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771837+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1991,7 +1934,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T17:44:33.616491+00:00",
+      "discovered_at": "2026-09-18T19:26:40.774253+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2021,7 +1964,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T17:44:32.033199+00:00",
+      "discovered_at": "2026-09-18T19:26:38.771665+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2049,7 +1992,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T17:44:32.558055+00:00",
+      "discovered_at": "2026-09-18T19:26:39.301127+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
