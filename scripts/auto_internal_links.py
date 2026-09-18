@@ -2,7 +2,9 @@ from pathlib import Path
 from html.parser import HTMLParser
 import re
 
+
 ROOT = Path(__file__).resolve().parents[1]
+
 
 LINKS = {
     "scholarship": ("scholarships.html", "Scholarships"),
@@ -26,6 +28,7 @@ LINKS = {
     "career skills": ("career-skills.html", "Career Skills"),
 }
 
+
 EXCLUDED = {
     "404.html",
     "login.html",
@@ -38,6 +41,7 @@ EXCLUDED = {
     "disclaimer.html",
     "contact.html",
 }
+
 
 MAX_CONTEXTUAL_LINKS = 5
 
@@ -52,8 +56,6 @@ class LinkParser(HTMLParser):
         self.in_script = False
         self.in_style = False
 
-        self.skip_depth = 0
-
     def handle_starttag(self, tag, attrs):
 
         tag = tag.lower()
@@ -64,32 +66,26 @@ class LinkParser(HTMLParser):
         elif tag == "style":
             self.in_style = True
 
-        if tag in {
-            "script",
-            "style",
-            "nav",
-            "footer",
-        }:
-            self.skip_depth += 1
+        if tag != "a":
+            return
 
-        if tag == "a":
+        for key, value in attrs:
 
-            for key, value in attrs:
+            if key.lower() != "href":
+                continue
 
-                if (
-                    key.lower() == "href"
-                    and value
-                ):
+            if not value:
+                continue
 
-                    clean = (
-                        value
-                        .split("#")[0]
-                        .split("?")[0]
-                        .strip()
-                    )
+            clean = (
+                value
+                .split("#")[0]
+                .split("?")[0]
+                .strip()
+            )
 
-                    if clean:
-                        self.links.add(clean)
+            if clean:
+                self.links.add(clean)
 
     def handle_endtag(self, tag):
 
@@ -101,32 +97,33 @@ class LinkParser(HTMLParser):
         elif tag == "style":
             self.in_style = False
 
-        if tag in {
-            "script",
-            "style",
-            "nav",
-            "footer",
-        }:
-
-            if self.skip_depth > 0:
-                self.skip_depth -= 1
-
 
 def get_existing_links(html):
 
     parser = LinkParser()
 
-    parser.feed(html)
+    try:
+        parser.feed(html)
+    except Exception:
+        pass
 
     return parser.links
 
 
-def already_has_related_section(html):
+def remove_old_related_section(html):
 
-    return (
-        "related-opportunities"
-        in html.lower()
+    pattern = re.compile(
+        r"""
+        <section
+        \s+
+        class=["'][^"']*\brelated-opportunities\b[^"']*["']
+        .*?
+        </section>
+        """,
+        flags=re.I | re.S | re.X,
     )
+
+    return pattern.sub("", html)
 
 
 def detect_topics(html):
@@ -160,18 +157,22 @@ def detect_topics(html):
     return text.lower()
 
 
+def page_exists(filename):
+
+    return (
+        ROOT / filename
+    ).exists()
+
+
 def choose_links(html, current_page):
 
-    existing_links = get_existing_links(
-        html
-    )
+    existing_links = get_existing_links(html)
 
     text = detect_topics(html)
 
     selected = []
+    selected_files = set()
 
-    # First choose links based on
-    # actual article/page content.
     for keyword, (
         filename,
         label
@@ -180,51 +181,36 @@ def choose_links(html, current_page):
         if filename == current_page:
             continue
 
+        if not page_exists(filename):
+            continue
+
         if filename in existing_links:
+            continue
+
+        if filename in selected_files:
             continue
 
         if keyword not in text:
             continue
 
-        if filename not in [
-            item[0]
-            for item in selected
-        ]:
-
-            selected.append(
-                (
-                    filename,
-                    label
-                )
+        selected.append(
+            (
+                filename,
+                label
             )
+        )
+
+        selected_files.add(filename)
 
         if len(selected) >= MAX_CONTEXTUAL_LINKS:
             return selected
 
-    # If the page does not contain enough
-    # matching topics, add useful general
-    # OpportunityBridge destinations.
     fallback = [
-        (
-            "opportunities.html",
-            "Opportunities"
-        ),
-        (
-            "scholarships.html",
-            "Scholarships"
-        ),
-        (
-            "jobs.html",
-            "Jobs"
-        ),
-        (
-            "internships.html",
-            "Internships"
-        ),
-        (
-            "courses.html",
-            "Courses"
-        ),
+        ("opportunities.html", "Opportunities"),
+        ("scholarships.html", "Scholarships"),
+        ("jobs.html", "Jobs"),
+        ("internships.html", "Internships"),
+        ("courses.html", "Courses"),
     ]
 
     for filename, label in fallback:
@@ -235,13 +221,13 @@ def choose_links(html, current_page):
         if filename == current_page:
             continue
 
+        if not page_exists(filename):
+            continue
+
         if filename in existing_links:
             continue
 
-        if filename in [
-            item[0]
-            for item in selected
-        ]:
+        if filename in selected_files:
             continue
 
         selected.append(
@@ -251,52 +237,45 @@ def choose_links(html, current_page):
             )
         )
 
+        selected_files.add(filename)
+
     return selected
 
 
-def create_related_section(
-    links
-):
+def create_related_section(links):
 
     if not links:
         return ""
 
-    html = """
-<section
-  class="related-opportunities"
-  aria-label="Related opportunities">
-
-  <h2>Explore More Opportunities</h2>
-
-  <p>
-"""
-
-    parts = []
+    items = []
 
     for filename, label in links:
 
-        parts.append(
-            f'    <a href="{filename}">{label}</a>'
+        items.append(
+            f"""
+            <li>
+                <a href="{filename}">
+                    {label}
+                </a>
+            </li>
+            """
         )
 
-    html += "\n    | \n".join(
-        parts
-    )
+    return f"""
+<section
+    class="related-opportunities"
+    aria-label="Related opportunities"
+>
+    <h2>Explore More Opportunities</h2>
 
-    html += """
-
-  </p>
-
+    <ul>
+        {''.join(items)}
+    </ul>
 </section>
 """
 
-    return html
 
-
-def insert_before_body(
-    html,
-    block
-):
+def insert_before_body(html, block):
 
     match = re.search(
         r"</body\s*>",
@@ -312,6 +291,7 @@ def insert_before_body(
     return (
         html[:position]
         + block
+        + "\n"
         + html[position:]
     )
 
@@ -325,42 +305,39 @@ def process_file(path):
         return False
 
     try:
-
         html = path.read_text(
             encoding="utf-8"
         )
-
     except UnicodeDecodeError:
-
         return False
 
-    if already_has_related_section(
-        html
-    ):
-        return False
+    original = html
+
+    # Remove the old automatically generated
+    # related section first.
+    html = remove_old_related_section(html)
 
     links = choose_links(
         html,
         path.name
     )
 
-    if not links:
-        return False
+    if links:
 
-    block = create_related_section(
-        links
-    )
+        block = create_related_section(
+            links
+        )
 
-    updated = insert_before_body(
-        html,
-        block
-    )
+        html = insert_before_body(
+            html,
+            block
+        )
 
-    if updated == html:
+    if html == original:
         return False
 
     path.write_text(
-        updated,
+        html,
         encoding="utf-8"
     )
 
@@ -369,13 +346,11 @@ def process_file(path):
 
 def main():
 
-    print("=" * 60)
-
+    print("=" * 70)
     print(
-        "OPPORTUNITYBRIDGE INTERNAL LINKING"
+        "OPPORTUNITYBRIDGE INTERNAL LINKING ENGINE v2.0"
     )
-
-    print("=" * 60)
+    print("=" * 70)
 
     changed = []
 
@@ -389,29 +364,27 @@ def main():
                 path.name
             )
 
+    print()
+
     if changed:
 
-        print(
-            "\nUpdated pages:"
-        )
+        print("Updated pages:")
 
         for page in changed:
-
-            print(
-                f"- {page}"
-            )
+            print(f"- {page}")
 
     else:
 
         print(
-            "\nNo pages required new internal links."
+            "No pages required internal-link updates."
         )
 
+    print()
     print(
-        f"\nPages updated: {len(changed)}"
+        f"Pages updated: {len(changed)}"
     )
 
-    print("=" * 60)
+    print("=" * 70)
 
 
 if __name__ == "__main__":
