@@ -1,16 +1,6 @@
-name: Automatic Sitemap
+name: Automatic Sitemap Manual
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "*.html"
-      - "scripts/generate_sitemap.py"
-
-  schedule:
-    - cron: "17 2 * * 1"
-
   workflow_dispatch:
 
 permissions:
@@ -45,6 +35,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sitemap is already up to date."
           else
-            git commit -m "chore: automatically update sitemap"
+            git commit -m "chore: manual sitemap update [skip ci]"
             git push
           fi
