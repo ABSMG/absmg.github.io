@@ -41,13 +41,17 @@ jobs:
         run: |
           python scripts/opportunity_approval.py
 
-      - name: Generate opportunity articles
+          - name: Generate opportunity articles
         run: |
           python scripts/opportunity_article_generator.py
 
+      - name: Fix site URLs and canonical URLs
+        run: |
+          python scripts/fix_site_urls.py
+
       - name: Update internal links
         run: |
-          python scripts/auto_internal_links.py
+          python scripts/auto_internal_links.py  
 
       - name: Generate sitemap
         run: |
