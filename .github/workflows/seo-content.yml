@@ -1,10 +1,14 @@
-name: SEO Content Manual
+name: SEO Content Check
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: opportunitybridge-seo-content-check
+  cancel-in-progress: false
 
 jobs:
   seo-content:
@@ -21,20 +25,11 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Update internal links
+      - name: Check internal-link updates
         run: |
           python scripts/auto_internal_links.py
 
-      - name: Commit SEO updates
+      - name: Report
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add -- '*.html'
-
-          if git diff --cached --quiet; then
-            echo "No SEO changes were required."
-          else
-            git commit -m "chore: manual internal links update [skip ci]"
-            git push
-          fi
+          echo "SEO content check completed."
+          echo "The main automation workflow is the only workflow allowed to publish changes to main."
