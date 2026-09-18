@@ -8,22 +8,28 @@ BASE_URL = "https://absmg.github.io"
 
 ROOT = Path(__file__).resolve().parents[1]
 
+OUTPUT = ROOT / "sitemap.xml"
+
 
 # Pages that should NOT appear in Google sitemap.
 EXCLUDED = {
     "404.html",
+
+    # Authentication / private pages
     "login.html",
     "logout.html",
     "register.html",
     "dashboard.html",
     "forgot-password.html",
     "reset-password.html",
+
+    # Legal / low-search-value pages
     "privacy.html",
     "disclaimer.html",
 }
 
 
-# Priority for important OpportunityBridge pages.
+# Important public pages.
 PRIORITIES = {
     "index.html": "1.0",
 
@@ -72,8 +78,13 @@ CHANGEFREQ = {
 
 
 def get_last_modified(path: Path) -> str:
+    """
+    Get the last Git commit date for the file.
+    Falls back to filesystem modification date.
+    """
 
     try:
+        relative_path = path.relative_to(ROOT)
 
         result = subprocess.run(
             [
@@ -82,7 +93,7 @@ def get_last_modified(path: Path) -> str:
                 "-1",
                 "--format=%cs",
                 "--",
-                str(path.relative_to(ROOT)),
+                str(relative_path),
             ],
             cwd=ROOT,
             capture_output=True,
@@ -105,11 +116,13 @@ def get_last_modified(path: Path) -> str:
 
 
 def url_for(path: Path) -> str:
+    """
+    Convert a local HTML file into its public OpportunityBridge URL.
+    """
 
-    relative = path.relative_to(
-        ROOT
-    ).as_posix()
+    relative = path.relative_to(ROOT).as_posix()
 
+    # Homepage must use root URL.
     if relative == "index.html":
         return BASE_URL + "/"
 
@@ -117,113 +130,151 @@ def url_for(path: Path) -> str:
 
 
 def should_include(path: Path) -> bool:
+    """
+    Decide whether a file belongs in the public sitemap.
+    """
 
+    # Must be a real file.
+    if not path.is_file():
+        return False
+
+    # Only HTML pages.
+    if path.suffix.lower() != ".html":
+        return False
+
+    # Excluded pages.
     if path.name in EXCLUDED:
         return False
 
+    # Ignore hidden/internal files.
     if path.name.startswith("_"):
-        return False
-
-    if not path.name.lower().endswith(".html"):
         return False
 
     return True
 
 
-# Collect all public HTML pages.
-pages = []
+def collect_public_pages():
+    """
+    Collect public HTML files from the repository root.
+    """
 
-for path in ROOT.glob("*.html"):
+    pages = []
 
-    if should_include(path):
-        pages.append(path)
+    for path in ROOT.glob("*.html"):
+        if should_include(path):
+            pages.append(path)
 
+    # Remove duplicate paths defensively.
+    unique = {}
 
-# Homepage first, then alphabetical order.
-pages.sort(
-    key=lambda p: (
-        p.name.lower() != "index.html",
-        p.name.lower(),
-    )
-)
+    for page in pages:
+        unique[page.resolve()] = page
 
+    pages = list(unique.values())
 
-# Create XML sitemap.
-urlset = Element(
-    "urlset",
-    {
-        "xmlns":
-            "http://www.sitemaps.org/schemas/sitemap/0.9"
-    },
-)
-
-
-for page in pages:
-
-    url = SubElement(
-        urlset,
-        "url",
+    # Homepage first, then alphabetical.
+    pages.sort(
+        key=lambda p: (
+            p.name.lower() != "index.html",
+            p.name.lower(),
+        )
     )
 
-    # URL
-    SubElement(
-        url,
-        "loc",
-    ).text = url_for(page)
+    return pages
 
-    # Last modification date
-    SubElement(
-        url,
-        "lastmod",
-    ).text = get_last_modified(
-        page
+
+def generate_sitemap(pages):
+    """
+    Generate sitemap.xml.
+    """
+
+    urlset = Element(
+        "urlset",
+        {
+            "xmlns": "http://www.sitemaps.org/schemas/sitemap/0.9"
+        },
     )
 
-    # Change frequency
-    SubElement(
-        url,
-        "changefreq",
-    ).text = CHANGEFREQ.get(
-        page.name,
-        "weekly",
+    seen_urls = set()
+
+    for page in pages:
+
+        url = url_for(page)
+
+        # Prevent duplicate URLs.
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+
+        url_node = SubElement(
+            urlset,
+            "url",
+        )
+
+        # Public URL
+        SubElement(
+            url_node,
+            "loc",
+        ).text = url
+
+        # Last modification
+        SubElement(
+            url_node,
+            "lastmod",
+        ).text = get_last_modified(page)
+
+        # Change frequency
+        SubElement(
+            url_node,
+            "changefreq",
+        ).text = CHANGEFREQ.get(
+            page.name,
+            "weekly",
+        )
+
+        # Priority
+        SubElement(
+            url_node,
+            "priority",
+        ).text = PRIORITIES.get(
+            page.name,
+            "0.6",
+        )
+
+    ElementTree(urlset).write(
+        OUTPUT,
+        encoding="utf-8",
+        xml_declaration=True,
     )
 
-    # Priority
-    SubElement(
-        url,
-        "priority",
-    ).text = PRIORITIES.get(
-        page.name,
-        "0.6",
-    )
+    return len(seen_urls)
 
 
-# Save sitemap.
-output = ROOT / "sitemap.xml"
+def main():
 
-ElementTree(
-    urlset
-).write(
-    output,
-    encoding="utf-8",
-    xml_declaration=True,
-)
+    print("=" * 70)
+    print("OPPORTUNITYBRIDGE SITEMAP GENERATOR v2.0")
+    print("=" * 70)
+
+    pages = collect_public_pages()
+
+    count = generate_sitemap(pages)
+
+    print()
+    print(f"Public HTML pages found: {len(pages)}")
+    print(f"Unique sitemap URLs: {count}")
+    print(f"Output: {OUTPUT}")
+    print()
+    print("Homepage:")
+    print(f"{BASE_URL}/")
+    print()
+    print("Sitemap:")
+    print(f"{BASE_URL}/sitemap.xml")
+    print()
+    print("Sitemap generation completed successfully.")
+    print("=" * 70)
 
 
-print("=" * 60)
-
-print(
-    "OPPORTUNITYBRIDGE SITEMAP GENERATOR"
-)
-
-print("=" * 60)
-
-print(
-    f"Generated sitemap.xml with {len(pages)} public HTML pages."
-)
-
-print(
-    f"Output: {output}"
-)
-
-print("=" * 60)
+if __name__ == "__main__":
+    main()
