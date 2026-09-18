@@ -12,7 +12,7 @@ OUTPUT = ROOT / "sitemap.xml"
 
 
 # Pages that should NOT appear in Google sitemap.
-EXCLUDED = {
+EXCLUDED EXCLUDED = {
     "404.html",
 
     # Authentication / private pages
@@ -23,9 +23,10 @@ EXCLUDED = {
     "forgot-password.html",
     "reset-password.html",
 
-    # Legal / low-search-value pages
+    # Legal pages
     "privacy.html",
     "disclaimer.html",
+}
 }
 
 
@@ -143,8 +144,24 @@ def should_include(path: Path) -> bool:
         return False
 
     # Excluded pages.
+    def should_include(path: Path) -> bool:
+
+    if not path.is_file():
+        return False
+
+    if path.suffix.lower() != ".html":
+        return False
+
     if path.name in EXCLUDED:
         return False
+
+    if path.name.lower().startswith("google"):
+        return False
+
+    if path.name.startswith("_"):
+        return False
+
+    return True
 
     # Ignore hidden/internal files.
     if path.name.startswith("_"):
