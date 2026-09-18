@@ -1,12 +1,6 @@
-name: SEO Pipeline
+name: SEO Pipeline Manual
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "*.html"
-      - "scripts/*.py"
   workflow_dispatch:
 
 permissions:
@@ -44,11 +38,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add "*.html" sitemap.xml
+          git add -- '*.html' sitemap.xml
 
           if git diff --cached --quiet; then
             echo "No SEO updates required."
           else
-            git commit -m "chore: update SEO files"
+            git commit -m "chore: manual SEO update [skip ci]"
             git push
           fi
