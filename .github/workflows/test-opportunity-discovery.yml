@@ -2,7 +2,7 @@ name: OpportunityBridge Full Automation
 
 on:
   schedule:
-    # Kila siku saa 09:00 Tanzania time (06:00 UTC)
+    # Kila siku saa 09:00 Tanzania time
     - cron: "0 6 * * *"
 
   workflow_dispatch:
@@ -14,52 +14,110 @@ concurrency:
   group: opportunitybridge-main-writer
   cancel-in-progress: false
 
+
 jobs:
+
   automate:
+
     runs-on: ubuntu-latest
 
     steps:
+
+      # ======================================================
+      # CHECKOUT
+      # ======================================================
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+
+      # ======================================================
+      # PYTHON
+      # ======================================================
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
+
+      # ======================================================
+      # 1. DISCOVERY
+      # ======================================================
+
       - name: Discover new opportunities
         run: |
           python scripts/opportunity_discovery.py
+
+
+      # ======================================================
+      # 2. VERIFICATION
+      # ======================================================
 
       - name: Verify discovered opportunities
         run: |
           python scripts/opportunity_verifier.py
 
+
+      # ======================================================
+      # 3. APPROVAL
+      # ======================================================
+
       - name: Approve verified opportunities
         run: |
           python scripts/opportunity_approval.py
 
-          - name: Generate opportunity articles
+
+      # ======================================================
+      # 4. ARTICLE GENERATION
+      # ======================================================
+
+      - name: Generate opportunity articles
         run: |
           python scripts/opportunity_article_generator.py
 
-      - name: Fix site URLs and canonical URLs
+
+      # ======================================================
+      # 5. CANONICAL + URL REPAIR
+      # ======================================================
+
+      - name: Repair canonical and site URLs
         run: |
           python scripts/fix_site_urls.py
 
+
+      # ======================================================
+      # 6. INTERNAL LINKS
+      # ======================================================
+
       - name: Update internal links
         run: |
-          python scripts/auto_internal_links.py  
+          python scripts/auto_internal_links.py
+
+
+      # ======================================================
+      # 7. SITEMAP
+      # ======================================================
 
       - name: Generate sitemap
         run: |
           python scripts/generate_sitemap.py
 
+
+      # ======================================================
+      # 8. SEO VALIDATION
+      # ======================================================
+
       - name: Run SEO checker
         run: |
           python scripts/seo_checker.py
+
+
+      # ======================================================
+      # 9. AUTOMATION SUMMARY
+      # ======================================================
 
       - name: Show automation summary
         run: |
@@ -72,31 +130,79 @@ jobs:
           from pathlib import Path
 
           files = [
-              ("Discovered", "data/discovered_opportunities.json", "total", "items"),
-              ("Verified", "data/verified_opportunities.json", "total_checked", "items"),
-              ("Approved", "data/approved_opportunities.json", "approved_count", "approved_items"),
+              (
+                  "Discovered",
+                  "data/discovered_opportunities.json",
+                  "total",
+                  "items"
+              ),
+              (
+                  "Verified",
+                  "data/verified_opportunities.json",
+                  "total_checked",
+                  "items"
+              ),
+              (
+                  "Approved",
+                  "data/approved_opportunities.json",
+                  "approved_count",
+                  "approved_items"
+              ),
           ]
 
           for label, filename, count_key, items_key in files:
-              p = Path(filename)
 
-              if p.exists():
-                  data = json.loads(p.read_text(encoding="utf-8"))
-                  count = data.get(count_key, len(data.get(items_key, [])))
-                  print(f"{label}: {count}")
+              path = Path(filename)
+
+              if path.exists():
+
+                  try:
+                      data = json.loads(
+                          path.read_text(
+                              encoding="utf-8"
+                          )
+                      )
+
+                      count = data.get(
+                          count_key,
+                          len(data.get(items_key, []))
+                      )
+
+                      print(
+                          f"{label}: {count}"
+                      )
+
+                  except Exception as error:
+
+                      print(
+                          f"{label}: ERROR - {error}"
+                      )
+
               else:
-                  print(f"{label}: 0")
 
-          echo = "Automation completed successfully."
-          print(echo)
+                  print(
+                      f"{label}: 0"
+                  )
+
+          print(
+              "Automation completed successfully."
+          )
           PY
 
           echo "======================================"
 
+
+      # ======================================================
+      # 10. PUBLISH
+      # ======================================================
+
       - name: Publish automation results
         run: |
+
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add -- \
             '*.html' \
@@ -110,9 +216,11 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore: automated opportunity update [skip ci]"
+          git commit \
+            -m "chore: automated opportunity update [skip ci]"
 
           git fetch origin main
+
           git rebase origin/main
 
           git push origin HEAD:main
