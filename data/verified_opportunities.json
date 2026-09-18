@@ -1,6 +1,9 @@
 {
-  "verified_at": "2026-09-18T16:07:52.498815+00:00",
+  "verification_engine_version": "2.0",
   "total_checked": 100,
+  "source_checked": 4,
+  "page_checked": 82,
+  "failed": 14,
   "items": [
     {
       "title": "Yaw helps present scholarships for religious school students - The Daily Review",
@@ -15,10 +18,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.805742+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028277+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thedailyreview.com",
+      "final_url": "https://www.thedailyreview.com",
+      "http_status": 200
     },
     {
       "title": "What do MFJI students take back to their home countries? - DW.com",
@@ -31,10 +42,42 @@
       "matched_keywords": [
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893005+00:00",
+      "discovered_at": "2026-09-18T17:44:33.019574+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page was reachable but no opportunity-related information was detected.",
+      "checked_url": "https://www.dw.com",
+      "final_url": "https://www.dw.com",
+      "http_status": 200
+    },
+    {
+      "title": "TAFISA Internship 2026 in Germany: Apply for International Sport for All Project Coordination Opportunity - Global South Opportunities",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAtSkRFNlN0VUdiUTVCb1FMNUVrWXFrS3lpbEtaVHlDOWNNME54TXAzQU1OeDVQRHYwdzFtNDNNY3dNV3V2S3J3b3RIUkREcVBwd3RBbmNYNTJPNXRlbk1ZVTFBOTFkTkVIMklB?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
+      "published": "2026-09-18T10:10:30+00:00",
+      "matched_keywords": [
+        "internship"
+      ],
+      "discovered_at": "2026-09-18T17:44:33.019691+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Enhance Your Knowledge with Free UNICEF Online Courses 2026: Learn Global Development Skills Through the UNICEF Agora Platform - Global South Opportunities",
@@ -48,10 +91,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495160+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616252+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Thebe Foundation Dr EJ Mabuza Scholarship 2027: Fully Funded Study Support for South African Students - Global South Opportunities",
@@ -67,15 +118,23 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.806099+00:00",
+      "discovered_at": "2026-09-18T17:44:32.029074+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
-      "title": "Airtel Africa Foundation launches 50 tech scholarships for students at UNZA and CBU - techreviewafrica.com",
+      "title": "Airtel Africa Foundation launches 50 tech scholarships for students at UNZA and CBU - Tech Review Africa",
       "source": "Google News - Scholarships",
-      "publisher_name": "techreviewafrica.com",
+      "publisher_name": "Tech Review Africa",
       "publisher_url": "https://techreviewafrica.com",
       "news_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdjNqdjlBTTdWZjk2RDZqMHhvSFcydnRYT0ZCNGhpSG0yUzZSeTJHWlF3WFhiVnRQYTQzd2ZtbVduVG5rNTJqaDhuR01IdWpjRlFPR2VlRXBKa3g2NWxSelJlZmR4WDB2VEdPcFVwdWJSZlQ3NGx1c05qUHRwbmhfd2JQbEM4VEV6YlpuZzAzbVVBcjBtY0Z3YXVDZkQ1dTNJRmRaT25uakdxaXVYYkxzQnRUdmpaczR5TXZmeEdUNA?oc=5",
       "source_url": "https://techreviewafrica.com",
@@ -86,15 +145,23 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.805844+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028481+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://techreviewafrica.com",
+      "final_url": "https://techreviewafrica.com",
+      "http_status": 200
     },
     {
-      "title": "NGO awards three-year scholarships to 20 indigent Zamfara students - The Nation Newspaper",
+      "title": "NGO awards three-year scholarships to 20 indigent Zamfara students - thenationonlineng.net",
       "source": "Google News - Scholarships",
-      "publisher_name": "The Nation Newspaper",
+      "publisher_name": "thenationonlineng.net",
       "publisher_url": "https://thenationonlineng.net",
       "news_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUWwxeTM4S2VaMzFnV0NpLVZFZDVlQ0pIVVpjeGtmNUJCSXlKZ2NuNXIzakRpbmZLVHF5cU1VOGZVd2ZQLWZSNFN3WnptT1hPVlBRUTZYQXJNNERjQ0pBcTB0X1VPaTM2RVA2dFNkeDdZbGNoRm16emJ3cUdGUEFZaGdNM1JJc29paGhLRFdnbzR4LUt0RExaSFNuSFBKZ9IBowFBVV95cUxOQ3BOeHdtWDdLU1FhX2JXQ3VNcTYxUWN2UjdKT2VuWmkzZUJ0TU9adUlqSUozYVhLZnZPTXJDOEQ4TjIzckNZUzB4dWNqZlJKYnFKT3U3TUVXQm9SV3lxaUhaUV9mWFNOdlVFSlNQQjBoaTdjRkd6YzFzNS1tM245VXdjdUxfMzk1cDRxX1ItM1FRbzdKMi11cS1oZDJNOURXZ3k4?oc=5",
       "source_url": "https://thenationonlineng.net",
@@ -104,10 +171,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814095+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032462+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://thenationonlineng.net",
+      "final_url": "https://thenationonlineng.net",
+      "http_status": 200
     },
     {
       "title": "TEAGTL inspires future professionals through career day engagements at UDSM - thecitizen.co.tz",
@@ -120,10 +195,18 @@
       "matched_keywords": [
         "career"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286652+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556355+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Two TVET students win scholarships to work on Kenya’s electric Rhino Charge car - tech-ish.com",
@@ -138,10 +221,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813709+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031830+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://tech-ish.com",
+      "final_url": "https://tech-ish.com",
+      "http_status": 200
     },
     {
       "title": "University of Cape Town (UCT) Mastercard Foundation Scholars Program 2026: Fully Funded Scholarship for Young African Leaders - Global South Opportunities",
@@ -156,10 +247,18 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812187+00:00",
+      "discovered_at": "2026-09-18T17:44:32.030193+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Sacramento High School hosts HBCU college fair, awards scholarships to students - KCRA",
@@ -174,10 +273,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.805915+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028632+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.kcra.com",
+      "final_url": "https://www.kcra.com",
+      "http_status": 200
     },
     {
       "title": "Comanche County students awarded OSU scholarships - The Lawton Constitution",
@@ -192,10 +299,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.805991+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028806+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.swoknews.com",
+      "final_url": "https://www.swoknews.com",
+      "http_status": 200
     },
     {
       "title": "World Veterinary Association is Giving 40 Veterinary Students $5,000 Scholarships in 2026 - Vet Candy",
@@ -210,15 +325,23 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.805801+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028388+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.myvetcandy.com",
+      "final_url": "https://www.myvetcandy.com",
+      "http_status": 200
     },
     {
-      "title": "Airtel Africa Foundation Opens Technology Scholarships for Zambian Students - TechAfrica News",
+      "title": "Airtel Africa Foundation Opens Technology Scholarships for Zambian Students - techafricanews.com",
       "source": "Google News - Scholarships",
-      "publisher_name": "TechAfrica News",
+      "publisher_name": "techafricanews.com",
       "publisher_url": "https://techafricanews.com",
       "news_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVHJ1SWx1bVlUZ3JBNXdhT1U0WHdVNm5Xb0VqUFB2SlBuOE52ZTR3ZUllUXpZWTUzMzl2UTlmSjZiTXloMHpoRzdIQlBHNmpkcHp3UEtHTDlTZTlHZkNkb0p6c3d6bjVVQW5DTS1kTkpuaWp4ZDFYLXdJV1VqbS1WRkRqUnNkQThiVHhhcWxzRFE5Y1Fjdy1qcXlSRjBYNzdpNHJySG43NEhZSnJkSkdmM3U5X2o?oc=5",
       "source_url": "https://techafricanews.com",
@@ -229,10 +352,18 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.805880+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028559+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://techafricanews.com",
+      "final_url": "https://techafricanews.com",
+      "http_status": 200
     },
     {
       "title": "Ludovika University of Public Service Scholarships 2026/2027: Study in Hungary Through Erasmus+ - Global South Opportunities",
@@ -246,15 +377,23 @@
         "scholarship",
         "scholarships"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812282+00:00",
+      "discovered_at": "2026-09-18T17:44:32.030264+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
-      "title": "Russian Ambassador pledges to increase scholarships for Pakistani students - nation.com.pk",
+      "title": "Russian Ambassador pledges to increase scholarships for Pakistani students - The Nation (Pakistan )",
       "source": "Google News - Scholarships",
-      "publisher_name": "nation.com.pk",
+      "publisher_name": "The Nation (Pakistan )",
       "publisher_url": "https://www.nation.com.pk",
       "news_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPT25QMkswWUdvZVU2SjF4aGZLaFdwT0U4NXY3OEJuT3NaejRhek1wLW4zdHcyVmx3aF8zVWROMTBjZDMxX1NjU2w0NG1yemtXTk5IRHl3R2l5RzJvLWc2c0VnWno2VjFYZ0FVNWFENmJTVnFMVmdUMENnVW5pclZSTFhTekdCOXI3YjY4emdGYkFJSkF3TVFmT0NqRmJuMGRMTEdWWU5kNU4?oc=5",
       "source_url": "https://www.nation.com.pk",
@@ -264,10 +403,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814435+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032790+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.nation.com.pk",
+      "final_url": "https://www.nation.com.pk",
+      "http_status": 200
     },
     {
       "title": "Harvard University Free Online Courses 2026: Study from Anywhere With 100+ Courses Available Free of Charge, No IELTS - Global South Opportunities",
@@ -281,10 +428,69 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495225+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616452+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
+    },
+    {
+      "title": "10 Merit-Based Scholarships to Watch in 2026: How Top Students Can Turn Academic Excellence into Global Opportunities - Global South Opportunities",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE41N0RRQjdKOHhtUUpCSzF6cDFBZlk3NFFZcUUyc1VfMGlVQTRVQWVwRDloZTZTOG1VejZsR1E1eHhqYkpvTmhsbk9Ydk1rNmE3dHdiMHI1dy1VRzQ2WUZQRFRIZnQxT2dYaVVuWg?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
+      "published": "2026-09-16T09:28:08+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students"
+      ],
+      "discovered_at": "2026-09-18T17:44:32.030341+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
+    },
+    {
+      "title": "Launch of the Airtel Africa Tech Fellowship - mwebantu.com",
+      "source": "Google News - Scholarships",
+      "publisher_name": "mwebantu.com",
+      "publisher_url": "https://www.mwebantu.com",
+      "news_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5zWDZSQnRkMDNWaDA3cXNRbUtUS3ZqZjU0RFNYbGVIQUR0aWZ1Umk0bmtSYkg5aDRtYTctN1FMWGc0LXRyYzRwUkdZVm82cmJNd1pFVV95Njg1NWJqZFNoODluSm9fRXFkaE5tT0RzeXdtM3NtanhLYtIBfkFVX3lxTFBkbEhiTWZXN1l6UkE2ejhYckdmek9UMnh2N1VPQlRCTjFZb01Ec3FkV01ReUxKc1VqUXFmS1MtbVdjTjEtUzU0TE1Ydlc1U0JjZERtcmFVSXR6a0I3SXl0S0lwWEZneTM2SVY0WGxQMWJOX3lUaUVDSWZOWk1OZw?oc=5",
+      "source_url": "https://www.mwebantu.com",
+      "published": "2026-09-16T08:19:09+00:00",
+      "matched_keywords": [
+        "fellowship",
+        "africa"
+      ],
+      "discovered_at": "2026-09-18T17:44:32.033753+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.mwebantu.com",
+      "final_url": "https://www.mwebantu.com",
+      "http_status": 200
     },
     {
       "title": "TRA doubles jobs for disabled workers - dailynews.co.tz",
@@ -298,10 +504,18 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286341+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556038+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "US colleges restrict internships as CPT rules tighten - The PIE News",
@@ -315,10 +529,18 @@
         "internship",
         "internships"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893049+00:00",
+      "discovered_at": "2026-09-18T17:44:33.019632+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://thepienews.com",
+      "final_url": "https://thepienews.com",
+      "http_status": null
     },
     {
       "title": "False assurance of ‘fully funded’ scholarships, Bangladeshi students under cost pressure after going to Pakistan - Views Bangladesh",
@@ -334,10 +556,18 @@
         "fully funded",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813382+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031632+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://viewsbangladesh.com",
+      "final_url": "https://viewsbangladesh.com",
+      "http_status": 200
     },
     {
       "title": "57 NU students receive VC awards, 4,921 get scholarships - New Age BD",
@@ -352,10 +582,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812441+00:00",
+      "discovered_at": "2026-09-18T17:44:32.030609+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.newagebd.net",
+      "final_url": "https://www.newagebd.net",
+      "http_status": 403
     },
     {
       "title": "HarvardX CS50’s Introduction to Cybersecurity 2026: Enrol in Harvard’s Popular Free Online Course on edX - Global South Opportunities",
@@ -368,10 +606,18 @@
       "matched_keywords": [
         "course"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495683+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616981+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "University of Manchester Global Futures Scholarships 2027: Over £6 Million for International Undergraduate and Master’s Students - Global South Opportunities",
@@ -386,10 +632,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812147+00:00",
+      "discovered_at": "2026-09-18T17:44:32.030112+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania universities Face AI test as future of jobs, learning takes centre stage - thecitizen.co.tz",
@@ -404,28 +658,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286116+00:00",
+      "discovered_at": "2026-09-18T17:44:32.555768+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
-    },
-    {
-      "title": "Gates Cambridge Scholarship Programme 2027/2028 for Study at the University of Cambridge, UK (Fully Funded) - Opportunities For Africans",
-      "source": "Google News - Scholarships",
-      "publisher_name": "Opportunities For Africans",
-      "publisher_url": "https://www.opportunitiesforafricans.com",
-      "news_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQb0lPME12Q3h1X28wVkZpcGp4RmVOUGROczJsTGhWZ1NZaHhXNWxJSzVVMWJaYXoyb243bDFGQ05WUDFvSUREbk1xRmJodXNIZkZVUjhXZ3pYdXFSTldoUHpMZDBKa3RtM1RzZEJ1TW5FaGdxM2FfRzUwcTduc1hNYlFqRThMSWhtUmdYdXloNVhIREt4RFRyczQ4ZWZEbW1ZQkZmT0FKRGMxUE9HdFVBLUtZRlczZDgtYzFaWDFLOEhoMUk1MFJ5WXNR?oc=5",
-      "source_url": "https://www.opportunitiesforafricans.com",
-      "published": "2026-09-14T16:32:34+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "fully funded",
-        "africa"
-      ],
-      "discovered_at": "2026-09-18T16:07:50.806138+00:00",
-      "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Stanford University Free Online Courses 2026: Learn from Stanford Online for Free Today! - Global South Opportunities",
@@ -439,10 +683,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495455+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616827+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania’s Kagera Coffee Nights Expose a Deeper Jobs and Skills Gap - pan african visions",
@@ -458,10 +710,18 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.285998+00:00",
+      "discovered_at": "2026-09-18T17:44:32.555653+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://panafricanvisions.com",
+      "final_url": "https://panafricanvisions.com",
+      "http_status": null
     },
     {
       "title": "Earn a Free UN Diploma in International Environmental Law and Governance Through 5 Online Courses: Self-paced, No Deadline - Global South Opportunities",
@@ -475,15 +735,23 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495721+00:00",
+      "discovered_at": "2026-09-18T17:44:33.617023+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
-      "title": "Tanzania Must Risk Becoming \"Broke\" to Create 20 Million Jobs - Uchumi360",
+      "title": "Tanzania Must Risk Becoming \"Broke\" to Create 20 Million Jobs - uchumi360.com",
       "source": "Google News - Jobs Tanzania",
-      "publisher_name": "Uchumi360",
+      "publisher_name": "uchumi360.com",
       "publisher_url": "https://uchumi360.com",
       "news_url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE42d18wUHIyeFdlR1JwV25nNHowLXV6ZjZJZFYxemtZanZjOVJJTjBnSzhNMzZnVUVuTmRrcTNwUkNueDVoakpxUXNzUUUtN01vTW1DMWlnVGtQajhSZUpQczExWQ?oc=5",
       "source_url": "https://uchumi360.com",
@@ -493,10 +761,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286043+00:00",
+      "discovered_at": "2026-09-18T17:44:32.555710+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://uchumi360.com",
+      "final_url": "https://uchumi360.com",
+      "http_status": 200
     },
     {
       "title": "How 3,500+ women are driving Tanzania’s foreign job boom - thecitizen.co.tz",
@@ -510,10 +786,18 @@
         "job",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286842+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556577+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "ARC–GSSP Scholarship Programme 2026/2027: Fully Funded Postgraduate Scholarships for African Students - Global South Opportunities",
@@ -530,10 +814,18 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812737+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031087+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "7 best Switzerland scholarships for international students - Study International",
@@ -549,10 +841,18 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812377+00:00",
+      "discovered_at": "2026-09-18T17:44:32.030404+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://studyinternational.com",
+      "final_url": "https://studyinternational.com",
+      "http_status": 200
     },
     {
       "title": "Stanford University Free Online Courses with Certificates 2026 | How to Apply - edugist.org",
@@ -566,10 +866,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495356+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616790+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://edugist.org",
+      "final_url": "https://edugist.org",
+      "http_status": 200
     },
     {
       "title": "Tanzania seeks Japan’s long-term investment to create jobs, develop skills, expand technology transfer - dailynews.co.tz",
@@ -584,10 +892,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286694+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556402+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 500
     },
     {
       "title": "Free Online Internship with Certificate: Benefits, How to Find & Platforms - Shiksha.com",
@@ -600,10 +916,18 @@
       "matched_keywords": [
         "internship"
       ],
-      "discovered_at": "2026-09-18T16:07:51.894029+00:00",
+      "discovered_at": "2026-09-18T17:44:33.020940+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.shiksha.com",
+      "final_url": "https://www.shiksha.com",
+      "http_status": 403
     },
     {
       "title": "Tanzania balances wage hikes, local jobs push - dailynews.co.tz",
@@ -618,10 +942,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286939+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556726+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "5 Tips for Securing Summer Internships for Incoming First-Years - Harvard College",
@@ -635,10 +967,18 @@
         "internship",
         "internships"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893117+00:00",
+      "discovered_at": "2026-09-18T17:44:33.019743+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://college.harvard.edu",
+      "final_url": "https://college.harvard.edu",
+      "http_status": 200
     },
     {
       "title": "Pasteur MOOCs: Free Online Courses in Life and Health Sciences - Institut Pasteur",
@@ -652,10 +992,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495387+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616525+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.pasteur.fr",
+      "final_url": "https://www.pasteur.fr/fr",
+      "http_status": 200
     },
     {
       "title": "Beyond the crown: Miss Universe finalists offered Dubai studies, jobs and land - thecitizen.co.tz",
@@ -669,15 +1017,23 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286772+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556495+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
-      "title": "Scholarship Opportunities for Students, Graduates & Researchers - fundsforngos.org",
+      "title": "Scholarship Opportunities for Students, Graduates & Researchers - fundsforNGOs",
       "source": "Google News - Scholarships",
-      "publisher_name": "fundsforngos.org",
+      "publisher_name": "fundsforNGOs",
       "publisher_url": "https://www2.fundsforngos.org",
       "news_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaUVkN3UySkxSTXJicXEwMEVtVjBib21icndNZGlTVVJ2cWY2eEI2VGVITTA4QWVJa1pjUFIxdzkzejhFMjgyVWk2VmI4R2FmRnB3eHc2VEg0V1BPbWs3OTRVRDlFMng0dy1ab3cyVkxrYl9ZU1l4S29aNVBOZGZjVnVsLVYyOVlTN3ZiRVplNUs3U0xkdlBmbFRmZ3NhMTlL0gGmAUFVX3lxTE5zUVA2TS10MDhOREF4UUJNM0I0bmxYeG9Uc08zUjlIaTRDZUpVdzBWRzJGUnUxMHBvemhfS3hKUFhObHF2VHYxWUlfWjJ6ZkVPY3FwTHhTdWFIdldXZDFwbFhWcVlXYktxZGJJSWptb0NILVBGZzNSS2swazJkZnZHVDgzSDFLdlNiWHptZGJkTWU3ajJQT2ZrSGk0RjNZSWoxMGx1Y1E?oc=5",
       "source_url": "https://www2.fundsforngos.org",
@@ -686,10 +1042,18 @@
         "scholarship",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813921+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032262+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": true,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www2.fundsforngos.org",
+      "final_url": "https://www2.fundsforngos.org",
+      "http_status": 403
     },
     {
       "title": "Financial Aid Options for International Students: What to Know | Best Global Universities | U.S. News - U.S. News & World Report",
@@ -703,10 +1067,18 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.806063+00:00",
+      "discovered_at": "2026-09-18T17:44:32.028998+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.usnews.com",
+      "final_url": "https://www.usnews.com",
+      "http_status": null
     },
     {
       "title": "From roadbed to economic transformation: SGR lays the track for Tanzania’s Vision 2050 - dailynews.co.tz",
@@ -719,28 +1091,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.287470+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557224+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
-    },
-    {
-      "title": "Russia to increase scholarships for Tunisian students and cover their tuition and living expenses - TV BRICS",
-      "source": "Google News - Scholarships",
-      "publisher_name": "TV BRICS",
-      "publisher_url": "https://tvbrics.com",
-      "news_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWmtKbjR5c0h1eDJXNlZvS0VpS1MxaktnaTZRa3kzTGdSVTZ5b0Q5NnVmbFVtejB3cnNvZngxZ1lIbF9sZVNQYXIweGRPRktLYm5VY2tXZGtGOWhSNDhUVzNoY3FTUzdSU0JQT3MxelNrN3E2ZHdjd0Q4OHFYdF9hQWx1b29VSEdwNldjQ0FLRW1adlBrTEtCeWJHUG5QRXRITkF3RXFnYXpwNXZ0V3BYT1Q4WUxUMmxGU2I4d3lYOUlyeDRl?oc=5",
-      "source_url": "https://tvbrics.com",
-      "published": "2026-09-01T07:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-18T16:07:50.813339+00:00",
-      "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Barau awards scholarships to Ghanaian students for Hausa studies - Punch Newspapers",
@@ -755,10 +1117,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814749+00:00",
+      "discovered_at": "2026-09-18T17:44:32.033160+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://punchng.com",
+      "final_url": "https://punchng.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania urged to turn innovations into businesses, jobs - thecitizen.co.tz",
@@ -773,10 +1143,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286874+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556645+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "WACA Student Scholars Program 2026: Fully Funded National Conference Opportunity - Global South Opportunities",
@@ -789,10 +1167,18 @@
       "matched_keywords": [
         "fully funded"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813774+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031976+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "5 Free World Bank Online Courses to Build In-Demand Skills in 2026 - Global South Opportunities",
@@ -806,10 +1192,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495752+00:00",
+      "discovered_at": "2026-09-18T17:44:33.617060+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Somalia, Tanzania Discuss Youth Jobs and Digital Government Cooperation - Shabelle Media Network",
@@ -824,10 +1218,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286254+00:00",
+      "discovered_at": "2026-09-18T17:44:32.555995+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://shabellemedia.com",
+      "final_url": "https://shabellemedia.com",
+      "http_status": 200
     },
     {
       "title": "12 full scholarships to Europe for 2025 and beyond - Study International",
@@ -841,10 +1243,18 @@
         "scholarship",
         "scholarships"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812663+00:00",
+      "discovered_at": "2026-09-18T17:44:32.030979+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://studyinternational.com",
+      "final_url": "https://studyinternational.com",
+      "http_status": 200
     },
     {
       "title": "Trump administration seeks to restrict internships for international students - Reuters",
@@ -860,10 +1270,18 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893267+00:00",
+      "discovered_at": "2026-09-18T17:44:33.019973+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.reuters.com",
+      "final_url": "https://www.reuters.com",
+      "http_status": 401
     },
     {
       "title": "Trump Limits Internships for International College Students - WSJ",
@@ -878,10 +1296,18 @@
         "internships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893148+00:00",
+      "discovered_at": "2026-09-18T17:44:33.019788+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.wsj.com",
+      "final_url": "https://www.wsj.com",
+      "http_status": 401
     },
     {
       "title": "School opens inside Annapolis Mall, linking students to internships and community resources - WBAL News Radio",
@@ -896,10 +1322,18 @@
         "internships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893234+00:00",
+      "discovered_at": "2026-09-18T17:44:33.019922+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.wbal.com",
+      "final_url": "https://www.wbal.com",
+      "http_status": 200
     },
     {
       "title": "Online Free Courses: Top Certification Programs by Jaro - Jaro Education",
@@ -913,10 +1347,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.496008+00:00",
+      "discovered_at": "2026-09-18T17:44:33.618408+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.jaroeducation.com",
+      "final_url": "https://www.jaroeducation.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania explores ways of bolstering its labour market in Saudi Arabia, Gulf states - dailynews.co.tz",
@@ -929,10 +1371,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.287565+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557296+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "KidsRights Program Support Internship 2026 in Amsterdam: Paid Opportunity for Students in Children’s Rights, Youth Empowerment and Climate Action - Global South Opportunities",
@@ -946,10 +1396,18 @@
         "internship",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893452+00:00",
+      "discovered_at": "2026-09-18T17:44:33.020301+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "South Africa Students Can Apply For 2027 Mastercard Foundation Scholarships - educationafricamag.com",
@@ -965,10 +1423,18 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.806227+00:00",
+      "discovered_at": "2026-09-18T17:44:32.029218+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://www.educationafricamag.com",
+      "final_url": "https://www.educationafricamag.com",
+      "http_status": 200
     },
     {
       "title": "Female scholars dominate Africa Climate Collaborative scholarships - Daily Monitor",
@@ -983,10 +1449,18 @@
         "scholarships",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814539+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032938+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": false,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.monitor.co.ug",
+      "final_url": "https://www.monitor.co.ug",
+      "http_status": 403
     },
     {
       "title": "TOWARDS TANZANIA 2050: The role of the National Commission for UNESCO in building future skills - dailynews.co.tz",
@@ -999,10 +1473,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288061+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557879+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Tanzania insists the AI won’t threaten human jobs, it only aims to improve efficiency - dailynews.co.tz",
@@ -1017,10 +1499,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.287927+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557681+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Panda Academy empowers 50 Young women to build thriving beauty businesses in Tanzania - dailynews.co.tz",
@@ -1033,10 +1523,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288701+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558363+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "TZ deploys 8,400 youths for overseas jobs - dailynews.co.tz",
@@ -1050,10 +1548,18 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288637+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558330+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Global Elim Foundation awards scholarships to 32 international students - The Korea Times",
@@ -1069,10 +1575,18 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813419+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032380+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.koreatimes.co.kr",
+      "final_url": "https://www.koreatimes.co.kr",
+      "http_status": 200
     },
     {
       "title": "Up to 120 Fully Funded KfW EAC Master’s Scholarships in East Africa 2026/2027 – Get Tuition, Monthly Stipend, Travel & Research Support - Global South Opportunities",
@@ -1088,10 +1602,18 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814142+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032509+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania banks on mineral value addition’s strong link with industrial sector to attain 1tri US dollar- economy - dailynews.co.tz",
@@ -1104,10 +1626,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288997+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558673+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Call for Applications: AICA × DataCamp Scholarship 2026/2027 for Africans - Global South Opportunities",
@@ -1121,10 +1651,18 @@
         "scholarship",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814227+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032584+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania’s billionaire-led MeTL plans $250 million Mozambique expansion targeting 20,000 jobs - Business Insider Africa",
@@ -1140,15 +1678,23 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286219+00:00",
+      "discovered_at": "2026-09-18T17:44:32.555942+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://africa.businessinsider.com",
+      "final_url": "https://africa.businessinsider.com",
+      "http_status": 200
     },
     {
-      "title": "Mozambique: Tanzania’s MeTL Group plans US$250M investment and 20,000 jobs - clubofmozambique.com",
+      "title": "Mozambique: Tanzania’s MeTL Group plans US$250M investment and 20,000 jobs - CLUB OF MOZAMBIQUE",
       "source": "Google News - Jobs Tanzania",
-      "publisher_name": "clubofmozambique.com",
+      "publisher_name": "CLUB OF MOZAMBIQUE",
       "publisher_url": "https://clubofmozambique.com",
       "news_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWGZGa3hEUVpPZlljRzU4UGRjY0w4UmxMZDR2Q1JmcnRmMjNCVTNOS245c2oycjFZTzJSZEFXWWM1MnpSWmxKa0pFc1JuZU90TTJrQTJjdUdBRGxJRjBldVBBaUgtLWxhemg2Y0E4SlE0VzMtRHRHcDU5ZjhhM1BzNDVhcTJKb29wNjM0X3ZWSTY2X0hod0dWYm1rR3dFSU1JV2lUN0xYUXQ?oc=5",
       "source_url": "https://clubofmozambique.com",
@@ -1158,10 +1704,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286487+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556154+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://clubofmozambique.com",
+      "final_url": "https://clubofmozambique.com",
+      "http_status": 200
     },
     {
       "title": "Tanzanian billionaire Mo Dewji pledges to invest $250 million in Mozambique and create 20,000 jobs - Billionaires.Africa",
@@ -1177,10 +1731,18 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286588+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556281+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.billionaires.africa",
+      "final_url": "https://www.billionaires.africa",
+      "http_status": 200
     },
     {
       "title": "UNDP urges Tanzanian universities to turn research into businesses to tackle jobs crisis - thecitizen.co.tz",
@@ -1195,10 +1757,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.287767+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557507+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Free IT Certifications and Courses to Elevate Your Career - Coursera",
@@ -1213,10 +1783,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495258+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616296+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://www.coursera.org",
+      "final_url": "https://www.coursera.org",
+      "http_status": 200
     },
     {
       "title": "Tanzania, Netherlands deepen partnership around investment, jobs, skills - ippmedia.co.tz",
@@ -1231,10 +1809,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288162+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557955+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://ippmedia.co.tz",
+      "final_url": "https://ippmedia.co.tz/the-guardian",
+      "http_status": 200
     },
     {
       "title": "Tanzania and World Bank Finalize KAZI MPA Central Corridor Jobs Programme to Boost Youth Employment and Private-Sector Growth - TanzaniaInvest",
@@ -1249,10 +1835,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.287633+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557367+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.tanzaniainvest.com",
+      "final_url": "https://www.tanzaniainvest.com",
+      "http_status": 200
     },
     {
       "title": "Innovation must deliver jobs, better services: Stakeholders - thecitizen.co.tz",
@@ -1266,10 +1860,18 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288922+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558594+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Tanzania positions as energy hub with 2,636MW power surplus - thecitizen.co.tz",
@@ -1282,10 +1884,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288667+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558301+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "CAUGHT IN CRISIS| Two Years On, Tanzania’s Fish Shortage Threatens Job - dailynews.co.tz",
@@ -1299,10 +1909,18 @@
         "job",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.289064+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558744+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Tanzania, World Bank seal key technical preps for KAZI MPA project along its central development corridor - dailynews.co.tz",
@@ -1315,10 +1933,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.290006+00:00",
+      "discovered_at": "2026-09-18T17:44:32.559586+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Uganda’s $5 billion oil route to the sea gets closer as Tanzania’s giant pipeline hits 88% - Business Insider Africa",
@@ -1332,10 +1958,18 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286738+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556454+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://africa.businessinsider.com",
+      "final_url": "https://africa.businessinsider.com",
+      "http_status": 200
     },
     {
       "title": "Tanzania’s youth challenge: More graduates, but where are the jobs? - thecitizen.co.tz",
@@ -1350,10 +1984,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288405+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558131+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Young Tanzanians turn farming into new route to jobs, business - thecitizen.co.tz",
@@ -1368,10 +2010,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288525+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558206+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Oxford AfOx Graduate Scholarships 2027–28 Offer Fully Funded MBA Opportunities for African Students - Global South Opportunities",
@@ -1388,28 +2038,18 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814181+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032424+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
-    },
-    {
-      "title": "Wageningen University Opens 2027 Master’s Scholarship Opportunities for International Students - Global South Opportunities",
-      "source": "Google News - Scholarships",
-      "publisher_name": "Global South Opportunities",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBIUFdpeHM2QnZPcTdsOTVTOXFjQXlaUzV5RU1BYlYtX2dfa3dqZ0pQNVJyNklxNXYyQjZnR1l4SGN1akkzS0lhU19WWTBIaGtFUWJHU3dacUU1V0FKSkQ2QVhKZF96c2VDVC1ENWVuYU5DeVR5?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-08-07T07:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "students",
-        "international students"
-      ],
-      "discovered_at": "2026-09-18T16:07:50.813458+00:00",
-      "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "5 Free Courses to Learn Modern AI and LLMs - KDnuggets",
@@ -1423,15 +2063,23 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495813+00:00",
+      "discovered_at": "2026-09-18T17:44:33.617393+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.kdnuggets.com",
+      "final_url": "https://www.kdnuggets.com",
+      "http_status": 200
     },
     {
-      "title": "Bulletin: 40 Partial Scholarships forWar-Affected Students at Egyptian-Russian University; Saudi University Lets Graduates of Health Related Subjects Study Medicine - al-fanarmedia.org",
+      "title": "Bulletin: 40 Partial Scholarships forWar-Affected Students at Egyptian-Russian University; Saudi University Lets Graduates of Health Related Subjects Study Medicine - Al-Fanar Media",
       "source": "Google News - Scholarships",
-      "publisher_name": "al-fanarmedia.org",
+      "publisher_name": "Al-Fanar Media",
       "publisher_url": "https://al-fanarmedia.org",
       "news_url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxOU05LN1l2ZWpoaklTS1VKZW9pR3hMWFh0cDdmQUpqc0NxeHZfUVQyay1oY205cFRFSDhSUXowS2dOM0s2YUlwbm5lZmxLSzBDd3dtYUctVkdpNDF3QWNiZkdwdW5ZYzhDY3ZhUjRrSWU0N2Q3MjFLMjYxa1BmbGxtMG5YYVFkYzRQdWtwNGtJdzZBYXNCUnB5dFZnUF84NE9YN0dqa0w3OG55Q1B6N0N6Qy13ZWVrNHhhLUNiV3BjRjRKNlRaTkZHTE9lLXVoS0M5RHZpUkt5T2RwNkhmaU5idzdyM19MMnR5R2FyUThHZTdCeWRpcGxuOEhFM2lVdHJ1eER0S1djWXVXRGRlbmVfTTE2YzRFcmlKNE1nR3JGQkhPSVU?oc=5",
       "source_url": "https://al-fanarmedia.org",
@@ -1441,10 +2089,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.812778+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031140+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": true,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://al-fanarmedia.org",
+      "final_url": "https://al-fanarmedia.org",
+      "http_status": 403
     },
     {
       "title": "Study in Norway 2026–2027 Without IELTS: Fully Funded Scholarship Opportunities for International Students - Global South Opportunities",
@@ -1460,10 +2116,18 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-18T16:07:50.815078+00:00",
+      "discovered_at": "2026-09-18T17:44:32.033482+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "The silent struggle affecting new graduates’ path to employment in Tanzania - thecitizen.co.tz",
@@ -1476,10 +2140,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288131+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557921+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Tanzania’s edible oil dilemma: How imports 'export' local jobs - thecitizen.co.tz",
@@ -1494,10 +2166,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288956+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558630+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     },
     {
       "title": "Chevening Scholarships 2027–2028 for South African Students Now Open: Fully Funded UK Master's Opportunity (Apply by 6 October 2026) - Global South Opportunities",
@@ -1514,15 +2194,23 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.815154+00:00",
+      "discovered_at": "2026-09-18T17:44:32.033527+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
-      "title": "Airtel Africa Foundation Awards Scholarships and Laptops to 23 University of Ilorin Freshers - TechAfrica News",
+      "title": "Airtel Africa Foundation Awards Scholarships and Laptops to 23 University of Ilorin Freshers - techafricanews.com",
       "source": "Google News - Scholarships",
-      "publisher_name": "TechAfrica News",
+      "publisher_name": "techafricanews.com",
       "publisher_url": "https://techafricanews.com",
       "news_url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNd2FISWlGSGZOWDctOWtUY3gtdkIyQTdtbmROMkJobVltcE9VbjFWMzBldVFjMmVwdVVSWGtOZmc2VndFM2RIdW5rbll3TUI5YlBzbkg0aEhDMEJuel9Xa2xVTm1YNkJsMDk4UGhzQ3lWSUJOLVFycmE1VkR1NEtVbnJhUm8tbk01UGdzU0NtWk9ONzJBN2d2TUlfWmdORVFfV2lmWG5veTZYa0l1UXI5aU5CSW9wcFc2VTRjR0RBclZZM3JOM3hNVmVfdw?oc=5",
       "source_url": "https://techafricanews.com",
@@ -1532,10 +2220,18 @@
         "scholarships",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814509+00:00",
+      "discovered_at": "2026-09-18T17:44:32.032902+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://techafricanews.com",
+      "final_url": "https://techafricanews.com",
+      "http_status": 200
     },
     {
       "title": "WFP Programme Policy Officer (Climate Resilience) 2026 in Tanzania: Join the UN's Climate Action Team - Global South Opportunities",
@@ -1548,10 +2244,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.287505+00:00",
+      "discovered_at": "2026-09-18T17:44:32.557261+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Dutch envoy pushes investment, value-addition agenda for Tanzania - dailynews.co.tz",
@@ -1564,10 +2268,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288556+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558238+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "Apply for the Friedrich-Ebert-Stiftung (FES) Ethiopia Internship 2026 in Addis Ababa: Paid Opportunity for Master’s Students in Policy, International Relations and Development - Global South Opportunities",
@@ -1581,10 +2293,18 @@
         "internship",
         "students"
       ],
-      "discovered_at": "2026-09-18T16:07:51.893997+00:00",
+      "discovered_at": "2026-09-18T17:44:33.020900+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Japan Africa Dream Scholarship (JADS) Program 2026: Fully Supported Master’s Scholarships for African Students - Global South Opportunities",
@@ -1600,10 +2320,18 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813302+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031587+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "Enhance Your Knowledge: Explore 2026 Free Online Courses with the University of Birmingham - Global South Opportunities",
@@ -1617,10 +2345,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495785+00:00",
+      "discovered_at": "2026-09-18T17:44:33.617363+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "France-South Africa Scholarship Programme 2027 Opens Applications | Fully Funded Master's and PhD Scholarships in France - Global South Opportunities",
@@ -1636,15 +2372,48 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814718+00:00",
+      "discovered_at": "2026-09-18T17:44:32.033312+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
-      "title": "Tom Queba and Pegasys Scholarships for Social Change (South Africa) - fundsforngos.org",
+      "title": "CFAs: Canon Collins RMTF Scholarships for Postgraduate Study - fundsforNGOs",
       "source": "Google News - Scholarships",
-      "publisher_name": "fundsforngos.org",
+      "publisher_name": "fundsforNGOs",
+      "publisher_url": "https://www2.fundsforngos.org",
+      "news_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaEp0SUY5N0dCLWNZdDVHSVMxdjVpM1FGOHExVFYzVlR2OFBHUWRjTmkzMUN6UDREU1Bhb1p1cWk2ejQwSmVkMXBkVC1IMVNESjhlMTJmRERzekpCZmZTYnp2VW53YnB0VEZrMnE3aTlYdndYLVFSM3ZpOTAzcmxDSTJTekozblE3UlMxamZoTWFxekVTQ01kMExrMmdsSDMxRVJkTtIBqgFBVV95cUxOTWxNSTgxYmMtTmZ6U2lzVmNvbnFCbHI4Z2cyd2gzVlhEZWxxeVcxaHFFUGItekZxbXQwUThQNHdKWVZRS3RNYlNfRURNMFVoaDBXUWNFT3VRMUN6QlpNUU9kZ1U5V183YVMxekVRb0tpYXVmaWx6R0lJUk5xSkJrd0tpTGJ1MXRJMl8xNE5TdlQ0MUl3aHVWN2x2MEJDV1p0RFNPVzFFNWlzZw?oc=5",
+      "source_url": "https://www2.fundsforngos.org",
+      "published": "2026-07-27T11:26:59+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships"
+      ],
+      "discovered_at": "2026-09-18T17:44:32.033632+00:00",
+      "status": "needs_verification",
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": true,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www2.fundsforngos.org",
+      "final_url": "https://www2.fundsforngos.org",
+      "http_status": 403
+    },
+    {
+      "title": "Tom Queba and Pegasys Scholarships for Social Change (South Africa) - fundsforNGOs",
+      "source": "Google News - Scholarships",
+      "publisher_name": "fundsforNGOs",
       "publisher_url": "https://www2.fundsforngos.org",
       "news_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNWFpa1JoMUxJUVVLcFQzM2t1N2pjUW5HWXZIdUxvd2FvRG8yVDZGdGl4b21SUHlocXNKQ2lCOXRWTnp1Q1d5SnFMRER4bUFob0hRdUFGSEc2ZFVWMVRrYVg0R29veEZXZHUzWUt2WEcwTEpKQzVyS3NmdGF2YjBTNHNmczdLY2dmcTNmMUlQTnFJcHJaNGpVelp0ZzNBdlJQYl9OQkFsY9IBrAFBVV95cUxNMk4tdzczWm1pazV3Z2hZVjhFZUhhMEo2a0dEcThVaTdXWF9xNFJ4NTVnd1BJU2QwSEtMZTN1aVh2eE1sMVZsZnl6VU9RMnpaLUZsUldrb3J5RmZPLXVVQWRZUW5qNXpxU2R0NmlyeC13UmFuaFlkWUdPM0ZwUVcyYnpSWEFsaE9UTGdlNk1xTkY3UDJsN1RvdFJ1SlNwQl9RSGc4RzFfLTY1a0tR?oc=5",
       "source_url": "https://www2.fundsforngos.org",
@@ -1654,10 +2423,18 @@
         "scholarships",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.813640+00:00",
+      "discovered_at": "2026-09-18T17:44:32.031915+00:00",
       "status": "needs_verification",
-      "verification_status": "verified_source",
-      "verification_reason": "Source domain looks authoritative"
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
+      "source_domain_trusted": true,
+      "opportunity_relevant": false,
+      "needs_human_review": true,
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www2.fundsforngos.org",
+      "final_url": "https://www2.fundsforngos.org",
+      "http_status": 403
     },
     {
       "title": "IFC’s Landmark Shilling Bond Raises $100 Million for Tanzania’s Small Businesses - ednews.africa",
@@ -1671,10 +2448,18 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.286911+00:00",
+      "discovered_at": "2026-09-18T17:44:32.556691+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.ednews.africa",
+      "final_url": "https://www.ednews.africa",
+      "http_status": 200
     },
     {
       "title": "Thrown away today, valuable tomorrow: Rethinking Tanzania’s waste economy - dailynews.co.tz",
@@ -1687,10 +2472,18 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.289584+00:00",
+      "discovered_at": "2026-09-18T17:44:32.559172+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
+      "http_status": 200
     },
     {
       "title": "5 free online courses military spouses should take advantage of this year - We Are The Mighty",
@@ -1704,10 +2497,18 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-18T16:07:52.495420+00:00",
+      "discovered_at": "2026-09-18T17:44:33.616491+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.wearethemighty.com",
+      "final_url": "https://www.wearethemighty.com",
+      "http_status": 200
     },
     {
       "title": "FirstRand International Postgraduate Scholarships 2027: Fully Funded Opportunities for South African Students to Study Abroad - Global South Opportunities",
@@ -1724,10 +2525,18 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-18T16:07:50.814928+00:00",
+      "discovered_at": "2026-09-18T17:44:32.033199+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
     },
     {
       "title": "How 'green gold' is creating jobs for young Tanzanians - thecitizen.co.tz",
@@ -1742,26 +2551,18 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-18T16:07:51.288331+00:00",
+      "discovered_at": "2026-09-18T17:44:32.558055+00:00",
       "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Source requires manual verification"
-    },
-    {
-      "title": "Why new teachers must now work before getting licences in Tanzania - thecitizen.co.tz",
-      "source": "Google News - Jobs Tanzania",
-      "publisher_name": "thecitizen.co.tz",
-      "publisher_url": "https://www.thecitizen.co.tz",
-      "news_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTkJWaGhHNG1mOEduUU5GZ21IOXV5RW4tcTJkb05ncFZTb3pSNzZ3aDZYbkdrOURHUTlFN1lCblZUd2pSSlZXaHZLUXNyUHZicmNqQ0xncjBNY0tMZHBtQzV0OTdrdzVFOEhmZUU2QTVTLWhmdm4wRUFUZl9vSWtMSFdYZnBRbUkzM19kLVVCeVRSU3J2aWNmUzY2MXMtNkZzMUstRU80UXNpY2ZxbGRDREJUVHhGaFZZRzhwUzVlZTdpeDhu?oc=5",
-      "source_url": "https://www.thecitizen.co.tz",
-      "published": "2026-07-22T07:00:00+00:00",
-      "matched_keywords": [
-        "tanzania"
-      ],
-      "discovered_at": "2026-09-18T16:07:51.288733+00:00",
-      "status": "needs_verification",
-      "verification_status": "needs_review",
-      "verification_reason": "Opportunity type unclear"
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
     }
   ]
 }
