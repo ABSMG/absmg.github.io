@@ -1,24 +1,48 @@
 {
   "verification_engine_version": "2.0",
   "total_checked": 100,
-  "source_checked": 5,
-  "page_checked": 89,
-  "failed": 6,
+  "source_checked": 8,
+  "page_checked": 85,
+  "failed": 7,
   "items": [
     {
-      "title": "Tanzania’s working on push to slash US$1bn import bill on pharmaceutical and create jobs - ippmedia.co.tz",
+      "title": "New CPT rules threaten the future of international students at Brandeis - thejustice.org",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "thejustice.org",
+      "publisher_url": "https://www.thejustice.org",
+      "news_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQU0JEZmR1RUFXM042dkN4M3Z2Zk9wWUs2REpnMzZtRGd5Rk9VQ3F0V0I5b1VxTmFVbnAwaVVmc1RIZm1uT2J5cmFuOERPS2s2aTJ0aFdhTzlVOUJwQm8tMERYSVR2RzhmeFRzSGttNC1DN3VvT3FxWjYyN1VkUHNlVjRWb1FwV3hCcnhOeXRCeTF1aVd5WGE3WGY1TmRtSXQxZm91SmprQnNsZS1XOVduREFtYVI?oc=5",
+      "source_url": "https://www.thejustice.org",
+      "published": "2026-09-29T10:01:50+00:00",
+      "matched_keywords": [
+        "students",
+        "international students"
+      ],
+      "discovered_at": "2026-09-29T12:30:43.716388+00:00",
+      "status": "needs_verification",
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://www.thejustice.org",
+      "final_url": "https://www.thejustice.org",
+      "http_status": 200
+    },
+    {
+      "title": "Tanzania to host 2nd Doha dialogue to boost safe overseas job opportunities for citizens - ippmedia.co.tz",
       "source": "Google News - Jobs Tanzania",
       "publisher_name": "ippmedia.co.tz",
       "publisher_url": "https://ippmedia.co.tz",
-      "news_url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNajFwZGZmSW1hT2pVN284QVBOanRWVEZQQmxjNkxQUzZ1eFQxak1yMklKNFFEWjB1U19yaDVLNHpxMDhRMUxUeUN4OUxTRWNTNElma3J3bW1iYTFwYTF6Q0Z0N1otTU1qRmREeEVWc3l0dnZKdUM0UWR3dF8yd2pDSmV2MFRWV1ZGTDlCVEdhdnd3V3RYQ3hTSHBZU1ZjSHVFellOOFZFS1F5VWppM3NWb0ZpYk00dGdjYjg4Z2J4WHFKVFNxa1llLTVsMHAtd2NSSjlEc0N2ZVpuNmRoR05HTVhYQ2tQbXBUc2dnOWJXRXo2eGM?oc=5",
+      "news_url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNRFowSTZWa01IZVk0ZjQwOEtpdzhWYXlKN3B1eHUyQlp5c3pVMlh3bkV6N1AzN3VOSjJIN0RZaHZJenVobHlsQnk2MW9OZTRxQ1lKbTU3ZFZVaFEwcXd0bzhlVm9uOWFsU2N1VkZiby15Q0hQSXFJZnl2LVBlRktWLTlkY1BhRG1PUDV0VklnR2hkb2NjTHc1WUVyT1ZYeXVtUWRLekp1S0Z2bEM0UkVRdlBvc3dISkN6aXpFWVVoUThOTmlacGVxVzgtQ045U09wY2VzN1o2T0VUcXRycnZjdWlpNjNscklEMmNHUWRyajY3T3lJdkE?oc=5",
       "source_url": "https://ippmedia.co.tz",
-      "published": "2026-09-28T08:49:34+00:00",
+      "published": "2026-09-29T08:44:52+00:00",
       "matched_keywords": [
         "job",
-        "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732409+00:00",
+      "discovered_at": "2026-09-29T12:30:42.690987+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -32,17 +56,18 @@
       "http_status": 200
     },
     {
-      "title": "Boom Without a Blueprint? China's Capital Surge Into Tanzania's SEZ Agriculture & Forestry Sector - Tanzania Investment and Consultant Group Ltd",
+      "title": "Tanzania widens response to mounting youth job pressure - thecitizen.co.tz",
       "source": "Google News - Jobs Tanzania",
-      "publisher_name": "Tanzania Investment and Consultant Group Ltd",
-      "publisher_url": "https://ticgl.com",
-      "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOT0FDR3pES2FteFlOMU5JOGVZbUVyZ2c2RlFMd3UzYzRCN0EwUFg0S1RuOUxBRlNqZ2g1SXdJMVZTdElpanYzRFY1Y3Jiano5bzZ4djBKSE9UZWsxMk5tQ2dJeVcwUGdkOGdpUDZNUFU1bkZLUHpPX21rai1ONTU2eVdNa3cySWEwbFQ4cDRhUjZYUVVOU0twQkE1emdfZ2Z3dE1WTTZoNVJieW4xTmhZeQ?oc=5",
-      "source_url": "https://ticgl.com",
-      "published": "2026-09-28T07:05:19+00:00",
+      "publisher_name": "thecitizen.co.tz",
+      "publisher_url": "https://www.thecitizen.co.tz",
+      "news_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWG5IVi1nRFZZVWgzeE9FTGFOMkJpUlFId3JwZFJaRUpKQTF3WVFaNV9WZDBrbGVHcW1MakV3bDZFY2FwaDU1cVhQVWtzLTFpczZnbTNHdFQzSWR1QklfdTZEVXFjU2FMMW92bUJ3eDFhZFhGYTRyZE9YVVMyb0RiNGFOd0ZyTUtNR2N6cGtGTmNEX2xBVEdid2JHLXRmUVRkUU5MbXBEWkVQSXFEU1NuMTdnam16dw?oc=5",
+      "source_url": "https://www.thecitizen.co.tz",
+      "published": "2026-09-29T06:13:45+00:00",
       "matched_keywords": [
+        "job",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732456+00:00",
+      "discovered_at": "2026-09-29T12:30:42.690723+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -51,23 +76,97 @@
       "opportunity_relevant": true,
       "needs_human_review": true,
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://ticgl.com",
-      "final_url": "https://ticgl.com",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
       "http_status": 200
     },
     {
-      "title": "‘Overseas jobs rest on discipline’ - dailynews.co.tz",
+      "title": "Intern adventures: Temple students put community engagement into action during summer 2026 - Temple Now",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "Temple Now",
+      "publisher_url": "https://now.temple.edu",
+      "news_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYVNKREQ0UGpZcnJvcUZoQzBDQkxVTlhfbEFPNmVIMVFPT0pQWUZUZWE4U0VrUEd2bm1BVlhnZTVrTnpkRVRGTEtMNnh4WjRVeGozb18xQzZneWtTWFhLclozMWx0VEMzSDVkWlpxWUNUTUZUXzRHNjRmd3lGMFo4UUJkbUtqZHZNZmJ0R1JxU1YxaEllWnhDeF9qb0Z6aFphS1ZjaklBUGRkX21TelUyVnktUUlZWlczRHJRSWVYSmE?oc=5",
+      "source_url": "https://now.temple.edu",
+      "published": "2026-09-28T16:40:29+00:00",
+      "matched_keywords": [
+        "students"
+      ],
+      "discovered_at": "2026-09-29T12:30:43.716437+00:00",
+      "status": "needs_verification",
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://now.temple.edu",
+      "final_url": "https://now.temple.edu",
+      "http_status": 200
+    },
+    {
+      "title": "ATNi Head of Partnerships Job 2026: International Leadership Opportunity in Kenya, Tanzania, Belgium or the Netherlands - Global South Opportunities",
+      "source": "Google News - Jobs Tanzania",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA5V3ZVaUNPbmJJeWg2V2RvM2pzTlBTb29oYmtpeXRrb3h2TWlsUDI1VGhCdDh5alNvM2pmcHpvSkE4ZlN2T3ZIUHA3MXBaY0FGc2ZGS0JfNmNndTBkNzZxNmZ6Ry1rdzlx?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
+      "published": "2026-09-28T14:12:45+00:00",
+      "matched_keywords": [
+        "job",
+        "tanzania"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.690912+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
+    },
+    {
+      "title": "Destination: Africa. BU Medical School Students Spent their Summer Volunteering in Malawi and Ghana - Boston University",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Boston University",
+      "publisher_url": "https://www.bu.edu",
+      "news_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVmNaNHdpb3RQbVZaU3pxdFg4c3hOWkd4YWVuck1aNkJnUzVUamJjemgzNGRJZGNOWXAyZlFTa0FIT1RwTXBKRFlnblZqbFJSYjc5cUdydUlSLXhnLXVfdWFIRHFTVDFqVzdOa0pPNjlSN2w5YzZYNUxadkpmbmI3NV9PNGVJdW5rTzB3?oc=5",
+      "source_url": "https://www.bu.edu",
+      "published": "2026-09-28T12:14:00+00:00",
+      "matched_keywords": [
+        "students",
+        "africa"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.192004+00:00",
+      "status": "needs_verification",
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://www.bu.edu",
+      "final_url": "https://www.bu.edu",
+      "http_status": 200
+    },
+    {
+      "title": "TZ moves to cut 2.6tri/- pharma imports, create jobs - dailynews.co.tz",
       "source": "Google News - Jobs Tanzania",
       "publisher_name": "dailynews.co.tz",
       "publisher_url": "https://dailynews.co.tz",
-      "news_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9oYjVjVkZLcWtQblVsajNYenlyX0owbmwzRE5SeTBqSGNQejRQY25WSEJXT2V1bzU4eXV0SU8xcjhZWU1NMk5xcTctS2ZXQ3Q0U1dvc1VlV1l3cDV6VGxKZlNIbzFWMzBh?oc=5",
+      "news_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xZThlNGhHX1pydE1hbERYMEtJMl9rMFZ5SXRyUUh6enFPOThDZk5YenhNVmotQm4tSEF1QnJrODdsVzUzTGJ0R3M5TEpKenJrakFwaFdkc19uWF9XVzdkRlZ5a1lVSDRPcXNvSDNya1B5Nm50czk5MlVuNnZiTWM?oc=5",
       "source_url": "https://dailynews.co.tz",
-      "published": "2026-09-28T06:15:56+00:00",
+      "published": "2026-09-28T07:50:33+00:00",
       "matched_keywords": [
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732490+00:00",
+      "discovered_at": "2026-09-29T12:30:42.691283+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -78,6 +177,30 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://dailynews.co.tz",
       "final_url": "https://dailynews.co.tz",
+      "http_status": 200
+    },
+    {
+      "title": "Boom Without a Blueprint? China's Capital Surge Into Tanzania's SEZ Agriculture & Forestry Sector - Tanzania Investment and Consultant Group Ltd",
+      "source": "Google News - Jobs Tanzania",
+      "publisher_name": "Tanzania Investment and Consultant Group Ltd",
+      "publisher_url": "https://ticgl.com",
+      "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOT0FDR3pES2FteFlOMU5JOGVZbUVyZ2c2RlFMd3UzYzRCN0EwUFg0S1RuOUxBRlNqZ2g1SXdJMVZTdElpanYzRFY1Y3Jiano5bzZ4djBKSE9UZWsxMk5tQ2dJeVcwUGdkOGdpUDZNUFU1bkZLUHpPX21rai1ONTU2eVdNa3cySWEwbFQ4cDRhUjZYUVVOU0twQkE1emdfZ2Z3dE1WTTZoNVJieW4xTmhZeQ?oc=5",
+      "source_url": "https://ticgl.com",
+      "published": "2026-09-28T07:05:19+00:00",
+      "matched_keywords": [
+        "tanzania"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.691136+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://ticgl.com",
+      "final_url": "https://ticgl.com",
       "http_status": 200
     },
     {
@@ -92,7 +215,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.930799+00:00",
+      "discovered_at": "2026-09-29T12:30:44.336839+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -116,7 +239,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732527+00:00",
+      "discovered_at": "2026-09-29T12:30:42.691057+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -130,9 +253,9 @@
       "http_status": 200
     },
     {
-      "title": "Local students of military families awarded BlueStar Scholarships - The News-Enterprise",
+      "title": "Local students of military families awarded BlueStar Scholarships - thenewsenterprise.com",
       "source": "Google News - Scholarships",
-      "publisher_name": "The News-Enterprise",
+      "publisher_name": "thenewsenterprise.com",
       "publisher_url": "https://www.thenewsenterprise.com",
       "news_url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQdEczVUoxbE54Z3poSkc4Vk5pcUJ0SVU0cm1qZmoyTGZNbVdYZWdLdV84OTRHOWctQkh5ZTd1NTBROFNUTXJ0VTZZcVZQSGZnMC1DZjhhYUFzeHhXVFdRODVQemVoOW5iQXpOVzlkUzFfTmZ2QzRGTVNFUlZUWV9XZzV6ZzdsNUhfRTBjdXJyT0Y4MF9fMlZCS1NDTkxPWThqakpXRHliRWFWUjkzZGE2QjdDWjV5N0xmd25Yc3NJTlBwVHlwaGFJWEFpSl9yTlNKUkE1OFpHYzhrRklONk52VzUwOWhtOWdZaXRfOF9IZl9DRFJ6UUpzQ0xnWm4?oc=5",
       "source_url": "https://www.thenewsenterprise.com",
@@ -142,18 +265,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208086+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192139+00:00",
       "status": "needs_verification",
-      "verification_level": "failed",
-      "source_verified": false,
-      "page_reachable": false,
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
       "source_domain_trusted": false,
-      "opportunity_relevant": false,
+      "opportunity_relevant": true,
       "needs_human_review": true,
-      "verification_reason": "Source page could not be reached.",
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.thenewsenterprise.com",
       "final_url": "https://www.thenewsenterprise.com",
-      "http_status": 429
+      "http_status": 200
     },
     {
       "title": "Beyond Buying From China: Tanzania’s Push to Build at Home and Create Jobs - pan african visions",
@@ -169,7 +292,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732356+00:00",
+      "discovered_at": "2026-09-29T12:30:42.690826+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -183,9 +306,9 @@
       "http_status": 200
     },
     {
-      "title": "University of Pretoria IEG Internship Programme 2027: 36-Month Opportunities for Young South Africans - globalsouthopportunities.com",
+      "title": "University of Pretoria IEG Internship Programme 2027: 36-Month Opportunities for Young South Africans - Global South Opportunities",
       "source": "Google News - Internships Africa",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBWNGp0ZGpQaC1paUswRVd5dnZpNHFTUjc0WmNmRy1aczhxX29UUWUxb1hDVlRmSE9RVnk3RExhcWsybW1OZGNEOWNfMUc1SnE0aS1RR3I4aTBRNFlDRlBNejNUVERmNmFndlpLclprQXAzcEZCY1E?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -194,7 +317,7 @@
         "internship",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:23.328302+00:00",
+      "discovered_at": "2026-09-29T12:30:43.717088+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -208,9 +331,9 @@
       "http_status": 200
     },
     {
-      "title": "Free UNU-INWEH Online Courses 2026: Learn GIS, Water, Environment and Sustainable Development - globalsouthopportunities.com",
+      "title": "Free UNU-INWEH Online Courses 2026: Learn GIS, Water, Environment and Sustainable Development - Global South Opportunities",
       "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE51S0w5ajltTEhOR185NlNNejg3X2Q0b3V2aVBsZ2l2T1ptNTZBYjNTcE13dzcyN0twLTVIeEhURVdOa19WNzYzVTVFVzJtcWhoZVNhOTk1QUgxaVZyV1p3NmEyck55SE9DQmNpdw?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -219,7 +342,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931334+00:00",
+      "discovered_at": "2026-09-29T12:30:44.337110+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -233,18 +356,18 @@
       "http_status": 200
     },
     {
-      "title": "20 scholarships up for grabs as Magodi School welcomes former Sunderland player - Featured News Malawi - Nyasa Times",
-      "source": "Google News - Scholarships",
-      "publisher_name": "Nyasa Times",
-      "publisher_url": "https://www.nyasatimes.com",
-      "news_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMUJ6QmwzWkZtZHRRV0ZHZDk2ZVpVeGUzWnlmQ0FXSzV0bGlRTlljVFZLeUhDaFI3T3hYd0I0VU91el9CcV9TSnNDYjNmRnB6VlpUcXhrdHNoWjhDQUtveGF0c1RKUkVhdFM0ZWJKc1VHc2taQXB2ZnpLQVh3ck0zYWlVenMyMTFmeEJMOExBVHdoVjJwS0lmMXd2RmpBZFhZa1BGX2JVY1dtYUE?oc=5",
-      "source_url": "https://www.nyasatimes.com",
-      "published": "2026-09-26T11:44:28+00:00",
+      "title": "I've helped hundreds of kids land Wall Street jobs. Here's how I train them. - businessinsider.com",
+      "source": "Google News - Internships Africa",
+      "publisher_name": "businessinsider.com",
+      "publisher_url": "https://www.businessinsider.com",
+      "news_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPYm9OWFRlMWZma1BqajVfdVF5UFJhQWpYaFhkdE0tcmpFSmxkSWoydDdya3lDNkFoYWUyOXpIOUtOcHBGUHRWdTNfWmgwZGptWTlySjJ2aTJBWTFGUi1EcXNQc19DRHVFUTBtaVBrYVV3Z3I5UHk4U3hHd1VwbjlnVUtsTjVVM3ZSRHhxV2FyV0pkS3NQ?oc=5",
+      "source_url": "https://www.businessinsider.com",
+      "published": "2026-09-26T09:03:00+00:00",
       "matched_keywords": [
-        "scholarship",
-        "scholarships"
+        "job",
+        "jobs"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211961+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716477+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -253,8 +376,8 @@
       "opportunity_relevant": true,
       "needs_human_review": true,
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.nyasatimes.com",
-      "final_url": "https://www.nyasatimes.com",
+      "checked_url": "https://www.businessinsider.com",
+      "final_url": "https://www.businessinsider.com",
       "http_status": 200
     },
     {
@@ -270,7 +393,7 @@
         "training",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:23.327868+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716650+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -296,7 +419,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.209585+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193549+00:00",
       "status": "needs_verification",
       "verification_level": "failed",
       "source_verified": false,
@@ -310,31 +433,6 @@
       "http_status": 403
     },
     {
-      "title": "Kogi Begins N646.8m Bursary Disbursement to 20,347 Students - MSME Africa",
-      "source": "Google News - Scholarships",
-      "publisher_name": "MSME Africa",
-      "publisher_url": "https://msmeafricaonline.com",
-      "news_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQSDZNSWt4RjVVQlU5RllCcnZ4MV9BNUN6bWJvaXVab19UNG54WDNJWXpwYlFfZnp5VURGeE5abVUybUl3YkR3YXRyTU9oeHZGQk45MVo4LXhlUGpSSEQ0bUl0VFN0QmtEdXJDYjZvdzdLS2FZT0ZnT1JHVy1wa085WjRJdnk5d1J1T2pBTTVhLU9yQQ?oc=5",
-      "source_url": "https://msmeafricaonline.com",
-      "published": "2026-09-25T12:44:29+00:00",
-      "matched_keywords": [
-        "students",
-        "africa"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.211993+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://msmeafricaonline.com",
-      "final_url": "https://msmeafricaonline.com",
-      "http_status": 200
-    },
-    {
       "title": "SBI offers free online courses on AI, banking, finance, marketing and more: Check details - The Times of India",
       "source": "Google News - Free Courses",
       "publisher_name": "The Times of India",
@@ -346,7 +444,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931039+00:00",
+      "discovered_at": "2026-09-29T12:30:44.336925+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -360,109 +458,9 @@
       "http_status": 200
     },
     {
-      "title": "State Bank of India offers free online courses on AI, Marketing, Personal Branding, Finance and more | Hindustan Times - Hindustan Times",
-      "source": "Google News - Free Courses",
-      "publisher_name": "Hindustan Times",
-      "publisher_url": "https://www.hindustantimes.com",
-      "news_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPRWlZXzlqZVpNNnQxWkxwY1lTTEZUSXBZZ0tMOGtGVGhVazNnWDc3TDZ2OExQMW1zZEhBb1oxYnk4YTBna1ZEOWJ6NmREOFFOY0Fad2dhNWFlTnVwMEs4dU1STmhHSUpQVzNJeU4wSGdDaDc2cjh0bTkybnFEN3ZaUmUwOHJhRFZMUTZxUUhMRFAwMW0tSXNjRmFndXRRVmg1MU1iZEFKMFRZVHM0a2FVSVRoanlUcUdLR29ncWFFREgzNzM4aVNDWGk0VXBwZ1JEeWdXS185UkswOEFXZC1sYzlaUkltNmU3aUg1SFVJRlHSAfYBQVVfeXFMTWlHY0lSUXRkbDN2S081YjZkU2dUVDIxYVBnQXdad0xUVk43YUliTGtmSU51ODFOWVF2RDBVYTJCaEtEMEF0S3cwX19hMXVkNlNUWV9iMU4xLW9uQUZLMHZHMFJsTTZMZ3ZMOXRaMGxPTnBXeVNoNGVsTDgxcHk1enRuUzhSTGlZUG1YXzBpeDdiVWFaUjZqbzlITm5aS2Joa1BITkZYQjZLMm4zMGFERlBIai1GSklxS3JwWHZSYXgtOFdsSk5xWjl5RXdacmpPVUdYZW9mMm1rLWk3UVlodThzN1k5SVNxSUNxSjQ4OTcyRlFxMXZn?oc=5",
-      "source_url": "https://www.hindustantimes.com",
-      "published": "2026-09-25T09:44:18+00:00",
-      "matched_keywords": [
-        "course",
-        "courses"
-      ],
-      "discovered_at": "2026-09-28T13:26:23.931200+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.hindustantimes.com",
-      "final_url": "https://www.hindustantimes.com",
-      "http_status": 200
-    },
-    {
-      "title": "St. John’s UCC honors 14 students with scholarships - Yahoo",
+      "title": "Oxford AfOx Graduate Scholarships 2027–28 Offer Fully Funded MBA Opportunities for African Students - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "Yahoo",
-      "publisher_url": "https://www.yahoo.com",
-      "news_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5BSFVEMVpoRXo1c2ZNZVlJaW42LXd3cnk4WDVzZGxIb2lMQkh4Z0VzREUyREoxZXc3dEVSMXVOWGktanVTamlkRFZkV2gzNTRDYUlPRnpDVS1XOVdzRUpaOW5BTjZMSjU1MjdMRWNGRTA1TlhxSE8xMlFGNEY?oc=5",
-      "source_url": "https://www.yahoo.com",
-      "published": "2026-09-25T09:03:03+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.208605+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.yahoo.com",
-      "final_url": "https://www.yahoo.com",
-      "http_status": 200
-    },
-    {
-      "title": "Stanford University Free Online Courses 2026: Learn from Stanford Online for Free Today! - globalsouthopportunities.com",
-      "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE45TVB4Y1BpRk45eUF4cm1RWGJXLU1JYmxlaHUxU0ZMNk1uNDB3TXdwSFdBWlFVdlVFZ1ZOWnJPWUpaSUZJbFBfbHAtRWdtQ1lYd2RZaF9YcXU3UHNnZm5ibFdwb3B1ZnZoWktv?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-09-24T19:41:46+00:00",
-      "matched_keywords": [
-        "course",
-        "courses"
-      ],
-      "discovered_at": "2026-09-28T13:26:23.930749+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "U.S. Embassy Tanzania is Hiring: IT Infrastructure Technician Position in Dar es Salaam 2026 (open to applicants) - globalsouthopportunities.com",
-      "source": "Google News - Jobs Tanzania",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9FajVWeW1ySURwelhmdjFOVUZybF9YM2I0UTRzaE4wLXBVR0tKN1FJZFg2WXJqZThRdnRRbEtyNlVaRXM1S0ZEdG9mWWI1bnZ0UWd2QmVHZzZNd2JLZE16NVR1cV90X0x1Q0lGUUdn?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-09-24T13:57:52+00:00",
-      "matched_keywords": [
-        "tanzania"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.732589+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "Oxford AfOx Graduate Scholarships 2027–28 Offer Fully Funded MBA Opportunities for African Students - globalsouthopportunities.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB6TEhWNDdydXo2S05IdnJZeXdDX0lQV0xZTWY1OEsyZ0dKVUpQNHJRUFNVeVNEUlRrVFRPME9DWWlsbTlRUkZQNGV6TzlqZTBWaWtPNXRHUGVBVVVqdjdzOU0tMkQ5NDMtZWg4WUMtSFBzUQ?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -474,7 +472,32 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.209141+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193227+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
+    },
+    {
+      "title": "Stanford University Free Online Courses 2026: Learn from Stanford Online for Free Today! - Global South Opportunities",
+      "source": "Google News - Free Courses",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE45TVB4Y1BpRk45eUF4cm1RWGJXLU1JYmxlaHUxU0ZMNk1uNDB3TXdwSFdBWlFVdlVFZ1ZOWnJPWUpaSUZJbFBfbHAtRWdtQ1lYd2RZaF9YcXU3UHNnZm5ibFdwb3B1ZnZoWktv?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
+      "published": "2026-09-24T10:45:59+00:00",
+      "matched_keywords": [
+        "course",
+        "courses"
+      ],
+      "discovered_at": "2026-09-29T12:30:44.336644+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -500,7 +523,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208126+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192177+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -514,58 +537,9 @@
       "http_status": 200
     },
     {
-      "title": "Fulbright U.S. Student Program 2027–2028: Fully Funded Graduate Study and Research Opportunities Abroad - globalsouthopportunities.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB3QTl4Z1ppc2o4YWY5V3UtdVpSNFpkbFcza2s5ZVdLTTJ3OExkc1BrTXFhTGw0TDlUdlZsLW1UbHZPREUzYUhpUzRIT3ZSc0RTMUhfNDlZMkZkWFRDYWdud3pxTWJNeWJoNTlSQ3BmV1E1Zw?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-09-24T10:22:51+00:00",
-      "matched_keywords": [
-        "fully funded"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.209258+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "Earn a Free UN Diploma in International Environmental Law and Governance Through 5 Online Courses: Self-paced, No Deadline - globalsouthopportunities.com",
-      "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9wSjFrRHZ6U0RWMDMtTWZQYVZOUWM4V3lKSGMzWWVKejlDRXJ5T21lN2NKSnQ2RkNFU1V6eEVhUmdvTC1raDFZRGlMRGNaYTc2UEhLNkhXSEJuUDFaRUs1TTVqSHFaTXQ5WDl3?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-09-24T10:20:49+00:00",
-      "matched_keywords": [
-        "course",
-        "courses"
-      ],
-      "discovered_at": "2026-09-28T13:26:23.931370+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "Apply for the Competition Tribunal South Africa Internship 2026: Paid 12-Month Economics Opportunity in Pretoria - globalsouthopportunities.com",
+      "title": "Apply for the Competition Tribunal South Africa Internship 2026: Paid 12-Month Economics Opportunity in Pretoria - Global South Opportunities",
       "source": "Google News - Internships Africa",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5PNWJmV2tlQWdVZmVEbGJ4NzEwcEVXY1hHVlZoTkFOb084aU1MUFBrdHhPcXQ2a19xVWRvM2RCRHgwTDVmNTJQWnJaOHJ4Y1N4ODAyX0pSQXVEdkpvQ045UjV6QmlHdHNOZk9lUGh4am1VaTJO?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -574,7 +548,7 @@
         "internship",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:23.328649+00:00",
+      "discovered_at": "2026-09-29T12:30:43.717546+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -585,59 +559,6 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.globalsouthopportunities.com",
       "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "University of Manchester Global Futures Scholarships 2027: Over £6 Million for International Undergraduate and Master’s Students - globalsouthopportunities.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE15UFBRMGpweGdzN1B5QUZrT0ItMW1TS1BlZUNvNmd2dGxpaVYxSjBLdHZqTUtycWZqTDhJdm54VURoZFFvS21MeTQ2SE9WUnlvcmpzVkxGRVNKUThIUV9QdDl6UFl1WEdrVXFndUViZkE?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-09-23T10:25:49+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.208927+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "New federal guidelines limit internships, work opportunities for international students - dailycardinal.com",
-      "source": "Google News - Internships Africa",
-      "publisher_name": "dailycardinal.com",
-      "publisher_url": "https://www.dailycardinal.com",
-      "news_url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQkhUUEZEOEFieFJaVENwTDFGYmgxNlp5eFBFaHIzVHdZVm0xRTR3RzhPeWhma1ZnNzZENlJid011T1JHb3Y5eEZMbW1lbzJQNGVLSURJeWV5aG5Halh6dW5EMWNKOWQ3dmtSVHVfcjRnZm5jNlNWN3JETERiR0dnWUNJVE1xandiUFMtSTludVZyUlFxTEhsQlNKNHk0N25LeUZaZ2hUZjVGY3hJSXFGNW5GVUxNcWlSYzhFVGpVRjlZNDNTbGFqcjlKcjg?oc=5",
-      "source_url": "https://www.dailycardinal.com",
-      "published": "2026-09-23T07:00:00+00:00",
-      "matched_keywords": [
-        "internship",
-        "internships",
-        "students",
-        "international students"
-      ],
-      "discovered_at": "2026-09-28T13:26:23.327720+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.dailycardinal.com",
-      "final_url": "https://www.dailycardinal.com",
       "http_status": 200
     },
     {
@@ -653,18 +574,18 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208163+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192282+00:00",
       "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
       "source_domain_trusted": false,
-      "opportunity_relevant": true,
+      "opportunity_relevant": false,
       "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "verification_reason": "Source page could not be reached.",
       "checked_url": "https://wgntv.com",
       "final_url": "https://wgntv.com",
-      "http_status": 200
+      "http_status": 403
     },
     {
       "title": "WYDOT awards two Sheridan students $500 scholarships - Your Wyoming Link",
@@ -679,7 +600,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208699+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192350+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -693,9 +614,9 @@
       "http_status": 200
     },
     {
-      "title": "Apply for the FAO Internship Programme for Africa 2026–2027: Apply for Paid UN Internships - globalsouthopportunities.com",
+      "title": "Apply for the FAO Internship Programme for Africa 2026–2027: Apply for Paid UN Internships - Global South Opportunities",
       "source": "Google News - Internships Africa",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5sb3dBU1BtTlQ0MVJ4WjlEbXNGdjRMNFlqNUZpOVNUTkF6ZGF6Tk1GTmZsLU5RQTdjR2Rab3B1R0doM3hYRXVSbWtJX3BLM0UwVm1qWGRrMVVYWUxpWVZ4YldnTllaMzJMV1BlWjhHYjhoYWVH?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -705,7 +626,7 @@
         "internships",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:23.327950+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716740+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -719,9 +640,9 @@
       "http_status": 200
     },
     {
-      "title": "15 Free Online Courses With Certificates From Top Universities - globalsouthopportunities.com",
+      "title": "15 Free Online Courses With Certificates From Top Universities - Global South Opportunities",
       "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB2NFR3MzEybEZsQTRROG1wVXllczFuSHBILWZBY0l6dHlyTUJ3RVZfWTVvak44akt4d0QtbW5LM2ZLUHR0dEs5TVZkUjBMSDVKRFlKV0xIZGkxQ0ptUTN5MmhnV29ZRmo4SW45eHVR?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -730,7 +651,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931301+00:00",
+      "discovered_at": "2026-09-29T12:30:44.337278+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -756,7 +677,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732752+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692021+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -783,7 +704,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208735+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192249+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -794,57 +715,6 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://techafricanews.com",
       "final_url": "https://techafricanews.com",
-      "http_status": 200
-    },
-    {
-      "title": "Harvard University Free Online Courses 2026: Study from Anywhere With 100+ Courses Available Free of Charge, No IELTS - globalsouthopportunities.com",
-      "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1QUlpiTG03RVVybFZjclB5WHNCdjBTVjBZYVRIbFFza1JZWFN2U0luemVHVUh1ZzBPbjd5bHNqQXNIbEZVdHZSMGQwVW15WFptTHNnYjV6cmVjYTVrTnNweFBLRVlWRVVqSUg3U3BXaWQ?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-09-16T11:31:18+00:00",
-      "matched_keywords": [
-        "course",
-        "courses"
-      ],
-      "discovered_at": "2026-09-28T13:26:23.931270+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "International Scholarships Take Old Dominion University Students Around the World - Old Dominion University",
-      "source": "Google News - Scholarships",
-      "publisher_name": "Old Dominion University",
-      "publisher_url": "https://www.odu.edu",
-      "news_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR0N0S1BJQmJ1MmxIZllLTlBwcEFIaWZiVlhGdVVjUFpBc1N5OGxOR05lallObWJEYXlKaFM1TVBLODZ3Vi01WHJqZ0xYTXVGRXI3MlF6LWZYQWpPLXREYUozaVJKbEhHY1dyVENkNUxLVTBVaENFRTNTWUE1eTRtQjRVR3hiZmJuVWtsbTBXci1IZWUtQWNGNzQ0LV9tMkVwM2QtcXZoQVRlazk4bnc?oc=5",
-      "source_url": "https://www.odu.edu",
-      "published": "2026-09-15T07:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.207945+00:00",
-      "status": "needs_verification",
-      "verification_level": "source_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": true,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
-      "checked_url": "https://www.odu.edu",
-      "final_url": "https://www.odu.edu",
       "http_status": 200
     },
     {
@@ -860,7 +730,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.209395+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193301+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -886,7 +756,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732957+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692101+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -897,6 +767,57 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.thecitizen.co.tz",
       "final_url": "https://www.thecitizen.co.tz",
+      "http_status": 200
+    },
+    {
+      "title": "University of Manchester Global Futures Scholarships 2027: Over £6 Million for International Undergraduate and Master’s Students - Global South Opportunities",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE15UFBRMGpweGdzN1B5QUZrT0ItMW1TS1BlZUNvNmd2dGxpaVYxSjBLdHZqTUtycWZqTDhJdm54VURoZFFvS21MeTQ2SE9WUnlvcmpzVkxGRVNKUThIUV9QdDl6UFl1WEdrVXFndUViZkE?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
+      "published": "2026-09-12T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.194102+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
+    },
+    {
+      "title": "Earn a Free UN Diploma in International Environmental Law and Governance Through 5 Online Courses: Self-paced, No Deadline - Global South Opportunities",
+      "source": "Google News - Free Courses",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5Xb2dTaUF2VE1EZUVrdkVKUEI2LXJOdFhaa05kSzhnZ3VYbDhwNGJWMVhTdFI3THE5bExId29iY1RtVlNveWNKRFpDYlFYMWs0QVNRaHRfcHhHZ2hPZS15N3lGREhhbUp0SnRn?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
+      "published": "2026-09-11T07:00:00+00:00",
+      "matched_keywords": [
+        "course",
+        "courses"
+      ],
+      "discovered_at": "2026-09-29T12:30:44.337904+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
       "http_status": 200
     },
     {
@@ -913,7 +834,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.209290+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193183+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -938,7 +859,7 @@
         "job",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733220+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692528+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -964,7 +885,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733079+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692294+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -978,9 +899,9 @@
       "http_status": 200
     },
     {
-      "title": "ARC–GSSP Scholarship Programme 2026/2027: Fully Funded Postgraduate Scholarships for African Students - globalsouthopportunities.com",
+      "title": "ARC–GSSP Scholarship Programme 2026/2027: Fully Funded Postgraduate Scholarships for African Students - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA4MjI0dzZRcUNndXNNa2FRVlhwWlJoWXNienJSOEgwWi1aV05lNHNkTy00bjlPeF8wYVRfeWI2RmFacEhsVjRqNG5IVzJ2bEJXTEJ1eWFrRnN1TjdfVGxFM0RtQ2xsZWc?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -992,7 +913,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210326+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194219+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1018,7 +939,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733411+00:00",
+      "discovered_at": "2026-09-29T12:30:42.693249+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1043,7 +964,7 @@
         "internship",
         "internships"
       ],
-      "discovered_at": "2026-09-28T13:26:23.327761+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716515+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -1068,7 +989,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931070+00:00",
+      "discovered_at": "2026-09-29T12:30:44.336960+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1093,7 +1014,7 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733184+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692635+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1107,9 +1028,9 @@
       "http_status": 200
     },
     {
-      "title": "Enhance Your Knowledge with Free UNICEF Online Courses 2026: Learn Global Development Skills Through the UNICEF Agora Platform - globalsouthopportunities.com",
+      "title": "Enhance Your Knowledge with Free UNICEF Online Courses 2026: Learn Global Development Skills Through the UNICEF Agora Platform - Global South Opportunities",
       "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBJV3paZWNfekYxbUlZcF9LWlFyRm51M1VVOFFpTS1uUTVkUDA2UHYzNTZBalZKd2JUbXk2aTJnNG93N1g5eUJ4bVR1VHhYUlFOWV90UnZMVGZfMmU3c2VCdjh4WUNfckVkRWpB?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -1118,7 +1039,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931627+00:00",
+      "discovered_at": "2026-09-29T12:30:44.337497+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1143,7 +1064,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208776+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192458+00:00",
       "status": "needs_verification",
       "verification_level": "failed",
       "source_verified": false,
@@ -1169,7 +1090,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733571+00:00",
+      "discovered_at": "2026-09-29T12:30:42.693438+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1183,9 +1104,9 @@
       "http_status": 200
     },
     {
-      "title": "WACA Student Scholars Program 2026: Fully Funded National Conference Opportunity - globalsouthopportunities.com",
+      "title": "WACA Student Scholars Program 2026: Fully Funded National Conference Opportunity - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MN3VjS0d2S19vaFdDZXg0RjRQRFNBOUVSbXhqbDhXaVVrRjJZMVIyUU9MZ3pPdEZzZUN4elhkMEMzY0FrdmxUX0dJUU1EMWZfNDE1NGNaT19HRDNWX3M4dW82SHhCWWMx?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -1193,7 +1114,7 @@
       "matched_keywords": [
         "fully funded"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211130+00:00",
+      "discovered_at": "2026-09-29T12:30:42.195617+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1207,9 +1128,9 @@
       "http_status": 200
     },
     {
-      "title": "Somalia, Tanzania Discuss Youth Jobs and Digital Government Cooperation - Shabelle Media",
+      "title": "Somalia, Tanzania Discuss Youth Jobs and Digital Government Cooperation - shabellemedia.com",
       "source": "Google News - Jobs Tanzania",
-      "publisher_name": "Shabelle Media",
+      "publisher_name": "shabellemedia.com",
       "publisher_url": "https://shabellemedia.com",
       "news_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMk1QVmZvQ1c0NTBaMlpWVUhfaTkwWmRDMUJYWGljblhXMVFVd0NmNGRnNWw5YXFLekpFalkyUDE3V0FMRGc2MHZ4RVZiazU2LUlaVWg4SW9oU1hIT2pkeGljN3hDNzFBZ2dVVUN0YVlWS2o5OUg5aGJNNEhRUE1aaG9Wemx5RFBlOFdOcmJNb09ENHhnb0l4cE9nSmt4Zw?oc=5",
       "source_url": "https://shabellemedia.com",
@@ -1219,7 +1140,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733150+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692442+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1244,7 +1165,7 @@
         "scholarship",
         "scholarships"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210429+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194393+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1255,6 +1176,30 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://studyinternational.com",
       "final_url": "https://studyinternational.com",
+      "http_status": 200
+    },
+    {
+      "title": "Tenga calls for local processing to boost Tanzania’s export revenue - dailynews.co.tz",
+      "source": "Google News - Jobs Tanzania",
+      "publisher_name": "dailynews.co.tz",
+      "publisher_url": "https://dailynews.co.tz",
+      "news_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQOVpod1M3eFA0QjQzRzJCRmhGYzh4VktzaWxORHNCQ0hacTRkd0liaXVFU1pnZGJ4bkMzZF82RlVxVzAtclBTZGhPODFITXlBaHhxd0VOUENMV1NqSlJjODlGLWxzaVdFVFFseUVuMXJWNm9LejlQZVJ5bDZ1WmtCU2wzekpPWnRvYUZLaEdDQV94N2k5emc?oc=5",
+      "source_url": "https://dailynews.co.tz",
+      "published": "2026-08-28T07:00:00+00:00",
+      "matched_keywords": [
+        "tanzania"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.697068+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
       "http_status": 200
     },
     {
@@ -1271,7 +1216,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-28T13:26:23.328168+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716777+00:00",
       "status": "needs_verification",
       "verification_level": "failed",
       "source_verified": false,
@@ -1297,7 +1242,7 @@
         "internships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:23.327983+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716809+00:00",
       "status": "needs_verification",
       "verification_level": "failed",
       "source_verified": false,
@@ -1311,9 +1256,9 @@
       "http_status": 401
     },
     {
-      "title": "School opens inside Annapolis Mall, linking students to internships and community resources - WBAL News Radio",
+      "title": "School opens inside Annapolis Mall, linking students to internships and community resources - wbal.com",
       "source": "Google News - Internships Africa",
-      "publisher_name": "WBAL News Radio",
+      "publisher_name": "wbal.com",
       "publisher_url": "https://www.wbal.com",
       "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTlMxVDU4X2xrQTdoZDZIWHhQMTg3ODQ3R19FMF8xbno4VXhQZllxR1E2Rkd0NjR4SXVsUnQ1amNnZ3B3emwzZlhEekNiYzMwYWVZRXhnSERuaFRlRzBCeTJkcXBEeW9GWjRwamxCMi0zQi1MMlNhQl82WVFjMlVmcW9tSlZRU0stdEl6ZG04czBSUjR1ZGJMczg0eHVLQ1lVVVFfclZyS2hVemV3TGVxZQ?oc=5",
       "source_url": "https://www.wbal.com",
@@ -1323,7 +1268,7 @@
         "internships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:23.328135+00:00",
+      "discovered_at": "2026-09-29T12:30:43.716952+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1348,7 +1293,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.933218+00:00",
+      "discovered_at": "2026-09-29T12:30:44.339071+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1372,7 +1317,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734297+00:00",
+      "discovered_at": "2026-09-29T12:30:42.694667+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1399,7 +1344,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.208879+00:00",
+      "discovered_at": "2026-09-29T12:30:42.192616+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -1413,28 +1358,30 @@
       "http_status": 200
     },
     {
-      "title": "TOWARDS TANZANIA 2050: The role of the National Commission for UNESCO in building future skills - dailynews.co.tz",
-      "source": "Google News - Jobs Tanzania",
-      "publisher_name": "dailynews.co.tz",
-      "publisher_url": "https://dailynews.co.tz",
-      "news_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZ3lDMlNHWGZ5TkVDM1dvYS1URk9OLWlXT3EwVFU2YUFUWFQ5cHV5Q1BJRHhhaGFMV2tuTjNVZGdNcG9acGx1TUdrWGxhaURIVUhMSGNqcHRxd3o2YlliTWhSTnBFM0xDQ0JiVVd6bjJaVnhJNVo2d3lGcWktcktZSWNhS2hpU3liSXQxN29hX1VjOThfOUhTTUFNM19fNnlhVFRuOVpUa3oyZ3VjMFl3RUZ4UFI2Z1gzVVhR?oc=5",
-      "source_url": "https://dailynews.co.tz",
+      "title": "Female scholars dominate Africa Climate Collaborative scholarships - Daily Monitor",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Daily Monitor",
+      "publisher_url": "https://www.monitor.co.ug",
+      "news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZ3dmZV9NdEE5R2t3bUQ3VnQycjZlWWN1RFhZWFp1ZkdCTHNFWmV2eEFxVklvRW9jWnVKRFJBd3FpYTRhLVdkVnJwUm1DbjdZVHJuZDRObkp3RnNpTmp3aVNiVC01bFlOa1hhN09NZjNfS2lVMlMxdHpEZlRBWk1zSzFtYWltRWdhWHpST3Fna1habk56TGhJS3BuMVlLZlV3T3ZtX3JnQ0w3enIyWHFJajJCMEw4NnlaaDNNM3VR?oc=5",
+      "source_url": "https://www.monitor.co.ug",
       "published": "2026-08-23T07:00:00+00:00",
       "matched_keywords": [
-        "tanzania"
+        "scholarship",
+        "scholarships",
+        "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734768+00:00",
+      "discovered_at": "2026-09-29T12:30:42.196081+00:00",
       "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
+      "verification_level": "failed",
+      "source_verified": false,
+      "page_reachable": false,
       "source_domain_trusted": false,
-      "opportunity_relevant": true,
+      "opportunity_relevant": false,
       "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://dailynews.co.tz",
-      "final_url": "https://dailynews.co.tz",
-      "http_status": 200
+      "verification_reason": "Source page could not be reached.",
+      "checked_url": "https://www.monitor.co.ug",
+      "final_url": "https://www.monitor.co.ug",
+      "http_status": 403
     },
     {
       "title": "Panda Academy empowers 50 Young women to build thriving beauty businesses in Tanzania - dailynews.co.tz",
@@ -1447,7 +1394,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.735063+00:00",
+      "discovered_at": "2026-09-29T12:30:42.696096+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1474,7 +1421,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211168+00:00",
+      "discovered_at": "2026-09-29T12:30:42.195143+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1498,7 +1445,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733856+00:00",
+      "discovered_at": "2026-09-29T12:30:42.693797+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -1524,7 +1471,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734158+00:00",
+      "discovered_at": "2026-09-29T12:30:42.694353+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1551,7 +1498,7 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210040+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193904+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1565,9 +1512,9 @@
       "http_status": 200
     },
     {
-      "title": "Ashinaga Africa Initiative Opens Fully Funded Study Opportunities for African Students - globalsouthopportunities.com",
+      "title": "Ashinaga Africa Initiative Opens Fully Funded Study Opportunities for African Students - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE05MV9HNkQxa3VySkM5TGVCdFZxRHNIZGVFTGk1MV9FeWVKTF9jZmFiUThfVS1EYmhncndjNEE4S3lNdmMtMXhYU1hZWTQzcTJvRklCQkJjN2VQSEVtNW8yV2cyeV85U1BjS1Y2dURQbUc?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -1577,7 +1524,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210397+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194362+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1601,7 +1548,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.735177+00:00",
+      "discovered_at": "2026-09-29T12:30:42.696383+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1615,9 +1562,9 @@
       "http_status": 200
     },
     {
-      "title": "Call for Applications: AICA × DataCamp Scholarship 2026/2027 for Africans - globalsouthopportunities.com",
+      "title": "Call for Applications: AICA × DataCamp Scholarship 2026/2027 for Africans - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9BRDZUS0dTRnFqSFZRUktqbllZSjZ4TU9Ic19kVzJ0SDNETVJod2VTSXd4N19SRE4xZmNJbzdqME9SWXJndXNWNEpXakl3RnNsOV9DaU90VXNhU3lFbG81bHlULW5xSGxqcERGdnNB?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -1626,7 +1573,7 @@
         "scholarship",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210805+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194815+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1653,7 +1600,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732638+00:00",
+      "discovered_at": "2026-09-29T12:30:42.691221+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1679,7 +1626,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732792+00:00",
+      "discovered_at": "2026-09-29T12:30:42.691549+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1705,7 +1652,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734041+00:00",
+      "discovered_at": "2026-09-29T12:30:42.694104+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1731,7 +1678,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.930833+00:00",
+      "discovered_at": "2026-09-29T12:30:44.336687+00:00",
       "status": "needs_verification",
       "verification_level": "source_checked",
       "source_verified": true,
@@ -1755,7 +1702,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734835+00:00",
+      "discovered_at": "2026-09-29T12:30:42.695753+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1780,31 +1727,7 @@
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734900+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.thecitizen.co.tz",
-      "final_url": "https://www.thecitizen.co.tz",
-      "http_status": 200
-    },
-    {
-      "title": "Tanzania positions as energy hub with 2,636MW power surplus - thecitizen.co.tz",
-      "source": "Google News - Jobs Tanzania",
-      "publisher_name": "thecitizen.co.tz",
-      "publisher_url": "https://www.thecitizen.co.tz",
-      "news_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYzVxYkpPeHhQcDlYLXpMUzNNZnNjaUNGOXJPRUJlalhpT2VVR0I1UmowTDZiNEhURU9DU0RMMlptWjdyQ0NhWnhCVnNZUm0zam85em1OVnZ6NktaNnBveS1hTDB1QTdfR2dOd3M1ZlItM1VrS1kwUFp6M2o2OURSVE1oWXM3LU9fSjNuTUhlM3V0VTNQdzA5d25CZU5yTlZIYzNPMkc5WmQxUVdPTDVTVnVXZTd3eDhTY1dR?oc=5",
-      "source_url": "https://www.thecitizen.co.tz",
-      "published": "2026-08-15T07:00:00+00:00",
-      "matched_keywords": [
-        "tanzania"
-      ],
-      "discovered_at": "2026-09-28T13:26:22.734964+00:00",
+      "discovered_at": "2026-09-29T12:30:42.695815+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1828,7 +1751,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734667+00:00",
+      "discovered_at": "2026-09-29T12:30:42.695445+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1842,9 +1765,9 @@
       "http_status": 200
     },
     {
-      "title": "INTRA-AFRICA PERI-ACE Scholarships 2026: Master’s and Doctoral Opportunities for African Students - globalsouthopportunities.com",
+      "title": "INTRA-AFRICA PERI-ACE Scholarships 2026: Master’s and Doctoral Opportunities for African Students - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBWeWJhV2JpZDR5dXpocVEwUTJISGw2d1R2MXRBNlJSdnRTYUlXZDRQS1RiWF9oMDY0eGpPNERGODc3WTlPb0FUdmJtbWg1V0ZmWTZCdGJMT0pNQjFkYV9wSm9pWFFXOFd6?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -1855,7 +1778,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.209362+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193269+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1880,7 +1803,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733001+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692202+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1906,7 +1829,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734233+00:00",
+      "discovered_at": "2026-09-29T12:30:42.694434+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1932,7 +1855,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734624+00:00",
+      "discovered_at": "2026-09-29T12:30:42.695353+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1956,7 +1879,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.735791+00:00",
+      "discovered_at": "2026-09-29T12:30:42.697648+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -1970,9 +1893,9 @@
       "http_status": 200
     },
     {
-      "title": "GMHAC2027 Event Scholarships Open for African Mental Health Researchers, Students and Advocates - globalsouthopportunities.com",
+      "title": "GMHAC2027 Event Scholarships Open for African Mental Health Researchers, Students and Advocates - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1MOFhrNmRDUDYyRTVJLUN2UGV4NThKdHpseWNlcnotQldHUXl5RFpZUmlIV2ZjWnE5My1NRkNGYzhZVWEzRjhoQlpuMmd3QWJMUHpCd2FTRTdfLUhLaHpTLXd4TzIzREZfa1VLRHU4bTkyOHVGR3c?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -1983,32 +1906,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210634+00:00",
-      "status": "needs_verification",
-      "verification_level": "page_checked",
-      "source_verified": true,
-      "page_reachable": true,
-      "source_domain_trusted": false,
-      "opportunity_relevant": true,
-      "needs_human_review": true,
-      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://www.globalsouthopportunities.com",
-      "final_url": "https://www.globalsouthopportunities.com",
-      "http_status": 200
-    },
-    {
-      "title": "UNICEF Agora Learning Platform: 2026 Free Online Courses and Professional Development Opportunities - globalsouthopportunities.com",
-      "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
-      "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9PZm5aTkNwZS0yUDNINmpqUFJ4NEFYYmFKelVySVRnMUlveTFsTk81aW83cXNPWHM4bDhEb3RYakl1RHlQcFU0UmtNOURLQ1p1Q3c0N0R6YUUwbUJaUnlKSUh6WkZBTEJmZE9TOVc4UQ?oc=5",
-      "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-08-10T07:00:00+00:00",
-      "matched_keywords": [
-        "course",
-        "courses"
-      ],
-      "discovered_at": "2026-09-28T13:26:23.932463+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194464+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2028,12 +1926,12 @@
       "publisher_url": "https://dailynews.co.tz",
       "news_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQ181a1ZIYWRBNmRqc2kwYUJHM0lQdVF2YzRJOExnVnJTRmw3dnlxZWk5N21kNVJxbU1QbWJIR1R2SDRmNnZZRzN1aExpS3lKWWdnbGRnNFZQWmw3VFlxMGlwYjl4bmtrd2NXMTdHaEl6dzlQemJ3bnBRM1FNWFZBTmpfM1VXQS0zXzBNUGdLYkFiX3hCRXNQNkhIdUtIdw?oc=5",
       "source_url": "https://dailynews.co.tz",
-      "published": "2026-08-09T07:00:00+00:00",
+      "published": "2026-08-10T07:00:00+00:00",
       "matched_keywords": [
         "job",
         "jobs"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734370+00:00",
+      "discovered_at": "2026-09-29T12:30:42.694951+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2047,20 +1945,18 @@
       "http_status": 200
     },
     {
-      "title": "University of Sussex (US) Commonwealth PhD Scholarships 2027: Fully Funded PhD Opportunity for Students from Eligible Commonwealth Countries - globalsouthopportunities.com",
-      "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "title": "UNICEF Agora Learning Platform: 2026 Free Online Courses and Professional Development Opportunities - Global South Opportunities",
+      "source": "Google News - Free Courses",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
-      "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5YMktTdHF6OXhXVEstYTAwTmEyM2NuSzBLbHNKWjFLc2dYcEZEUkxZOFdXQjBJV2VWS19DdU1PTG9lTVVkMUU3ekI3Ung1eklLZ2NZT001a0VRdlhZV3pfMHRocW5CQlpLQnlHSzZ3?oc=5",
+      "news_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9PZm5aTkNwZS0yUDNINmpqUFJ4NEFYYmFKelVySVRnMUlveTFsTk81aW83cXNPWHM4bDhEb3RYakl1RHlQcFU0UmtNOURLQ1p1Q3c0N0R6YUUwbUJaUnlKSUh6WkZBTEJmZE9TOVc4UQ?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
-      "published": "2026-08-08T07:00:00+00:00",
+      "published": "2026-08-10T07:00:00+00:00",
       "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "fully funded",
-        "students"
+        "course",
+        "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211924+00:00",
+      "discovered_at": "2026-09-29T12:30:44.338329+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2074,17 +1970,20 @@
       "http_status": 200
     },
     {
-      "title": "Isaya Yunge: Profile Of The Tanzanian Man Set To Be Charlene Ruto’s Husband - The Kenya Times",
-      "source": "Google News - Jobs Tanzania",
-      "publisher_name": "The Kenya Times",
-      "publisher_url": "https://thekenyatimes.com",
-      "news_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYW1xZWgwSkF1NGFMTWJYNjREMjh2bFhaMlFaRGdrUGtlWWF3VnQ3bGY5OG5JcXNMZEpsMVlPY2djTDkzajRHeHFsbjV2UjhfTlZFaHZCNk94UWlUaEVRTEV3bDBVY19qbW02SjdoNk9HQjdScE00NGR4Z0dlSmUzbWNQVXZlQXVPR0ZqQ0ZMTFJzMDBqc1lGZTN2RDMxbzA0c3ZaU09nWkxod2M1Vi05ZzhXOA?oc=5",
-      "source_url": "https://thekenyatimes.com",
+      "title": "University of Sussex (US) Commonwealth PhD Scholarships 2027: Fully Funded PhD Opportunity for Students from Eligible Commonwealth Countries - Global South Opportunities",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com",
+      "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5YMktTdHF6OXhXVEstYTAwTmEyM2NuSzBLbHNKWjFLc2dYcEZEUkxZOFdXQjBJV2VWS19DdU1PTG9lTVVkMUU3ekI3Ung1eklLZ2NZT001a0VRdlhZV3pfMHRocW5CQlpLQnlHSzZ3?oc=5",
+      "source_url": "https://www.globalsouthopportunities.com",
       "published": "2026-08-08T07:00:00+00:00",
       "matched_keywords": [
-        "tanzania"
+        "scholarship",
+        "scholarships",
+        "fully funded",
+        "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734807+00:00",
+      "discovered_at": "2026-09-29T12:30:42.196002+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2093,14 +1992,14 @@
       "opportunity_relevant": true,
       "needs_human_review": true,
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
-      "checked_url": "https://thekenyatimes.com",
-      "final_url": "https://thekenyatimes.com",
+      "checked_url": "https://www.globalsouthopportunities.com",
+      "final_url": "https://www.globalsouthopportunities.com",
       "http_status": 200
     },
     {
-      "title": "Wageningen University Opens 2027 Master’s Scholarship Opportunities for International Students - globalsouthopportunities.com",
+      "title": "Wageningen University Opens 2027 Master’s Scholarship Opportunities for International Students - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBIUFdpeHM2QnZPcTdsOTVTOXFjQXlaUzV5RU1BYlYtX2dfa3dqZ0pQNVJyNklxNXYyQjZnR1l4SGN1akkzS0lhU19WWTBIaGtFUWJHU3dacUU1V0FKSkQ2QVhKZF96c2VDVC1ENWVuYU5DeVR5?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2110,7 +2009,7 @@
         "students",
         "international students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210146+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194056+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2136,7 +2035,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.735355+00:00",
+      "discovered_at": "2026-09-29T12:30:42.696744+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2160,7 +2059,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734408+00:00",
+      "discovered_at": "2026-09-29T12:30:42.694882+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2186,7 +2085,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.735135+00:00",
+      "discovered_at": "2026-09-29T12:30:42.696228+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2210,7 +2109,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.735718+00:00",
+      "discovered_at": "2026-09-29T12:30:42.697472+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2224,9 +2123,9 @@
       "http_status": 200
     },
     {
-      "title": "6 Trending Free & Funded Online Courses with Free Certificates You Should Enrol in Right Now: No Degree or Experience Required! - globalsouthopportunities.com",
+      "title": "6 Trending Free & Funded Online Courses with Free Certificates You Should Enrol in Right Now: No Degree or Experience Required! - Global South Opportunities",
       "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9CZzhWSkttXzljWnpNR1Y2SU5ieXBaRENrS0I2RXFMNkpKNDBXSThzZkRoM2hKVXlmdEdTWXlSLVd0WGlDVENOdXVrQXFpYlhVZUNYWTZvU1E0TEtPU3gydVdGU0tMejZnRHJV?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2235,7 +2134,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931406+00:00",
+      "discovered_at": "2026-09-29T12:30:44.337316+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2249,9 +2148,9 @@
       "http_status": 200
     },
     {
-      "title": "Call for Applications: GMHAC 2027 Fully Funded Scholarships for Early Career Researchers, Students and Mental Health Advocates Across Africa - globalsouthopportunities.com",
+      "title": "Call for Applications: GMHAC 2027 Fully Funded Scholarships for Early Career Researchers, Students and Mental Health Advocates Across Africa - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE90bFpWR2x1VW5IOEd1d25Vd0NZNzNTYWFQUndjWUtIdHBxdnV0YVpIZ3ZBTElySlNOdzNiQVoxTTZpMXRXX1QwSzR1SlFtX3hlQjVWdExoSXJXZ1pycy1EeUtpQ0p2Q3RON0E?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2264,7 +2163,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210736+00:00",
+      "discovered_at": "2026-09-29T12:30:42.194701+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2289,7 +2188,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.732718+00:00",
+      "discovered_at": "2026-09-29T12:30:42.691462+00:00",
       "status": "needs_verification",
       "verification_level": "failed",
       "source_verified": false,
@@ -2315,7 +2214,7 @@
         "scholarships",
         "students"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211233+00:00",
+      "discovered_at": "2026-09-29T12:30:42.195290+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2329,9 +2228,9 @@
       "http_status": 200
     },
     {
-      "title": "Chevening Scholarships 2027–2028 for South African Students Now Open: Fully Funded UK Master's Opportunity (Apply by 6 October 2026) - globalsouthopportunities.com",
+      "title": "Chevening Scholarships 2027–2028 for South African Students Now Open: Fully Funded UK Master's Opportunity (Apply by 6 October 2026) - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1YYkN2SlFVaUg0a25ZdGNILXo3dFAwcFNkbndPYlhMTjg5a0ZHR1p6T25oLVlnR3RuckpaV0pDUHZHQ1JOeXRMcm93MVJmLXZlemlMNDNVMWttZUxlYXpraGY3OGxaeVE1QlVTWVlvQUhSdw?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2343,7 +2242,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.212114+00:00",
+      "discovered_at": "2026-09-29T12:30:42.196048+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2369,7 +2268,7 @@
         "scholarships",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211698+00:00",
+      "discovered_at": "2026-09-29T12:30:42.195695+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2383,9 +2282,9 @@
       "http_status": 200
     },
     {
-      "title": "WFP Programme Policy Officer (Climate Resilience) 2026 in Tanzania: Join the UN's Climate Action Team - globalsouthopportunities.com",
+      "title": "WFP Programme Policy Officer (Climate Resilience) 2026 in Tanzania: Join the UN's Climate Action Team - Global South Opportunities",
       "source": "Google News - Jobs Tanzania",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBvWENiSExVYjhJZkJVUEZOdkhkcEFWSXFLS3BFSXhOM242ejR6ZVlSbkpiTHNaRWt1NTVUSERMS0NXMjlHYjU3Y281cXg3V0hzV1dFM2I3VEk5MGhTZkUxMkRtUGVEck80QUlHQ3JiOFY?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2393,7 +2292,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733514+00:00",
+      "discovered_at": "2026-09-29T12:30:42.693191+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2417,7 +2316,7 @@
       "matched_keywords": [
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.734536+00:00",
+      "discovered_at": "2026-09-29T12:30:42.695216+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2443,7 +2342,7 @@
         "jobs",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733801+00:00",
+      "discovered_at": "2026-09-29T12:30:42.693732+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2457,9 +2356,9 @@
       "http_status": 200
     },
     {
-      "title": "Japan Africa Dream Scholarship (JADS) Program 2026: Fully Supported Master’s Scholarships for African Students - globalsouthopportunities.com",
+      "title": "Japan Africa Dream Scholarship (JADS) Program 2026: Fully Supported Master’s Scholarships for African Students - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBUUllFQkNTY013bW01aUdVR01rUUdBcEphcHRYeWN3bVlHVmFjeXVtdXZHRGFJM3U0RGl0MlFYTUNTWmdZS1lTbWhfNzhOYmlhaFpEendkYVQwTEZnYUkzR1V2ZW5YQTRONVA4?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2470,7 +2369,7 @@
         "students",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.210000+00:00",
+      "discovered_at": "2026-09-29T12:30:42.193864+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2484,9 +2383,9 @@
       "http_status": 200
     },
     {
-      "title": "Enhance Your Knowledge: Explore 2026 Free Online Courses with the University of Birmingham - globalsouthopportunities.com",
+      "title": "Enhance Your Knowledge: Explore 2026 Free Online Courses with the University of Birmingham - Global South Opportunities",
       "source": "Google News - Free Courses",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBMdk5PQ3pvdXU1ZXpCWVY0dkxKVlBHd3Byb3FjN3RwajkwNC11Tkt5aGtxMTFPTGtCR1JWRFQ3WkpwT3lWUGhIWFpJTml3VEQtcVNoQ1N2aUsxdlBTNEYybTFpWVUzNm9hUzhr?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2495,7 +2394,7 @@
         "course",
         "courses"
       ],
-      "discovered_at": "2026-09-28T13:26:23.931929+00:00",
+      "discovered_at": "2026-09-29T12:30:44.337768+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2509,9 +2408,9 @@
       "http_status": 200
     },
     {
-      "title": "France-South Africa Scholarship Programme 2027 Opens Applications | Fully Funded Master's and PhD Scholarships in France - globalsouthopportunities.com",
+      "title": "France-South Africa Scholarship Programme 2027 Opens Applications | Fully Funded Master's and PhD Scholarships in France - Global South Opportunities",
       "source": "Google News - Scholarships",
-      "publisher_name": "globalsouthopportunities.com",
+      "publisher_name": "Global South Opportunities",
       "publisher_url": "https://www.globalsouthopportunities.com",
       "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB0aDItdW5CeXY4bWdtdnZQdS0xX0tmUUVCZ0RJdTZZclMyQUluN1B1RzdPc1JNaGhtek41Q0RTeXdCNTYxNjR0WGVaOWJJRm5DdGpPZUo2ZlQ4bmlfV29uNW5CcnhoeWZvcm1GNzZR?oc=5",
       "source_url": "https://www.globalsouthopportunities.com",
@@ -2522,7 +2421,7 @@
         "fully funded",
         "africa"
       ],
-      "discovered_at": "2026-09-28T13:26:22.211308+00:00",
+      "discovered_at": "2026-09-29T12:30:42.195554+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2533,6 +2432,56 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.globalsouthopportunities.com",
       "final_url": "https://www.globalsouthopportunities.com",
+      "http_status": 200
+    },
+    {
+      "title": "France-South Africa Scholarship Programme 2026 - Opportunity Desk",
+      "source": "Google News - Scholarships",
+      "publisher_name": "Opportunity Desk",
+      "publisher_url": "https://opportunitydesk.org",
+      "news_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNYzcxbEh5SUhDVVpMVmdlaHRVNllUWUF6OTl0V3lvWmFwNk5NZXd3SFd3V19jaG42N1lhckNsZWJFOE5TdFR6N0VVMzZ4cW9rUEpyeDljejhuX3RnN29GZnFvMkV3czRsT1BYbTZQS0dRVjlBQ2RwTEc0MVpQeFo3Sk5yUjM1TDRLejFHc3lPdw?oc=5",
+      "source_url": "https://opportunitydesk.org",
+      "published": "2026-07-28T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "africa"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.194661+00:00",
+      "status": "needs_verification",
+      "verification_level": "source_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": true,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source domain is trusted, the page is reachable, and opportunity-related information was detected.",
+      "checked_url": "https://opportunitydesk.org",
+      "final_url": "https://opportunitydesk.org",
+      "http_status": 200
+    },
+    {
+      "title": "Mining equipment plant to create 800 jobs - dailynews.co.tz",
+      "source": "Google News - Jobs Tanzania",
+      "publisher_name": "dailynews.co.tz",
+      "publisher_url": "https://dailynews.co.tz",
+      "news_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJY3UwaVlKQU5vQkZfMW9qNEd6eTB0MFpDWGNsQUpGd3FBb2o3aWVOTlRJcWhJRmVQOG1OYWgzZUpveHh4Sm5sSnFvblRpWUNETV9SMFZYeWNWRTBKYWJVN1FTODRMVXBOMXFtVDR0QmVMd19t?oc=5",
+      "source_url": "https://dailynews.co.tz",
+      "published": "2026-07-27T07:00:00+00:00",
+      "matched_keywords": [
+        "job",
+        "jobs"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.694599+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://dailynews.co.tz",
+      "final_url": "https://dailynews.co.tz",
       "http_status": 200
     },
     {
@@ -2547,7 +2496,7 @@
         "africa",
         "tanzania"
       ],
-      "discovered_at": "2026-09-28T13:26:22.733116+00:00",
+      "discovered_at": "2026-09-29T12:30:42.692374+00:00",
       "status": "needs_verification",
       "verification_level": "page_checked",
       "source_verified": true,
@@ -2558,6 +2507,57 @@
       "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
       "checked_url": "https://www.ednews.africa",
       "final_url": "https://www.ednews.africa",
+      "http_status": 200
+    },
+    {
+      "title": "5 free online courses military spouses should take advantage of this year - We Are The Mighty",
+      "source": "Google News - Free Courses",
+      "publisher_name": "We Are The Mighty",
+      "publisher_url": "https://www.wearethemighty.com",
+      "news_url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPOXl2c0JiVjJid3RCRC1KSEdTZjRRdTZMNGM1MWRWbFVZaHotRERuVS0yWHUyZ3REZjhKcmRGRUNxbmp3SFFtY1pEWEQ4ZGdiUW4zUEtJeVhYRGhfZE0zRWZMcTRpZmlwdHI1SEo1Z2FzbGkya0twS0FURlJQUDZ0WnNyUG4zcl96R2wtNjNtdjczMG5WUmhvRFl4MWdBLXVXOGdpc0dMSnFUT3JXS0RkZVBNRVFqNC1OSER1RXh1MA?oc=5",
+      "source_url": "https://www.wearethemighty.com",
+      "published": "2026-07-25T07:00:00+00:00",
+      "matched_keywords": [
+        "course",
+        "courses"
+      ],
+      "discovered_at": "2026-09-29T12:30:44.337076+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.wearethemighty.com",
+      "final_url": "https://www.wearethemighty.com",
+      "http_status": 200
+    },
+    {
+      "title": "How 'green gold' is creating jobs for young Tanzanians - thecitizen.co.tz",
+      "source": "Google News - Jobs Tanzania",
+      "publisher_name": "thecitizen.co.tz",
+      "publisher_url": "https://www.thecitizen.co.tz",
+      "news_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQeF9QSEhQMVFKWHdsWVkzclVGaERsUnlkaGVQc3NORU5KVi1Hcl9IN2J2d2czdFNFZlF1VkU0eGYwYXczMDV5NVA5Y3hxcmZEWTlBNWFGNVdXOTlPZ0tyc0txWmN0TkdaNmVzRnFENHVWVHBlcG5uZ2Z3WnBKeG1lZDNsVzNyVF8tdVo5NWR6bnBpdElUSUEyaGQ0RVl3bFkzNkQ2M3JXcXVGOGc?oc=5",
+      "source_url": "https://www.thecitizen.co.tz",
+      "published": "2026-07-22T07:00:00+00:00",
+      "matched_keywords": [
+        "job",
+        "jobs",
+        "tanzania"
+      ],
+      "discovered_at": "2026-09-29T12:30:42.694726+00:00",
+      "status": "needs_verification",
+      "verification_level": "page_checked",
+      "source_verified": true,
+      "page_reachable": true,
+      "source_domain_trusted": false,
+      "opportunity_relevant": true,
+      "needs_human_review": true,
+      "verification_reason": "Source page is reachable and contains opportunity-related information, but the domain is not in the trusted-domain list.",
+      "checked_url": "https://www.thecitizen.co.tz",
+      "final_url": "https://www.thecitizen.co.tz",
       "http_status": 200
     }
   ]
