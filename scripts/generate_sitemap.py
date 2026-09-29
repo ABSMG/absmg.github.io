@@ -17,6 +17,12 @@ EXCLUDED = {
     "reset-password.html",
     "privacy.html",
     "disclaimer.html",
+
+    # Duplicate article pages
+    "cfas-canon-collins-rmtf-scholarships-for-postgraduate-study-fundsforngosorg.html",
+    "free-it-certifications-and-courses-to-elevate-your-career-courseraorg.html",
+    "scholarship-opportunities-for-students-graduates-researchers-fundsforngosorg.html",
+    "tom-queba-and-pegasys-scholarships-for-social-change-south-africa-fundsforngosor.html",
 }
 
 
@@ -52,7 +58,14 @@ def page_url(path: Path) -> str:
 def last_modified(path: Path) -> str:
     try:
         result = subprocess.run(
-            ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(ROOT))],
+            [
+                "git",
+                "log",
+                "-1",
+                "--format=%cI",
+                "--",
+                str(path.relative_to(ROOT)),
+            ],
             cwd=ROOT,
             capture_output=True,
             text=True,
@@ -108,7 +121,7 @@ def changefreq_for(path: Path) -> str:
 
 def main():
     print("=" * 70)
-    print("OPPORTUNITYBRIDGE SITEMAP GENERATOR v2.1")
+    print("OPPORTUNITYBRIDGE SITEMAP GENERATOR v2.2")
     print("=" * 70)
 
     pages = []
@@ -168,8 +181,24 @@ def main():
     print("Excluded:")
     print("- 404.html")
     print("- authentication pages")
-    print("- privacy/disclaimer")
+    print("- privacy.html")
+    print("- disclaimer.html")
     print("- Google verification HTML files")
+    print("- duplicate article pages")
+    print()
+    print("Duplicate article files excluded:")
+    print(
+        "- cfas-canon-collins-rmtf-scholarships-for-postgraduate-study-fundsforngosorg.html"
+    )
+    print(
+        "- free-it-certifications-and-courses-to-elevate-your-career-courseraorg.html"
+    )
+    print(
+        "- scholarship-opportunities-for-students-graduates-researchers-fundsforngosorg.html"
+    )
+    print(
+        "- tom-queba-and-pegasys-scholarships-for-social-change-south-africa-fundsforngosor.html"
+    )
     print()
     print(f"Sitemap URL: {BASE_URL}/sitemap.xml")
     print("=" * 70)
