@@ -527,11 +527,6 @@
     }
 
 
-    /* IMPORTANT:
-       Official logo.svg is now used
-       instead of a separate inline SVG.
-    */
-
     .logo-mark img {
 
       width:
@@ -1060,6 +1055,104 @@
 
 
     /* =====================================================
+       CATEGORY FILTERS
+    ====================================================== */
+
+    .category-filters {
+
+      width:
+        min(1000px, 100%);
+
+      margin:
+        24px auto 0;
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      justify-content:
+        center;
+
+      gap:
+        10px;
+
+    }
+
+
+    .filter-btn {
+
+      border:
+        1px solid var(--border);
+
+      background:
+        var(--white);
+
+      color:
+        var(--navy);
+
+      padding:
+        9px 15px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        14px;
+
+      font-weight:
+        700;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+    }
+
+
+    .filter-btn:hover {
+
+      background:
+        #eef4ff;
+
+      border-color:
+        var(--blue);
+
+      transform:
+        translateY(-1px);
+
+    }
+
+
+    .filter-btn.active {
+
+      background:
+        var(--navy);
+
+      color:
+        var(--white);
+
+      border-color:
+        var(--navy);
+
+    }
+
+
+    .filter-btn.active:hover {
+
+      background:
+        var(--blue);
+
+      border-color:
+        var(--blue);
+
+    }
+
+
+    /* =====================================================
        CARDS
     ====================================================== */
 
@@ -1437,6 +1530,96 @@
 
 
     /* =====================================================
+       RELATED OPPORTUNITIES
+    ====================================================== */
+
+    .related-opportunities {
+
+      width:
+        min(1100px, 92%);
+
+      margin:
+        0 auto;
+
+      padding:
+        40px 0;
+
+    }
+
+
+    .related-opportunities h2 {
+
+      color:
+        var(--navy);
+
+      margin-bottom:
+        15px;
+
+      font-size:
+        25px;
+
+    }
+
+
+    .related-opportunities ul {
+
+      list-style:
+        none;
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        10px;
+
+    }
+
+
+    .related-opportunities li a {
+
+      display:
+        inline-block;
+
+      padding:
+        9px 15px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        7px;
+
+      background:
+        var(--white);
+
+      color:
+        var(--blue);
+
+      font-weight:
+        600;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+    }
+
+
+    .related-opportunities li a:hover {
+
+      background:
+        var(--navy);
+
+      color:
+        var(--white);
+
+    }
+
+
+    /* =====================================================
        FOOTER
     ====================================================== */
 
@@ -1556,96 +1739,6 @@
 
       font-size:
         13px;
-
-    }
-
-
-    /* =====================================================
-       RELATED OPPORTUNITIES
-    ====================================================== */
-
-    .related-opportunities {
-
-      width:
-        min(1100px, 92%);
-
-      margin:
-        0 auto;
-
-      padding:
-        40px 0;
-
-    }
-
-
-    .related-opportunities h2 {
-
-      color:
-        var(--navy);
-
-      margin-bottom:
-        15px;
-
-      font-size:
-        25px;
-
-    }
-
-
-    .related-opportunities ul {
-
-      list-style:
-        none;
-
-      display:
-        flex;
-
-      flex-wrap:
-        wrap;
-
-      gap:
-        10px;
-
-    }
-
-
-    .related-opportunities li a {
-
-      display:
-        inline-block;
-
-      padding:
-        9px 15px;
-
-      border:
-        1px solid var(--border);
-
-      border-radius:
-        7px;
-
-      background:
-        var(--white);
-
-      color:
-        var(--blue);
-
-      font-weight:
-        600;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-
-    }
-
-
-    .related-opportunities li a:hover {
-
-      background:
-        var(--navy);
-
-      color:
-        var(--white);
 
     }
 
@@ -1903,6 +1996,25 @@
 
         width:
           100%;
+
+      }
+
+
+      .category-filters {
+
+        gap:
+          8px;
+
+      }
+
+
+      .filter-btn {
+
+        font-size:
+          13px;
+
+        padding:
+          8px 12px;
 
       }
 
@@ -2295,6 +2407,99 @@
       </form>
 
 
+      <!-- =================================================
+           CATEGORY FILTERS
+      ================================================== -->
+
+      <div
+        class="category-filters"
+        role="group"
+        aria-label="Filter opportunities by category">
+
+
+        <button
+          type="button"
+          class="filter-btn active"
+          data-category="all">
+
+          All
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="scholarships">
+
+          Scholarships
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="jobs">
+
+          Jobs
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="internships">
+
+          Internships
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="courses">
+
+          Courses
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="digital-skills">
+
+          Digital Skills
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="opportunities">
+
+          Global Opportunities
+
+        </button>
+
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-category="heslb">
+
+          HESLB
+
+        </button>
+
+
+      </div>
+
+
     </section>
 
 
@@ -2335,7 +2540,9 @@
 
         <!-- SCHOLARSHIPS -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="scholarships">
 
 
           <div
@@ -2374,7 +2581,9 @@
 
         <!-- JOBS -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="jobs">
 
 
           <div
@@ -2413,7 +2622,9 @@
 
         <!-- INTERNSHIPS -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="internships">
 
 
           <div
@@ -2452,7 +2663,9 @@
 
         <!-- ONLINE COURSES -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="courses">
 
 
           <div
@@ -2491,7 +2704,9 @@
 
         <!-- DIGITAL SKILLS -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="digital-skills">
 
 
           <div
@@ -2530,7 +2745,9 @@
 
         <!-- GLOBAL OPPORTUNITIES -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="opportunities">
 
 
           <div
@@ -2571,7 +2788,9 @@
              ARTICLE 5 - HESLB 2026/2027 GUIDE
         ================================================== -->
 
-        <article class="card">
+        <article
+          class="card"
+          data-category="heslb">
 
 
           <div
@@ -2899,6 +3118,42 @@
     </section>
 
 
+    <!-- =================================================
+         RELATED OPPORTUNITIES
+    ================================================== -->
+
+    <section
+      class="related-opportunities"
+      aria-label="Related opportunities">
+
+
+      <h2>
+
+        Explore More Opportunities
+
+      </h2>
+
+
+      <ul>
+
+
+        <li>
+
+          <a href="digital-skills.html">
+
+            Digital Skills
+
+          </a>
+
+        </li>
+
+
+      </ul>
+
+
+    </section>
+
+
   </main>
 
 
@@ -3172,8 +3427,11 @@
 
 
     /* =================================================
-       SEARCH
+       SEARCH + CATEGORY FILTER
     ================================================== */
+
+    let activeCategory = "all";
+
 
     function searchCards() {
 
@@ -3208,9 +3466,25 @@
           card.textContent.toLowerCase();
 
 
-        if (
+        const category =
+          (
+            card.getAttribute("data-category") || ""
+          ).toLowerCase();
+
+
+        const matchesSearch =
           input === "" ||
-          text.includes(input)
+          text.includes(input);
+
+
+        const matchesCategory =
+          activeCategory === "all" ||
+          category === activeCategory;
+
+
+        if (
+          matchesSearch &&
+          matchesCategory
         ) {
 
 
@@ -3267,6 +3541,56 @@
 
 
     }
+
+
+    /* =================================================
+       CATEGORY FILTERS
+    ================================================== */
+
+    const filterButtons =
+      document.querySelectorAll(
+        ".filter-btn"
+      );
+
+
+    filterButtons.forEach(function(button) {
+
+
+      button.addEventListener(
+        "click",
+        function() {
+
+
+          filterButtons.forEach(
+            function(btn) {
+
+              btn.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          this.classList.add(
+            "active"
+          );
+
+
+          activeCategory =
+            this.getAttribute(
+              "data-category"
+            ) || "all";
+
+
+          searchCards();
+
+
+        }
+      );
+
+
+    });
 
 
     /* =================================================
@@ -3410,55 +3734,6 @@
 
   </script>
 
-
-  <!-- =====================================================
-       RELATED OPPORTUNITIES
-  ====================================================== -->
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section
-    class="related-opportunities"
-    aria-label="Related opportunities"
->
-    <h2>Explore More Opportunities</h2>
-
-    <ul>
-        
-            <li>
-                <a href="digital-skills.html">
-                    Digital Skills
-                </a>
-            </li>
-            
-    </ul>
-</section>
 
 </body>
 </html>
