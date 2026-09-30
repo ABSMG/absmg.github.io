@@ -58,7 +58,19 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2004981151172844"
     crossorigin="anonymous"></script>
 
-  <!-- STRUCTURED DATA: COLLECTION PAGE -->
+  <!-- STRUCTURED DATA: WEB SITE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "OpportunityBridge",
+    "url": "https://absmg.github.io/",
+    "description": "OpportunityBridge helps students, graduates and job seekers discover scholarships, jobs, internships, online courses and digital opportunities.",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- STRUCTURED DATA: WEB PAGE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -306,7 +318,8 @@
     }
 
     .section-intro a,
-    .info-section a:not(.btn) {
+    .info-section a:not(.job-btn),
+    .related-opportunities a {
       color: var(--blue);
       font-weight: 700;
     }
@@ -560,9 +573,8 @@
       margin-bottom: 8px;
     }
 
-    .related-opportunities a {
-      color: var(--blue);
-      font-weight: 700;
+    .related-opportunities a:hover {
+      text-decoration: underline;
     }
 
     /* NO RESULTS */
@@ -1042,7 +1054,7 @@
         <article
           class="job-card"
           data-category="tanzania"
-          data-search="tanzania jobs general employment career">
+          data-search="tanzania jobs general employment career ajira">
 
           <span class="badge">
             Tanzania
@@ -1090,7 +1102,7 @@
         <article
           class="job-card"
           data-category="graduate"
-          data-search="graduate jobs fresh graduates entry level Tanzania">
+          data-search="graduate jobs fresh graduates entry level Tanzania careers">
 
           <span class="badge">
             Graduate
@@ -1138,7 +1150,7 @@
         <article
           class="job-card"
           data-category="technology"
-          data-search="technology IT software developer programming jobs">
+          data-search="technology IT software developer programming jobs digital technology">
 
           <span class="badge">
             Technology
@@ -1186,7 +1198,7 @@
         <article
           class="job-card"
           data-category="health"
-          data-search="health medical laboratory nursing medicine healthcare jobs">
+          data-search="health medical laboratory nursing medicine healthcare jobs medical careers">
 
           <span class="badge">
             Health
@@ -1234,7 +1246,7 @@
         <article
           class="job-card"
           data-category="remote"
-          data-search="remote online jobs work from home digital jobs">
+          data-search="remote online jobs work from home digital jobs remote careers online employment">
 
           <span class="badge">
             Remote
@@ -1283,7 +1295,7 @@
         <article
           class="job-card"
           data-category="tanzania"
-          data-search="public service government jobs Tanzania employment">
+          data-search="public service government jobs Tanzania employment public sector recruitment ajira">
 
           <span class="badge">
             Public Service
@@ -1548,7 +1560,50 @@
 
     <!-- RELATED OPPORTUNITIES -->
 
-    
+    <section
+      class="related-opportunities"
+      aria-labelledby="related-opportunities-title">
+
+      <h2 id="related-opportunities-title">
+        Explore More Opportunities
+      </h2>
+
+      <ul>
+
+        <li>
+          <a href="digital-skills.html">
+            Digital Skills
+          </a>
+        </li>
+
+        <li>
+          <a href="courses.html">
+            Online Courses
+          </a>
+        </li>
+
+        <li>
+          <a href="internships.html">
+            Internships
+          </a>
+        </li>
+
+        <li>
+          <a href="scholarships.html">
+            Scholarships
+          </a>
+        </li>
+
+        <li>
+          <a href="opportunities.html">
+            All Opportunities
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
 
   </main>
 
@@ -1658,61 +1713,65 @@
     const mainNav =
       document.getElementById("mainNav");
 
-    menuToggle.addEventListener(
-      "click",
-      function () {
+    if (menuToggle && mainNav) {
 
-        const isOpen =
-          mainNav.classList.toggle("active");
+      menuToggle.addEventListener(
+        "click",
+        function () {
 
-        menuToggle.setAttribute(
-          "aria-expanded",
-          isOpen ? "true" : "false"
-        );
+          const isOpen =
+            mainNav.classList.toggle("active");
 
-        menuToggle.setAttribute(
-          "aria-label",
-          isOpen
-            ? "Close navigation"
-            : "Open navigation"
-        );
+          menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+          );
 
-        menuToggle.textContent =
-          isOpen ? "✕" : "☰";
+          menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+              ? "Close navigation"
+              : "Open navigation"
+          );
 
-      }
-    );
+          menuToggle.textContent =
+            isOpen ? "✕" : "☰";
+
+        }
+      );
 
 
-    /* CLOSE MOBILE MENU */
+      /* CLOSE MOBILE MENU */
 
-    document
-      .querySelectorAll("#mainNav a")
-      .forEach(function (link) {
+      document
+        .querySelectorAll("#mainNav a")
+        .forEach(function (link) {
 
-        link.addEventListener(
-          "click",
-          function () {
+          link.addEventListener(
+            "click",
+            function () {
 
-            mainNav.classList.remove("active");
+              mainNav.classList.remove("active");
 
-            menuToggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
 
-            menuToggle.setAttribute(
-              "aria-label",
-              "Open navigation"
-            );
+              menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+              );
 
-            menuToggle.textContent =
-              "☰";
+              menuToggle.textContent =
+                "☰";
 
-          }
-        );
+            }
+          );
 
-      });
+        });
+
+    }
 
 
     /* JOB SEARCH + FILTER */
@@ -1734,6 +1793,10 @@
 
     function updateJobs() {
 
+      if (!searchInput || !noResults) {
+        return;
+      }
+
       const searchTerm =
         searchInput.value
           .toLowerCase()
@@ -1744,15 +1807,17 @@
       cards.forEach(function (card) {
 
         const category =
-          card.getAttribute("data-category");
+          card.getAttribute("data-category") || "";
 
         const searchText =
-          card.getAttribute("data-search")
-            .toLowerCase();
+          card.getAttribute("data-search") || "";
+
+        const normalizedSearchText =
+          searchText.toLowerCase();
 
         const matchesSearch =
           searchTerm === "" ||
-          searchText.includes(searchTerm);
+          normalizedSearchText.includes(searchTerm);
 
         const matchesFilter =
           currentFilter === "all" ||
@@ -1787,10 +1852,14 @@
 
     /* SEARCH */
 
-    searchInput.addEventListener(
-      "input",
-      updateJobs
-    );
+    if (searchInput) {
+
+      searchInput.addEventListener(
+        "input",
+        updateJobs
+      );
+
+    }
 
 
     /* FILTERS */
@@ -1829,7 +1898,7 @@
             currentFilter =
               button.getAttribute(
                 "data-filter"
-              );
+              ) || "all";
 
             updateJobs();
 
@@ -1839,25 +1908,12 @@
       }
     );
 
+
+    /* INITIAL JOB DISPLAY */
+
+    updateJobs();
+
   </script>
-
-
-<section
-    class="related-opportunities"
-    aria-label="Related opportunities"
->
-    <h2>Explore More Opportunities</h2>
-
-    <ul>
-        
-            <li>
-                <a href="digital-skills.html">
-                    Digital Skills
-                </a>
-            </li>
-            
-    </ul>
-</section>
 
 </body>
 </html>
