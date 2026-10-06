@@ -20,7 +20,8 @@ jobs:
           python-version: "3.x"
 
       - name: Run SEO cleanup
-        run: python scripts/seo_cleanup.py
+       - name: Clean sitemap
+        run: python scripts/clean_sitemap.py       run: python scripts/seo_cleanup.py
 
       - name: Commit changes
         run: |
@@ -29,5 +30,5 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "SEO cleanup: noindex and canonical fixes"
           git push
-      - name: Clean sitemap
-        run: python scripts/clean_sitemap.py
+      
+  
