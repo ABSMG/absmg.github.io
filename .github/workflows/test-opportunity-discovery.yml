@@ -49,7 +49,10 @@ jobs:
       # ======================================================
 
       - name: Discover new opportunities
+        id: discovery
         run: |
+          set -e
+
           python scripts/opportunity_discovery.py
 
 
@@ -58,7 +61,10 @@ jobs:
       # ======================================================
 
       - name: Verify discovered opportunities
+        id: verification
         run: |
+          set -e
+
           python scripts/opportunity_verifier.py
 
 
@@ -67,7 +73,10 @@ jobs:
       # ======================================================
 
       - name: Approve verified opportunities
+        id: approval
         run: |
+          set -e
+
           python scripts/opportunity_approval.py
 
 
@@ -76,7 +85,10 @@ jobs:
       # ======================================================
 
       - name: Generate opportunity articles
+        id: article_generation
         run: |
+          set -e
+
           python scripts/opportunity_article_generator.py
 
 
@@ -91,7 +103,10 @@ jobs:
       # ======================================================
 
       - name: Update homepage with approved opportunities
+        id: homepage
         run: |
+          set -e
+
           python scripts/update_homepage.py
 
 
@@ -100,7 +115,10 @@ jobs:
       # ======================================================
 
       - name: Repair canonical and site URLs
+        id: url_repair
         run: |
+          set -e
+
           python scripts/fix_site_urls.py
 
 
@@ -109,7 +127,10 @@ jobs:
       # ======================================================
 
       - name: Update internal links
+        id: internal_links
         run: |
+          set -e
+
           python scripts/auto_internal_links.py
 
 
@@ -118,15 +139,39 @@ jobs:
       # ======================================================
 
       - name: Generate sitemap
+        id: sitemap
         run: |
+          set -e
+
           python scripts/generate_sitemap.py
 
 
       # ======================================================
       # 9. SEO VALIDATION
+      #
+      # IMPORTANT:
+      #
+      # SEO checker still runs normally.
+      #
+      # However, an SEO failure DOES NOT stop the workflow.
+      #
+      # This prevents:
+      #
+      # Article generated
+      #        ↓
+      # Homepage updated
+      #        ↓
+      # SEO checker failed
+      #        ↓
+      # Publish skipped
+      #
+      # SEO problems are still visible in the GitHub Actions
+      # logs and can be fixed separately.
       # ======================================================
 
       - name: Run SEO checker
+        id: seo
+        continue-on-error: true
         run: |
           python scripts/seo_checker.py
 
@@ -201,6 +246,7 @@ jobs:
                       f"{label}: 0"
                   )
 
+
           # ==================================================
           # CHECK HOMEPAGE
           # ==================================================
@@ -231,9 +277,11 @@ jobs:
 
               print("")
               print("Homepage:")
+
               print(
                   f"  Auto section start markers: {start_count}"
               )
+
               print(
                   f"  Auto section end markers: {end_count}"
               )
@@ -242,10 +290,13 @@ jobs:
                   start_count == 1
                   and end_count == 1
               ):
+
                   print(
                       "  Homepage auto-opportunity section: OK"
                   )
+
               else:
+
                   print(
                       "  Homepage auto-opportunity section: CHECK"
                   )
@@ -253,6 +304,7 @@ jobs:
           else:
 
               print("")
+
               print(
                   "Homepage: index.html not found."
               )
@@ -300,12 +352,14 @@ jobs:
           for article_file in article_files:
 
               try:
+
                   content = article_file.read_text(
                       encoding="utf-8",
                       errors="ignore"
                   )
 
               except Exception:
+
                   continue
 
               if (
@@ -318,28 +372,76 @@ jobs:
                       in content
                   )
               ):
+
                   generated_articles.append(
                       article_file
                   )
 
+
           print("")
+
           print(
-              f"Generated article pages detected: "
+              "Generated article pages detected: "
               f"{len(generated_articles)}"
           )
 
 
           # ==================================================
-          # FINAL SUMMARY
+          # SHOW GENERATED ARTICLES
+          # ==================================================
+
+          if generated_articles:
+
+              print("")
+
+              print(
+                  "Generated article files:"
+              )
+
+              for article_file in sorted(
+                  generated_articles
+              ):
+
+                  print(
+                      f"  - {article_file}"
+                  )
+
+
+          # ==================================================
+          # GIT STATUS
           # ==================================================
 
           print("")
+
           print(
-              "Automation completed successfully."
+              "Current Git status:"
+          )
+
+          import subprocess
+
+          git_status = subprocess.run(
+              [
+                  "git",
+                  "status",
+                  "--short"
+              ],
+              capture_output=True,
+              text=True
           )
 
           print(
-              "Pipeline:"
+              git_status.stdout
+          )
+
+
+          # ==================================================
+          # FINAL PIPELINE
+          # ==================================================
+
+          print("")
+
+          print(
+              "Automation pipeline:"
           )
 
           print(
@@ -348,6 +450,7 @@ jobs:
               "URL Repair -> Internal Links -> Sitemap -> "
               "SEO Validation -> Publish"
           )
+
 
           print(
               "======================================"
@@ -375,18 +478,292 @@ jobs:
 
 
       # ======================================================
-      # 12. PUBLISH
+      # 12. VERIFY CRITICAL PUBLISH PREREQUISITES
+      #
+      # SEO is intentionally NOT required here.
+      #
+      # SEO is diagnostic and must not prevent publication.
+      # ======================================================
+
+      - name: Verify publish prerequisites
+        id: publish_check
+        if: always()
+        run: |
+
+          echo "======================================"
+          echo "CHECKING PUBLISH PREREQUISITES"
+          echo "======================================"
+
+          echo ""
+          echo "Discovery:"
+          echo "${{ steps.discovery.outcome }}"
+
+          echo ""
+          echo "Verification:"
+          echo "${{ steps.verification.outcome }}"
+
+          echo ""
+          echo "Approval:"
+          echo "${{ steps.approval.outcome }}"
+
+          echo ""
+          echo "Article generation:"
+          echo "${{ steps.article_generation.outcome }}"
+
+          echo ""
+          echo "Homepage:"
+          echo "${{ steps.homepage.outcome }}"
+
+          echo ""
+          echo "URL repair:"
+          echo "${{ steps.url_repair.outcome }}"
+
+          echo ""
+          echo "Internal links:"
+          echo "${{ steps.internal_links.outcome }}"
+
+          echo ""
+          echo "Sitemap:"
+          echo "${{ steps.sitemap.outcome }}"
+
+          echo ""
+          echo "SEO:"
+          echo "${{ steps.seo.outcome }}"
+
+
+          # ==================================================
+          # DISCOVERY
+          # ==================================================
+
+          if [
+            "${{ steps.discovery.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Discovery failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # VERIFICATION
+          # ==================================================
+
+          if [
+            "${{ steps.verification.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Verification failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # APPROVAL
+          # ==================================================
+
+          if [
+            "${{ steps.approval.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Approval failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # ARTICLE GENERATION
+          # ==================================================
+
+          if [
+            "${{ steps.article_generation.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Article generation failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # HOMEPAGE
+          # ==================================================
+
+          if [
+            "${{ steps.homepage.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Homepage update failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # URL REPAIR
+          # ==================================================
+
+          if [
+            "${{ steps.url_repair.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: URL repair failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # INTERNAL LINKS
+          # ==================================================
+
+          if [
+            "${{ steps.internal_links.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Internal links update failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # SITEMAP
+          # ==================================================
+
+          if [
+            "${{ steps.sitemap.outcome }}"
+            != "success"
+          ]; then
+
+            echo ""
+            echo "ERROR: Sitemap generation failed."
+
+            exit 1
+
+          fi
+
+
+          # ==================================================
+          # SEO DOES NOT BLOCK PUBLISH
+          # ==================================================
+
+          echo ""
+          echo "======================================"
+          echo "SEO RESULT"
+          echo "======================================"
+
+          if [
+            "${{ steps.seo.outcome }}"
+            = "failure"
+          ]; then
+
+            echo "SEO checker reported errors."
+
+            echo ""
+            echo "IMPORTANT:"
+            echo "SEO failure will NOT block publication."
+
+            echo ""
+            echo "The SEO issue should be fixed separately."
+
+          else
+
+            echo "SEO checker passed."
+
+          fi
+
+
+          # ==================================================
+          # FINAL PREREQUISITE RESULT
+          # ==================================================
+
+          echo ""
+          echo "======================================"
+          echo "PUBLISH PREREQUISITES PASSED"
+          echo "======================================"
+
+          echo ""
+          echo "Critical automation steps completed."
+
+          echo ""
+          echo "The workflow is allowed to continue to Publish."
+
+          echo "======================================"
+
+
+      # ======================================================
+      # 13. PUBLISH
+      #
+      # Generated articles, index.html, sitemap.xml and
+      # automation data are committed and pushed to main.
+      #
+      # GitHub Pages can then deploy the updated website.
       # ======================================================
 
       - name: Publish automation results
+        if: steps.publish_check.outcome == 'success'
         run: |
 
-          git config user.name "github-actions[bot]"
+          set -e
+
+
+          # ==================================================
+          # GIT IDENTITY
+          # ==================================================
+
+          git config user.name \
+            "github-actions[bot]"
 
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          echo "Preparing generated files for commit..."
+
+          echo "======================================"
+          echo "PREPARING AUTOMATED PUBLISH"
+          echo "======================================"
+
+
+          # ==================================================
+          # SHOW STATUS BEFORE STAGING
+          # ==================================================
+
+          echo ""
+          echo "Repository status before staging:"
+
+          git status --short
+
+
+          # ==================================================
+          # ADD GENERATED WEBSITE FILES
+          # ==================================================
+
+          echo ""
+          echo "Staging generated files..."
+
 
           git add -- \
             '*.html' \
@@ -395,38 +772,206 @@ jobs:
             data/verified_opportunities.json \
             data/approved_opportunities.json
 
+
+          # ==================================================
+          # SHOW STAGED CHANGES
+          # ==================================================
+
           echo ""
           echo "Staged changes:"
+
           git status --short
 
+
+          # ==================================================
+          # CHECK WHETHER THERE IS SOMETHING TO PUBLISH
+          # ==================================================
+
           if git diff --cached --quiet; then
+
             echo ""
             echo "No changes to publish."
+
+            echo ""
+            echo "The automation completed successfully, "
+            echo "but no new repository changes were detected."
+
             exit 0
+
           fi
+
+
+          # ==================================================
+          # SHOW CHANGE SUMMARY
+          # ==================================================
 
           echo ""
           echo "Changes detected."
 
+          echo ""
+          echo "Changed files:"
+
+          git diff --cached --name-status
+
+
+          # ==================================================
+          # COMMIT
+          # ==================================================
+
+          echo ""
+          echo "Creating automation commit..."
+
+
           git commit \
             -m "chore: automated opportunity update [skip ci]"
+
+
+          # ==================================================
+          # FETCH LATEST MAIN
+          # ==================================================
 
           echo ""
           echo "Fetching latest main branch..."
 
+
           git fetch origin main
+
+
+          # ==================================================
+          # REBASE
+          # ==================================================
 
           echo ""
           echo "Rebasing automation changes onto latest main..."
 
+
           git rebase origin/main
+
+
+          # ==================================================
+          # PUSH
+          # ==================================================
 
           echo ""
           echo "Pushing automated changes to main..."
 
+
           git push origin HEAD:main
+
+
+          # ==================================================
+          # PUBLISH SUCCESS
+          # ==================================================
 
           echo ""
           echo "======================================"
           echo "PUBLISH COMPLETED SUCCESSFULLY"
           echo "======================================"
+
+          echo ""
+          echo "Generated articles were published."
+
+          echo ""
+          echo "index.html was published."
+
+          echo ""
+          echo "sitemap.xml was published."
+
+          echo ""
+          echo "Automation data was published."
+
+          echo ""
+          echo "GitHub Pages can now deploy the changes."
+
+          echo "======================================"
+
+
+      # ======================================================
+      # 14. FINAL AUTOMATION RESULT
+      # ======================================================
+
+      - name: Final automation result
+        if: always()
+        run: |
+
+          echo ""
+          echo "=================================================="
+          echo "OPPORTUNITYBRIDGE FINAL AUTOMATION RESULT"
+          echo "=================================================="
+
+
+          echo ""
+          echo "Critical pipeline:"
+          echo "Discovery        : ${{ steps.discovery.outcome }}"
+          echo "Verification     : ${{ steps.verification.outcome }}"
+          echo "Approval         : ${{ steps.approval.outcome }}"
+          echo "Article Generator: ${{ steps.article_generation.outcome }}"
+          echo "Homepage         : ${{ steps.homepage.outcome }}"
+          echo "URL Repair       : ${{ steps.url_repair.outcome }}"
+          echo "Internal Links   : ${{ steps.internal_links.outcome }}"
+          echo "Sitemap          : ${{ steps.sitemap.outcome }}"
+          echo "SEO Checker      : ${{ steps.seo.outcome }}"
+          echo "Publish Check    : ${{ steps.publish_check.outcome }}"
+
+
+          echo ""
+          echo "=================================================="
+          echo "PUBLICATION POLICY"
+          echo "=================================================="
+
+
+          if [
+            "${{ steps.seo.outcome }}"
+            = "failure"
+          ]; then
+
+            echo "SEO checker reported errors."
+
+            echo ""
+            echo "SEO failure did NOT block publication."
+
+            echo ""
+            echo "Review the SEO logs and fix the reported issues."
+
+          else
+
+            echo "SEO checker passed."
+
+          fi
+
+
+          echo ""
+          echo "=================================================="
+          echo "WEBSITE PUBLICATION"
+          echo "=================================================="
+
+
+          if [
+            "${{ steps.publish_check.outcome }}"
+            = "success"
+          ]; then
+
+            echo "Critical pipeline completed."
+
+            echo ""
+            echo "Generated articles and index.html were"
+            echo "eligible for publication."
+
+            echo ""
+            echo "If changes existed, they were pushed to main."
+
+            echo ""
+            echo "GitHub Pages will deploy the updated website."
+
+          else
+
+            echo "Publication was blocked because a critical"
+            echo "automation stage failed."
+
+          fi
+
+
+          echo ""
+          echo "=================================================="
+          echo "END OF AUTOMATION"
+          echo "=================================================="
