@@ -31,6 +31,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
 
 
       # ======================================================
@@ -80,7 +81,22 @@ jobs:
 
 
       # ======================================================
-      # 5. CANONICAL + URL REPAIR
+      # 5. HOMEPAGE UPDATE
+      #
+      # Approved opportunities with generated article pages
+      # are automatically added to index.html.
+      #
+      # This happens BEFORE URL repair, internal links,
+      # sitemap generation and SEO validation.
+      # ======================================================
+
+      - name: Update homepage with approved opportunities
+        run: |
+          python scripts/update_homepage.py
+
+
+      # ======================================================
+      # 6. CANONICAL + URL REPAIR
       # ======================================================
 
       - name: Repair canonical and site URLs
@@ -89,7 +105,7 @@ jobs:
 
 
       # ======================================================
-      # 6. INTERNAL LINKS
+      # 7. INTERNAL LINKS
       # ======================================================
 
       - name: Update internal links
@@ -98,7 +114,7 @@ jobs:
 
 
       # ======================================================
-      # 7. SITEMAP
+      # 8. SITEMAP
       # ======================================================
 
       - name: Generate sitemap
@@ -107,7 +123,7 @@ jobs:
 
 
       # ======================================================
-      # 8. SEO VALIDATION
+      # 9. SEO VALIDATION
       # ======================================================
 
       - name: Run SEO checker
@@ -116,10 +132,11 @@ jobs:
 
 
       # ======================================================
-      # 9. AUTOMATION SUMMARY
+      # 10. AUTOMATION SUMMARY
       # ======================================================
 
       - name: Show automation summary
+        if: always()
         run: |
           echo "======================================"
           echo "OPPORTUNITYBRIDGE AUTOMATION SUMMARY"
@@ -184,16 +201,181 @@ jobs:
                       f"{label}: 0"
                   )
 
+          # ==================================================
+          # CHECK HOMEPAGE
+          # ==================================================
+
+          homepage = Path("index.html")
+
+          if homepage.exists():
+
+              homepage_html = homepage.read_text(
+                  encoding="utf-8"
+              )
+
+              start_marker = (
+                  "<!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START -->"
+              )
+
+              end_marker = (
+                  "<!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->"
+              )
+
+              start_count = homepage_html.count(
+                  start_marker
+              )
+
+              end_count = homepage_html.count(
+                  end_marker
+              )
+
+              print("")
+              print("Homepage:")
+              print(
+                  f"  Auto section start markers: {start_count}"
+              )
+              print(
+                  f"  Auto section end markers: {end_count}"
+              )
+
+              if (
+                  start_count == 1
+                  and end_count == 1
+              ):
+                  print(
+                      "  Homepage auto-opportunity section: OK"
+                  )
+              else:
+                  print(
+                      "  Homepage auto-opportunity section: CHECK"
+                  )
+
+          else:
+
+              print("")
+              print(
+                  "Homepage: index.html not found."
+              )
+
+
+          # ==================================================
+          # CHECK SITEMAP
+          # ==================================================
+
+          sitemap = Path("sitemap.xml")
+
+          print("")
+
+          if sitemap.exists():
+
+              sitemap_html = sitemap.read_text(
+                  encoding="utf-8"
+              )
+
+              url_count = sitemap_html.count(
+                  "<loc>"
+              )
+
+              print(
+                  f"Sitemap URLs: {url_count}"
+              )
+
+          else:
+
+              print(
+                  "Sitemap: sitemap.xml not found."
+              )
+
+
+          # ==================================================
+          # CHECK GENERATED ARTICLE FILES
+          # ==================================================
+
+          article_files = list(
+              Path(".").glob("*.html")
+          )
+
+          generated_articles = []
+
+          for article_file in article_files:
+
+              try:
+                  content = article_file.read_text(
+                      encoding="utf-8",
+                      errors="ignore"
+                  )
+
+              except Exception:
+                  continue
+
+              if (
+                  "OpportunityBridge" in content
+                  and (
+                      "OPPORTUNITYBRIDGE_GENERATED_ARTICLE"
+                      in content
+                      or
+                      "OpportunityBridge Article"
+                      in content
+                  )
+              ):
+                  generated_articles.append(
+                      article_file
+                  )
+
+          print("")
+          print(
+              f"Generated article pages detected: "
+              f"{len(generated_articles)}"
+          )
+
+
+          # ==================================================
+          # FINAL SUMMARY
+          # ==================================================
+
+          print("")
           print(
               "Automation completed successfully."
           )
+
+          print(
+              "Pipeline:"
+          )
+
+          print(
+              "Discovery -> Verification -> Approval -> "
+              "Article Generation -> Homepage Update -> "
+              "URL Repair -> Internal Links -> Sitemap -> "
+              "SEO Validation -> Publish"
+          )
+
+          print(
+              "======================================"
+          )
+
           PY
 
           echo "======================================"
 
 
       # ======================================================
-      # 10. PUBLISH
+      # 11. SHOW GENERATED CHANGES
+      # ======================================================
+
+      - name: Show generated changes
+        if: always()
+        run: |
+          echo "======================================"
+          echo "GENERATED FILE CHANGES"
+          echo "======================================"
+
+          git status --short
+
+          echo "======================================"
+
+
+      # ======================================================
+      # 12. PUBLISH
       # ======================================================
 
       - name: Publish automation results
@@ -204,6 +386,8 @@ jobs:
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
+          echo "Preparing generated files for commit..."
+
           git add -- \
             '*.html' \
             sitemap.xml \
@@ -211,16 +395,38 @@ jobs:
             data/verified_opportunities.json \
             data/approved_opportunities.json
 
+          echo ""
+          echo "Staged changes:"
+          git status --short
+
           if git diff --cached --quiet; then
+            echo ""
             echo "No changes to publish."
             exit 0
           fi
 
+          echo ""
+          echo "Changes detected."
+
           git commit \
             -m "chore: automated opportunity update [skip ci]"
 
+          echo ""
+          echo "Fetching latest main branch..."
+
           git fetch origin main
+
+          echo ""
+          echo "Rebasing automation changes onto latest main..."
 
           git rebase origin/main
 
+          echo ""
+          echo "Pushing automated changes to main..."
+
           git push origin HEAD:main
+
+          echo ""
+          echo "======================================"
+          echo "PUBLISH COMPLETED SUCCESSFULLY"
+          echo "======================================"
