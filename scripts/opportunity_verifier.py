@@ -82,14 +82,6 @@ OPPORTUNITY_KEYWORDS = [
 # ============================================================
 # STRONG OPPORTUNITY SIGNALS
 # ============================================================
-#
-# These phrases are stronger evidence than generic words such
-# as "jobs", "career", "students", or "opportunity".
-#
-# IMPORTANT:
-# A general news article containing "jobs" should not easily
-# become an approved opportunity.
-# ============================================================
 
 STRONG_OPPORTUNITY_SIGNALS = [
     "apply now",
@@ -159,13 +151,6 @@ STRONG_OPPORTUNITY_SIGNALS = [
 
 # ============================================================
 # NEWS / GENERAL CONTENT SIGNALS
-# ============================================================
-#
-# These phrases frequently appear in news/reporting rather
-# than on actual opportunity pages.
-#
-# They are not automatic rejection signals by themselves.
-# They are combined with opportunity evidence.
 # ============================================================
 
 NEWS_SIGNALS = [
@@ -255,9 +240,6 @@ NEWS_TITLE_SIGNALS = [
 
 # ============================================================
 # TRUSTED DOMAINS
-# ============================================================
-#
-# Generic .org is intentionally NOT automatically trusted.
 # ============================================================
 
 TRUSTED_EXACT_DOMAINS = {
@@ -615,6 +597,7 @@ def clean_text(value):
     """
 
     if value is None:
+
         return ""
 
     return re.sub(
@@ -787,12 +770,10 @@ def is_trusted_domain(url):
 
         return False
 
-    # Exact trusted domains
     if domain in TRUSTED_EXACT_DOMAINS:
 
         return True
 
-    # Trusted suffixes
     for suffix in TRUSTED_DOMAIN_SUFFIXES:
 
         if domain.endswith(
@@ -801,7 +782,6 @@ def is_trusted_domain(url):
 
             return True
 
-    # Known trusted patterns
     for pattern in TRUSTED_DOMAIN_CONTAINS:
 
         if pattern in domain:
@@ -884,7 +864,6 @@ def strip_html(html):
         flags=re.DOTALL,
     )
 
-    # Decode common HTML entities.
     text = (
         text
         .replace("&nbsp;", " ")
@@ -1153,7 +1132,6 @@ def extract_links(
 
             break
 
-    # Deduplicate by normalized URL.
     unique = []
 
     seen = set()
@@ -1176,8 +1154,9 @@ def extract_links(
             link
         )
 
-    return unique
-
+    return unique# ============================================================
+# DATE / DEADLINE DETECTION
+# ============================================================
 
 def extract_date_candidates(text):
     """
@@ -1318,6 +1297,108 @@ def extract_deadline(text):
 
     return ""
 
+
+# ============================================================
+# DEADLINE EXPIRY CHECK
+# ============================================================
+
+def parse_deadline_date(value):
+    """
+    Parse a detected deadline into a timezone-aware UTC datetime.
+
+    Returns None when the value cannot be parsed safely.
+    """
+
+    value = clean_text(
+        value
+    )
+
+    if not value:
+
+        return None
+
+    candidates = [
+        value,
+        value.replace(
+            "Z",
+            "+00:00"
+        ),
+    ]
+
+    for candidate in candidates:
+
+        try:
+
+            parsed = datetime.fromisoformat(
+                candidate
+            )
+
+            if parsed.tzinfo is None:
+
+                parsed = parsed.replace(
+                    tzinfo=timezone.utc
+                )
+
+            return parsed.astimezone(
+                timezone.utc
+            )
+
+        except Exception:
+
+            pass
+
+    date_formats = [
+        "%Y-%m-%d",
+        "%d/%m/%Y",
+        "%d-%m-%Y",
+        "%m/%d/%Y",
+        "%B %d, %Y",
+        "%b %d, %Y",
+        "%d %B %Y",
+        "%d %b %Y",
+    ]
+
+    for date_format in date_formats:
+
+        try:
+
+            parsed = datetime.strptime(
+                value,
+                date_format
+            )
+
+            return parsed.replace(
+                tzinfo=timezone.utc
+            )
+
+        except Exception:
+
+            pass
+
+    return None
+
+
+def deadline_is_expired(value):
+    """
+    Return True when a parseable deadline is already in the past.
+    """
+
+    parsed = parse_deadline_date(
+        value
+    )
+
+    if parsed is None:
+
+        return False
+
+    return parsed < datetime.now(
+        timezone.utc
+    )
+
+
+# ============================================================
+# CATEGORY / LOCATION / FUNDING / ELIGIBILITY
+# ============================================================
 
 def detect_category(text):
     """
@@ -2460,10 +2541,7 @@ def find_more_specific_link(
         reverse=True,
     )
 
-    return candidates[0][1]
-
-
-# ============================================================
+    return candidates[0][1]# ============================================================
 # QUALITY / EVIDENCE HELPERS
 # ============================================================
 
@@ -3017,16 +3095,16 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # Trusted opportunity.
+    # Trusted source opportunity.
     # --------------------------------------------------------
 
     if (
         trusted_domain
         and score >= 10
         and (
-            strong_signals
-            or application_url
-            or deadline
+            bool(strong_signals)
+            or bool(application_url)
+            or bool(deadline)
         )
         and page_word_count >= MIN_PAGE_WORDS
     ):
@@ -3039,16 +3117,14 @@ def classify_relevance(
 
     # --------------------------------------------------------
     # Possible opportunity.
-    #
-    # Useful for diagnostics but NOT for auto publication.
     # --------------------------------------------------------
 
     if (
         score >= 7
         and (
-            strong_signals
-            or application_url
-            or deadline
+            bool(strong_signals)
+            or bool(application_url)
+            or bool(deadline)
             or meaningful_eligibility
             or meaningful_funding
         )
@@ -3061,19 +3137,20 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # News-heavy weak pages.
+    # News/general content.
     # --------------------------------------------------------
 
-    if (
-        news_signals
-        and score < 7
-    ):
+    if news_heavy:
 
         return (
             False,
             True,
             "likely_news_or_general_content",
         )
+
+    # --------------------------------------------------------
+    # Insufficient evidence.
+    # --------------------------------------------------------
 
     return (
         False,
@@ -3083,18 +3160,42 @@ def classify_relevance(
 
 
 # ============================================================
-# VERIFICATION ENGINE
+# VERIFICATION
 # ============================================================
 
-def determine_verification(item):
+def determine_verification(
+    item
+):
+    """
+    Verify one discovered opportunity.
+
+    This function preserves discovery metadata while adding
+    page-level verification evidence.
+    """
+
+    # --------------------------------------------------------
+    # IMPORTANT:
+    # Use actual dictionary fields here.
+    #
+    # The old implementation accidentally used:
+    #
+    # item.get(
+    #     "source_url"
+    #     or "url"
+    #     or "link"
+    #     or "news_url"
+    # )
+    #
+    # Because "source_url" is always truthy, Python only looked
+    # at source_url. The corrected implementation checks each
+    # field independently.
+    # --------------------------------------------------------
 
     original_discovered_url = clean_text(
-        item.get(
-            "source_url"
-            or "url"
-            or "link"
-            or "news_url"
-        )
+        item.get("source_url")
+        or item.get("url")
+        or item.get("link")
+        or item.get("news_url")
     )
 
     selected_url = choose_candidate_source_url(
@@ -3103,121 +3204,136 @@ def determine_verification(item):
 
     title = clean_text(
         item.get(
-            "title"
+            "title",
+            ""
         )
     )
 
     description = clean_text(
         item.get(
-            "description"
-        )
-        or item.get(
-            "summary"
+            "description",
+            ""
         )
     )
 
     publisher_name = clean_text(
         item.get(
-            "publisher_name"
-        )
-        or item.get(
-            "publisher"
+            "publisher_name",
+            ""
         )
     )
 
-    result = {
-        "verification_level": "failed",
+    result = dict(
+        item
+    )
 
-        "source_verified": False,
+    result.update(
+        {
+            "verification_level": "failed",
 
-        "page_reachable": False,
+            "source_verified": False,
 
-        "source_domain_trusted": False,
+            "page_reachable": False,
 
-        "opportunity_relevant": False,
+            "source_domain_trusted": False,
 
-        "needs_human_review": True,
+            "opportunity_relevant": False,
 
-        "verification_reason": "",
+            "needs_human_review": True,
 
-        "checked_url": selected_url,
+            "verification_reason": "",
 
-        "original_discovered_url": (
-            original_discovered_url
-        ),
+            "checked_url": selected_url,
 
-        "final_url": selected_url,
+            "original_discovered_url": (
+                original_discovered_url
+            ),
 
-        "official_url": selected_url,
+            "final_url": "",
 
-        "application_url": "",
+            "official_url": "",
 
-        "application_domain": "",
+            "application_url": "",
 
-        "application_domain_trusted": False,
+            "application_domain": "",
 
-        "canonical_url": "",
+            "application_domain_trusted": False,
 
-        "http_status": None,
+            "canonical_url": "",
 
-        "content_type": "",
+            "http_status": None,
 
-        "source_domain": get_domain(
-            selected_url
-        ),
+            "content_type": "",
 
-        "opportunity_score": 0,
+            "source_domain": "",
 
-        "opportunity_classification": "failed",
+            "opportunity_score": 0,
 
-        "matched_keywords": [],
+            "opportunity_classification": (
+                "unverified"
+            ),
 
-        "strong_opportunity_signals": [],
+            "matched_keywords": [],
 
-        "news_signals": [],
+            "strong_opportunity_signals": [],
 
-        "news_title_signals": [],
+            "news_signals": [],
 
-        "verification_evidence": [],
+            "news_title_signals": [],
 
-        "detected_category": "opportunities",
+            "verification_evidence": [],
 
-        "detected_location": "",
+            "detected_category": "",
 
-        "detected_deadline": "",
+            "detected_location": "",
 
-        "date_candidates": [],
+            "detected_deadline": "",
 
-        "eligibility_signals": [],
+            "deadline_expired": False,
 
-        "funding_detected": False,
+            "date_candidates": [],
 
-        "funding_type": "",
+            "eligibility_signals": [],
 
-        "funding_signals": [],
+            "funding_detected": False,
 
-        "page_title": "",
+            "funding_type": "",
 
-        "page_description": "",
+            "funding_signals": [],
 
-        "page_h1": "",
+            "page_title": "",
 
-        "page_word_count": 0,
+            "page_description": "",
 
-        "page_type": "unknown",
+            "page_h1": "",
 
-        "source_url_resolved": False,
+            "page_word_count": 0,
 
-        "source_url_resolution_method": "",
+            "page_type": "",
 
-        "application_candidates": [],
+            "source_url_resolved": False,
 
-        "publisher_name": publisher_name,
-    }
+            "source_url_resolution_method": "",
 
-    # ========================================================
-    # 1. URL validation
-    # ========================================================
+            "application_candidates": [],
+
+            "publisher_name": publisher_name,
+        }
+    )
+
+    # --------------------------------------------------------
+    # 1. Validate discovered URL.
+    # --------------------------------------------------------
+
+    if not selected_url:
+
+        result[
+            "verification_reason"
+        ] = (
+            "No valid source URL was found."
+        )
+
+        return result
 
     if not is_valid_url(
         selected_url
@@ -3226,26 +3342,30 @@ def determine_verification(item):
         result[
             "verification_reason"
         ] = (
-            "Invalid or missing source URL."
+            "The discovered source URL is invalid."
         )
 
         return result
 
-    # ========================================================
-    # 2. Domain trust check
-    # ========================================================
+    # --------------------------------------------------------
+    # 2. Initial domain trust.
+    # --------------------------------------------------------
 
-    trusted_domain = is_trusted_domain(
+    result[
+        "source_domain"
+    ] = get_domain(
         selected_url
     )
 
     result[
         "source_domain_trusted"
-    ] = trusted_domain
+    ] = is_trusted_domain(
+        selected_url
+    )
 
-    # ========================================================
-    # 3. Reachability check
-    # ========================================================
+    # --------------------------------------------------------
+    # 3. Fetch source page.
+    # --------------------------------------------------------
 
     page = fetch_page(
         selected_url
@@ -3253,31 +3373,48 @@ def determine_verification(item):
 
     result[
         "page_reachable"
-    ] = page[
-        "reachable"
-    ]
+    ] = bool(
+        page.get(
+            "reachable",
+            False
+        )
+    )
 
     result[
         "http_status"
-    ] = page[
+    ] = page.get(
         "status_code"
-    ]
-
-    result[
-        "final_url"
-    ] = page[
-        "final_url"
-    ]
+    )
 
     result[
         "content_type"
-    ] = page.get(
-        "content_type",
-        "",
+    ] = clean_text(
+        page.get(
+            "content_type",
+            ""
+        )
     )
 
-    if not page[
-        "reachable"
+    result[
+        "final_url"
+    ] = clean_text(
+        page.get(
+            "final_url",
+            ""
+        )
+    )
+
+    result[
+        "canonical_url"
+    ] = clean_text(
+        page.get(
+            "canonical",
+            ""
+        )
+    )
+
+    if not result[
+        "page_reachable"
     ]:
 
         result[
@@ -3286,30 +3423,74 @@ def determine_verification(item):
             "Source page could not be reached."
         )
 
-        if page.get(
-            "error"
-        ):
+        result[
+            "verification_level"
+        ] = "failed"
 
-            result[
-                "verification_error"
-            ] = page[
-                "error"
-            ]
+        result[
+            "source_verified"
+        ] = False
 
         return result
 
-    # ========================================================
-    # 4. Resolve official/source URL
-    # ========================================================
+    # --------------------------------------------------------
+    # 4. Resolve official/source URL.
+    # --------------------------------------------------------
 
-    official_url = resolve_official_url(
+    resolved_url = resolve_official_url(
         selected_url,
         page,
     )
 
-    result[
+    if (
+        resolved_url
+        and is_valid_url(
+            resolved_url
+        )
+    ):
+
+        result[
+            "official_url"
+        ] = resolved_url
+
+        result[
+            "source_url_resolved"
+        ] = (
+            normalize_url(
+                resolved_url
+            )
+            != normalize_url(
+                selected_url
+            )
+        )
+
+        if result[
+            "source_url_resolved"
+        ]:
+
+            result[
+                "source_url_resolution_method"
+            ] = "canonical_or_redirect"
+
+        else:
+
+            result[
+                "source_url_resolution_method"
+            ] = "original_url"
+
+    else:
+
+        result[
+            "official_url"
+        ] = selected_url
+
+    # --------------------------------------------------------
+    # 5. Re-check trusted domain after redirect/canonical.
+    # --------------------------------------------------------
+
+    official_url = result[
         "official_url"
-    ] = official_url
+    ]
 
     result[
         "source_domain"
@@ -3317,101 +3498,48 @@ def determine_verification(item):
         official_url
     )
 
-    redirected = (
-        normalize_url(
-            selected_url
-        )
-        != normalize_url(
-            page.get(
-                "final_url",
-                selected_url,
-            )
-        )
-    )
-
-    canonical_exists = bool(
-        page.get(
-            "canonical",
-            "",
-        )
-    )
-
-    if canonical_exists:
-
-        result[
-            "source_url_resolved"
-        ] = True
-
-        result[
-            "source_url_resolution_method"
-        ] = "canonical"
-
-    elif redirected:
-
-        result[
-            "source_url_resolved"
-        ] = True
-
-        result[
-            "source_url_resolution_method"
-        ] = "redirect"
-
-    else:
-
-        result[
-            "source_url_resolved"
-        ] = False
-
-        result[
-            "source_url_resolution_method"
-        ] = "original"
-
-    # Re-check trust after redirects/canonical.
     result[
         "source_domain_trusted"
-    ] = (
-        trusted_domain
-        or is_trusted_domain(
-            official_url
-        )
+    ] = is_trusted_domain(
+        official_url
     )
 
-    # ========================================================
-    # 5. Extract page information
-    # ========================================================
+    # --------------------------------------------------------
+    # 6. Extract page metadata.
+    # --------------------------------------------------------
 
     page_title = clean_text(
         page.get(
             "title",
-            "",
+            ""
         )
     )
 
     page_description = clean_text(
         page.get(
             "description",
-            "",
+            ""
         )
     )
 
     page_h1 = clean_text(
         page.get(
             "h1",
-            "",
+            ""
         )
     )
 
     page_text = clean_text(
         page.get(
             "text",
-            "",
+            ""
         )
     )
 
     page_word_count = int(
         page.get(
             "word_count",
-            0,
+            0
         )
         or 0
     )
@@ -3432,74 +3560,70 @@ def determine_verification(item):
         "page_word_count"
     ] = page_word_count
 
-    result[
-        "canonical_url"
-    ] = clean_text(
-        page.get(
-            "canonical",
-            "",
-        )
-    )
+    # --------------------------------------------------------
+    # 7. Build analysis text.
+    # --------------------------------------------------------
 
-    # Limit analysis size to keep workflow efficient.
+    analysis_parts = [
+        title,
+        description,
+        page_title,
+        page_description,
+        page_h1,
+        page_text,
+    ]
+
     analysis_text = clean_text(
         " ".join(
-            [
-                title,
-                description,
-                page_title,
-                page_description,
-                page_h1,
-                page_text[:MAX_ANALYSIS_CHARS],
-            ]
+            analysis_parts
         )
     )
 
-    # ========================================================
-    # 6. Keyword detection
-    # ========================================================
-
-    matched_keywords = find_matching_keywords(
+    if len(
         analysis_text
-    )
+    ) > MAX_ANALYSIS_CHARS:
 
-    strong_signals = find_strong_signals(
-        analysis_text
-    )
+        analysis_text = analysis_text[
+            :MAX_ANALYSIS_CHARS
+        ]
 
-    news_signals = find_news_signals(
-        analysis_text
-    )
-
-    news_title_signals = find_title_news_signals(
-        " ".join(
-            [
-                title,
-                page_title,
-                page_h1,
-            ]
-        )
-    )
+    # --------------------------------------------------------
+    # 8. Keyword detection.
+    # --------------------------------------------------------
 
     result[
         "matched_keywords"
-    ] = matched_keywords
+    ] = find_matching_keywords(
+        analysis_text
+    )
 
     result[
         "strong_opportunity_signals"
-    ] = strong_signals
+    ] = find_strong_signals(
+        analysis_text
+    )
 
     result[
         "news_signals"
-    ] = news_signals
+    ] = find_news_signals(
+        analysis_text
+    )
 
     result[
         "news_title_signals"
-    ] = news_title_signals
+    ] = find_title_news_signals(
+        " ".join(
+            [
+                title,
+                page_title,
+                page_h1,
+            ]
+        )
+    )
 
-    # ========================================================
-    # 7. Detect category
-    # ========================================================
+    # --------------------------------------------------------
+    # 9. Detect category.
+    # --------------------------------------------------------
 
     result[
         "detected_category"
@@ -3507,9 +3631,9 @@ def determine_verification(item):
         analysis_text
     )
 
-    # ========================================================
-    # 8. Detect location
-    # ========================================================
+    # --------------------------------------------------------
+    # 10. Detect location.
+    # --------------------------------------------------------
 
     result[
         "detected_location"
@@ -3517,9 +3641,9 @@ def determine_verification(item):
         analysis_text
     )
 
-    # ========================================================
-    # 9. Detect deadline
-    # ========================================================
+    # --------------------------------------------------------
+    # 11. Detect deadline.
+    # --------------------------------------------------------
 
     detected_deadline = extract_deadline(
         analysis_text
@@ -3535,21 +3659,65 @@ def determine_verification(item):
         analysis_text
     )
 
-    # ========================================================
-    # 10. Detect eligibility
-    # ========================================================
+    # --------------------------------------------------------
+    # 11A. Reject expired opportunities.
+    # --------------------------------------------------------
 
-    eligibility_signals = detect_eligibility(
-        analysis_text
+    result[
+        "deadline_expired"
+    ] = deadline_is_expired(
+        detected_deadline
     )
+
+    if result.get(
+        "deadline_expired",
+        False
+    ):
+
+        result[
+            "opportunity_relevant"
+        ] = False
+
+        result[
+            "needs_human_review"
+        ] = False
+
+        result[
+            "opportunity_classification"
+        ] = (
+            "expired_opportunity"
+        )
+
+        result[
+            "verification_level"
+        ] = "failed"
+
+        result[
+            "source_verified"
+        ] = False
+
+        result[
+            "verification_reason"
+        ] = (
+            "The detected application deadline "
+            "has already passed."
+        )
+
+        return result
+
+    # --------------------------------------------------------
+    # 12. Detect eligibility.
+    # --------------------------------------------------------
 
     result[
         "eligibility_signals"
-    ] = eligibility_signals
+    ] = detect_eligibility(
+        analysis_text
+    )
 
-    # ========================================================
-    # 11. Detect funding
-    # ========================================================
+    # --------------------------------------------------------
+    # 13. Detect funding.
+    # --------------------------------------------------------
 
     funding_data = detect_funding(
         analysis_text
@@ -3573,16 +3741,18 @@ def determine_verification(item):
         "funding_signals"
     ]
 
-    # ========================================================
-    # 12. Detect application URL
-    # ========================================================
+    # --------------------------------------------------------
+    # 14. Find application candidates.
+    # --------------------------------------------------------
+
+    page_html = page.get(
+        "content",
+        ""
+    )
 
     application_candidates = (
         find_application_candidates(
-            page.get(
-                "content",
-                "",
-            ),
+            page_html,
             page.get(
                 "final_url",
                 selected_url,
@@ -3592,32 +3762,27 @@ def determine_verification(item):
 
     result[
         "application_candidates"
-    ] = [
-        {
-            "url": candidate[
-                "url"
-            ],
-            "anchor": candidate[
-                "anchor"
-            ],
-            "score": candidate[
-                "score"
-            ],
-            "trusted_domain": candidate[
-                "trusted_domain"
-            ],
-        }
-        for candidate in application_candidates[:10]
-    ]
+    ] = application_candidates
 
     application_url = ""
 
     if application_candidates:
 
-        application_url = (
-            application_candidates[0][
-                "url"
-            ]
+        application_url = clean_text(
+            application_candidates[0].get(
+                "url",
+                ""
+            )
+        )
+
+    if not application_url:
+
+        application_url = find_application_url(
+            page_html,
+            page.get(
+                "final_url",
+                selected_url,
+            ),
         )
 
     result[
@@ -3638,53 +3803,66 @@ def determine_verification(item):
             application_url
         )
 
-    # ========================================================
-    # 13. Basic opportunity presence
-    # ========================================================
+    # --------------------------------------------------------
+    # 15. No opportunity terminology.
+    # --------------------------------------------------------
 
-    relevant_keyword_found = (
-        contains_opportunity_keyword(
-            analysis_text
+    if not contains_opportunity_keyword(
+        analysis_text
+    ):
+
+        result[
+            "opportunity_relevant"
+        ] = False
+
+        result[
+            "needs_human_review"
+        ] = False
+
+        result[
+            "opportunity_classification"
+        ] = (
+            "general_page"
         )
-    )
 
-    if not relevant_keyword_found:
+        result[
+            "verification_level"
+        ] = "failed"
+
+        result[
+            "source_verified"
+        ] = False
 
         result[
             "verification_reason"
         ] = (
-            "Source page was reachable but no "
-            "opportunity-related terminology was detected."
+            "The page does not contain sufficient "
+            "opportunity-related terminology."
         )
-
-        result[
-            "page_type"
-        ] = "general_page"
 
         return result
 
-    # ========================================================
-    # 14. Publisher homepage protection
-    # ========================================================
+    # --------------------------------------------------------
+    # 16. Homepage protection.
     #
-    # If the discovered URL is a homepage and the homepage
-    # contains links to more specific opportunity pages,
-    # record the candidate. We do not blindly switch pages
-    # because the candidate still needs verification.
-    # ========================================================
+    # If discovery supplied a homepage, look for a more
+    # specific opportunity/article link.
+    # --------------------------------------------------------
 
     if is_homepage_url(
         selected_url
     ):
 
-        specific_candidate = find_more_specific_link(
-            page=page,
-            base_url=page.get(
-                "final_url",
-                selected_url,
-            ),
-            title=title,
-            description=description,
+        specific_candidate = (
+            find_more_specific_link(
+                page,
+                page.get(
+                    "final_url",
+                    selected_url,
+                ),
+                title,
+                description,
+            )
         )
 
         if specific_candidate:
@@ -3693,17 +3871,9 @@ def determine_verification(item):
                 "specific_opportunity_candidate_url"
             ] = specific_candidate
 
-            result[
-                "verification_evidence"
-            ].append(
-                "Publisher homepage detected; "
-                "a more specific opportunity/article "
-                "candidate link was found."
-            )
-
-    # ========================================================
-    # 15. Evidence score
-    # ========================================================
+    # --------------------------------------------------------
+    # 17. Calculate evidence score.
+    # --------------------------------------------------------
 
     score, score_reasons = (
         calculate_opportunity_score(
@@ -3711,7 +3881,7 @@ def determine_verification(item):
             description=description,
             page_title=page_title,
             page_description=page_description,
-            page_text=page_text[:MAX_ANALYSIS_CHARS],
+            page_text=page_text,
             trusted_domain=result[
                 "source_domain_trusted"
             ],
@@ -3725,48 +3895,49 @@ def determine_verification(item):
         "opportunity_score"
     ] = score
 
-    # ========================================================
-    # 16. Page type
-    # ========================================================
-
-    page_type = detect_page_type(
-        title=(
-            title
-            + " "
-            + page_title
-        ),
-        text=page_text,
-        application_url=application_url,
-        deadline=detected_deadline,
-        news_signals=news_signals,
-        strong_signals=strong_signals,
-    )
+    # --------------------------------------------------------
+    # 18. Detect page type.
+    # --------------------------------------------------------
 
     result[
         "page_type"
-    ] = page_type
+    ] = detect_page_type(
+        title,
+        page_text,
+        application_url,
+        detected_deadline,
+        result[
+            "news_signals"
+        ],
+        result[
+            "strong_opportunity_signals"
+        ],
+    )
 
-    # ========================================================
-    # 17. Classification
-    # ========================================================
+    # --------------------------------------------------------
+    # 19. Classify relevance.
+    # --------------------------------------------------------
 
     (
-        relevant,
-        needs_review,
+        opportunity_relevant,
+        needs_human_review,
         classification,
     ) = classify_relevance(
         score=score,
         trusted_domain=result[
             "source_domain_trusted"
         ],
-        strong_signals=strong_signals,
+        strong_signals=result[
+            "strong_opportunity_signals"
+        ],
         application_url=application_url,
         deadline=detected_deadline,
-        news_signals=news_signals,
+        news_signals=result[
+            "news_signals"
+        ],
         title=(
             title
-            + " "
-            + page_title
+            or page_title
         ),
         page_text=page_text,
         page_word_count=page_word_count,
@@ -3774,73 +3945,32 @@ def determine_verification(item):
 
     result[
         "opportunity_relevant"
-    ] = relevant
+    ] = opportunity_relevant
 
     result[
         "needs_human_review"
-    ] = needs_review
+    ] = needs_human_review
 
     result[
         "opportunity_classification"
     ] = classification
 
-    # ========================================================
-    # 18. Verification level
-    # ========================================================
+    # --------------------------------------------------------
+    # 20. Verification level.
+    # --------------------------------------------------------
 
     if classification in {
         "confirmed_opportunity",
         "trusted_opportunity",
     }:
 
-        if result[
-            "source_domain_trusted"
-        ]:
+        result[
+            "verification_level"
+        ] = "verified"
 
-            result[
-                "verification_level"
-            ] = "source_checked"
-
-            result[
-                "source_verified"
-            ] = True
-
-            result[
-                "verification_reason"
-            ] = (
-                "The source page is reachable and "
-                "contains meaningful evidence of a real "
-                "opportunity. The source domain is trusted "
-                "and/or the page contains application, "
-                "eligibility, funding or deadline signals. "
-                f"Evidence score: {score}."
-            )
-
-        else:
-
-            result[
-                "verification_level"
-            ] = "page_checked"
-
-            result[
-                "source_verified"
-            ] = True
-
-            result[
-                "verification_reason"
-            ] = (
-                "The source page is reachable and "
-                "contains strong evidence of a real "
-                "opportunity. The domain is not on the "
-                "trusted-domain list, so additional "
-                "review is required before automatic "
-                f"publication. Evidence score: {score}."
-            )
-
-            # Non-trusted domains remain human-review items.
-            result[
-                "needs_human_review"
-            ] = True
+        result[
+            "source_verified"
+        ] = True
 
     elif classification == (
         "possible_opportunity"
@@ -3848,41 +3978,11 @@ def determine_verification(item):
 
         result[
             "verification_level"
-        ] = "page_checked"
+        ] = "review"
 
         result[
             "source_verified"
-        ] = False
-
-        result[
-            "verification_reason"
-        ] = (
-            "The page contains some opportunity-related "
-            "evidence, but the evidence is not strong "
-            "enough for automatic approval. Human review "
-            f"is required. Evidence score: {score}."
-        )
-
-    elif classification == (
-        "likely_news_or_general_content"
-    ):
-
-        result[
-            "verification_level"
-        ] = "failed"
-
-        result[
-            "source_verified"
-        ] = False
-
-        result[
-            "verification_reason"
-        ] = (
-            "The page is reachable but appears to be "
-            "news/reporting or general content rather "
-            "than a specific opportunity listing. "
-            f"Evidence score: {score}."
-        )
+        ] = True
 
     else:
 
@@ -3894,65 +3994,114 @@ def determine_verification(item):
             "source_verified"
         ] = False
 
+    # --------------------------------------------------------
+    # 21. Verification reason.
+    # --------------------------------------------------------
+
+    if score_reasons:
+
+        result[
+            "verification_reason"
+        ] = "; ".join(
+            score_reasons[:12]
+        )
+
+    else:
+
         result[
             "verification_reason"
         ] = (
-            "The page is reachable but there is "
-            "insufficient evidence that it represents "
-            "a real opportunity rather than general "
-            f"content. Evidence score: {score}."
+            "Verification completed with limited evidence."
         )
 
-    # ========================================================
-    # 19. Strong evidence summary
-    # ========================================================
+    # --------------------------------------------------------
+    # 22. Evidence summary.
+    # --------------------------------------------------------
 
-    evidence_summary = list(
-        score_reasons
-    )
+    evidence = []
 
-    if application_url:
+    if page_title:
 
-        evidence_summary.append(
-            "application URL: "
-            + application_url
+        evidence.append(
+            f"title: {page_title}"
+        )
+
+    if page_h1:
+
+        evidence.append(
+            f"h1: {page_h1}"
+        )
+
+    if result[
+        "strong_opportunity_signals"
+    ]:
+
+        evidence.append(
+            "strong signals: "
+            + ", ".join(
+                result[
+                    "strong_opportunity_signals"
+                ][:8]
+            )
+        )
+
+    if result[
+        "eligibility_signals"
+    ]:
+
+        evidence.append(
+            "eligibility: "
+            + ", ".join(
+                result[
+                    "eligibility_signals"
+                ][:8]
+            )
+        )
+
+    if result[
+        "funding_signals"
+    ]:
+
+        evidence.append(
+            "funding: "
+            + ", ".join(
+                result[
+                    "funding_signals"
+                ][:8]
+            )
         )
 
     if detected_deadline:
 
-        evidence_summary.append(
-            "detected deadline: "
-            + detected_deadline
+        evidence.append(
+            f"deadline: {detected_deadline}"
         )
 
-    if eligibility_signals:
+    if application_url:
 
-        evidence_summary.append(
-            "eligibility signals present"
+        evidence.append(
+            f"application: {application_url}"
         )
 
-    if funding_data[
-        "funding_detected"
+    if result[
+        "source_domain_trusted"
     ]:
 
-        evidence_summary.append(
-            "funding signals present: "
-            + ", ".join(
-                funding_data[
-                    "funding_signals"
-                ][:6]
-            )
+        evidence.append(
+            "trusted source domain"
         )
 
     result[
         "verification_evidence"
-    ] = evidence_summary[:20]
+    ] = evidence
 
-    # ========================================================
-    # 20. Preserve original item metadata
-    # ========================================================
+    # --------------------------------------------------------
+    # 23. Preserve publisher metadata.
+    # --------------------------------------------------------
 
-    if publisher_name:
+    if not result.get(
+        "publisher_name"
+    ):
 
         result[
             "publisher_name"
@@ -3962,75 +4111,107 @@ def determine_verification(item):
 
 
 # ============================================================
-# VERIFY ONE ITEM
+# ITEM VERIFICATION WRAPPER
 # ============================================================
 
-def verify_item(item):
+def verify_item(
+    item
+):
+    """
+    Verify one item and remove large temporary page fields
+    before returning the final JSON record.
+    """
 
-    verification = determine_verification(
+    result = determine_verification(
         item
     )
 
-    verified_item = dict(
-        item
-    )
-
-    verified_item.update(
-        verification
-    )
-
-    # --------------------------------------------------------
-    # Never store downloaded page HTML in JSON.
-    # --------------------------------------------------------
-
-    verified_item.pop(
+    # Never store raw HTML/page content in the final dataset.
+    result.pop(
         "content",
         None
     )
 
-    verified_item.pop(
+    result.pop(
         "html",
         None
     )
 
-    # --------------------------------------------------------
-    # Never store internal full page links unnecessarily.
-    # --------------------------------------------------------
-
-    verified_item.pop(
+    result.pop(
         "links",
         None
     )
 
-    return verified_item
+    return result
 
 
 # ============================================================
-# SAFE JSON LOADING
+# JSON HELPERS
 # ============================================================
 
 def load_json_file(
-    path,
+    path
 ):
     """
-    Load JSON safely.
+    Load a JSON file safely.
     """
+
+    if not path.exists():
+
+        return []
 
     try:
 
-        return json.loads(
-            path.read_text(
-                encoding="utf-8"
+        with path.open(
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            data = json.load(
+                file
             )
-        )
+
+        if isinstance(
+            data,
+            list,
+        ):
+
+            return data
+
+        if isinstance(
+            data,
+            dict,
+        ):
+
+            if isinstance(
+                data.get(
+                    "items"
+                ),
+                list,
+            ):
+
+                return data[
+                    "items"
+                ]
+
+            if isinstance(
+                data.get(
+                    "opportunities"
+                ),
+                list,
+            ):
+
+                return data[
+                    "opportunities"
+                ]
 
     except Exception as error:
 
         print(
-            f"Could not read JSON file {path}: {error}"
+            f"ERROR loading {path}: {error}"
         )
 
-        return None
+    return []
 
 
 # ============================================================
@@ -4038,559 +4219,250 @@ def load_json_file(
 # ============================================================
 
 def main():
+    """
+    Verify all discovered opportunities and save the results.
+    """
 
-    if not INPUT_FILE.exists():
-
-        print(
-            f"Input file not found: {INPUT_FILE}"
-        )
-
-        return
-
-    data = load_json_file(
+    items = load_json_file(
         INPUT_FILE
     )
 
-    if data is None:
-
-        return
-
-    # --------------------------------------------------------
-    # Support the existing discovered JSON structure.
-    # --------------------------------------------------------
-
-    items = data.get(
-        "items",
-        []
+    print(
+        f"Loaded {len(items)} discovered opportunities."
     )
-
-    if not isinstance(
-        items,
-        list
-    ):
-
-        print(
-            "Input JSON does not contain a valid "
-            "'items' list."
-        )
-
-        return
 
     verified_items = []
 
-    source_checked = 0
-
-    page_checked = 0
-
-    failed = 0
-
-    human_review = 0
-
-    confirmed_opportunities = 0
-
-    trusted_opportunities = 0
-
-    possible_opportunities = 0
-
-    rejected_or_non_opportunities = 0
-
-    likely_news = 0
-
-    insufficient_evidence = 0
-
-    application_links_detected = 0
-
-    deadlines_detected = 0
-
-    funding_detected = 0
-
-    eligibility_detected = 0
-
-    trusted_sources = 0
-
-    non_trusted_sources = 0
-
-    reachable_pages = 0
-
-    unreachable_pages = 0
-
-    total_score = 0
-
-    print(
-        "=" * 60
-    )
-
-    print(
-        "OPPORTUNITYBRIDGE VERIFICATION ENGINE"
-    )
-
-    print(
-        "Version: 4.0"
-    )
-
-    print(
-        "=" * 60
-    )
-
-    print(
-        f"Input items: {len(items)}"
-    )
+    counters = {
+        "total": 0,
+        "verified": 0,
+        "review": 0,
+        "failed": 0,
+        "relevant": 0,
+        "expired": 0,
+        "news_or_general": 0,
+    }
 
     for index, item in enumerate(
         items,
-        start=1
+        start=1,
     ):
 
-        title = clean_text(
-            item.get(
-                "title"
+        counters[
+            "total"
+        ] += 1
+
+        try:
+
+            result = verify_item(
+                item
             )
-        )
-
-        print()
-
-        print(
-            f"[{index}/{len(items)}] {title}"
-        )
-
-        verified = verify_item(
-            item
-        )
-
-        level = verified.get(
-            "verification_level",
-            "failed"
-        )
-
-        classification = verified.get(
-            "opportunity_classification",
-            "failed"
-        )
-
-        score = verified.get(
-            "opportunity_score",
-            0
-        )
 
-        total_score += int(
-            score
-            or 0
-        )
+            verified_items.append(
+                result
+            )
 
-        print(
-            f"Verification level: {level}"
-        )
+            verification_level = result.get(
+                "verification_level",
+                "failed",
+            )
 
-        print(
-            f"Classification: {classification}"
-        )
+            if verification_level == "verified":
 
-        print(
-            f"Opportunity score: {score}"
-        )
+                counters[
+                    "verified"
+                ] += 1
 
-        print(
-            "Source trusted: "
-            f"{verified.get('source_domain_trusted')}"
-        )
+            elif verification_level == "review":
 
-        print(
-            "Page reachable: "
-            f"{verified.get('page_reachable')}"
-        )
+                counters[
+                    "review"
+                ] += 1
 
-        print(
-            "Relevant: "
-            f"{verified.get('opportunity_relevant')}"
-        )
+            else:
 
-        print(
-            "Human review: "
-            f"{verified.get('needs_human_review')}"
-        )
+                counters[
+                    "failed"
+                ] += 1
 
-        print(
-            "Category: "
-            f"{verified.get('detected_category')}"
-        )
+            if result.get(
+                "opportunity_relevant",
+                False,
+            ):
 
-        print(
-            "Location: "
-            f"{verified.get('detected_location')}"
-        )
+                counters[
+                    "relevant"
+                ] += 1
 
-        print(
-            "Deadline: "
-            f"{verified.get('detected_deadline')}"
-        )
+            if result.get(
+                "deadline_expired",
+                False,
+            ):
 
-        print(
-            "Funding: "
-            f"{verified.get('funding_type')}"
-        )
+                counters[
+                    "expired"
+                ] += 1
 
-        print(
-            "Application URL: "
-            f"{verified.get('application_url')}"
-        )
+            classification = result.get(
+                "opportunity_classification",
+                "",
+            )
 
-        print(
-            "Page type: "
-            f"{verified.get('page_type')}"
-        )
+            if classification in {
+                "likely_news_or_general_content",
+                "general_page",
+            }:
 
-        print(
-            "Page words: "
-            f"{verified.get('page_word_count')}"
-        )
+                counters[
+                    "news_or_general"
+                ] += 1
 
-        print(
-            "Official URL: "
-            f"{verified.get('official_url')}"
-        )
+        except Exception as error:
 
-        # ----------------------------------------------------
-        # Counters
-        # ----------------------------------------------------
+            print(
+                f"ERROR verifying item "
+                f"{index}: {error}"
+            )
 
-        if verified.get(
-            "page_reachable"
-        ):
+            fallback = dict(
+                item
+            )
 
-            reachable_pages += 1
+            fallback.update(
+                {
+                    "verification_level": "failed",
 
-        else:
+                    "source_verified": False,
 
-            unreachable_pages += 1
+                    "page_reachable": False,
 
-        if level == "source_checked":
+                    "opportunity_relevant": False,
 
-            source_checked += 1
+                    "needs_human_review": True,
 
-        elif level == "page_checked":
+                    "verification_reason": (
+                        f"Verifier exception: {error}"
+                    ),
 
-            page_checked += 1
+                    "opportunity_classification": (
+                        "verification_error"
+                    ),
 
-        else:
+                    "opportunity_score": 0,
 
-            failed += 1
+                    "deadline_expired": False,
+                }
+            )
 
-        if verified.get(
-            "needs_human_review"
-        ):
+            verified_items.append(
+                fallback
+            )
 
-            human_review += 1
+            counters[
+                "failed"
+            ] += 1
 
-        if verified.get(
-            "source_domain_trusted"
-        ):
-
-            trusted_sources += 1
-
-        else:
-
-            non_trusted_sources += 1
-
-        if verified.get(
-            "application_url"
-        ):
-
-            application_links_detected += 1
-
-        if verified.get(
-            "detected_deadline"
-        ):
-
-            deadlines_detected += 1
-
-        if verified.get(
-            "funding_detected"
-        ):
-
-            funding_detected += 1
-
-        if verified.get(
-            "eligibility_signals"
-        ):
-
-            eligibility_detected += 1
-
-        if classification == (
-            "confirmed_opportunity"
-        ):
-
-            confirmed_opportunities += 1
-
-        elif classification == (
-            "trusted_opportunity"
-        ):
-
-            trusted_opportunities += 1
-
-        elif classification == (
-            "possible_opportunity"
-        ):
-
-            possible_opportunities += 1
-
-        else:
-
-            rejected_or_non_opportunities += 1
-
-        if classification == (
-            "likely_news_or_general_content"
-        ):
-
-            likely_news += 1
-
-        elif classification == (
-            "insufficient_opportunity_evidence"
-        ):
-
-            insufficient_evidence += 1
-
-        verified_items.append(
-            verified
-        )
-
-    # ========================================================
-    # AVERAGE SCORE
-    # ========================================================
-
-    if verified_items:
-
-        average_score = round(
-            total_score
-            / len(
-                verified_items
-            ),
-            2,
-        )
-
-    else:
-
-        average_score = 0
-
-    # ========================================================
-    # OUTPUT
-    # ========================================================
+    # --------------------------------------------------------
+    # Build final output.
+    # --------------------------------------------------------
 
     output = {
-
-        "verification_engine_version": "4.0",
-
         "generated_at": datetime.now(
             timezone.utc
         ).isoformat(),
 
-        "total_checked": len(
-            verified_items
+        "source_file": str(
+            INPUT_FILE
         ),
 
-        "source_checked": source_checked,
-
-        "page_checked": page_checked,
-
-        "failed": failed,
-
-        "reachable_pages": reachable_pages,
-
-        "unreachable_pages": unreachable_pages,
-
-        "human_review_required": human_review,
-
-        "confirmed_opportunities": (
-            confirmed_opportunities
+        "total_discovered": len(
+            items
         ),
 
-        "trusted_opportunities": (
-            trusted_opportunities
-        ),
+        "summary": {
+            "total": counters[
+                "total"
+            ],
 
-        "possible_opportunities": (
-            possible_opportunities
-        ),
+            "verified": counters[
+                "verified"
+            ],
 
-        "rejected_or_non_opportunities": (
-            rejected_or_non_opportunities
-        ),
+            "review": counters[
+                "review"
+            ],
 
-        "likely_news_or_general_content": (
-            likely_news
-        ),
+            "failed": counters[
+                "failed"
+            ],
 
-        "insufficient_opportunity_evidence": (
-            insufficient_evidence
-        ),
+            "relevant": counters[
+                "relevant"
+            ],
 
-        "trusted_sources": (
-            trusted_sources
-        ),
+            "expired": counters[
+                "expired"
+            ],
 
-        "non_trusted_sources": (
-            non_trusted_sources
-        ),
-
-        "application_links_detected": (
-            application_links_detected
-        ),
-
-        "deadlines_detected": (
-            deadlines_detected
-        ),
-
-        "funding_detected": (
-            funding_detected
-        ),
-
-        "eligibility_detected": (
-            eligibility_detected
-        ),
-
-        "average_opportunity_score": (
-            average_score
-        ),
+            "news_or_general": counters[
+                "news_or_general"
+            ],
+        },
 
         "items": verified_items,
     }
 
     OUTPUT_FILE.parent.mkdir(
         parents=True,
-        exist_ok=True
+        exist_ok=True,
     )
 
-    OUTPUT_FILE.write_text(
-        json.dumps(
-            output,
-            indent=2,
-            ensure_ascii=False,
-        ),
+    with OUTPUT_FILE.open(
+        "w",
         encoding="utf-8",
-    )
+    ) as file:
 
-    # ========================================================
-    # FINAL REPORT
-    # ========================================================
-
-    print()
-
-    print(
-        "=" * 60
-    )
+        json.dump(
+            output,
+            file,
+            ensure_ascii=False,
+            indent=2,
+        )
 
     print(
-        "VERIFICATION COMPLETE"
+        "Verification complete."
     )
 
     print(
-        "=" * 60
+        f"Total: {counters['total']}"
     )
 
     print(
-        f"Total checked: "
-        f"{len(verified_items)}"
+        f"Verified: {counters['verified']}"
     )
 
     print(
-        f"Source checked: "
-        f"{source_checked}"
+        f"Review: {counters['review']}"
     )
 
     print(
-        f"Page checked: "
-        f"{page_checked}"
+        f"Failed: {counters['failed']}"
     )
 
     print(
-        f"Reachable pages: "
-        f"{reachable_pages}"
+        f"Relevant: {counters['relevant']}"
     )
 
     print(
-        f"Unreachable pages: "
-        f"{unreachable_pages}"
+        f"Expired: {counters['expired']}"
     )
 
     print(
-        f"Failed: "
-        f"{failed}"
+        f"News/general: {counters['news_or_general']}"
     )
 
     print(
-        f"Confirmed opportunities: "
-        f"{confirmed_opportunities}"
-    )
-
-    print(
-        f"Trusted opportunities: "
-        f"{trusted_opportunities}"
-    )
-
-    print(
-        f"Possible opportunities: "
-        f"{possible_opportunities}"
-    )
-
-    print(
-        f"Human review required: "
-        f"{human_review}"
-    )
-
-    print(
-        f"Likely news/general content: "
-        f"{likely_news}"
-    )
-
-    print(
-        f"Insufficient opportunity evidence: "
-        f"{insufficient_evidence}"
-    )
-
-    print(
-        f"Trusted sources: "
-        f"{trusted_sources}"
-    )
-
-    print(
-        f"Non-trusted sources: "
-        f"{non_trusted_sources}"
-    )
-
-    print(
-        f"Application links detected: "
-        f"{application_links_detected}"
-    )
-
-    print(
-        f"Deadlines detected: "
-        f"{deadlines_detected}"
-    )
-
-    print(
-        f"Funding detected: "
-        f"{funding_detected}"
-    )
-
-    print(
-        f"Eligibility detected: "
-        f"{eligibility_detected}"
-    )
-
-    print(
-        f"Average opportunity score: "
-        f"{average_score}"
-    )
-
-    print(
-        f"Output: "
-        f"{OUTPUT_FILE}"
-    )
-
-    print()
-
-    print(
-        "OPPORTUNITYBRIDGE VERIFICATION "
-        "ENGINE COMPLETE"
+        f"Saved to: {OUTPUT_FILE}"
     )
 
 
