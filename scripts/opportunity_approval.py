@@ -196,6 +196,24 @@ NEWS_SIGNALS = {
 # ============================================================
 # APPROVED VERIFICATION LEVELS
 # ============================================================
+#
+# IMPORTANT:
+#
+# The verification engine currently produces:
+#
+#   verified
+#   review
+#   failed
+#
+# Only "verified" is automatically eligible here.
+#
+# The legacy values "source_checked" and "page_checked"
+# are preserved for compatibility with older verification
+# records.
+#
+# "review" is intentionally NOT allowed because records
+# requiring review must not be automatically published.
+# ============================================================
 
 ALLOWED_VERIFICATION_LEVELS = {
     "verified",
@@ -231,6 +249,7 @@ REJECTED_CLASSIFICATIONS = {
     "likely_news_or_general_content",
     "insufficient_opportunity_evidence",
     "possible_opportunity",
+    "expired_opportunity",
 }
 
 
@@ -342,6 +361,106 @@ def normalize_url(url):
     ).rstrip(
         "/"
     ).lower()
+
+
+# ============================================================
+# DEADLINE PARSING
+# ============================================================
+
+def parse_deadline_date(value):
+    """
+    Parse common deadline formats into a timezone-aware UTC
+    datetime.
+
+    Returns None when the value cannot be parsed.
+    """
+
+    value = clean(
+        value
+    )
+
+    if not value:
+        return None
+
+    candidates = [
+        value,
+        value.replace(
+            "Z",
+            "+00:00"
+        ),
+    ]
+
+    for candidate in candidates:
+
+        try:
+
+            parsed = datetime.fromisoformat(
+                candidate
+            )
+
+            if parsed.tzinfo is None:
+
+                parsed = parsed.replace(
+                    tzinfo=timezone.utc
+                )
+
+            return parsed.astimezone(
+                timezone.utc
+            )
+
+        except Exception:
+
+            pass
+
+    date_formats = [
+        "%Y-%m-%d",
+        "%d/%m/%Y",
+        "%d-%m-%Y",
+        "%m/%d/%Y",
+        "%B %d, %Y",
+        "%b %d, %Y",
+        "%d %B %Y",
+        "%d %b %Y",
+    ]
+
+    for date_format in date_formats:
+
+        try:
+
+            parsed = datetime.strptime(
+                value,
+                date_format
+            )
+
+            return parsed.replace(
+                tzinfo=timezone.utc
+            )
+
+        except Exception:
+
+            pass
+
+    return None
+
+
+def deadline_is_expired(value):
+    """
+    Return True when a detected deadline has already passed.
+    """
+
+    parsed = parse_deadline_date(
+        value
+    )
+
+    if parsed is None:
+        return False
+
+    return (
+        parsed
+        < datetime.now(
+            timezone.utc
+        )
+    )
 
 
 # ============================================================
@@ -1082,7 +1201,24 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 5. Classification
+    # 5. Deadline protection
+    # --------------------------------------------------------
+
+    deadline = get_deadline(
+        item
+    )
+
+    if deadline and deadline_is_expired(
+        deadline
+    ):
+
+        return False, (
+            "The detected application deadline "
+            "has already passed"
+        )
+
+    # --------------------------------------------------------
+    # 6. Classification
     # --------------------------------------------------------
 
     classification = clean(
@@ -1108,7 +1244,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 6. Source verification
+    # 7. Source verification
     # --------------------------------------------------------
 
     source_verified = bool(
@@ -1126,7 +1262,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 7. Page reachability
+    # 8. Page reachability
     # --------------------------------------------------------
 
     page_reachable = bool(
@@ -1143,7 +1279,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 8. Opportunity relevance
+    # 9. Opportunity relevance
     # --------------------------------------------------------
 
     opportunity_relevant = bool(
@@ -1161,7 +1297,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 9. Required opportunity keyword
+    # 10. Required opportunity keyword
     # --------------------------------------------------------
 
     if not has_opportunity_keyword(
@@ -1174,7 +1310,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 10. Score
+    # 11. Score
     # --------------------------------------------------------
 
     score = get_score(
@@ -1193,7 +1329,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 11. Strong evidence
+    # 12. Strong evidence
     # --------------------------------------------------------
 
     if REQUIRE_STRONG_EVIDENCE:
@@ -1208,7 +1344,7 @@ def approve(item):
             )
 
     # --------------------------------------------------------
-    # 12. News protection
+    # 13. News protection
     # --------------------------------------------------------
 
     if is_news_heavy(
@@ -1221,7 +1357,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 13. Source URL sanity
+    # 14. Source URL sanity
     # --------------------------------------------------------
 
     final_url = clean(
@@ -1253,7 +1389,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 14. Approval
+    # 15. Approval
     # --------------------------------------------------------
 
     if classification == (
@@ -1524,6 +1660,8 @@ def main():
 
     verification_failed_count = 0
 
+    expired_deadline_count = 0
+
     # ========================================================
     # PROCESS ITEMS
     # ========================================================
@@ -1660,6 +1798,7 @@ def main():
                 "failed",
                 "likely_news_or_general_content",
                 "insufficient_opportunity_evidence",
+                "expired_opportunity",
             }:
 
                 failed_count += 1
@@ -1711,6 +1850,16 @@ def main():
             ):
 
                 verification_failed_count += 1
+
+            deadline = get_deadline(
+                item
+            )
+
+            if deadline and deadline_is_expired(
+                deadline
+            ):
+
+                expired_deadline_count += 1
 
             print(
                 "STATUS: REJECTED"
@@ -1808,6 +1957,10 @@ def main():
             verification_failed_count
         ),
 
+        "expired_deadline_count": (
+            expired_deadline_count
+        ),
+
         "minimum_auto_approval_score": (
             MINIMUM_AUTO_APPROVAL_SCORE
         ),
@@ -1819,6 +1972,12 @@ def main():
         "auto_approvable_classifications": (
             sorted(
                 AUTO_APPROVABLE_CLASSIFICATIONS
+            )
+        ),
+
+        "allowed_verification_levels": (
+            sorted(
+                ALLOWED_VERIFICATION_LEVELS
             )
         ),
 
@@ -1934,6 +2093,11 @@ def main():
         f"{verification_failed_count}"
     )
 
+    print(
+        f"Expired deadline rejections: "
+        f"{expired_deadline_count}"
+    )
+
     print()
 
     print(
@@ -1944,6 +2108,18 @@ def main():
     print(
         f"Strong evidence required: "
         f"{REQUIRE_STRONG_EVIDENCE}"
+    )
+
+    print()
+
+    print(
+        "Allowed verification levels: "
+        f"{sorted(ALLOWED_VERIFICATION_LEVELS)}"
+    )
+
+    print(
+        "Auto-approvable classifications: "
+        f"{sorted(AUTO_APPROVABLE_CLASSIFICATIONS)}"
     )
 
     print()
