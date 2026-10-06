@@ -29,3 +29,5 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "SEO cleanup: noindex and canonical fixes"
           git push
+      - name: Clean sitemap
+        run: python scripts/clean_sitemap.py
