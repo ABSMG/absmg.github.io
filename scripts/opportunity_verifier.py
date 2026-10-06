@@ -3598,13 +3598,35 @@ def classify_relevance(
             needs_human_review,
             classification
         )
+
+    IMPORTANT:
+    - confirmed_opportunity = eligible for automatic approval
+    - trusted_opportunity = eligible for automatic approval
+    - possible_opportunity = HUMAN REVIEW ONLY
+    - news/general = rejected
+    - insufficient evidence = rejected
+
+    This function deliberately improves automatic approval for
+    genuinely detailed opportunity pages without allowing weak
+    news/general pages to bypass verification.
     """
+
+    # --------------------------------------------------------
+    # 1. Detect news/general characteristics.
+    # --------------------------------------------------------
 
     news_heavy = is_news_heavy(
         title,
         page_text,
         news_signals,
     )
+
+    # --------------------------------------------------------
+    # 2. Detect direct evidence.
+    #
+    # These are independent categories. Repeating the same
+    # keyword many times does not create multiple categories.
+    # --------------------------------------------------------
 
     meaningful_application_evidence = (
         bool(application_url)
@@ -3642,6 +3664,10 @@ def classify_relevance(
         )
     )
 
+    # --------------------------------------------------------
+    # 3. Calculate direct evidence categories and strength.
+    # --------------------------------------------------------
+
     direct_categories = count_direct_evidence_categories(
         strong_signals=strong_signals,
         application_url=application_url,
@@ -3665,6 +3691,11 @@ def classify_relevance(
         )
     )
 
+    # --------------------------------------------------------
+    # 4. Determine whether news wording is outweighed by
+    # genuine opportunity evidence.
+    # --------------------------------------------------------
+
     news_override_protection = (
         news_is_dominated_by_direct_evidence(
             title=title,
@@ -3677,16 +3708,147 @@ def classify_relevance(
     )
 
     # --------------------------------------------------------
-    # Hard protection against obvious news/general pages.
+    # 5. Additional direct-evidence checks.
     #
-    # A news-heavy page is still blocked when it does not have
-    # meaningful direct opportunity evidence.
+    # These are intentionally explicit because some legitimate
+    # opportunity pages do not contain a traditional HTML
+    # application link.
+    # --------------------------------------------------------
+
+    has_application_category = (
+        meaningful_application_evidence
+    )
+
+    has_eligibility_category = (
+        meaningful_eligibility
+    )
+
+    has_funding_category = (
+        meaningful_funding
+    )
+
+    has_deadline_category = (
+        meaningful_deadline
+    )
+
+    has_opportunity_signal_category = bool(
+        strong_signals
+    )
+
+    # --------------------------------------------------------
+    # 6. Count independent categories again using the
+    # meaningful-evidence interpretation.
+    #
+    # This protects against cases where direct evidence exists
+    # through text rather than an application URL.
+    # --------------------------------------------------------
+
+    meaningful_category_count = sum(
+        [
+            has_opportunity_signal_category,
+            has_application_category,
+            has_eligibility_category,
+            has_funding_category,
+            has_deadline_category,
+        ]
+    )
+
+    # --------------------------------------------------------
+    # 7. Identify a strong "call for applications" page.
+    #
+    # These pages are often announced through news/RSS feeds,
+    # but the actual page itself contains application evidence.
+    # --------------------------------------------------------
+
+    normalized_page_text = clean_lower(
+        page_text
+    )
+
+    call_for_applications = (
+        "call for applications"
+        in normalized_page_text
+    )
+
+    applications_open = (
+        "applications are open"
+        in normalized_page_text
+        or "applications open"
+        in normalized_page_text
+        or "application is open"
+        in normalized_page_text
+    )
+
+    now_accepting = (
+        "now accepting applications"
+        in normalized_page_text
+    )
+
+    applications_invited = (
+        "applications invited"
+        in normalized_page_text
+        or "inviting applications"
+        in normalized_page_text
+    )
+
+    strong_application_notice = (
+        call_for_applications
+        or applications_open
+        or now_accepting
+        or applications_invited
+    )
+
+    # --------------------------------------------------------
+    # 8. Detect detailed opportunity-page structure.
+    #
+    # A page with application + eligibility + funding/deadline
+    # is much more likely to be the actual opportunity than a
+    # news article mentioning an opportunity.
+    # --------------------------------------------------------
+
+    detailed_opportunity_structure = (
+        has_application_category
+        and (
+            has_eligibility_category
+            or has_funding_category
+            or has_deadline_category
+        )
+        and page_word_count >= MIN_PAGE_WORDS
+    )
+
+    # --------------------------------------------------------
+    # 9. Determine whether news evidence should be ignored for
+    # classification purposes.
+    #
+    # News wording is acceptable when the page has enough
+    # direct opportunity evidence.
+    # --------------------------------------------------------
+
+    direct_opportunity_overrides_news = (
+        strong_direct_evidence
+        or news_override_protection
+        or detailed_opportunity_structure
+        or (
+            meaningful_category_count >= 3
+            and page_word_count >= MIN_PAGE_WORDS
+        )
+    )
+
+    # --------------------------------------------------------
+    # 10. HARD NEWS PROTECTION.
+    #
+    # Do NOT allow an obvious news/general page to become an
+    # automatically approved opportunity merely because it
+    # contains words such as scholarship, funding, application,
+    # government, announcement, etc.
+    #
+    # Exception:
+    # A page with sufficient direct opportunity evidence is
+    # allowed through to the normal classification logic.
     # --------------------------------------------------------
 
     if (
         news_heavy
-        and not strong_direct_evidence
-        and not news_override_protection
+        and not direct_opportunity_overrides_news
         and not application_url
         and not deadline
         and not meaningful_application_evidence
@@ -3699,24 +3861,37 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # Confirmed opportunity.
+    # 11. CONFIRMED OPPORTUNITY.
     #
-    # Requires strong evidence, not just generic keywords.
+    # This is the primary path to automatic approval.
     #
-    # The new logic requires either:
+    # Requirements:
+    # - high evidence score
+    # - adequate page content
+    # - at least 2 meaningful independent evidence categories
+    # - enough evidence strength
     #
-    #   - 3 independent evidence categories
-    #   - or 2 categories with strong evidence quality
+    # OR:
+    # - 3+ independent categories
     #
-    # This prevents generic keyword repetition from becoming
-    # an automatic verification.
+    # News language is allowed only when direct opportunity
+    # evidence clearly outweighs it.
     # --------------------------------------------------------
 
     confirmed_evidence = (
-        len(direct_categories) >= 3
+        meaningful_category_count >= 3
         or (
-            len(direct_categories) >= 2
+            meaningful_category_count >= 2
             and direct_strength >= 3
+        )
+        or (
+            strong_application_notice
+            and (
+                has_eligibility_category
+                or has_funding_category
+                or has_deadline_category
+            )
+            and page_word_count >= MIN_PAGE_WORDS
         )
     )
 
@@ -3726,8 +3901,7 @@ def classify_relevance(
         and page_word_count >= MIN_PAGE_WORDS
         and (
             not news_heavy
-            or news_override_protection
-            or strong_direct_evidence
+            or direct_opportunity_overrides_news
         )
     ):
 
@@ -3738,26 +3912,45 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # Trusted source opportunity.
+    # 12. TRUSTED OPPORTUNITY.
     #
-    # Trusted domains still require meaningful opportunity
-    # evidence. Trust alone never creates an opportunity.
+    # Trusted domains still require actual opportunity evidence.
+    #
+    # Trust alone is NEVER enough.
+    #
+    # This allows legitimate university/government/UN/etc.
+    # opportunity pages to become verified when their page
+    # contains concrete application evidence.
     # --------------------------------------------------------
+
+    trusted_evidence = (
+        meaningful_category_count >= 2
+        or (
+            strong_application_notice
+            and (
+                has_eligibility_category
+                or has_funding_category
+                or has_deadline_category
+            )
+        )
+        or (
+            bool(application_url)
+            and (
+                has_eligibility_category
+                or has_funding_category
+                or has_deadline_category
+            )
+        )
+    )
 
     if (
         trusted_domain
         and score >= 10
-        and (
-            bool(strong_signals)
-            or bool(application_url)
-            or bool(deadline)
-            or meaningful_application_evidence
-        )
+        and trusted_evidence
         and page_word_count >= MIN_PAGE_WORDS
         and (
             not news_heavy
-            or news_override_protection
-            or strong_direct_evidence
+            or direct_opportunity_overrides_news
         )
     ):
 
@@ -3768,11 +3961,52 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # Possible opportunity.
+    # 13. STRONG APPLICATION PAGE FALLBACK.
     #
-    # This remains a REVIEW classification.
+    # Some pages score slightly below the normal threshold
+    # because the source text contains many news/context words.
     #
-    # It must NOT become an automatic approval.
+    # We still require multiple direct evidence categories and
+    # adequate content. This does NOT approve weak pages.
+    # --------------------------------------------------------
+
+    strong_application_page = (
+        (
+            bool(application_url)
+            or strong_application_notice
+        )
+        and (
+            has_eligibility_category
+            or has_funding_category
+            or has_deadline_category
+        )
+        and page_word_count >= MIN_PAGE_WORDS
+        and direct_strength >= 3
+    )
+
+    if (
+        strong_application_page
+        and score >= 14
+        and (
+            not news_heavy
+            or direct_opportunity_overrides_news
+        )
+    ):
+
+        return (
+            True,
+            False,
+            "confirmed_opportunity",
+        )
+
+    # --------------------------------------------------------
+    # 14. POSSIBLE OPPORTUNITY.
+    #
+    # IMPORTANT:
+    # This remains HUMAN REVIEW ONLY.
+    #
+    # It must NEVER be treated as verified/auto-approved by
+    # this verifier.
     # --------------------------------------------------------
 
     if (
@@ -3794,7 +4028,7 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # News/general content.
+    # 15. NEWS / GENERAL CONTENT.
     # --------------------------------------------------------
 
     if news_heavy:
@@ -3806,7 +4040,7 @@ def classify_relevance(
         )
 
     # --------------------------------------------------------
-    # Insufficient evidence.
+    # 16. INSUFFICIENT EVIDENCE.
     # --------------------------------------------------------
 
     return (
@@ -3814,8 +4048,6 @@ def classify_relevance(
         True,
         "insufficient_opportunity_evidence",
     )
-
-
 # ============================================================
 # VERIFICATION
 # ============================================================
