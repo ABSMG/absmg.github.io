@@ -19,16 +19,22 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Generate sitemap
+        run: python scripts/generate_sitemap.py
+
       - name: Run SEO cleanup
-       - name: Clean sitemap
-        run: python scripts/clean_sitemap.py       run: python scripts/seo_cleanup.py
+        run: python scripts/seo_cleanup.py
+
+      - name: Clean sitemap
+        run: python scripts/clean_sitemap.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add .
-          git diff --cached --quiet || git commit -m "SEO cleanup: noindex and canonical fixes"
+
+          git diff --cached --quiet || git commit -m "Automated SEO and sitemap cleanup"
+
           git push
-      
-  
