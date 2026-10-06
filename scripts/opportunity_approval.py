@@ -198,6 +198,7 @@ NEWS_SIGNALS = {
 # ============================================================
 
 ALLOWED_VERIFICATION_LEVELS = {
+    "verified",
     "source_checked",
     "page_checked",
 }
