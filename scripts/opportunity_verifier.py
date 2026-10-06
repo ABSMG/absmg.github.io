@@ -1154,7 +1154,10 @@ def extract_links(
             link
         )
 
-    return unique# ============================================================
+    return unique
+
+
+# ============================================================
 # DATE / DEADLINE DETECTION
 # ============================================================
 
@@ -2541,7 +2544,10 @@ def find_more_specific_link(
         reverse=True,
     )
 
-    return candidates[0][1]# ============================================================
+    return candidates[0][1]
+
+
+# ============================================================
 # QUALITY / EVIDENCE HELPERS
 # ============================================================
 
@@ -2591,6 +2597,414 @@ def has_funding_language(text):
     )
 
 
+def has_direct_application_evidence(
+    text
+):
+    """
+    Detect direct application evidence from page text.
+
+    This supplements HTML application-link detection because
+    many modern websites use JavaScript buttons, forms, or
+    external application systems that may not appear as a
+    simple <a> element.
+    """
+
+    normalized = clean_lower(
+        text
+    )
+
+    direct_application_phrases = [
+        "apply now",
+        "apply here",
+        "apply online",
+        "applications are open",
+        "applications open",
+        "application is open",
+        "application form",
+        "application portal",
+        "submit application",
+        "submit your application",
+        "how to apply",
+        "call for applications",
+        "now accepting applications",
+        "applications invited",
+        "inviting applications",
+        "register now",
+        "registration is open",
+        "enroll now",
+        "enrol now",
+    ]
+
+    return any(
+        phrase in normalized
+        for phrase in direct_application_phrases
+    )
+
+
+def has_direct_deadline_evidence(
+    text,
+    deadline="",
+):
+    """
+    Detect meaningful deadline evidence.
+
+    A parsed deadline is strongest, but explicit deadline
+    wording also counts as direct evidence.
+    """
+
+    if deadline:
+
+        return True
+
+    normalized = clean_lower(
+        text
+    )
+
+    deadline_phrases = [
+        "application deadline",
+        "deadline",
+        "closing date",
+        "last date to apply",
+        "last day to apply",
+        "apply by",
+        "applications close",
+        "applications closing",
+    ]
+
+    return any(
+        phrase in normalized
+        for phrase in deadline_phrases
+    )
+
+
+def has_direct_funding_evidence(
+    text
+):
+    """
+    Detect meaningful funding evidence.
+
+    This keeps funding as a distinct evidence category.
+    """
+
+    normalized = clean_lower(
+        text
+    )
+
+    direct_funding_phrases = [
+        "fully funded",
+        "fully-funded",
+        "funded by",
+        "tuition waiver",
+        "tuition fee",
+        "tuition fees",
+        "fee waiver",
+        "stipend",
+        "monthly stipend",
+        "living allowance",
+        "financial support",
+        "financial assistance",
+        "travel allowance",
+        "travel support",
+        "scholarship award",
+        "grant amount",
+        "funding amount",
+    ]
+
+    return any(
+        phrase in normalized
+        for phrase in direct_funding_phrases
+    )
+
+
+def has_direct_eligibility_evidence(
+    text
+):
+    """
+    Detect meaningful eligibility evidence.
+
+    This keeps eligibility as a distinct evidence category.
+    """
+
+    normalized = clean_lower(
+        text
+    )
+
+    direct_eligibility_phrases = [
+        "eligibility criteria",
+        "eligibility requirements",
+        "eligible applicants",
+        "who can apply",
+        "applicants must",
+        "candidates must",
+        "academic requirements",
+        "academic qualification",
+        "minimum qualification",
+        "nationality requirement",
+        "citizenship requirement",
+        "age requirement",
+    ]
+
+    return any(
+        phrase in normalized
+        for phrase in direct_eligibility_phrases
+    )
+
+
+def count_direct_evidence_categories(
+    strong_signals,
+    application_url,
+    page_text,
+    deadline="",
+):
+    """
+    Count independent categories of direct opportunity evidence.
+
+    Categories:
+        1. opportunity-specific strong signals
+        2. application mechanism
+        3. eligibility
+        4. funding
+        5. deadline
+
+    Multiple phrases inside the same category do not inflate
+    this count. This prevents repeated generic wording from
+    being treated as independent evidence.
+    """
+
+    categories = []
+
+    if strong_signals:
+
+        categories.append(
+            "opportunity_signal"
+        )
+
+    if (
+        application_url
+        or has_direct_application_evidence(
+            page_text
+        )
+    ):
+
+        categories.append(
+            "application"
+        )
+
+    if has_direct_eligibility_evidence(
+        page_text
+    ):
+
+        categories.append(
+            "eligibility"
+        )
+
+    if has_direct_funding_evidence(
+        page_text
+    ):
+
+        categories.append(
+            "funding"
+        )
+
+    if has_direct_deadline_evidence(
+        page_text,
+        deadline,
+    ):
+
+        categories.append(
+            "deadline"
+        )
+
+    return categories
+
+
+def count_direct_evidence_strength(
+    strong_signals,
+    application_url,
+    page_text,
+    deadline="",
+):
+    """
+    Calculate a conservative direct-evidence strength score.
+
+    This is separate from the general opportunity score.
+
+    The purpose is to distinguish a genuinely detailed
+    opportunity page from a news article that happens to contain
+    words such as scholarship, application, or opportunity.
+    """
+
+    categories = count_direct_evidence_categories(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    strength = len(
+        categories
+    )
+
+    normalized = clean_lower(
+        page_text
+    )
+
+    # Additional quality bonuses are deliberately small.
+    if (
+        "call for applications" in normalized
+        or "call for proposals" in normalized
+        or "now accepting applications" in normalized
+        or "applications are open" in normalized
+    ):
+
+        strength += 1
+
+    if (
+        "eligibility criteria" in normalized
+        and (
+            "deadline" in normalized
+            or deadline
+        )
+    ):
+
+        strength += 1
+
+    if (
+        has_direct_funding_evidence(
+            page_text
+        )
+        and has_direct_eligibility_evidence(
+            page_text
+        )
+    ):
+
+        strength += 1
+
+    return strength
+
+
+def has_substantial_direct_opportunity_evidence(
+    strong_signals,
+    application_url,
+    page_text,
+    deadline="",
+):
+    """
+    Determine whether the page has enough independent direct
+    evidence to be considered a strong opportunity candidate.
+
+    This is intentionally stricter than merely checking for
+    opportunity keywords.
+    """
+
+    categories = count_direct_evidence_categories(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    strength = count_direct_evidence_strength(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    # Three independent categories is strong evidence.
+    if len(categories) >= 3:
+
+        return True
+
+    # Two categories can be enough when the actual signals are
+    # concrete and the page contains enough detail.
+    if (
+        len(categories) >= 2
+        and strength >= 3
+        and count_words(page_text) >= MIN_PAGE_WORDS
+    ):
+
+        return True
+
+    return False
+
+
+def news_is_dominated_by_direct_evidence(
+    title,
+    text,
+    news_signals,
+    strong_signals,
+    application_url,
+    deadline="",
+):
+    """
+    Determine whether direct opportunity evidence is strong
+    enough that normal news wording should not dominate it.
+
+    A legitimate opportunity page can contain words such as
+    announced, government, partnership, conference, report, etc.
+    Those words should not automatically make the page a news
+    page when the same page contains application, eligibility,
+    funding, and deadline evidence.
+    """
+
+    direct_categories = count_direct_evidence_categories(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=text,
+        deadline=deadline,
+    )
+
+    direct_strength = count_direct_evidence_strength(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=text,
+        deadline=deadline,
+    )
+
+    title_news = find_title_news_signals(
+        title
+    )
+
+    news_count = len(
+        news_signals
+    )
+
+    if (
+        len(direct_categories) >= 3
+        and direct_strength >= 4
+    ):
+
+        return True
+
+    if (
+        application_url
+        and (
+            deadline
+            or has_direct_eligibility_evidence(
+                text
+            )
+            or has_direct_funding_evidence(
+                text
+            )
+        )
+        and direct_strength >= 3
+    ):
+
+        return True
+
+    if (
+        not title_news
+        and news_count <= 6
+        and len(direct_categories) >= 2
+        and direct_strength >= 3
+    ):
+
+        return True
+
+    return False
+
+
 def is_news_heavy(
     title,
     text,
@@ -2599,6 +3013,11 @@ def is_news_heavy(
     """
     Determine whether a page looks more like news/general
     reporting than an opportunity listing.
+
+    Important:
+    This function remains conservative and does not decide
+    final relevance by itself. Direct opportunity evidence can
+    override news-heavy classification later.
     """
 
     normalized_title = clean_lower(
@@ -2627,10 +3046,61 @@ def is_news_heavy(
         )
     )
 
+    application_evidence = has_direct_application_evidence(
+        normalized_text
+    )
+
+    eligibility_evidence = has_direct_eligibility_evidence(
+        normalized_text
+    )
+
+    funding_evidence = has_direct_funding_evidence(
+        normalized_text
+    )
+
+    deadline_evidence = has_direct_deadline_evidence(
+        normalized_text
+    )
+
+    direct_category_count = sum(
+        [
+            bool(opportunity_count),
+            application_evidence,
+            eligibility_evidence,
+            funding_evidence,
+            deadline_evidence,
+        ]
+    )
+
+    # Strong direct evidence protects legitimate opportunity
+    # pages from being classified as news simply because they
+    # mention reporting/announcement/context.
+    if (
+        direct_category_count >= 3
+        and word_count >= MIN_PAGE_WORDS
+    ):
+
+        return False
+
+    # Strong application language plus eligibility/funding is
+    # especially strong evidence of an actual opportunity.
+    if (
+        application_evidence
+        and (
+            eligibility_evidence
+            or funding_evidence
+            or deadline_evidence
+        )
+    ):
+
+        return False
+
     # Strong news title with little opportunity evidence.
     if (
         title_news
         and opportunity_count == 0
+        and not application_evidence
+        and not deadline_evidence
     ):
 
         return True
@@ -2639,16 +3109,18 @@ def is_news_heavy(
     if (
         news_count >= 6
         and opportunity_count <= 1
+        and direct_category_count <= 1
     ):
 
         return True
 
     # Extremely short article with news signals and no
-    # application evidence.
+    # meaningful application evidence.
     if (
         word_count < MIN_PAGE_WORDS
         and news_count >= 3
         and opportunity_count == 0
+        and not application_evidence
     ):
 
         return True
@@ -2671,6 +3143,9 @@ def detect_page_type(
     if (
         application_url
         or deadline
+        or has_direct_application_evidence(
+            text
+        )
         or (
             len(strong_signals) >= 2
             and has_application_language(text)
@@ -2829,6 +3304,23 @@ def calculate_opportunity_score(
         )
 
     # --------------------------------------------------------
+    # Direct application language
+    # --------------------------------------------------------
+
+    if (
+        has_direct_application_evidence(
+            page_text
+        )
+        and not application_url
+    ):
+
+        score += 4
+
+        reasons.append(
+            "direct application language detected"
+        )
+
+    # --------------------------------------------------------
     # Eligibility language
     # --------------------------------------------------------
 
@@ -2932,6 +3424,15 @@ def calculate_opportunity_score(
         combined
     )
 
+    direct_evidence_protection = (
+        has_substantial_direct_opportunity_evidence(
+            strong_signals=strong_signals,
+            application_url=application_url,
+            page_text=page_text,
+            deadline=deadline,
+        )
+    )
+
     if news_signals:
 
         penalty = min(
@@ -2939,14 +3440,32 @@ def calculate_opportunity_score(
             MAX_NEWS_PENALTY,
         )
 
-        score -= penalty
+        # Do not allow normal contextual news wording to
+        # overwhelm a page that has substantial direct
+        # opportunity evidence.
+        if direct_evidence_protection:
 
-        reasons.append(
-            "news/general signals: "
-            + ", ".join(
-                news_signals[:8]
+            penalty = min(
+                penalty,
+                6,
             )
-        )
+
+            reasons.append(
+                "news/general signals present but "
+                "reduced because direct opportunity "
+                "evidence is strong"
+            )
+
+        else:
+
+            score -= penalty
+
+            reasons.append(
+                "news/general signals: "
+                + ", ".join(
+                    news_signals[:8]
+                )
+            )
 
     # --------------------------------------------------------
     # News-heavy title
@@ -2960,17 +3479,34 @@ def calculate_opportunity_score(
 
     if title_news_signals:
 
-        score -= min(
+        title_penalty = min(
             len(title_news_signals) * 2,
             6,
         )
 
-        reasons.append(
-            "news-style title signals: "
-            + ", ".join(
-                title_news_signals[:6]
+        if direct_evidence_protection:
+
+            title_penalty = min(
+                title_penalty,
+                2,
             )
-        )
+
+            reasons.append(
+                "news-style title detected but "
+                "reduced because direct opportunity "
+                "evidence is strong"
+            )
+
+        else:
+
+            score -= title_penalty
+
+            reasons.append(
+                "news-style title signals: "
+                + ", ".join(
+                    title_news_signals[:6]
+                )
+            )
 
     # --------------------------------------------------------
     # Opportunity vs news balance
@@ -2981,12 +3517,62 @@ def calculate_opportunity_score(
         and len(strong_signals) <= 1
         and not application_url
         and not deadline
+        and not direct_evidence_protection
     ):
 
         score -= 5
 
         reasons.append(
             "news evidence outweighs opportunity evidence"
+        )
+
+    # --------------------------------------------------------
+    # Direct evidence quality bonus
+    # --------------------------------------------------------
+
+    direct_categories = count_direct_evidence_categories(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    direct_strength = count_direct_evidence_strength(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    if len(
+        direct_categories
+    ) >= 3:
+
+        score += 3
+
+        reasons.append(
+            "multiple independent opportunity evidence "
+            "categories detected"
+        )
+
+    elif (
+        len(direct_categories) >= 2
+        and direct_strength >= 3
+    ):
+
+        score += 2
+
+        reasons.append(
+            "multiple direct opportunity evidence "
+            "categories detected"
+        )
+
+    if direct_strength >= 5:
+
+        score += 2
+
+        reasons.append(
+            "strong direct evidence quality"
         )
 
     return score, reasons
@@ -3025,10 +3611,16 @@ def classify_relevance(
         or has_application_language(
             page_text
         )
+        or has_direct_application_evidence(
+            page_text
+        )
     )
 
     meaningful_eligibility = (
         has_eligibility_language(
+            page_text
+        )
+        or has_direct_eligibility_evidence(
             page_text
         )
     )
@@ -3037,18 +3629,64 @@ def classify_relevance(
         has_funding_language(
             page_text
         )
+        or has_direct_funding_evidence(
+            page_text
+        )
     )
 
-    meaningful_deadline = bool(
-        deadline
+    meaningful_deadline = (
+        bool(deadline)
+        or has_direct_deadline_evidence(
+            page_text,
+            deadline,
+        )
+    )
+
+    direct_categories = count_direct_evidence_categories(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    direct_strength = count_direct_evidence_strength(
+        strong_signals=strong_signals,
+        application_url=application_url,
+        page_text=page_text,
+        deadline=deadline,
+    )
+
+    strong_direct_evidence = (
+        has_substantial_direct_opportunity_evidence(
+            strong_signals=strong_signals,
+            application_url=application_url,
+            page_text=page_text,
+            deadline=deadline,
+        )
+    )
+
+    news_override_protection = (
+        news_is_dominated_by_direct_evidence(
+            title=title,
+            text=page_text,
+            news_signals=news_signals,
+            strong_signals=strong_signals,
+            application_url=application_url,
+            deadline=deadline,
+        )
     )
 
     # --------------------------------------------------------
     # Hard protection against obvious news/general pages.
+    #
+    # A news-heavy page is still blocked when it does not have
+    # meaningful direct opportunity evidence.
     # --------------------------------------------------------
 
     if (
         news_heavy
+        and not strong_direct_evidence
+        and not news_override_protection
         and not application_url
         and not deadline
         and not meaningful_application_evidence
@@ -3064,27 +3702,32 @@ def classify_relevance(
     # Confirmed opportunity.
     #
     # Requires strong evidence, not just generic keywords.
+    #
+    # The new logic requires either:
+    #
+    #   - 3 independent evidence categories
+    #   - or 2 categories with strong evidence quality
+    #
+    # This prevents generic keyword repetition from becoming
+    # an automatic verification.
     # --------------------------------------------------------
 
-    strong_evidence_count = sum(
-        [
-            bool(strong_signals),
-            bool(application_url),
-            meaningful_application_evidence,
-            meaningful_eligibility,
-            meaningful_funding,
-            meaningful_deadline,
-        ]
+    confirmed_evidence = (
+        len(direct_categories) >= 3
+        or (
+            len(direct_categories) >= 2
+            and direct_strength >= 3
+        )
     )
 
     if (
         score >= 16
-        and strong_evidence_count >= 2
+        and confirmed_evidence
         and page_word_count >= MIN_PAGE_WORDS
-        and not (
-            news_heavy
-            and not application_url
-            and not deadline
+        and (
+            not news_heavy
+            or news_override_protection
+            or strong_direct_evidence
         )
     ):
 
@@ -3096,6 +3739,9 @@ def classify_relevance(
 
     # --------------------------------------------------------
     # Trusted source opportunity.
+    #
+    # Trusted domains still require meaningful opportunity
+    # evidence. Trust alone never creates an opportunity.
     # --------------------------------------------------------
 
     if (
@@ -3105,8 +3751,14 @@ def classify_relevance(
             bool(strong_signals)
             or bool(application_url)
             or bool(deadline)
+            or meaningful_application_evidence
         )
         and page_word_count >= MIN_PAGE_WORDS
+        and (
+            not news_heavy
+            or news_override_protection
+            or strong_direct_evidence
+        )
     ):
 
         return (
@@ -3117,6 +3769,10 @@ def classify_relevance(
 
     # --------------------------------------------------------
     # Possible opportunity.
+    #
+    # This remains a REVIEW classification.
+    #
+    # It must NOT become an automatic approval.
     # --------------------------------------------------------
 
     if (
@@ -3127,6 +3783,7 @@ def classify_relevance(
             or bool(deadline)
             or meaningful_eligibility
             or meaningful_funding
+            or meaningful_application_evidence
         )
     ):
 
@@ -3318,6 +3975,16 @@ def determine_verification(
             "application_candidates": [],
 
             "publisher_name": publisher_name,
+
+            # New diagnostics. These do not remove any existing
+            # feature or field.
+            "direct_evidence_categories": [],
+
+            "direct_evidence_strength": 0,
+
+            "strong_direct_opportunity_evidence": False,
+
+            "news_override_protection": False,
         }
     )
 
@@ -3804,6 +4471,80 @@ def determine_verification(
         )
 
     # --------------------------------------------------------
+    # 14A. Calculate direct evidence diagnostics.
+    #
+    # These diagnostics are added without removing the old
+    # application candidates or existing verification fields.
+    # --------------------------------------------------------
+
+    direct_evidence_categories = (
+        count_direct_evidence_categories(
+            strong_signals=result[
+                "strong_opportunity_signals"
+            ],
+            application_url=application_url,
+            page_text=page_text,
+            deadline=detected_deadline,
+        )
+    )
+
+    direct_evidence_strength = (
+        count_direct_evidence_strength(
+            strong_signals=result[
+                "strong_opportunity_signals"
+            ],
+            application_url=application_url,
+            page_text=page_text,
+            deadline=detected_deadline,
+        )
+    )
+
+    strong_direct_opportunity_evidence = (
+        has_substantial_direct_opportunity_evidence(
+            strong_signals=result[
+                "strong_opportunity_signals"
+            ],
+            application_url=application_url,
+            page_text=page_text,
+            deadline=detected_deadline,
+        )
+    )
+
+    result[
+        "direct_evidence_categories"
+    ] = direct_evidence_categories
+
+    result[
+        "direct_evidence_strength"
+    ] = direct_evidence_strength
+
+    result[
+        "strong_direct_opportunity_evidence"
+    ] = strong_direct_opportunity_evidence
+
+    # --------------------------------------------------------
+    # 14B. Determine news override protection.
+    # --------------------------------------------------------
+
+    result[
+        "news_override_protection"
+    ] = news_is_dominated_by_direct_evidence(
+        title=(
+            title
+            or page_title
+        ),
+        text=page_text,
+        news_signals=result[
+            "news_signals"
+        ],
+        strong_signals=result[
+            "strong_opportunity_signals"
+        ],
+        application_url=application_url,
+        deadline=detected_deadline,
+    )
+
+    # --------------------------------------------------------
     # 15. No opportunity terminology.
     # --------------------------------------------------------
 
@@ -4091,6 +4832,40 @@ def determine_verification(
             "trusted source domain"
         )
 
+    if result[
+        "direct_evidence_categories"
+    ]:
+
+        evidence.append(
+            "direct evidence categories: "
+            + ", ".join(
+                result[
+                    "direct_evidence_categories"
+                ]
+            )
+        )
+
+    if result[
+        "direct_evidence_strength"
+    ]:
+
+        evidence.append(
+            "direct evidence strength: "
+            + str(
+                result[
+                    "direct_evidence_strength"
+                ]
+            )
+        )
+
+    if result[
+        "news_override_protection"
+    ]:
+
+        evidence.append(
+            "news penalty protection applied"
+        )
+
     result[
         "verification_evidence"
     ] = evidence
@@ -4351,6 +5126,14 @@ def main():
                     "opportunity_score": 0,
 
                     "deadline_expired": False,
+
+                    "direct_evidence_categories": [],
+
+                    "direct_evidence_strength": 0,
+
+                    "strong_direct_opportunity_evidence": False,
+
+                    "news_override_protection": False,
                 }
             )
 
