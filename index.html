@@ -2092,7 +2092,123 @@
 
     }
 
-  </style>
+  
+
+/* OPPORTUNITYBRIDGE AUTO OPPORTUNITIES CSS START */
+
+    .latest-opportunities {
+      padding-top: 34px;
+    }
+
+    .latest-opportunity-grid {
+      margin-top: 4px;
+    }
+
+    .latest-opportunity-card {
+      min-height: 310px;
+    }
+
+    .latest-opportunity-card .opportunity-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+    }
+
+    .latest-opportunity-card .opportunity-badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .latest-opportunity-card .opportunity-location {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .latest-opportunity-card .opportunity-deadline,
+    .latest-opportunity-card .opportunity-source {
+      margin-bottom: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .latest-opportunity-card .opportunity-deadline strong,
+    .latest-opportunity-card .opportunity-source strong {
+      color: var(--dark);
+    }
+
+    .latest-opportunity-card
+    .opportunity-card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .latest-opportunity-card
+    .opportunity-apply-link {
+      display: inline-block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .latest-opportunity-card
+    .opportunity-apply-link:hover {
+      text-decoration: underline;
+    }
+
+    .latest-opportunity-card
+    .opportunity-category-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .latest-opportunity-card
+    .opportunity-category-link:hover {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
+    .latest-empty-state {
+      grid-column: 1 / -1;
+      padding: 34px 26px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .latest-empty-state h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .latest-empty-state p {
+      max-width: 650px;
+      margin: 0 auto 15px;
+      color: var(--muted);
+    }
+
+    /* OPPORTUNITYBRIDGE AUTO OPPORTUNITIES CSS END */
+
+</style>
 
 </head>
 
@@ -2538,53 +2654,63 @@
 
       <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START -->
 
+<!-- =================================================
+         AUTOMATICALLY UPDATED OPPORTUNITIES
+         Generated: 2026-10-06 20:21 UTC
+         DO NOT EDIT BETWEEN AUTOMATION MARKERS
+    ================================================== -->
+
+    <section
+      class="container latest-opportunities"
+      id="latest-opportunities"
+      aria-labelledby="latest-opportunities-heading">
+
+      <div class="section-title">
+
+        <h2 id="latest-opportunities-heading">
+          Latest Opportunities
+        </h2>
+
+        <p>
+          Explore the latest approved opportunities
+          published on OpportunityBridge.
+        </p>
+
+      </div>
+
       <div
-        class="latest-grid"
+        class="cards latest-opportunity-grid"
         id="latestOpportunityCards">
 
-        <article
-          class="latest-opportunity-card"
-          data-category="opportunities">
-
-          <span class="opportunity-label">
-            Global Opportunities
-          </span>
+        <div
+          class="latest-empty-state"
+          role="status">
 
           <h3>
-            Explore the latest opportunities
+            New opportunities are being checked
           </h3>
 
           <p>
-            Browse OpportunityBridge to discover scholarships,
-            jobs, internships, courses, fellowships and other
-            useful opportunities from around the world.
+            Please explore our opportunity categories
+            while the latest verified opportunities are
+            being prepared.
           </p>
-
-          <div class="opportunity-meta">
-
-            <span>
-              Global
-            </span>
-
-            <span>
-              Students & Graduates
-            </span>
-
-          </div>
 
           <a
             href="opportunities.html"
             class="card-link">
 
-            Explore Opportunities →
+            Explore All Opportunities →
 
           </a>
 
-        </article>
+        </div>
 
       </div>
 
-      <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->
+    </section>
+
+<!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->
 
     </section>
 
@@ -3341,55 +3467,7 @@
          RELATED OPPORTUNITIES
     ================================================== -->
 
-    <section
-      class="related-opportunities"
-      aria-label="Related opportunities">
-
-      <h2>
-        Explore More Opportunities
-      </h2>
-
-      <ul>
-
-        <li>
-          <a href="digital-skills.html">
-            Digital Skills
-          </a>
-        </li>
-
-        <li>
-          <a href="scholarships.html">
-            Scholarships
-          </a>
-        </li>
-
-        <li>
-          <a href="jobs.html">
-            Jobs
-          </a>
-        </li>
-
-        <li>
-          <a href="internships.html">
-            Internships
-          </a>
-        </li>
-
-        <li>
-          <a href="courses.html">
-            Online Courses
-          </a>
-        </li>
-
-        <li>
-          <a href="opportunities.html">
-            Global Opportunities
-          </a>
-        </li>
-
-      </ul>
-
-    </section>
+    
 
   </main>
 
@@ -3913,6 +3991,24 @@
     );
 
   </script>
+
+
+<section
+    class="related-opportunities"
+    aria-label="Related opportunities"
+>
+    <h2>Explore More Opportunities</h2>
+
+    <ul>
+        
+            <li>
+                <a href="digital-skills.html">
+                    Digital Skills
+                </a>
+            </li>
+            
+    </ul>
+</section>
 
 </body>
 </html>
