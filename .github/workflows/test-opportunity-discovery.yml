@@ -535,10 +535,7 @@ jobs:
           # DISCOVERY
           # ==================================================
 
-          if [
-            "${{ steps.discovery.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.discovery.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Discovery failed."
