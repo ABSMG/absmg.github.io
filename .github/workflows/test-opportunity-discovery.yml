@@ -549,10 +549,7 @@ jobs:
           # VERIFICATION
           # ==================================================
 
-          if [
-            "${{ steps.verification.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.verification.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Verification failed."
@@ -566,10 +563,7 @@ jobs:
           # APPROVAL
           # ==================================================
 
-          if [
-            "${{ steps.approval.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.approval.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Approval failed."
@@ -583,10 +577,7 @@ jobs:
           # ARTICLE GENERATION
           # ==================================================
 
-          if [
-            "${{ steps.article_generation.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.article_generation.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Article generation failed."
@@ -600,10 +591,7 @@ jobs:
           # HOMEPAGE
           # ==================================================
 
-          if [
-            "${{ steps.homepage.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.homepage.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Homepage update failed."
@@ -617,10 +605,7 @@ jobs:
           # URL REPAIR
           # ==================================================
 
-          if [
-            "${{ steps.url_repair.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.url_repair.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: URL repair failed."
@@ -634,10 +619,7 @@ jobs:
           # INTERNAL LINKS
           # ==================================================
 
-          if [
-            "${{ steps.internal_links.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.internal_links.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Internal links update failed."
@@ -651,10 +633,7 @@ jobs:
           # SITEMAP
           # ==================================================
 
-          if [
-            "${{ steps.sitemap.outcome }}"
-            != "success"
-          ]; then
+          if [ "${{ steps.sitemap.outcome }}" != "success" ]; then
 
             echo ""
             echo "ERROR: Sitemap generation failed."
@@ -673,10 +652,7 @@ jobs:
           echo "SEO RESULT"
           echo "======================================"
 
-          if [
-            "${{ steps.seo.outcome }}"
-            = "failure"
-          ]; then
+          if [ "${{ steps.seo.outcome }}" = "failure" ]; then
 
             echo "SEO checker reported errors."
 
@@ -917,10 +893,7 @@ jobs:
           echo "=================================================="
 
 
-          if [
-            "${{ steps.seo.outcome }}"
-            = "failure"
-          ]; then
+          if [ "${{ steps.seo.outcome }}" = "failure" ]; then
 
             echo "SEO checker reported errors."
 
@@ -943,10 +916,7 @@ jobs:
           echo "=================================================="
 
 
-          if [
-            "${{ steps.publish_check.outcome }}"
-            = "success"
-          ]; then
+          if [ "${{ steps.publish_check.outcome }}" = "success" ]; then
 
             echo "Critical pipeline completed."
 
