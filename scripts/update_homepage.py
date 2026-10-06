@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime, timezone
 from html import escape
+from urllib.parse import urlparse
 import json
 import re
 
@@ -8,6 +9,9 @@ import re
 # ============================================================
 # OPPORTUNITYBRIDGE HOMEPAGE AUTO-UPDATER
 # ============================================================
+#
+# Version:
+#   3.0
 #
 # Purpose:
 #   Read approved opportunities and automatically publish
@@ -17,12 +21,43 @@ import re
 #   data/approved_opportunities.json
 #   index.html
 #
-# The script only replaces content between:
+# The script only manages content between:
 #
 #   <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START -->
 #   <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->
 #
 # Everything outside those markers is preserved.
+#
+# The script also ensures that the CSS required by the
+# automatically generated opportunity cards exists.
+#
+# Important:
+#   This script DOES NOT generate article pages.
+#
+#   Article generation is handled by:
+#
+#       scripts/opportunity_article_generator.py
+#
+#   This script only publishes links to already-generated
+#   article pages on the homepage.
+#
+# Expected automation order:
+#
+#   discovery
+#       ↓
+#   verifier
+#       ↓
+#   approval
+#       ↓
+#   article generator
+#       ↓
+#   homepage updater
+#       ↓
+#   internal links
+#       ↓
+#   sitemap
+#       ↓
+#   SEO checker
 #
 # ============================================================
 
@@ -44,12 +79,18 @@ APPROVED_FILE = (
 
 MAX_HOMEPAGE_OPPORTUNITIES = 12
 
+BASE_URL = "https://absmg.github.io"
+
 START_MARKER = (
     "<!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START -->"
 )
 
 END_MARKER = (
     "<!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->"
+)
+
+AUTO_ARTICLE_MARKER = (
+    "OPPORTUNITYBRIDGE_AUTO_ARTICLE"
 )
 
 
@@ -59,22 +100,40 @@ END_MARKER = (
 
 def clean_text(value):
     """
-    Convert any value to safe plain text.
+    Convert a value to safe plain text.
+
+    Dictionaries and lists are ignored because they should
+    not accidentally become visible homepage text.
     """
+
     if value is None:
         return ""
 
-    if isinstance(value, (dict, list)):
+    if isinstance(value, (dict, list, tuple, set)):
         return ""
 
     return str(value).strip()
 
 
+def clean_lower(value):
+    """
+    Return normalized lowercase text.
+    """
+
+    return clean_text(value).lower()
+
+
 def first_value(item, *keys):
     """
-    Return the first non-empty value from a list of possible keys.
+    Return the first non-empty value from a list of possible
+    dictionary keys.
     """
+
+    if not isinstance(item, dict):
+        return ""
+
     for key in keys:
+
         value = item.get(key)
 
         if value is None:
@@ -88,38 +147,182 @@ def first_value(item, *keys):
     return ""
 
 
-def normalize_url(url):
+def safe_html(value):
     """
-    Normalize a URL for comparison.
+    Escape content before placing it into HTML.
     """
-    url = clean_text(url)
 
-    if not url:
+    return escape(
+        clean_text(value),
+        quote=True
+    )
+
+
+def normalize_whitespace(value):
+    """
+    Normalize repeated whitespace.
+    """
+
+    value = clean_text(value)
+
+    if not value:
         return ""
 
-    return url.rstrip("/").lower()
+    return re.sub(
+        r"\s+",
+        " ",
+        value
+    ).strip()
 
+
+# ============================================================
+# URL HELPERS
+# ============================================================
 
 def is_http_url(url):
     """
     Allow only normal HTTP/HTTPS URLs.
     """
-    url = clean_text(url).lower()
 
-    return (
-        url.startswith("https://")
-        or url.startswith("http://")
+    url = clean_text(url)
+
+    if not url:
+        return False
+
+    try:
+
+        parsed = urlparse(url)
+
+        return (
+            parsed.scheme.lower() in {
+                "http",
+                "https",
+            }
+            and bool(parsed.netloc)
+        )
+
+    except Exception:
+        return False
+
+
+def normalize_url(url):
+    """
+    Normalize a URL for comparison.
+
+    This is used for deduplication and source matching.
+    """
+
+    url = clean_text(url)
+
+    if not url:
+        return ""
+
+    # Remove HTML entity noise where possible.
+    url = (
+        url
+        .replace("&amp;", "&")
+        .replace("&#x2F;", "/")
+        .replace("&#47;", "/")
     )
 
+    # Remove surrounding whitespace.
+    url = url.strip()
 
-def safe_html(value):
+    # Remove trailing slash.
+    url = url.rstrip("/")
+
+    return url.lower()
+
+
+def make_site_relative_url(url):
     """
-    Escape content before placing it into HTML.
+    Convert an OpportunityBridge absolute URL into a
+    root-relative URL.
+
+    Example:
+
+        https://absmg.github.io/example.html
+
+    becomes:
+
+        example.html
     """
-    return escape(
-        clean_text(value),
-        quote=True
+
+    url = clean_text(url)
+
+    if not url:
+        return ""
+
+    normalized = url.rstrip("/")
+
+    base_variants = [
+        BASE_URL.rstrip("/") + "/",
+        BASE_URL.rstrip("/"),
+    ]
+
+    for base in base_variants:
+
+        if normalized.startswith(base):
+
+            relative = normalized[
+                len(base):
+            ].lstrip("/")
+
+            return relative
+
+    return ""
+
+
+def safe_article_relative_url(value):
+    """
+    Validate and normalize an article path.
+
+    External article URLs are rejected because the homepage
+    should link to the internally generated OpportunityBridge
+    article page.
+    """
+
+    value = clean_text(value)
+
+    if not value:
+        return ""
+
+    # Absolute OpportunityBridge URL.
+    site_relative = make_site_relative_url(
+        value
     )
+
+    if site_relative:
+        value = site_relative
+
+    # External URL should not be used as the article URL.
+    if is_http_url(value):
+
+        return ""
+
+    value = value.lstrip("/")
+
+    # Do not allow obvious path traversal.
+    if ".." in Path(value).parts:
+        return ""
+
+    # Article pages generated by this system are root HTML files.
+    if not value.lower().endswith(".html"):
+        return ""
+
+    article_path = ROOT / value
+
+    try:
+
+        article_path.resolve().relative_to(
+            ROOT.resolve()
+        )
+
+    except Exception:
+
+        return ""
+
+    return value
 
 
 # ============================================================
@@ -132,13 +335,15 @@ def parse_date(value):
 
     Returns a timezone-aware datetime when possible.
     """
+
     value = clean_text(value)
 
     if not value:
         return None
 
-    # ISO 8601
+    # ISO 8601.
     try:
+
         normalized = value.replace(
             "Z",
             "+00:00"
@@ -149,6 +354,7 @@ def parse_date(value):
         )
 
         if dt.tzinfo is None:
+
             dt = dt.replace(
                 tzinfo=timezone.utc
             )
@@ -158,7 +364,7 @@ def parse_date(value):
     except Exception:
         pass
 
-    # Common date formats
+    # Common date formats.
     formats = [
         "%Y-%m-%d",
         "%Y/%m/%d",
@@ -166,6 +372,8 @@ def parse_date(value):
         "%d/%m/%Y",
         "%B %d, %Y",
         "%b %d, %Y",
+        "%d %B %Y",
+        "%d %b %Y",
     ]
 
     for fmt in formats:
@@ -187,9 +395,36 @@ def parse_date(value):
     return None
 
 
+def format_date_for_homepage(value):
+    """
+    Keep a real deadline/publication value readable.
+
+    No date is invented.
+
+    If the value is parseable, return a cleaner human-readable
+    date. Otherwise preserve the original value.
+    """
+
+    value = clean_text(value)
+
+    if not value:
+        return ""
+
+    dt = parse_date(value)
+
+    if not dt:
+        return value
+
+    return dt.strftime(
+        "%d %b %Y"
+    )
+
+
 def get_sort_date(item):
     """
     Find the most useful date for sorting opportunities.
+
+    Preference is given to publication/approval timestamps.
     """
 
     date_keys = [
@@ -197,8 +432,8 @@ def get_sort_date(item):
         "published",
         "publication_date",
         "date_published",
-        "verified_at",
         "approved_at",
+        "verified_at",
         "updated_at",
         "date",
         "created_at",
@@ -339,18 +574,134 @@ CATEGORY_RULES = {
 }
 
 
+def normalize_category(value):
+    """
+    Normalize category values coming from the approval engine.
+    """
+
+    value = clean_lower(value)
+
+    if not value:
+        return ""
+
+    aliases = {
+
+        "scholarship":
+            "scholarships",
+
+        "scholarships":
+            "scholarships",
+
+        "job":
+            "jobs",
+
+        "jobs":
+            "jobs",
+
+        "remote job":
+            "remote-jobs",
+
+        "remote jobs":
+            "remote-jobs",
+
+        "remote-job":
+            "remote-jobs",
+
+        "internship":
+            "internships",
+
+        "internships":
+            "internships",
+
+        "fellowship":
+            "fellowships",
+
+        "fellowships":
+            "fellowships",
+
+        "grant":
+            "grants",
+
+        "grants":
+            "grants",
+
+        "course":
+            "courses",
+
+        "courses":
+            "courses",
+
+        "training":
+            "training",
+
+        "trainings":
+            "training",
+
+        "competition":
+            "competitions",
+
+        "competitions":
+            "competitions",
+
+        "research":
+            "research",
+
+        "study abroad":
+            "study-abroad",
+
+        "study-abroad":
+            "study-abroad",
+
+        "volunteer":
+            "volunteer",
+
+        "volunteering":
+            "volunteer",
+
+        "digital skills":
+            "digital-skills",
+
+        "digital-skills":
+            "digital-skills",
+
+        "opportunity":
+            "opportunities",
+
+        "opportunities":
+            "opportunities",
+    }
+
+    return aliases.get(
+        value,
+        value
+    )
+
+
 def detect_category(item):
     """
     Determine a useful homepage category.
+
+    Explicit approval/verifier category values get priority
+    over keyword detection.
     """
 
     explicit = first_value(
         item,
+        "approval_category",
+        "detected_category",
         "opportunity_type",
         "category",
         "type",
         "category_name",
     )
+
+    explicit_normalized = normalize_category(
+        explicit
+    )
+
+    if explicit_normalized in CATEGORY_LABELS:
+
+        return explicit_normalized
 
     combined = " ".join(
         [
@@ -364,36 +715,13 @@ def detect_category(item):
                 "description",
                 "summary",
             ),
+            first_value(
+                item,
+                "matched_keywords",
+            ),
             explicit,
         ]
     ).lower()
-
-    # Explicit category gets priority.
-    if explicit:
-
-        normalized = explicit.lower().strip()
-
-        aliases = {
-            "scholarship": "scholarships",
-            "job": "jobs",
-            "internship": "internships",
-            "course": "courses",
-            "fellowship": "fellowships",
-            "grant": "grants",
-            "competition": "competitions",
-            "research": "research",
-            "training": "training",
-            "volunteer": "volunteer",
-            "remote job": "remote-jobs",
-            "remote jobs": "remote-jobs",
-            "study abroad": "study-abroad",
-        }
-
-        if normalized in aliases:
-            return aliases[normalized]
-
-        if normalized in CATEGORY_RULES:
-            return normalized
 
     # Keyword detection.
     for category, keywords in CATEGORY_RULES.items():
@@ -401,6 +729,7 @@ def detect_category(item):
         for keyword in keywords:
 
             if keyword in combined:
+
                 return category
 
     return "opportunities"
@@ -457,8 +786,141 @@ CATEGORY_LABELS = {
 
 
 # ============================================================
+# CATEGORY LINKS
+# ============================================================
+
+CATEGORY_LINKS = {
+
+    "scholarships":
+        "scholarships.html",
+
+    "jobs":
+        "jobs.html",
+
+    "remote-jobs":
+        "jobs.html",
+
+    "internships":
+        "internships.html",
+
+    "courses":
+        "courses.html",
+
+    "training":
+        "courses.html",
+
+    "digital-skills":
+        "ai-skills.html",
+
+    "fellowships":
+        "opportunities.html",
+
+    "grants":
+        "opportunities.html",
+
+    "competitions":
+        "opportunities.html",
+
+    "research":
+        "opportunities.html",
+
+    "study-abroad":
+        "opportunities.html",
+
+    "volunteer":
+        "opportunities.html",
+
+    "opportunities":
+        "opportunities.html",
+}
+
+
+def get_category_link(category):
+    """
+    Return a safe internal category page.
+    """
+
+    category = normalize_category(
+        category
+    )
+
+    return CATEGORY_LINKS.get(
+        category,
+        "opportunities.html"
+    )
+
+
+# ============================================================
 # ARTICLE URL RESOLUTION
 # ============================================================
+
+def article_file_contains_source(
+    html_file,
+    source_urls
+):
+    """
+    Check whether a generated article contains one of the
+    approved source URLs.
+
+    This is used as a compatibility fallback for older
+    generated article pages that may not yet contain the
+    newer article metadata fields.
+    """
+
+    try:
+
+        content = html_file.read_text(
+            encoding="utf-8",
+            errors="ignore"
+        )
+
+    except Exception:
+
+        return False
+
+    if not content:
+        return False
+
+    # Prefer generated article marker.
+    has_generated_marker = (
+        AUTO_ARTICLE_MARKER
+        in content
+    )
+
+    normalized_content = normalize_url(
+        content
+    )
+
+    for source_url in source_urls:
+
+        source_url = normalize_url(
+            source_url
+        )
+
+        if not source_url:
+            continue
+
+        if source_url in normalized_content:
+
+            # If it is a generated article, this is a
+            # strong match.
+            if has_generated_marker:
+                return True
+
+            # Backwards compatibility:
+            # Older generator pages may not have the marker.
+            #
+            # Require OpportunityBridge branding so that a
+            # completely unrelated HTML page is less likely
+            # to be selected.
+            if (
+                "OpportunityBridge"
+                in content
+            ):
+                return True
+
+    return False
+
 
 def get_article_url(item):
     """
@@ -470,8 +932,11 @@ def get_article_url(item):
         article_path
         article_filename
 
-    If those are not available, use source/title information
-    to locate an existing HTML article where possible.
+    If those are not available, use source/official/
+    application URLs to locate an existing generated
+    OpportunityBridge HTML article.
+
+    The article URL must point to a local root HTML file.
     """
 
     direct_url = first_value(
@@ -484,67 +949,70 @@ def get_article_url(item):
 
     if direct_url:
 
-        direct_url = direct_url.strip()
+        direct_relative = safe_article_relative_url(
+            direct_url
+        )
 
-        # Absolute site URL
-        if direct_url.startswith(
-            "https://absmg.github.io/"
-        ):
+        if direct_relative:
 
-            direct_url = direct_url.replace(
-                "https://absmg.github.io/",
-                "",
-                1
+            article_path = (
+                ROOT / direct_relative
             )
 
-        # Remove leading slash
-        direct_url = direct_url.lstrip("/")
+            if article_path.exists():
 
-        # Do not allow external article URL
-        if (
-            direct_url
-            and not direct_url.startswith("http://")
-            and not direct_url.startswith("https://")
+                return direct_relative
+
+    # Gather all possible source URLs.
+    source_candidates = [
+
+        first_value(
+            item,
+            "official_url",
+        ),
+
+        first_value(
+            item,
+            "source_url",
+        ),
+
+        first_value(
+            item,
+            "application_url",
+        ),
+
+        first_value(
+            item,
+            "url",
+        ),
+
+        first_value(
+            item,
+            "link",
+        ),
+    ]
+
+    source_candidates = [
+        url
+        for url in source_candidates
+        if is_http_url(url)
+    ]
+
+    if not source_candidates:
+
+        return ""
+
+    # Prefer generated article pages.
+    for html_file in ROOT.glob(
+        "*.html"
+    ):
+
+        if article_file_contains_source(
+            html_file,
+            source_candidates
         ):
 
-            article_path = ROOT / direct_url
-
-            if article_path.exists():
-                return direct_url
-
-    # Try source_url -> existing HTML
-    source_url = first_value(
-        item,
-        "source_url",
-        "official_url",
-        "url",
-        "link",
-    )
-
-    source_url_normalized = normalize_url(
-        source_url
-    )
-
-    if source_url_normalized:
-
-        for html_file in ROOT.glob("*.html"):
-
-            try:
-
-                content = html_file.read_text(
-                    encoding="utf-8",
-                    errors="ignore"
-                )
-
-            except Exception:
-                continue
-
-            # Search for the source URL inside the article.
-            if source_url_normalized in normalize_url(
-                content
-            ):
-
-                return html_file.name
+            return html_file.name
 
     return ""
 
@@ -556,6 +1024,11 @@ def get_article_url(item):
 def build_description(item):
     """
     Build a concise homepage description.
+
+    The description is based only on information already
+    present in the approved record.
+
+    No opportunity facts are invented.
     """
 
     description = first_value(
@@ -566,6 +1039,10 @@ def build_description(item):
         "excerpt",
     )
 
+    description = normalize_whitespace(
+        description
+    )
+
     if not description:
 
         title = first_value(
@@ -574,18 +1051,26 @@ def build_description(item):
             "name",
         )
 
-        description = (
-            f"Explore this {detect_category(item)} "
-            f"and check the official source for "
-            f"eligibility, deadline and application details."
+        category = CATEGORY_LABELS.get(
+            detect_category(item),
+            "Opportunity"
         )
 
-    # Normalize whitespace
-    description = re.sub(
-        r"\s+",
-        " ",
-        description
-    ).strip()
+        if title:
+
+            description = (
+                f"Explore this {category.lower()} "
+                f"and check the official source for "
+                f"eligibility, deadline and application details."
+            )
+
+        else:
+
+            description = (
+                "Explore this opportunity and check "
+                "the official source for eligibility, "
+                "deadline and application details."
+            )
 
     # Keep homepage cards compact.
     if len(description) > 220:
@@ -605,7 +1090,17 @@ def build_description(item):
 def get_location(item):
     """
     Get country/region information if available.
+
+    Never invent a location.
     """
+
+    # Approval/verifier values get priority.
+    location = first_value(
+        item,
+        "approval_location",
+        "detected_location",
+        "location",
+    )
 
     country = first_value(
         item,
@@ -622,11 +1117,22 @@ def get_location(item):
         "location_region",
     )
 
+    if location:
+
+        location = normalize_whitespace(
+            location
+        )
+
+        if location:
+            return location
+
     if country and region:
 
         if country.lower() not in region.lower():
 
-            return f"{country} • {region}"
+            return (
+                f"{country} • {region}"
+            )
 
         return country
 
@@ -653,6 +1159,8 @@ def get_deadline(item):
 
     deadline = first_value(
         item,
+        "approval_deadline",
+        "detected_deadline",
         "deadline",
         "application_deadline",
         "closing_date",
@@ -663,7 +1171,9 @@ def get_deadline(item):
     if not deadline:
         return ""
 
-    return deadline
+    return format_date_for_homepage(
+        deadline
+    )
 
 
 # ============================================================
@@ -673,17 +1183,99 @@ def get_deadline(item):
 def get_source_name(item):
     """
     Get the source/publisher name.
+
+    Discovery currently uses publisher_name, while older
+    records may use publisher/source/source_name.
     """
 
     return first_value(
         item,
-        "publisher",
         "publisher_name",
+        "publisher",
         "source_name",
         "organization",
         "provider",
         "source",
     )
+
+
+# ============================================================
+# OFFICIAL URL
+# ============================================================
+
+def get_official_url(item):
+    """
+    Get the authoritative source URL.
+
+    Priority:
+        official_url
+        source_url
+        url
+        link
+
+    application_url is intentionally NOT used as the
+    official source fallback because it represents the
+    application destination rather than necessarily the
+    main opportunity information page.
+    """
+
+    candidates = [
+        first_value(
+            item,
+            "official_url",
+        ),
+
+        first_value(
+            item,
+            "source_url",
+        ),
+
+        first_value(
+            item,
+            "url",
+        ),
+
+        first_value(
+            item,
+            "link",
+        ),
+    ]
+
+    for candidate in candidates:
+
+        if is_http_url(candidate):
+
+            return candidate
+
+    return ""
+
+
+# ============================================================
+# APPLICATION URL
+# ============================================================
+
+def get_application_url(item):
+    """
+    Get the application URL if the verification/approval
+    system detected one.
+
+    Never invent an application URL.
+    """
+
+    application_url = first_value(
+        item,
+        "application_url",
+        "apply_url",
+        "application_link",
+    )
+
+    if not is_http_url(
+        application_url
+    ):
+
+        return ""
+
+    return application_url
 
 
 # ============================================================
@@ -693,20 +1285,50 @@ def get_source_name(item):
 def opportunity_identity(item):
     """
     Generate a stable identity for deduplication.
+
+    Priority:
+        official URL
+        source URL
+        application URL
+        article URL
+        title
     """
 
-    source_url = normalize_url(
+    url_candidates = [
+
         first_value(
             item,
             "official_url",
-            "source_url",
-            "url",
-            "link",
-        )
-    )
+        ),
 
-    if source_url:
-        return "url:" + source_url
+        first_value(
+            item,
+            "source_url",
+        ),
+
+        first_value(
+            item,
+            "application_url",
+        ),
+
+        first_value(
+            item,
+            "article_url",
+        ),
+    ]
+
+    for url in url_candidates:
+
+        normalized = normalize_url(
+            url
+        )
+
+        if normalized:
+
+            return (
+                "url:"
+                + normalized
+            )
 
     title = first_value(
         item,
@@ -720,13 +1342,23 @@ def opportunity_identity(item):
         title
     ).strip()
 
-    return "title:" + title
+    if title:
+
+        return (
+            "title:"
+            + title
+        )
+
+    return ""
 
 
 def deduplicate_opportunities(items):
     """
     Remove duplicate opportunities while preserving
     the first/best occurrence.
+
+    The approval engine should already have filtered the
+    records, but this second gate prevents duplicate cards.
     """
 
     seen = set()
@@ -734,7 +1366,11 @@ def deduplicate_opportunities(items):
 
     for item in items:
 
-        if not isinstance(item, dict):
+        if not isinstance(
+            item,
+            dict
+        ):
+
             continue
 
         identity = opportunity_identity(
@@ -748,13 +1384,16 @@ def deduplicate_opportunities(items):
             continue
 
         seen.add(identity)
-        result.append(item)
+
+        result.append(
+            item
+        )
 
     return result
 
 
 # ============================================================
-# QUALITY CHECK
+# QUALITY / APPROVAL CHECK
 # ============================================================
 
 def is_usable_opportunity(item):
@@ -765,7 +1404,11 @@ def is_usable_opportunity(item):
     but this second gate prevents obviously invalid records.
     """
 
-    if not isinstance(item, dict):
+    if not isinstance(
+        item,
+        dict
+    ):
+
         return False
 
     title = first_value(
@@ -777,7 +1420,10 @@ def is_usable_opportunity(item):
     if not title:
         return False
 
+    # --------------------------------------------------------
     # Respect explicit approval status.
+    # --------------------------------------------------------
+
     approval_status = first_value(
         item,
         "approval_status",
@@ -793,7 +1439,63 @@ def is_usable_opportunity(item):
         }
 
         if approval_status not in allowed:
+
             return False
+
+    # --------------------------------------------------------
+    # If the record explicitly says it is NOT approved for
+    # homepage publication, reject it.
+    # --------------------------------------------------------
+
+    approved_for_homepage = item.get(
+        "approved_for_homepage"
+    )
+
+    if (
+        approved_for_homepage is not None
+        and approved_for_homepage is not True
+    ):
+
+        return False
+
+    # --------------------------------------------------------
+    # If the record has an explicit approval classification,
+    # reject known non-opportunity classifications.
+    # --------------------------------------------------------
+
+    classification = clean_lower(
+        first_value(
+            item,
+            "opportunity_classification",
+        )
+    )
+
+    rejected_classifications = {
+        "failed",
+        "likely_news_or_general_content",
+        "insufficient_opportunity_evidence",
+        "possible_opportunity",
+    }
+
+    if classification in rejected_classifications:
+
+        return False
+
+    # --------------------------------------------------------
+    # Do not publish records that explicitly require human
+    # review when they are not also approved.
+    # --------------------------------------------------------
+
+    needs_human_review = item.get(
+        "needs_human_review"
+    )
+
+    if (
+        needs_human_review is True
+        and approval_status != "approved"
+    ):
+
+        return False
 
     # Article must be resolvable later.
     return True
@@ -806,6 +1508,30 @@ def is_usable_opportunity(item):
 def load_approved_opportunities():
     """
     Load approved opportunities from JSON.
+
+    Supported structures:
+
+        1. list
+
+        2. {
+             "approved_items": [...]
+           }
+
+        3. {
+             "opportunities": [...]
+           }
+
+        4. {
+             "approved_opportunities": [...]
+           }
+
+        5. {
+             "items": [...]
+           }
+
+        6. {
+             "data": [...]
+           }
     """
 
     if not APPROVED_FILE.exists():
@@ -834,29 +1560,48 @@ def load_approved_opportunities():
 
         return []
 
-    # Supported structures:
-    #
-    # 1. list
-    # 2. {"opportunities": [...]}
-    # 3. {"approved_opportunities": [...]}
-    # 4. {"items": [...]}
+    # --------------------------------------------------------
+    # Direct list.
+    # --------------------------------------------------------
 
-    if isinstance(data, list):
+    if isinstance(
+        data,
+        list
+    ):
 
         return data
 
-    if isinstance(data, dict):
+    # --------------------------------------------------------
+    # Dictionary structures.
+    # --------------------------------------------------------
+
+    if isinstance(
+        data,
+        dict
+    ):
 
         for key in [
+
+            "approved_items",
+
             "opportunities",
+
             "approved_opportunities",
+
             "items",
+
             "data",
         ]:
 
-            value = data.get(key)
+            value = data.get(
+                key
+            )
 
-            if isinstance(value, list):
+            if isinstance(
+                value,
+                list
+            ):
+
                 return value
 
     print(
@@ -874,13 +1619,21 @@ def load_approved_opportunities():
 def prepare_homepage_items(items):
     """
     Prepare approved opportunities for homepage publishing.
+
+    Only opportunities with a real generated article page
+    are included.
+
+    This prevents broken homepage links.
     """
 
     prepared = []
 
     for item in items:
 
-        if not is_usable_opportunity(item):
+        if not is_usable_opportunity(
+            item
+        ):
+
             continue
 
         title = first_value(
@@ -889,19 +1642,26 @@ def prepare_homepage_items(items):
             "name",
         )
 
+        # ----------------------------------------------------
+        # Article URL
+        # ----------------------------------------------------
+
         article_url = get_article_url(
             item
         )
 
-        # Do not create broken homepage links.
         if not article_url:
+
             print(
                 "SKIP: No generated article found for:"
                 f" {title}"
             )
+
             continue
 
-        article_path = ROOT / article_url
+        article_path = (
+            ROOT / article_url
+        )
 
         if not article_path.exists():
 
@@ -912,6 +1672,10 @@ def prepare_homepage_items(items):
 
             continue
 
+        # ----------------------------------------------------
+        # Category
+        # ----------------------------------------------------
+
         category = detect_category(
             item
         )
@@ -921,52 +1685,113 @@ def prepare_homepage_items(items):
             "Opportunity"
         )
 
+        category_link = get_category_link(
+            category
+        )
+
+        # ----------------------------------------------------
+        # Description
+        # ----------------------------------------------------
+
         description = build_description(
             item
         )
+
+        # ----------------------------------------------------
+        # Location
+        # ----------------------------------------------------
 
         location = get_location(
             item
         )
 
+        # ----------------------------------------------------
+        # Deadline
+        # ----------------------------------------------------
+
         deadline = get_deadline(
             item
         )
+
+        # ----------------------------------------------------
+        # Source
+        # ----------------------------------------------------
 
         source_name = get_source_name(
             item
         )
 
-        official_url = first_value(
-            item,
-            "official_url",
-            "source_url",
-            "url",
-            "link",
+        # ----------------------------------------------------
+        # URLs
+        # ----------------------------------------------------
+
+        official_url = get_official_url(
+            item
         )
+
+        application_url = get_application_url(
+            item
+        )
+
+        # ----------------------------------------------------
+        # Prepare record.
+        # ----------------------------------------------------
 
         prepared.append(
             {
-                "title": title,
-                "article_url": article_url,
-                "category": category,
-                "category_label": category_label,
-                "description": description,
-                "location": location,
-                "deadline": deadline,
-                "source_name": source_name,
-                "official_url": official_url,
-                "sort_date": get_sort_date(item),
+                "title":
+                    title,
+
+                "article_url":
+                    article_url,
+
+                "category":
+                    category,
+
+                "category_label":
+                    category_label,
+
+                "category_link":
+                    category_link,
+
+                "description":
+                    description,
+
+                "location":
+                    location,
+
+                "deadline":
+                    deadline,
+
+                "source_name":
+                    source_name,
+
+                "official_url":
+                    official_url,
+
+                "application_url":
+                    application_url,
+
+                "sort_date":
+                    get_sort_date(
+                        item
+                    ),
             }
         )
 
-    # Newest first
+    # ========================================================
+    # Newest first.
+    # ========================================================
+
     prepared.sort(
         key=lambda x: x["sort_date"],
         reverse=True
     )
 
+    # ========================================================
     # Deduplicate after preparation.
+    # ========================================================
+
     unique = []
 
     seen = set()
@@ -975,6 +1800,9 @@ def prepare_homepage_items(items):
 
         identity = (
             normalize_url(
+                item["official_url"]
+            )
+            or normalize_url(
                 item["article_url"]
             )
             or item["title"].lower()
@@ -983,8 +1811,17 @@ def prepare_homepage_items(items):
         if identity in seen:
             continue
 
-        seen.add(identity)
-        unique.append(item)
+        seen.add(
+            identity
+        )
+
+        unique.append(
+            item
+        )
+
+    # ========================================================
+    # Homepage limit.
+    # ========================================================
 
     return unique[
         :MAX_HOMEPAGE_OPPORTUNITIES
@@ -998,6 +1835,9 @@ def prepare_homepage_items(items):
 def build_card(item):
     """
     Generate one homepage opportunity card.
+
+    The card contains only verified/approved information
+    already available in the approved opportunity record.
     """
 
     title = safe_html(
@@ -1028,7 +1868,15 @@ def build_card(item):
         item["source_name"]
     )
 
+    category_link = safe_html(
+        item["category_link"]
+    )
+
     metadata_parts = []
+
+    # --------------------------------------------------------
+    # Category badge.
+    # --------------------------------------------------------
 
     if category_label:
 
@@ -1037,6 +1885,10 @@ def build_card(item):
             f'{category_label}'
             f'</span>'
         )
+
+    # --------------------------------------------------------
+    # Location.
+    # --------------------------------------------------------
 
     if location:
 
@@ -1052,9 +1904,15 @@ def build_card(item):
 
         metadata_html = (
             '<div class="opportunity-meta">'
-            + "".join(metadata_parts)
+            + "".join(
+                metadata_parts
+            )
             + '</div>'
         )
+
+    # --------------------------------------------------------
+    # Deadline.
+    # --------------------------------------------------------
 
     deadline_html = ""
 
@@ -1067,6 +1925,10 @@ def build_card(item):
             '</p>'
         )
 
+    # --------------------------------------------------------
+    # Source.
+    # --------------------------------------------------------
+
     source_html = ""
 
     if source_name:
@@ -1077,6 +1939,58 @@ def build_card(item):
             f'{source_name}'
             '</p>'
         )
+
+    # --------------------------------------------------------
+    # Application link.
+    #
+    # Use application URL as the primary CTA when a valid
+    # application destination was detected.
+    # --------------------------------------------------------
+
+    application_url = (
+        item["application_url"]
+    )
+
+    application_html = ""
+
+    if is_http_url(
+        application_url
+    ):
+
+        safe_application_url = safe_html(
+            application_url
+        )
+
+        application_html = (
+            '<a '
+            f'href="{safe_application_url}" '
+            'class="opportunity-apply-link" '
+            'target="_blank" '
+            'rel="noopener noreferrer">'
+            'Apply / Official Application →'
+            '</a>'
+        )
+
+    # --------------------------------------------------------
+    # Category link.
+    # --------------------------------------------------------
+
+    category_html = ""
+
+    if category_link:
+
+        category_html = (
+            '<a '
+            f'href="{category_link}" '
+            'class="opportunity-category-link">'
+            f'Browse {category_label} '
+            '→'
+            '</a>'
+        )
+
+    # --------------------------------------------------------
+    # Card.
+    # --------------------------------------------------------
 
     return f"""
         <article
@@ -1103,14 +2017,22 @@ def build_card(item):
 
           {source_html}
 
-          <a
-            href="{article_url}"
-            class="card-link"
-            aria-label="Read {title}">
+          <div class="opportunity-card-actions">
 
-            Read Opportunity →
+            <a
+              href="{article_url}"
+              class="card-link"
+              aria-label="Read {title}">
 
-          </a>
+              Read Opportunity →
+
+            </a>
+
+            {application_html}
+
+          </div>
+
+          {category_html}
 
         </article>
     """.strip()
@@ -1160,6 +2082,9 @@ def build_empty_state():
 def build_homepage_section(items):
     """
     Build the complete automatically managed section.
+
+    This function does not add the outer automation markers.
+    Those are handled by update_index_html().
     """
 
     generated_at = datetime.now(
@@ -1179,7 +2104,9 @@ def build_homepage_section(items):
         for item in items:
 
             cards.append(
-                build_card(item)
+                build_card(
+                    item
+                )
             )
 
         cards_html = "\n\n".join(
@@ -1227,12 +2154,17 @@ def build_homepage_section(items):
 # INSERT / REPLACE AUTOMATION BLOCK
 # ============================================================
 
-def update_index_html(section_html):
+def update_index_html(
+    html,
+    section_html
+):
     """
     Replace the automated homepage block.
 
     If markers do not exist, insert the section before
-    the main Explore Opportunities section.
+    the first recognizable opportunity-card section.
+
+    Everything outside the managed block remains unchanged.
     """
 
     if not INDEX_FILE.exists():
@@ -1241,9 +2173,9 @@ def update_index_html(section_html):
             f"Homepage not found: {INDEX_FILE}"
         )
 
-    html = INDEX_FILE.read_text(
-        encoding="utf-8"
-    )
+    # ========================================================
+    # Existing markers.
+    # ========================================================
 
     start_position = html.find(
         START_MARKER
@@ -1252,10 +2184,6 @@ def update_index_html(section_html):
     end_position = html.find(
         END_MARKER
     )
-
-    # ========================================================
-    # Existing markers
-    # ========================================================
 
     if (
         start_position != -1
@@ -1276,14 +2204,82 @@ def update_index_html(section_html):
             + html[end_position:]
         )
 
-        return new_html, "replaced"
+        return (
+            new_html,
+            "replaced"
+        )
 
     # ========================================================
-    # Missing markers
+    # Broken marker state.
+    #
+    # If only one marker exists, do NOT blindly duplicate
+    # another block. Remove the incomplete automation block
+    # only if it is clearly recoverable.
     # ========================================================
 
-    # Insert immediately before the first Explore
-    # Opportunities section.
+    if (
+        start_position != -1
+        and end_position == -1
+    ):
+
+        print(
+            "WARNING: Start marker exists but end marker "
+            "was not found."
+        )
+
+        # Append an end marker after the existing content
+        # only if we can safely identify the homepage main.
+        main_end = html.lower().rfind(
+            "</main>"
+        )
+
+        if main_end != -1:
+
+            recovered_html = (
+                html[:main_end]
+                + "\n\n"
+                + END_MARKER
+                + "\n"
+                + html[main_end:]
+            )
+
+            end_position = recovered_html.find(
+                END_MARKER
+            )
+
+            start_position = recovered_html.find(
+                START_MARKER
+            )
+
+            replacement_start = (
+                start_position
+                + len(START_MARKER)
+            )
+
+            new_html = (
+                recovered_html[
+                    :replacement_start
+                ]
+                + "\n\n"
+                + section_html
+                + "\n\n"
+                + recovered_html[
+                    end_position:
+                ]
+            )
+
+            return (
+                new_html,
+                "repaired-and-replaced"
+            )
+
+    # ========================================================
+    # Missing markers.
+    #
+    # Insert immediately before the first recognizable
+    # opportunity cards section.
+    # ========================================================
+
     marker_pattern = re.compile(
         r'(\s*<!-- =================================================\s*'
         r'OPPORTUNITY CARDS\s*'
@@ -1304,7 +2300,7 @@ def update_index_html(section_html):
             + section_html
             + "\n\n"
             + END_MARKER
-            + "\n"
+            + "\n\n"
         )
 
         new_html = (
@@ -1313,10 +2309,19 @@ def update_index_html(section_html):
             + html[match.start():]
         )
 
-        return new_html, "inserted"
+        return (
+            new_html,
+            "inserted"
+        )
 
     # ========================================================
-    # Fallback: before </main>
+    # Fallback:
+    #
+    # Insert before </main>.
+    #
+    # This keeps the dynamic section inside the homepage's
+    # main content instead of accidentally placing it after
+    # </main>.
     # ========================================================
 
     main_end = html.lower().rfind(
@@ -1332,7 +2337,7 @@ def update_index_html(section_html):
             + section_html
             + "\n\n"
             + END_MARKER
-            + "\n"
+            + "\n\n"
         )
 
         new_html = (
@@ -1341,7 +2346,14 @@ def update_index_html(section_html):
             + html[main_end:]
         )
 
-        return new_html, "inserted-before-main-close"
+        return (
+            new_html,
+            "inserted-before-main-close"
+        )
+
+    # ========================================================
+    # No safe insertion point.
+    # ========================================================
 
     raise RuntimeError(
         "Could not find a safe location to insert "
@@ -1414,6 +2426,45 @@ AUTO_CSS = f"""
       color: var(--dark);
     }}
 
+    .latest-opportunity-card
+    .opportunity-card-actions {{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }}
+
+    .latest-opportunity-card
+    .opportunity-apply-link {{
+      display: inline-block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }}
+
+    .latest-opportunity-card
+    .opportunity-apply-link:hover {{
+      text-decoration: underline;
+    }}
+
+    .latest-opportunity-card
+    .opportunity-category-link {{
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }}
+
+    .latest-opportunity-card
+    .opportunity-category-link:hover {{
+      color: var(--navy);
+      text-decoration: underline;
+    }}
+
     .latest-empty-state {{
       grid-column: 1 / -1;
       padding: 34px 26px;
@@ -1442,23 +2493,40 @@ AUTO_CSS = f"""
 
 def ensure_css(html):
     """
-    Add CSS required by automatically generated opportunity cards.
+    Add CSS required by automatically generated opportunity
+    cards.
 
-    The CSS is inserted before </style> only once.
+    The CSS is inserted before the LAST </style> element.
+
+    The operation is idempotent:
+    running the script repeatedly will not duplicate the CSS.
     """
 
     if (
         AUTO_CSS_MARKER_START in html
         and AUTO_CSS_MARKER_END in html
     ):
-        return html, False
+
+        return (
+            html,
+            False
+        )
 
     style_end = html.lower().rfind(
         "</style>"
     )
 
     if style_end == -1:
-        return html, False
+
+        print(
+            "WARNING: No </style> tag found. "
+            "Automatic opportunity CSS was not added."
+        )
+
+        return (
+            html,
+            False
+        )
 
     new_html = (
         html[:style_end]
@@ -1468,7 +2536,142 @@ def ensure_css(html):
         + html[style_end:]
     )
 
-    return new_html, True
+    return (
+        new_html,
+        True
+    )
+
+
+# ============================================================
+# HTML STRUCTURE SAFETY CHECKS
+# ============================================================
+
+def validate_generated_block(
+    html
+):
+    """
+    Validate the managed homepage block before writing.
+
+    This provides a final safety check against accidentally
+    producing an incomplete automation section.
+    """
+
+    start_count = html.count(
+        START_MARKER
+    )
+
+    end_count = html.count(
+        END_MARKER
+    )
+
+    if start_count != 1:
+
+        raise RuntimeError(
+            "Homepage safety check failed: expected exactly "
+            f"1 start marker, found {start_count}."
+        )
+
+    if end_count != 1:
+
+        raise RuntimeError(
+            "Homepage safety check failed: expected exactly "
+            f"1 end marker, found {end_count}."
+        )
+
+    start_position = html.find(
+        START_MARKER
+    )
+
+    end_position = html.find(
+        END_MARKER
+    )
+
+    if end_position <= start_position:
+
+        raise RuntimeError(
+            "Homepage safety check failed: end marker "
+            "appears before start marker."
+        )
+
+    # The managed section should be inside <main>.
+    main_start = html.lower().find(
+        "<main"
+    )
+
+    main_end = html.lower().rfind(
+        "</main>"
+    )
+
+    if (
+        main_start != -1
+        and main_end != -1
+    ):
+
+        if not (
+            main_start
+            < start_position
+            < end_position
+            < main_end
+        ):
+
+            raise RuntimeError(
+                "Homepage safety check failed: automatic "
+                "opportunity section is not inside <main>."
+            )
+
+    return True
+
+
+# ============================================================
+# BACKUP / CHANGE PROTECTION
+# ============================================================
+
+def count_existing_automation_blocks(
+    html
+):
+    """
+    Return the number of automation start/end markers.
+
+    Used before and after updates to make sure the updater
+    does not duplicate its own block.
+    """
+
+    return {
+        "start":
+            html.count(
+                START_MARKER
+            ),
+
+        "end":
+            html.count(
+                END_MARKER
+            ),
+    }
+
+
+def has_major_html_structure(
+    html
+):
+    """
+    Basic protection against writing to an unexpectedly
+    corrupted homepage.
+    """
+
+    required_tokens = [
+        "<html",
+        "<head",
+        "<body",
+    ]
+
+    lowered = html.lower()
+
+    for token in required_tokens:
+
+        if token not in lowered:
+
+            return False
+
+    return True
 
 
 # ============================================================
@@ -1478,15 +2681,15 @@ def ensure_css(html):
 def main():
 
     print(
-        "=============================================="
+        "============================================================"
     )
 
     print(
-        "OpportunityBridge Homepage Updater"
+        "OpportunityBridge Homepage Updater v3.0"
     )
 
     print(
-        "=============================================="
+        "============================================================"
     )
 
     print(
@@ -1503,34 +2706,97 @@ def main():
 
     print()
 
-    # --------------------------------------------------------
-    # Load
-    # --------------------------------------------------------
+    # ========================================================
+    # Validate homepage.
+    # ========================================================
 
-    approved = load_approved_opportunities()
+    if not INDEX_FILE.exists():
+
+        raise SystemExit(
+            "ERROR: index.html was not found."
+        )
+
+    try:
+
+        original_html = INDEX_FILE.read_text(
+            encoding="utf-8"
+        )
+
+    except Exception as exc:
+
+        raise SystemExit(
+            f"ERROR: Could not read index.html: {exc}"
+        )
+
+    if not has_major_html_structure(
+        original_html
+    ):
+
+        raise SystemExit(
+            "ERROR: index.html does not look like a valid "
+            "HTML document. No changes were made."
+        )
+
+    original_marker_counts = (
+        count_existing_automation_blocks(
+            original_html
+        )
+    )
 
     print(
-        f"Approved records loaded: {len(approved)}"
-    )
-
-    # --------------------------------------------------------
-    # Deduplicate
-    # --------------------------------------------------------
-
-    approved = deduplicate_opportunities(
-        approved
+        "Existing automation markers:"
     )
 
     print(
-        f"After deduplication: {len(approved)}"
+        f"  Start markers: "
+        f"{original_marker_counts['start']}"
     )
 
-    # --------------------------------------------------------
-    # Prepare
-    # --------------------------------------------------------
+    print(
+        f"  End markers:   "
+        f"{original_marker_counts['end']}"
+    )
 
-    items = prepare_homepage_items(
-        approved
+    print()
+
+    # ========================================================
+    # Load approved opportunities.
+    # ========================================================
+
+    approved = (
+        load_approved_opportunities()
+    )
+
+    print(
+        "Approved records loaded: "
+        f"{len(approved)}"
+    )
+
+    # ========================================================
+    # Deduplicate approved records.
+    # ========================================================
+
+    approved = (
+        deduplicate_opportunities(
+            approved
+        )
+    )
+
+    print(
+        "After deduplication: "
+        f"{len(approved)}"
+    )
+
+    print()
+
+    # ========================================================
+    # Prepare homepage items.
+    # ========================================================
+
+    items = (
+        prepare_homepage_items(
+            approved
+        )
     )
 
     print(
@@ -1538,84 +2804,171 @@ def main():
         f"{len(items)}"
     )
 
-    # --------------------------------------------------------
-    # Display selected items
-    # --------------------------------------------------------
+    print()
 
-    for index, item in enumerate(
-        items,
-        start=1
-    ):
+    # ========================================================
+    # Display selected opportunities.
+    # ========================================================
+
+    if items:
 
         print(
-            f"{index}. "
-            f"{item['title']} "
-            f"-> "
-            f"{item['article_url']}"
+            "Homepage opportunities:"
+        )
+
+        for index, item in enumerate(
+            items,
+            start=1
+        ):
+
+            deadline_text = (
+                item["deadline"]
+                if item["deadline"]
+                else "No deadline available"
+            )
+
+            location_text = (
+                item["location"]
+                if item["location"]
+                else "Location not specified"
+            )
+
+            print(
+                f"{index}. "
+                f"{item['title']}"
+            )
+
+            print(
+                f"   Category: "
+                f"{item['category_label']}"
+            )
+
+            print(
+                f"   Location: "
+                f"{location_text}"
+            )
+
+            print(
+                f"   Deadline: "
+                f"{deadline_text}"
+            )
+
+            print(
+                f"   Article: "
+                f"{item['article_url']}"
+            )
+
+            if item["application_url"]:
+
+                print(
+                    f"   Application: "
+                    f"{item['application_url']}"
+                )
+
+    else:
+
+        print(
+            "No approved opportunities with valid generated "
+            "article pages are currently available."
         )
 
     print()
 
-    # --------------------------------------------------------
-    # Build section
-    # --------------------------------------------------------
+    # ========================================================
+    # Build automated section.
+    # ========================================================
 
-    section_html = build_homepage_section(
-        items
+    section_html = (
+        build_homepage_section(
+            items
+        )
     )
 
-    # --------------------------------------------------------
-    # Read homepage
-    # --------------------------------------------------------
+    # ========================================================
+    # Add CSS first.
+    #
+    # IMPORTANT:
+    # The section update must operate on the CSS-updated
+    # document, not on the original document.
+    #
+    # This fixes the original implementation's double-pass
+    # issue where the first update was created from the old
+    # HTML and CSS was then re-applied afterward.
+    # ========================================================
 
-    original_html = INDEX_FILE.read_text(
-        encoding="utf-8"
-    )
-
-    # --------------------------------------------------------
-    # Add CSS
-    # --------------------------------------------------------
-
-    html_with_css, css_added = ensure_css(
-        original_html
+    html_with_css, css_added = (
+        ensure_css(
+            original_html
+        )
     )
 
     if css_added:
 
         print(
-            "Added automatic opportunity card CSS."
+            "Automatic opportunity card CSS added."
         )
 
-    # --------------------------------------------------------
-    # Update homepage section
-    # --------------------------------------------------------
+    else:
 
-    updated_html, action = update_index_html(
-        section_html
-    )
+        print(
+            "Automatic opportunity card CSS already exists."
+        )
 
-    # IMPORTANT:
-    #
-    # update_index_html() was based on original_html.
-    # If CSS was added, run the section update against
-    # the CSS-updated document so we do not lose the CSS.
-    #
+    # ========================================================
+    # Update homepage section.
+    # ========================================================
 
-    if css_added:
-
-        updated_html, action = update_index_html(
+    updated_html, action = (
+        update_index_html(
+            html_with_css,
             section_html
         )
+    )
 
-        # Re-apply CSS if update_index_html used
-        # the original document.
-        updated_html, css_was_present = ensure_css(
+    # ========================================================
+    # Final safety validation.
+    # ========================================================
+
+    try:
+
+        validate_generated_block(
             updated_html
         )
 
-    # --------------------------------------------------------
-    # Avoid unnecessary write
-    # --------------------------------------------------------
+    except Exception as exc:
+
+        raise SystemExit(
+            "ERROR: Homepage safety validation failed. "
+            "No changes were written.\n"
+            f"Reason: {exc}"
+        )
+
+    # ========================================================
+    # Check marker counts again.
+    # ========================================================
+
+    updated_marker_counts = (
+        count_existing_automation_blocks(
+            updated_html
+        )
+    )
+
+    if (
+        updated_marker_counts["start"]
+        != 1
+        or
+        updated_marker_counts["end"]
+        != 1
+    ):
+
+        raise SystemExit(
+            "ERROR: Homepage marker safety check failed. "
+            "No changes were written."
+        )
+
+    # ========================================================
+    # Avoid unnecessary write.
+    # ========================================================
 
     if updated_html == original_html:
 
@@ -1628,18 +2981,70 @@ def main():
         )
 
         print(
+            f"Published cards: {len(items)}"
+        )
+
+        print(
             "OPPORTUNITYBRIDGE HOMEPAGE UPDATE COMPLETE"
         )
 
         return
 
-    # --------------------------------------------------------
-    # Write
-    # --------------------------------------------------------
+    # ========================================================
+    # Write homepage.
+    # ========================================================
 
-    INDEX_FILE.write_text(
-        updated_html,
-        encoding="utf-8"
+    try:
+
+        INDEX_FILE.write_text(
+            updated_html,
+            encoding="utf-8"
+        )
+
+    except Exception as exc:
+
+        raise SystemExit(
+            f"ERROR: Could not write index.html: {exc}"
+        )
+
+    # ========================================================
+    # Confirm written file.
+    # ========================================================
+
+    try:
+
+        written_html = INDEX_FILE.read_text(
+            encoding="utf-8"
+        )
+
+    except Exception as exc:
+
+        raise SystemExit(
+            "ERROR: Could not re-read index.html "
+            f"after writing: {exc}"
+        )
+
+    try:
+
+        validate_generated_block(
+            written_html
+        )
+
+    except Exception as exc:
+
+        raise SystemExit(
+            "ERROR: Post-write homepage validation failed. "
+            f"Reason: {exc}"
+        )
+
+    # ========================================================
+    # Final report.
+    # ========================================================
+
+    print()
+
+    print(
+        "------------------------------------------------------------"
     )
 
     print(
@@ -1647,11 +3052,41 @@ def main():
     )
 
     print(
-        f"Published cards: {len(items)}"
+        f"Approved records loaded: {len(approved)}"
     )
 
     print(
+        f"Published cards:          {len(items)}"
+    )
+
+    print(
+        f"CSS added:                "
+        f"{'YES' if css_added else 'NO'}"
+    )
+
+    print(
+        f"Start markers:            "
+        f"{updated_marker_counts['start']}"
+    )
+
+    print(
+        f"End markers:              "
+        f"{updated_marker_counts['end']}"
+    )
+
+    print(
+        "------------------------------------------------------------"
+    )
+
+    print()
+
+    print(
         "index.html updated successfully."
+    )
+
+    print(
+        "Only the managed OpportunityBridge automation block "
+        "was changed."
     )
 
     print(
@@ -1659,5 +3094,10 @@ def main():
     )
 
 
+# ============================================================
+# SCRIPT ENTRY POINT
+# ============================================================
+
 if __name__ == "__main__":
+
     main()
