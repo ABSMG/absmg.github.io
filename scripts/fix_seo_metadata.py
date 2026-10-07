@@ -333,37 +333,69 @@ def repair_file(path):
                 f'href="{expected}">'
             )
         )
-
     # =========================================================
     # 3. ROBOTS
     # =========================================================
 
-    parser3 = MetadataParser()
+    # Preserve intentional noindex pages.
+    intentional_noindex = (
+        path.name in {
+            "121-east-african-students-win-sh3-billion-global-scholarships-putting-education-at-heart-of-africas.html",
+            "tanzania-economic-update-2026-making-jobs-work-world-bank-group.html",
+            "tanzanian-billionaire-mo-dewji-pledges-to-invest-250-million-in-mozambique-and-create-20000-jobs-bil.html",
+            "tanzanias-billionaire-led-metl-plans-250-million-mozambique-expansion-targeting-20000-jobs-business.html",
+            "tanzanias-billionaire-led-metl-plans-250-million-mozambique-expansion-targeting-20000-jobs-cedirates.html",
+            "tanzania-and-world-bank-finalize-kazi-mpa-central-corridor-jobs-programme-to-boost-youth-employment.html",
+            "tanzania-to-host-2nd-doha-dialogue-to-boost-safe-overseas-job-opportunities-for-citizens-ippmediacot.html",
+            "tanzania-urged-to-turn-economic-growth-into-better-jobs-channel-africa.html",
+            "tanzania-must-risk-becoming-broke-to-create-20-million-jobs-uchumi360com.html",
+            "tanzania-netherlands-deepen-partnership-around-investment-jobs-skills-ippmediacotz.html",
+            "somalia-tanzania-discuss-youth-jobs-and-digital-government-cooperation-shabelle-media-network.html",
+            "tanzanias-economy-gains-momentum-but-better-jobs-hold-the-key-to-broader-national-prosperity-devdisc.html",
+            "tanzanias-kagera-coffee-nights-expose-a-deeper-jobs-and-skills-gap-pan-african-visions.html",
+            "teagtl-inspires-future-professionals-through-career-day-engagements-at-udsm-thecitizencotz.html",
+            "tra-doubles-jobs-for-disabled-workers-dailynewscotz.html",
+        }
+    )
 
-    try:
-        parser3.feed(content)
-    except Exception:
-        return False
+    duplicate_page = (
+        path.name in {
+            "cfas-canon-collins-rmtf-scholarships-for-postgraduate-study-fundsforngos.html",
+            "free-it-certifications-and-courses-to-elevate-your-career-coursera.html",
+            "scholarship-opportunities-for-students-graduates-researchers-fundsforngos.html",
+            "tom-queba-and-pegasys-scholarships-for-social-change-south-africa-fundsforngos.html",
+        }
+    )
 
-    if parser3.robots:
+    if intentional_noindex or duplicate_page:
 
         content, _ = replace_meta(
             content,
             "robots",
-            "index, follow",
+            "noindex, follow",
             "name"
         )
 
     else:
 
-        content = insert_into_head(
-            content,
-            (
-                '  <meta name="robots" '
-                'content="index, follow">'
-            )
-        )
+        if parser3.robots:
 
+            content, _ = replace_meta(
+                content,
+                "robots",
+                "index, follow",
+                "name"
+            )
+
+        else:
+
+            content = insert_into_head(
+                content,
+                (
+                    '  <meta name="robots" '
+                    'content="index, follow">'
+                )
+            )
     # =========================================================
     # 4. META DESCRIPTION
     # =========================================================
