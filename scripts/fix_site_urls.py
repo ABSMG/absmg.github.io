@@ -22,7 +22,12 @@ class SEOURLParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
 
         tag = tag.lower()
+
         attributes = dict(attrs)
+
+        # =====================================================
+        # CANONICAL
+        # =====================================================
 
         if tag == "link":
 
@@ -37,7 +42,12 @@ class SEOURLParser(HTMLParser):
             ).strip()
 
             if rel == "canonical":
+
                 self.canonical = href
+
+        # =====================================================
+        # OPEN GRAPH URL
+        # =====================================================
 
         elif tag == "meta":
 
@@ -52,6 +62,7 @@ class SEOURLParser(HTMLParser):
             ).strip()
 
             if property_name == "og:url":
+
                 self.og_url = content
 
 
@@ -60,9 +71,36 @@ def expected_url(path):
     relative = path.relative_to(ROOT).as_posix()
 
     if relative == "index.html":
+
         return BASE_URL + "/"
 
     return BASE_URL + "/" + relative
+
+
+def insert_into_head(content, markup):
+
+    """
+    Add SEO markup immediately before </head>.
+    """
+
+    import re
+
+    match = re.search(
+        r"</head\s*>",
+        content,
+        flags=re.IGNORECASE
+    )
+
+    if not match:
+
+        return content
+
+    return (
+        content[:match.start()]
+        + markup
+        + "\n"
+        + content[match.start():]
+    )
 
 
 def replace_canonical(content, expected):
@@ -70,14 +108,32 @@ def replace_canonical(content, expected):
     parser = SEOURLParser()
 
     try:
+
         parser.feed(content)
+
     except Exception:
+
         return content
 
     old = parser.canonical
 
+    # =========================================================
+    # Canonical does not exist
+    # =========================================================
+
     if not old:
-        return content
+
+        return insert_into_head(
+            content,
+            (
+                f'  <link rel="canonical" '
+                f'href="{expected}">'
+            )
+        )
+
+    # =========================================================
+    # Canonical already exists
+    # =========================================================
 
     return content.replace(
         old,
@@ -91,14 +147,32 @@ def replace_og_url(content, expected):
     parser = SEOURLParser()
 
     try:
+
         parser.feed(content)
+
     except Exception:
+
         return content
 
     old = parser.og_url
 
+    # =========================================================
+    # OG URL does not exist
+    # =========================================================
+
     if not old:
-        return content
+
+        return insert_into_head(
+            content,
+            (
+                f'  <meta property="og:url" '
+                f'content="{expected}">'
+            )
+        )
+
+    # =========================================================
+    # OG URL already exists
+    # =========================================================
 
     return content.replace(
         old,
@@ -109,11 +183,44 @@ def replace_og_url(content, expected):
 
 def replace_legacy_urls(content):
 
+    """
+    Remove all known legacy OpportunityBridge URLs.
+
+    The old project-path URL:
+        https://absmg.github.io/OpportunityBridge/
+
+    must never remain as a canonical, OG URL, internal URL,
+    or other absolute URL in the HTML.
+    """
+
     replacements = {
+
+        # =====================================================
+        # HTTPS legacy URL WITH trailing slash
+        # =====================================================
+
         "https://absmg.github.io/OpportunityBridge/":
             "https://absmg.github.io/",
 
+        # =====================================================
+        # HTTPS legacy URL WITHOUT trailing slash
+        # =====================================================
+
         "https://absmg.github.io/OpportunityBridge":
+            "https://absmg.github.io",
+
+        # =====================================================
+        # HTTP legacy URL WITH trailing slash
+        # =====================================================
+
+        "http://absmg.github.io/OpportunityBridge/":
+            "https://absmg.github.io/",
+
+        # =====================================================
+        # HTTP legacy URL WITHOUT trailing slash
+        # =====================================================
+
+        "http://absmg.github.io/OpportunityBridge":
             "https://absmg.github.io",
     }
 
@@ -131,8 +238,17 @@ def replace_legacy_urls(content):
 
 def process_file(path):
 
+    # =========================================================
+    # EXCLUDED FILES
+    # =========================================================
+
     if path.name in EXCLUDED:
+
         return False
+
+    # =========================================================
+    # READ FILE
+    # =========================================================
 
     try:
 
@@ -140,7 +256,10 @@ def process_file(path):
             encoding="utf-8"
         )
 
-    except UnicodeDecodeError:
+    except (
+        UnicodeDecodeError,
+        OSError
+    ):
 
         return False
 
@@ -148,44 +267,50 @@ def process_file(path):
 
     expected = expected_url(path)
 
-    # ---------------------------------------------------------
-    # 1. Remove legacy /OpportunityBridge/ URLs
-    # ---------------------------------------------------------
+    # =========================================================
+    # 1. REMOVE LEGACY /OpportunityBridge/ URLs
+    # =========================================================
 
     content = replace_legacy_urls(
         content
     )
 
-    # ---------------------------------------------------------
-    # 2. Repair canonical URL
-    # ---------------------------------------------------------
+    # =========================================================
+    # 2. REPAIR CANONICAL URL
+    # =========================================================
 
     content = replace_canonical(
         content,
         expected
     )
 
-    # ---------------------------------------------------------
-    # 3. Repair Open Graph URL
-    # ---------------------------------------------------------
+    # =========================================================
+    # 3. REPAIR OPEN GRAPH URL
+    # =========================================================
 
     content = replace_og_url(
         content,
         expected
     )
 
-    # ---------------------------------------------------------
-    # 4. Write only if something changed
-    # ---------------------------------------------------------
+    # =========================================================
+    # 4. WRITE ONLY IF SOMETHING CHANGED
+    # =========================================================
 
     if content == original:
 
         return False
 
-    path.write_text(
-        content,
-        encoding="utf-8"
-    )
+    try:
+
+        path.write_text(
+            content,
+            encoding="utf-8"
+        )
+
+    except OSError:
+
+        return False
 
     return True
 
@@ -193,12 +318,18 @@ def process_file(path):
 def main():
 
     print("=" * 70)
+
     print(
-        "OPPORTUNITYBRIDGE SITE URL REPAIR v2.0"
+        "OPPORTUNITYBRIDGE SITE URL REPAIR v3.0"
     )
+
     print("=" * 70)
 
     changed = []
+
+    # =========================================================
+    # PROCESS ROOT HTML FILES
+    # =========================================================
 
     for path in sorted(
         ROOT.glob("*.html")
@@ -212,9 +343,15 @@ def main():
 
     print()
 
+    # =========================================================
+    # REPORT UPDATED FILES
+    # =========================================================
+
     if changed:
 
-        print("Updated files:")
+        print(
+            "Updated files:"
+        )
 
         for filename in changed:
 
@@ -236,6 +373,10 @@ def main():
 
     print()
 
+    # =========================================================
+    # CANONICAL STRATEGY
+    # =========================================================
+
     print(
         "Canonical strategy:"
     )
@@ -246,6 +387,58 @@ def main():
 
     print(
         f"- Other pages: {BASE_URL}/filename.html"
+    )
+
+    print()
+
+    # =========================================================
+    # LEGACY URL STRATEGY
+    # =========================================================
+
+    print(
+        "Legacy URL cleanup:"
+    )
+
+    print(
+        "- HTTPS /OpportunityBridge/ removed"
+    )
+
+    print(
+        "- HTTPS /OpportunityBridge removed"
+    )
+
+    print(
+        "- HTTP /OpportunityBridge/ removed"
+    )
+
+    print(
+        "- HTTP /OpportunityBridge removed"
+    )
+
+    print()
+
+    # =========================================================
+    # SEO ELEMENTS
+    # =========================================================
+
+    print(
+        "SEO URL elements repaired:"
+    )
+
+    print(
+        "- Canonical URL"
+    )
+
+    print(
+        "- Open Graph og:url"
+    )
+
+    print(
+        "- Missing canonical URLs"
+    )
+
+    print(
+        "- Missing Open Graph URLs"
     )
 
     print()
