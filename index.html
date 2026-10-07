@@ -1,73 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>OpportunityBridge | Scholarships, Jobs, Internships & Online Courses</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-    content="OpportunityBridge helps students, graduates and job seekers discover scholarships, jobs, internships, fellowships, grants, remote jobs, online courses and global opportunities in Tanzania and around the world.">
+  <title>
+    OpportunityBridge | Scholarships, Jobs, Internships & Online Courses
+  </title>
 
-  <meta name="keywords"
-    content="OpportunityBridge, scholarships, jobs, internships, fellowships, grants, remote jobs, online courses, global opportunities, international scholarships, study abroad, student opportunities, digital skills, Tanzania scholarships, HESLB 2026/2027, HESLB student loans">
+  <meta
+    name="description"
+    content="OpportunityBridge helps students, graduates and job seekers discover scholarships, jobs, internships, fellowships, grants, remote jobs, online courses and verified opportunities worldwide.">
 
-  <meta name="author" content="Anord Boniphace">
-  <meta name="creator" content="Anord Boniphace">
-  <meta name="publisher" content="OpportunityBridge">
+  <meta
+    name="keywords"
+    content="OpportunityBridge, scholarships, jobs, internships, fellowships, grants, remote jobs, online courses, global opportunities, international scholarships, fully funded scholarships, study abroad, student opportunities, digital skills, graduate jobs, remote careers, HESLB 2026/2027">
 
-  <meta name="author-country" content="Tanzania">
-  <meta name="geo.region" content="TZ">
-  <meta name="geo.country" content="Tanzania">
+  <meta
+    name="author"
+    content="Anord Boniphace">
 
-  <meta name="robots"
+  <meta
+    name="creator"
+    content="Anord Boniphace">
+
+  <meta
+    name="publisher"
+    content="OpportunityBridge">
+
+  <meta
+    name="robots"
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <meta name="googlebot"
+  <meta
+    name="googlebot"
     content="index, follow, max-image-preview:large, max-snippet:-1">
 
-  <meta name="google-site-verification"
+  <meta
+    name="google-site-verification"
     content="sebJZeuuxXnG6XhRDonUX5V39yiUex4BX3UIDmz3mkA">
 
-  <meta name="google-adsense-account"
+  <meta
+    name="google-adsense-account"
     content="ca-pub-2004981151172844">
 
-  <meta name="theme-color" content="#0B3D91">
+  <meta
+    name="theme-color"
+    content="#0B3D91">
 
   <!-- =====================================================
        CANONICAL
   ====================================================== -->
 
-  <link rel="canonical"
+  <link
+    rel="canonical"
     href="https://absmg.github.io/">
 
   <!-- =====================================================
        GOOGLE FUNDING CHOICES
   ====================================================== -->
 
-  <script async
+  <script
+    async
     src="https://fundingchoicesmessages.google.com/i/pub-2004981151172844?ers=1">
   </script>
 
   <script>
     (function() {
+
       function signalGooglefcPresent() {
+
         if (!window.frames['googlefcPresent']) {
+
           if (document.body) {
-            const iframe = document.createElement('iframe');
+
+            const iframe =
+              document.createElement('iframe');
 
             iframe.style =
               'width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;display:none;';
 
-            iframe.name = 'googlefcPresent';
-            document.body.appendChild(iframe);
+            iframe.name =
+              'googlefcPresent';
+
+            document.body.appendChild(
+              iframe
+            );
+
           } else {
-            setTimeout(signalGooglefcPresent, 0);
+
+            setTimeout(
+              signalGooglefcPresent,
+              0
+            );
+
           }
+
         }
+
       }
 
       signalGooglefcPresent();
+
     })();
   </script>
 
@@ -98,7 +137,7 @@
 
   <meta
     property="og:description"
-    content="Discover scholarships, jobs, internships, fellowships, grants, online courses and global opportunities from Tanzania and around the world.">
+    content="Discover scholarships, jobs, internships, fellowships, grants, online courses and verified opportunities from trusted sources around the world.">
 
   <meta
     property="og:url"
@@ -205,38 +244,80 @@
   <style>
 
     /* =====================================================
-       GLOBAL
+       GLOBAL DESIGN SYSTEM
     ====================================================== */
 
     :root {
+
       --navy: #0b3d91;
+
+      --navy-dark: #082b68;
+
       --blue: #1769d1;
-      --gold: #f4c542;
+
+      --blue-light: #eaf2ff;
+
+      --gold: #d9a91a;
+
+      --gold-light: #fff8df;
+
       --dark: #172033;
+
       --muted: #64748b;
-      --light: #f6f8fc;
+
+      --light: #f7f9fc;
+
       --white: #ffffff;
-      --border: #e2e8f0;
+
+      --border: #dfe6ef;
+
       --footer: #071f49;
 
+      --glass:
+        rgba(255, 255, 255, 0.72);
+
+      --glass-strong:
+        rgba(255, 255, 255, 0.86);
+
+      --glass-border:
+        rgba(255, 255, 255, 0.82);
+
       --shadow:
-        0 4px 18px rgba(15, 23, 42, 0.07);
+        0 8px 28px rgba(15, 23, 42, 0.07);
 
       --shadow-hover:
-        0 10px 28px rgba(15, 23, 42, 0.11);
+        0 14px 34px rgba(15, 23, 42, 0.11);
+
+      --radius:
+        14px;
+
+      --max-width:
+        1100px;
+
     }
 
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+
+      box-sizing:
+        border-box;
+
+      margin:
+        0;
+
+      padding:
+        0;
+
     }
 
     html {
-      scroll-behavior: smooth;
+
+      scroll-behavior:
+        smooth;
+
     }
 
     body {
+
       font-family:
         Arial,
         Helvetica,
@@ -250,20 +331,124 @@
 
       line-height:
         1.7;
+
+      min-height:
+        100vh;
+
+      position:
+        relative;
+
+      overflow-x:
+        hidden;
+
+    }
+
+    /*
+      CSS-only background structure.
+      No external image is used.
+    */
+
+    body::before {
+
+      content:
+        "";
+
+      position:
+        fixed;
+
+      inset:
+        0;
+
+      z-index:
+        -2;
+
+      pointer-events:
+        none;
+
+      background:
+
+        radial-gradient(
+          circle at 8% 8%,
+          rgba(23, 105, 209, 0.08),
+          transparent 27%
+        ),
+
+        radial-gradient(
+          circle at 92% 18%,
+          rgba(217, 169, 26, 0.055),
+          transparent 24%
+        ),
+
+        linear-gradient(
+          180deg,
+          #f9fbff 0%,
+          #f7f9fc 48%,
+          #f4f7fb 100%
+        );
+
+    }
+
+    body::after {
+
+      content:
+        "";
+
+      position:
+        fixed;
+
+      inset:
+        0;
+
+      z-index:
+        -1;
+
+      pointer-events:
+        none;
+
+      opacity:
+        0.32;
+
+      background-image:
+
+        linear-gradient(
+          rgba(11, 61, 145, 0.025) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(11, 61, 145, 0.025) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        48px 48px;
+
     }
 
     a {
-      color: inherit;
-      text-decoration: none;
+
+      color:
+        inherit;
+
+      text-decoration:
+        none;
+
     }
 
     button,
     input {
-      font-family: inherit;
+
+      font-family:
+        inherit;
+
     }
 
     button {
-      cursor: pointer;
+
+      cursor:
+        pointer;
+
     }
 
     /* =====================================================
@@ -271,10 +456,18 @@
     ====================================================== */
 
     .skip-link {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 2000;
+
+      position:
+        fixed;
+
+      top:
+        10px;
+
+      left:
+        10px;
+
+      z-index:
+        2000;
 
       padding:
         10px 16px;
@@ -296,25 +489,31 @@
 
       transition:
         transform 0.2s ease;
+
     }
 
     .skip-link:focus {
+
       transform:
         translateY(0);
+
     }
 
     :focus-visible {
+
       outline:
-        3px solid var(--white);
+        3px solid var(--gold);
 
       outline-offset:
         3px;
 
       box-shadow:
-        0 0 0 6px var(--navy);
+        0 0 0 5px rgba(11, 61, 145, 0.28);
+
     }
 
     .visually-hidden {
+
       position:
         absolute !important;
 
@@ -341,6 +540,7 @@
 
       border:
         0;
+
     }
 
     /* =====================================================
@@ -348,6 +548,7 @@
     ====================================================== */
 
     .site-header {
+
       position:
         sticky;
 
@@ -358,21 +559,32 @@
         1000;
 
       background:
-        var(--navy);
+        rgba(7, 31, 73, 0.94);
 
       color:
         var(--white);
 
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
+
       box-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.14);
+        0 4px 20px rgba(7, 31, 73, 0.13);
+
+      backdrop-filter:
+        blur(14px);
+
+      -webkit-backdrop-filter:
+        blur(14px);
+
     }
 
     .header-container {
+
       width:
         min(1200px, 92%);
 
       min-height:
-        68px;
+        70px;
 
       margin:
         0 auto;
@@ -388,6 +600,7 @@
 
       gap:
         20px;
+
     }
 
     /* =====================================================
@@ -395,6 +608,7 @@
     ====================================================== */
 
     .logo {
+
       display:
         inline-flex;
 
@@ -418,9 +632,11 @@
 
       color:
         var(--white);
+
     }
 
     .logo-mark {
+
       width:
         42px;
 
@@ -440,19 +656,18 @@
         center;
 
       border-radius:
-        12px;
+        11px;
 
       overflow:
         hidden;
 
       background:
-        transparent;
+        rgba(255, 255, 255, 0.06);
 
-      box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.18);
     }
 
     .logo-mark img {
+
       width:
         42px;
 
@@ -464,16 +679,21 @@
 
       object-fit:
         contain;
+
     }
 
     .logo-text {
+
       color:
         var(--white);
+
     }
 
     .logo-text span {
+
       color:
-        var(--gold);
+        #f0c84a;
+
     }
 
     /* =====================================================
@@ -481,6 +701,7 @@
     ====================================================== */
 
     .main-nav {
+
       display:
         flex;
 
@@ -492,9 +713,11 @@
 
       gap:
         3px;
+
     }
 
     .main-nav a {
+
       display:
         inline-block;
 
@@ -502,10 +725,10 @@
         9px 10px;
 
       border-radius:
-        6px;
+        7px;
 
       color:
-        var(--white);
+        rgba(255, 255, 255, 0.94);
 
       font-size:
         14px;
@@ -516,22 +739,31 @@
       transition:
         background 0.2s ease,
         color 0.2s ease;
+
     }
 
     .main-nav a:hover {
+
       background:
-        rgba(255, 255, 255, 0.13);
+        rgba(255, 255, 255, 0.10);
+
+      color:
+        var(--white);
+
     }
 
     .main-nav .login-link {
+
       margin-left:
-        4px;
+        5px;
 
       border:
-        1px solid rgba(255, 255, 255, 0.75);
+        1px solid rgba(255, 255, 255, 0.55);
+
     }
 
     .main-nav .register-link {
+
       background:
         var(--gold);
 
@@ -540,34 +772,55 @@
 
       font-weight:
         700;
+
     }
 
     .main-nav .register-link:hover {
+
       background:
-        #ffd85c;
+        #edc13a;
+
+      color:
+        var(--navy-dark);
+
     }
 
     .menu-btn {
+
       display:
         none;
 
       border:
-        0;
+        1px solid rgba(255, 255, 255, 0.35);
 
       background:
-        transparent;
+        rgba(255, 255, 255, 0.06);
 
       color:
         var(--white);
 
       font-size:
-        27px;
+        14px;
+
+      font-weight:
+        700;
 
       line-height:
         1;
 
       padding:
+        10px 14px;
+
+      border-radius:
         7px;
+
+    }
+
+    .menu-btn:hover {
+
+      background:
+        rgba(255, 255, 255, 0.12);
+
     }
 
     /* =====================================================
@@ -575,66 +828,157 @@
     ====================================================== */
 
     .hero {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
       background:
-        linear-gradient(
-          135deg,
-          var(--navy),
-          var(--blue)
-        );
+        rgba(255, 255, 255, 0.52);
 
       color:
-        var(--white);
+        var(--dark);
 
       text-align:
         center;
 
+      border-bottom:
+        1px solid rgba(223, 230, 239, 0.85);
+
       padding:
-        78px 20px 82px;
+        82px 20px 88px;
+
+      backdrop-filter:
+        blur(4px);
+
+      -webkit-backdrop-filter:
+        blur(4px);
+
+    }
+
+    .hero::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        520px;
+
+      height:
+        520px;
+
+      top:
+        -300px;
+
+      left:
+        -160px;
+
+      border:
+        1px solid rgba(23, 105, 209, 0.10);
+
+      border-radius:
+        50%;
+
+      pointer-events:
+        none;
+
+    }
+
+    .hero::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        440px;
+
+      height:
+        440px;
+
+      right:
+        -180px;
+
+      bottom:
+        -280px;
+
+      border:
+        1px solid rgba(217, 169, 26, 0.12);
+
+      border-radius:
+        50%;
+
+      pointer-events:
+        none;
+
     }
 
     .hero-inner {
+
       width:
         min(900px, 94%);
 
       margin:
         0 auto;
+
+      position:
+        relative;
+
+      z-index:
+        1;
+
     }
 
     .hero h1 {
+
       max-width:
         850px;
 
       margin:
         0 auto 18px;
 
+      color:
+        var(--navy-dark);
+
       font-size:
-        clamp(34px, 5vw, 52px);
+        clamp(34px, 5vw, 54px);
 
       line-height:
-        1.13;
+        1.12;
 
       letter-spacing:
-        -1px;
+        -1.4px;
+
     }
 
     .hero p {
+
       max-width:
-        780px;
+        790px;
 
       margin:
-        0 auto 28px;
+        0 auto 30px;
 
       color:
-        #eaf2ff;
+        #526174;
 
       font-size:
         18px;
 
       line-height:
         1.75;
+
     }
 
     .hero-buttons {
+
       display:
         flex;
 
@@ -649,6 +993,7 @@
 
       flex-wrap:
         wrap;
+
     }
 
     /* =====================================================
@@ -656,6 +1001,7 @@
     ====================================================== */
 
     .btn {
+
       display:
         inline-block;
 
@@ -663,7 +1009,7 @@
         12px 21px;
 
       border-radius:
-        7px;
+        8px;
 
       font-size:
         15px;
@@ -674,44 +1020,62 @@
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
+
     }
 
     .btn:hover {
+
       transform:
         translateY(-1px);
+
     }
 
     .btn-primary {
-      background:
-        var(--gold);
 
-      color:
+      background:
         var(--navy);
-    }
-
-    .btn-primary:hover {
-      background:
-        #ffd85c;
-
-      box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.14);
-    }
-
-    .btn-secondary {
-      border:
-        1px solid rgba(255, 255, 255, 0.85);
 
       color:
         var(--white);
 
+      box-shadow:
+        0 5px 16px rgba(11, 61, 145, 0.18);
+
+    }
+
+    .btn-primary:hover {
+
       background:
-        transparent;
+        var(--blue);
+
+      box-shadow:
+        0 8px 20px rgba(11, 61, 145, 0.23);
+
+    }
+
+    .btn-secondary {
+
+      border:
+        1px solid #b9c7d8;
+
+      color:
+        var(--navy);
+
+      background:
+        rgba(255, 255, 255, 0.68);
+
     }
 
     .btn-secondary:hover {
+
       background:
-        rgba(255, 255, 255, 0.09);
+        rgba(255, 255, 255, 0.92);
+
+      border-color:
+        var(--navy);
+
     }
 
     /* =====================================================
@@ -719,27 +1083,32 @@
     ====================================================== */
 
     .container {
+
       width:
-        min(1100px, 92%);
+        min(var(--max-width), 92%);
 
       margin:
         0 auto;
 
       padding:
         58px 0;
+
     }
 
     .section-title {
+
       text-align:
         center;
 
       margin-bottom:
         32px;
+
     }
 
     .section-title h2 {
+
       color:
-        var(--navy);
+        var(--navy-dark);
 
       font-size:
         30px;
@@ -749,9 +1118,11 @@
 
       margin-bottom:
         8px;
+
     }
 
     .section-title p {
+
       max-width:
         700px;
 
@@ -760,6 +1131,7 @@
 
       color:
         var(--muted);
+
     }
 
     /* =====================================================
@@ -767,6 +1139,7 @@
     ====================================================== */
 
     .ad-container {
+
       width:
         min(1000px, 100%);
 
@@ -781,6 +1154,7 @@
 
       overflow:
         hidden;
+
     }
 
     /* =====================================================
@@ -788,14 +1162,17 @@
     ====================================================== */
 
     .search-section {
+
       padding-top:
-        48px;
+        50px;
 
       padding-bottom:
         20px;
+
     }
 
     .search-box {
+
       width:
         min(720px, 100%);
 
@@ -807,9 +1184,32 @@
 
       gap:
         10px;
+
+      padding:
+        8px;
+
+      border:
+        1px solid var(--glass-border);
+
+      border-radius:
+        13px;
+
+      background:
+        var(--glass);
+
+      box-shadow:
+        var(--shadow);
+
+      backdrop-filter:
+        blur(14px);
+
+      -webkit-backdrop-filter:
+        blur(14px);
+
     }
 
     .search-box input {
+
       flex:
         1;
 
@@ -820,13 +1220,13 @@
         13px 15px;
 
       border:
-        1px solid #cbd5e1;
+        1px solid transparent;
 
       border-radius:
-        7px;
+        8px;
 
       background:
-        var(--white);
+        rgba(255, 255, 255, 0.82);
 
       color:
         var(--dark);
@@ -836,22 +1236,28 @@
 
       outline:
         none;
+
     }
 
     .search-box input::placeholder {
+
       color:
         #94a3b8;
+
     }
 
     .search-box input:focus {
+
       border-color:
-        var(--blue);
+        rgba(23, 105, 209, 0.45);
 
       box-shadow:
-        0 0 0 3px rgba(23, 105, 209, 0.10);
+        0 0 0 3px rgba(23, 105, 209, 0.09);
+
     }
 
     .search-box button {
+
       padding:
         13px 22px;
 
@@ -859,7 +1265,7 @@
         0;
 
       border-radius:
-        7px;
+        8px;
 
       background:
         var(--navy);
@@ -872,11 +1278,14 @@
 
       transition:
         background 0.2s ease;
+
     }
 
     .search-box button:hover {
+
       background:
         var(--blue);
+
     }
 
     /* =====================================================
@@ -884,6 +1293,7 @@
     ====================================================== */
 
     .category-filters {
+
       width:
         min(1050px, 100%);
 
@@ -900,15 +1310,17 @@
         center;
 
       gap:
-        10px;
+        9px;
+
     }
 
     .filter-btn {
+
       border:
-        1px solid var(--border);
+        1px solid rgba(203, 213, 225, 0.9);
 
       background:
-        var(--white);
+        rgba(255, 255, 255, 0.66);
 
       color:
         var(--navy);
@@ -930,20 +1342,30 @@
         color 0.2s ease,
         border-color 0.2s ease,
         transform 0.2s ease;
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+
     }
 
     .filter-btn:hover {
+
       background:
-        #eef4ff;
+        rgba(255, 255, 255, 0.94);
 
       border-color:
         var(--blue);
 
       transform:
         translateY(-1px);
+
     }
 
     .filter-btn.active {
+
       background:
         var(--navy);
 
@@ -952,14 +1374,17 @@
 
       border-color:
         var(--navy);
+
     }
 
     .filter-btn.active:hover {
+
       background:
         var(--blue);
 
       border-color:
         var(--blue);
+
     }
 
     /* =====================================================
@@ -967,11 +1392,14 @@
     ====================================================== */
 
     .latest-section {
+
       padding-top:
         30px;
+
     }
 
     .latest-header {
+
       display:
         flex;
 
@@ -986,16 +1414,20 @@
 
       margin-bottom:
         24px;
+
     }
 
     .latest-header-text {
+
       flex:
         1;
+
     }
 
     .latest-header h2 {
+
       color:
-        var(--navy);
+        var(--navy-dark);
 
       font-size:
         30px;
@@ -1005,17 +1437,21 @@
 
       margin-bottom:
         7px;
+
     }
 
     .latest-header p {
+
       color:
         var(--muted);
 
       max-width:
         720px;
+
     }
 
     .latest-badge {
+
       display:
         inline-flex;
 
@@ -1032,7 +1468,7 @@
         999px;
 
       background:
-        #eef4ff;
+        rgba(234, 242, 255, 0.72);
 
       color:
         var(--navy);
@@ -1048,9 +1484,11 @@
 
       white-space:
         nowrap;
+
     }
 
     .latest-grid {
+
       display:
         grid;
 
@@ -1059,9 +1497,11 @@
 
       gap:
         22px;
+
     }
 
     .latest-opportunity-card {
+
       display:
         flex;
 
@@ -1072,13 +1512,13 @@
         285px;
 
       background:
-        var(--white);
+        var(--glass);
 
       border:
-        1px solid var(--border);
+        1px solid var(--glass-border);
 
       border-radius:
-        12px;
+        var(--radius);
 
       padding:
         24px;
@@ -1090,20 +1530,30 @@
         transform 0.2s ease,
         box-shadow 0.2s ease,
         border-color 0.2s ease;
+
+      backdrop-filter:
+        blur(13px);
+
+      -webkit-backdrop-filter:
+        blur(13px);
+
     }
 
     .latest-opportunity-card:hover {
+
       transform:
         translateY(-3px);
 
       border-color:
-        #cbd5e1;
+        rgba(23, 105, 209, 0.22);
 
       box-shadow:
         var(--shadow-hover);
+
     }
 
     .opportunity-label {
+
       display:
         inline-flex;
 
@@ -1123,7 +1573,7 @@
         999px;
 
       background:
-        #f8fafc;
+        rgba(248, 250, 252, 0.72);
 
       border:
         1px solid var(--border);
@@ -1142,11 +1592,13 @@
 
       letter-spacing:
         0.3px;
+
     }
 
     .latest-opportunity-card h3 {
+
       color:
-        var(--navy);
+        var(--navy-dark);
 
       font-size:
         19px;
@@ -1156,9 +1608,11 @@
 
       margin-bottom:
         10px;
+
     }
 
     .latest-opportunity-card p {
+
       color:
         var(--muted);
 
@@ -1170,9 +1624,11 @@
 
       margin-bottom:
         16px;
+
     }
 
     .opportunity-meta {
+
       display:
         flex;
 
@@ -1184,9 +1640,11 @@
 
       margin-bottom:
         17px;
+
     }
 
     .opportunity-meta span {
+
       display:
         inline-flex;
 
@@ -1197,7 +1655,7 @@
         5px 8px;
 
       background:
-        #f8fafc;
+        rgba(248, 250, 252, 0.70);
 
       border:
         1px solid var(--border);
@@ -1213,14 +1671,18 @@
 
       font-weight:
         600;
+
     }
 
     .latest-opportunity-card .card-link {
+
       margin-top:
         auto;
+
     }
 
     .latest-empty {
+
       grid-column:
         1 / -1;
 
@@ -1228,19 +1690,26 @@
         30px;
 
       background:
-        var(--white);
+        var(--glass);
 
       border:
         1px dashed var(--border);
 
       border-radius:
-        12px;
+        var(--radius);
 
       text-align:
         center;
 
       color:
         var(--muted);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
     }
 
     /* =====================================================
@@ -1248,6 +1717,7 @@
     ====================================================== */
 
     .cards {
+
       display:
         grid;
 
@@ -1256,9 +1726,11 @@
 
       gap:
         22px;
+
     }
 
     .card {
+
       display:
         flex;
 
@@ -1266,16 +1738,16 @@
         column;
 
       min-height:
-        245px;
+        235px;
 
       background:
-        var(--white);
+        var(--glass);
 
       border:
-        1px solid var(--border);
+        1px solid var(--glass-border);
 
       border-radius:
-        12px;
+        var(--radius);
 
       padding:
         26px;
@@ -1287,39 +1759,56 @@
         transform 0.2s ease,
         box-shadow 0.2s ease,
         border-color 0.2s ease;
+
+      backdrop-filter:
+        blur(13px);
+
+      -webkit-backdrop-filter:
+        blur(13px);
+
     }
 
     .card:hover {
+
       transform:
         translateY(-3px);
 
       border-color:
-        #cbd5e1;
+        rgba(23, 105, 209, 0.22);
 
       box-shadow:
         var(--shadow-hover);
+
     }
 
     .card h3 {
+
       color:
-        var(--navy);
+        var(--navy-dark);
 
       font-size:
         20px;
 
+      line-height:
+        1.35;
+
       margin-bottom:
         10px;
+
     }
 
     .card p {
+
       color:
         var(--muted);
 
       margin-bottom:
         18px;
+
     }
 
     .card-link {
+
       display:
         inline-block;
 
@@ -1331,37 +1820,25 @@
 
       font-weight:
         700;
+
     }
 
     .card-link:hover {
+
       color:
         var(--navy);
 
       text-decoration:
         underline;
+
     }
 
-    .card-icon {
-      width:
-        42px;
-
-      height:
-        4px;
-
-      margin-bottom:
-        19px;
-
-      border-radius:
-        4px;
-
-      background:
-        var(--gold);
-
-      font-size:
-        0;
-    }
+    /*
+      No decorative icons are used on the opportunity cards.
+    */
 
     .no-results {
+
       display:
         none;
 
@@ -1372,19 +1849,20 @@
         30px;
 
       background:
-        var(--white);
+        var(--glass);
 
       border:
         1px solid var(--border);
 
       border-radius:
-        10px;
+        var(--radius);
 
       text-align:
         center;
 
       color:
         var(--muted);
+
     }
 
     /* =====================================================
@@ -1392,17 +1870,26 @@
     ====================================================== */
 
     .about {
+
       background:
-        var(--white);
+        rgba(255, 255, 255, 0.58);
 
       border-top:
-        1px solid var(--border);
+        1px solid rgba(223, 230, 239, 0.82);
 
       border-bottom:
-        1px solid var(--border);
+        1px solid rgba(223, 230, 239, 0.82);
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+
     }
 
     .about-content {
+
       width:
         min(850px, 100%);
 
@@ -1411,19 +1898,24 @@
 
       text-align:
         center;
+
     }
 
     .about-content p {
+
       color:
         #475569;
 
       margin-bottom:
         15px;
+
     }
 
     .about-content p:last-child {
+
       margin-bottom:
         0;
+
     }
 
     /* =====================================================
@@ -1431,6 +1923,7 @@
     ====================================================== */
 
     .steps {
+
       display:
         grid;
 
@@ -1442,17 +1935,19 @@
 
       margin-top:
         28px;
+
     }
 
     .step {
+
       background:
-        var(--white);
+        var(--glass);
 
       border:
-        1px solid var(--border);
+        1px solid var(--glass-border);
 
       border-radius:
-        12px;
+        var(--radius);
 
       padding:
         28px 24px;
@@ -1462,9 +1957,17 @@
 
       box-shadow:
         var(--shadow);
+
+      backdrop-filter:
+        blur(13px);
+
+      -webkit-backdrop-filter:
+        blur(13px);
+
     }
 
     .step-number {
+
       width:
         44px;
 
@@ -1494,19 +1997,24 @@
 
       font-weight:
         700;
+
     }
 
     .step h3 {
+
       color:
         var(--navy);
 
       margin-bottom:
         8px;
+
     }
 
     .step p {
+
       color:
         var(--muted);
+
     }
 
     /* =====================================================
@@ -1514,28 +2022,39 @@
     ====================================================== */
 
     .popular-searches {
+
       background:
-        var(--white);
+        rgba(255, 255, 255, 0.58);
 
       border-top:
-        1px solid var(--border);
+        1px solid rgba(223, 230, 239, 0.82);
 
       border-bottom:
-        1px solid var(--border);
+        1px solid rgba(223, 230, 239, 0.82);
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+
     }
 
     .popular-searches-inner {
+
       width:
-        min(1100px, 92%);
+        min(var(--max-width), 92%);
 
       margin:
         0 auto;
 
       padding:
         48px 0;
+
     }
 
     .popular-searches h2 {
+
       color:
         var(--navy);
 
@@ -1544,17 +2063,21 @@
 
       margin-bottom:
         8px;
+
     }
 
     .popular-searches p {
+
       color:
         var(--muted);
 
       margin-bottom:
         20px;
+
     }
 
     .popular-links {
+
       display:
         flex;
 
@@ -1563,9 +2086,11 @@
 
       gap:
         10px;
+
     }
 
     .popular-links a {
+
       display:
         inline-block;
 
@@ -1579,7 +2104,7 @@
         7px;
 
       background:
-        var(--light);
+        rgba(255, 255, 255, 0.64);
 
       color:
         var(--blue);
@@ -1594,9 +2119,17 @@
         background 0.2s ease,
         color 0.2s ease,
         border-color 0.2s ease;
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+
     }
 
     .popular-links a:hover {
+
       background:
         var(--navy);
 
@@ -1605,6 +2138,7 @@
 
       border-color:
         var(--navy);
+
     }
 
     /* =====================================================
@@ -1612,6 +2146,13 @@
     ====================================================== */
 
     .cta {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
       background:
         var(--navy);
 
@@ -1622,18 +2163,59 @@
         center;
 
       padding:
-        58px 20px;
+        62px 20px;
+
+    }
+
+    .cta::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        420px;
+
+      height:
+        420px;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      border-radius:
+        50%;
+
+      top:
+        -300px;
+
+      right:
+        -120px;
+
+      pointer-events:
+        none;
+
     }
 
     .cta-inner {
+
       width:
         min(760px, 94%);
 
       margin:
         0 auto;
+
+      position:
+        relative;
+
+      z-index:
+        1;
+
     }
 
     .cta h2 {
+
       margin-bottom:
         12px;
 
@@ -1642,14 +2224,17 @@
 
       line-height:
         1.3;
+
     }
 
     .cta p {
+
       margin:
         0 auto 24px;
 
       color:
         #dbe8fb;
+
     }
 
     /* =====================================================
@@ -1657,17 +2242,20 @@
     ====================================================== */
 
     .related-opportunities {
+
       width:
-        min(1100px, 92%);
+        min(var(--max-width), 92%);
 
       margin:
         0 auto;
 
       padding:
         40px 0;
+
     }
 
     .related-opportunities h2 {
+
       color:
         var(--navy);
 
@@ -1676,9 +2264,11 @@
 
       font-size:
         25px;
+
     }
 
     .related-opportunities ul {
+
       list-style:
         none;
 
@@ -1690,9 +2280,11 @@
 
       gap:
         10px;
+
     }
 
     .related-opportunities li a {
+
       display:
         inline-block;
 
@@ -1706,7 +2298,7 @@
         7px;
 
       background:
-        var(--white);
+        rgba(255, 255, 255, 0.68);
 
       color:
         var(--blue);
@@ -1717,14 +2309,17 @@
       transition:
         background 0.2s ease,
         color 0.2s ease;
+
     }
 
     .related-opportunities li a:hover {
+
       background:
         var(--navy);
 
       color:
         var(--white);
+
     }
 
     /* =====================================================
@@ -1732,6 +2327,7 @@
     ====================================================== */
 
     footer {
+
       background:
         var(--footer);
 
@@ -1740,11 +2336,13 @@
 
       padding:
         48px 20px 24px;
+
     }
 
     .footer-container {
+
       width:
-        min(1100px, 92%);
+        min(var(--max-width), 92%);
 
       margin:
         0 auto;
@@ -1757,9 +2355,11 @@
 
       gap:
         38px;
+
     }
 
     footer h2 {
+
       margin-bottom:
         13px;
 
@@ -1768,42 +2368,54 @@
 
       font-size:
         21px;
+
     }
 
     footer p {
+
       max-width:
         430px;
 
       color:
         #cbd5e1;
+
     }
 
     footer ul {
+
       list-style:
         none;
+
     }
 
     footer li {
+
       margin-bottom:
         8px;
+
     }
 
     footer a {
+
       color:
         #cbd5e1;
 
       transition:
         color 0.2s ease;
+
     }
 
     footer a:hover {
+
       color:
         var(--gold);
+
     }
 
     .copyright {
+
       width:
-        min(1100px, 92%);
+        min(var(--max-width), 92%);
 
       margin:
         32px auto 0;
@@ -1822,7 +2434,258 @@
 
       font-size:
         13px;
+
     }
+
+    /* =====================================================
+       AUTOMATED OPPORTUNITIES
+    ====================================================== */
+
+    /* OPPORTUNITYBRIDGE AUTO OPPORTUNITIES CSS START */
+
+    .latest-opportunities {
+
+      padding-top:
+        34px;
+
+    }
+
+    .latest-opportunity-grid {
+
+      margin-top:
+        4px;
+
+    }
+
+    .latest-opportunity-card {
+
+      min-height:
+        310px;
+
+    }
+
+    .latest-opportunity-card .opportunity-meta {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      margin-bottom:
+        13px;
+
+    }
+
+    .latest-opportunity-card .opportunity-badge {
+
+      display:
+        inline-block;
+
+      padding:
+        5px 9px;
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(238, 244, 255, 0.78);
+
+      color:
+        var(--navy);
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+    }
+
+    .latest-opportunity-card .opportunity-location {
+
+      color:
+        var(--muted);
+
+      font-size:
+        12px;
+
+      font-weight:
+        600;
+
+    }
+
+    .latest-opportunity-card .opportunity-deadline,
+    .latest-opportunity-card .opportunity-source {
+
+      margin-bottom:
+        9px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+
+      line-height:
+        1.5;
+
+    }
+
+    .latest-opportunity-card .opportunity-deadline strong,
+    .latest-opportunity-card .opportunity-source strong {
+
+      color:
+        var(--dark);
+
+    }
+
+    .latest-opportunity-card
+    .opportunity-card-actions {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+      margin-top:
+        14px;
+
+    }
+
+    .latest-opportunity-card
+    .opportunity-apply-link {
+
+      display:
+        inline-block;
+
+      color:
+        var(--navy);
+
+      font-size:
+        13px;
+
+      font-weight:
+        700;
+
+      text-decoration:
+        none;
+
+    }
+
+    .latest-opportunity-card
+    .opportunity-apply-link:hover {
+
+      text-decoration:
+        underline;
+
+    }
+
+    .latest-opportunity-card
+    .opportunity-category-link {
+
+      display:
+        inline-block;
+
+      margin-top:
+        12px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        12px;
+
+      font-weight:
+        600;
+
+      text-decoration:
+        none;
+
+    }
+
+    .latest-opportunity-card
+    .opportunity-category-link:hover {
+
+      color:
+        var(--navy);
+
+      text-decoration:
+        underline;
+
+    }
+
+    .latest-empty-state {
+
+      grid-column:
+        1 / -1;
+
+      padding:
+        34px 26px;
+
+      background:
+        var(--glass);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      text-align:
+        center;
+
+      box-shadow:
+        var(--shadow);
+
+      backdrop-filter:
+        blur(13px);
+
+      -webkit-backdrop-filter:
+        blur(13px);
+
+    }
+
+    .latest-empty-state h3 {
+
+      color:
+        var(--navy);
+
+      margin-bottom:
+        8px;
+
+      font-size:
+        21px;
+
+    }
+
+    .latest-empty-state p {
+
+      max-width:
+        650px;
+
+      margin:
+        0 auto 15px;
+
+      color:
+        var(--muted);
+
+    }
+
+    /* OPPORTUNITYBRIDGE AUTO OPPORTUNITIES CSS END */
 
     /* =====================================================
        RESPONSIVE
@@ -1831,6 +2694,7 @@
     @media (max-width: 1050px) {
 
       .main-nav a {
+
         padding-left:
           8px;
 
@@ -1839,6 +2703,7 @@
 
         font-size:
           13px;
+
       }
 
     }
@@ -1847,18 +2712,24 @@
 
       .cards,
       .latest-grid {
+
         grid-template-columns:
           repeat(2, 1fr);
+
       }
 
       .steps {
+
         grid-template-columns:
           1fr;
+
       }
 
       .footer-container {
+
         grid-template-columns:
           1fr 1fr;
+
       }
 
     }
@@ -1866,16 +2737,21 @@
     @media (max-width: 760px) {
 
       .header-container {
+
         min-height:
           64px;
+
       }
 
       .menu-btn {
+
         display:
           block;
+
       }
 
       .main-nav {
+
         display:
           none;
 
@@ -1895,10 +2771,13 @@
           12px 18px 18px;
 
         background:
-          var(--navy);
+          rgba(7, 31, 73, 0.98);
+
+        border-top:
+          1px solid rgba(255, 255, 255, 0.08);
 
         box-shadow:
-          0 8px 18px rgba(0, 0, 0, 0.16);
+          0 8px 22px rgba(0, 0, 0, 0.16);
 
         flex-direction:
           column;
@@ -1908,14 +2787,24 @@
 
         gap:
           3px;
+
+        backdrop-filter:
+          blur(16px);
+
+        -webkit-backdrop-filter:
+          blur(16px);
+
       }
 
       .main-nav.active {
+
         display:
           flex;
+
       }
 
       .main-nav a {
+
         width:
           100%;
 
@@ -1927,42 +2816,55 @@
 
         font-size:
           14px;
+
       }
 
       .main-nav .login-link {
+
         margin-left:
           0;
 
         margin-top:
           4px;
+
       }
 
       .hero {
+
         padding:
-          60px 18px 65px;
+          64px 18px 68px;
+
       }
 
       .hero h1 {
+
         font-size:
           34px;
+
       }
 
       .hero p {
+
         font-size:
           16px;
+
       }
 
       .latest-header {
+
         align-items:
           flex-start;
 
         flex-direction:
           column;
+
       }
 
       .latest-badge {
+
         white-space:
           normal;
+
       }
 
     }
@@ -1970,11 +2872,14 @@
     @media (max-width: 600px) {
 
       .logo {
+
         font-size:
           20px;
+
       }
 
       .logo-mark {
+
         width:
           38px;
 
@@ -1983,17 +2888,21 @@
 
         flex-basis:
           38px;
+
       }
 
       .logo-mark img {
+
         width:
           38px;
 
         height:
           38px;
+
       }
 
       .container {
+
         width:
           min(92%, 1100px);
 
@@ -2002,73 +2911,101 @@
 
         padding-bottom:
           48px;
+
       }
 
       .section-title h2 {
+
         font-size:
           27px;
+
       }
 
       .cards,
       .latest-grid {
+
         grid-template-columns:
           1fr;
+
       }
 
       .card {
+
         min-height:
           auto;
+
       }
 
       .search-box {
+
         flex-direction:
           column;
+
+        padding:
+          7px;
+
       }
 
       .search-box button {
+
         width:
           100%;
+
       }
 
       .category-filters {
+
         gap:
           8px;
+
       }
 
       .filter-btn {
+
         font-size:
           13px;
 
         padding:
           8px 12px;
+
       }
 
       .footer-container {
+
         grid-template-columns:
           1fr;
 
         gap:
           28px;
+
       }
 
       .cta {
+
         padding:
           50px 18px;
+
       }
 
       .cta h2 {
+
         font-size:
           27px;
+
       }
 
       .related-opportunities {
+
         padding:
           32px 0;
+
       }
 
       .popular-searches-inner {
+
         padding:
           38px 0;
+
       }
 
     }
@@ -2076,141 +3013,30 @@
     @media (prefers-reduced-motion: reduce) {
 
       html {
+
         scroll-behavior:
           auto;
+
       }
 
       *,
       *::before,
       *::after {
+
         transition:
           none !important;
 
         animation:
           none !important;
+
       }
 
     }
 
-  
-
-/* OPPORTUNITYBRIDGE AUTO OPPORTUNITIES CSS START */
-
-    .latest-opportunities {
-      padding-top: 34px;
-    }
-
-    .latest-opportunity-grid {
-      margin-top: 4px;
-    }
-
-    .latest-opportunity-card {
-      min-height: 310px;
-    }
-
-    .latest-opportunity-card .opportunity-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 13px;
-    }
-
-    .latest-opportunity-card .opportunity-badge {
-      display: inline-block;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: #eef4ff;
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .latest-opportunity-card .opportunity-location {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .latest-opportunity-card .opportunity-deadline,
-    .latest-opportunity-card .opportunity-source {
-      margin-bottom: 9px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .latest-opportunity-card .opportunity-deadline strong,
-    .latest-opportunity-card .opportunity-source strong {
-      color: var(--dark);
-    }
-
-    .latest-opportunity-card
-    .opportunity-card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .latest-opportunity-card
-    .opportunity-apply-link {
-      display: inline-block;
-      color: var(--navy);
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .latest-opportunity-card
-    .opportunity-apply-link:hover {
-      text-decoration: underline;
-    }
-
-    .latest-opportunity-card
-    .opportunity-category-link {
-      display: inline-block;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .latest-opportunity-card
-    .opportunity-category-link:hover {
-      color: var(--navy);
-      text-decoration: underline;
-    }
-
-    .latest-empty-state {
-      grid-column: 1 / -1;
-      padding: 34px 26px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .latest-empty-state h3 {
-      color: var(--navy);
-      margin-bottom: 8px;
-      font-size: 21px;
-    }
-
-    .latest-empty-state p {
-      max-width: 650px;
-      margin: 0 auto 15px;
-      color: var(--muted);
-    }
-
-    /* OPPORTUNITYBRIDGE AUTO OPPORTUNITIES CSS END */
-
-</style>
+  </style>
 
 </head>
+
 
 <body>
 
@@ -2225,6 +3051,7 @@
     Skip to main content
 
   </a>
+
 
   <!-- =====================================================
        HEADER
@@ -2257,6 +3084,7 @@
 
       </a>
 
+
       <button
         type="button"
         class="menu-btn"
@@ -2266,9 +3094,10 @@
         aria-controls="mainNav"
         aria-expanded="false">
 
-        ☰
+        Menu
 
       </button>
+
 
       <nav
         id="mainNav"
@@ -2284,31 +3113,45 @@
         </a>
 
         <a href="scholarships.html">
+
           Scholarships
+
         </a>
 
         <a href="jobs.html">
+
           Jobs
+
         </a>
 
         <a href="internships.html">
+
           Internships
+
         </a>
 
         <a href="courses.html">
+
           Courses
+
         </a>
 
         <a href="opportunities.html">
+
           Opportunities
+
         </a>
 
         <a href="about.html">
+
           About
+
         </a>
 
         <a href="contact.html">
+
           Contact
+
         </a>
 
         <a
@@ -2333,11 +3176,13 @@
 
   </header>
 
+
   <!-- =====================================================
        MAIN
   ====================================================== -->
 
   <main id="main-content">
+
 
     <!-- =================================================
          HERO
@@ -2360,7 +3205,7 @@
 
           OpportunityBridge connects students, graduates and job seekers
           with scholarships, jobs, internships, fellowships, grants,
-          online courses and global opportunities from Tanzania and
+          online courses and verified opportunities from trusted sources
           around the world.
 
         </p>
@@ -2389,6 +3234,7 @@
 
     </section>
 
+
     <!-- =================================================
          ADSENSE 1
     ================================================== -->
@@ -2409,14 +3255,17 @@
         </ins>
 
         <script>
+
           (adsbygoogle =
             window.adsbygoogle || [])
             .push({});
+
         </script>
 
       </div>
 
     </div>
+
 
     <!-- =================================================
          SEARCH
@@ -2429,15 +3278,20 @@
       <div class="section-title">
 
         <h2 id="search-heading">
+
           Find Your Opportunity
+
         </h2>
 
         <p>
+
           Search scholarships, jobs, internships, fellowships,
-          grants, courses and other resources.
+          grants, courses and other resources from around the world.
+
         </p>
 
       </div>
+
 
       <form
         class="search-box"
@@ -2468,6 +3322,7 @@
         </button>
 
       </form>
+
 
       <!-- =================================================
            CATEGORY FILTERS
@@ -2617,16 +3472,22 @@
 
     </section>
 
+
     <!-- =================================================
          LATEST OPPORTUNITIES
-         
-         AUTOMATION MARKERS:
-         OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START
-         OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END
+
+         IMPORTANT:
+         The automation script owns the section inserted
+         between these markers.
+
+         Do NOT wrap these markers in another
+         #latest-opportunities section.
     ================================================== -->
 
+    <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START -->
+
     <section
-      class="container latest-section"
+      class="container latest-opportunities"
       id="latest-opportunities"
       aria-labelledby="latest-opportunities-heading">
 
@@ -2635,48 +3496,28 @@
         <div class="latest-header-text">
 
           <h2 id="latest-opportunities-heading">
+
             Latest Opportunities
+
           </h2>
 
           <p>
-            Explore newly published opportunities for students,
-            graduates and job seekers. New approved opportunities
-            can be added here automatically by OpportunityBridge.
+
+            Explore the latest verified opportunities
+            for students, graduates and job seekers.
+
           </p>
 
         </div>
 
         <span class="latest-badge">
+
           Updated regularly
+
         </span>
 
       </div>
 
-      <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_START -->
-
-<!-- =================================================
-         AUTOMATICALLY UPDATED OPPORTUNITIES
-         Generated: 2026-10-06 23:59 UTC
-         DO NOT EDIT BETWEEN AUTOMATION MARKERS
-    ================================================== -->
-
-    <section
-      class="container latest-opportunities"
-      id="latest-opportunities"
-      aria-labelledby="latest-opportunities-heading">
-
-      <div class="section-title">
-
-        <h2 id="latest-opportunities-heading">
-          Latest Opportunities
-        </h2>
-
-        <p>
-          Explore the latest approved opportunities
-          published on OpportunityBridge.
-        </p>
-
-      </div>
 
       <div
         class="cards latest-opportunity-grid"
@@ -2687,13 +3528,17 @@
           role="status">
 
           <h3>
+
             New opportunities are being checked
+
           </h3>
 
           <p>
+
             Please explore our opportunity categories
             while the latest verified opportunities are
             being prepared.
+
           </p>
 
           <a
@@ -2710,9 +3555,8 @@
 
     </section>
 
-<!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->
+    <!-- OPPORTUNITYBRIDGE_AUTO_OPPORTUNITIES_END -->
 
-    </section>
 
     <!-- =================================================
          EXPLORE OPPORTUNITIES
@@ -2725,19 +3569,25 @@
       <div class="section-title">
 
         <h2 id="opportunities-heading">
+
           Explore Opportunities
+
         </h2>
 
         <p>
+
           Find useful resources for education,
           careers and professional development.
+
         </p>
 
       </div>
 
+
       <div
         class="cards"
         id="opportunityCards">
+
 
         <!-- SCHOLARSHIPS -->
 
@@ -2745,18 +3595,18 @@
           class="card"
           data-category="scholarships">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Scholarships
+
           </h3>
 
           <p>
+
             Discover scholarships and study opportunities
-            in Tanzania and around the world.
+            from universities, organizations and institutions
+            around the world.
+
           </p>
 
           <a
@@ -2770,24 +3620,25 @@
 
         </article>
 
+
         <!-- JOBS -->
 
         <article
           class="card"
           data-category="jobs">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Jobs
+
           </h3>
 
           <p>
+
             Find job opportunities for graduates,
-            students and professionals.
+            students and professionals from different
+            industries and locations.
+
           </p>
 
           <a
@@ -2801,24 +3652,24 @@
 
         </article>
 
+
         <!-- REMOTE JOBS -->
 
         <article
           class="card"
           data-category="remote-jobs">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Remote Jobs
+
           </h3>
 
           <p>
+
             Explore remote and flexible career opportunities
             that can be accessed from different locations.
+
           </p>
 
           <a
@@ -2832,24 +3683,25 @@
 
         </article>
 
+
         <!-- INTERNSHIPS -->
 
         <article
           class="card"
           data-category="internships">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Internships
+
           </h3>
 
           <p>
+
             Find internships that can help you gain
-            practical knowledge and experience.
+            practical knowledge, experience and professional
+            skills.
+
           </p>
 
           <a
@@ -2863,24 +3715,24 @@
 
         </article>
 
+
         <!-- FELLOWSHIPS -->
 
         <article
           class="card"
           data-category="fellowships">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Fellowships
+
           </h3>
 
           <p>
+
             Discover fellowship programs for education,
             professional development, leadership and research.
+
           </p>
 
           <a
@@ -2894,24 +3746,25 @@
 
         </article>
 
+
         <!-- GRANTS -->
 
         <article
           class="card"
           data-category="grants">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Grants & Funding
+
           </h3>
 
           <p>
+
             Explore grants, funding opportunities and
-            programs supporting education and development.
+            programs supporting education, research,
+            innovation and development.
+
           </p>
 
           <a
@@ -2925,24 +3778,24 @@
 
         </article>
 
+
         <!-- ONLINE COURSES -->
 
         <article
           class="card"
           data-category="courses">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Online Courses
+
           </h3>
 
           <p>
+
             Learn useful skills through online courses
             and educational platforms.
+
           </p>
 
           <a
@@ -2956,24 +3809,24 @@
 
         </article>
 
+
         <!-- TRAINING -->
 
         <article
           class="card"
           data-category="training">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Training Programs
+
           </h3>
 
           <p>
+
             Find training programs designed to develop
             practical, professional and digital skills.
+
           </p>
 
           <a
@@ -2987,24 +3840,24 @@
 
         </article>
 
+
         <!-- COMPETITIONS -->
 
         <article
           class="card"
           data-category="competitions">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Competitions
+
           </h3>
 
           <p>
+
             Discover competitions, challenges and programs
             where students and young professionals can participate.
+
           </p>
 
           <a
@@ -3018,24 +3871,24 @@
 
         </article>
 
+
         <!-- RESEARCH -->
 
         <article
           class="card"
           data-category="research">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Research Opportunities
+
           </h3>
 
           <p>
+
             Explore research programs, academic opportunities
             and resources for researchers and students.
+
           </p>
 
           <a
@@ -3049,24 +3902,24 @@
 
         </article>
 
+
         <!-- STUDY ABROAD -->
 
         <article
           class="card"
           data-category="study-abroad">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Study Abroad
+
           </h3>
 
           <p>
+
             Find international study opportunities,
             scholarships and educational programs.
+
           </p>
 
           <a
@@ -3080,24 +3933,25 @@
 
         </article>
 
+
         <!-- DIGITAL SKILLS -->
 
         <article
           class="card"
           data-category="digital-skills">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Digital Skills
+
           </h3>
 
           <p>
+
             Improve your digital skills and learn
-            technologies that can support your future.
+            technologies that can support your education
+            and future career.
+
           </p>
 
           <a
@@ -3111,24 +3965,25 @@
 
         </article>
 
+
         <!-- GLOBAL OPPORTUNITIES -->
 
         <article
           class="card"
           data-category="opportunities">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             Global Opportunities
+
           </h3>
 
           <p>
+
             Explore international opportunities,
-            competitions and educational programs.
+            competitions, programs and educational
+            opportunities from trusted sources.
+
           </p>
 
           <a
@@ -3142,26 +3997,26 @@
 
         </article>
 
+
         <!-- HESLB -->
 
         <article
           class="card"
           data-category="heslb">
 
-          <div
-            class="card-icon"
-            aria-hidden="true">
-          </div>
-
           <h3>
+
             HESLB 2026/2027 Student Loans
+
           </h3>
 
           <p>
+
             Learn about HESLB student loans for 2026/2027,
             eligibility, requirements, required documents,
             OLAMS application steps and important updates
             for students in Tanzania.
+
           </p>
 
           <a
@@ -3174,6 +4029,7 @@
           </a>
 
         </article>
+
 
         <!-- NO RESULTS -->
 
@@ -3191,6 +4047,7 @@
       </div>
 
     </section>
+
 
     <!-- =================================================
          ADSENSE 2
@@ -3212,14 +4069,17 @@
         </ins>
 
         <script>
+
           (adsbygoogle =
             window.adsbygoogle || [])
             .push({});
+
         </script>
 
       </div>
 
     </div>
+
 
     <!-- =================================================
          ABOUT
@@ -3234,34 +4094,45 @@
         <div class="section-title">
 
           <h2 id="about-heading">
+
             About OpportunityBridge
+
           </h2>
 
         </div>
 
+
         <div class="about-content">
 
           <p>
-            OpportunityBridge is a digital platform created to make
-            useful opportunities easier to discover.
+
+            OpportunityBridge is a digital platform created
+            to make useful opportunities easier to discover.
+
           </p>
 
           <p>
+
             We bring together scholarships, jobs, internships,
-            fellowships, grants, online learning resources and
-            digital opportunities in one simple place.
+            fellowships, grants, online learning resources
+            and professional opportunities in one simple place.
+
           </p>
 
           <p>
-            Our goal is to help students, graduates and job seekers
-            discover opportunities that can support their education,
-            skills and careers.
+
+            Our goal is to help students, graduates and job
+            seekers discover opportunities that can support
+            their education, skills and careers.
+
           </p>
 
           <p>
-            Opportunities may come from Tanzania, Africa and
-            international organizations, universities, companies
-            and other reputable sources around the world.
+
+            Opportunities may come from universities,
+            organizations, companies, governments and other
+            reputable sources across different countries and regions.
+
           </p>
 
         </div>
@@ -3269,6 +4140,7 @@
       </div>
 
     </section>
+
 
     <!-- =================================================
          HOW IT WORKS
@@ -3281,16 +4153,22 @@
       <div class="section-title">
 
         <h2 id="how-heading">
+
           How It Works
+
         </h2>
 
         <p>
+
           Finding an opportunity is simple.
+
         </p>
 
       </div>
 
+
       <div class="steps">
+
 
         <!-- STEP 1 -->
 
@@ -3305,15 +4183,20 @@
           </div>
 
           <h3>
+
             Explore
+
           </h3>
 
           <p>
+
             Browse scholarships, jobs, internships,
             courses and other opportunities.
+
           </p>
 
         </article>
+
 
         <!-- STEP 2 -->
 
@@ -3328,15 +4211,20 @@
           </div>
 
           <h3>
+
             Choose
+
           </h3>
 
           <p>
+
             Read the available information and
             choose opportunities that match your goals.
+
           </p>
 
         </article>
+
 
         <!-- STEP 3 -->
 
@@ -3351,12 +4239,16 @@
           </div>
 
           <h3>
+
             Apply & Learn
+
           </h3>
 
           <p>
+
             Follow the official instructions and
             take the next step toward your goals.
+
           </p>
 
         </article>
@@ -3364,6 +4256,7 @@
       </div>
 
     </section>
+
 
     <!-- =================================================
          POPULAR SEARCHES
@@ -3376,54 +4269,79 @@
       <div class="popular-searches-inner">
 
         <h2 id="popular-searches-heading">
+
           Popular Opportunity Searches
+
         </h2>
 
         <p>
+
           Quickly explore some of the opportunity topics
           people commonly look for.
+
         </p>
+
 
         <div class="popular-links">
 
           <a href="scholarships.html">
+
             International Scholarships
+
           </a>
 
           <a href="scholarships.html">
+
             Fully Funded Scholarships
+
           </a>
 
           <a href="jobs.html">
+
             Jobs for Graduates
+
           </a>
 
           <a href="jobs.html">
+
             Remote Jobs
+
           </a>
 
           <a href="internships.html">
+
             Student Internships
+
           </a>
 
           <a href="opportunities.html">
+
             Fellowships
+
           </a>
 
           <a href="opportunities.html">
+
             Grants & Funding
+
           </a>
 
           <a href="courses.html">
+
             Free Online Courses
+
           </a>
 
           <a href="opportunities.html">
+
             Study Abroad
+
           </a>
 
           <a href="ai-skills.html">
+
             Digital Skills
+
           </a>
 
         </div>
@@ -3431,6 +4349,7 @@
       </div>
 
     </section>
+
 
     <!-- =================================================
          CTA
@@ -3443,12 +4362,16 @@
       <div class="cta-inner">
 
         <h2 id="cta-heading">
+
           Don't Miss Your Next Opportunity
+
         </h2>
 
         <p>
+
           Create your free OpportunityBridge account
           and keep exploring useful opportunities.
+
         </p>
 
         <a
@@ -3463,13 +4386,40 @@
 
     </section>
 
+
     <!-- =================================================
          RELATED OPPORTUNITIES
     ================================================== -->
 
-    
+    <section
+      class="related-opportunities"
+      aria-label="Related opportunities">
+
+      <h2>
+
+        Explore More Opportunities
+
+      </h2>
+
+      <ul>
+
+        <li>
+
+          <a href="digital-skills.html">
+
+            Digital Skills
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </section>
+
 
   </main>
+
 
   <!-- =====================================================
        FOOTER
@@ -3479,115 +4429,174 @@
 
     <div class="footer-container">
 
+
       <!-- FOOTER BRAND -->
 
       <div>
 
         <h2>
+
           OpportunityBridge
+
         </h2>
 
         <p>
+
           Global opportunities and digital resources
           for students, graduates and job seekers.
+
         </p>
 
       </div>
+
 
       <!-- EXPLORE -->
 
       <div>
 
         <h2>
+
           Explore
+
         </h2>
 
         <ul>
 
           <li>
+
             <a href="scholarships.html">
+
               Scholarships
+
             </a>
+
           </li>
 
           <li>
+
             <a href="jobs.html">
+
               Jobs
+
             </a>
+
           </li>
 
           <li>
+
             <a href="internships.html">
+
               Internships
+
             </a>
+
           </li>
 
           <li>
+
             <a href="courses.html">
+
               Online Courses
+
             </a>
+
           </li>
 
           <li>
+
             <a href="opportunities.html">
+
               Opportunities
+
             </a>
+
           </li>
 
           <li>
+
             <a href="article5.html">
+
               HESLB 2026/2027 Loan Guide
+
             </a>
+
           </li>
 
         </ul>
 
       </div>
+
 
       <!-- COMPANY -->
 
       <div>
 
         <h2>
+
           Company
+
         </h2>
 
         <ul>
 
           <li>
+
             <a href="about.html">
+
               About
+
             </a>
+
           </li>
 
           <li>
+
             <a href="contact.html">
+
               Contact
+
             </a>
+
           </li>
 
           <li>
+
             <a href="privacy.html">
+
               Privacy Policy
+
             </a>
+
           </li>
 
           <li>
+
             <a href="disclaimer.html">
+
               Disclaimer
+
             </a>
+
           </li>
 
           <li>
+
             <a href="login.html">
+
               Login
+
             </a>
+
           </li>
 
           <li>
+
             <a href="register.html">
+
               Register
+
             </a>
+
           </li>
 
         </ul>
@@ -3596,12 +4605,16 @@
 
     </div>
 
+
     <div class="copyright">
+
       © 2026 OpportunityBridge.
       All rights reserved.
+
     </div>
 
   </footer>
+
 
   <!-- =====================================================
        JAVASCRIPT
@@ -3616,23 +4629,35 @@
     function toggleMenu() {
 
       const nav =
-        document.getElementById("mainNav");
+        document.getElementById(
+          "mainNav"
+        );
 
       const menuButton =
-        document.getElementById("menuButton");
+        document.getElementById(
+          "menuButton"
+        );
 
       if (!nav || !menuButton) {
+
         return;
+
       }
 
-      nav.classList.toggle("active");
+      nav.classList.toggle(
+        "active"
+      );
 
       const isOpen =
-        nav.classList.contains("active");
+        nav.classList.contains(
+          "active"
+        );
 
       menuButton.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        isOpen
+          ? "true"
+          : "false"
       );
 
       menuButton.setAttribute(
@@ -3642,29 +4667,44 @@
           : "Open navigation menu"
       );
 
+      menuButton.textContent =
+        isOpen
+          ? "Close"
+          : "Menu";
+
     }
+
 
     /* =================================================
        SEARCH + CATEGORY FILTER
     ================================================== */
 
-    let activeCategory = "all";
+    let activeCategory =
+      "all";
+
 
     function normalizeText(value) {
 
-      return String(value || "")
+      return String(
+        value || ""
+      )
         .toLowerCase()
         .trim();
 
     }
 
+
     function searchCards() {
 
       const inputElement =
-        document.getElementById("searchInput");
+        document.getElementById(
+          "searchInput"
+        );
 
       if (!inputElement) {
+
         return;
+
       }
 
       const input =
@@ -3678,50 +4718,60 @@
         );
 
       const noResults =
-        document.getElementById("noResults");
+        document.getElementById(
+          "noResults"
+        );
 
-      let visibleCards = 0;
+      let visibleCards =
+        0;
 
-      cards.forEach(function(card) {
 
-        const text =
-          normalizeText(
-            card.textContent
-          );
+      cards.forEach(
+        function(card) {
 
-        const category =
-          normalizeText(
-            card.getAttribute(
-              "data-category"
-            )
-          );
+          const text =
+            normalizeText(
+              card.textContent
+            );
 
-        const matchesSearch =
-          input === "" ||
-          text.includes(input);
+          const category =
+            normalizeText(
+              card.getAttribute(
+                "data-category"
+              )
+            );
 
-        const matchesCategory =
-          activeCategory === "all" ||
-          category === activeCategory;
+          const matchesSearch =
+            input === "" ||
+            text.includes(
+              input
+            );
 
-        if (
-          matchesSearch &&
-          matchesCategory
-        ) {
+          const matchesCategory =
+            activeCategory === "all" ||
+            category === activeCategory;
 
-          card.style.display =
-            "";
 
-          visibleCards++;
+          if (
+            matchesSearch &&
+            matchesCategory
+          ) {
 
-        } else {
+            card.style.display =
+              "";
 
-          card.style.display =
-            "none";
+            visibleCards++;
+
+          } else {
+
+            card.style.display =
+              "none";
+
+          }
 
         }
+      );
 
-      });
 
       if (noResults) {
 
@@ -3734,6 +4784,7 @@
 
     }
 
+
     /* =================================================
        LIVE SEARCH
     ================================================== */
@@ -3742,6 +4793,7 @@
       document.getElementById(
         "searchInput"
       );
+
 
     if (searchInput) {
 
@@ -3752,6 +4804,7 @@
 
     }
 
+
     /* =================================================
        CATEGORY FILTERS
     ================================================== */
@@ -3760,6 +4813,7 @@
       document.querySelectorAll(
         ".filter-btn"
       );
+
 
     filterButtons.forEach(
       function(button) {
@@ -3778,14 +4832,17 @@
               }
             );
 
+
             this.classList.add(
               "active"
             );
+
 
             activeCategory =
               this.getAttribute(
                 "data-category"
               ) || "all";
+
 
             searchCards();
 
@@ -3795,10 +4852,12 @@
       }
     );
 
+
     /* =================================================
        URL SEARCH PARAMETER
-       
+
        Allows:
+
        index.html?q=scholarship
     ================================================== */
 
@@ -3811,6 +4870,7 @@
 
       const query =
         params.get("q");
+
 
       if (
         query &&
@@ -3825,6 +4885,7 @@
       }
 
     })();
+
 
     /* =================================================
        CLOSE MOBILE MENU AFTER LINK CLICK
@@ -3851,32 +4912,43 @@
                   "menuButton"
                 );
 
+
               if (
                 !nav ||
                 !menuButton
               ) {
+
                 return;
+
               }
+
 
               nav.classList.remove(
                 "active"
               );
+
 
               menuButton.setAttribute(
                 "aria-expanded",
                 "false"
               );
 
+
               menuButton.setAttribute(
                 "aria-label",
                 "Open navigation menu"
               );
+
+
+              menuButton.textContent =
+                "Menu";
 
             }
           );
 
         }
       );
+
 
     /* =================================================
        CLOSE MENU WHEN CLICKING OUTSIDE
@@ -3896,12 +4968,16 @@
             "menuButton"
           );
 
+
         if (
           !nav ||
           !menuButton
         ) {
+
           return;
+
         }
+
 
         if (
           window.innerWidth <= 760 &&
@@ -3914,20 +4990,27 @@
             "active"
           );
 
+
           menuButton.setAttribute(
             "aria-expanded",
             "false"
           );
+
 
           menuButton.setAttribute(
             "aria-label",
             "Open navigation menu"
           );
 
+
+          menuButton.textContent =
+            "Menu";
+
         }
 
       }
     );
+
 
     /* =================================================
        RESET MENU ON RESIZE
@@ -3947,12 +5030,16 @@
             "menuButton"
           );
 
+
         if (
           !nav ||
           !menuButton
         ) {
+
           return;
+
         }
+
 
         if (
           window.innerWidth > 760
@@ -3962,20 +5049,27 @@
             "active"
           );
 
+
           menuButton.setAttribute(
             "aria-expanded",
             "false"
           );
+
 
           menuButton.setAttribute(
             "aria-label",
             "Open navigation menu"
           );
 
+
+          menuButton.textContent =
+            "Menu";
+
         }
 
       }
     );
+
 
     /* =================================================
        INITIAL SEARCH STATE
@@ -3992,38 +5086,6 @@
 
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section
-    class="related-opportunities"
-    aria-label="Related opportunities"
->
-    <h2>Explore More Opportunities</h2>
-
-    <ul>
-        
-            <li>
-                <a href="digital-skills.html">
-                    Digital Skills
-                </a>
-            </li>
-            
-    </ul>
-</section>
-
 </body>
+
 </html>
