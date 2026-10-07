@@ -921,23 +921,28 @@ def article_file_contains_source(
 
     return False
 
-
 def get_article_url(item):
     """
-    Find the generated article URL.
+    Find the generated OpportunityBridge article URL safely.
 
-    Preferred:
-        article_url
-        article
-        article_path
-        article_filename
+    Priority:
+        1. Explicit article_url/article/article_path/article_filename
+           when the file exists.
+        2. Generated article files containing the approved source URL.
+        3. Only HTML files that clearly identify themselves as
+           OpportunityBridge generated articles.
 
-    If those are not available, use source/official/
-    application URLs to locate an existing generated
-    OpportunityBridge HTML article.
-
-    The article URL must point to a local root HTML file.
+    Important:
+        - Never use index.html or category/navigation pages as
+          opportunity article pages.
+        - Never return external URLs.
+        - Never invent an article URL.
     """
+
+    # ========================================================
+    # 1. Prefer an explicit article URL from the approved
+    #    opportunity record.
+    # ========================================================
 
     direct_url = first_value(
         item,
@@ -959,11 +964,17 @@ def get_article_url(item):
                 ROOT / direct_relative
             )
 
-            if article_path.exists():
+            if article_path.is_file():
 
                 return direct_relative
 
-    # Gather all possible source URLs.
+    # ========================================================
+    # 2. Gather possible source URLs.
+    #
+    #    These are the URLs that the generated article may
+    #    contain as its official source/application evidence.
+    # ========================================================
+
     source_candidates = [
 
         first_value(
@@ -979,6 +990,16 @@ def get_article_url(item):
         first_value(
             item,
             "application_url",
+        ),
+
+        first_value(
+            item,
+            "apply_url",
+        ),
+
+        first_value(
+            item,
+            "application_link",
         ),
 
         first_value(
@@ -1002,17 +1023,208 @@ def get_article_url(item):
 
         return ""
 
-    # Prefer generated article pages.
-    for html_file in ROOT.glob(
-        "*.html"
-    ):
+    # ========================================================
+    # 3. Define known non-article homepage/navigation files.
+    #
+    #    These must never be selected as opportunity articles.
+    # ========================================================
 
-        if article_file_contains_source(
-            html_file,
-            source_candidates
+    excluded_files = {
+        "index.html",
+        "about.html",
+        "contact.html",
+        "privacy.html",
+        "privacy-policy.html",
+        "disclaimer.html",
+        "login.html",
+        "register.html",
+        "dashboard.html",
+        "logout.html",
+        "forgot-password.html",
+        "reset-password.html",
+        "scholarships.html",
+        "jobs.html",
+        "internships.html",
+        "courses.html",
+        "opportunities.html",
+        "sitemap.html",
+    }
+
+    # ========================================================
+    # 4. Search root-level HTML files only.
+    #
+    #    Article generator currently creates root-level
+    #    article HTML files, so this preserves compatibility
+    #    while avoiding obvious navigation pages.
+    # ========================================================
+
+    candidate_files = []
+
+    for html_file in ROOT.glob("*.html"):
+
+        if not html_file.is_file():
+
+            continue
+
+        filename = html_file.name.lower()
+
+        if filename in excluded_files:
+
+            continue
+
+        candidate_files.append(
+            html_file
+        )
+
+    # ========================================================
+    # 5. Score candidate generated articles.
+    #
+    #    This prevents the first matching HTML file from being
+    #    selected when multiple files contain the same source
+    #    URL.
+    # ========================================================
+
+    candidates = []
+
+    normalized_sources = []
+
+    for source_url in source_candidates:
+
+        normalized_source = normalize_url(
+            source_url
+        )
+
+        if normalized_source:
+
+            normalized_sources.append(
+                normalized_source
+            )
+
+    for html_file in candidate_files:
+
+        try:
+
+            content = html_file.read_text(
+                encoding="utf-8",
+                errors="ignore"
+            )
+
+        except Exception:
+
+            continue
+
+        if not content:
+
+            continue
+
+        normalized_content = normalize_url(
+            content
+        )
+
+        # ----------------------------------------------------
+        # The article should contain at least one source URL.
+        # ----------------------------------------------------
+
+        matched_sources = 0
+
+        for source_url in normalized_sources:
+
+            if source_url in normalized_content:
+
+                matched_sources += 1
+
+        if matched_sources == 0:
+
+            continue
+
+        # ----------------------------------------------------
+        # Strong signals that this is a generated article.
+        # ----------------------------------------------------
+
+        score = 0
+
+        if AUTO_ARTICLE_MARKER in content:
+
+            score += 100
+
+        if "OpportunityBridge" in content:
+
+            score += 20
+
+        # Generated article metadata.
+        lowered_content = content.lower()
+
+        if (
+            'property="og:type"'
+            in lowered_content
+            and "article"
+            in lowered_content
         ):
 
-            return html_file.name
+            score += 10
+
+        if (
+            'rel="canonical"'
+            in lowered_content
+            and BASE_URL.lower()
+            in lowered_content
+        ):
+
+            score += 5
+
+        # Article semantic structure.
+        if "<article" in lowered_content:
+
+            score += 5
+
+        if "<h1" in lowered_content:
+
+            score += 3
+
+        # Number of matching source URLs.
+        score += min(
+            matched_sources * 5,
+            20
+        )
+
+        candidates.append(
+            (
+                score,
+                html_file
+            )
+        )
+
+    # ========================================================
+    # 6. Select the strongest generated article candidate.
+    # ========================================================
+
+    if candidates:
+
+        candidates.sort(
+            key=lambda candidate: (
+                candidate[0],
+                candidate[1].name.lower(),
+            ),
+            reverse=True,
+        )
+
+        best_score, best_file = candidates[0]
+
+        # Require a meaningful article signal.
+        #
+        # The source URL alone is not enough to turn an
+        # arbitrary HTML page into an article.
+        if best_score >= 20:
+
+            return best_file.name
+
+    # ========================================================
+    # 7. No safe article found.
+    #
+    #    Returning an empty string causes the homepage updater
+    #    to skip the opportunity rather than create a broken
+    #    homepage link.
+    # ========================================================
 
     return ""
 
