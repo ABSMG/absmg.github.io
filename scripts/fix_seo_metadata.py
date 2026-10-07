@@ -46,7 +46,9 @@ class MetadataParser(HTMLParser):
 
         # TITLE
         if tag == "title":
+
             self.in_title = True
+
             return
 
         # META
@@ -68,18 +70,23 @@ class MetadataParser(HTMLParser):
             ).strip()
 
             if name == "description":
+
                 self.description = content
 
             elif name == "robots":
+
                 self.robots = content
 
             elif property_name == "og:title":
+
                 self.og_title = content
 
             elif property_name == "og:description":
+
                 self.og_description = content
 
             elif property_name == "og:url":
+
                 self.og_url = content
 
         # CANONICAL
@@ -96,16 +103,19 @@ class MetadataParser(HTMLParser):
             ).strip()
 
             if rel == "canonical":
+
                 self.canonical = href
 
     def handle_endtag(self, tag):
 
         if tag.lower() == "title":
+
             self.in_title = False
 
     def handle_data(self, data):
 
         if self.in_title:
+
             self.title += data
 
 
@@ -114,6 +124,7 @@ def expected_url(path):
     relative = path.relative_to(ROOT).as_posix()
 
     if relative == "index.html":
+
         return BASE_URL + "/"
 
     return BASE_URL + "/" + relative
@@ -128,6 +139,7 @@ def insert_into_head(content, markup):
     )
 
     if not match:
+
         return content
 
     return (
@@ -152,12 +164,15 @@ def make_description(parser):
     title = clean_text(parser.title)
 
     if title:
+
         description = (
             f"{title}. "
             "Discover scholarships, jobs, internships, "
             "courses and digital opportunities on OpportunityBridge."
         )
+
     else:
+
         description = (
             "Discover scholarships, jobs, internships, "
             "online courses and digital opportunities on OpportunityBridge."
@@ -236,7 +251,12 @@ def replace_canonical(content, expected):
 
 def repair_file(path):
 
+    # =========================================================
+    # EXCLUDED FILES
+    # =========================================================
+
     if path.name in EXCLUDED:
+
         return False
 
     try:
@@ -253,6 +273,10 @@ def repair_file(path):
         return False
 
     original = content
+
+    # =========================================================
+    # PARSE ORIGINAL HTML
+    # =========================================================
 
     parser = MetadataParser()
 
@@ -313,8 +337,11 @@ def repair_file(path):
     parser2 = MetadataParser()
 
     try:
+
         parser2.feed(content)
+
     except Exception:
+
         return False
 
     if parser2.canonical:
@@ -333,69 +360,106 @@ def repair_file(path):
                 f'href="{expected}">'
             )
         )
+
     # =========================================================
     # 3. ROBOTS
     # =========================================================
 
-    # Preserve intentional noindex pages.
+    # Pages ambazo intentionally hazitakiwi ku-indexiwa.
     intentional_noindex = (
         path.name in {
             "121-east-african-students-win-sh3-billion-global-scholarships-putting-education-at-heart-of-africas.html",
+
             "tanzania-economic-update-2026-making-jobs-work-world-bank-group.html",
-            "tanzanian-billionaire-mo-dewji-pledges-to-invest-250-million-in-mozambique-and-create-20000-jobs-bil.html",
+
+            "tanzanian-billionaire-mo-dewji-pledges-to-invest-250-million-to-mozambique-and-create-20000-jobs-bil.html",
+
             "tanzanias-billionaire-led-metl-plans-250-million-mozambique-expansion-targeting-20000-jobs-business.html",
+
             "tanzanias-billionaire-led-metl-plans-250-million-mozambique-expansion-targeting-20000-jobs-cedirates.html",
+
             "tanzania-and-world-bank-finalize-kazi-mpa-central-corridor-jobs-programme-to-boost-youth-employment.html",
+
             "tanzania-to-host-2nd-doha-dialogue-to-boost-safe-overseas-job-opportunities-for-citizens-ippmediacot.html",
+
             "tanzania-urged-to-turn-economic-growth-into-better-jobs-channel-africa.html",
+
             "tanzania-must-risk-becoming-broke-to-create-20-million-jobs-uchumi360com.html",
+
             "tanzania-netherlands-deepen-partnership-around-investment-jobs-skills-ippmediacotz.html",
+
             "somalia-tanzania-discuss-youth-jobs-and-digital-government-cooperation-shabelle-media-network.html",
+
             "tanzanias-economy-gains-momentum-but-better-jobs-hold-the-key-to-broader-national-prosperity-devdisc.html",
+
             "tanzanias-kagera-coffee-nights-expose-a-deeper-jobs-and-skills-gap-pan-african-visions.html",
+
             "teagtl-inspires-future-professionals-through-career-day-engagements-at-udsm-thecitizencotz.html",
+
             "tra-doubles-jobs-for-disabled-workers-dailynewscotz.html",
         }
     )
 
+    # Pages ambazo ni duplicates za content nyingine.
     duplicate_page = (
         path.name in {
             "cfas-canon-collins-rmtf-scholarships-for-postgraduate-study-fundsforngos.html",
+
             "free-it-certifications-and-courses-to-elevate-your-career-coursera.html",
+
             "scholarship-opportunities-for-students-graduates-researchers-fundsforngos.html",
+
             "tom-queba-and-pegasys-scholarships-for-social-change-south-africa-fundsforngos.html",
         }
     )
 
+    # =========================================================
+    # DETERMINE CORRECT ROBOTS VALUE
+    # =========================================================
+
     if intentional_noindex or duplicate_page:
+
+        desired_robots = "noindex, follow"
+
+    else:
+
+        desired_robots = "index, follow"
+
+    # =========================================================
+    # APPLY ROBOTS
+    # =========================================================
+
+    # Re-parse current content so that metadata added/changed
+    # above is correctly detected.
+    parser3 = MetadataParser()
+
+    try:
+
+        parser3.feed(content)
+
+    except Exception:
+
+        return False
+
+    if parser3.robots:
 
         content, _ = replace_meta(
             content,
             "robots",
-            "noindex, follow",
+            desired_robots,
             "name"
         )
 
     else:
 
-        if parser3.robots:
-
-            content, _ = replace_meta(
-                content,
-                "robots",
-                "index, follow",
-                "name"
+        content = insert_into_head(
+            content,
+            (
+                f'  <meta name="robots" '
+                f'content="{desired_robots}">'
             )
+        )
 
-        else:
-
-            content = insert_into_head(
-                content,
-                (
-                    '  <meta name="robots" '
-                    'content="index, follow">'
-                )
-            )
     # =========================================================
     # 4. META DESCRIPTION
     # =========================================================
@@ -403,8 +467,11 @@ def repair_file(path):
     parser4 = MetadataParser()
 
     try:
+
         parser4.feed(content)
+
     except Exception:
+
         return False
 
     if parser4.description:
@@ -515,10 +582,16 @@ def repair_file(path):
 
         return False
 
-    path.write_text(
-        content,
-        encoding="utf-8"
-    )
+    try:
+
+        path.write_text(
+            content,
+            encoding="utf-8"
+        )
+
+    except OSError:
+
+        return False
 
     return True
 
@@ -535,6 +608,10 @@ def main():
 
     changed = []
 
+    # =========================================================
+    # PROCESS ALL ROOT HTML FILES
+    # =========================================================
+
     for path in sorted(
         ROOT.glob("*.html")
     ):
@@ -546,6 +623,10 @@ def main():
             )
 
     print()
+
+    # =========================================================
+    # REPORT UPDATED FILES
+    # =========================================================
 
     if changed:
 
