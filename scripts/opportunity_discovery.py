@@ -17,44 +17,301 @@ OUTPUT = ROOT / "data" / "discovered_opportunities.json"
 # ============================================================
 # GOOGLE NEWS FEEDS
 # ============================================================
+#
+# OpportunityBridge is a GLOBAL opportunities platform.
+#
+# These feeds intentionally avoid Tanzania-only or
+# Africa-only discovery rules.
+#
+# The goal is to discover opportunities from:
+#
+# - Worldwide scholarships
+# - International student opportunities
+# - Fellowships
+# - Grants
+# - Global internships
+# - Remote and worldwide jobs
+# - Global career opportunities
+# - Free online courses
+# - International training programs
+# - Study abroad opportunities
+#
+# Google News RSS may return publishers from different
+# countries depending on the query and available news.
+#
+# The "gl=US" setting is only used as the Google News
+# language/edition configuration and does NOT mean that
+# OpportunityBridge is limited to the United States.
+# ============================================================
 
 FEEDS = {
-    "Google News - Scholarships":
-        "https://news.google.com/rss/search?q=scholarships+Africa+students&hl=en&gl=US&ceid=US:en",
+    "Google News - Global Scholarships":
+        "https://news.google.com/rss/search?q=scholarships+fully+funded+international+students&hl=en&gl=US&ceid=US:en",
 
-    "Google News - Jobs Tanzania":
-        "https://news.google.com/rss/search?q=jobs+Tanzania&hl=en&gl=US&ceid=US:en",
+    "Google News - International Scholarships":
+        "https://news.google.com/rss/search?q=international+student+scholarships+worldwide&hl=en&gl=US&ceid=US:en",
 
-    "Google News - Internships Africa":
-        "https://news.google.com/rss/search?q=internships+Africa+students&hl=en&gl=US&ceid=US:en",
+    "Google News - Global Fellowships and Grants":
+        "https://news.google.com/rss/search?q=fellowships+grants+international+students+worldwide&hl=en&gl=US&ceid=US:en",
 
-    "Google News - Free Courses":
-        "https://news.google.com/rss/search?q=free+online+courses+students&hl=en&gl=US&ceid=US:en",
+    "Google News - Global Internships":
+        "https://news.google.com/rss/search?q=international+internships+students+worldwide&hl=en&gl=US&ceid=US:en",
+
+    "Google News - Remote Jobs":
+        "https://news.google.com/rss/search?q=remote+jobs+worldwide+careers&hl=en&gl=US&ceid=US:en",
+
+    "Google News - Global Jobs":
+        "https://news.google.com/rss/search?q=jobs+careers+international+worldwide&hl=en&gl=US&ceid=US:en",
+
+    "Google News - Free Online Courses":
+        "https://news.google.com/rss/search?q=free+online+courses+students+worldwide&hl=en&gl=US&ceid=US:en",
+
+    "Google News - Online Training":
+        "https://news.google.com/rss/search?q=free+online+training+certificates+students&hl=en&gl=US&ceid=US:en",
+
+    "Google News - Study Abroad":
+        "https://news.google.com/rss/search?q=study+abroad+international+students+opportunities&hl=en&gl=US&ceid=US:en",
+
+    "Google News - International Student Opportunities":
+        "https://news.google.com/rss/search?q=international+students+opportunities+education+careers&hl=en&gl=US&ceid=US:en",
 }
 
 
 # ============================================================
 # DISCOVERY KEYWORDS
 # ============================================================
+#
+# These keywords are intentionally GLOBAL.
+#
+# Do not add country-specific terms here unless the platform
+# later introduces a separate regional discovery system.
+#
+# The discovery system should be able to find opportunities
+# relevant to users in:
+#
+# - Africa
+# - Europe
+# - North America
+# - South America
+# - Asia
+# - Middle East
+# - Oceania
+# - and other regions worldwide
+#
+# Country-specific opportunities can still be discovered
+# naturally from the article title/description.
+# ============================================================
 
 KEYWORDS = [
+    # --------------------------------------------------------
+    # SCHOLARSHIPS
+    # --------------------------------------------------------
+
     "scholarship",
     "scholarships",
     "fully funded",
+    "fully-funded",
+    "funded scholarship",
+    "funded scholarships",
+    "tuition scholarship",
+    "tuition scholarships",
+    "merit scholarship",
+    "merit scholarships",
+    "academic scholarship",
+    "academic scholarships",
+
+    # --------------------------------------------------------
+    # FELLOWSHIPS
+    # --------------------------------------------------------
+
     "fellowship",
+    "fellowships",
+    "funded fellowship",
+    "funded fellowships",
+    "research fellowship",
+    "research fellowships",
+
+    # --------------------------------------------------------
+    # GRANTS
+    # --------------------------------------------------------
+
     "grant",
+    "grants",
+    "student grant",
+    "student grants",
+    "education grant",
+    "education grants",
+    "research grant",
+    "research grants",
+
+    # --------------------------------------------------------
+    # INTERNSHIPS
+    # --------------------------------------------------------
+
     "internship",
     "internships",
+    "student internship",
+    "student internships",
+    "paid internship",
+    "paid internships",
+    "summer internship",
+    "summer internships",
+    "international internship",
+    "international internships",
+
+    # --------------------------------------------------------
+    # JOBS
+    # --------------------------------------------------------
+
     "job",
     "jobs",
     "career",
+    "careers",
+    "employment",
+    "graduate jobs",
+    "graduate careers",
+    "student jobs",
+    "entry level jobs",
+    "entry-level jobs",
+    "early career",
+
+    # --------------------------------------------------------
+    # REMOTE WORK
+    # --------------------------------------------------------
+
+    "remote job",
+    "remote jobs",
+    "remote work",
+    "work from home",
+    "work-from-home",
+    "worldwide remote",
+    "remote career",
+    "remote careers",
+
+    # --------------------------------------------------------
+    # COURSES
+    # --------------------------------------------------------
+
     "course",
     "courses",
+    "online course",
+    "online courses",
+    "free course",
+    "free courses",
+    "free online course",
+    "free online courses",
+
+    # --------------------------------------------------------
+    # TRAINING
+    # --------------------------------------------------------
+
     "training",
+    "online training",
+    "free training",
+    "professional training",
+    "career training",
+    "skills training",
+
+    # --------------------------------------------------------
+    # CERTIFICATIONS
+    # --------------------------------------------------------
+
+    "certificate",
+    "certificates",
+    "certification",
+    "certifications",
+    "free certificate",
+    "free certificates",
+    "free certification",
+    "free certifications",
+
+    # --------------------------------------------------------
+    # EDUCATION
+    # --------------------------------------------------------
+
     "students",
-    "africa",
-    "tanzania",
+    "student opportunity",
+    "student opportunities",
+    "education opportunity",
+    "education opportunities",
+    "higher education",
+    "university opportunity",
+    "university opportunities",
+
+    # --------------------------------------------------------
+    # INTERNATIONAL EDUCATION
+    # --------------------------------------------------------
+
     "international students",
+    "international student",
+    "international education",
+    "study abroad",
+    "study abroad scholarships",
+    "study abroad opportunities",
+    "global education",
+    "global scholarship",
+
+    # --------------------------------------------------------
+    # GLOBAL / INTERNATIONAL
+    # --------------------------------------------------------
+
+    "international",
+    "worldwide",
+    "global",
+    "international opportunity",
+    "international opportunities",
+    "global opportunity",
+    "global opportunities",
+
+    # --------------------------------------------------------
+    # UNDERGRADUATE
+    # --------------------------------------------------------
+
+    "undergraduate",
+    "undergraduate scholarship",
+    "undergraduate scholarships",
+    "bachelor scholarship",
+    "bachelor scholarships",
+
+    # --------------------------------------------------------
+    # GRADUATE / POSTGRADUATE
+    # --------------------------------------------------------
+
+    "graduate scholarship",
+    "graduate scholarships",
+    "postgraduate scholarship",
+    "postgraduate scholarships",
+    "masters scholarship",
+    "master's scholarship",
+    "phd scholarship",
+    "doctoral scholarship",
+
+    # --------------------------------------------------------
+    # CAREER DEVELOPMENT
+    # --------------------------------------------------------
+
+    "career development",
+    "career opportunities",
+    "career program",
+    "career programmes",
+    "career program",
+    "professional development",
+    "professional opportunities",
+
+    # --------------------------------------------------------
+    # DIGITAL / TECHNOLOGY SKILLS
+    # --------------------------------------------------------
+
+    "digital skills",
+    "technology training",
+    "tech training",
+    "coding course",
+    "coding courses",
+    "programming course",
+    "programming courses",
+    "data science course",
+    "artificial intelligence course",
+    "ai course",
 ]
 
 
@@ -72,7 +329,7 @@ MAX_DISCOVERIES = 300
 
 USER_AGENT = (
     "OpportunityBridge Opportunity Discovery Bot/2.0 "
-    "(+https://absmg.github.io/OpportunityBridge/)"
+    "(+https://absmg.github.io/)"
 )
 
 
@@ -1122,14 +1379,22 @@ def main():
 
     print("=" * 60)
     print(
-        "OPPORTUNITYBRIDGE DISCOVERY SYSTEM"
+        "OPPORTUNITYBRIDGE GLOBAL DISCOVERY SYSTEM"
     )
     print("=" * 60)
 
     print("")
     print(
-        "Discovery mode: Google News RSS "
+        "Discovery mode: Global Google News RSS "
         "with article URL resolution"
+    )
+
+    print(
+        "Geographic targeting: GLOBAL"
+    )
+
+    print(
+        "Regional targeting: NONE"
     )
 
     print(
@@ -1304,6 +1569,12 @@ def main():
         "feed_count":
             len(FEEDS),
 
+        "geographic_scope":
+            "global",
+
+        "regional_restriction":
+            None,
+
         "url_resolution": {
             "resolved_articles":
                 resolved_count,
@@ -1350,6 +1621,10 @@ def main():
     print("\n" + "=" * 60)
 
     print(
+        "GLOBAL DISCOVERY COMPLETED"
+    )
+
+    print(
         f"Saved {len(saved_items)} discoveries."
     )
 
@@ -1378,6 +1653,10 @@ def main():
     print(
         f"URL resolution failures: "
         f"{resolution_failures}"
+    )
+
+    print(
+        "Geographic scope: GLOBAL"
     )
 
     print(
