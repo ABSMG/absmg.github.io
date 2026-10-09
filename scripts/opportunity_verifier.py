@@ -3407,7 +3407,9 @@ def calculate_opportunity_score(
     # Application URL
     # --------------------------------------------------------
 
-    if application_url:        score += 8
+    if application_url:
+
+        score += 8
 
         reasons.append(
             "application link detected"
