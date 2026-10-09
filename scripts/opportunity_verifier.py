@@ -639,26 +639,143 @@ def get_domain(url):
 
 def is_valid_url(url):
     """
-    Validate HTTP/HTTPS URLs.
+    Validate a well-formed HTTP/HTTPS URL without credentials.
     """
+    value = clean_text(url)
+
+    if not value or re.search(r"\s", value):
+        return False
 
     try:
+        parsed = urlsplit(value)
 
-        parsed = urlparse(
-            clean_text(url)
-        )
+        if parsed.scheme.lower() not in ("http", "https"):
+            return False
 
-        return (
-            parsed.scheme in (
-                "http",
-                "https",
-            )
-            and bool(parsed.netloc)
-        )
+        if not parsed.netloc or not parsed.hostname:
+            return False
 
-    except Exception:
+        if parsed.username is not None or parsed.password is not None:
+            return False
 
+        # Accessing .port raises ValueError for malformed ports.
+        port = parsed.port
+
+        if port is not None and not (1 <= port <= 65535):
+            return False
+
+        hostname = parsed.hostname.rstrip(".").lower()
+
+        if not hostname:
+            return False
+
+        if any(character.isspace() for character in hostname):
+            return False
+
+        if hostname in {
+            "localhost",
+            "localhost.localdomain",
+        }:
+            return False
+
+        return True
+
+    except (TypeError, ValueError, UnicodeError):
         return False
+
+
+def is_public_http_url(url):
+    """
+    Reject destinations that do not resolve exclusively to
+    globally routable public IP addresses.
+    """
+    if not is_valid_url(url):
+        return False
+
+    try:
+        parsed = urlsplit(url)
+        hostname = parsed.hostname
+
+        if not hostname:
+            return False
+
+        port = parsed.port or (
+            443 if parsed.scheme.lower() == "https" else 80
+        )
+
+        # Validate IP addresses supplied directly in the URL.
+        try:
+            address = ipaddress.ip_address(hostname)
+            return address.is_global
+        except ValueError:
+            pass
+
+        # Reject local and single-label hostnames.
+        if "." not in hostname or hostname.endswith(".local"):
+            return False
+
+        records = socket.getaddrinfo(
+            hostname,
+            port,
+            type=socket.SOCK_STREAM,
+        )
+
+        addresses = {
+            record[4][0]
+            for record in records
+            if record and len(record) > 4 and record[4]
+        }
+
+        if not addresses:
+            return False
+
+        for raw_address in addresses:
+            try:
+                address = ipaddress.ip_address(raw_address)
+            except ValueError:
+                return False
+
+            if not address.is_global:
+                return False
+
+        return True
+
+    except (TypeError, ValueError, OSError):
+        return False
+
+
+class SafeRedirectHandler(HTTPRedirectHandler):
+    """
+    Validate redirect destinations before following them.
+    """
+
+    def redirect_request(
+        self,
+        req,
+        fp,
+        code,
+        msg,
+        headers,
+        newurl,
+    ):
+        target_url = urljoin(
+            req.full_url,
+            newurl,
+        )
+
+        if not is_public_http_url(target_url):
+            raise URLError(
+                "Redirect target is not a valid public HTTP/HTTPS URL."
+            )
+
+        return super().redirect_request(
+            req,
+            fp,
+            code,
+            msg,
+            headers,
+            target_url,
+        )
 
 
 def normalize_url(url):
@@ -1676,24 +1793,10 @@ def count_occurrences(
 
 def fetch_page(url):
     """
-    Check whether the source page is reachable.
+    Fetch and analyze an HTTP/HTTPS page.
 
-    Returns:
-        {
-            "reachable": bool,
-            "status_code": int or None,
-            "final_url": str,
-            "content_type": str,
-            "title": str,
-            "description": str,
-            "canonical": str,
-            "h1": str,
-            "content": str,
-            "text": str,
-            "links": list,
-            "word_count": int,
-            "error": str or None
-        }
+    Validate the initial URL and redirect destinations.
+    Limit the response size and retain the existing result schema.
     """
 
     result = {
@@ -1713,6 +1816,12 @@ def fetch_page(url):
     }
 
     try:
+        if not is_public_http_url(url):
+            result["error"] = (
+                "Rejected invalid URL or destination that does not "
+                "resolve exclusively to public IP addresses."
+            )
+            return result
 
         request = Request(
             url,
@@ -1726,42 +1835,65 @@ def fetch_page(url):
                     "text/html,application/xhtml+xml,"
                     "application/xml;q=0.9,*/*;q=0.8"
                 ),
-                "Accept-Language": (
-                    "en-US,en;q=0.9"
-                ),
+                "Accept-Language": "en-US,en;q=0.9",
             },
         )
 
-        with urlopen(
+        opener = build_opener(
+            SafeRedirectHandler
+        )
+
+        with opener.open(
             request,
             timeout=TIMEOUT,
         ) as response:
 
             status_code = response.getcode()
-
             final_url = response.geturl()
 
-            content_type = (
-                response.headers.get(
-                    "Content-Type",
-                    "",
-                )
+            content_type = response.headers.get(
+                "Content-Type",
+                "",
             )
+
+            if not is_public_http_url(final_url):
+                result["status_code"] = status_code
+                result["final_url"] = final_url
+                result["content_type"] = content_type
+                result["error"] = (
+                    "Rejected final URL because it is not a valid "
+                    "public HTTP/HTTPS destination."
+                )
+                return result
+
+            media_type = (
+                content_type
+                .split(";", 1)[0]
+                .strip()
+                .lower()
+            )
+
+            if media_type and media_type not in {
+                "text/html",
+                "application/xhtml+xml",
+            } and not media_type.endswith("+html"):
+
+                result["status_code"] = status_code
+                result["final_url"] = final_url
+                result["content_type"] = content_type
+                result["error"] = (
+                    "Unsupported content type; expected an HTML page."
+                )
+                return result
 
             raw = response.read(
                 MAX_PAGE_BYTES
             )
 
-            try:
-
-                content = raw.decode(
-                    "utf-8",
-                    errors="ignore",
-                )
-
-            except Exception:
-
-                content = ""
+            content = raw.decode(
+                "utf-8",
+                errors="replace",
+            )
 
             title = extract_title(
                 content
@@ -1787,58 +1919,43 @@ def fetch_page(url):
             links = extract_links(
                 content,
                 final_url,
-            )            )
-
-            result.update(
-                {
-                    "reachable": (
-                        200
-                        <= status_code
-                        < 400
-                    ),
-                    "status_code": status_code,
-                    "final_url": final_url,
-                    "content_type": content_type,
-                    "title": title,
-                    "description": description,
-                    "canonical": canonical,
-                    "h1": h1,
-                    "content": content,
-                    "text": text,
-                    "links": links,
-                    "word_count": count_words(
-                        text
-                    ),
-                }
             )
 
+            result.update({
+                "reachable": (
+                    200 <= status_code < 400
+                ),
+                "status_code": status_code,
+                "final_url": final_url,
+                "content_type": content_type,
+                "title": title,
+                "description": description,
+                "canonical": canonical,
+                "h1": h1,
+                "content": content,
+                "text": text,
+                "links": links,
+                "word_count": count_words(
+                    text
+                ),
+            })
+
     except HTTPError as error:
-
-        result[
-            "status_code"
-        ] = error.code
-
-        result[
-            "error"
-        ] = f"HTTP {error.code}"
+        result["status_code"] = error.code
+        result["error"] = f"HTTP {error.code}"
 
     except (
         URLError,
         socket.timeout,
+        TimeoutError,
+        OSError,
     ) as error:
-
-        result[
-            "error"
-        ] = str(error)
+        result["error"] = str(error)
 
     except Exception as error:
-
-        result[
-            "error"
-        ] = str(error)
+        result["error"] = str(error)
 
     return result
-
 
 # ============================================================
 # KEYWORD / RELEVANCE CHECKS
@@ -4186,7 +4303,11 @@ def determine_verification(item):
     current_is_homepage = is_homepage_url(
         current_page_url
     )
-
+    # A homepage is not sufficient evidence of an actual opportunity.
+    homepage_without_specific_page = bool(
+        page.get("reachable")
+        and current_is_homepage
+    )
     if page.get("reachable") and current_is_homepage:
         try:
             candidate_url = find_more_specific_link(
@@ -4248,7 +4369,7 @@ def determine_verification(item):
                 result["source_url_resolution_method"] = (
                     "specific_opportunity_link"
                 )
-
+                homepage_without_specific_page = False
             elif not current_text:
                 result["verification_error"] = (
                     "The specific opportunity candidate was not "
