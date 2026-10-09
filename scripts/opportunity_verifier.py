@@ -2207,7 +2207,9 @@ def find_application_url(
 
         if not href:
 
-            continue        absolute = urljoin(
+            continue
+
+        absolute = urljoin(
             base_url,
             href,
         )
