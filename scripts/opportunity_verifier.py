@@ -1607,7 +1607,9 @@ def detect_location(text):
 
             elif country == "united kingdom":
 
-                display = "United Kingdom"            elif country == "new zealand":
+                display = "United Kingdom"
+
+            elif country == "new zealand":
 
                 display = "New Zealand"
 
