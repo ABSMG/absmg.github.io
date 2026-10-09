@@ -591,17 +591,18 @@ REGIONS = [
 # ============================================================
 
 def clean_text(value):
-    """
-    Normalize whitespace and safely convert values to text.
-    """    if value is None:
+"""
+Normalize whitespace and safely convert values to text.
+"""
 
-        return ""
+if value is None:
+    return ""
 
-    return re.sub(
-        r"\s+",
-        " ",
-        str(value)
-    ).strip()
+return re.sub(
+    r"\s+",
+    " ",
+    str(value)
+).strip()
 
 
 def clean_lower(value):
@@ -2501,7 +2502,9 @@ def choose_candidate_source_url(
 
         return non_homepage[0]["url"]
 
-    # If everything is homepage-like, use the first URL.    return candidates[0]["url"]
+    If everything is homepage-like, use the first URL.
+
+return candidates[0]["url"]
 
 
 def find_more_specific_link(
