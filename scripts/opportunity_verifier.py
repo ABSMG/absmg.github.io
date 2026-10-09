@@ -1293,7 +1293,7 @@ def extract_date_candidates(text):
         r"\b\d{4}[/-]\d{1,2}[/-]\d{1,2}\b",
 
         r"\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|"
-        r"Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|"
+  r"Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|"
         r"Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|"
         r"Nov(?:ember)?|Dec(?:ember)?)"
         r"\s+\d{1,2},?\s+\d{4}\b",
@@ -1307,7 +1307,9 @@ def extract_date_candidates(text):
             pattern,
             text,
             flags=re.IGNORECASE,
-        )        for match in matches:
+        )
+
+        for match in matches:
 
             value = clean_text(
                 match
@@ -1322,7 +1324,7 @@ def extract_date_candidates(text):
                     value
                 )
 
-    return results[:15]
+    return results[:15]  
 
 
 def extract_deadline(text):
