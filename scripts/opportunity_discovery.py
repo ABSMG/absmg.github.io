@@ -579,22 +579,19 @@ def choose_best_url(
     Select the best URL for verification.
 
     Priority:
+    1. Resolved publisher article URL.
+    2. Publisher URL as a fallback when resolution fails.
+    3. Google News URL only when no publisher URL is available.
 
-    1. Resolved article URL
-    2. Google News URL as fallback
-
-    Publisher homepage is deliberately NOT used as the
-    primary source URL because that was one of the causes
-    of verification failures.
+    Google News URLs remain preserved separately in news_url.
     """
 
     candidates = [
         resolved_url,
-        google_news_url,
         publisher_url,
     ]
 
-    # Prefer resolved non-Google article URLs.
+    # Prefer a resolved, specific publisher article URL.
     for candidate in candidates:
 
         normalized = normalize_url(
@@ -618,31 +615,32 @@ def choose_best_url(
 
         return normalized
 
-    # If the resolved URL is a homepage but is the only
-    # usable publisher URL, keep it as a secondary fallback.
+    # When article resolution fails, retain the publisher URL.
+    # The verification stage can inspect its links for the
+    # matching article instead of treating Google News as
+    # the primary source.
     if is_http_url(
-        resolved_url
+        publisher_url
     ):
 
-        return normalize_url(
-            resolved_url
+        normalized_publisher_url = normalize_url(
+            publisher_url
         )
 
-    # Google News is still better than losing the discovery.
+        if not is_google_news_url(
+            normalized_publisher_url
+        ):
+
+            return normalized_publisher_url
+
+    # Final fallback: retain the Google News URL if no
+    # usable publisher URL is available.
     if is_http_url(
         google_news_url
     ):
 
         return normalize_url(
             google_news_url
-        )
-
-    if is_http_url(
-        publisher_url
-    ):
-
-        return normalize_url(
-            publisher_url
         )
 
     return ""
