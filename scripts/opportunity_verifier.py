@@ -4917,7 +4917,23 @@ def determine_verification(item):
             "likely_news_or_general_content",
         }
     ):
-       result["verification_level"] = "review"
+       result["source_verified"] = True
+
+        result["needs_human_review"] = False
+
+        result["verification_reason"] = (
+            "The fetched source page contains sufficient "
+            "opportunity evidence for automatic verification."
+        )
+
+    elif (
+        relevant
+        or classification in {
+            "possible_opportunity",
+            "likely_news_or_general_content",
+        }
+    ):
+        result["verification_level"] = "review"
 
         # A possible opportunity is not a verified source.
         result["source_verified"] = False
@@ -4928,7 +4944,7 @@ def determine_verification(item):
                 "The page may describe an opportunity, but "
                 "the available evidence is insufficient for "
                 "automatic verification."
-            ) 
+            )
 
         elif classification == "likely_news_or_general_content":
             result["verification_reason"] = (
