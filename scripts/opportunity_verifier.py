@@ -1,15 +1,14 @@
 import json
 import re
 import socket
+import ipaddress
 from pathlib import Path
-from urllib.parse import urlparse, urljoin, urlunparse
-from urllib.request import Request, urlopen
+from urllib.parse import urlparse, urljoin, urlunparse, urlsplit
+from urllib.request import Request, urlopen, HTTPRedirectHandler, build_opener
 from urllib.error import HTTPError, URLError
 from datetime import datetime, timezone
 
-import ipaddress
-from urllib.parse import urlsplit
-from urllib.request import HTTPRedirectHandler, build_opener
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 INPUT_FILE = BASE_DIR / "data" / "discovered_opportunities.json"
@@ -296,9 +295,7 @@ TRUSTED_DOMAIN_CONTAINS = [
 # ============================================================
 
 CATEGORY_KEYWORDS = {
-    "scholarships": [
-        "scholarship",
-        "scholarships",
+    "scholarships": [        "scholarships",
         "fully funded scholarship",
         "funded scholarship",
         "tuition scholarship",
@@ -596,9 +593,7 @@ REGIONS = [
 def clean_text(value):
     """
     Normalize whitespace and safely convert values to text.
-    """
-
-    if value is None:
+    """    if value is None:
 
         return ""
 
@@ -897,9 +892,7 @@ def extract_title(html):
         flags=re.IGNORECASE | re.DOTALL,
     )
 
-    if not title_match:
-
-        return ""
+    if not title_match:        return ""
 
     return clean_text(
         strip_html(
@@ -1196,9 +1189,7 @@ def extract_date_candidates(text):
             pattern,
             text,
             flags=re.IGNORECASE,
-        )
-
-        for match in matches:
+        )        for match in matches:
 
             value = clean_text(
                 match
@@ -1496,9 +1487,7 @@ def detect_location(text):
 
             elif country == "united kingdom":
 
-                display = "United Kingdom"
-
-            elif country == "new zealand":
+                display = "United Kingdom"            elif country == "new zealand":
 
                 display = "New Zealand"
 
@@ -1798,7 +1787,7 @@ def fetch_page(url):
             links = extract_links(
                 content,
                 final_url,
-            )
+            )            )
 
             result.update(
                 {
@@ -2096,9 +2085,7 @@ def find_application_url(
 
         if not href:
 
-            continue
-
-        absolute = urljoin(
+            continue        absolute = urljoin(
             base_url,
             href,
         )
@@ -2397,8 +2384,7 @@ def choose_candidate_source_url(
 
         return non_homepage[0]["url"]
 
-    # If everything is homepage-like, use the first URL.
-    return candidates[0]["url"]
+    # If everything is homepage-like, use the first URL.    return candidates[0]["url"]
 
 
 def find_more_specific_link(
@@ -2697,8 +2683,7 @@ def has_direct_funding_evidence(
         "fully-funded",
         "funded by",
         "tuition waiver",
-        "tuition fee",
-        "tuition fees",
+        "tuition fee",        "tuition fees",
         "fee waiver",
         "stipend",
         "monthly stipend",
@@ -2997,8 +2982,7 @@ def news_is_dominated_by_direct_evidence(
 
     if (
         not title_news
-        and news_count <= 6
-        and len(direct_categories) >= 2
+        and news_count <= 6        and len(direct_categories) >= 2
         and direct_strength >= 3
     ):
 
@@ -3297,9 +3281,7 @@ def calculate_opportunity_score(
     # Application URL
     # --------------------------------------------------------
 
-    if application_url:
-
-        score += 8
+    if application_url:        score += 8
 
         reasons.append(
             "application link detected"
@@ -3597,8 +3579,7 @@ def classify_relevance(
     Returns:
         (
             relevant,
-            needs_human_review,
-            classification
+            needs_human_review,            classification
         )
 
     IMPORTANT:
@@ -3897,8 +3878,7 @@ def classify_relevance(
         )
     )
 
-    if (
-        score >= 16
+    if (        score >= 16
         and confirmed_evidence
         and page_word_count >= MIN_PAGE_WORDS
         and (
@@ -4197,8 +4177,7 @@ def determine_verification(item):
 
     # ---------------------------------------------------------
     # 5. Search for a specific opportunity page when the
-    # discovered URL is a homepage or generic landing page
-    # ---------------------------------------------------------
+    # discovered URL is a homepage or generic landing page    # ---------------------------------------------------------
 
     current_page_url = clean_text(
         page.get("final_url", "")
@@ -4497,8 +4476,7 @@ def determine_verification(item):
 
     try:
         application_url = find_application_url(
-            html_content,
-            final_url,
+            html_content,            final_url,
         )
     except Exception:
         application_url = ""
@@ -4796,9 +4774,7 @@ def determine_verification(item):
         result["verification_level"] = "review"
 
         # A possible opportunity is not a verified source.
-        result["source_verified"] = False
-
-        result["needs_human_review"] = True
+        result["source_verified"] = False        result["needs_human_review"] = True
 
         if classification == "possible_opportunity":
             result["verification_reason"] = (
@@ -5096,9 +5072,7 @@ def main():
 
                     "verification_reason": (
                         f"Verifier exception: {error}"
-                    ),
-
-                    "opportunity_classification": (
+                    ),                    "opportunity_classification": (
                         "verification_error"
                     ),
 
