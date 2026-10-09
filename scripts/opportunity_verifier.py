@@ -4833,22 +4833,36 @@ def determine_verification(item):
 
         result["source_verified"] = False
 
+      # ---------------------------------------------------------
+    # BLOCK AUTOMATIC APPROVAL OF HOMEPAGES
+    #
+    # A publisher homepage is not itself proof of a specific
+    # scholarship, job, internship, course, or other opportunity.
+    # Automatic approval requires a reachable, specific page.
+    # ---------------------------------------------------------
+
+    if homepage_without_specific_page:
+
+        result["verification_level"] = "review"
+
+        result["source_verified"] = False
+
         result["opportunity_relevant"] = False
 
         result["needs_human_review"] = True
 
         result["opportunity_classification"] = (
-            "expired_opportunity"
+            "homepage_without_specific_page"
         )
 
         result["verification_reason"] = (
-            "The detected deadline is in the past. The source "
-            "was reachable, but the opportunity was not "
-            "automatically approved as current."
+            "The source is a publisher homepage or generic "
+            "landing page, and no reachable specific opportunity "
+            "page was verified. Automatic approval was blocked."
         )
 
         result["verification_evidence"].append(
-            "automatic_approval_blocked_expired_deadline"
+            "automatic_approval_blocked_homepage"
         )
 
         result["verification_evidence"] = list(
@@ -4857,7 +4871,7 @@ def determine_verification(item):
             )
         )
 
-        return result
+        return result  
 
     # ---------------------------------------------------------
     # 19. Decide the final verification level
