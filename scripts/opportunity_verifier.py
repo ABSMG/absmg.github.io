@@ -4926,7 +4926,7 @@ def determine_verification(item):
             "opportunity evidence for automatic verification."
         )
 
-    elif (
+       elif (
         relevant
         or classification in {
             "possible_opportunity",
@@ -4957,7 +4957,7 @@ def determine_verification(item):
                 "The page contains some opportunity evidence, "
                 "but it did not meet every automatic-verification "
                 "requirement."
-            )
+            ) 
 
     else:
         result["verification_level"] = "failed"
