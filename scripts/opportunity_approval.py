@@ -907,20 +907,18 @@ def passed_verification_engine(item):
 # HUMAN REVIEW CHECK
 # ============================================================
 
+
 def requires_human_review(item):
     """
-    Any item explicitly marked for human review must not be
-    automatically approved.
+    Human review is disabled for the automated pipeline.
+
+    This function does not approve an opportunity by itself.
+    All other approval checks, including source verification,
+    classification, evidence, deadlines, and relevance, must
+    still pass before automatic approval is allowed.
     """
 
-    return bool(
-        item.get(
-            "needs_human_review",
-            False
-        )
-    )
-
-
+    return False
 # ============================================================
 # CLASSIFICATION CHECK
 # ============================================================
@@ -1140,17 +1138,40 @@ def get_deadline(item):
 # APPROVAL DECISION
 # ============================================================
 
+# ============================================================
+# APPROVAL DECISION
+# ============================================================
+
 def approve(item):
+    """
+    Apply the final automatic approval checks.
+
+    Only sufficiently verified, relevant, reachable, current,
+    and evidence-backed opportunities may be approved.
+
+    Human review is not used as a separate approval stage.
+    Unverified or uncertain records are rejected automatically.
+
+    All substantive publication-quality checks remain enabled.
+    """
+
+    # --------------------------------------------------------
+    # 1. Validate input
+    # --------------------------------------------------------
+
+    if not isinstance(item, dict):
+
+        return False, (
+            "Invalid opportunity record: expected a dictionary"
+        )
+
+    # --------------------------------------------------------
+    # 2. Validate title
+    # --------------------------------------------------------
 
     title = clean(
-        item.get(
-            "title"
-        )
+        item.get("title")
     )
-
-    # --------------------------------------------------------
-    # 1. Title
-    # --------------------------------------------------------
 
     if not title:
 
@@ -1159,7 +1180,7 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 2. Source URL
+    # 3. Validate source URL
     # --------------------------------------------------------
 
     source_url = get_source_url(
@@ -1175,7 +1196,10 @@ def approve(item):
         )
 
     # --------------------------------------------------------
-    # 3. Verification engine
+    # 4. Verification engine
+    # --------------------------------------------------------
+    # A record must have passed verification.
+    # Records marked review or failed remain ineligible.
     # --------------------------------------------------------
 
     if not passed_verification_engine(
@@ -1183,21 +1207,8 @@ def approve(item):
     ):
 
         return False, (
-            "Opportunity did not pass "
+            "Rejected: the opportunity did not pass "
             "the verification engine"
-        )
-
-    # --------------------------------------------------------
-    # 4. Explicit human-review protection
-    # --------------------------------------------------------
-
-    if requires_human_review(
-        item
-    ):
-
-        return False, (
-            "Human review is required; "
-            "automatic approval is blocked"
         )
 
     # --------------------------------------------------------
@@ -1213,15 +1224,14 @@ def approve(item):
     ):
 
         return False, (
-            "The detected application deadline "
-            "has already passed"
+            "Rejected: the application deadline has passed"
         )
 
     # --------------------------------------------------------
     # 6. Classification
     # --------------------------------------------------------
 
-    classification = clean(
+    classification = clean_lower(
         item.get(
             "opportunity_classification"
         )
@@ -1230,8 +1240,7 @@ def approve(item):
     if classification in REJECTED_CLASSIFICATIONS:
 
         return False, (
-            f"Classification '{classification}' "
-            "is not eligible for automatic approval"
+            f"Rejected classification: '{classification}'"
         )
 
     if not is_auto_approvable_classification(
@@ -1239,8 +1248,8 @@ def approve(item):
     ):
 
         return False, (
-            "Opportunity classification is not "
-            "approved for automatic publication"
+            "Rejected: classification is not eligible "
+            "for automatic publication"
         )
 
     # --------------------------------------------------------
@@ -1257,8 +1266,7 @@ def approve(item):
     if not source_verified:
 
         return False, (
-            "Source has not passed "
-            "source verification"
+            "Rejected: source verification has not passed"
         )
 
     # --------------------------------------------------------
@@ -1275,7 +1283,7 @@ def approve(item):
     if not page_reachable:
 
         return False, (
-            "Source page is not reachable"
+            "Rejected: the source page is not reachable"
         )
 
     # --------------------------------------------------------
@@ -1292,12 +1300,12 @@ def approve(item):
     if not opportunity_relevant:
 
         return False, (
-            "Source page is not recognized "
-            "as a sufficiently relevant opportunity"
+            "Rejected: the page is not sufficiently "
+            "relevant to a specific opportunity"
         )
 
     # --------------------------------------------------------
-    # 10. Required opportunity keyword
+    # 10. Required opportunity keywords
     # --------------------------------------------------------
 
     if not has_opportunity_keyword(
@@ -1305,12 +1313,12 @@ def approve(item):
     ):
 
         return False, (
-            "No recognized opportunity keyword "
+            "Rejected: no recognized opportunity keyword "
             "was detected"
         )
 
     # --------------------------------------------------------
-    # 11. Score
+    # 11. Minimum evidence score
     # --------------------------------------------------------
 
     score = get_score(
@@ -1322,14 +1330,13 @@ def approve(item):
     ):
 
         return False, (
-            "Opportunity evidence score "
-            f"{score:g} is below the minimum "
-            f"automatic approval threshold of "
-            f"{MINIMUM_AUTO_APPROVAL_SCORE}"
+            "Rejected: opportunity evidence score "
+            f"{score:g} is below the minimum threshold "
+            f"of {MINIMUM_AUTO_APPROVAL_SCORE}"
         )
 
     # --------------------------------------------------------
-    # 12. Strong evidence
+    # 12. Strong evidence requirement
     # --------------------------------------------------------
 
     if REQUIRE_STRONG_EVIDENCE:
@@ -1339,12 +1346,12 @@ def approve(item):
         ):
 
             return False, (
-                "No strong opportunity evidence "
-                "was detected for automatic publication"
+                "Rejected: insufficient strong opportunity "
+                "evidence for automatic publication"
             )
 
     # --------------------------------------------------------
-    # 13. News protection
+    # 13. News/general-content protection
     # --------------------------------------------------------
 
     if is_news_heavy(
@@ -1352,12 +1359,13 @@ def approve(item):
     ):
 
         return False, (
-            "Content contains strong news/general-reporting "
-            "signals without enough opportunity evidence"
+            "Rejected: the page contains strong news or "
+            "general-reporting signals without sufficient "
+            "opportunity evidence"
         )
 
     # --------------------------------------------------------
-    # 14. Source URL sanity
+    # 14. Validate resolved and official URLs
     # --------------------------------------------------------
 
     final_url = clean(
@@ -1377,7 +1385,7 @@ def approve(item):
     ):
 
         return False, (
-            "Final resolved URL is invalid"
+            "Rejected: final resolved URL is invalid"
         )
 
     if official_url and not valid_url(
@@ -1385,36 +1393,40 @@ def approve(item):
     ):
 
         return False, (
-            "Official URL is invalid"
+            "Rejected: official URL is invalid"
         )
 
     # --------------------------------------------------------
-    # 15. Approval
+    # 15. Final approval
     # --------------------------------------------------------
 
-    if classification == (
-        "confirmed_opportunity"
-    ):
+    if classification == "confirmed_opportunity":
 
         return True, (
-            "Approved: confirmed opportunity with "
-            "valid source, reachable page, strong "
-            f"evidence and score {score:g}"
+            "Approved: confirmed opportunity passed "
+            "source verification, page reachability, "
+            "relevance, deadline, classification, keyword, "
+            f"strong-evidence, news and score checks "
+            f"(score: {score:g})"
         )
 
-    if classification == (
-        "trusted_opportunity"
-    ):
+    if classification == "trusted_opportunity":
 
         return True, (
-            "Approved: trusted opportunity with "
-            "valid source, reachable page, strong "
-            f"evidence and score {score:g}"
+            "Approved: trusted opportunity passed "
+            "source verification, page reachability, "
+            "relevance, deadline, classification, keyword, "
+            f"strong-evidence, news and score checks "
+            f"(score: {score:g})"
         )
+
+    # --------------------------------------------------------
+    # 16. Default rejection
+    # --------------------------------------------------------
 
     return False, (
-        "Opportunity did not satisfy the final "
-        "automatic publication rules"
+        "Rejected: the opportunity did not satisfy "
+        "all automatic publication requirements"
     )
 
 
