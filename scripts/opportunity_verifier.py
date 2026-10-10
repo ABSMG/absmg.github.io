@@ -4884,7 +4884,7 @@ def determine_verification(item):
 
         return result  
 
-    # ---------------------------------------------------------
+   # ---------------------------------------------------------
     # 19. Decide the final verification level
     #
     # Only confirmed/trusted opportunities with sufficient
@@ -4917,26 +4917,11 @@ def determine_verification(item):
             "likely_news_or_general_content",
         }
     ):
-       result["source_verified"] = True
-
-        result["needs_human_review"] = False
-
-        result["verification_reason"] = (
-            "The fetched source page contains sufficient "
-            "opportunity evidence for automatic verification."
-        )
-
-       elif (
-        relevant
-        or classification in {
-            "possible_opportunity",
-            "likely_news_or_general_content",
-        }
-    ):
         result["verification_level"] = "review"
 
         # A possible opportunity is not a verified source.
         result["source_verified"] = False
+
         result["needs_human_review"] = True
 
         if classification == "possible_opportunity":
@@ -4957,7 +4942,7 @@ def determine_verification(item):
                 "The page contains some opportunity evidence, "
                 "but it did not meet every automatic-verification "
                 "requirement."
-            ) 
+            )
 
     else:
         result["verification_level"] = "failed"
@@ -4971,7 +4956,7 @@ def determine_verification(item):
         result["verification_reason"] = (
             "The page did not provide sufficient evidence "
             "to verify a relevant opportunity."
-        )
+        ) 
 
     # ---------------------------------------------------------
     # 20. Add score/classification diagnostics
