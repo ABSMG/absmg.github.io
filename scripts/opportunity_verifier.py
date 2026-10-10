@@ -4218,7 +4218,7 @@ def determine_verification(item):
         "page_reachable": False,
         "source_domain_trusted": False,
         "opportunity_relevant": False,
-        "needs_human_review": True,
+        "needs_human_review": False,
         "verification_reason": "",
         "checked_url": selected_url,
         "original_discovered_url": original_discovered_url,
@@ -4884,11 +4884,13 @@ def determine_verification(item):
 
         return result  
 
-   # ---------------------------------------------------------
+       # ---------------------------------------------------------
     # 19. Decide the final verification level
     #
-    # Only confirmed/trusted opportunities with sufficient
-    # evidence can be marked source_verified=True.
+    # Automatically verify only opportunities that satisfy
+    # the existing evidence and classification requirements.
+    # Reject uncertain, irrelevant, and news-related pages
+    # automatically instead of placing them in human review.
     # ---------------------------------------------------------
 
     if (
@@ -4903,46 +4905,14 @@ def determine_verification(item):
 
         result["source_verified"] = True
 
+        result["opportunity_relevant"] = True
+
         result["needs_human_review"] = False
 
         result["verification_reason"] = (
             "The fetched source page contains sufficient "
             "opportunity evidence for automatic verification."
         )
-
-    elif (
-        relevant
-        or classification in {
-            "possible_opportunity",
-            "likely_news_or_general_content",
-        }
-    ):
-        result["verification_level"] = "review"
-
-        # A possible opportunity is not a verified source.
-        result["source_verified"] = False
-
-        result["needs_human_review"] = True
-
-        if classification == "possible_opportunity":
-            result["verification_reason"] = (
-                "The page may describe an opportunity, but "
-                "the available evidence is insufficient for "
-                "automatic verification."
-            )
-
-        elif classification == "likely_news_or_general_content":
-            result["verification_reason"] = (
-                "The page contains news or general-content "
-                "signals and requires human review."
-            )
-
-        else:
-            result["verification_reason"] = (
-                "The page contains some opportunity evidence, "
-                "but it did not meet every automatic-verification "
-                "requirement."
-            )
 
     else:
         result["verification_level"] = "failed"
@@ -4951,12 +4921,32 @@ def determine_verification(item):
 
         result["opportunity_relevant"] = False
 
-        result["needs_human_review"] = True
+        result["needs_human_review"] = False
 
-        result["verification_reason"] = (
-            "The page did not provide sufficient evidence "
-            "to verify a relevant opportunity."
-        ) 
+        if classification == "likely_news_or_general_content":
+            result["verification_reason"] = (
+                "Automatically rejected because the page "
+                "appears to contain news or general content "
+                "rather than a sufficiently verified opportunity."
+            )
+
+        elif classification == "possible_opportunity":
+            result["verification_reason"] = (
+                "Automatically rejected because the available "
+                "evidence is insufficient to verify this opportunity."
+            )
+
+        elif deadline_expired:
+            result["verification_reason"] = (
+                "Automatically rejected because the opportunity "
+                "deadline has expired."
+            )
+
+        else:
+            result["verification_reason"] = (
+                "Automatically rejected because the page did not "
+                "meet all automatic-verification requirements."
+            )
 
     # ---------------------------------------------------------
     # 20. Add score/classification diagnostics
