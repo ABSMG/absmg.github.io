@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-23T11:21:17.737872+00:00",
-  "total": 266,
+  "generated_at": "2026-10-24T10:53:53.638485+00:00",
+  "total": 300,
   "discovery_limit": 300,
-  "total_before_limit": 266,
+  "total_before_limit": 301,
   "feed_count": 10,
   "geographic_scope": "global",
   "regional_restriction": null,
   "url_resolution": {
     "resolved_articles": 0,
-    "fallback_google_news": 266,
-    "publisher_homepage_sources": 266,
+    "fallback_google_news": 300,
+    "publisher_homepage_sources": 300,
     "resolution_successes": 0,
-    "resolution_failures": 750
+    "resolution_failures": 801
   },
   "items": [
     {
@@ -37,7 +37,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:54.770102+00:00",
+      "discovered_at": "2026-10-24T10:39:39.293872+00:00",
       "status": "needs_verification"
     },
     {
@@ -63,7 +63,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:51.875272+00:00",
+      "discovered_at": "2026-10-24T10:39:32.780215+00:00",
       "status": "needs_verification"
     },
     {
@@ -88,7 +88,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:35.594707+00:00",
+      "discovered_at": "2026-10-24T10:39:02.902163+00:00",
       "status": "needs_verification"
     },
     {
@@ -113,7 +113,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:59.383506+00:00",
+      "discovered_at": "2026-10-24T10:39:47.507265+00:00",
       "status": "needs_verification"
     },
     {
@@ -138,7 +138,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:42.638864+00:00",
+      "discovered_at": "2026-10-24T10:41:10.071846+00:00",
       "status": "needs_verification"
     },
     {
@@ -163,7 +163,32 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:12.068702+00:00",
+      "discovered_at": "2026-10-24T10:42:17.077759+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "10 fully funded PhD scholarships for international students in 2025 - Businessday NG",
+      "source": "Google News - International Scholarships",
+      "publisher_name": "Businessday NG",
+      "publisher_url": "https://businessday.ng/",
+      "news_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcjNFclJPaE91WDdFRWc3dC15SDEtOVhIN29WaUNTcHJPZTRfR3RSbTB6VXJIZ1FPbjh6M1UxY1kxV3loSjF3RFFoRU02WG1ONTlUUi11QkZsb1pfVmVUVTdkXzNuWTJnTHQtdjhvZ0VmcEYzcVhfZFBCVW5vOFZtS1RldGNZWU44Q3FrUDNXZkhwbmRzQ1ktRnpCejNVcnExbGhsOGFkaE1qcEtWU2fSAbMBQVVfeXFMUEFkakdncTkzbjFmZ0dVT01OMWFDUWZOYkYxS2NGZl81ek1UZU82M1BneTY5djAwYlN0S0tDZzA2d2VMS3ZxYW0xaTZubUczS2pVdWJvRklQRXBHRGJWTFFQMkhEdEh0MEV1UXpZYnR1YlVMZlVENDFCa1NtVVo3Zjc5QV9FOWNkbkpsM2Nsd3RDZVcza3NidXYxRG9LN2RPZ3hCSEhKNy13c3hEclM2UkFPckU?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://businessday.ng/",
+      "published": "2025-03-11T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "fully funded",
+        "students",
+        "international students",
+        "international student",
+        "international",
+        "phd scholarship"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:39:36.747833+00:00",
       "status": "needs_verification"
     },
     {
@@ -188,31 +213,31 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:48.277196+00:00",
+      "discovered_at": "2026-10-24T10:41:21.270348+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Apply for the University of Lausanne (UNIL) Master's Scholarship 2027/2028: CHF 1,600 Monthly Funding for International Students - Global South Opportunities",
+      "title": "OPEN DOOR SCHOLARSHIP RUSSIA 2026 | FULLY FUNDED SCHOLARSHIP FOR INTERNATIONAL STUDENTS - YouTube",
       "source": "Google News - Global Scholarships",
-      "publisher_name": "Global South Opportunities",
-      "publisher_url": "https://www.globalsouthopportunities.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA5Q08wSkJiQW1ISmgtX2pnWldXM0RPeTRCcl9tMlZQdWJJVk84amhzdlJrcjJBSUZBNW1uRkZkY1lfZ3RYWWFJTE5kS1ZvV2VET0stZ09wdmF4SUZ6NlFaTElQeW1IQi1HYVhhRGFR?oc=5",
+      "publisher_name": "YouTube",
+      "publisher_url": "https://youtu.be/",
+      "news_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE83aklfRXpFQzFrVE9keWdHb1BzWWlLQmRzRDJERXkxVE9rSkVTTjB2TTZmSTRqNzg5V0c2WjE0VDlsNWo0d2xSVGE1dlMxcWM3SGpCNDVGOEg3c3dq?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.globalsouthopportunities.com/",
-      "published": "2026-10-22T21:51:35+00:00",
+      "source_url": "https://youtu.be/",
+      "published": "2026-08-21T07:00:00+00:00",
       "matched_keywords": [
         "scholarship",
+        "fully funded",
+        "funded scholarship",
         "students",
         "international students",
         "international student",
-        "international",
-        "global",
-        "master's scholarship"
+        "international"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:34.669168+00:00",
+      "discovered_at": "2026-10-24T10:39:21.713105+00:00",
       "status": "needs_verification"
     },
     {
@@ -236,7 +261,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:58.888115+00:00",
+      "discovered_at": "2026-10-24T10:39:46.532317+00:00",
       "status": "needs_verification"
     },
     {
@@ -260,7 +285,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:55.561815+00:00",
+      "discovered_at": "2026-10-24T10:39:41.247853+00:00",
       "status": "needs_verification"
     },
     {
@@ -284,7 +309,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:49.821407+00:00",
+      "discovered_at": "2026-10-24T10:39:29.739951+00:00",
       "status": "needs_verification"
     },
     {
@@ -308,7 +333,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:51.618535+00:00",
+      "discovered_at": "2026-10-24T10:41:27.230736+00:00",
       "status": "needs_verification"
     },
     {
@@ -332,7 +357,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:50.175650+00:00",
+      "discovered_at": "2026-10-24T10:41:24.737824+00:00",
       "status": "needs_verification"
     },
     {
@@ -356,7 +381,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:18.713796+00:00",
+      "discovered_at": "2026-10-24T10:40:24.458764+00:00",
       "status": "needs_verification"
     },
     {
@@ -380,7 +405,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:51.125699+00:00",
+      "discovered_at": "2026-10-24T10:41:26.748900+00:00",
       "status": "needs_verification"
     },
     {
@@ -404,7 +429,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:50.581473+00:00",
+      "discovered_at": "2026-10-24T10:41:25.205219+00:00",
       "status": "needs_verification"
     },
     {
@@ -428,7 +453,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:46.803044+00:00",
+      "discovered_at": "2026-10-24T10:41:18.515298+00:00",
       "status": "needs_verification"
     },
     {
@@ -451,8 +476,8 @@
         "international"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:16.741930+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:52:27.572819+00:00",
       "status": "needs_verification"
     },
     {
@@ -476,7 +501,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:45.798545+00:00",
+      "discovered_at": "2026-10-24T10:41:16.350457+00:00",
       "status": "needs_verification"
     },
     {
@@ -500,7 +525,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:45.106295+00:00",
+      "discovered_at": "2026-10-24T10:41:14.679017+00:00",
       "status": "needs_verification"
     },
     {
@@ -524,7 +549,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:59.519637+00:00",
+      "discovered_at": "2026-10-24T10:41:42.187514+00:00",
       "status": "needs_verification"
     },
     {
@@ -547,7 +572,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:37.382503+00:00",
+      "discovered_at": "2026-10-24T10:39:07.532173+00:00",
       "status": "needs_verification"
     },
     {
@@ -570,7 +595,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:07.429565+00:00",
+      "discovered_at": "2026-10-24T10:42:09.691249+00:00",
       "status": "needs_verification"
     },
     {
@@ -593,7 +618,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:38.254886+00:00",
+      "discovered_at": "2026-10-24T10:39:09.306476+00:00",
       "status": "needs_verification"
     },
     {
@@ -616,7 +641,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:35.007454+00:00",
+      "discovered_at": "2026-10-24T10:39:01.733086+00:00",
       "status": "needs_verification"
     },
     {
@@ -639,7 +664,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:58.649950+00:00",
+      "discovered_at": "2026-10-24T10:39:46.061772+00:00",
       "status": "needs_verification"
     },
     {
@@ -662,7 +687,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:35.477093+00:00",
+      "discovered_at": "2026-10-24T10:39:02.436874+00:00",
       "status": "needs_verification"
     },
     {
@@ -685,30 +710,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:39.776353+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Free Online Courses to Boost Your CV & Improve Your Employability - E4S",
-      "source": "Google News - Online Training",
-      "publisher_name": "E4S",
-      "publisher_url": "https://www.e4s.co.uk/",
-      "news_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQWJ3TmJQSDRNWm10cHVWYzVubXphb1hMYVJLQ3E0RV9tR0oyTGdrdzlWZUo1N3VvVldqMGFDMy1oMU5kd043bVVLYUp0bTNscnhJQUN2TnE4T2FEN25VNVdibGNJYnBnNHJTSlpLTFBTVUVnM1VpTEowVHpmRlBVbFB4QUJpalVIU0syYm1vQlFRTWpEQ0hfNHVUZHg3eWdncHc?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.e4s.co.uk/",
-      "published": "2026-06-07T07:00:00+00:00",
-      "matched_keywords": [
-        "course",
-        "courses",
-        "online course",
-        "online courses",
-        "free online course",
-        "free online courses"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:54.171855+00:00",
+      "discovered_at": "2026-10-24T10:39:11.469158+00:00",
       "status": "needs_verification"
     },
     {
@@ -731,7 +733,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:48.172799+00:00",
+      "discovered_at": "2026-10-24T10:39:26.714998+00:00",
       "status": "needs_verification"
     },
     {
@@ -754,30 +756,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:59.133707+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Talent retention in South Korean context: social support, cultural adaptation, and career opportunities discourage onward migration intentions of international students - Nature",
-      "source": "Google News - International Student Opportunities",
-      "publisher_name": "Nature",
-      "publisher_url": "https://www.nature.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBfQVZfSnh5ZGw4MkpEdkZHYnBrei0yMmxfbHJwVWlDUmdNOGNtTTVHWkowY0JoVlhTR2Q3S2s3YnBwdGlRNXA1YVpsUzVDcFhVVEh0Yi1XNHBNbUJkUllZ?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.nature.com/",
-      "published": "2026-01-16T08:00:00+00:00",
-      "matched_keywords": [
-        "career",
-        "students",
-        "international students",
-        "international student",
-        "international",
-        "career opportunities"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:09.465582+00:00",
+      "discovered_at": "2026-10-24T10:39:46.983500+00:00",
       "status": "needs_verification"
     },
     {
@@ -800,7 +779,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:55.298427+00:00",
+      "discovered_at": "2026-10-24T10:41:33.265448+00:00",
       "status": "needs_verification"
     },
     {
@@ -823,7 +802,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:49.885547+00:00",
+      "discovered_at": "2026-10-24T10:41:23.778366+00:00",
       "status": "needs_verification"
     },
     {
@@ -846,7 +825,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:47.410737+00:00",
+      "discovered_at": "2026-10-24T10:41:18.997154+00:00",
       "status": "needs_verification"
     },
     {
@@ -869,7 +848,30 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:55.063707+00:00",
+      "discovered_at": "2026-10-24T10:39:40.277795+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "11 free online courses with qualifications to boost your CV - Save the Student",
+      "source": "Google News - Online Training",
+      "publisher_name": "Save the Student",
+      "publisher_url": "https://www.savethestudent.org/",
+      "news_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNWVJxbEdnT2RBSnJaYmpzTDNRdFZkX2hTWm4yZzRrdmFYZnFiWHk3MzZjcko5eUh0Tm5nd3VUZVhqbXJDN0Z5S2hqRndvTW9wNENmdDA5UUdxSVdfOFhCMlpHZTZvSmdHY0s1OFEzZUMwVE5WelBSTFR6UVlpXy1VLWpxSG83aVVBOTRiUnVNVUIxamI0SVZjY2hR?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.savethestudent.org/",
+      "published": "2025-06-08T07:00:00+00:00",
+      "matched_keywords": [
+        "course",
+        "courses",
+        "online course",
+        "online courses",
+        "free online course",
+        "free online courses"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:39.783316+00:00",
       "status": "needs_verification"
     },
     {
@@ -891,8 +893,8 @@
         "international"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:14.785848+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:49:07.116830+00:00",
       "status": "needs_verification"
     },
     {
@@ -915,7 +917,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:54.371233+00:00",
+      "discovered_at": "2026-10-24T10:39:38.196163+00:00",
       "status": "needs_verification"
     },
     {
@@ -938,30 +940,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:03.148834+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "8 countries with scholarships, free education policy for international students in fall 2025 - Businessday NG",
-      "source": "Google News - International Scholarships",
-      "publisher_name": "Businessday NG",
-      "publisher_url": "https://businessday.ng/",
-      "news_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVHJuMkJtM3o1ZFF1TGhJT0lSV2JBdmJHU1ZKdG9BNzdLUHJYUV9lLU5DN1NxYzlsdlNJZHdfR1F5UElsOEZWbVhNSlgza0xWa1h2YzdScUxaTEtIZHlyYWllUUUwNHZ2bUplZUZjSzlfMGFOM0V2ekJUMnF3ckJxYWJTZFdXcktiYmc3dldZOWUzSGRocmUxd281Q3pHcWRzdEtfN0RUblBhTnVUd011NGEzZWk0cHE2VUR5d0FLMkhJdmdsZjM00gHMAUFVX3lxTFAxY3hsWEFDZEJSQWVfMm5SVXQ2SDVJWVdyNUJwMVNVQTl4b3NxVGNyV3NUS0pzU0xUU1pYbEhnM01ydWpKQnJFVXM2LWkxQk90b2pkaGJKeUVMVDVfWHRwdlUxNzFzREtyWVhVbm1MS3VtVEloLXBibTM3R0lKajFrTkswOVdFUXpMVkR2Y0FVV25tRmxWbWd6SXdPc3B4Mi1yWkpmTVEzbTlJcHNHX0VtYmRuSThPMjVkdERpTW5yNlpmVmE3QjVWRXItTQ?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://businessday.ng/",
-      "published": "2025-03-29T07:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "scholarships",
-        "students",
-        "international students",
-        "international student",
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:52.122928+00:00",
+      "discovered_at": "2026-10-24T10:39:55.180792+00:00",
       "status": "needs_verification"
     },
     {
@@ -984,7 +963,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:51.218856+00:00",
+      "discovered_at": "2026-10-24T10:39:33.017843+00:00",
       "status": "needs_verification"
     },
     {
@@ -1007,7 +986,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:56.076394+00:00",
+      "discovered_at": "2026-10-24T10:41:35.431124+00:00",
       "status": "needs_verification"
     },
     {
@@ -1030,7 +1009,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:53.804201+00:00",
+      "discovered_at": "2026-10-24T10:41:30.353690+00:00",
       "status": "needs_verification"
     },
     {
@@ -1053,7 +1032,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:42.933880+00:00",
+      "discovered_at": "2026-10-24T10:41:10.312462+00:00",
       "status": "needs_verification"
     },
     {
@@ -1076,7 +1055,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:47.665821+00:00",
+      "discovered_at": "2026-10-24T10:41:20.790074+00:00",
       "status": "needs_verification"
     },
     {
@@ -1099,7 +1078,30 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:39.115812+00:00",
+      "discovered_at": "2026-10-24T10:41:06.227951+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "25 best free online courses in South Africa to choose from in 2022 - Briefly News",
+      "source": "Google News - Online Training",
+      "publisher_name": "Briefly News",
+      "publisher_url": "https://briefly.co.za/",
+      "news_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1CWE1JeWY3cEtpRnp6b3N3UXJxWlB0elc1THVma3FXcGZGbDNxYXFxVXBuUGZDelVERVFhcm5UeEEydm1mOUNHeGFiMElQM0lFMVVpb3J1S3pXSXRLdDhITXl4X01iVzFFeHBpUll3WkF5cDdCUlM3WDBn?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://briefly.co.za/",
+      "published": "2022-05-07T07:00:00+00:00",
+      "matched_keywords": [
+        "course",
+        "courses",
+        "online course",
+        "online courses",
+        "free online course",
+        "free online courses"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:45.330267+00:00",
       "status": "needs_verification"
     },
     {
@@ -1122,7 +1124,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:00.341443+00:00",
+      "discovered_at": "2026-10-24T10:41:43.441396+00:00",
       "status": "needs_verification"
     },
     {
@@ -1145,7 +1147,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:50.874324+00:00",
+      "discovered_at": "2026-10-24T10:41:25.679237+00:00",
       "status": "needs_verification"
     },
     {
@@ -1168,30 +1170,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:58.604856+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "DOE International Internships Grant - Connecticut College",
-      "source": "Google News - Global Internships",
-      "publisher_name": "Connecticut College",
-      "publisher_url": "https://www.conncoll.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZkZRVm9aaTAxRzdUZU5kd0FrdHM3Q0JQTGk1cWM4QUxmVGY5b05jZXZVZnlZTUtEMEVYc2p4cThzUnNpUERvcDNXMDVFSWZxMVRaWkh4bkZaVmFvWGNSYlpfeGF5Q0tmR0xNOGNTVmdOS1FVcTRVcHJIMFl0QUFhNmZ3Y3F6a0RPQ09NMw?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.conncoll.edu/",
-      "published": "2018-11-27T08:00:00+00:00",
-      "matched_keywords": [
-        "grant",
-        "internship",
-        "internships",
-        "international internship",
-        "international internships",
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:17.246173+00:00",
+      "discovered_at": "2026-10-24T10:41:40.282886+00:00",
       "status": "needs_verification"
     },
     {
@@ -1214,7 +1193,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:52.892769+00:00",
+      "discovered_at": "2026-10-24T10:39:36.263693+00:00",
       "status": "needs_verification"
     },
     {
@@ -1237,7 +1216,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:46.447578+00:00",
+      "discovered_at": "2026-10-24T10:41:15.847447+00:00",
       "status": "needs_verification"
     },
     {
@@ -1260,29 +1239,29 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:19.717446+00:00",
+      "discovered_at": "2026-10-24T10:40:26.294880+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "SATO-EdAbroad: Your Gateway to Fully Funded Global Scholarships - YouTube",
+      "title": "The University of British Columbia (UBC) International Scholars Program 2027 for international students (Fully Funded) - Opportunities For Africans",
       "source": "Google News - Global Scholarships",
-      "publisher_name": "YouTube",
-      "publisher_url": "https://youtu.be/",
-      "news_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA2Y1lkN1d3b1ZJRjFnaGdScFpmQk5meGlGYkFselNNTkhrNHV0ZFBuUWZUaWJVdTFtOE1KczBtM0lZdWNmX3FXVTRacmJVWnAyMlpkei1zSTlRTFNi?oc=5",
+      "publisher_name": "Opportunities For Africans",
+      "publisher_url": "https://www.opportunitiesforafricans.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZWg5RGt4cHlWdkV4WW43c0ItYkQwRXQzM3hLZWR0NERtMDhIQXV1ejgteXFod0Jnalk2em82NVBjOWp5SjAtMWFZUl9TUGRnRFlmcEtkdEdHV0ZFQTZKZmdGYXUySlg5UUFWUUh0aXhPSkducWtqZWRZVi1ZLXNSdk5ab2hlYkVTb2JFb2lNZDJYMVlxY1o3a2JmQWx6QjBGMzBHWmt2ekU3SVlQMU5Fa2JSU1JKeXROcWdoblIxQ2tqY1dQbHAwdGRURjFXbmt3NXBrTjBGek8yeTQ?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://youtu.be/",
-      "published": "2026-09-29T07:00:00+00:00",
+      "source_url": "https://www.opportunitiesforafricans.com/",
+      "published": "2026-10-09T07:00:00+00:00",
       "matched_keywords": [
-        "scholarship",
-        "scholarships",
         "fully funded",
-        "global scholarship",
-        "global"
+        "students",
+        "international students",
+        "international student",
+        "international"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:43.175119+00:00",
+      "discovered_at": "2026-10-24T10:39:02.671286+00:00",
       "status": "needs_verification"
     },
     {
@@ -1304,7 +1283,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:34.779712+00:00",
+      "discovered_at": "2026-10-24T10:39:01.478906+00:00",
       "status": "needs_verification"
     },
     {
@@ -1326,7 +1305,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:48.291756+00:00",
+      "discovered_at": "2026-10-24T10:39:26.954610+00:00",
       "status": "needs_verification"
     },
     {
@@ -1348,7 +1327,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:08.638748+00:00",
+      "discovered_at": "2026-10-24T10:42:15.406308+00:00",
       "status": "needs_verification"
     },
     {
@@ -1370,7 +1349,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:35.123632+00:00",
+      "discovered_at": "2026-10-24T10:39:01.971521+00:00",
       "status": "needs_verification"
     },
     {
@@ -1392,7 +1371,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:58.362401+00:00",
+      "discovered_at": "2026-10-24T10:39:45.571836+00:00",
       "status": "needs_verification"
     },
     {
@@ -1414,7 +1393,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:09.931809+00:00",
+      "discovered_at": "2026-10-24T10:40:07.969976+00:00",
       "status": "needs_verification"
     },
     {
@@ -1436,7 +1415,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:38.024749+00:00",
+      "discovered_at": "2026-10-24T10:39:08.829077+00:00",
       "status": "needs_verification"
     },
     {
@@ -1458,7 +1437,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:46.688165+00:00",
+      "discovered_at": "2026-10-24T10:41:17.926125+00:00",
       "status": "needs_verification"
     },
     {
@@ -1480,7 +1459,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:32.337028+00:00",
+      "discovered_at": "2026-10-24T10:40:50.363732+00:00",
       "status": "needs_verification"
     },
     {
@@ -1502,29 +1481,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:09.810065+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Swedish Institute opens master’s scholarship for applicants from international students - Scandasia",
-      "source": "Google News - Global Scholarships",
-      "publisher_name": "Scandasia",
-      "publisher_url": "https://scandasia.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQSjd0eHlQZFY5azlEYjhJOHVkSXRHQXFsR1RLb1o0N05wZTRjd3RLdXZGN0RWa0FiRXNHbGQwTmRid2o4SEItbGRxYnQxdXVZTXNyZHJQeGhicHI0bkR2aWZMYTZrc2d6SEhZaG5jSGR6aFRDa1BMT1czZ1FuYVhpbzBGcUhJLXpRMXhfZlhXVUUzUE5VWkZ2UWp3ZHRLaUtUSTRaZWpFalZpc1FmVnc?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://scandasia.com/",
-      "published": "2026-02-10T08:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "students",
-        "international students",
-        "international student",
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:46.996796+00:00",
+      "discovered_at": "2026-10-24T10:40:06.374235+00:00",
       "status": "needs_verification"
     },
     {
@@ -1546,7 +1503,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:53.144707+00:00",
+      "discovered_at": "2026-10-24T10:41:29.025018+00:00",
       "status": "needs_verification"
     },
     {
@@ -1568,29 +1525,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:19.076088+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "The impact of study abroad social interactions on post-return relationships with international students: Japanese students’ perceptions of recategorization - Frontiers",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Frontiers",
-      "publisher_url": "https://www.frontiersin.org/",
-      "news_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWjBLNUtYUThSYjV0eFZDeWhheVVKTlE4Q29pWTZKNEt2WTJ4eWtEOXI3X3NDQlZHUzh3TmlXZm9tU0tLRXdMb2JoWGMtSWFoNVhoZjlnYjJfLU1POGkyc3FoQ1FQREtfdVBHbHdfUjc3NXRXTm5ZbjBYYnRrNUJPSjRuUmJIZ1RyMG1NYXBDVE8?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.frontiersin.org/",
-      "published": "2025-03-04T12:17:51+00:00",
-      "matched_keywords": [
-        "students",
-        "international students",
-        "international student",
-        "study abroad",
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:04.929340+00:00",
+      "discovered_at": "2026-10-24T10:40:24.949051+00:00",
       "status": "needs_verification"
     },
     {
@@ -1611,8 +1546,8 @@
         "international"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:16.103309+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:50:58.549549+00:00",
       "status": "needs_verification"
     },
     {
@@ -1634,7 +1569,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:03.517125+00:00",
+      "discovered_at": "2026-10-24T10:39:54.449304+00:00",
       "status": "needs_verification"
     },
     {
@@ -1656,7 +1591,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:37.817369+00:00",
+      "discovered_at": "2026-10-24T10:41:00.092604+00:00",
       "status": "needs_verification"
     },
     {
@@ -1678,7 +1613,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:45.558382+00:00",
+      "discovered_at": "2026-10-24T10:41:15.614261+00:00",
       "status": "needs_verification"
     },
     {
@@ -1700,49 +1635,175 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:57.327635+00:00",
+      "discovered_at": "2026-10-24T10:41:37.114511+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Netherlands Job Outlook: Skill Shortages, Salaries & Jobs Trends - Y-Axis Overseas Careers",
-      "source": "Google News - Remote Jobs",
-      "publisher_name": "Y-Axis Overseas Careers",
-      "publisher_url": "https://www.y-axis.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBKb0F3eEhBVzJYOTFtQXBxUXg0MU0xV1RTSnNUb2pVam9EcDZUcERkczJ5aVUySnJnd21DM3lpUXVZVzJjeDU0NHNwXzBPT000R3h6UllmYXMzVFU?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.y-axis.com/",
-      "published": "2026-09-23T07:00:00+00:00",
-      "matched_keywords": [
-        "job",
-        "jobs",
-        "career",
-        "careers"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:29.681458+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Scholarship Opportunities for Students, Graduates & Researchers - fundsforNGOs - Grants and Resources for Sustainability",
+      "title": "55 Hot Master’s and PhD Scholarships to Check Out Now – October 2026 - Global South Opportunities",
       "source": "Google News - Global Scholarships",
-      "publisher_name": "fundsforNGOs - Grants and Resources for Sustainability",
-      "publisher_url": "https://www2.fundsforngos.org/",
-      "news_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaUVkN3UySkxSTXJicXEwMEVtVjBib21icndNZGlTVVJ2cWY2eEI2VGVITTA4QWVJa1pjUFIxdzkzejhFMjgyVWk2VmI4R2FmRnB3eHc2VEg0V1BPbWs3OTRVRDlFMng0dy1ab3cyVkxrYl9ZU1l4S29aNVBOZGZjVnVsLVYyOVlTN3ZiRVplNUs3U0xkdlBmbFRmZ3NhMTlL0gGmAUFVX3lxTE5zUVA2TS10MDhOREF4UUJNM0I0bmxYeG9Uc08zUjlIaTRDZUpVdzBWRzJGUnUxMHBvemhfS3hKUFhObHF2VHYxWUlfWjJ6ZkVPY3FwTHhTdWFIdldXZDFwbFhWcVlXYktxZGJJSWptb0NILVBGZzNSS2swazJkZnZHVDgzSDFLdlNiWHptZGJkTWU3ajJQT2ZrSGk0RjNZSWoxMGx1Y1E?oc=5",
+      "publisher_name": "Global South Opportunities",
+      "publisher_url": "https://www.globalsouthopportunities.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9DdjZsS040ekE0VVhRSlZDUkhlQUN1a3JwTHp2UWpFVFJoZjMxZUpZQzdYUWw3LXVTZWdka09QSWVWeC1zcEpnWnBPYmh4eDlBU19QUEhnMmtJR1c3MVE4b0M5WllncGJCT2d2dw?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www2.fundsforngos.org/",
-      "published": "2026-09-03T05:19:03+00:00",
+      "source_url": "https://www.globalsouthopportunities.com/",
+      "published": "2026-10-23T18:53:02+00:00",
       "matched_keywords": [
         "scholarship",
-        "grant",
-        "grants",
-        "students"
+        "scholarships",
+        "global",
+        "phd scholarship"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:43.857491+00:00",
+      "discovered_at": "2026-10-24T10:39:01.241678+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "FAMU Study Abroad Fair Connects Students to Global Opportunities - Florida A&M University - FAMU",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Florida A&M University - FAMU",
+      "publisher_url": "https://news.famu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPT20ybnRzRHVJeTRHRDVFbm82Szd2SThPNUxSQ01xSjlRajVheTlLdmQxUG02RDdSZTZvTFdvdk1sTW96Y2Q1UkEtX2RnUFRhZThaZzlFcnBXUS1td0pFdFBjTE41WmhlTFJiUWVydWRTLWdheVFXRkd6YUpRbzFZWUotNkdRTGhlYWZjb2swbTZiOWJvbzBqNlpSTQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.famu.edu/",
+      "published": "2026-10-07T14:18:55+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "global",
+        "global opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:46.634269+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "KU Study Abroad Fair connects students with international opportunities - Keystone Newspaper",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Keystone Newspaper",
+      "publisher_url": "https://thekeystonenews.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQOUY0NU4wOXNjZ1lmbDRxMFhlUWRWdy16NjBFOTFQdER5VDFpQzNyVDB3b1Y4N200VWFhWkttQy1qOEdEMG9PNWVnZUk1SC1ZWXpETUJwYWQzb3pucHQ1QTdrZExIaWtLdWliaWJRb3A2MFE0YWF1YWl5SkJLemJsRC1YOWZ6QzVUX1lUR2UxZm53Ym0xZmNSWWZYSVI5bjVrbVJYZktMdGlCeG9WaEdVdtIBtgFBVV95cUxQeTRQRHhEdUpMWEttSHJTRVRpRzNLV3VXZmZzd1NxTTRwLWZaZF84aTVkX2YycTl2OFFjM0ROZFpDdWpvcmJnZGJqWDlNeFhScE4zRnlWdy1EUGVfWHRzdUZfZEwwQzNmNEZfY1B5a0hkSFNBeko2WmNEdkV0Tm1sQkdkdTRXZzJZUFBkUVIwSkREOWdyZmNJUjdXem1XSkpuQUhNdVk1Q2V4dU9pZUxYaTlZc3d1dw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://thekeystonenews.com/",
+      "published": "2026-09-30T22:13:21+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "international",
+        "international opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:47.600139+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Emerson Study Abroad Fair highlights global opportunities for students - The Berkeley Beacon",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The Berkeley Beacon",
+      "publisher_url": "https://berkeleybeacon.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMkFUYTl0RGo4Nk8wVzE2THJTS0hMRDdhQlRvSGlFcG9NZ2hNa19kZ2xCcUxzd2lxalNfTDBQM29oWG9HdTNIUlZDZERXNkg5Sl9tdkg1YWZMaFVjc3dUT19VeUM0a0NRbTFlLUIwMkxFS1lmWHl4Q3VjSVppQVNZbGt0dkgxaElTcDRJT0V6Y2JDUWJxWTVNRG9pelFjR0U?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://berkeleybeacon.com/",
+      "published": "2026-09-24T09:44:51+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "global",
+        "global opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:51.305071+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "UTA Study Abroad Fair highlights international opportunities for students - The Shorthorn",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The Shorthorn",
+      "publisher_url": "https://www.theshorthorn.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOVlZyX1N5T2l6NlhFcGRBV2FRTFNvRUt3MERjZnhGLXhpcllxejlhZGxzMjd5RXRHMGFZUC1UeW5uQjY1ODJzR1FvTHczcmxDN1BIY2NNTW1sS21jdTJ5VGJKa3gxOS1NWDE3RFNnbG1manlJeDJ5NDFVb005ODktSHdMUVdMVzdfWmNKV0VKTTBuZjUwSjEtN3lVUHVLYjBRVF9xUmNMUEF0bVF0enVtcE50TTVGZnVXNnk2SzJScXRZM2puTXBKNW1vdmNQQVlwZ3hCQzViYVVxSjl3ai1mbFR4R1VFNkYzU0lYN2E0Q0kzQWpjb3Qw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.theshorthorn.com/",
+      "published": "2026-09-22T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "international",
+        "international opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:51.073827+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Top 10 Fully Funded International Scholarship Opportunities for African Students - The African Exponent",
+      "source": "Google News - Global Scholarships",
+      "publisher_name": "The African Exponent",
+      "publisher_url": "https://www.africanexponent.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQbDFxWHZFVm82STVjemNVYjdITFY3ZWVPcVRDZHkyamxhVHBoTHVucU8xOUxhM1o0azVsZS03YUJ5cXEzT3F4UXhuT0gxcUZhSUtDTnRlQ29JNDJxbUVuVW9HcHV4LTJpWm5kU2JFZjBCeVJzYk53WlJ3NWpZbEZtRGUyX2NlXzUyN1lPM0RoMS0yVnVmdWl6X2ctLWIyOEZtN1JuVGR6RDRjekU4ZkZqRjZWUU53dw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.africanexponent.com/",
+      "published": "2026-09-21T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "fully funded",
+        "students",
+        "international"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:39:16.656232+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "7 CofC Students Receive Gilman Scholarships for Study Abroad - The College Today",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The College Today",
+      "publisher_url": "https://today.charleston.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNb0FzQzhMbnI5cnJVdTJOVjVaNEgtZC0tc29kS2xWNjd0dmYyUnZIazBUYmM4UFJ5WnV4cU5HbkkteVgwc1hfZHFFSF90ZFBPUVpYQXlBdThQVEtqdWd0NEhmaE1FM3hCYUpqelU2cDNjX3liTmt0bU5TRzZxMTk2eGV4d3RLd25UMl9CUzExbWIyWU1ma0ZHNlg3a01leWsxcmNB?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://today.charleston.edu/",
+      "published": "2026-09-09T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:48.813028+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "2 UK students awarded Gilman scholarships to study abroad - UKNow",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "UKNow",
+      "publisher_url": "https://uknow.uky.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPWW05M1hkU2ROUHFyNHFSaElBcWdWa1NraXU4NlZ0dzI3NDJlUkVFWjg4Vkd4YXBRQ0tiN3h3anJ3aGI5US1URTZ0SFUwdDZ5ZUMwa3QzRGxBZng4UEhIa0s3TlBsQmZCN3MwZEN6bWtSWXNoNEZlM2VJeTcxZ05UQWdzdm5lRFpqZ013UjdzWGJ2NDA?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://uknow.uky.edu/",
+      "published": "2026-08-17T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:50.602339+00:00",
       "status": "needs_verification"
     },
     {
@@ -1763,7 +1824,49 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:35.719553+00:00",
+      "discovered_at": "2026-10-24T10:39:06.205677+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Beyond IIT-JEE and NEET: 3 career pathways offering global opportunities for Indian students - The Financial Express",
+      "source": "Google News - Global Jobs",
+      "publisher_name": "The Financial Express",
+      "publisher_url": "https://www.financialexpress.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQNFVocGI2NWNaMWRpa1hkaHZlNnZnTU1IbzBwRlNCZjRTekczSFpQa3ZON1VSM0NiazNiZE9BNUs4THlZVWhfd1lvZS1SX0YtS2Riak5RS1RXaVdiZUppdTNOSVh1Z0dpZVJ1WUNuU0JfY1VrOXVJTk1VMU5kVFVGOVF4OEpuYVQ3bWg5R2RHZFJxY2tPbUpWRi1pRllpbV9RTEF1YjQ2MlFfZGdna2ExdEdQbVQyZjdZeDU1RHlleGFQTC1Sd3lpN0JGVEpIb0FjWmRKaVRIVWdEQ1RobjJuUmVGRHlMRnBwcE1j0gHyAUFVX3lxTE0wODBKaTAyckQyMWU0N0s0ZGVzMmV2SWVmRjhtbHhJUlU0QjFZVTZvUGRlcW14SWEyNk1rdHVFNnpOVmF1Ni1saWo2aUtfTUNEM2otQUg1XzJZRGw3U3Z2eVVhQU5DMVUtbkxxVmloYlRSSHBxdF9BRVVZRVhSQ2poWnlaT0V4WXlKMUVMOGE0X2s2X3RwMVFQWlZJTDdmdWxfdUFBN01STG1idVBpcno5cG9KVlY0ZTFaQWVReldtcV9kVGNVY0RYYTVkaFlwU2FpTzktZnMwaFgtQVpyV0pTUjNzUkk4MnZLaHpYVVVjc1p3?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.financialexpress.com/",
+      "published": "2026-07-15T07:00:00+00:00",
+      "matched_keywords": [
+        "career",
+        "students",
+        "global",
+        "global opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:07.799448+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Study abroad opportunities at UNF: programs, scholarships and benefits - UNF Spinnaker",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "UNF Spinnaker",
+      "publisher_url": "https://unfspinnaker.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQ3hRem5HREtJcktQay00RnIzTHM1MV9STG9ER2lCM1VoemoxWDFCNDBqLUFpYVBCbkhHY2pTeFFfbjFoV2hWM01jZlg1cTR5NXdXazYxZmVWcS1HSDczRUJyMS1BQVZFaHVESlNLQUZjSy14WTN1aFp5NFJCRTE3UXJTWWZIMGd2UWxURVpiYXJKYnRFRnBua01NaWVQTWRpZ1E1MWczVm1oM2lF?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://unfspinnaker.com/",
+      "published": "2026-07-02T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "study abroad",
+        "study abroad opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:54.647748+00:00",
       "status": "needs_verification"
     },
     {
@@ -1784,7 +1887,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:27.500467+00:00",
+      "discovered_at": "2026-10-24T10:40:42.394254+00:00",
       "status": "needs_verification"
     },
     {
@@ -1805,7 +1908,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:54.671056+00:00",
+      "discovered_at": "2026-10-24T10:41:31.933780+00:00",
       "status": "needs_verification"
     },
     {
@@ -1826,7 +1929,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:07.674334+00:00",
+      "discovered_at": "2026-10-24T10:42:09.450762+00:00",
       "status": "needs_verification"
     },
     {
@@ -1847,7 +1950,28 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:47.789192+00:00",
+      "discovered_at": "2026-10-24T10:41:19.965259+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "18 FSU students earn 2026 Gilman Scholarships to study abroad - Florida State University News",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Florida State University News",
+      "publisher_url": "https://news.fsu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxON25yRldySVZldEVrTkEwQ0dSTkpHOTZiQVNfcVBfb2JhT0ctMWR5Q25JaWhhREJrTzNJVTBZdjAxSkJmZHlYU3dua2xReTFvWnhzWi1sZmVuV2NBcngwNzZGaHU3Umg1dWZ5Y1ZDcHNLOXV0Zjk5bjlaMkVPbUx6T1ZydUc4UFNYYmN1ZHJOV2o3RndJZXF0ZmRxZ2Y1d3dHMDJ6dHIyTXJETDBOb1gzSnBGRzJubWVrN0VpVkpiakJ3YjAt?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.fsu.edu/",
+      "published": "2026-05-26T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:56.478450+00:00",
       "status": "needs_verification"
     },
     {
@@ -1868,7 +1992,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:12.374533+00:00",
+      "discovered_at": "2026-10-24T10:40:13.685413+00:00",
       "status": "needs_verification"
     },
     {
@@ -1889,7 +2013,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:08.409318+00:00",
+      "discovered_at": "2026-10-24T10:42:11.723738+00:00",
       "status": "needs_verification"
     },
     {
@@ -1910,7 +2034,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:10.231546+00:00",
+      "discovered_at": "2026-10-24T10:42:14.191320+00:00",
       "status": "needs_verification"
     },
     {
@@ -1931,7 +2055,28 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:09.818929+00:00",
+      "discovered_at": "2026-10-24T10:42:11.961940+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Through study abroad opportunities, Purdue's Veterinary Technology Distance Learning program is helping students think globally - Purdue University College of Veterinary Medicine",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Purdue University College of Veterinary Medicine",
+      "publisher_url": "https://vet.purdue.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQTzBBbkpnME82bE4tZGtWQXVCT204ajV1enpoTk4wdUdJdkhPaFVGZGVJVmU3a0xWZW5kbFZPc1E1RUl6MkhSUnRzMzhyTlR2TnFHMUFmVmJTdXF5MnZUaUIyc2dDZHQ2WFJTNXN0S0ljczFaNTFIeFZNckJUZk96NXhCTEFPUFdtTWp4M2t1MWMtSU14dzJST2JPWjFBbUVaTVVEWVdXcHRTS2FVMHp3RjVBMDQ3WndMbi1RYTNkRk1GMy0zcm9zbkU1d2RyU3lSOXdCMW04dWhDbnpsYUFtX2N3WEtQWVFpWTNUcVF3?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://vet.purdue.edu/",
+      "published": "2026-03-27T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "study abroad opportunities",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:03.085859+00:00",
       "status": "needs_verification"
     },
     {
@@ -1952,7 +2097,49 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:09.230689+00:00",
+      "discovered_at": "2026-10-24T10:42:11.005885+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Gilman scholarships enable 4 Honors students to study abroad - FGCU 360",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "FGCU 360",
+      "publisher_url": "https://fgcu360.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQS2xldWpRZnNtaWRvM2lqRHlOMk04YkZiNlFJekdOcEhqZVpOOUpaemR6aG51N3VDU2k2SHdDQ0o3ZnIxOERhamc4ZTNYR1JhMXY1Z21sMWRLVHZrV1ZqaG1sVjNBNEdXZnRHdVJ5S3FvUmdMbjQwWllXU1NqQkVLRGhyVmp1ZFozQXB2RjUzVTFBcjdZNzY4?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://fgcu360.com/",
+      "published": "2026-03-05T08:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:00.545259+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Renewable Energy Jobs in 2026: Global Market Growth, Skills Gap & Career Pathways (With Data + Forecasts) - Green Fuel Journal",
+      "source": "Google News - Global Jobs",
+      "publisher_name": "Green Fuel Journal",
+      "publisher_url": "https://www.greenfueljournal.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZGoxY1ZBTjJXMDgzYlhsTF84SGJwM3FtQmR0bmxHRl9fNVk4WlIxMVFBYV9paXdYRHh6Z3JVdWpzT1I1N3Z0UVZxem5lY1BUV21oNTNsZzJqdWpTLXkwV2dmMmpXMXdhQ1l1ckNyWEk4akxnaXJpdE51blZjVlZHdnd4WTlBemVCZkxkWDhldS1EYXNLdkhEaElBdjdFdnJMb2lyMjh3Nm5uLUtjcnFhM3dsQXp2UQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.greenfueljournal.com/",
+      "published": "2026-02-27T08:00:00+00:00",
+      "matched_keywords": [
+        "job",
+        "jobs",
+        "career",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:40:51.904288+00:00",
       "status": "needs_verification"
     },
     {
@@ -1973,7 +2160,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:10.106015+00:00",
+      "discovered_at": "2026-10-24T10:42:13.699272+00:00",
       "status": "needs_verification"
     },
     {
@@ -1994,7 +2181,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:53.258822+00:00",
+      "discovered_at": "2026-10-24T10:41:29.259471+00:00",
       "status": "needs_verification"
     },
     {
@@ -2015,7 +2202,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:35.895834+00:00",
+      "discovered_at": "2026-10-24T10:40:56.852414+00:00",
       "status": "needs_verification"
     },
     {
@@ -2036,7 +2223,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:21.148270+00:00",
+      "discovered_at": "2026-10-24T10:40:29.063500+00:00",
       "status": "needs_verification"
     },
     {
@@ -2057,7 +2244,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:29.051055+00:00",
+      "discovered_at": "2026-10-24T10:40:45.264278+00:00",
       "status": "needs_verification"
     },
     {
@@ -2078,7 +2265,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:14.908582+00:00",
+      "discovered_at": "2026-10-24T10:40:17.915086+00:00",
       "status": "needs_verification"
     },
     {
@@ -2099,7 +2286,28 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:49.734647+00:00",
+      "discovered_at": "2026-10-24T10:41:23.541002+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "World's most satisfied international students - Umeå universitet",
+      "source": "Google News - International Scholarships",
+      "publisher_name": "Umeå universitet",
+      "publisher_url": "https://www.umu.se/",
+      "news_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9VajdLLXdjcmtmQXl5aHRsVUkwRHl5MWZ3QVJKR0FNYXNvVWxzNXR0X0JxcThSSFR4Rkp4RGpzdVdYOGRDYllQaXIyaVFEZDFBd1hQNzhoVmtKdC02bUFVV2NrZlRIaElMUDF5Nm5YOVpVSENfM3ZveWhObld6dw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.umu.se/",
+      "published": "2025-09-02T06:55:48+00:00",
+      "matched_keywords": [
+        "students",
+        "international students",
+        "international student",
+        "international"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:39:32.540491+00:00",
       "status": "needs_verification"
     },
     {
@@ -2120,7 +2328,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.020893+00:00",
+      "discovered_at": "2026-10-24T10:40:18.146022+00:00",
       "status": "needs_verification"
     },
     {
@@ -2141,28 +2349,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:54.414494+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Elevate Your Personal Finance Knowledge With These 12 Free Courses - U.S. News - Money",
-      "source": "Google News - Online Training",
-      "publisher_name": "U.S. News - Money",
-      "publisher_url": "https://money.usnews.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSmx3aWN3VHRxbEM1VlJ6WkQ2NENQVkhSV2dVNlFabWJQU2dxcjcxUFVRQXVUS3NOZmJ6VXc3N2lOR256SDF1ampTbzdib0JId1ZyNnlZRlRzR3V4cllTckg5MXlXU1VVUlNESjRkVTlid3ZZQ05TTHd4aFdkb0lPS3BsVzVIYnlXSlpLZ2h2aHpRZVo1MEpXbUJ0NkdSMUJ4R3lVVlV3cU5QVnU0QVM2RVBoYnE?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://money.usnews.com/",
-      "published": "2025-06-24T07:00:00+00:00",
-      "matched_keywords": [
-        "course",
-        "courses",
-        "free course",
-        "free courses"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:55.651108+00:00",
+      "discovered_at": "2026-10-24T10:41:31.328142+00:00",
       "status": "needs_verification"
     },
     {
@@ -2183,7 +2370,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:54.542888+00:00",
+      "discovered_at": "2026-10-24T10:41:31.694273+00:00",
       "status": "needs_verification"
     },
     {
@@ -2204,7 +2391,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:41.346701+00:00",
+      "discovered_at": "2026-10-24T10:41:07.554998+00:00",
       "status": "needs_verification"
     },
     {
@@ -2224,8 +2411,8 @@
         "international"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:12.613439+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:45:46.856531+00:00",
       "status": "needs_verification"
     },
     {
@@ -2246,7 +2433,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:01.253884+00:00",
+      "discovered_at": "2026-10-24T10:39:50.854852+00:00",
       "status": "needs_verification"
     },
     {
@@ -2267,7 +2454,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:40.779124+00:00",
+      "discovered_at": "2026-10-24T10:41:05.534452+00:00",
       "status": "needs_verification"
     },
     {
@@ -2288,28 +2475,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:50.836403+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Find the Best Remote Jobs With These Top 25 Websites for 2024 - ProPakistani",
-      "source": "Google News - Remote Jobs",
-      "publisher_name": "ProPakistani",
-      "publisher_url": "https://propakistani.pk/",
-      "news_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNF9TU3dtUGQwYU1jemllY1QzTG81STJXU1ZoWFNmVFVkWk1qQzhEeThOdUYxYTNnLTVEd0ZJeXcxUm1weFJyWTZ6NWItU2JYV0Qtc1BoSDFMcUYxQTJNWXdOeHFZNV9jV3M1LVBwVTdJUExmOGs0U25ZbWlteHBUQndCRG5NZW9mUUliV00xblEtMlBKY1FMVWcxQnVVUdIBowFBVV95cUxNaWdkb01PZTFaeVdPSHo2LWc0R1J1QU1uM05MblhYeTNDWmg4UnNISGtMZ0tqUGZiUEpkRmhQd2hHOEZjSHdFMHg4OXFaYlZpbkIwRnVHM2RPcEUyUWV4Z1g1VnRkaVN0SmYxbGFPemtCUUhDUE1pZzZmR0Z3V0JVRTZXc0hvSndjYWloSlVnUktvcm9GNWpKR3EzTDR4M3NDRmxR?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://propakistani.pk/",
-      "published": "2024-03-29T07:00:00+00:00",
-      "matched_keywords": [
-        "job",
-        "jobs",
-        "remote job",
-        "remote jobs"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:30.176607+00:00",
+      "discovered_at": "2026-10-24T10:39:31.842203+00:00",
       "status": "needs_verification"
     },
     {
@@ -2330,7 +2496,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:27.104080+00:00",
+      "discovered_at": "2026-10-24T10:40:41.414810+00:00",
       "status": "needs_verification"
     },
     {
@@ -2351,7 +2517,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:28.092694+00:00",
+      "discovered_at": "2026-10-24T10:40:43.107734+00:00",
       "status": "needs_verification"
     },
     {
@@ -2372,7 +2538,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:26.420836+00:00",
+      "discovered_at": "2026-10-24T10:40:40.116924+00:00",
       "status": "needs_verification"
     },
     {
@@ -2392,8 +2558,8 @@
         "international"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:16.620805+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:52:09.784551+00:00",
       "status": "needs_verification"
     },
     {
@@ -2414,7 +2580,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:40.534908+00:00",
+      "discovered_at": "2026-10-24T10:41:05.300407+00:00",
       "status": "needs_verification"
     },
     {
@@ -2435,7 +2601,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:48.807273+00:00",
+      "discovered_at": "2026-10-24T10:41:21.878816+00:00",
       "status": "needs_verification"
     },
     {
@@ -2456,7 +2622,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:58.733347+00:00",
+      "discovered_at": "2026-10-24T10:41:40.522991+00:00",
       "status": "needs_verification"
     },
     {
@@ -2477,7 +2643,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:58.859200+00:00",
+      "discovered_at": "2026-10-24T10:41:40.764266+00:00",
       "status": "needs_verification"
     },
     {
@@ -2498,7 +2664,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:49.371443+00:00",
+      "discovered_at": "2026-10-24T10:41:22.115177+00:00",
       "status": "needs_verification"
     },
     {
@@ -2518,7 +2684,27 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:34.890883+00:00",
+      "discovered_at": "2026-10-24T10:39:03.135799+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Applications open for Chevening Scholarship Program (Ecuador) - fundsforNGOs - Grants and Resources for Sustainability",
+      "source": "Google News - Global Scholarships",
+      "publisher_name": "fundsforNGOs - Grants and Resources for Sustainability",
+      "publisher_url": "https://www2.fundsforngos.org/",
+      "news_url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcGtrVFk5anlhTFBVMU9iRWhSd29pMVppeF9YUG5sXzJESGwwU1pmYkZYQlNJSVRhLVNUOHVoRzBqVWRwVnV3VFdDTzFnNFZEMUNCbF9oWW82X1NSV21Od1B3RWxjeUdfcnpRMDFyZExIUkJ3VDdmQm5IRkpwSk1sSDVQcEdkZk5uODNIVU9qVDNObEZhTWhfVklxX3VVZE9LS2840gGoAUFVX3lxTE9NUDltdUJqMThGOGtBd3ZySDNiUkxaaU50ak5haVlUR29GcEJldktKdlNuamtIVzMzOTN1bUpwckV3czlZdElSRkdmT0hGeXVoYWRJa1RrUDNVYVV4VVNlMzhtY0Z4OVItQ0IzNFRfSWVSQTlMa2t4b3ZmZWxKNWp3UW1CbmpRbzFPRWFFN1FkZTEwZ3Q2dnJlN1VYV0dQbDU1OUd0dnctSQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www2.fundsforngos.org/",
+      "published": "2026-10-06T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "grant",
+        "grants"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:39:12.429763+00:00",
       "status": "needs_verification"
     },
     {
@@ -2538,7 +2724,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:40.244089+00:00",
+      "discovered_at": "2026-10-24T10:41:05.070708+00:00",
       "status": "needs_verification"
     },
     {
@@ -2558,7 +2744,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:07.797849+00:00",
+      "discovered_at": "2026-10-24T10:42:10.772186+00:00",
       "status": "needs_verification"
     },
     {
@@ -2578,7 +2764,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:55.186728+00:00",
+      "discovered_at": "2026-10-24T10:39:40.512997+00:00",
       "status": "needs_verification"
     },
     {
@@ -2598,7 +2784,107 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:42.405389+00:00",
+      "discovered_at": "2026-10-24T10:41:09.603894+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "My Student Experience: Students Immerse Themselves in New Cultures, Experiences During Summer Study Abroad Opportunities - NC State University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "NC State University",
+      "publisher_url": "https://ced.ncsu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPQ2FkWG13dGk4bTMzZ1BjSHVUSjhNN1F2ZEFmMVM1Y2ZCN0Q2M05xaEoydXZVRjU3eUhrYm5Rbk9BbUZTQ25EMHVFRzNIQkNheFZGY1EwSDVTeTIwWVVQajY3MWtlMnFLYTRNX2ZmangyaDJkOHFaMU1uX01RbkFzWVVheGZiX0FtRjBnOFktMHVCT1pQbkxTWVVMTnhnbmw2T2wtb3RwUU5HZThGYTdCbVppeV94bTV6TDJNbDZsQkwwN1JUaHR3aERhUWVXaDctVkhXaEp6QXZpQ1NXeWl1dHpwRmJtRG9qZmhCUw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://ced.ncsu.edu/",
+      "published": "2026-08-11T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "study abroad opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:51.664587+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Three URI students receive Gilman Scholarships to study, travel abroad – Rhody Today - The University of Rhode Island",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The University of Rhode Island",
+      "publisher_url": "https://www.uri.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcGoxRkJQTzROTzFlU2owczl5ekVoU3JmMDdNZmM2aDFGNWVVMzhpMGloYXg4Q1Q4cmNaNHZ6VENQN3BTdlp2LXFrc1k3bm14aG1zMEZKLXlpRURoUGhCS2steldzcGhQelF2c2RNLW92WlJ4a1VvOWlzV3MwWWNnejduN1NmNkQ1TThfOHRCUFlhNHUxQkRHX3BFOFFERmxiNHk4UnBR?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.uri.edu/",
+      "published": "2026-07-30T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:52.584617+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Foreign Students Praise Convenience Store Jobs in Japan - News On Japan",
+      "source": "Google News - International Student Opportunities",
+      "publisher_name": "News On Japan",
+      "publisher_url": "https://newsonjapan.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBMZDljWkFGLUFFeUw0N055YXJta1c3cFlFcDdGeDlFWFBKdENZamphTzRWZ2l2YWIxbnRSMGtOWXAxZ3hIZzZvcV9ZVHQ3LV9WMzlEQg?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://newsonjapan.com/",
+      "published": "2026-07-23T07:00:00+00:00",
+      "matched_keywords": [
+        "job",
+        "jobs",
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:15.145531+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Students gain global health care perspective during OSU Nursing’s first study abroad program - news.okstate.edu",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "news.okstate.edu",
+      "publisher_url": "https://news.okstate.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNLTlGWVJPa2tHMjZXLVhJZmlXR2xDVjBzVW42V3pzb0lNLURTQkNod21maUJlU1J3aDgzd2hiNDVuR3pfaHgtRnlfT0NFTjlKdWJpUVh2UENmNG1HeVJrQWZqeld4czg1QlJJNTQ4R1VzQXJ3dU5KUzVPaDdpeGxUTmNiZzB6eTlMdVI2Y2tiNEc0TlB5cER6VjBqVlpKZG9tSEZ6QldTcGROeTdpSngyU1lxaEVSS0U3bzVSa2NUWkh4UmoxRFFhN2Q4VElLTG5lWklLRlljMmRfZnhkVklNMk1zR3VYMU5QRGc?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.okstate.edu/",
+      "published": "2026-07-08T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:52.353391+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Wellstar College launches first study abroad program to Amsterdam, providing a transformative global experience for KSU students - Kennesaw State University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Kennesaw State University",
+      "publisher_url": "https://www.kennesaw.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOFRna3VhN3BZLTFGYlNpV2Etam0tbGhFV3Y0S3FoaHVaRTFpeWsxQS0tV3NuclpTOU05T29nbjRlUGZTSDlSdWxsNlFGQWlFOEU3ZU51c1luaERRQ2QwYkxPVmFDYjBGSU85VDI1N1dFOUFkQzJPZllLZng1MUN5VTdlUDlmRDRkeXAzNmxVY1ZVcWozNy15QXAtWUFCeXJkUjZmUDlNRVNob1JENWxORk9B?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.kennesaw.edu/",
+      "published": "2026-07-02T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:53.792816+00:00",
       "status": "needs_verification"
     },
     {
@@ -2618,7 +2904,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:16.826378+00:00",
+      "discovered_at": "2026-10-24T10:40:21.169065+00:00",
       "status": "needs_verification"
     },
     {
@@ -2638,7 +2924,27 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:09.692846+00:00",
+      "discovered_at": "2026-10-24T10:40:07.143422+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Anthropic brings free AI fluency courses to Coursera for students, educators, and nonprofits - EdTech Innovation Hub",
+      "source": "Google News - Online Training",
+      "publisher_name": "EdTech Innovation Hub",
+      "publisher_url": "https://www.edtechinnovationhub.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBIclBfRkFWeTVUM0FqWDRxbG5XQmt5bGIxQ3FTaXE5REhMekdNS2oySU9qV3hHeFlyU2tCcEctR0ZxUVc0Z2hyRmhzUnE5anl3b3RGcW1lRDVHZnBrZkg2S2phWGRtOC1nQ0VaSi1pUVRkdWt6SWh2ZFpHTQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.edtechinnovationhub.com/",
+      "published": "2026-06-03T07:00:00+00:00",
+      "matched_keywords": [
+        "course",
+        "courses",
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:34.724778+00:00",
       "status": "needs_verification"
     },
     {
@@ -2658,7 +2964,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:40.019818+00:00",
+      "discovered_at": "2026-10-24T10:39:11.956976+00:00",
       "status": "needs_verification"
     },
     {
@@ -2678,7 +2984,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:21.027052+00:00",
+      "discovered_at": "2026-10-24T10:40:28.822250+00:00",
       "status": "needs_verification"
     },
     {
@@ -2698,7 +3004,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:17.499653+00:00",
+      "discovered_at": "2026-10-24T10:40:16.923076+00:00",
       "status": "needs_verification"
     },
     {
@@ -2718,7 +3024,27 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:59.932357+00:00",
+      "discovered_at": "2026-10-24T10:39:48.573906+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Expanding Global Access: Memorial Scholarship Opens Doors for Students - University of Missouri-Kansas City",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "University of Missouri-Kansas City",
+      "publisher_url": "https://www.umkc.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPakc3SE13MEIzYlQ0NEZYM2x4SDBHRWVad0lpQm8td0Jqd1RYbkxzUFNrZVpxOEsydGdyY25tb2pEbktKMGF1N2ZVT09NY1ZUN3VhNTBqaUVfS3lXZTFXQ0JYSERMX09JYmRHLVlpTmpuZHJ2aGZtb3BzSTBYcnNsVXZ6LU9rNWJNTGJYYWNvVFRRSGpxZGx0YmN0OTNuQ0JiT1Bkb2xkQ3MxQ015QVFYRU9XUnVWeDJS?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.umkc.edu/",
+      "published": "2026-04-03T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "students",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:59.592968+00:00",
       "status": "needs_verification"
     },
     {
@@ -2737,8 +3063,28 @@
         "career opportunities"
       ],
       "url_resolution": "fallback",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:43:16.480812+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Gift endows study abroad scholarship, broadening horizons for students - ASU News",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "ASU News",
+      "publisher_url": "https://news.asu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRUMwb3VMWUgybHp0cE9iOFRxTk9JTVZxdzBZRlh6TGpGOGhSbUMwaEhrSmk4V1MtQUhxa1N6aW1OTW9ELWk4MV94ZUoyVzBfNmNFSkwtNTdRSVZDM0JFcjNEVGlQTGxISkNndVZZNGh6bzVrS3NyTEJ5M2xQbHpEbHhhQnJ4eUZIcG0zQl9JaVdSRkZJb1l5eEFSVDVYVUl3b0tYZFNoSUI1WXZ2QjNvUTJ0TzBrMHpOclhNRw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.asu.edu/",
+      "published": "2026-03-12T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:14.904731+00:00",
+      "discovered_at": "2026-10-24T10:42:02.166340+00:00",
       "status": "needs_verification"
     },
     {
@@ -2758,7 +3104,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:12.781782+00:00",
+      "discovered_at": "2026-10-24T10:40:06.874613+00:00",
       "status": "needs_verification"
     },
     {
@@ -2778,7 +3124,47 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:25.456504+00:00",
+      "discovered_at": "2026-10-24T10:40:38.087059+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Study Abroad & Internships Abroad - Louisiana State University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Louisiana State University",
+      "publisher_url": "https://www.lsu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBxNlJSUTdfSkYtZmlMbjNDaWg0UU9hUjhUOHhqZmllRlJ3SmZDUDNjTWhOcDVaNFV5YmtvWWxwVDh0eFJoOGNqdk5xdXc2ZkVpNlk3OUZ4TlYwbnFuOTl2a1NONHAtLURJNFdhLWhfS1JLLWZBV291WEVhQUluQQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.lsu.edu/",
+      "published": "2026-01-28T10:58:08+00:00",
+      "matched_keywords": [
+        "internship",
+        "internships",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:04.544597+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Office of International Education study abroad fair, Jan. 28 - Marquette Today",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Marquette Today",
+      "publisher_url": "https://today.marquette.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWGJJTURPbmJLMEgtTkpxemFfbDV5U0J6ZGZLUjJXVUp2bWtOSTlkODdlSzBWelNURXdiTGtITHlkU2RIT051bk1PWDV6UWlxdkpGa1c5bVBMdDk4VXVTVzJ5YlBfYmxuaEJ3TjNxczB4ZGw1NGRhRFpIRVJDX0xqSUZEQzdtS2xIaDJZUmJKdXE4T1dlMXlzbGs4VQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://today.marquette.edu/",
+      "published": "2026-01-20T08:00:00+00:00",
+      "matched_keywords": [
+        "international education",
+        "study abroad",
+        "international"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:03.338715+00:00",
       "status": "needs_verification"
     },
     {
@@ -2798,7 +3184,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:34.673512+00:00",
+      "discovered_at": "2026-10-24T10:40:54.283286+00:00",
       "status": "needs_verification"
     },
     {
@@ -2818,7 +3204,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:02.494922+00:00",
+      "discovered_at": "2026-10-24T10:39:53.715994+00:00",
       "status": "needs_verification"
     },
     {
@@ -2838,7 +3224,27 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:32.983433+00:00",
+      "discovered_at": "2026-10-24T10:40:51.663293+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "This fall 2025, seven UH Hilo students are studying abroad on scholarships. Their stories are inspirational. - University of Hawaii at Hilo",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "University of Hawaii at Hilo",
+      "publisher_url": "https://hilo.hawaii.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORmZXYmFhSm05cE1TSjBESVI2ZkRXMmJqbm1ybU05WjZ3UHAybTBtUzhRUXpRS1JJZHRBNmxXVDJlQnBxR1kzamNlTk91SkhQTTNrVVg2cl91bXRmWGJsZEJuaFJ4aTcxcDYzZHhVaHBtcGlRUXN3cVE0YU1pUWp2cFpOSmhtUmpNTFRuMFUtU1BtUDhtYXhraE9Rcw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://hilo.hawaii.edu/",
+      "published": "2025-12-03T08:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:05.497290+00:00",
       "status": "needs_verification"
     },
     {
@@ -2858,7 +3264,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:26.056655+00:00",
+      "discovered_at": "2026-10-24T10:40:39.418503+00:00",
       "status": "needs_verification"
     },
     {
@@ -2878,7 +3284,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:20.870598+00:00",
+      "discovered_at": "2026-10-24T10:40:28.456317+00:00",
       "status": "needs_verification"
     },
     {
@@ -2898,7 +3304,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:52.476150+00:00",
+      "discovered_at": "2026-10-24T10:39:35.418916+00:00",
       "status": "needs_verification"
     },
     {
@@ -2918,7 +3324,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:11.200216+00:00",
+      "discovered_at": "2026-10-24T10:42:16.370577+00:00",
       "status": "needs_verification"
     },
     {
@@ -2938,7 +3344,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:13.137799+00:00",
+      "discovered_at": "2026-10-24T10:40:08.324371+00:00",
       "status": "needs_verification"
     },
     {
@@ -2958,7 +3364,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:27.218945+00:00",
+      "discovered_at": "2026-10-24T10:40:41.678542+00:00",
       "status": "needs_verification"
     },
     {
@@ -2978,7 +3384,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.488588+00:00",
+      "discovered_at": "2026-10-24T10:40:18.981250+00:00",
       "status": "needs_verification"
     },
     {
@@ -2998,7 +3404,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:12.898612+00:00",
+      "discovered_at": "2026-10-24T10:40:08.913108+00:00",
       "status": "needs_verification"
     },
     {
@@ -3017,8 +3423,8 @@
         "students"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:17.385128+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:53:37.328170+00:00",
       "status": "needs_verification"
     },
     {
@@ -3038,7 +3444,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:18.541097+00:00",
+      "discovered_at": "2026-10-24T10:40:23.974343+00:00",
       "status": "needs_verification"
     },
     {
@@ -3058,27 +3464,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:10.666132+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "How do research careers compare across countries? New global database has some answers - Science | AAAS",
-      "source": "Google News - Global Jobs",
-      "publisher_name": "Science | AAAS",
-      "publisher_url": "https://www.science.org/",
-      "news_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOUHNuUnlhYlFoc29ZWFFFMTdadXlwMWFGOXN6M3lUZ3MtY3d3R1N4Q0NHYnEtZS1aQkZQendRaEJsOEdWZ29LblpBTlN0QUtKRDNZbEtucGRZeFNTVlBONE9UWDIzeHloNlREQ3FZeWs4UTUyak1OVHZXUU1jVWlBY25UYVZZaG1iQ0wzNlp1WEZ5QVdyck9vNDcxczU5MmlXMUY3NUxwOGhtMlpidld1YVpLUjU1V3dEcUtuUHVPa3B1RDA?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.science.org/",
-      "published": "2025-06-30T07:00:00+00:00",
-      "matched_keywords": [
-        "career",
-        "careers",
-        "global"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:34.156257+00:00",
+      "discovered_at": "2026-10-24T10:42:25.641252+00:00",
       "status": "needs_verification"
     },
     {
@@ -3098,27 +3484,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.746316+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "UWA international student explores the United Arab Emirates through transformative study abroad program - University of West Alabama",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "University of West Alabama",
-      "publisher_url": "https://www.uwa.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdHlqZWo2NEpjMUxyaVRtRk9ZcURnVF9DUFh0eXZtbXNaX05KZDlkV2RtODZWdWtMeTZ6bU9jMU5qTGt5QnJ6QVEzMG1SNFdtSlZJc2RPQ3NTRG9qOVYwVGxJM05XZWpZelVDeVVlbDQ5SllkNFdNdWhQcF8tOXFjT3I0ckc4N2dma3ZCdVpwdWVsc0Y0LVBGVEZ0VVc0aXBBcnBua0NDdWxJanhTeldhRkFkTU1FQjZVQXRmSVNQMm5TbFo4ck5kUA?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.uwa.edu/",
-      "published": "2025-04-15T07:00:00+00:00",
-      "matched_keywords": [
-        "international student",
-        "study abroad",
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:05.535459+00:00",
+      "discovered_at": "2026-10-24T10:40:19.727443+00:00",
       "status": "needs_verification"
     },
     {
@@ -3138,7 +3504,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:36.151782+00:00",
+      "discovered_at": "2026-10-24T10:40:57.086378+00:00",
       "status": "needs_verification"
     },
     {
@@ -3158,7 +3524,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:54.936912+00:00",
+      "discovered_at": "2026-10-24T10:39:39.788269+00:00",
       "status": "needs_verification"
     },
     {
@@ -3178,7 +3544,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:35.295058+00:00",
+      "discovered_at": "2026-10-24T10:40:55.817077+00:00",
       "status": "needs_verification"
     },
     {
@@ -3197,28 +3563,28 @@
         "students"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:17.258666+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:53:21.195917+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Study Abroad Opportunities for Online Students - Southern Utah University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Southern Utah University",
-      "publisher_url": "https://www.suu.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9abFpnX2pDZVFwV0c5dmdaOHc1WmU3cl9mUm5QNWtpTHJGazJlVTVHY0ctREhiQXJYTWhxT2pLNy0zZ2xCY1RnQVhDMkp4Wk5ZVEVaTnU0Z0l5MDVFUmJsQzBfTjRMRlowcXVJOXJ0ejBsRjRHaGF4NVpR?oc=5",
+      "title": "Student Spotlight: Claire Keenan talks summer internship with Global Relations - University of Illinois Urbana-Champaign",
+      "source": "Google News - Global Internships",
+      "publisher_name": "University of Illinois Urbana-Champaign",
+      "publisher_url": "https://blogs.illinois.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA4UmlXdmdtamc0NVN5Vzk3NUhuQnc5bGM0eTdjMVFxVmlFY1VNUTVQRmtrQ0FiUjQtVmI3SmE3UFJnNnl5dkg4QXBKbUlGdVFSMmU5NTlNSnVYdEU?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.suu.edu/",
-      "published": "2024-12-02T08:00:00+00:00",
+      "source_url": "https://blogs.illinois.edu/",
+      "published": "2024-10-21T07:00:00+00:00",
       "matched_keywords": [
-        "students",
-        "study abroad",
-        "study abroad opportunities"
+        "internship",
+        "summer internship",
+        "global"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:03.781394+00:00",
+      "discovered_at": "2026-10-24T10:40:19.225241+00:00",
       "status": "needs_verification"
     },
     {
@@ -3238,7 +3604,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:17.655109+00:00",
+      "discovered_at": "2026-10-24T10:40:21.892164+00:00",
       "status": "needs_verification"
     },
     {
@@ -3258,7 +3624,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:13.696300+00:00",
+      "discovered_at": "2026-10-24T10:40:15.354496+00:00",
       "status": "needs_verification"
     },
     {
@@ -3278,7 +3644,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:54.264584+00:00",
+      "discovered_at": "2026-10-24T10:39:38.937603+00:00",
       "status": "needs_verification"
     },
     {
@@ -3298,7 +3664,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:58.985155+00:00",
+      "discovered_at": "2026-10-24T10:41:41.003901+00:00",
       "status": "needs_verification"
     },
     {
@@ -3318,27 +3684,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:01.315876+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "ISRO Announces Free Space Science Course With Certificate for School Students - Shiksha.com",
-      "source": "Google News - Online Training",
-      "publisher_name": "Shiksha.com",
-      "publisher_url": "https://www.shiksha.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZlNEdzBFbUV5NEVuQ1ZpUkVfWDcxYmI5Y2J3czBYR1VYNWRlWmhEdndxSGJycExhV0xXQzExOGNtUHg5WnNJY2xXdXRobFRxQjNZaDVKRG1IaG1oSTVtelJuT2JUaWNxU2haY1g1UWg3SWtBdFlEaTQtaXd6ZTRZQTFVdm93VmtTNXpHcW9laS0xSlU?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.shiksha.com/",
-      "published": "2022-05-27T07:00:00+00:00",
-      "matched_keywords": [
-        "course",
-        "certificate",
-        "students"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:01.188219+00:00",
+      "discovered_at": "2026-10-24T10:41:45.093674+00:00",
       "status": "needs_verification"
     },
     {
@@ -3358,7 +3704,27 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:45.337257+00:00",
+      "discovered_at": "2026-10-24T10:41:15.142122+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Global Ministries Awards Scholarships - umcmission.org",
+      "source": "Google News - Global Fellowships and Grants",
+      "publisher_name": "umcmission.org",
+      "publisher_url": "https://umcmission.org/",
+      "news_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPb3BuYm5zTEpaUGlPbVpXOEdEQzd3b3BWUko4NWhYVE1iZkYzcW1hSWhrNGN6NkVseV83RjZmOTkteVIyc3B5Zk1XdkE2VEF0VDFOcmhmQ01aSDJiWk9sV1Y1WlZsMmlmcHZUdk5oa1VLUTlURTdoTFpTb05oaV9fWDB3?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://umcmission.org/",
+      "published": "2020-12-07T08:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:39:56.376176+00:00",
       "status": "needs_verification"
     },
     {
@@ -3378,7 +3744,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:45.441218+00:00",
+      "discovered_at": "2026-10-24T10:41:15.380562+00:00",
       "status": "needs_verification"
     },
     {
@@ -3397,8 +3763,46 @@
         "international"
       ],
       "url_resolution": "fallback",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:53:53.588591+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "USF students encourage peers to study abroad - The Oracle",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The Oracle",
+      "publisher_url": "https://www.usforacle.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1DSnlQXzhoQk1Dc3drTnhodjlOTVNKUnlkY3JGeXJaSnBDcnZwSXp1dU1XUFdjQVZ6YzQ0NVh0c3N2c19GLWI4Q3pGaEo4Z3U2T3hScl9Qcmh0YVBmNEhLUFFCNVBCdUVGd3lsaG5FWXNtOWN3THdLZWEyNWEwQQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.usforacle.com/",
+      "published": "2026-10-14T21:18:05+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:17.691453+00:00",
+      "discovered_at": "2026-10-24T10:41:46.856956+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "First-year students begin their WMU experience with study abroad in the Dominican Republic - Western Michigan University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Western Michigan University",
+      "publisher_url": "https://wmich.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9QY2FzdjRoVkhpeWFUeVJhS0oycDhFUUJGQXpUMDdZTEF0N1o0YXVfa1F4ZG1kV09rZUFHQjNKYzlZV3J1TGxWUExhVW9NRmcyTzYwZU5zSzlKbGJrWXNkWU5CYUVrU2VoZHoxc0Y3aGNIMkNmTzVVUndqbWZtUQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://wmich.edu/",
+      "published": "2026-10-13T23:21:33+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:46.403935+00:00",
       "status": "needs_verification"
     },
     {
@@ -3417,7 +3821,83 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:31.690286+00:00",
+      "discovered_at": "2026-10-24T10:40:49.434006+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Study Abroad and Exchanges Grant Opportunities Available - Auburn University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Auburn University",
+      "publisher_url": "https://wire.auburn.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNVl3S2EzVFBpNF9SV1pWbEVyTFQtcEpGUjJlZGM2WU9STi1jaHFIUldvYzI4X1I5c05lMm5sOEs0aUlIWHJWMTFzejM5cTNiRzktLTczMTRpNlVLOHE4N1VtajJPVGtyLUpndVIzamdzVjZBYVFyeUNSQVg1N2Nhdzkyal9LQnd0LU81REFlRTFXQThnRDVwQnhDUUtxd1FRLVFoM25jVUVWUFk1Y3dGalNUM1hsSEJTR1E?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://wire.auburn.edu/",
+      "published": "2026-09-30T07:00:00+00:00",
+      "matched_keywords": [
+        "grant",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:47.354011+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Annual International Education Summit - Harper College",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Harper College",
+      "publisher_url": "https://www.harpercollege.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1tSE1fYWJ2cnBjV3hBMXdfeXBXT3dlaVhDeXV3cEFPOXB2MEVpWnhOXzBzTlFra1dnN1JIM3JJMkd5dXRwajZhbU5KbUszczlUaUxmeDhuZnRtSkxDakI4VVpSTVpoR09aajA3RlFB?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.harpercollege.edu/",
+      "published": "2026-09-30T07:00:00+00:00",
+      "matched_keywords": [
+        "international education",
+        "international"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:50.844331+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "UNCG Honors Program Opens Affordable Study Abroad Opportunities in Copenhagen - UNC Greensboro",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "UNC Greensboro",
+      "publisher_url": "https://www.uncg.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPYWF5Y29vd25yQXFsaU1hcEM5NTc3eXlRUEJURUdhZVk4a1RBemFHWkdsR2xyZk9RT1hobUtkaVpvc3Z4bnM1UkhOdnlDWjBDVDlrRW92d0xLcTdMSTVlSTZXWU0zeDZCVjEtc2NWRWk0YVNBdmh1NU9EWElOYS1lQkI4bThZWlRhSWZ2QklhQkZKYW54cDMzWTBUeEUxUm1WdDZwXzQ3OA?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.uncg.edu/",
+      "published": "2026-09-29T07:00:00+00:00",
+      "matched_keywords": [
+        "study abroad",
+        "study abroad opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:47.106204+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Students expand program connecting GW, exchange students to ease study abroad transition - The GW Hatchet",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The GW Hatchet",
+      "publisher_url": "https://gwhatchet.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOWXllN3FXRm9IYjBzUDB1WDh4dHV4VEtnUkh6bTVoUC1CN1hPdzBPNTUzeGRkN05iVzMxaGY1ZjktaXI2SzNZdXFsN095eDFIeS1pb2xVVE1zN0tiSWl6SVhXTU9QaUptblBBWVphMzlrU21IRVQ4TDVUeGZ3LXJKcVVzVlVOWTBhVnh5eVdReEJBSDkyTDNERjNfOTBTa1Zrd1Vka3JncVFTYjVmeGtfbDFVZElDcTNkVkJ5T0Zn?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://gwhatchet.com/",
+      "published": "2026-09-28T06:26:11+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:48.460439+00:00",
       "status": "needs_verification"
     },
     {
@@ -3436,26 +3916,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:42.282227+00:00",
+      "discovered_at": "2026-10-24T10:41:09.130842+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "“0 out of 10”: Woman rates remote job platforms and Mzansi weighs in - Briefly News",
-      "source": "Google News - Remote Jobs",
-      "publisher_name": "Briefly News",
-      "publisher_url": "https://briefly.co.za/",
-      "news_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWjVRVVBtQXk5ZUhqRFJCYjdWQURRX05KLThLTTZNX204SnlPRUJvQWp5OE50UFpHT0dzTVczclp2SU50MzVXWXNibmdmYnRkWVJTaFZqYVZWWkxBUkd6Uk9GS25vQklQUFBoblQyTDE2cFUxWGJGTDVVSEFNdnBUZ2UtNVNZakRmeGF1dDJvTmw?oc=5",
+      "title": "Study Abroad Fair shows students they can travel the world while gaining an education - BYU Daily Universe",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "BYU Daily Universe",
+      "publisher_url": "https://universe.byu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbUpSUUtVNmthQnVnSXVVTXdkMzhDWTRXZjlqOThkVDBHWG9FRUtqOVBuNmplZTdqVEVKMWlNcU50ekFXZGNSNUQzV0ZuQ25TRmhIdTgzc0VhbF82czhNa0F5azBVNlZMalV5akFFeEJGdUJudGRkMUhUMUsxWG00VFJ3UXp3bjBWRzR6Y0ViNzN5UUFsSlNyNWxIbS01NXhiWHBZRmd0ZGxlQllhUVRQXzhoNktlcEtF?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://briefly.co.za/",
-      "published": "2026-09-18T07:00:00+00:00",
+      "source_url": "https://universe.byu.edu/",
+      "published": "2026-09-22T07:00:00+00:00",
       "matched_keywords": [
-        "job",
-        "remote job"
+        "students",
+        "study abroad"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:29.801217+00:00",
+      "discovered_at": "2026-10-24T10:41:52.129129+00:00",
       "status": "needs_verification"
     },
     {
@@ -3474,7 +3954,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:59.911080+00:00",
+      "discovered_at": "2026-10-24T10:41:42.487042+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Summer Study Abroad Recap: CAP Students Travel to Rome, Chile, and Japan - CU Denver News",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "CU Denver News",
+      "publisher_url": "https://news.ucdenver.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb3N5cTh6ZDVVYUJlXzlHaTdySHo4NldTenR0bEh1aHhBSkwtSVRvUThmYVFJdy04MXNETWNxandHN0phZllFc3d6dDZnYVR5RGhQeERrVTNwUXJCeHNEOC0zU2tFTDJaVHZVN29OYW5mcVpERjFDQUhRVHpwUjkxVWxod3gtTWZCWnhPRFJXczE5bS1nTUtpLVNQc3E?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.ucdenver.edu/",
+      "published": "2026-09-01T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:48.074845+00:00",
       "status": "needs_verification"
     },
     {
@@ -3493,7 +3992,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:10.094385+00:00",
+      "discovered_at": "2026-10-24T10:40:08.561769+00:00",
       "status": "needs_verification"
     },
     {
@@ -3512,7 +4011,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:31.832390+00:00",
+      "discovered_at": "2026-10-24T10:40:49.080210+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Summer Study Abroad Made Possible Through Elaine Baran Scholarship - Brookdale Community College",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Brookdale Community College",
+      "publisher_url": "https://www.brookdalecc.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNa2xSTE85UG9FMlFFWTRXbzItUDdJXzZ6TFV2V1dzcFk3UkxPSmw5eXRZSGJkZnBMckNFSGt0bG5mbmZjVUF0bTM4SGpSQkFuVUxVVklOeHpnRTVaa1J4WG03QTZxVzNBRUdDVVdZbE1zazNkZVdYcmVFczVhakZXaE14Z1N5SzVfMFJfSkl3RE9MZEo5aHFUUHJOUQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.brookdalecc.edu/",
+      "published": "2026-08-07T07:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:50.375905+00:00",
       "status": "needs_verification"
     },
     {
@@ -3531,7 +4049,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:57.763026+00:00",
+      "discovered_at": "2026-10-24T10:41:38.328216+00:00",
       "status": "needs_verification"
     },
     {
@@ -3550,7 +4068,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:51.346110+00:00",
+      "discovered_at": "2026-10-24T10:39:35.169480+00:00",
       "status": "needs_verification"
     },
     {
@@ -3569,7 +4087,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:20.356927+00:00",
+      "discovered_at": "2026-10-24T10:40:27.413412+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "An Incredible Investment in Global Education - St. Olaf College",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "St. Olaf College",
+      "publisher_url": "https://wp.stolaf.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9TNTEwS1p6LVlOTy0xSmNZN3hjOXlJU0dCSmxGNDFEOFVYc000dHA5MnZCc3NZR1F3NHNudEM2ejZIeVRUV0pmdUJib0YtWTBqLWg1WjEtZ1kxT01qMFpqZkozNHF1OFB4cWQzdjRleUhmdGtGejJRWmZkRQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://wp.stolaf.edu/",
+      "published": "2026-05-21T07:00:00+00:00",
+      "matched_keywords": [
+        "global education",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:55.375845+00:00",
       "status": "needs_verification"
     },
     {
@@ -3588,7 +4125,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:13.254324+00:00",
+      "discovered_at": "2026-10-24T10:40:13.911403+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "How Study Abroad Program Shaped Poole Student’s Global Perspective - NC State Poole College of Management",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "NC State Poole College of Management",
+      "publisher_url": "https://poole.ncsu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTXJ5V3N1VVZsUHUwTV9wTmY5bFMzaWoxeDBnQkx4eWZhbTNWZWNLZ1k0dE1QS2dkZ2JDaUJCRmpOMUktV2hYRUVXTXgteGZFUll4N2dCV19fcmtrVTNkRGZZM01MWEo0MlhtYXlpTDE3SVhCaTNTdGpIVmVfTFB4MHlfY2R3V3MzTU5IbFUtYXVZbU1ZR3JtVGg2U0wxTDZoZUNjMU4td28?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://poole.ncsu.edu/",
+      "published": "2026-04-20T07:00:00+00:00",
+      "matched_keywords": [
+        "study abroad",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:59.104936+00:00",
       "status": "needs_verification"
     },
     {
@@ -3607,7 +4163,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:32.734267+00:00",
+      "discovered_at": "2026-10-24T10:40:51.430409+00:00",
       "status": "needs_verification"
     },
     {
@@ -3626,7 +4182,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:12.652126+00:00",
+      "discovered_at": "2026-10-24T10:40:06.638302+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "With President Gilliam’s Visit to BU Geneva, An Inspiring Moment for BU Geneva Study Abroad Students - Boston University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Boston University",
+      "publisher_url": "https://www.bu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNTXpxVmpUWWJ3NmRVc3NrSi16d0NreEljZElYNkxaU0FxeldyaDVRVWt5cGdEd0pzcjBuaTZPaFZVSFZndGtIRjlxeFUwSmtCNFJWTTZJdWVNRUZQclBxaWZMdEVXb0U3N2RpYVdUQVJLemJPeno2Q0hZWTUzV1ZGMkVxUGhveWxmN0dEeFhUUzNUZVNfZTdyYWhOb2p3a1RiSm52QW9CRlBqbF80S1FWTk1iMUhnX2lQYU1BWmNJbXZEb0pSa25CbEMtb2VxdjBqY1U4dzFkdlp3QVVu?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.bu.edu/",
+      "published": "2026-04-08T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:00.772838+00:00",
       "status": "needs_verification"
     },
     {
@@ -3645,7 +4220,45 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:51.503281+00:00",
+      "discovered_at": "2026-10-24T10:41:26.399603+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Why More Students in Kazakhstan Choose to Study Abroad - The Times Of Central Asia",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The Times Of Central Asia",
+      "publisher_url": "https://timesca.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRmJrNWpBb0ZrTjlqb2pPcDNDMjE0U0tibXlPNWYwaTY4MXltVFM5UnpWT0IyNm5EMTVvckEyQ3Zrd1o2Z29NeEw1LVdtMmNtRlp3Y1otS080QjlteENlQldzSzNWSnFJWTgwTE1JQVpTVU93bzY2YVRZZ0FwWW1HMQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://timesca.com/",
+      "published": "2026-03-25T07:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:06.474945+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Chico State Earns National Recognition for Expanding Study Abroad Opportunities - Chico State Today",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Chico State Today",
+      "publisher_url": "https://today.csuchico.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWnRFaWZ0R0RmZ0F5aFl6S3B2a2ljOExpWnlENG5BSUdFbWJPZEVHaHhkcHZhNzVpemluWWhfQXJPaEV1ZzcwV2tpMDNDOUFoMnhpV0xqZk1XdnJfdnFYTVAzS2JkWTBmUC1UT3lsb0tNWktNY01Db251cG5Ra2VpT1E3QzduNWtVOHNjVkJqa1hQZFNRWTlaLXF4X3VoWUx3bTZHQV9aaUZXbms?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://today.csuchico.edu/",
+      "published": "2026-03-24T07:00:00+00:00",
+      "matched_keywords": [
+        "study abroad",
+        "study abroad opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:57.927168+00:00",
       "status": "needs_verification"
     },
     {
@@ -3664,7 +4277,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:02.723048+00:00",
+      "discovered_at": "2026-10-24T10:42:00.304306+00:00",
       "status": "needs_verification"
     },
     {
@@ -3683,7 +4296,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:52.982617+00:00",
+      "discovered_at": "2026-10-24T10:41:28.786059+00:00",
       "status": "needs_verification"
     },
     {
@@ -3702,7 +4315,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:59.369128+00:00",
+      "discovered_at": "2026-10-24T10:41:41.943916+00:00",
       "status": "needs_verification"
     },
     {
@@ -3721,7 +4334,45 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:53.922669+00:00",
+      "discovered_at": "2026-10-24T10:41:30.584239+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Gilman Scholarship Provides Three Augustana Students Study-Abroad Opportunity in 2026 - Augustana University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Augustana University",
+      "publisher_url": "https://www.augie.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVGxjdVJPYlNMeVhUaEhwb3RUcndtX056QmQzZmp5Rmo5LTBybU92NndubWpCQVdrY293WmU1LUZJb3cyNjNRbDFIeWlrbVFDR2Q4UFdkNnJBQ2FNVXZ3ODJMR3JtSmozYzN5NG9Md3IxcEdwNzVfV0dhMWpkQkk0aXdJSndESEN0RURzVkJWbmFfeThYVHVXVW95MU1IcGJ6VDlTa291RXUzSmpKVnczYkxtb0I?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.augie.edu/",
+      "published": "2026-03-02T08:00:00+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:02.849450+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "The Center for Global Engagement Hosts Study Abroad Week - James Madison University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "James Madison University",
+      "publisher_url": "https://www.jmu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSXJ0cHlUU2V6UUpwZTFVZnZ3UHowcXFkZ2RrTENxZ0xtTUZpWGFORkFvSFpBQUVyeGV3aEQ2eXZIU1U3ZnRkVzM4YXRyS1BKaVozR2pZZnFnWUVlX05MS2hYdEx4MWJDbWJUWDBvRVNPekJyQl9FSHpNY0xyU3Nrdy1R?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.jmu.edu/",
+      "published": "2026-02-24T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad",
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:00.051381+00:00",
       "status": "needs_verification"
     },
     {
@@ -3740,7 +4391,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:28.458740+00:00",
+      "discovered_at": "2026-10-24T10:40:44.070319+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Students explore a world of possibilities at the Study Abroad Fair - The Johns Hopkins News-Letter",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "The Johns Hopkins News-Letter",
+      "publisher_url": "https://www.jhunewsletter.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYjc0MHYtZi1jZFEyaThEYmpCbUxCRGhOYV9hd3JMS1Z0THcxZlBWaDZjUmw1MnRYclRyME4wYXZWS1ZkRUVlcEtXajllN0N5aURHbEQ5NmcwSjEwYjZFSVc0R212UlQ0ZWExU2lONk51a2FwM0FUZnFsVUY0VVBzN1QxZTZwOHItb3ZoTTRvcnZxUjJLZGx4UGl1ZzgtektmT2lSX2J3aVM2T29FLWhQRjBR?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.jhunewsletter.com/",
+      "published": "2026-02-10T08:00:00+00:00",
+      "matched_keywords": [
+        "students",
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:07.906890+00:00",
       "status": "needs_verification"
     },
     {
@@ -3759,7 +4429,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:20.626276+00:00",
+      "discovered_at": "2026-10-24T10:40:27.992414+00:00",
       "status": "needs_verification"
     },
     {
@@ -3778,7 +4448,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:49.441650+00:00",
+      "discovered_at": "2026-10-24T10:39:29.275949+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Webster University and Arcadia Abroad Partner to Expand Study Abroad Opportunities - Webster University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Webster University",
+      "publisher_url": "https://news.webster.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9MZ3BZdXdrU3ZpcjhjUkU3ZTg0em9zaUdVd3hZcjUxWGJldjVJN2U3SHhIdlRlX3ZhQkZ0TnFfd1BmYmRJWGd3SUJhcUZNZDMwX3BOYzFxRTZuUHZqTGtoRU5LeGZ3dzBBM3U1UUZn?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.webster.edu/",
+      "published": "2026-01-21T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad",
+        "study abroad opportunities"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:03.582254+00:00",
       "status": "needs_verification"
     },
     {
@@ -3797,7 +4486,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:34.797806+00:00",
+      "discovered_at": "2026-10-24T10:40:54.527184+00:00",
       "status": "needs_verification"
     },
     {
@@ -3816,7 +4505,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:33.920012+00:00",
+      "discovered_at": "2026-10-24T10:40:53.573181+00:00",
       "status": "needs_verification"
     },
     {
@@ -3835,7 +4524,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:49.327826+00:00",
+      "discovered_at": "2026-10-24T10:39:29.964475+00:00",
       "status": "needs_verification"
     },
     {
@@ -3854,7 +4543,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:14.186803+00:00",
+      "discovered_at": "2026-10-24T10:40:12.602387+00:00",
       "status": "needs_verification"
     },
     {
@@ -3873,7 +4562,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:42.811804+00:00",
+      "discovered_at": "2026-10-24T10:41:10.561103+00:00",
       "status": "needs_verification"
     },
     {
@@ -3891,8 +4580,8 @@
         "students"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:15.151171+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:47:03.418793+00:00",
       "status": "needs_verification"
     },
     {
@@ -3911,7 +4600,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:30.057838+00:00",
+      "discovered_at": "2026-10-24T10:40:47.026907+00:00",
       "status": "needs_verification"
     },
     {
@@ -3930,7 +4619,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:46.209761+00:00",
+      "discovered_at": "2026-10-24T10:41:17.310394+00:00",
       "status": "needs_verification"
     },
     {
@@ -3949,26 +4638,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:13.815815+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Vos Family Global Internship Fund Launches Transformative Student Experiences - Boston University",
-      "source": "Google News - Global Internships",
-      "publisher_name": "Boston University",
-      "publisher_url": "https://www.bu.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNlFhMlJ6ZU0wc2NpNFNwLXdlVmVycnNIbkR0NU5CaW9vN2IyRy1VRnM0ek5Kb0NwZGVQNG1fWFRtVHlzTURLY2lUaFJVRmdwOWR5VENjZERmdTdySTNyY1gtVWFHcXdQdW1pUHp6X2NqT3ZuYkpnNDlDQVFzbjg2ZFYxUXlpMU83c3VxNTl6WkdUWmxUWTJjTGIxVl9RalF0b1hqbkVKam1uM2Zibi1QOA?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.bu.edu/",
-      "published": "2025-08-28T07:00:00+00:00",
-      "matched_keywords": [
-        "internship",
-        "global"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:14.669715+00:00",
+      "discovered_at": "2026-10-24T10:40:15.591948+00:00",
       "status": "needs_verification"
     },
     {
@@ -3987,7 +4657,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:37.991109+00:00",
+      "discovered_at": "2026-10-24T10:41:00.560543+00:00",
       "status": "needs_verification"
     },
     {
@@ -4006,7 +4676,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:54.148576+00:00",
+      "discovered_at": "2026-10-24T10:39:37.961804+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Most Prestigious Scholarships in the World 2026 - Shiksha.com",
+      "source": "Google News - International Scholarships",
+      "publisher_name": "Shiksha.com",
+      "publisher_url": "https://www.shiksha.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNWk1bVpMbVo3anRHTmE2dUFGV0U3ZHBmQVlNLXlJRzA3aDNoM25BS1QwaEtKeWI1VFcxUEY2LXU2VWVCYWc3ZGpXLU1sZW5SUEloa09UZW92b01mZkhlQ1EtbHY1NUt4a2huMmNHQWhhYzhXcmgtUmJJMkZWYk5rYlFteGN5bk9fdkNYTWRPUXE3UFRPY3ZWSWJzRi0yQQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.shiksha.com/",
+      "published": "2025-03-01T05:51:11+00:00",
+      "matched_keywords": [
+        "scholarship",
+        "scholarships"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:39:38.444109+00:00",
       "status": "needs_verification"
     },
     {
@@ -4025,7 +4714,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:29.926240+00:00",
+      "discovered_at": "2026-10-24T10:40:46.664042+00:00",
       "status": "needs_verification"
     },
     {
@@ -4044,7 +4733,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:25.815582+00:00",
+      "discovered_at": "2026-10-24T10:40:38.802907+00:00",
       "status": "needs_verification"
     },
     {
@@ -4063,7 +4752,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:55.139289+00:00",
+      "discovered_at": "2026-10-24T10:41:32.409111+00:00",
       "status": "needs_verification"
     },
     {
@@ -4082,7 +4771,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:58.485368+00:00",
+      "discovered_at": "2026-10-24T10:41:40.028270+00:00",
       "status": "needs_verification"
     },
     {
@@ -4101,26 +4790,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:55.961494+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Notre Dame surpasses 87 percent for undergraduate study abroad participation - Notre Dame News",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Notre Dame News",
-      "publisher_url": "https://news.nd.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQWtIWWszdEVoemR2U2c2N0pZSGtyNm5IUkUyZFo0TkloSXQ2VVhYekZxQ1RQNGVaeF9oenB1cUFTR1Z4WFFUWHlvN19zVEJmWUFUTE40eTg1RWRWWnFPVmpDUFp4R0JBVkt2a3hlTHg0Q09OcEJIVl9DMkVZTVBTZ3RoNlRrUFB0U1J3M2gxUGVLbWJrR0NMYThCVXl4UGpUWUVteg?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://news.nd.edu/",
-      "published": "2024-12-05T08:00:00+00:00",
-      "matched_keywords": [
-        "study abroad",
-        "undergraduate"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:04.678311+00:00",
+      "discovered_at": "2026-10-24T10:41:34.001951+00:00",
       "status": "needs_verification"
     },
     {
@@ -4139,45 +4809,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:54.295768+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Education Abroad Fair to highlight upcoming study abroad, scholarship opportunities : Newsroom - Texas State University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Texas State University",
-      "publisher_url": "https://news.txst.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZ2NUR0g5UUhQbm8zV0RLYjkyTTVUVFBRMFdER3lqMldQX3VaNG9hS3Q5dzFfUC1XYzRzWHJoanVCdHpTUzhxckdyLVpveU10N2kyRVdOR2tKaGpHOXZBYnJZSXBIcTcyN2R5ejhDOThUbGhIWnRxNnJfR2djX0g1bXE5YlB3QQ?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://news.txst.edu/",
-      "published": "2024-10-14T07:00:00+00:00",
-      "matched_keywords": [
-        "scholarship",
-        "study abroad"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:04.434462+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Study Abroad Opportunities - University of Southern Indiana | USI",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "University of Southern Indiana | USI",
-      "publisher_url": "https://www.usi.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBuUlIyeFI3aTdxbmIyUk5xRkRkYlFfZ19FR2FkZU9pTm9RTUdlMHlGN2xla0h0bE1td3hSTk5MVm41Mk05Z3piYmlHNHF6WVRTcGpkS3dNRE9Jc25QRzFLNVlWcw?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.usi.edu/",
-      "published": "2024-08-30T14:16:39+00:00",
-      "matched_keywords": [
-        "study abroad",
-        "study abroad opportunities"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:04.137463+00:00",
+      "discovered_at": "2026-10-24T10:41:31.091048+00:00",
       "status": "needs_verification"
     },
     {
@@ -4196,26 +4828,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:00.611372+00:00",
+      "discovered_at": "2026-10-24T10:41:43.912239+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Universities say 14,000 jobs face axe as Labor’s ‘poll-driven’ crackdown bites - SMH.com.au",
-      "source": "Google News - International Student Opportunities",
-      "publisher_name": "SMH.com.au",
-      "publisher_url": "https://www.smh.com.au/",
-      "news_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQcDJhSVB0UWZNTDkxWTZwZzN4OEZobXUwX3Z6VmdWMHowRm9DTFdtTjZWeFpvX0FHZUtlT1ZTaDRHcW5hSmRaaDhudnhyaHVsdE9Rc05RLXp5S0puUHVNYThkN2YzWHUzcEtrd21HMGlfcC02NXpsdEs1NGU4S1BQS0lvcXA0RGNTWWFjUndXVENnWFIzbFJIU1Q4OVhZMlVHdXVaTzdrQ1NXSDhBOFRLVm5TNkdyZTFocjRfaDVqSEZzZ1JLMHYzTjVLWWJZSGs?oc=5",
+      "title": "Margaret Hardin seeks to help students gain worldwide experience - New Mexico State University",
+      "source": "Google News - International Scholarships",
+      "publisher_name": "New Mexico State University",
+      "publisher_url": "https://newsroom.nmsu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQYTMza1FoMGY1dmJjMFVURlVSUGZndmhJbGFYck4xUEhSZGppc25ya3VrY05Kc2VKVldWNkEzOTEwdTZfckJvU3hyYmNoeGJtaVNiRUFTaXBHbEFxcTI4RVpmWFpjQ1hlWlhhYmlfQXVRbmt3OFFYVnNaSjFzbElDVDRXLWVWc0pZOFZ1X0lid0hEdFlrT0RoX3MwQXM3a3VpLWtDY1BGODB3U1lhbDBKNUttbTNZdERIQmxuS2Nfakg3QldWQzhvbnE5d3U1dzA?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.smh.com.au/",
-      "published": "2024-08-06T07:00:00+00:00",
+      "source_url": "https://newsroom.nmsu.edu/",
+      "published": "2024-08-07T07:00:00+00:00",
       "matched_keywords": [
-        "job",
-        "jobs"
+        "students",
+        "worldwide"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:17.528928+00:00",
+      "discovered_at": "2026-10-24T10:39:28.150135+00:00",
       "status": "needs_verification"
     },
     {
@@ -4234,7 +4866,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:54.612908+00:00",
+      "discovered_at": "2026-10-24T10:39:39.530002+00:00",
       "status": "needs_verification"
     },
     {
@@ -4252,8 +4884,8 @@
         "jobs"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:15.666746+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:50:29.017693+00:00",
       "status": "needs_verification"
     },
     {
@@ -4272,7 +4904,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:27.614333+00:00",
+      "discovered_at": "2026-10-24T10:40:42.157962+00:00",
       "status": "needs_verification"
     },
     {
@@ -4291,7 +4923,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:25.574468+00:00",
+      "discovered_at": "2026-10-24T10:40:38.324738+00:00",
       "status": "needs_verification"
     },
     {
@@ -4310,7 +4942,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:14.557689+00:00",
+      "discovered_at": "2026-10-24T10:40:17.417533+00:00",
       "status": "needs_verification"
     },
     {
@@ -4329,7 +4961,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.179752+00:00",
+      "discovered_at": "2026-10-24T10:40:18.367782+00:00",
       "status": "needs_verification"
     },
     {
@@ -4348,7 +4980,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:52.603393+00:00",
+      "discovered_at": "2026-10-24T10:39:35.901295+00:00",
       "status": "needs_verification"
     },
     {
@@ -4367,7 +4999,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:44.987581+00:00",
+      "discovered_at": "2026-10-24T10:41:14.091188+00:00",
       "status": "needs_verification"
     },
     {
@@ -4386,7 +5018,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:55.025160+00:00",
+      "discovered_at": "2026-10-24T10:41:32.173897+00:00",
       "status": "needs_verification"
     },
     {
@@ -4405,7 +5037,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:57.489848+00:00",
+      "discovered_at": "2026-10-24T10:41:37.360709+00:00",
       "status": "needs_verification"
     },
     {
@@ -4424,26 +5056,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:00.456514+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "HPU's Go Global Grant - High Point University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "High Point University",
-      "publisher_url": "https://www.highpoint.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zdU9ZV0didWFWNUFxWEppR0cwblBTekpfUllHd1ZjNUtXSmtoV2F3RWVlTURkbUFGLS1RQ2RHMkJwYUlnWk1iYzlpV2ZTUVVJOFV3bzAxbVJpSFJ1cnc?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.highpoint.edu/",
-      "published": "2021-08-09T20:25:27+00:00",
-      "matched_keywords": [
-        "grant",
-        "global"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:05.935102+00:00",
+      "discovered_at": "2026-10-24T10:41:43.678275+00:00",
       "status": "needs_verification"
     },
     {
@@ -4462,7 +5075,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:45.222155+00:00",
+      "discovered_at": "2026-10-24T10:41:14.915181+00:00",
       "status": "needs_verification"
     },
     {
@@ -4481,7 +5094,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:40.940695+00:00",
+      "discovered_at": "2026-10-24T10:41:05.995497+00:00",
       "status": "needs_verification"
     },
     {
@@ -4500,7 +5113,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:00.025614+00:00",
+      "discovered_at": "2026-10-24T10:41:42.971025+00:00",
       "status": "needs_verification"
     },
     {
@@ -4519,7 +5132,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:59.235545+00:00",
+      "discovered_at": "2026-10-24T10:41:41.709332+00:00",
       "status": "needs_verification"
     },
     {
@@ -4538,26 +5151,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:48.037630+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Start Here: Abroad 101 - International Education & Engagement - University of Wisconsin-La Crosse",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "University of Wisconsin-La Crosse",
-      "publisher_url": "https://www.uwlax.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYlhEWEhud0pqUUM3OWxNQ2otdUZtaFk5dEJrMHJrYTYxazNxeVZESWtGRmhUX3lROUxTZlNPNXZ4Q1c1WDV0QVE5YnJvMTVCX1J3SDh6Vy03TEZ2ajFiYVJMcm01THUzX1RSNFpkUjdOSEwyRVJJWFZRUjlZLXh1TWZjV2l2RzBRWG9R?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.uwlax.edu/",
-      "published": "2019-09-27T03:43:42+00:00",
-      "matched_keywords": [
-        "international education",
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:06.310273+00:00",
+      "discovered_at": "2026-10-24T10:41:20.559032+00:00",
       "status": "needs_verification"
     },
     {
@@ -4576,7 +5170,26 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:18.271593+00:00",
+      "discovered_at": "2026-10-24T10:40:23.349977+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "These 3 free online UCT courses have been named as some of the best in the world - BusinessTech",
+      "source": "Google News - Free Online Courses",
+      "publisher_name": "BusinessTech",
+      "publisher_url": "https://businesstech.co.za/",
+      "news_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVXNWWllDODNfNEdNVmpHRUdQY29ZeWluZWNYcEt5eHNaQ19SNHpKcXRCbUpCYXlqU0N0OXVodGVPSF9FV3ExUlZuYWUzSHlHUkJZRUY1bUZTVzFrTlM3SmRlUGlTOWpDNkhQc241NXNtLU1aTldUZ0plSlZ3LVVZa3N6WV9sQkJyNHQ2T1VYSkdpcEVjb3VUWEFRY0FKRzVETS1hVU1uTDZPbFAtSVpiQWZZUmNyY3hFRC12VXpkYUswWDZLOFA5Yw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://businesstech.co.za/",
+      "published": "2018-08-28T07:00:00+00:00",
+      "matched_keywords": [
+        "course",
+        "courses"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:25.918233+00:00",
       "status": "needs_verification"
     },
     {
@@ -4595,7 +5208,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:50.300381+00:00",
+      "discovered_at": "2026-10-24T10:41:24.500472+00:00",
       "status": "needs_verification"
     },
     {
@@ -4614,7 +5227,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:44.742260+00:00",
+      "discovered_at": "2026-10-24T10:41:10.801459+00:00",
       "status": "needs_verification"
     },
     {
@@ -4633,7 +5246,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:50.457761+00:00",
+      "discovered_at": "2026-10-24T10:41:24.254918+00:00",
       "status": "needs_verification"
     },
     {
@@ -4652,7 +5265,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:41.225501+00:00",
+      "discovered_at": "2026-10-24T10:41:06.461808+00:00",
       "status": "needs_verification"
     },
     {
@@ -4671,7 +5284,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:48.403544+00:00",
+      "discovered_at": "2026-10-24T10:41:21.030900+00:00",
       "status": "needs_verification"
     },
     {
@@ -4689,25 +5302,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:02.073192+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "The University of Edinburgh Mastercard Foundation on-campus and online postgraduate Scholars Program 2027/2028 for young Africans (Fully Funded) - Opportunities For Africans",
-      "source": "Google News - Global Scholarships",
-      "publisher_name": "Opportunities For Africans",
-      "publisher_url": "https://www.opportunitiesforafricans.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNazMycVNYTThNb0dTWGJKYlpJOVJoeHhfZDQ5dlpNTlZVdnZrMmZHanR4aW9iemcwSThuLTU2dHlBbmZhMjdsamtUVWJkWWoyQ3ZiQTRIMW1lSndEbTlKdkNxT0x1anFwcmtIaGMwSmxuVzVtbHg4TzlIUlNzUXhhbHpiNHBIdjd3eUNGOVp1RVZnRlpLS3FJdWhCaWJtSlNHb1BOSEdOMUk3LUJEeTBYS1dXVUlrdU9zeWpmNEoxSU94d0lxam5CZGhFUkhSYTdENk5jd0tjelVJMGtPeGlOckln?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.opportunitiesforafricans.com/",
-      "published": "2026-10-20T13:18:23+00:00",
-      "matched_keywords": [
-        "fully funded"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:35.246820+00:00",
+      "discovered_at": "2026-10-24T10:41:46.174419+00:00",
       "status": "needs_verification"
     },
     {
@@ -4725,7 +5320,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:52.863162+00:00",
+      "discovered_at": "2026-10-24T10:41:28.552248+00:00",
       "status": "needs_verification"
     },
     {
@@ -4743,25 +5338,61 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:48.010100+00:00",
+      "discovered_at": "2026-10-24T10:39:26.471384+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Carolina Global Launch - The University of North Carolina at Chapel Hill",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "The University of North Carolina at Chapel Hill",
-      "publisher_url": "https://www.unc.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBQSHBDSEZRa0RWRzdGTi1aMVlsV2ZYVURrMXBCcEt1MzBRdF9NWDc2dmtMd005Z3JfVVBhdzY5OWRRMXRtMU5Rb2gzZzNQcHcwTEdZVlZsUk40NktQeHc?oc=5",
+      "title": "Rising numbers of Asian and African PhD students choose to study in China - Nature",
+      "source": "Google News - International Student Opportunities",
+      "publisher_name": "Nature",
+      "publisher_url": "https://www.nature.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1NeTR3R3hCaFM3VmJRR1EzcGNMSGI2TVZzak5RY2FmSjhzSV80WEJ5bkN6ZVpkbDBzVHl3QkY4QXNYcE5sMWg2UzRPUGFld0xDMFI4eEFMY0tEaUhoR0RB?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.unc.edu/",
-      "published": "2026-10-11T07:00:00+00:00",
+      "source_url": "https://www.nature.com/",
+      "published": "2026-10-06T07:00:00+00:00",
+      "matched_keywords": [
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:09.921974+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "2026 Summer Oxford study abroad program - Lynn University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Lynn University",
+      "publisher_url": "https://www.lynn.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ndkxsT3JncHg4V0R6U0tINzVFbWx4d0pVNGJFY2Y2eXpoV3F4cmJRY3ViUmVKTGhlczdEcU9rbFdrVUdOTHpGT1h1ZWR5VkNma0ZGZi1taHkxdG4wWHZ5V21rUVFQUXl4QjBOOXF5eERRSkJnT3p5NjFB?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.lynn.edu/",
+      "published": "2026-09-03T07:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:49.124595+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Gilman Scholars from UF describe their global learning opportunities - University of Florida",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "University of Florida",
+      "publisher_url": "https://news.ufl.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5VbFJFOFZ5RkdFZnRxZXFsa1ctUFlmN1BoazBuWFdFTnZKZHV6VGx6cDRCRThRQWpuOFRHQWNHNFEyU0U1OERabjhaaVRuRHhTeEpFN01aVG4?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.ufl.edu/",
+      "published": "2026-09-02T07:00:00+00:00",
       "matched_keywords": [
         "global"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:02.313205+00:00",
+      "discovered_at": "2026-10-24T10:41:51.899700+00:00",
       "status": "needs_verification"
     },
     {
@@ -4779,7 +5410,25 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:31.316505+00:00",
+      "discovered_at": "2026-10-24T10:40:48.578305+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "How studying sustainability in Southeast Asia changed the way I see international business - Florida International University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Florida International University",
+      "publisher_url": "https://news.fiu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOT1N3X1BNMTl4SzFkVWFsQVFGRE93c25kNGRib3UydEtQSFFfWXdEc2d1eFJkNk5QbE9PVDZPaW9IOWU3U0VjdWJwS2d1ZE8tRVdyZjZkRXcwYWw3bi1QNHNHT0thYkFWZFl5WDN4R3NGVWRaektVOHNBZkNFU3l6TVY1cm1VNXcxRy1HZjBrQU1GeFRkR0NiSVJ3YjFvWTZzYlB6ZkpPcWRsaXhHNmJKYW9ndUR1cnEySXNMT0RKVkQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.fiu.edu/",
+      "published": "2026-07-27T07:00:00+00:00",
+      "matched_keywords": [
+        "international"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:53.064335+00:00",
       "status": "needs_verification"
     },
     {
@@ -4797,7 +5446,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:19.322156+00:00",
+      "discovered_at": "2026-10-24T10:40:25.424342+00:00",
       "status": "needs_verification"
     },
     {
@@ -4815,31 +5464,31 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:39.086607+00:00",
+      "discovered_at": "2026-10-24T10:39:10.740753+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "UN labour organisation sets first global standards for gig workers - Reuters",
-      "source": "Google News - Global Jobs",
-      "publisher_name": "Reuters",
-      "publisher_url": "https://www.reuters.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZHA4NWQtbTU1Y0NJQ3c4SEhzNFJ4UHFLVlNWYnlMajR5MXliNlhGRXFIZXYwR1BCUTU2X0xudTRROUtfNUNVMGVhdmszYS1CTUNucEJwR0VIU28wSlEtSjJLVy1QaU5Oc3p1UjdjOGlaU1B2TEZJMEZtc0FmYi1aV1RnS2o1eE1DU1h5c2ZLdTJRYUNBdXBkOHI0amVzQVNSYzBJeFdPd21kSy1rVTBPWGFPcTJLUWFzVklGSzZOMHB4TWtwa0tvVUpKYVY5RFRTWVE?oc=5",
+      "title": "Currency crash and visa crackdowns force Indian students to rethink studying abroad - BBC",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "BBC",
+      "publisher_url": "https://www.bbc.com/",
+      "news_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1CMkpqdTBJbFRSRldkY1JEbW05UDlDSDhFN3ZQa25NRldGMWV5QzZIdmNIcEhNbHRyMF9abTJvbjl6YzNka0oxb2lrZllaMVNvZmZqbW5QRTdiQQ?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.reuters.com/",
-      "published": "2026-06-12T07:00:00+00:00",
+      "source_url": "https://www.bbc.com/",
+      "published": "2026-06-21T07:00:00+00:00",
       "matched_keywords": [
-        "global"
+        "students"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:37.702739+00:00",
+      "discovered_at": "2026-10-24T10:41:56.726724+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "North Korean Remote IT Worker Fraud: Managing Insider Threat, Sanctions and Employment Risk - Skadden, Arps, Slate, Meagher & Flom LLP",
+      "title": "North Korean Remote IT Worker Fraud: Managing Insider Threat, Sanctions and Employment Risk - Skadden, Arps, Slate, Meagher & Flom",
       "source": "Google News - Remote Jobs",
-      "publisher_name": "Skadden, Arps, Slate, Meagher & Flom LLP",
+      "publisher_name": "Skadden, Arps, Slate, Meagher & Flom",
       "publisher_url": "https://www.skadden.com/",
       "news_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOS1RvRFl5b0pvY1R5VlNmdjJFR0tWVlJOSWV3ZjFLNVF2b2Y2TUdiNnpvYWxPWEZKUkZ1aF84Z3ZmRm5qcWZMU0tfSTVuVzRVWDRuck80ZEowNW8tYkpTOTU1U3UzUEZPd0lwT1lFc1hEN3Fla3FUSlBFTzlVdGpJay13?oc=5",
       "resolved_url": "",
@@ -4851,7 +5500,25 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:20.748271+00:00",
+      "discovered_at": "2026-10-24T10:40:28.216747+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Fostering international exchange - University of Miami News",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "University of Miami News",
+      "publisher_url": "https://news.miami.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMXNVaW5fTXRIb01odzNyNWtDc3BfcUVYZmNZUkx6OUdaOXFoeFp0cUVTaHVfZ3gwZ1BiUDJ2c2hSaWMxMjQ3MUF2WFpzN2J4TVgtNy1vLTlFdnIxU0p3SkNjR3dFUjJZa0o3NXRmMXRwaWFFcXVRbTJrRUpwVTk5QVRn?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.miami.edu/",
+      "published": "2026-06-08T07:00:00+00:00",
+      "matched_keywords": [
+        "international"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:52.827926+00:00",
       "status": "needs_verification"
     },
     {
@@ -4869,7 +5536,25 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:48.785874+00:00",
+      "discovered_at": "2026-10-24T10:39:27.915090+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "From Career Readiness to Personal Growth, Studying Abroad is The Ticket - Bentley University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Bentley University",
+      "publisher_url": "https://www.bentley.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1PdXU0S0dnRDRfQXkzZW91cXFqRG9GYVRQZDhObnFfaWJHZ2RFVXp3ZFdMNDl4dWhzQVo5dDJ0U295QllZZ2twTlRSVGhOVXBWVE5xbGRhSnh2QnE1YmREb1BaX28zN1B3TWhyU3dpWUJPWDg?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.bentley.edu/",
+      "published": "2026-05-26T07:00:00+00:00",
+      "matched_keywords": [
+        "career"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:41:54.896735+00:00",
       "status": "needs_verification"
     },
     {
@@ -4887,7 +5572,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:36.706149+00:00",
+      "discovered_at": "2026-10-24T10:40:58.542939+00:00",
       "status": "needs_verification"
     },
     {
@@ -4905,7 +5590,25 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:19:49.155066+00:00",
+      "discovered_at": "2026-10-24T10:39:28.787224+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Summer :: Global Engagement - Swarthmore College",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Swarthmore College",
+      "publisher_url": "https://www.swarthmore.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9NZ0o1MTNNN2xKanBZNnJKZmh0eGlqX2FyekFnODktQld6MV96QldWSUtoMUtETi1KVGtsbjNES2xHQTBUcGlMVzB3UXdkZzhDY0Rpa2UxYm5mRldudWlRTQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.swarthmore.edu/",
+      "published": "2026-02-14T05:05:57+00:00",
+      "matched_keywords": [
+        "global"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:01.702863+00:00",
       "status": "needs_verification"
     },
     {
@@ -4923,7 +5626,25 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.334055+00:00",
+      "discovered_at": "2026-10-24T10:40:18.726382+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Study Abroad with Teachers College: Learning Peace in Practice in Costa Rica - Teachers College - Columbia University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Teachers College - Columbia University",
+      "publisher_url": "https://www.tc.columbia.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPQ0VkeS04bzJmaXRrSnJEX3drUElGYVdaRnQyaDZIWDl2WnozRG9ObXhCbzZpU3lLdjVDaTM1UFl3ZnhhcWk3Ui1RaDJPdjdyeE1EV2NqTUVfYTluU2Fua0pmbllWbXU5aGRmdUR1dWktTFBEcndRVzgydTZTeXg1amR2cjBZNWxpbENHTmhmeUdFLWlIdFBGUFdndmRWalpINVhTd0ZNSGVsejNVVXJlYWdRejNPSE12WVMwaVEyYkdpaWswTXJ4X2tvNl9YdlB6WFMxRjluZGpITHJ6SjY0YnVJNmJPS2NRTkNzUmpURnpKOHZD?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.tc.columbia.edu/",
+      "published": "2026-02-09T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:05.013577+00:00",
       "status": "needs_verification"
     },
     {
@@ -4941,7 +5662,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:28.214319+00:00",
+      "discovered_at": "2026-10-24T10:40:43.352453+00:00",
       "status": "needs_verification"
     },
     {
@@ -4959,7 +5680,43 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:17.904178+00:00",
+      "discovered_at": "2026-10-24T10:40:22.378562+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "University of Richmond takes a top spot among study abroad programs — again - UR Now",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "UR Now",
+      "publisher_url": "https://urnow.richmond.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQSjRwVEdWd1FrNkNndC1RYXF4T1lKdGNFUlRfemExZERVM2szRjRTLWRodUtEcURvaV9mRGlhZ2JULTBWWmlIam9ucmhnV2NRT01lOXNDMWEzRjdEWnVzdTVmbFdKd1pMMDJvTHRNc0tPOXNlM0xrOGFabndaNFU5WkFRZXZMaU1uUVZwNFg3ZEwwcm91Y1ZmZ2o3M25DWG1kMENFcTNobC13a1NvNWpwN2VTMTFIb3ZwT1FsSlhuaTVxVnpDc1cxRTl3?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://urnow.richmond.edu/",
+      "published": "2026-01-15T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:01.475077+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "We are the world: URochester students learn, work, and research across the globe - University of Rochester",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "University of Rochester",
+      "publisher_url": "https://www.rochester.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOWl9uUzBxQW00WFRfSEZGREpmcExFUVZSR2xrRC1LMF9aV1BqYVpkYWg1cnFWLWlBYlB5RTdzUW1jMmp2X25MYXp0N1UtY1h4dGk3X1FkYm5lNU5NUC1QUXJhVmtKck5tZWdtbFgzM1VNa2xPeE9fal9QQ0o4ZU93OHBOd2N3VlhzQl9OV1VGU1BvUQ?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.rochester.edu/",
+      "published": "2025-12-10T08:00:00+00:00",
+      "matched_keywords": [
+        "students"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:08.136538+00:00",
       "status": "needs_verification"
     },
     {
@@ -4977,43 +5734,133 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:02.844030+00:00",
+      "discovered_at": "2026-10-24T10:41:59.352203+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Elon University ranked #1 in the nation for study abroad - Elon University",
+      "title": "University of Richmond Ranked No. 1 in Study Abroad Participation by Open Doors Report - University of Richmond",
       "source": "Google News - Study Abroad",
-      "publisher_name": "Elon University",
-      "publisher_url": "https://www.elon.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPdzZzUUh2ZVJZQmdGMFg3YV9jcWFOSHVOQnUxNjNHVG11N0NlOVZ5b1d6LTdsWENXdWx1aXNDTmlfSlNIbjR6ZS12NFQycVBqLVpBYm52YlIwUElhWkRyYU9oeUxjQzlsN0x5ejVkTVFWMVZHLXdIZGYwakJSUXg5dnA1dGlOdnhkNTZRQnZCcGp0aGdFdnZ4cDhQcw?oc=5",
+      "publisher_name": "University of Richmond",
+      "publisher_url": "https://news.richmond.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQRVEwQmdUSW5qdURuOXJKeVdrTERRSlo3X3VJNzhFWFJGOHhZOVp1MDF6RVA3UklJd1JRc0RwQy02OGV1b1RldUtZUDRGb3B4d01aWTAwYUZEOHkwN1hhWmJGWW9McTgtbzVUOGtjZmRPNzJCUmJpNE5SZGNlaDM3Rmtnci1BeTJocVpubEJueGtoOXVlMGQ1ZmFMei1Yd2RmZU5CM1V3WDZ1ckRFcVFpWXBKLVZyRC1zRzV1YWpITk9TQ0dtMS0xU3lwRzFWYUFGdGI3Y0ZwUWJ6QQ?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.elon.edu/",
+      "source_url": "https://news.richmond.edu/",
+      "published": "2025-12-04T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:05.991273+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Perspectives from Study Abroad in Santiago, Chile: Lily Leman - University of Wyoming",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "University of Wyoming",
+      "publisher_url": "https://www.uwyo.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWmR4Y2ttQ0Z6VVQxYURhTE1XalhQUjVJOGxsYmc3UGhUOHFIUlhFcUJtN1BzdnhUeFlEb1F1bjY1M1o5eXZFajJ1NVN5Y0FDQXRERGJaSFB6YXNIdlF4WDdXcVd1ZkVPcUh1bTBBTlAxbHFfNE90cnp3aHQ5bVFXN3lxeHZkS29GQlFMbXk1VlZYeGtXQUp4NFl4RWc?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.uwyo.edu/",
+      "published": "2025-11-21T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:01.235238+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Cal Poly Ranks First in the Nation in Study Abroad for Fourth Year - Cal Poly",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Cal Poly",
+      "publisher_url": "https://ucm.calpoly.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZHF0MFNMMHZBUVJ4N3ZsUUZTZ1ZXaEpXdXBGendzZ3h2Qnh1c1hYRDcyWFVleUdFWGFfMXZhdHgxZElJSUtocXdpLXVkdWVoS2kxdlRXaGRnR3JNMFpfcTRhY0ViWXlIcl9FSVlaWEFYU3V6MHVDakctUmwzdnZIZDRoTVNPSHF0?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://ucm.calpoly.edu/",
+      "published": "2025-11-20T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:04.061463+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "Wake Forest University ranks 4th nationally for study abroad participation - Wake Forest University",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "Wake Forest University",
+      "publisher_url": "https://news.wfu.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcWJYN3pQSVgxTTd2ekg0OFRjSVBSWjhkbGlvZnVWU3RuZ3hQeC1LWklObGJ3R3V1YUtSQnFhN29FR215dHNVdXJ2NElYekp5ZEtLbzJDVXNiYmU1RnZSNjJRZHZNNDhpVG5QdjVJTFl3T0hTZDZwWnUzdkxDWU44RHh3VjFYN2tWUjgxYm9EcVlHb19kT0hZcFdvVU9pckhrWnlMS1hTNmxLZmc?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.wfu.edu/",
+      "published": "2025-11-20T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:07.204918+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "William & Mary remains No. 1 public university for study abroad - W&M News",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "W&M News",
+      "publisher_url": "https://news.wm.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaXZzU2pkaDBlV0VINHRkem1Oc1dfck1EalpRVElLcXhwYUpwWWdEdlQ2UE03dEJobDJMZkRrUm9KUjRPQ3I3Vm12bnpKZ0l6c1pINUpqdTN3MUtsZXFtN0ZEY0pRVlpEZW1fTTRFQVJSaUluc3l3WnJUR3dUakp0NE5pc0R0Sk1LTnIyYTltM3lVbHE3eEl1LTdB?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://news.wm.edu/",
       "published": "2025-11-17T08:00:00+00:00",
       "matched_keywords": [
         "study abroad"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:03.347738+00:00",
+      "discovered_at": "2026-10-24T10:42:02.621894+00:00",
       "status": "needs_verification"
     },
     {
-      "title": "Study Abroad - Polk State College",
+      "title": "WPI Named a Top 5 School for Study Abroad - Worcester Polytechnic Institute",
       "source": "Google News - Study Abroad",
-      "publisher_name": "Polk State College",
-      "publisher_url": "https://www.polk.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEdkxINlByM0ZxRVlHczVzM3VGZ1BGbjVlVU03Q0xaT0ZXTHN2Q1VFOGlXdzFHNnVreE5nZVRhd09EaEpoVWlNWDdtOUlud1NaVGZjb2xFYV83VDMxY1Y0Sk4zQk9vNGc3WlVqajd6TktGNHJyN1E?oc=5",
+      "publisher_name": "Worcester Polytechnic Institute",
+      "publisher_url": "https://www.wpi.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5pMkhQV2Nsd1Z2QmhpQmF4Vjdfb1ZCS1d0UEVsNjRSa0xHR1RJbkY0cVdXaGU5R1FZUy03Y2VfNDhQSTdMdkM2TWpTOGdGNTFCM0h4Ni1ZZmIyVzhTVkRNVm0ydmFzYUNMVlE3dA?oc=5",
       "resolved_url": "",
       "article_url": "",
-      "source_url": "https://www.polk.edu/",
-      "published": "2025-09-19T07:00:00+00:00",
+      "source_url": "https://www.wpi.edu/",
+      "published": "2025-11-17T08:00:00+00:00",
       "matched_keywords": [
         "study abroad"
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:04.561370+00:00",
+      "discovered_at": "2026-10-24T10:42:05.264180+00:00",
+      "status": "needs_verification"
+    },
+    {
+      "title": "William & Mary remains No. 1 public university for study abroad - William & Mary",
+      "source": "Google News - Study Abroad",
+      "publisher_name": "William & Mary",
+      "publisher_url": "https://www.wm.edu/",
+      "news_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONE1aN0NNODh2U2tidGFXR3hBcUM1Rlo0YjhES09JUFBTMGpIM0FJY01TcGl1YTFsRks5VHNacEpVTTZLd0ktakFxaFNxaTFCcnJoS2dQSmFDS2ZjczdxVEdFM1V3d1lBY2pzQVhReENUTndQTUtDT3pKQjhXeFpwZ0Q3TGFWNzBnSkNxeFVsWmFqRUdjekEwU0s0Ql9veGVBaGg0bzJ1V0RUWi1BZXpzWUVEcw?oc=5",
+      "resolved_url": "",
+      "article_url": "",
+      "source_url": "https://www.wm.edu/",
+      "published": "2025-11-17T08:00:00+00:00",
+      "matched_keywords": [
+        "study abroad"
+      ],
+      "url_resolution": "fallback",
+      "url_resolution_error": "Could not resolve Google News URL",
+      "discovered_at": "2026-10-24T10:42:07.687429+00:00",
       "status": "needs_verification"
     },
     {
@@ -5031,7 +5878,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:34.428824+00:00",
+      "discovered_at": "2026-10-24T10:40:54.045529+00:00",
       "status": "needs_verification"
     },
     {
@@ -5049,7 +5896,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.604204+00:00",
+      "discovered_at": "2026-10-24T10:40:19.472850+00:00",
       "status": "needs_verification"
     },
     {
@@ -5067,25 +5914,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:14.429618+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "I Just Finished a Life-Changing Semester Abroad. But Thanks to Trump’s Policies, I’m Afraid Other Students Won’t Have the Same Opportunity. - American Immigration Council",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "American Immigration Council",
-      "publisher_url": "https://www.americanimmigrationcouncil.org/",
-      "news_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaTFVZmJaVEZoaUh0MlYxc2JrTUlxMVhtY0tSM25rbkdiQjVxRndIcm1neWh4VFM0NHhoSy10NnNfYTJSNXpzU3lxbXJtZVJ5cllmUEUyRFBheWVISFplZjlnRzhVM0wxekZiZzVMbzhLUDYtVXBENXQ2SndTZHp0c2dQenB4UVlrcklWaGktZDZma2E5OUYzdQ?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.americanimmigrationcouncil.org/",
-      "published": "2025-07-11T07:00:00+00:00",
-      "matched_keywords": [
-        "students"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:03.656582+00:00",
+      "discovered_at": "2026-10-24T10:40:16.334713+00:00",
       "status": "needs_verification"
     },
     {
@@ -5103,7 +5932,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:35.043519+00:00",
+      "discovered_at": "2026-10-24T10:40:55.130891+00:00",
       "status": "needs_verification"
     },
     {
@@ -5121,7 +5950,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:37.586949+00:00",
+      "discovered_at": "2026-10-24T10:41:00.326139+00:00",
       "status": "needs_verification"
     },
     {
@@ -5139,61 +5968,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:15.862143+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Faculty-led India trip is interdisciplinary, international by design - Western Michigan University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Western Michigan University",
-      "publisher_url": "https://wmich.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9razdBel9VeTZhZ2d2ZTdSOG4xNWJWaU45U3otYkF6UHZ0VDNxYkdyQVY3VmQtUlNsU2U3UVNTN2tXaV9ETGxhdmpxaTZITE9jMU1wSXpFbVZscmcwRkphc2JZbUN3VWM?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://wmich.edu/",
-      "published": "2025-02-17T08:00:00+00:00",
-      "matched_keywords": [
-        "international"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:05.411922+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "How to pay for study abroad - University of Delaware",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "University of Delaware",
-      "publisher_url": "https://www.udel.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxORFBiYXVmdVR5Z01XSVVOdTdKb2pGVjlaWGdOb0xoaG82al9nbnBKbmpkRTdUNkJnazVqdC1JVG9zNEQ4anJzM0huTGpuNzRSSXNjYlVkQnNaN1VUMW1ubDZRZWZrcFRJTjVsdWJ2d1pBdHZvU09hclRERklDYU9vYnFSRFZwZVVVNlA5Z0ZVRTR2b2VlcnZfOV9xaDVVVEtZN1VRZg?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.udel.edu/",
-      "published": "2025-02-13T08:00:00+00:00",
-      "matched_keywords": [
-        "study abroad"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:04.022353+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Top recruitment agencies for remote work - hcamag.com",
-      "source": "Google News - Remote Jobs",
-      "publisher_name": "hcamag.com",
-      "publisher_url": "https://www.hcamag.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeFgxbFl0eklsX09ZR0NyQVV0SWlRdVE1RjdYcnFDOFdLaXBpZE50Y0ZqbEtNbWt5bWF4UkRTVC1lNEJXZU5nU3AzWEhYdUxZSl8yOXh0c0M4U3VmR3pBeVRyR1dHcThRYnFPZGxyaVRpcklPT2ZfOFJKaEtxQURpZFpOVzdDZ0phcS04eFVyLVQyQndEYkl3UjR6SFYyUzVpdWc?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.hcamag.com/",
-      "published": "2024-12-09T08:00:00+00:00",
-      "matched_keywords": [
-        "remote work"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:26.847763+00:00",
+      "discovered_at": "2026-10-24T10:40:19.967712+00:00",
       "status": "needs_verification"
     },
     {
@@ -5211,7 +5986,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:38.277259+00:00",
+      "discovered_at": "2026-10-24T10:41:01.072898+00:00",
       "status": "needs_verification"
     },
     {
@@ -5229,25 +6004,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:35.593265+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Q&A with Jodyi Wren about the Career Center - University of Rochester",
-      "source": "Google News - International Student Opportunities",
-      "publisher_name": "University of Rochester",
-      "publisher_url": "https://www.rochester.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdVY3cGRHX0YwSnZ3UTRqblY3YlZ5M1J6bF9iejNjb3ZMRW1DWnZuNVhqX3UwWjJ4R1drMHdBSVZLZ2ZYRzVZdTNDZE5PSzFuR0ZqcjBpMHpuaHkwUmxZRG1pdUE0M3RodXYyRmg2VWJjVHRZd3NTTDFZLUdQQTJiQ29R?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.rochester.edu/",
-      "published": "2024-03-12T07:00:00+00:00",
-      "matched_keywords": [
-        "career"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:11.439647+00:00",
+      "discovered_at": "2026-10-24T10:40:56.255582+00:00",
       "status": "needs_verification"
     },
     {
@@ -5265,7 +6022,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:57.046290+00:00",
+      "discovered_at": "2026-10-24T10:41:36.404603+00:00",
       "status": "needs_verification"
     },
     {
@@ -5283,7 +6040,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:26.180573+00:00",
+      "discovered_at": "2026-10-24T10:40:39.880961+00:00",
       "status": "needs_verification"
     },
     {
@@ -5300,44 +6057,8 @@
         "international"
       ],
       "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:11.844117+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Honors Study Abroad | Special Opportunities | Honors College - Miami University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Miami University",
-      "publisher_url": "https://miamioh.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNUI0UEZ4THJBMGtOaWhNdFRJN3lqdzJIcGZCbWlsbVdpcjB5cW80T0hPQ3NLZGgtZDZ1ZmtxZER3WUEzTEhhaVUybGVHVllMYUNuQ05XZkhxUW1VOWFiZjVzMFRUaUZ3S0ZuYkxIRmF2WlZsc1dYRmZNTW0wem9ndWQ1dWpHMTRo?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://miamioh.edu/",
-      "published": "2023-02-10T23:38:51+00:00",
-      "matched_keywords": [
-        "study abroad"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:05.296963+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "William & Mary maintains its leadership in study abroad among public universities - W&M News",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "W&M News",
-      "publisher_url": "https://news.wm.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSzg0aG5aSmpKbWFzSkdpX1lDeE40S0lla3hSODlZaUVqZENrTVE0ZmUwelNkSjYxWE1BVWdMbnlzR3ZkdTM4YUhPY0hRdUpKQkNVTUpoaGhIYmc2bHZZWkJQeWNhTkxZLVhyZk1hanRTVWd5akhTOFVMbm1aMmlJbnJpX1I1NHJUb3BLV3RtX3hadzA0WnpNV0pDVVBlV1FiSnR5Zmd3cHlwanBpdDJhMA?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://news.wm.edu/",
-      "published": "2022-11-29T08:00:00+00:00",
-      "matched_keywords": [
-        "study abroad"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:05.048690+00:00",
+      "url_resolution_error": "HTTP Error 503: Service Unavailable",
+      "discovered_at": "2026-10-24T10:44:37.387123+00:00",
       "status": "needs_verification"
     },
     {
@@ -5355,7 +6076,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:50.991227+00:00",
+      "discovered_at": "2026-10-24T10:41:26.157458+00:00",
       "status": "needs_verification"
     },
     {
@@ -5373,25 +6094,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:29.556245+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Smeal Global Representatives - The Pennsylvania State University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "The Pennsylvania State University",
-      "publisher_url": "https://sites.psu.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBrb1MzUnFQWWJuTkl2dnFnVUI5UExwcXhuVVFXdWMzbk9zdWZhcXhNeEpsWkZFMzlFS2wtZ3pwYXpyYUlrWmdRU21Fcm1ZaGRFVXc?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://sites.psu.edu/",
-      "published": "2022-09-19T23:28:46+00:00",
-      "matched_keywords": [
-        "global"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:05.812728+00:00",
+      "discovered_at": "2026-10-24T10:40:46.422194+00:00",
       "status": "needs_verification"
     },
     {
@@ -5409,43 +6112,7 @@
       ],
       "url_resolution": "fallback",
       "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:56.555397+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "11 Respected Providers of IT Security Training - Tripwire",
-      "source": "Google News - Online Training",
-      "publisher_name": "Tripwire",
-      "publisher_url": "https://www.tripwire.com/",
-      "news_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSHNzZUEwbzdOY1F2ckpVSDYzYUduMjhzNGxQWmpRVFh0WlN2bWRaRk53REduaUhWUGdoYmZDdTR1bDZlODBFaGxVeFQxWGtkYUx3VjNjVXhWZjc2UC1yWUwxNEU3TXRndjU3aXdhcmhvX0NxQjhVcVVkSWFYMkdCanJkVUd6MHc4ZmJj?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.tripwire.com/",
-      "published": "2021-02-01T08:00:00+00:00",
-      "matched_keywords": [
-        "training"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:20:58.120186+00:00",
-      "status": "needs_verification"
-    },
-    {
-      "title": "Office of Study Abroad - Morgan State University",
-      "source": "Google News - Study Abroad",
-      "publisher_name": "Morgan State University",
-      "publisher_url": "https://www.morgan.edu/",
-      "news_url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE40c2tOYm54djNuZjJmeHc2Q3FCWEVpN1BFVENCNUFWRW5ySk1aVmFPN1otclFFdFAyWFdaWWpoUzl6ZHY3OHpmSWRR?oc=5",
-      "resolved_url": "",
-      "article_url": "",
-      "source_url": "https://www.morgan.edu/",
-      "published": "2018-04-19T10:46:52+00:00",
-      "matched_keywords": [
-        "study abroad"
-      ],
-      "url_resolution": "fallback",
-      "url_resolution_error": "Could not resolve Google News URL",
-      "discovered_at": "2026-10-23T11:21:06.181926+00:00",
+      "discovered_at": "2026-10-24T10:41:35.195148+00:00",
       "status": "needs_verification"
     }
   ]
